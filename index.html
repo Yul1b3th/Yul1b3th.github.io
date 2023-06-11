@@ -3,71 +3,86 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boostrap</title>
+
+    <title>Universidad la Salle</title>
 
     <!-- CSS Boostrap -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css">
 
     <!--///// font-awesome /////-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!--///// Estilos /////-->
-    <link rel="stylesheet" href="./css/fonts.css" />
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/ejemplo.css">
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!--///// Java Script /////-->
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBcJCvaq2NekNgvG-19nlYnEPqwgl5UCU"></script>
+    <script src="./js/main.js" type="module"></script>
 
 </head>
 
 <body class="bg-white text-dark mx-auto">
 
     <!--///// header /////-->
-    <header id="header" class="d-flex align-items-center justify-content-center justify-content-md-start">
-        <h1 class="text-white ps-md-3">My Bussines Webpage</h1>
+    <header id="header" class="bg-lazy-load-img" data-src="./img/header-mini.png">
+        <div
+            class="container-fluid hero d-flex justify-content-center justify-content-md-start align-items-center h-100">
+            <h1 class="text-white ps-md-3">My Business Webpage</h1>
+        </div>
     </header>
 
     <!--///// nav /////-->
-    <nav class="navbar navbar-expand-md bg-primary">
-        <div class="container justify-content-end justify-content-md-start">
-            <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse"
+    <nav class="navbar navbar-expand-md bg-primary sticky-top" id="navbar-main">
+        <div class="container justify-content-end justify-content-md-start g-0 g-md-4">
+            <button class="navbar-toggler border-white me-3" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
+                aria-label="Mostrar el Menú">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse mt-2 mt-md-0" id="navbarNav">
+                <ul class="navbar-nav text-center">
                     <li class="nav-item">
-                        <a class="nav-link text-white" aria-current="page" href="#seccion1">Who We are?</a>
+                        <a class="nav-link text-white" aria-current="page" href="#seccion1"
+                            aria-label="Ir a la sección Who We are" data-scroll-spy>Who We are?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#seccion2">Services</a>
+                        <a class="nav-link text-white" href="#seccion2" aria-label="Ir a la sección Services"
+                            data-scroll-spy>Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#seccion3">Portfolio</a>
+                        <a class="nav-link text-white" href="#seccion3" aria-label="Ir a la sección Portfolio"
+                            data-scroll-spy>Portfolio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#seccion4">Location</a>
+                        <a class="nav-link text-white" href="#seccion4" aria-label="Ir a la sección Location"
+                            data-scroll-spy>Location</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#seccion5">Email Us</a>
+                        <a class="nav-link text-white" href="#seccion5" aria-label="Ir a la sección Email Us"
+                            data-scroll-spy>Email
+                            Us</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <div class="cats-container" id="slider">
+        <div id="cats-facts"></div>
+    </div>
+
     <!--///// main /////-->
     <main>
-        <!--///// Who We are? /////-->
-        <section class="p-2 pt-5 pb-5 p-md-5 bg-light" id="seccion1">
-            <div class="container">
+        <!--///// Who We are? -->
+        <section class="p-2 py-5 p-md-5 bg-light" id="seccion1" data-scroll-spy>
+            <div class="container pb-3">
                 <div class="row">
                     <div class="col-12 text-center">
                         <header>
-                            <h2 class="mb-4">Who we are?</h2>
+                            <h2 class="mb-4 pt-3">Who we are?</h2>
                             <p class="padding-bottom-20">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
                                 deleniti<br>
                                 numquam placeat fuga odit molestiae perspiciatis.</p>
@@ -77,24 +92,29 @@
                     <div class="col-12 col-lg-6 border-lg-end">
                         <article class="article1">
                             <h3>Lorem ipsum</h3>
-                            <img src="./img/1.jpg" width="150px" alt="lorem1" id="article_img1"
-                                class="pe-2 float-start">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis deleniti numquam placeat
+                            <img src="" width="150" alt="lorem1" id="article_img1"
+                                class="pe-2 float-start lazy-load-img" data-src="./img/1.jpg">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis deleniti numquam
+                                placeat
                                 fuga odit molestiae perspiciatis accusamus qui dicta corrupti sapiente libero ipsam
                                 rerum saepe
-                                similique, repudiandae praesentium? Minima atque sit non debitis sunt, in autem omnis
+                                similique, repudiandae praesentium? Minima atque sit non debitis sunt, in autem
+                                omnis
                                 quae. Sint dignissimos et
                                 dolorum, magnam fugiat tempora fuga officia est minus ducimus. Lorem ipsum dolor sit
                                 amet consectetur adipisicing elit. Omnis deleniti numquam placeat
                                 fuga odit molestiae perspiciatis accusamus qui dicta corrupti sapiente libero ipsam
-                                rerum saepe similique, repudiandae praesentium? Minima atque sit non debitis sunt, in
+                                rerum saepe similique, repudiandae praesentium? Minima atque sit non debitis sunt,
+                                in
                                 autem omnis quae. Sint
                                 dignissimos et dolorum, magnam fugiat tempora fuga officia est minus ducimus. Lorem
                                 ipsum dolor sit amet consectetur adipisicing elit. Omnis deleniti numquam placeat
                                 fuga odit molestiae perspiciatis accusamus qui dicta corrupti sapiente libero ipsam
-                                rerum saepe similique, repudiandae praesentium? Minima atque sit non debitis sunt, in
+                                rerum saepe similique, repudiandae praesentium? Minima atque sit non debitis sunt,
+                                in
                                 autem omnis quae. Sint
-                                dignissimos et dolorum, magnam fugiat tempora fuga officia est minus.Lorem ipsum dolor
+                                dignissimos et dolorum, magnam fugiat tempora fuga officia est minus.Lorem ipsum
+                                dolor
                                 sit amet </p>
                         </article>
                     </div>
@@ -105,7 +125,8 @@
                                 <article class="article2">
                                     <h3>Lorem ipsum</h3>
                                     <img src="./img/ad.jpg" alt="lorem2" id="article_img2" width="220"
-                                        class="ps-2 d-none d-xl-block float-lg-end">
+                                        class="ps-2 d-none d-lg-block float-lg-end lazy-load-img"
+                                        data-src="./img/ad.jpg">
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis deleniti numquam
                                         placeat fuga odit molestiae perspiciatis accusamus qui dicta corrupti sapiente
                                         libero ipsam rerumsaepe similique, repudiandae praesentium? Minima atque sit non
@@ -131,72 +152,73 @@
             </div>
         </section>
 
-        <!--///// Services /////-->
-        <section id="seccion2" class="p-2 pt-5 pb-5 p-md-5">
-            <div class="container ">
+        <!--///// Services -->
+        <section id="seccion2" class="p-2 py-5 p-md-5 min-vh-100 d-flex justify-content-center align-items-center"
+            data-scroll-spy>
+            <div class="container pb-3">
                 <header class="text-center">
-                    <h2 class="mb-4">Our Services</h2>
+                    <h2 class="mb-5 pt-3">Our Services</h2>
                 </header>
-                <div class="row">
-                    <div class="col-12 col-lg-4">
+                <div class="row text-center text-md-start">
+                    <div class="col-12 col-lg-4 mb-4 mb-md-0 mb-lg-5">
                         <div class="row">
-                            <div class="col-2">
+                            <div class="col-12 col-md-2 col-lg-3">
                                 <i
                                     class="fa-solid fa-cloud d-flex justify-content-center align-items-center mx-auto rounded-circle border border-3 border-light"></i>
                             </div>
-                            <div class="col-10 ps-4">
+                            <div class="col-12 col-md-10 col-lg-9 ps-4">
                                 <h3>Service 1</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate asperiores saepe,
                                     ut commodi velit esse est.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-4">
+                    <div class="col-12 col-lg-4 mb-4 mb-md-0">
                         <div class="row">
-                            <div class="col-2">
+                            <div class="col-12 col-md-2 col-lg-3">
                                 <i
                                     class="fa-solid fa-code d-flex justify-content-center align-items-center mx-auto rounded-circle border border-3 border-light"></i>
                             </div>
-                            <div class="col-10 ps-4">
+                            <div class="col-12 col-md-10 col-lg-9 ps-4">
                                 <h3>Service 2</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate asperiores saepe,
                                     ut commodi velit esse est.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-4">
+                    <div class="col-12 col-lg-4 mb-4 mb-md-0">
                         <div class="row">
-                            <div class="col-2">
+                            <div class="col-12 col-md-2 col-lg-3">
                                 <i
                                     class="fa-solid fa-rss d-flex justify-content-center align-items-center mx-auto rounded-circle border border-3 border-light"></i>
                             </div>
-                            <div class="col-10 ps-4">
+                            <div class="col-12 col-md-10 col-lg-9 ps-4">
                                 <h3>Service 3</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate asperiores saepe,
                                     ut commodi velit esse est.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-4">
+                    <div class="col-12 col-lg-4 mb-4 mb-md-0">
                         <div class="row">
-                            <div class="col-2">
+                            <div class="col-12 col-md-2 col-lg-3">
                                 <i
                                     class="fa-solid fa-earth-americas d-flex justify-content-center align-items-center mx-auto rounded-circle border border-3 border-light"></i>
                             </div>
-                            <div class="col-10 ps-4">
+                            <div class="col-12 col-md-10 col-lg-9 ps-4">
                                 <h3>Service 4</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate asperiores saepe,
                                     ut commodi velit esse est.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-4">
+                    <div class="col-12 col-lg-4 mb-4 mb-md-0">
                         <div class="row">
-                            <div class="col-2">
+                            <div class="col-12 col-md-2 col-lg-3">
                                 <i
                                     class="fa-solid fa-flag d-flex justify-content-center align-items-center mx-auto rounded-circle border border-3 border-light"></i>
                             </div>
-                            <div class="col-10 ps-4">
+                            <div class="col-12 col-md-10 col-lg-9 ps-4">
                                 <h3>Service 5</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate asperiores saepe,
                                     ut commodi velit esse est.</p>
@@ -205,11 +227,11 @@
                     </div>
                     <div class="col-12 col-lg-4">
                         <div class="row">
-                            <div class="col-2">
+                            <div class="col-12 col-md-2 col-lg-3">
                                 <i
                                     class="fa-solid fa-gear d-flex justify-content-center align-items-center mx-auto rounded-circle border border-3 border-light"></i>
                             </div>
-                            <div class="col-10 ps-4">
+                            <div class="col-12 col-md-10 col-lg-9 ps-4">
                                 <h3>Service 6</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate asperiores saepe,
                                     ut commodi velit esse est.</p>
@@ -220,50 +242,50 @@
             </div>
         </section>
 
-        <!--///// Portfolio /////-->
-        <section id="seccion3" class="p-2 pt-5 pb-5 p-md-5 bg-light text-center">
-            <div class="container">
+        <!--///// Portfolio -->
+        <section id="seccion3" class="p-2 py-5 p-md-5 bg-light text-center" data-scroll-spy>
+            <div class="container pb-3">
                 <header class="text-center">
-                    <h2 class="mb-4">Portfolio</h2>
+                    <h2 class="mb-4 pt-3">Portfolio</h2>
                     <p>There are success projects created by us</p>
                 </header>
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-6 col-lg-4 pb-2">
-                        <img src="./img/2.jpg" alt="Lorem3" class="animacion-rotate">
+                        <img src="" alt="Lorem3" class="animacion-rotate lazy-load-img" data-src="./img/2.jpg">
                     </div>
                     <div class="col-12 col-md-6 col-lg-4 pb-2">
-                        <img src="./img/3.jpg" alt="Lorem4" class="animacion-rotate">
+                        <img src="lo" alt="Lorem4" class="animacion-rotate lazy-load-img" data-src="./img/3.jpg">
                     </div>
                     <div class="col-12 col-md-6 col-lg-4 pb-2">
-                        <img src="./img/4.jpg" alt="Lorem5" class="animacion-rotate">
+                        <img src="lo" alt="Lorem5" class="animacion-rotate lazy-load-img" data-src="./img/4.jpg">
                     </div>
                     <div class="col-12 col-md-6 col-lg-4 pb-2">
-                        <img src="./img/5.jpg" alt="Lorem6" class="animacion-rotate">
+                        <img src="lo" alt="Lorem6" class="animacion-rotate lazy-load-img" data-src="./img/5.jpg">
                     </div>
                     <div class="col-12 col-md-6 col-lg-4 pb-2">
-                        <img src="./img/6.jpg" alt="Lorem7" class="animacion-girar">
+                        <img src="lo" alt="Lorem7" class="animacion-girar lazy-load-img" data-src="./img/6.jpg">
                     </div>
                     <div class="col-12 col-md-6 col-lg-4 pb-2">
-                        <img src="./img/7.jpg" alt="Lorem8" class="animacion-rotate">
+                        <img src="lo" alt="Lorem8" class="animacion-rotate lazy-load-img" data-src="./img/7.jpg">
                     </div>
                     <div class="col-12 col-md-6 col-lg-4 pb-2">
-                        <img src="./img/8.jpg" alt="Lorem9" class="animacion-rotate">
+                        <img src="lo" alt="Lorem9" class="animacion-rotate lazy-load-img" data-src="./img/8.jpg">
                     </div>
                     <div class="col-12 col-md-6 col-lg-4 pb-2">
-                        <img src="./img/9.jpg" alt="Lorem10" class="animacion-rotate">
+                        <img src="lo" alt="Lorem10" class="animacion-rotate lazy-load-img" data-src="./img/9.jpg">
                     </div>
                     <div class="col-12 col-md-6 col-lg-4 pb-2">
-                        <img src="./img/10.jpg" alt="Lorem11" class="animacion-rotate">
+                        <img src="lo" alt="Lorem11" class="animacion-rotate lazy-load-img" data-src="./img/10.jpg">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!--///// Location /////-->
-        <section id="seccion4" class="p-2 pt-5 pb-5 p-md-5">
-            <div class="container">
+        <!--///// Location -->
+        <section id="seccion4" class="p-2 py-5 p-md-5" data-scroll-spy>
+            <div class="container pb-3">
                 <header class="text-center">
-                    <h2 class="mb-4">Location</h2>
+                    <h2 class="mb-4 pt-3">Location</h2>
                     <p>You can find us:</p>
                 </header>
                 <div class="row">
@@ -275,26 +297,35 @@
                     </div>
                     <div class="col-12 col-md-6 text-center text-md-start">
                         <address>
-                            <span><strong>Head Office</strong></span><br />
-                            12356 Blank Street<br />
-                            Phone: <a href="tel:2456134321">2456134321</a><br />
-                            Email Address: <a href="mailto:info@domain.com">info@domain.com</a><br /><br />
+                            <span><strong>Head Office</strong></span><br>
+                            12356 Blank Street<br>
+                            Phone: <a href="tel:2456134321"
+                                aria-label="Llamar a la oficina Head Office">2456134321</a><br>
+                            Email Address: <a href="mailto:info@domain.com"
+                                aria-label="Enviar un mail a la oficina Head Office">info@domain.com</a><br><br>
 
-                            <span><strong>Emea</strong></span><br />
-                            Carrer de Sant Joan de la Salle, 42<br />
-                            08022 Barcelona Phone: <a href="tel:932902474">932902474</a><br />
-                            Email Address: <a href="mailto:info@salleurl.edu">info@salleurl.edu</a>
+                            <span><strong>Emea</strong></span><br>
+                            Carrer de Sant Joan de la Salle, 42<br>
+                            08022 Barcelona Phone: <a href="tel:932902474"
+                                aria-label="Llamar a la oficina Emea">932902474</a><br>
+                            Email Address: <a href="mailto:info@salleurl.edu"
+                                aria-label="Enviar un mail a la oficina Emea">info@salleurl.edu</a>
                         </address>
                     </div>
+                </div>
+                <div class="row pt-5">
+                    <h3 class="text-center my-3">Estaciones de metro mas cercanas</h3>
+                    <div id="metro-list" class="row justify-content-evenly"></div>
+                    <div id="map"></div>
                 </div>
             </div>
         </section>
 
-        <!--///// Email Us /////-->
-        <section id="seccion5" class="p-2 pt-5 pb-5 p-md-5">
-            <div class="container text-white w-lg-50">
+        <!--///// Email Us -->
+        <section id="seccion5" class="p-2 py-5 p-md-5 bg-lazy-load-img" data-scroll-spy data-src="./img/map-image.png">
+            <div class="container text-white w-md-75 w-lg-50 pb-3">
                 <header class="text-center">
-                    <h2 class="mb-4">Email Us </h2>
+                    <h2 class="mb-4 pt-3">Email Us </h2>
                 </header>
 
                 <form action="/some-url" method="post">
@@ -315,7 +346,7 @@
                     <div class="mb-3 row w-100 m-0">
                         <label for="phone" class="col-sm-3 col-form-label">Phone:</label>
                         <div class="col-sm-9 p-0">
-                            <input type="text" name="name" class="form-control" id="phone"
+                            <input type="tel" name="name" class="form-control" id="phone"
                                 placeholder="Escribe tu telefono">
                         </div>
                     </div>
@@ -338,7 +369,9 @@
                         <label class="col-sm-3"></label>
                         <div class="col-sm-9 p-0 text-center">
                             <button class="btn btn-light ps-4 pe-4" type="submit">Send <span
-                                    class="hide--accessibility">. Formulario de contacto</span></button>
+                                    class="hide--accessibility">
+                                    Formulario de
+                                    contacto</span></button>
                         </div>
                     </div>
                 </form>
@@ -347,35 +380,191 @@
     </main>
 
     <!--///// footer /////-->
-    <footer class="mx-auto bg-primary p-1">
+    <footer class="mx-auto bg-primary p-2">
         <div class="container-fluid">
-            <p class="text-white text-end m-0">© 2016 - <a class="text-white" href="https://www.salleurl.edu/es"
-                    title="Visitar la web de LaSalle">LaSalle <span class="hide--accessibility">. Abre la página de la
+            <p class="text-white text-end m-0">© 2023 - <a class="text-white" href="https://www.salleurl.edu/es"
+                    title="Visitar la web de LaSalle" aria-label="Ir a la Web de la Universidad La Salle"
+                    target="_blank">LaSalle <span class="hide--accessibility">. Abre
+                        la página de la
                         Salle</span> </a>, All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- JS Bootstrap -->
-    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!--///// Help Modal /////-->
+    <div aria-label="navigationHelp" class="modal fade" id="helpModal">
+        <div class="modal-dialog">
+            <div class="modal-content px-4 pb-4">
+                <div class="pt-4">
+                    <h5 class="modal-title fw-semibold text-center">Navegación por teclado </h5>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body p-0">
+                    <div class="d-flex justify-content-between align-items-center p-3 py-2 border-bottom">
+                        <div>
+                            Ir a Who we are?
+                        </div>
+                        <div class="border rounded-4 Small shadow text-bg-light p-1 px-4 fw-semibold">
+                            1
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center p-3 py-2 border-bottom">
+                        <div>
+                            Ir a Our Services
+                        </div>
+                        <div class="border rounded-4 Small shadow text-bg-light p-1 px-4 fw-semibold">
+                            2
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center p-3 py-2 border-bottom">
+                        <div>
+                            Ir a Our Services
 
+                        </div>
+                        <div class="border rounded-4 Small shadow text-bg-light p-1 px-4 fw-semibold">
+                            3
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center p-3 py-2 border-bottom">
+                        <div>
+                            Ir a Who we are?
+                        </div>
+                        <div class="border rounded-4 Small shadow text-bg-light p-1 px-4 fw-semibold">
+                            4
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center p-3 py-2 border-bottom">
+                        <div>
+                            Ir a Location
+                        </div>
+                        <div class="border rounded-4 Small shadow text-bg-light p-1 px-4 fw-semibold">
+                            5
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center p-3 py-2 text-bg-light">
+                        <div>
+                            Mostrar Modal
+                        </div>
+                        <div class="rounded-4 Small shadow text-bg-dark p-1 px-4 fw-semibold">
+                            h / H
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center p-3 py-2 text-bg-light">
+                        <div>
+                            Ocultar Modal
+                        </div>
+                        <div class="rounded-4 Small shadow text-bg-dark p-1 px-4 fw-semibold">
+                            Esc
+                        </div>
+                    </div>
+
+                    <div class="text-center fst-italic pt-2">
+                        Esta ayuda se cerrará en 20 Segundo
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Top Button -->
+    <a href="#" class="scroll-top-btn hidden"><i class="arrow up"></i></a>
+
+    <!-- JS Bootstrap -->
+    <script src="./js/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <!-- ScrollSpy Observer-->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let divs = document.getElementsByTagName("div");
-            for (let div of divs) {
-                div.addEventListener("click", ponerBorde);
-                div.addEventListener("dblclick", quitarBorde);
+        const $sections = document.querySelectorAll('section[data-scroll-spy]');
+        const callback = (entries) => {
+            entries.forEach((entry) => {
+                let id = entry.target.getAttribute('id');
+                let link = document.querySelector(`a[data-scroll-spy][href='#${id}']`);
+                if (entry.isIntersecting) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                };
+            });
+        };
+        const options = {
+            rootMargin: '-50% 0px -50% 0px',
+        };
+        const observer = new IntersectionObserver(callback, options);
+        $sections.forEach((el) => observer.observe(el));
+    </script>
+
+    <!-- Scroll Top Button -->
+    <script>
+        const $toTop = document.querySelector('.scroll-top-btn');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                $toTop.classList.remove('hidden');
+            } else {
+                $toTop.classList.add('hidden');
             };
         });
-
-        function ponerBorde(event) {
-            event.currentTarget.classList.add("conborde");
-            event.stopPropagation();
-        }
-        function quitarBorde(event) {
-            event.currentTarget.classList.remove("conborde");
-            event.stopPropagation();
-        }
     </script>
+
+    <!-- Validación del numero de telefono -->
+    <script>
+        const $tel = document.querySelector('input[type=tel]')
+        $tel.addEventListener('keydown', (event) => {
+            let expr1 = parseInt(event.key);
+            if (event.keyCode === 8) {
+                return;
+            } else if (isNaN(expr1)) {
+                event.preventDefault();
+            };
+        });
+        $tel.addEventListener('keypress', (event) => {
+            let expr1 = parseInt(event.key);
+            if (event.keyCode === 8) {
+                return;
+            } else if (isNaN(expr1)) {
+                event.preventDefault();
+            };
+        });
+    </script>
+
+    <!-- LazyLoadImgObserver -->
+    <script>
+        window.addEventListener("resize", lazyLoadImg);
+        window.addEventListener("DOMContentLoaded", lazyLoadImg);
+        function lazyLoadImg() {
+            const bgLazyLoadImg = document.querySelectorAll('.bg-lazy-load-img');
+            const LazyLoadImg = document.querySelectorAll('.lazy-load-img');
+
+            const callbackLazyLoadImg = (entries, LazyLoadImgObserver) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('bg-lazy-load-img')) {
+                            let id = entry.target.getAttribute('id');
+                            if ((id == 'header') && (window.innerWidth >= 992)) {
+                                entry.target.style.backgroundImage = `url("./img/header.jpg")`;
+                            } else {
+                                entry.target.style.backgroundImage = `url("${entry.target.dataset.src}")`;
+                            }
+                        } else if (entry.target.classList.contains('lazy-load-img')) {
+                            entry.target.src = entry.target.dataset.src;
+                        }
+                        entry.target.classList.add('fade-lazy-load-img');
+                        LazyLoadImgObserver.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const optionsLazyLoadImg = {
+                rootMargin: '-1px',
+            };
+
+            const LazyLoadImgObserver = new IntersectionObserver(callbackLazyLoadImg, optionsLazyLoadImg);
+
+            bgLazyLoadImg.forEach((target) => LazyLoadImgObserver.observe(target));
+
+            LazyLoadImg.forEach((target) => LazyLoadImgObserver.observe(target));
+        }
+
+    </script>
+
 </body>
 
 </html>
