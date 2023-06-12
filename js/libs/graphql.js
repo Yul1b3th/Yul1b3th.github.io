@@ -26,12 +26,13 @@ async function fetchMetroStations(latitude, longitude) {
 }
 
 async function fetchStations(query) {
-    const url = new URL("https://barcelona-urban-mobility-graphql-api.netlify.app/graphql");
-    const variables = { cursor: null };
-    url.searchParams.set("query", query);
-    url.searchParams.set("variables", JSON.stringify(variables));
+    const url = "https://healthy-fox-82.deno.dev/graphql"; // Cambia la URL al nuevo servidor
+    const requestOptions = {
+        method: "POST",
+        body: JSON.stringify({ query }),
+    };
 
-    const response = await fetch(url);
+    const response = await fetch(url, requestOptions);
     const data = await response.json();
 
     return data;
