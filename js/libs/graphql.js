@@ -1,56 +1,52 @@
 async function fetchMetroStations(latitude, longitude) {
     const metroQuery = `
-query metros($cursor: String) {
-    metroStations(first: 8, after: $cursor) {
-        edges {
-            node {
-                name
-                coordinates {
-                    latitude
-                    longitude
+        query metros($cursor: String) {
+            metroStations(first: 10, after: $cursor) {
+                edges {
+                    node {
+                        name
+                        coordinates {
+                            latitude
+                            longitude
+                        }
+                    }
+                }
+                pageInfo {
+                    hasNextPage
+                    endCursor
                 }
             }
         }
-        pageInfo {
-            hasNextPage
-            endCursor
-        }
-    }
-}
-`;
+    `;
 
     const metroResponse = await fetchStations(metroQuery);
     const metroStations = metroResponse.data.metroStations.edges.map(edge => edge.node);
 
-    displayMetroStations(metroStations, latitude, longitude);
+    displayMetroStations(metroStations);
 }
 
 async function fetchStations(query) {
-    const url = new URL("https://barcelona-urban-mobility-graphql-api.netlify.app/graphql");
-    const variables = { cursor: null };
-    url.searchParams.set("query", query);
-    url.searchParams.set("variables", JSON.stringify(variables));
+    const url = "https://healthy-fox-82.deno.dev/graphql"; // Cambia la URL al nuevo servidor
+    const requestOptions = {
+        method: "POST",
+        body: JSON.stringify({ query }),
+    };
 
-    const response = await fetch(url);
+    const response = await fetch(url, requestOptions);
     const data = await response.json();
 
     return data;
 }
 
-function displayMetroStations(stations, latitude, longitude) {
+
+function displayMetroStations(stations) {
     const sortedStations = stations.sort((a, b) => {
-        const aDistance = calculateDistance(latitude, longitude, a.coordinates.latitude, a.coordinates.longitude);
-        const bDistance = calculateDistance(latitude, longitude, b.coordinates.latitude, b.coordinates.longitude);
+        const aDistance = calculateDistance(a.coordinates.latitude, a.coordinates.longitude);
+        const bDistance = calculateDistance(b.coordinates.latitude, b.coordinates.longitude);
         return aDistance - bDistance;
     });
 
     const metroListElement = document.getElementById('metro-list');
-    const mapElement = document.getElementById('map');
-
-    const map = new google.maps.Map(mapElement, {
-        center: { lat: latitude, lng: longitude },
-        zoom: 13
-    });
 
     sortedStations.slice(0, 10).forEach(station => {
         const stationElement = document.createElement('div');
@@ -59,12 +55,6 @@ function displayMetroStations(stations, latitude, longitude) {
         stationElement.classList.add("mb-4");
         stationElement.innerHTML = `<div class="card-body"><h4 class="card-title">${station.name}</h4><p class="card-text">Latitud: ${station.coordinates.latitude}, Longitud: ${station.coordinates.longitude}</p></div>`;
         metroListElement.appendChild(stationElement);
-
-        const marker = new google.maps.Marker({
-            position: { lat: station.coordinates.latitude, lng: station.coordinates.longitude },
-            map: map,
-            title: station.name
-        });
     });
 }
 
