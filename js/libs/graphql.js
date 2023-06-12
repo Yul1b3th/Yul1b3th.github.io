@@ -1,23 +1,23 @@
 async function fetchMetroStations(latitude, longitude) {
     const metroQuery = `
-        query metros($cursor: String) {
-            metroStations(first: 8, after: $cursor) {
-                edges {
-                    node {
-                        name
-                        coordinates {
-                            latitude
-                            longitude
-                        }
-                    }
-                }
-                pageInfo {
-                    hasNextPage
-                    endCursor
+query metros($cursor: String) {
+    metroStations(first: 8, after: $cursor) {
+        edges {
+            node {
+                name
+                coordinates {
+                    latitude
+                    longitude
                 }
             }
         }
-    `;
+        pageInfo {
+            hasNextPage
+            endCursor
+        }
+    }
+}
+`;
 
     const metroResponse = await fetchStations(metroQuery);
     const metroStations = metroResponse.data.metroStations.edges.map(edge => edge.node);
@@ -26,13 +26,12 @@ async function fetchMetroStations(latitude, longitude) {
 }
 
 async function fetchStations(query) {
-    const url = "https://healthy-fox-82.deno.dev/graphql"; // Cambia la URL al nuevo servidor
-    const requestOptions = {
-        method: "POST",
-        body: JSON.stringify({ query }),
-    };
+    const url = new URL("https://barcelona-urban-mobility-graphql-api.netlify.app/graphql");
+    const variables = { cursor: null };
+    url.searchParams.set("query", query);
+    url.searchParams.set("variables", JSON.stringify(variables));
 
-    const response = await fetch(url, requestOptions);
+    const response = await fetch(url);
     const data = await response.json();
 
     return data;

@@ -19,15 +19,7 @@
     <link rel="stylesheet" href="./css/main.css">
 
     <!--///// Java Script /////-->
-    <script>
-        const apiKey = process.env.API_KEY;
-
-        const scriptElement = document.createElement('script');
-        scriptElement.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
-        scriptElement.defer = true;
-        document.head.appendChild(scriptElement);
-    </script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}"></script>
 
     <script src="./js/main.js" type="module"></script>
 
