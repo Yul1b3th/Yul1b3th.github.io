@@ -19,7 +19,16 @@
     <link rel="stylesheet" href="./css/main.css">
 
     <!--///// Java Script /////-->
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBcJCvaq2NekNgvG-19nlYnEPqwgl5UCU"></script>
+    <script>
+        const apiKey = process.env.API_KEY;
+
+        const scriptElement = document.createElement('script');
+        scriptElement.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
+        scriptElement.defer = true;
+        document.head.appendChild(scriptElement);
+    </script>
+
+
     <script src="./js/main.js" type="module"></script>
 
 </head>
