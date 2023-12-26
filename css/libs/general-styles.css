@@ -1,0 +1,73 @@
+/* General styles */
+
+html {
+ scroll-behavior: smooth;
+}
+
+/* set up the body */
+body {
+ font-family: 'BeVietnamPro', Arial, sans-serif;
+ color: hsl(var(--clr-text));
+ background-color: hsl(var(--clr-white));
+ line-height: 1.5;
+ min-height: 100vh;
+ overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+ color: hsl(var(--clr-dark));
+}
+
+/* make images easier to work with */
+img,
+picutre {
+ max-width: 100%;
+ /* display: block; */
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+ font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+
+ *,
+ *::before,
+ *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+ }
+}
+
+/* Typography */
+
+/* h1,
+h2,
+h3 {
+ line-height: 1;
+ margin: 0;
+}
+
+h1 {
+ font-size: var(--fs-h1)
+}
+
+h2 {
+ font-size: var(--fs-h2)
+}
+
+h3 {
+ font-size: var(--fs-h3)
+} */

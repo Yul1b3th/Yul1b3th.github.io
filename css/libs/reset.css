@@ -1,0 +1,13 @@
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+*,
+*::before,
+*::after {
+ margin: 0px;
+ padding: 0px;
+ box-sizing: border-box;
+}

@@ -1,0 +1,172 @@
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* general */
+.bg-gradient {
+ background: linear-gradient(0deg, rgba(246, 246, 246, 1) 0%, rgb(255 252 247) 100%);
+}
+
+.flex {
+ display: flex;
+ gap: var(--gap, 1rem);
+}
+
+.grid {
+ display: grid;
+ gap: var(--gap, 1rem);
+}
+
+.d-block {
+ display: block;
+}
+
+.container {
+ padding-inline: 2em;
+ margin-inline: auto;
+ max-width: 80rem;
+}
+
+.sr-only {
+ position: absolute;
+ width: 1px;
+ height: 1px;
+ padding: 0;
+ margin: -1px;
+ overflow: hidden;
+ clip: rect(0, 0, 0, 0);
+ white-space: nowrap;
+ /* added line */
+ border: 0;
+}
+
+
+
+/* colors */
+
+.bg-dark {
+ background-color: hsl(var(--clr-dark));
+}
+
+.bg-accent {
+ background-color: hsl(var(--clr-light));
+}
+
+.bg-white {
+ background-color: hsl(var(--clr-white));
+}
+
+.text-dark {
+ color: hsl(var(--clr-dark));
+}
+
+.text-accent {
+ color: hsl(var(--clr-accent));
+}
+
+.text-white {
+ color: hsl(var(--clr-white));
+}
+
+/* typography */
+
+.ff-serif {
+ font-family: var(--ff-serif);
+}
+
+.ff-sans-cond {
+ font-family: var(--ff-sans-cond);
+}
+
+.ff-sans-normal {
+ font-family: var(--ff-sans-normal);
+}
+
+.letter-spacing-1 {
+ letter-spacing: 4.75px;
+}
+
+.letter-spacing-2 {
+ letter-spacing: 2.7px;
+}
+
+.letter-spacing-3 {
+ letter-spacing: 2.35px;
+}
+
+.uppercase {
+ text-transform: uppercase;
+}
+
+.fs-900 {
+ font-size: var(--fs-900);
+}
+
+.fs-800 {
+ font-size: var(--fs-800);
+}
+
+.fs-700 {
+ font-size: var(--fs-700);
+}
+
+.fs-600 {
+ font-size: var(--fs-600);
+}
+
+.fs-500 {
+ font-size: var(--fs-500);
+}
+
+.fs-400 {
+ font-size: var(--fs-400);
+}
+
+.fs-300 {
+ font-size: var(--fs-300);
+}
+
+.fs-200 {
+ font-size: var(--fs-200);
+}
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+ line-height: 1.1;
+}
+
+.box-shadow-1 {
+ box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.btn {
+ border-radius: 0.5rem;
+ padding: 1rem;
+ display: inline-block;
+ width: 200px;
+ font-weight: bold;
+ text-align: center;
+ text-decoration: none;
+ color: var(--white-color);
+ background-color: var(--first-color);
+}
+
+.container {
+ margin-left: auto;
+ margin-right: auto;
+ max-width: var(--max-width);
+}
+
+.gray-scale {
+ filter: grayscale(1);
+}
+
+.none {
+ display: none;
+}
+
+.section {
+ padding: 2rem 1rem;
+}
