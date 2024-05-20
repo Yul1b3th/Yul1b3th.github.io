@@ -3,7 +3,6 @@
 /* ------------------- */
 
 /*-------- NAV --------*/
-/* Estilos para la barra de navegación */
 .navbar {
   position: fixed;
   width: 100%;
@@ -33,13 +32,18 @@
   position: absolute;
   z-index: 2;
   right: 1rem;
-  width: 1.5rem;
+      width: fit-content;
   aspect-ratio: 1;
   background: transparent url(../../img/icon-hamburger.svg) no-repeat center;
   border: 0;
   cursor: pointer;
   top: 0;
   bottom: 0;
+    border: 1px solid transparent;
+}
+
+button.navbar-toggler:hover{
+    outline: 1px solid var(--primary);
 }
 
 .navbar-toggler[aria-expanded='true'] {
@@ -90,6 +94,7 @@
 .navbar-collapse[data-visible='true'] {
   transform: translateX(0);
 }
+
 /*-------- BUTTONS --------*/
 .btn {
   background-color: var(--primary);
@@ -100,7 +105,7 @@
   display: inline-block;
   font-size: var(--font-md);
   font-weight: 500;
-  padding: 0.625rem 1.25rem;
+  padding: 0.8125rem 1.25rem 0.5625rem;
   text-align: center;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
@@ -111,54 +116,6 @@
   color: var(--dark);
 }
 
-.btn-primary {
-  background-color: var(--primary);
-  border-color: var(--primary);
-}
-
-
-
-
-.btn-primary:hover {
-  background-color: var(--white);
-  color: var(--dark);
-}
-
-
-
-
-/*-------- MODAL --------*/
-.modal {
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: hsla(var(--black-hsl), 0.8); /* Utilizando variable de color sin prefijo */
-  opacity: 0;
-  pointer-events: none;
-  transition: all 1s;
-}
-
-.modal-content {
-  position: relative;
-}
-
-.modal-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-
-.modal-close svg {
-  width: 3rem;
-  height: 3rem;
-  fill: var(--first-color);
-}
 
 /*-------- SCROLL TOP BUTTON --------*/
 .scroll-top-btn {
@@ -208,7 +165,6 @@
 }
 
 
-
 /*-------- Orgenizar --------*/
 .footer {
     background: var(--dark);
@@ -217,39 +173,5 @@
     padding: 1rem 0;
 }
 
-.footer a:hover{
-    color: var(--primary);
 
-}
 
-.social-media {
-display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    align-items: center;
-}
-
-.social-media a svg {
-  fill: var(--dark);
-  width: 1.2rem;
-}
-
-.social-media a:hover svg {
-  fill: var(--primary);
-}
-
-.social-list {
-    display: flex;
-    justify-content: center;
-    margin: 0.5rem 0 0;
-    gap: 1rem;
-}
-
-.social-list a svg {
-  fill: var(--secondary);
-  width: 1rem;
-}
-
-.social-list a:hover svg {
-  fill: var(--primary);
-}

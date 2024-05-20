@@ -21,6 +21,10 @@ a {
   color: inherit;
 }
 
+a:hover{
+  color: var(--primary);
+}
+
 h1,
 h2,
 h3 {
@@ -86,11 +90,6 @@ select {
 /*----------------------*/
 /* SECTION TITLE STYLES */
 /*----------------------*/
-
-.section{
-  min-height: 100vh;
-}
-
 .section-title {
   text-align: center;
   padding: 1.875rem 0;
@@ -167,9 +166,7 @@ select {
 .resume-items p{
 margin-bottom: 0px;
 }
-.resume-items a:hover{
-  color: var(--primary);
-}
+
 .year {
     background: #eef0f2;
     padding: 0.3125rem 0.9375rem;
@@ -187,6 +184,39 @@ margin-bottom: 0px;
     .resume-items .card {
         width: 80%;
     }
+}
+
+/*-------- Social styles--------*/
+.social-media {
+display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-media a svg {
+  fill: var(--dark);
+  width: 1.2rem;
+}
+
+.social-media a:hover svg {
+  fill: var(--primary);
+}
+
+.social-list {
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 0 0;
+    gap: 1rem;
+}
+
+.social-list a svg {
+  fill: var(--secondary);
+  width: 1rem;
+}
+
+.social-list a:hover svg {
+  fill: var(--primary);
 }
 
 

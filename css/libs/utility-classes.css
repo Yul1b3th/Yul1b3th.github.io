@@ -69,21 +69,8 @@
 .overflow-hidden {
   overflow: hidden;
 }
-
-.sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  text-align: center;
-  white-space: nowrap;
-  width: 1px;
-}
-
 .section {
+    min-height: 100vh;
   padding: 2rem 1.5rem 3rem 1.5rem;
 }
 
@@ -122,32 +109,8 @@
 
 /* Colors */
 
-.bg-accent {
-  background-color: var(--light); /* Utilizando variable de color sin prefijo */
-}
-
-.bg-dark {
-  background-color: var(--dark); /* Utilizando variable de color sin prefijo */
-}
-
 .bg-gradient {
   background: linear-gradient(0deg, rgba(246, 246, 246, 1) 0%, rgb(255 252 247) 100%);
-}
-
-.bg-white {
-  background-color: var(--white); /* Utilizando variable de color sin prefijo */
-}
-
-.text-accent {
-  color: var(--light); /* Utilizando variable de color sin prefijo */
-}
-
-.text-dark {
-  color: var(--dark); /* Utilizando variable de color sin prefijo */
-}
-
-.text-white {
-  color: var(--white); /* Utilizando variable de color sin prefijo */
 }
 
 /* Typography */
