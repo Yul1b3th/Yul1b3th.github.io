@@ -1,17 +1,31 @@
-/* General styles */
+/* ------------------- */
+/* General styles     */
+/* ------------------- */
 
 html {
- scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  font-size: 16px; /* Utilizando variables de tamaño de fuente de Bootstrap */
+  line-height: 1.5;
 }
 
-/* set up the body */
 body {
- font-family: 'BeVietnamPro', Arial, sans-serif;
- color: hsl(var(--clr-text));
- background-color: hsl(var(--clr-white));
- line-height: 1.5;
- min-height: 100vh;
- overflow-x: hidden;
+  font-family: var(--font-primary);
+  color: var(--light); /* Utilizando variable de color sin prefijo */
+  background-color: var(--white); /* Utilizando variable de color sin prefijo */
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
 h1,
@@ -20,54 +34,167 @@ h3,
 h4,
 h5,
 h6 {
- color: hsl(var(--clr-dark));
+  color: var(--dark); /* Utilizando variable de color sin prefijo */
 }
 
-/* make images easier to work with */
+h3{
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
 img,
-picutre {
- max-width: 100%;
- /* display: block; */
+picture {
+  max-width: 100%;
+  height: auto;
 }
 
-/* make form elements easier to work with */
 input,
 button,
 textarea,
 select {
- font: inherit;
+  font: inherit;
 }
 
-/* remove animations for people who've turned them off */
-@media (prefers-reduced-motion: reduce) {
+ /* *:focus {
+   outline: 1px solid var(--light);
+   padding: 0.2rem;
+  } */
 
- *,
- *::before,
- *::after {
-  animation-duration: 0.01ms !important;
-  animation-iteration-count: 1 !important;
-  transition-duration: 0.01ms !important;
-  scroll-behavior: auto !important;
- }
+*:focus-visible {
+  outline: 0.16rem solid #FF4ABE;
+  outline-offset: 0.3125rem;
 }
 
-/* Typography */
 
-/* h1,
-h2,
-h3 {
- line-height: 1;
- margin: 0;
+@media (min-width: 992px) {
+  html {
+    font-size: 18px; /* Utilizando variable de tamaño de fuente de Bootstrap */
+  }
 }
 
-h1 {
- font-size: var(--fs-h1)
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}
+
+/*----------------------*/
+/* SECTION TITLE STYLES */
+/*----------------------*/
+
+.section{
+  min-height: 100vh;
 }
 
-h2 {
- font-size: var(--fs-h2)
+.section-title {
+  text-align: center;
+  padding: 1.875rem 0;
+  position: relative;
 }
 
-h3 {
- font-size: var(--fs-h3)
+.section-title h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0;
+  color: var(--dark);
+  position: relative;
+  z-index: 2;
+}
+
+.section-title span {
+  position: absolute;
+  top: 1.875rem;
+  color: hsl(var(--dark-hsl) / 0.1);
+  left: 0;
+  right: 0;
+  z-index: 1;
+  font-weight: 700;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  line-height: 0;
+}
+
+@media (min-width: 992px) {
+  .section-title span {
+    font-size: 3.25rem;
+  }
+}
+
+
+
+
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  background: #fff;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
+  border-color: var(--primary);
+}
+
+.resume-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+      align-items: center;
+}
+
+    .resume-items .card {
+        width: 100%;
+    }
+
+.resume-items ul{
+    list-style: disc;
+    margin-left: 1.5rem;
+}
+
+/* .resume-items h4{
+  margin-bottom: 0.5rem;
 } */
+
+.resume-items p{
+margin-bottom: 0px;
+}
+.resume-items a:hover{
+  color: var(--primary);
+}
+.year {
+    background: #eef0f2;
+    padding: 0.3125rem 0.9375rem;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 0.625rem;
+}
+ p.year {
+
+    margin-bottom: 0.625rem;
+}
+
+
+@media (min-width: 992px) {
+    .resume-items .card {
+        width: 80%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
