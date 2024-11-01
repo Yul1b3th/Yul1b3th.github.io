@@ -99,12 +99,13 @@
       transform: none;
       background-color: transparent;
       color: inherit;
-
+      .navbar-brand{
+        display: none;
+      }
       .navbar-nav {
         display: flex;
         flex-direction: row;
         padding: 0;
-
         .nav-link {
           padding: 0 1rem;
           border-bottom: none;

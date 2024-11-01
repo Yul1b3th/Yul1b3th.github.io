@@ -5,6 +5,14 @@ import { navigationMenu } from './modules/navigationMenu.js';
 import { contactForm } from './modules/contactForm.js';
 import { scrollSpyObserver } from './modules/scrollSpyObserver.js';
 import { lazyLoadImgObserver } from './modules/lazyLoadImgObserver.js';
+import { languageSwitcher } from './modules/languageSwitcher.js';
+
+scrollTopButton();
+navigationMenu();
+contactForm();
+scrollSpyObserver();
+lazyLoadImgObserver();
+languageSwitcher();
 
 // window.onload = function() {
 //   setTimeout(function() {
@@ -13,9 +21,3 @@ import { lazyLoadImgObserver } from './modules/lazyLoadImgObserver.js';
 //     history.pushState(null, null, ' ');
 //   }, 1);
 // }
-
-scrollTopButton();
-navigationMenu();
-contactForm();
-scrollSpyObserver();
-lazyLoadImgObserver();

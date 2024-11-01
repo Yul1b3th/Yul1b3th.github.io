@@ -637,6 +637,9 @@ p.year {
     background-color: transparent;
     color: inherit;
   }
+  .navbar .container-nav .navbar-collapse .navbar-brand {
+    display: none;
+  }
   .navbar .container-nav .navbar-collapse .navbar-nav {
     display: flex;
     flex-direction: row;
