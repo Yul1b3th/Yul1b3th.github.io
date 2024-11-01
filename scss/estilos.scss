@@ -1,13 +1,13 @@
 // Importa variables y mixins primero
+@use './reboot';
+@use './vendor/fonts';
 @use './variables';
 @use './utilities/utilities';
-@use './vendor/fonts';
-@use './reboot';
 
 // Importa estilos generales
+@use './containers';
 @use './type';
 @use './images';
-@use './containers';
 @use './base';
 @use './section-title';
 @use './card';
