@@ -1,0 +1,56 @@
+@use './variables' as vars;
+
+/* ------------------- */
+/* General styles     */
+/* ------------------- */
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px; /* Utilizando variables de tamaño de fuente de Bootstrap */
+  line-height: 1.5;
+}
+
+body {
+  font-family: vars.$font-primary; /* Utilizando variable de fuente */
+  color: vars.$light; /* Utilizando variable de color sin prefijo */
+  background-color: vars.$white; /* Utilizando variable de color sin prefijo */
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: vars.$primary; 
+}
+
+img,
+picture {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+*:focus-visible {
+  outline: 0.16rem solid #FF4ABE;
+  outline-offset: 0.3125rem;
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 18px; /* Utilizando variable de tamaño de fuente de Bootstrap */
+  }
+}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}

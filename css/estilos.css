@@ -1,0 +1,213 @@
+@charset "UTF-8";
+@import url("./libs/reset.css");
+@import url("./libs/fonts.css");
+@import url("./libs/custom-properties.css");
+@import url("./libs/general-styles.css");
+@import url("./libs/utility-classes.css");
+@import url("./libs/compontents.css");
+/* ------------------- */
+/* SECTIONS            */
+/* ------------------- */
+/*-------- Nav */
+/*-------- Home */
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home .home-img {
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid var(--primary);
+  max-width: 330px;
+}
+.home .home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 2rem 0rem;
+}
+@media (min-width: 992px) {
+  .home .home-container {
+    gap: 0rem;
+    padding: 2rem 4rem 4rem;
+  }
+}
+.home .home-container .social-media a svg {
+  width: 2rem;
+}
+
+/*-------- Sobre mí */
+.about-me {
+  text-align: center;
+}
+.about-me .knowledge-card {
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.about-me .knowledge-card .card {
+  flex: 0 0 100%;
+}
+@media (min-width: 992px) {
+  .about-me .knowledge-card .card {
+    flex: 0 0 30%;
+  }
+}
+.about-me .skills-items {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (min-width: 992px) {
+  .about-me .skills-items {
+    flex-direction: row;
+    gap: 0;
+  }
+}
+.about-me .skills-items svg {
+  width: 80px;
+  fill: var(--primary);
+}
+
+/*-------- Experiencia */
+/*-------- Formación */
+/*-------- Cursos */
+/*-------- Contacto */
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .contact-cards {
+    flex-direction: row;
+  }
+  .contact-cards .card {
+    width: calc(25% - 20px);
+  }
+}
+.contact-cards p {
+  margin-bottom: 0px;
+}
+.contact-cards .card {
+  flex: 1;
+  padding: 20px 0px;
+  width: 100%;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .contact-form {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto;
+  }
+  .contact-form .form-group:nth-child(1),
+  .contact-form .form-group:nth-child(2) {
+    grid-column: span 1;
+  }
+  .contact-form .form-group:nth-child(3),
+  .contact-form .contact-form-loader,
+  .contact-form button {
+    grid-column: span 2;
+  }
+  .contact-form .contact-form-loader {
+    justify-self: center;
+  }
+  .contact-form button {
+    justify-self: start;
+  }
+}
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+.contact-form input,
+.contact-form textarea {
+  border-radius: 0.2rem;
+  font-family: var(--font);
+  font-size: 0.85rem;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  width: 100%;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: hsl(var(--primary-hsl));
+  box-shadow: 0 0 0 0.25rem hsl(var(--primary-hsl)/0.5);
+  outline: 0;
+}
+.contact-form input {
+  border: 0;
+  border-bottom: thin solid hsl(var(--dark-hsl)/0.4);
+}
+.contact-form textarea {
+  border: thin solid hsl(var(--dark-hsl)/0.4);
+  resize: none;
+  width: 100%;
+}
+.contact-form *::placeholder {
+  color: hsl(var(--dark-hsl)/0.5);
+}
+.contact-form .contact-form-response {
+  background-color: hsl(var(--white-hsl));
+  padding: 1rem;
+  text-align: center;
+  width: 400px;
+}
+.contact-form .contact-form-response svg {
+  fill: hsl(var(--primary-hsl));
+  height: 4rem;
+  margin-top: 2rem;
+  width: 4rem;
+}
+
+.modal {
+  align-items: center;
+  background-color: hsl(var(--dark-hsl)/0.8);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: all 1s;
+  z-index: 999;
+}
+.modal#gracias:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal .modal-content {
+  position: relative;
+}
+.modal .modal-close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+.modal .modal-close svg {
+  fill: var(--first-color);
+  height: 3rem;
+  width: 3rem;
+}
+
+/*-------- footer */
+
+/*# sourceMappingURL=estilos.css.map */

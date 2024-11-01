@@ -1,0 +1,35 @@
+@use '../variables' as vars;
+
+/*-------- SCROLL TOP BUTTON --------*/
+.scroll-top-btn {
+  position: fixed;
+  z-index: 1;
+  bottom: 5%;
+  right: 1%;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: vars.$primary;
+  transition: all 0.2s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 0.6);
+  }
+
+  .arrow {
+    border: solid vars.$dark;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+    margin-top: 0.25rem;
+
+    &.up {
+      transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
+    }
+  }
+}

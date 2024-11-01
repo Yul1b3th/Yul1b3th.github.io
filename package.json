@@ -1,0 +1,15 @@
+{
+  "name": "htmlfinal2004",
+  "version": "1.0.0",
+  "description": "This repository contains the source code for my web resume. You can see the resume in action [here](https://yul1b3th.github.io).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.80.5"
+  }
+}

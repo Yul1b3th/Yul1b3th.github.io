@@ -1,0 +1,42 @@
+@use '../variables' as vars;
+
+.about-me {
+  text-align: center;
+}
+
+.knowledge-card {
+  justify-content: space-between;
+}
+
+.skills-items {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skills-items svg {
+  width: 80px;
+  fill: vars.$primary;
+}
+
+.knowledge-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.knowledge-card .card {
+  flex: 0 0 100%;
+}
+
+@media (min-width: 992px) {
+  .skills-items {
+    flex-direction: row;
+    gap: 0;
+  }
+  .knowledge-card .card {
+    flex: 0 0 30%;
+  }
+}

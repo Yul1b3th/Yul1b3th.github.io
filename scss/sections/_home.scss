@@ -1,0 +1,35 @@
+@use '../variables' as vars;
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-img {
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid vars.$primary;
+  max-width: 330px;
+}
+
+@media (min-width: 992px) {
+  .home-container {
+    gap: 0rem;
+    padding: 2rem 4rem 4rem;
+  }
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 2rem 0rem;
+}
+
+.home-container .social-media a svg {
+  width: 2rem;
+}

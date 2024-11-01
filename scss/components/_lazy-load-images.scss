@@ -1,0 +1,13 @@
+@use '../variables' as vars;
+
+/*-------- LAZY LOAD IMAGES --------*/
+.bg-lazy-load-img,
+.lazy-load-img {
+  opacity: 0;
+  transition: opacity 1000ms;
+
+  &.fade-lazy-load-img {
+    opacity: 1.0 !important;
+    transition: opacity ease-out 1s;
+  }
+}

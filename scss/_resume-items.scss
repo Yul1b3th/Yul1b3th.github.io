@@ -1,0 +1,39 @@
+@use './variables' as vars;
+
+.resume-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.resume-items .card {
+  width: 100%;
+}
+
+.resume-items ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+.resume-items p {
+  margin-bottom: 0px;
+}
+
+.year {
+  background: #eef0f2;
+  padding: 0.3125rem 0.9375rem;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+}
+
+p.year {
+  margin-bottom: 0.625rem;
+}
+
+@media (min-width: 992px) {
+  .resume-items .card {
+    width: 80%;
+  }
+}

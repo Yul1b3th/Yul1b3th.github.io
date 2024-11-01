@@ -1,0 +1,20 @@
+{
+  "en": {
+    "home": "Home",
+    "about-me": "About Me",
+    "experience": "Experience",
+    "education": "Education",
+    "courses": "Courses",
+    "contact": "Contact",
+    "navbar-brand": "Yulibeth Rivero"
+  },
+  "es": {
+    "home": "Inicio",
+    "about-me": "Sobre Mí",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "courses": "Cursos",
+    "contact": "Contacto",
+    "navbar-brand": "Yulibeth Rivero"
+  }
+}

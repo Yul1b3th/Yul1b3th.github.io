@@ -1,0 +1,31 @@
+// Importa variables y mixins primero
+@use './variables';
+@use './utilities/utilities';
+@use './vendor/fonts';
+@use './reboot';
+
+// Importa estilos generales
+@use './type';
+@use './images';
+@use './containers';
+@use './base';
+@use './section-title';
+@use './card';
+@use './resume-items';
+@use './social-media';
+// @use './modal';
+
+// Importa componentes
+@use './components/navbar';
+@use './components/buttons';
+@use './components/scroll-top-btn';
+@use './components/lazy-load-images';
+@use './components/footer';
+
+// Importa secciones
+@use './sections/home';
+@use './sections/about-me';
+// @use './sections/experience';
+// @use './sections/education';
+// @use './sections/courses';
+@use './sections/contact';

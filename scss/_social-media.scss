@@ -1,0 +1,34 @@
+@use './variables' as vars;
+
+/*-------- Social styles--------*/
+.social-media {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-media a svg {
+  fill: vars.$dark;
+  width: 1.2rem;
+}
+
+.social-media a:hover svg {
+  fill: vars.$primary;
+}
+
+.social-list {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0 0;
+  gap: 1rem;
+}
+
+.social-list a svg {
+  fill: vars.$secondary;
+  width: 1rem;
+}
+
+.social-list a:hover svg {
+  fill: vars.$primary;
+}
