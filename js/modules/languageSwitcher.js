@@ -21,7 +21,11 @@ export function languageSwitcher() {
     if (translations) {
       elementsToTranslate.forEach(element => {
         const key = element.getAttribute('data-translate');
-        element.textContent = translations[key];
+        if (element.tagName.toLowerCase() === 'meta') {
+          element.setAttribute('content', translations[key]);
+        } else {
+          element.textContent = translations[key];
+        }
       });
       // Cambiar el atributo lang del elemento <html>
       htmlElement.setAttribute('lang', language);
