@@ -722,6 +722,7 @@ p.year {
   background: #1C1C1C;
 }
 .home .home-container {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -730,16 +731,28 @@ p.year {
   text-align: center;
   padding: 2rem 0rem;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .home .home-container {
-    gap: 0rem;
-    padding: 2rem 4rem 4rem;
+    flex-wrap: nowrap;
+    text-align: left;
   }
 }
 .home .home-container .home-img {
   border-radius: 50%;
   overflow: hidden;
   max-width: 330px;
+}
+@media (min-width: 768px) {
+  .home .home-container .home-img {
+    flex-basis: calc(30% - 1rem);
+    flex-grow: 0;
+  }
+}
+@media (min-width: 768px) {
+  .home .home-container .home-text {
+    flex-basis: calc(70% - 1rem);
+    flex-grow: 0;
+  }
 }
 .home .home-container .home-text h1, .home .home-container .home-text h2, .home .home-container .home-text p {
   color: #ffffff;
@@ -765,6 +778,11 @@ p.year {
 .home .home-container .home-text .social-list a svg {
   width: 24px;
   height: 24px;
+}
+@media (min-width: 768px) {
+  .home .home-container .home-text .social-list {
+    justify-content: left;
+  }
 }
 .home .home-container .home-text .btn:hover {
   background-color: #1C1C1C;
