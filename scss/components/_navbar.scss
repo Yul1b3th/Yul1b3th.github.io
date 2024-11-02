@@ -60,10 +60,8 @@
       transition: transform 500ms ease-in-out;
       background-color: hsla(vars.$dark-hue, vars.$dark-saturation, vars.$dark-lightness, 1);
       color: hsla(vars.$white-hue, vars.$white-saturation, vars.$white-lightness, 1);
-
       .navbar-nav {
         padding: 0 3rem;
-        
         .nav-link {
           display: block;
           padding: 1.3rem;
@@ -99,12 +97,13 @@
       transform: none;
       background-color: transparent;
       color: inherit;
-
+      .navbar-brand{
+        display: none;
+      }
       .navbar-nav {
         display: flex;
         flex-direction: row;
         padding: 0;
-
         .nav-link {
           padding: 0 1rem;
           border-bottom: none;

@@ -20,12 +20,12 @@
 .social-list {
   display: flex;
   justify-content: center;
-  margin: 0.5rem 0 0;
   gap: 1rem;
+
 }
 
 .social-list a svg {
-  fill: vars.$secondary;
+  fill: vars.$white;
   width: 1rem;
 }
 

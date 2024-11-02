@@ -1,4 +1,4 @@
-export function contactForm () {
+export function contactForm() {
   ((d) => {
     const $form = d.querySelector(".contact-form"),
       $loader = d.querySelector(".contact-form-loader"),
@@ -14,7 +14,7 @@ export function contactForm () {
         .then((res) => (res.ok ? res.json() : Promise.reject(res)))
         .then((json) => {
           console.log(json);
-          location.hash = "#gracias";
+          location.hash = "#thanks";
           $form.reset();
         })
         .catch((err) => {
@@ -33,5 +33,4 @@ export function contactForm () {
         });
     });
   })(document);
-  
 }
