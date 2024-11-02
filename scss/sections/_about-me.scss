@@ -1,9 +1,6 @@
 @use '../variables' as vars;
 
 .about-me {
-  text-align: center;
-  background: linear-gradient(0deg, rgba(246, 246, 246, 1) 0%, rgb(255 252 247) 100%);
-
   .container {
       .skills-items {
         display: flex;
@@ -41,19 +38,24 @@
       }
 
 a {
-  color: #2F4858;
+  color: vars.$link-color-hsl;
   text-decoration: underline;
   font-weight: 600;
 
   &:hover {
-    text-decoration: underline; // Mantener subrayado
-    color: #4A6572; // Cambiar color en hover
+    text-decoration: underline;
+    color: hsl(vars.$link-hue, vars.$link-saturation, vars.$link-hover-lightness);
   }
 
   &:visited {
-    color: #7A9B9F; // Color para enlaces visitados
+    color: hsl(vars.$link-hue, vars.$link-saturation, vars.$link-visited-lightness);
+  }
+
+  &:active {
+    color: hsl(vars.$link-hue, vars.$link-saturation, vars.$link-active-lightness);
   }
 }
+
 
     }
 
@@ -73,11 +75,6 @@ a {
         }
 
         .card {
-          // flex: 0 0 100%;
-          // padding: 1rem;
-          // border: 1px solid #ccc;
-          // border-radius: 4px;
-
           h4 {
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
@@ -107,12 +104,6 @@ a {
 
   @media (min-width: 992px) {
     .container {
-      // .knowledge-card {
-      //   .card {
-      //     flex: 0 0 30%;
-      //   }
-      // }
-
       .skills-items {
         flex-direction: row;
         gap: 0;
