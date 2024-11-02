@@ -1,30 +1,20 @@
 /* Variables de colores */
-$primary: #ffb727;
-$secondary: #fff4df;
-$dark: #1D1D1D;
-$light: #222222;
-$black: #000000;
-$white: #ffffff;
+$primary: #ffb727; // Hexadecimal
+$secondary: #fff4df; // Hexadecimal
+$dark: #1D1D1D; // Hexadecimal
+$light: #222222; // Hexadecimal
+$black: #000000; // Hexadecimal
+$white: #ffffff; // Hexadecimal
+$link-color: #663300; // Hexadecimal
 
-/* Variables de colores en RGBA */
-// $primary: rgba(255, 183, 39, 1); // #ffb727
-// $secondary: rgba(255, 244, 223, 1); // #fff4df
-// $dark: rgba(29, 29, 29, 1); // #1D1D1D
-// $light: rgba(34, 34, 34, 1); // #222222
-// $black: rgba(0, 0, 0, 1); // #000000
-// $white: rgba(255, 255, 255, 1); // #ffffff
-
-
-/* Tamaños de fuente */
-$font-xs: 0.75rem;
-$font-sm: 0.875rem;
-$font-md: 1rem;
-$font-lg: 1.25rem;
-$font-xl: 1.5rem;
-$font-xxl: 2.5rem;
-
-/* Familias de fuentes */
-$font-primary: 'BeVietnamPro', Arial, sans-serif;
+/* Variables de colores en HSL */
+$primary-hsl: hsl(40, 100%, 58%); // HSL para el color primario
+$secondary-hsl: hsl(39.375, 100%, 94%); // HSL para el color secundario
+$dark-hsl: hsl(0, 0%, 11%); // HSL para el color oscuro
+$light-hsl: hsl(0, 0%, 13%); // HSL para el color claro
+$black-hsl: hsl(0, 0%, 0%); // HSL para el negro
+$white-hsl: hsl(0, 0%, 100%); // HSL para el blanco
+$link-color-hsl: hsl(30, 100%, 20%); // HSL para el color de enlaces
 
 /* Colores en HSL */
 $primary-hue: 40;
@@ -50,6 +40,40 @@ $black-lightness: 0%;
 $white-hue: 0;
 $white-saturation: 0%;
 $white-lightness: 100%;
+
+/* Variables de color para enlaces */
+$link-hue: 30; // Matiz
+$link-saturation: 100%; // Saturación
+$link-lightness: 20%; // Luminosidad base
+
+$link-color-hsl: hsl($link-hue, $link-saturation, $link-lightness); // Color de enlace
+$link-hover-lightness: 30%; // Luminosidad para hover
+$link-visited-lightness: 25%; // Luminosidad para visitados
+$link-active-lightness: 15%; // Luminosidad para activos
+
+
+
+/* Variables de colores en RGBA */
+// $primary: rgba(255, 183, 39, 1); // #ffb727
+// $secondary: rgba(255, 244, 223, 1); // #fff4df
+// $dark: rgba(29, 29, 29, 1); // #1D1D1D
+// $light: rgba(34, 34, 34, 1); // #222222
+// $black: rgba(0, 0, 0, 1); // #000000
+// $white: rgba(255, 255, 255, 1); // #ffffff
+
+
+/* Tamaños de fuente */
+$font-xs: 0.75rem;
+$font-sm: 0.875rem;
+$font-md: 1rem;
+$font-lg: 1.25rem;
+$font-xl: 1.5rem;
+$font-xxl: 2.5rem;
+
+/* Familias de fuentes */
+$font-primary: 'BeVietnamPro', Arial, sans-serif;
+
+
 
 $breakpoints: (
   sm: 576px,
