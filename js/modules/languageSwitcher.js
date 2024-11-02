@@ -32,11 +32,24 @@ export function languageSwitcher() {
     }
   };
 
+  const getDefaultLanguage = () => {
+    const browserLanguage = navigator.language || navigator.languages[0];
+    if (browserLanguage.startsWith('es')) {
+      return 'es';
+    } else if (browserLanguage.startsWith('en')) {
+      return 'en';
+    } else {
+      return 'en'; // Default to English if the language is neither Spanish nor English
+    }
+  };
+
   languageSelector.addEventListener('change', (event) => {
     const selectedLanguage = event.target.value;
     translatePage(selectedLanguage);
   });
 
-  // Set default language
-  translatePage(languageSelector.value);
+  // Set default language based on browser language
+  const defaultLanguage = getDefaultLanguage();
+  languageSelector.value = defaultLanguage;
+  translatePage(defaultLanguage);
 }
