@@ -104,6 +104,11 @@
   margin-top: 5rem;
 }
 
+.py-1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .min-vh-100 {
   min-height: 100vh;
 }
@@ -131,6 +136,13 @@
 
 /* Colors */
 
+.bg-gradient {
+  background: linear-gradient(0deg, rgba(246, 246, 246, 1) 0%, rgb(255 252 247) 100%);
+}
+
+.bg-dark {
+  background: vars.$dark;
+}
 
 
 
