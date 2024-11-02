@@ -2,6 +2,7 @@ export function languageSwitcher() {
   const languageSelector = document.getElementById('language-selector');
   const elementsToTranslate = document.querySelectorAll('[data-translate]');
   const htmlElement = document.documentElement;
+  const downloadCvBtn = document.getElementById('download-cv-btn');
 
   const loadTranslations = async (language) => {
     try {
@@ -21,14 +22,13 @@ export function languageSwitcher() {
     if (translations) {
       elementsToTranslate.forEach(element => {
         const key = element.getAttribute('data-translate');
-        if (element.tagName.toLowerCase() === 'meta') {
-          element.setAttribute('content', translations[key]);
-        } else {
-          element.textContent = translations[key];
-        }
+        element.textContent = translations[key];
       });
       // Cambiar el atributo lang del elemento <html>
       htmlElement.setAttribute('lang', language);
+      // Cambiar el enlace del botón de descarga del CV
+      const cvLink = `./assets/yulibeth-rivero-${language}.pdf`;
+      downloadCvBtn.setAttribute('href', cvLink);
     }
   };
 
