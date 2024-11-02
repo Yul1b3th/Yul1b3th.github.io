@@ -2,41 +2,121 @@
 
 .about-me {
   text-align: center;
-}
+  background: linear-gradient(0deg, rgba(246, 246, 246, 1) 0%, rgb(255 252 247) 100%);
 
-.knowledge-card {
-  justify-content: space-between;
-}
+  .container {
+      .skills-items {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 20px;
 
-.skills-items {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  flex-direction: column;
-  gap: 20px;
-}
+        .center {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
 
-.skills-items svg {
-  width: 80px;
-  fill: vars.$primary;
-}
+          img {
+            width: 70px;
+            height: 70px;
+          }
 
-.knowledge-card {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+          h4 {
+            font-size: 1rem;
+          }
+        }
+      }
+    .section-title {
+      span,
+      h2 {
+        display: block;
+        margin: 0;
+      }
 
-.knowledge-card .card {
-  flex: 0 0 100%;
-}
+      .section-title-text {
+        margin-top: 1rem;
+        line-height: 1.6;
+      }
 
-@media (min-width: 992px) {
-  .skills-items {
-    flex-direction: row;
-    gap: 0;
+a {
+  color: #2F4858;
+  text-decoration: underline;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: underline; // Mantener subrayado
+    color: #4A6572; // Cambiar color en hover
   }
-  .knowledge-card .card {
-    flex: 0 0 30%;
+
+  &:visited {
+    color: #7A9B9F; // Color para enlaces visitados
+  }
+}
+
+    }
+
+    .mb-2 {
+      h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .knowledge-card {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @media (min-width: 768px) {
+          flex-wrap: nowrap; 
+        }
+
+        .card {
+          // flex: 0 0 100%;
+          // padding: 1rem;
+          // border: 1px solid #ccc;
+          // border-radius: 4px;
+
+          h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+          }
+
+          p {
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+
+    > div:last-child {
+      h3 {
+        font-size: 1.25rem;
+        margin-top: 2rem;
+      }
+
+      p {
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+
+    }
+  }
+
+  @media (min-width: 992px) {
+    .container {
+      // .knowledge-card {
+      //   .card {
+      //     flex: 0 0 30%;
+      //   }
+      // }
+
+      .skills-items {
+        flex-direction: row;
+        gap: 0;
+      }
+    }
   }
 }

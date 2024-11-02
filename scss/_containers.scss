@@ -1,3 +1,4 @@
+@use "sass:map"; // Importa el módulo de mapas de Sass
 @use './variables' as vars;
 
 .container {
@@ -5,28 +6,10 @@
   margin-right: auto;
   padding: 3rem 0.9375rem;
   width: 100%;
-}
 
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1100px;
+  @each $breakpoint, $width in vars.$container-max-widths {
+    @media (min-width: map.get(vars.$breakpoints, $breakpoint)) {
+      max-width: $width;
+    }
   }
 }

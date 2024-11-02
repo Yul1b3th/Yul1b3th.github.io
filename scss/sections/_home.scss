@@ -4,32 +4,79 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  background: vars.$dark;
 
-.home-img {
-  border-radius: 50%;
-  overflow: hidden;
-  border: 10px solid vars.$primary;
-  max-width: 330px;
-}
-
-@media (min-width: 992px) {
   .home-container {
-    gap: 0rem;
-    padding: 2rem 4rem 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 2rem 0rem;
+
+    @media (min-width: 768px) {
+      flex-wrap: nowrap;
+      text-align: left;
+    }
+
+    .home-img {
+      border-radius: 50%;
+      overflow: hidden;
+      max-width: 330px;
+      @media (min-width: 768px) {
+        flex-basis: calc(30% - 1rem);
+        flex-grow: 0;
+      }
+    }
+    
+    .home-text {
+      @media (min-width: 768px) {
+        flex-basis: calc(70% - 1rem);
+        flex-grow: 0;
+      }
+      h1, h2 , p{
+        color: vars.$white;
+      }
+      h1{
+        font-size: vars.$font-xxl;
+        margin-top: 1rem;
+      }
+      .social-list {
+        margin: 1rem 0;
+          a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: 2px solid vars.$primary;
+            overflow: hidden;
+            padding: 0.3rem;
+            width: 50px;
+            height: 50px;
+            svg{
+              width: 24px;
+              height: 24px;
+            }
+          }
+          @media (min-width: 768px) {
+            justify-content: left;
+          }
+      }
+      .btn:hover {
+        background-color: vars.$dark;
+        color: vars.$white;
+      }
+
+    }
+
+    .social-media {
+      a {
+        svg {
+          width: 2rem;
+        }
+      }
+    }
   }
-}
-
-.home-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  text-align: center;
-  padding: 2rem 0rem;
-}
-
-.home-container .social-media a svg {
-  width: 2rem;
 }

@@ -3,18 +3,22 @@
     "home": "Home",
     "about-me": "About Me",
     "experience": "Experience",
+    "projects": "Projects",
     "education": "Education",
     "courses": "Courses",
     "contact": "Contact",
-    "navbar-brand": "Yulibeth Rivero"
+    "navbar-brand": "Yulibeth Rivero",
+    "meta-description": "Curriculum of Yulibeth Rivero, web developer with experience in HTML5, CSS3, JavaScript, and Angular. Focused on efficient and high-quality solutions."
   },
   "es": {
     "home": "Inicio",
     "about-me": "Sobre Mí",
+    "projects": "Projectos",
     "experience": "Experiencia",
     "education": "Educación",
     "courses": "Cursos",
     "contact": "Contacto",
-    "navbar-brand": "Yulibeth Rivero"
+    "navbar-brand": "Yulibeth Rivero",
+    "meta-description": "Currículum de Yulibeth Rivero, desarrolladora web con experiencia en HTML5, CSS3, JavaScript y Angular. Enfocada en soluciones eficientes y de alta calidad."
   }
 }
