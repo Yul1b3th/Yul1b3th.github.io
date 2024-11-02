@@ -8,13 +8,13 @@
   color: vars.$dark;
   cursor: pointer;
   display: inline-block;
-  font-size: vars.$font-md;
+  font-size: 0.9rem;
   font-weight: 600;
   padding: 0.8125rem 1.25rem 0.5625rem;
   text-align: center;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
-  width: 180px;
+  width: 186px;
 
   &:hover {
     background-color: vars.$white;

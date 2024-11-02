@@ -1,10 +1,19 @@
 /* Variables de colores */
 $primary: #ffb727;
 $secondary: #fff4df;
-$dark: #1C1C1C;
-$light: #3f3f3f;
+$dark: #1D1D1D;
+$light: #222222;
 $black: #000000;
 $white: #ffffff;
+
+/* Variables de colores en RGBA */
+// $primary: rgba(255, 183, 39, 1); // #ffb727
+// $secondary: rgba(255, 244, 223, 1); // #fff4df
+// $dark: rgba(29, 29, 29, 1); // #1D1D1D
+// $light: rgba(34, 34, 34, 1); // #222222
+// $black: rgba(0, 0, 0, 1); // #000000
+// $white: rgba(255, 255, 255, 1); // #ffffff
+
 
 /* Tamaños de fuente */
 $font-xs: 0.75rem;
@@ -54,3 +63,4 @@ $container-max-widths: (
   lg: 960px,
   xl: 1100px
 );
+

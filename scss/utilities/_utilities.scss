@@ -1,3 +1,5 @@
+@use '../variables' as vars;
+
 /* General */
 
 .box-shadow-1 {
@@ -25,23 +27,23 @@
 }
 
 .gap-1 {
-  gap: 0.25rem; /* 4px */
+  gap: 0.25rem;
 }
 
 .gap-2 {
-  gap: 0.5rem; /* 8px */
+  gap: 0.5rem;
 }
 
 .gap-3 {
-  gap: 1rem; /* 16px */
+  gap: 1rem;
 }
 
 .gap-4 {
-  gap: 1.5rem; /* 24px */
+  gap: 1.5rem;
 }
 
 .gap-5 {
-  gap: 2rem; /* 32px */
+  gap: 2rem;
 }
 
 .gray-scale {
@@ -129,9 +131,8 @@
 
 /* Colors */
 
-.bg-gradient {
-  background: linear-gradient(0deg, rgba(246, 246, 246, 1) 0%, rgb(255 252 247) 100%);
-}
+
+
 
 /* Typography */
 

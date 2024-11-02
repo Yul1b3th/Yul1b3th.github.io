@@ -3,6 +3,7 @@
     "home": "Home",
     "about-me": "About Me",
     "experience": "Experience",
+    "projects": "Projects",
     "education": "Education",
     "courses": "Courses",
     "contact": "Contact",
@@ -12,6 +13,7 @@
   "es": {
     "home": "Inicio",
     "about-me": "Sobre Mí",
+    "projects": "Projectos",
     "experience": "Experiencia",
     "education": "Educación",
     "courses": "Cursos",
