@@ -1,10 +1,7 @@
 @use '../variables' as vars;
 
 .projects {
-  background: vars.$dark;
-
   .container {
-
     .section-title {
       h2 {
         display: block;
@@ -12,29 +9,12 @@
         color: vars.$white;
       }
       span{
-            color: hsla(vars.$light-hue, vars.$light-saturation, vars.$light-lightness, 0.1);
+        color: hsla(vars.$light-hue, vars.$light-saturation, vars.$light-lightness, 0.1);
       }
-
       .section-title-text {
         margin-top: 1rem;
         line-height: 1.6;
       }
-
-a {
-  color: #2F4858;
-  text-decoration: underline;
-  font-weight: 600;
-
-  &:hover {
-    text-decoration: underline; // Mantener subrayado
-    color: #4A6572; // Cambiar color en hover
-  }
-
-  &:visited {
-    color: #7A9B9F; // Color para enlaces visitados
-  }
-}
-
     }
 
     .mb-2 {
@@ -53,11 +33,6 @@ a {
         }
 
         .card {
-          // flex: 0 0 100%;
-          // padding: 1rem;
-          // border: 1px solid #ccc;
-          // border-radius: 4px;
-
           h4 {
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
@@ -87,11 +62,6 @@ a {
 
   @media (min-width: 992px) {
     .container {
-      // .knowledge-card {
-      //   .card {
-      //     flex: 0 0 30%;
-      //   }
-      // }
 
       .skills-items {
         flex-direction: row;

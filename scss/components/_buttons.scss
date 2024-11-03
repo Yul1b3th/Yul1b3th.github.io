@@ -14,10 +14,11 @@
   text-align: center;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
-  width: 186px;
+  width: 11.625rem;
 
   &:hover {
-    background-color: vars.$white;
+    background-color: vars.$gray-light;
     color: vars.$dark;
+    text-decoration: none;
   }
 }

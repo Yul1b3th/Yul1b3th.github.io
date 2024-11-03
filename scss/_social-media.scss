@@ -1,20 +1,26 @@
 @use './variables' as vars;
 
-/*-------- Social styles--------*/
+/*-------- Social styles --------*/
 .social-media {
   display: flex;
   gap: 1.5rem;
   justify-content: center;
   align-items: center;
-}
 
-.social-media a svg {
-  fill: vars.$dark;
-  width: 1.2rem;
-}
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.social-media a:hover svg {
-  fill: vars.$primary;
+    svg {
+      fill: vars.$dark;
+      width: 1.2rem;
+
+      &:hover {
+        fill: vars.$primary;
+      }
+    }
+  }
 }
 
 .social-list {
@@ -22,13 +28,18 @@
   justify-content: center;
   gap: 1rem;
 
-}
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.social-list a svg {
-  fill: vars.$white;
-  width: 1rem;
-}
+    svg {
+      fill: vars.$white;
+      width: 1rem;
 
-.social-list a:hover svg {
-  fill: vars.$primary;
+      &:hover {
+        fill: vars.$primary;
+      }
+    }
+  }
 }

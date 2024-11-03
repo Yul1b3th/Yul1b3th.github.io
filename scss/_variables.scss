@@ -1,20 +1,21 @@
 /* Variables de colores */
-$primary: #ffb727; // Hexadecimal
-$secondary: #fff4df; // Hexadecimal
-$dark: #1D1D1D; // Hexadecimal
-$light: #222222; // Hexadecimal
-$black: #000000; // Hexadecimal
-$white: #ffffff; // Hexadecimal
-$link-color: #663300; // Hexadecimal
+$primary: #ffb727; // rgba(255, 183, 39, 1)
+$secondary: #fff4df;// rgba(255, 244, 223, 1)
+$dark: #1C1C1C; // rgba(29, 29, 29, 1)
+$light: #3F3F3F; // rgba(34, 34, 34, 1)
+$gray-light: #FAFAFA;
+$black: #000000; // rgba(0, 0, 0, 1)
+$white: #ffffff; // rgba(255, 255, 255, 1)
+$link-color: #663300;
 
 /* Variables de colores en HSL */
-$primary-hsl: hsl(40, 100%, 58%); // HSL para el color primario
-$secondary-hsl: hsl(39.375, 100%, 94%); // HSL para el color secundario
-$dark-hsl: hsl(0, 0%, 11%); // HSL para el color oscuro
-$light-hsl: hsl(0, 0%, 13%); // HSL para el color claro
-$black-hsl: hsl(0, 0%, 0%); // HSL para el negro
-$white-hsl: hsl(0, 0%, 100%); // HSL para el blanco
-$link-color-hsl: hsl(30, 100%, 20%); // HSL para el color de enlaces
+$primary-hsl: hsl(40, 100%, 58%);
+$secondary-hsl: hsl(39.375, 100%, 94%);
+$dark-hsl: hsl(0, 0%, 11%);
+$light-hsl: hsl(0, 0%, 13%);
+$black-hsl: hsl(0, 0%, 0%);
+$white-hsl: hsl(0, 0%, 100%);
+$link-color-hsl: hsl(30, 100%, 20%);
 
 /* Colores en HSL */
 $primary-hue: 40;
@@ -42,25 +43,14 @@ $white-saturation: 0%;
 $white-lightness: 100%;
 
 /* Variables de color para enlaces */
-$link-hue: 30; // Matiz
-$link-saturation: 100%; // Saturación
-$link-lightness: 20%; // Luminosidad base
+$link-hue: 30;
+$link-saturation: 100%;
+$link-lightness: 20%;
 
-$link-color-hsl: hsl($link-hue, $link-saturation, $link-lightness); // Color de enlace
-$link-hover-lightness: 30%; // Luminosidad para hover
-$link-visited-lightness: 25%; // Luminosidad para visitados
-$link-active-lightness: 15%; // Luminosidad para activos
-
-
-
-/* Variables de colores en RGBA */
-// $primary: rgba(255, 183, 39, 1); // #ffb727
-// $secondary: rgba(255, 244, 223, 1); // #fff4df
-// $dark: rgba(29, 29, 29, 1); // #1D1D1D
-// $light: rgba(34, 34, 34, 1); // #222222
-// $black: rgba(0, 0, 0, 1); // #000000
-// $white: rgba(255, 255, 255, 1); // #ffffff
-
+$link-color-hsl: hsl($link-hue, $link-saturation, $link-lightness);
+$link-hover-lightness: 30%;
+$link-visited-lightness: 25%;
+$link-active-lightness: 15%;
 
 /* Tamaños de fuente */
 $font-xs: 0.75rem;
@@ -73,8 +63,7 @@ $font-xxl: 2.5rem;
 /* Familias de fuentes */
 $font-primary: 'BeVietnamPro', Arial, sans-serif;
 
-
-
+/* Variables de espaciado */
 $breakpoints: (
   sm: 576px,
   md: 768px,
@@ -87,4 +76,3 @@ $container-max-widths: (
   lg: 960px,
   xl: 1100px
 );
-

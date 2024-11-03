@@ -18,6 +18,11 @@
     text-align: center;
     margin: 0 auto;
 
+    label {
+      display: inline-block; // Asegura que el label se comporte como un contenedor inline
+      margin-right: 0.5rem; // Ajusta el margen según sea necesario
+    }
+
     .navbar-brand {
       color: vars.$white;
       font-size: 2rem;
