@@ -26,15 +26,21 @@ a {
 
   &:hover {
     text-decoration: underline;
-    color: hsl(vars.$link-hue, vars.$link-saturation, vars.$link-hover-lightness);
+    color: vars.$primary;
   }
 
-  &:visited {
-    color: hsl(vars.$link-hue, vars.$link-saturation, vars.$link-visited-lightness);
-  }
+  // &:visited {
+  //   color: hsl(vars.$link-hue, vars.$link-saturation, vars.$link-visited-lightness);
+  // }
 
-  &:active {
-    color: hsl(vars.$link-hue, vars.$link-saturation, vars.$link-active-lightness);
+  // &:active {
+  //   color: hsl(vars.$link-hue, vars.$link-saturation, vars.$link-active-lightness);
+  // }
+
+  &.btn {
+    &:active, &:visited {
+      color: inherit;
+    }
   }
 }
 

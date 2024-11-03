@@ -22,7 +22,11 @@ export function languageSwitcher() {
     if (translations) {
       elementsToTranslate.forEach(element => {
         const key = element.getAttribute('data-translate');
-        element.textContent = translations[key];
+        if (element.tagName === 'A' && element.hasAttribute('aria-label')) {
+          element.setAttribute('aria-label', translations[key]);
+        } else {
+          element.innerHTML = translations[key]; // Usar innerHTML en lugar de textContent
+        }
       });
       // Cambiar el atributo lang del elemento <html>
       htmlElement.setAttribute('lang', language);
