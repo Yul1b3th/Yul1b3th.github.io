@@ -430,12 +430,6 @@ a:hover {
   text-decoration: underline;
   color: #ffb727;
 }
-a:visited {
-  color: hsl(30, 100%, 25%);
-}
-a:active {
-  color: hsl(30, 100%, 15%);
-}
 a.btn:active, a.btn:visited {
   color: inherit;
 }
@@ -619,6 +613,7 @@ select {
   display: block;
   padding: 1.3rem;
   border-bottom: 1px solid transparent;
+  color: #ffffff;
 }
 .navbar .container-nav .navbar-collapse .navbar-nav .nav-link:hover, .navbar .container-nav .navbar-collapse .navbar-nav .nav-link.active {
   background-color: hsla(40, 100%, 58%, 0.2);

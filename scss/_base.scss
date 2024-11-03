@@ -29,13 +29,13 @@ a {
     color: vars.$primary;
   }
 
-  &:visited {
-    color: hsl(vars.$link-hue, vars.$link-saturation, vars.$link-visited-lightness);
-  }
+  // &:visited {
+  //   color: hsl(vars.$link-hue, vars.$link-saturation, vars.$link-visited-lightness);
+  // }
 
-  &:active {
-    color: hsl(vars.$link-hue, vars.$link-saturation, vars.$link-active-lightness);
-  }
+  // &:active {
+  //   color: hsl(vars.$link-hue, vars.$link-saturation, vars.$link-active-lightness);
+  // }
 
   &.btn {
     &:active, &:visited {
