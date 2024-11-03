@@ -42,16 +42,24 @@
   flex-direction: column;
   gap: 20px;
   text-align: center;
-}
 
-.contact-cards p {
-  margin-bottom: 0px;
-}
+  @media (min-width: 992px) {
+    flex-direction: row;
+  }
 
-.contact-cards .card {
-  flex: 1;
-  padding: 20px 0px;
-  width: 100%;
+  .card {
+    flex: 1;
+    padding: 20px 0px;
+    width: 100%;
+
+    @media (min-width: 992px) {
+      width: calc(25% - 20px);
+    }
+  }
+
+  p {
+    margin-bottom: 0px;
+  }
 }
 
 .contact-form {
@@ -60,43 +68,78 @@
   margin: 2rem auto;
   max-width: 800px;
   padding: 1rem;
-}
 
-.contact-form .form-group {
-  display: flex;
-  flex-direction: column;
-}
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
 
-.contact-form input,
-.contact-form textarea {
-  border-radius: 0.2rem;
-  font-family: vars.$font-primary;
-  font-size: 0.85rem;
-  margin: 1rem auto;
-  padding: 0.5rem;
-  width: 100%;
-}
+  input,
+  textarea {
+    border-radius: 0.2rem;
+    font-family: vars.$font-primary;
+    font-size: 0.85rem;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    width: 100%;
+  }
 
-.contact-form input {
-  border: 0;
-  border-bottom: thin solid hsla(vars.$dark-hue, vars.$dark-saturation, vars.$dark-lightness, 0.4);
-}
+  input {
+    border: 0;
+    border-bottom: thin solid hsla(vars.$dark-hue, vars.$dark-saturation, vars.$dark-lightness, 0.4);
+  }
 
-.contact-form textarea {
-  border: thin solid hsla(vars.$dark-hue, vars.$dark-saturation, vars.$dark-lightness, 0.4);
-  resize: none;
-  width: 100%;
-}
+  textarea {
+    border: thin solid hsla(vars.$dark-hue, vars.$dark-saturation, vars.$dark-lightness, 0.4);
+    resize: none;
+    width: 100%;
+  }
 
-.contact-form *::placeholder {
-  color: hsla(vars.$dark-hue, vars.$dark-saturation, vars.$dark-lightness, 0.5);
-}
+  *::placeholder {
+    color: hsla(vars.$dark-hue, vars.$dark-saturation, vars.$dark-lightness, 0.5);
+  }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 1);
-  box-shadow: 0 0 0 .25rem hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 0.5);
-  outline: 0;
+  input:focus,
+  textarea:focus {
+    border-color: hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 1);
+    box-shadow: 0 0 0 .25rem hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 0.5);
+    outline: 0;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto;
+
+    .form-group:nth-child(1),
+    .form-group:nth-child(2) {
+      grid-column: span 1;
+    }
+
+    .form-group:nth-child(3),
+    .contact-form-loader,
+    button {
+      grid-column: span 2;
+    }
+
+    .contact-form-loader {
+      justify-self: center;
+    }
+
+    button {
+      justify-self: start;
+    }
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+
+    .textarea,
+    button,
+    .contact-form-loader {
+      grid-column: span 2;
+    }
+  }
 }
 
 .contact-form-response {
@@ -104,59 +147,11 @@
   padding: 1rem;
   text-align: center;
   width: 400px;
-}
 
-.contact-form-response svg {
-  fill: hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 1);
-  height: 4rem;
-  margin-top: 2rem;
-  width: 4rem;
-}
-
-@media (min-width: 768px) {
-  .contact-form {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto auto auto;
-  }
-
-  .contact-form .form-group:nth-child(1),
-  .contact-form .form-group:nth-child(2) {
-    grid-column: span 1;
-  }
-
-  .contact-form .form-group:nth-child(3),
-  .contact-form-loader,
-  .contact-form button {
-    grid-column: span 2;
-  }
-
-  .contact-form-loader {
-    justify-self: center;
-  }
-
-  .contact-form button {
-    justify-self: start;
-  }
-}
-
-@media (min-width: 992px) {
-  .contact-cards {
-    flex-direction: row;
-  }
-
-  .contact-cards .card {
-    width: calc(25% - 20px);
-  }
-
-  .contact-form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1rem;
-  }
-
-  .contact-form .textarea,
-  .contact-form button,
-  .contact-form-loader {
-    grid-column: span 2;
+  svg {
+    fill: hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 1);
+    height: 4rem;
+    margin-top: 2rem;
+    width: 4rem;
   }
 }
