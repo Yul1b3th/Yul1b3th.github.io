@@ -721,6 +721,16 @@ select {
 }
 
 /*-------- FOOTER --------*/
+.footer {
+  background-color: #1C1C1C;
+}
+.footer a {
+  color: #ffffff;
+}
+.footer a:hover {
+  color: #ffb727;
+}
+
 .home .container {
   gap: 2rem;
   flex-wrap: wrap;
@@ -792,43 +802,6 @@ select {
 }
 @media (min-width: 992px) {
   .about-me .container .soft-skills .soft-skills-items {
-    flex-direction: row;
-    gap: 0;
-  }
-}
-
-.projects .container .mb-2 h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-.projects .container .mb-2 .knowledge-card {
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-@media (min-width: 768px) {
-  .projects .container .mb-2 .knowledge-card {
-    flex-wrap: nowrap;
-  }
-}
-.projects .container .mb-2 .knowledge-card .card h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-.projects .container .mb-2 .knowledge-card .card p {
-  line-height: 1.5;
-}
-.projects .container > div:last-child h3 {
-  font-size: 1.25rem;
-  margin-top: 2rem;
-}
-.projects .container > div:last-child p {
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-@media (min-width: 992px) {
-  .projects .container .skills-items {
     flex-direction: row;
     gap: 0;
   }
