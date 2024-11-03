@@ -1,3 +1,12 @@
 @use '../variables' as vars;
 
 /*-------- FOOTER --------*/
+.footer{
+  background-color: vars.$dark;
+  a {
+    color: vars.$white;
+    &:hover {
+      color: vars.$primary;
+    }
+  }
+}
