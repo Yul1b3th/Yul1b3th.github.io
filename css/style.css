@@ -333,6 +333,19 @@ select {
   align-items: center;
 }
 
+.section ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+p.year {
+  background: #eef0f2;
+  padding: 0.3125rem 0.9375rem;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -442,12 +455,12 @@ select {
   outline-offset: 0.3125rem;
 }
 
-.section-title {
+.section-title, .section-title-dark {
   text-align: center;
   padding: 1.875rem 0;
   position: relative;
 }
-.section-title h2 {
+.section-title h2, .section-title-dark h2 {
   font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -457,7 +470,7 @@ select {
   position: relative;
   z-index: 2;
 }
-.section-title span {
+.section-title span, .section-title-dark span {
   position: absolute;
   top: 1.875rem;
   color: hsla(0, 0%, 11%, 0.1);
@@ -470,9 +483,16 @@ select {
   line-height: 0;
 }
 @media (min-width: 992px) {
-  .section-title span {
+  .section-title span, .section-title-dark span {
     font-size: 3.25rem;
   }
+}
+
+.section-title-dark h2 {
+  color: #ffffff;
+}
+.section-title-dark span {
+  color: hsla(0, 0%, 95%, 0.1);
 }
 
 .card {
@@ -490,43 +510,6 @@ select {
   box-shadow: 0px 4px 12px rgba(255, 183, 39, 0.4);
 }
 
-.resume-items {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-}
-
-.resume-items .card {
-  width: 100%;
-}
-
-.resume-items ul {
-  list-style: disc;
-  margin-left: 1.5rem;
-}
-
-.resume-items p {
-  margin-bottom: 0px;
-}
-
-.year {
-  background: #eef0f2;
-  padding: 0.3125rem 0.9375rem;
-  display: inline-block;
-  font-weight: 600;
-  margin-bottom: 0.625rem;
-}
-
-p.year {
-  margin-bottom: 0.625rem;
-}
-
-@media (min-width: 992px) {
-  .resume-items .card {
-    width: 80%;
-  }
-}
 /*-------- Social styles --------*/
 .social-media {
   display: flex;
@@ -814,18 +797,6 @@ p.year {
   }
 }
 
-.projects .container .section-title h2 {
-  display: block;
-  margin: 0;
-  color: #ffffff;
-}
-.projects .container .section-title span {
-  color: hsla(0, 0%, 95%, 0.1);
-}
-.projects .container .section-title .section-title-text {
-  margin-top: 1rem;
-  line-height: 1.6;
-}
 .projects .container .mb-2 h3 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
