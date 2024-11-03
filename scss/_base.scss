@@ -1,30 +1,41 @@
 @use './variables' as vars;
 
-/* ------------------- */
-/* General styles     */
-/* ------------------- */
-
+/*-------- Base styles --------*/
 html {
   scroll-behavior: smooth;
-  font-size: 16px; /* Utilizando variables de tamaño de fuente de Bootstrap */
+  font-size: 16px;
   line-height: 1.5;
+
+  @media (min-width: 992px) {
+    font-size: 18px;
+  }
 }
 
 body {
-  font-family: vars.$font-primary; /* Utilizando variable de fuente */
-  color: vars.$light; /* Utilizando variable de color sin prefijo */
-  background-color: vars.$white; /* Utilizando variable de color sin prefijo */
+  font-family: vars.$font-primary;
+  color: vars.$light;
+  background-color: vars.$white;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
-}
+  color: vars.$link-color-hsl;
+  text-decoration: underline;
+  font-weight: 600;
 
-a:hover {
-  color: vars.$primary; 
+  &:hover {
+    text-decoration: underline;
+    color: hsl(vars.$link-hue, vars.$link-saturation, vars.$link-hover-lightness);
+  }
+
+  &:visited {
+    color: hsl(vars.$link-hue, vars.$link-saturation, vars.$link-visited-lightness);
+  }
+
+  &:active {
+    color: hsl(vars.$link-hue, vars.$link-saturation, vars.$link-active-lightness);
+  }
 }
 
 img,
@@ -41,16 +52,6 @@ select {
 }
 
 *:focus-visible {
-  outline: 0.16rem solid #FF4ABE;
+  outline: 0.16rem solid vars.$primary;
   outline-offset: 0.3125rem;
 }
-
-@media (min-width: 992px) {
-  html {
-    font-size: 18px; /* Utilizando variable de tamaño de fuente de Bootstrap */
-  }
-}
-
-@media (min-width: 1200px) {}
-
-@media (min-width: 1400px) {}
