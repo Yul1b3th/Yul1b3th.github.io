@@ -428,13 +428,16 @@ a {
 }
 a:hover {
   text-decoration: underline;
-  color: hsl(30, 100%, 30%);
+  color: #ffb727;
 }
 a:visited {
   color: hsl(30, 100%, 25%);
 }
 a:active {
   color: hsl(30, 100%, 15%);
+}
+a.btn:active, a.btn:visited {
+  color: inherit;
 }
 
 img,
@@ -663,7 +666,7 @@ select {
   color: #1C1C1C;
   cursor: pointer;
   display: inline-block;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   padding: 0.8125rem 1.25rem 0.5625rem;
   text-align: center;
@@ -675,6 +678,11 @@ select {
   background-color: #FAFAFA;
   color: #1C1C1C;
   text-decoration: none;
+}
+
+.btn-small {
+  padding: 0.5rem 1rem 0.375rem; /* Padding más pequeño */
+  width: 8rem; /* Ancho más pequeño */
 }
 
 /*-------- SCROLL TOP BUTTON --------*/

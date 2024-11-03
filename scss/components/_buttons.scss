@@ -8,7 +8,7 @@
   color: vars.$dark;
   cursor: pointer;
   display: inline-block;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   padding: 0.8125rem 1.25rem 0.5625rem;
   text-align: center;
@@ -21,4 +21,10 @@
     color: vars.$dark;
     text-decoration: none;
   }
+}
+
+.btn-small {
+  // font-size: 0.875rem; /* Tamaño de fuente más pequeño */
+  padding: 0.5rem 1rem 0.375rem; /* Padding más pequeño */
+  width: 8rem; /* Ancho más pequeño */
 }
