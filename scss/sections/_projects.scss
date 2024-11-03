@@ -2,21 +2,6 @@
 
 .projects {
   .container {
-    .section-title {
-      h2 {
-        display: block;
-        margin: 0;
-        color: vars.$white;
-      }
-      span{
-        color: hsla(vars.$light-hue, vars.$light-saturation, vars.$light-lightness, 0.1);
-      }
-      .section-title-text {
-        margin-top: 1rem;
-        line-height: 1.6;
-      }
-    }
-
     .mb-2 {
       h3 {
         font-size: 1.25rem;

@@ -33,3 +33,15 @@
     }
   }
 }
+
+.section-title-dark {
+  @extend .section-title;
+
+  h2 {
+    color: vars.$white;
+  }
+
+  span {
+    color: hsla(vars.$light-hue, vars.$light-saturation, vars.$light-lightness, 0.1);
+  }
+}
