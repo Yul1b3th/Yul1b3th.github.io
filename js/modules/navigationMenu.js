@@ -3,7 +3,7 @@ export function navigationMenu() {
   const nav = document.querySelector('.navbar-collapse');
   const navToggle = document.querySelector('.navbar-toggler');
   const navLinks = document.querySelectorAll('.nav-link');
-  const interactiveElements = nav.querySelectorAll('.navbar-collapse a');
+  const interactiveElements = nav.querySelectorAll('a, button, select');
 
   // Función para alternar la visibilidad del menú
   const toggleMenu = () => {
@@ -19,9 +19,11 @@ export function navigationMenu() {
     nav.setAttribute("data-visible", newVisibility);
     navToggle.setAttribute("aria-expanded", newVisibility);
 
-    // Establecer el tabindex de los elementos interactivos
-    const tabindexValue = newVisibility ? '0' : '-1';
-    interactiveElements.forEach(el => el.setAttribute('tabindex', tabindexValue));
+    // Establecer el tabindex de los elementos interactivos solo en dispositivos móviles
+    if (window.innerWidth < 992) {
+      const tabindexValue = newVisibility ? '0' : '-1';
+      interactiveElements.forEach(el => el.setAttribute('tabindex', tabindexValue));
+    }
   }
 
   // Función para manejar el click en un enlace del menú
@@ -37,6 +39,8 @@ export function navigationMenu() {
   navToggle.addEventListener('click', toggleMenu);
   navLinks.forEach(link => link.addEventListener('click', handleLinkClick));
 
-  // Inicialmente, deshabilita los enlaces del menú
-  interactiveElements.forEach(link => link.setAttribute('tabindex', '-1'));
+  // Inicialmente, deshabilita los enlaces del menú solo en dispositivos móviles
+  if (window.innerWidth < 992) {
+    interactiveElements.forEach(link => link.setAttribute('tabindex', '-1'));
+  }
 }
