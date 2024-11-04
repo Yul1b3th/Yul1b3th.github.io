@@ -1,4 +1,4 @@
-export function navigationMenu () {
+export function navigationMenu() {
   const body = document.querySelector('body');
   const nav = document.querySelector('.navbar-collapse');
   const navToggle = document.querySelector('.navbar-toggler');
@@ -10,7 +10,12 @@ export function navigationMenu () {
     const isVisible = nav.getAttribute("data-visible") === "true";
     const newVisibility = !isVisible;
 
-    body.classList.toggle('overflow-hidden');
+    if (newVisibility) {
+      body.classList.add('overflow-hidden');
+    } else {
+      body.classList.remove('overflow-hidden');
+    }
+
     nav.setAttribute("data-visible", newVisibility);
     navToggle.setAttribute("aria-expanded", newVisibility);
 
@@ -23,7 +28,9 @@ export function navigationMenu () {
   const handleLinkClick = (event) => {
     navLinks.forEach(link => link.classList.remove('active'));
     event.target.classList.add('active');
-    toggleMenu();
+    if (window.innerWidth < 992) { // Solo alternar el menú en dispositivos móviles
+      toggleMenu();
+    }
   }
 
   // Añade los event listeners
