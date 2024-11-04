@@ -171,10 +171,6 @@ select {
 /* Familias de fuentes */
 /* Variables de espaciado */
 /* General */
-.box-shadow-1 {
-  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
-}
-
 .d-block {
   display: block;
 }
@@ -213,10 +209,6 @@ select {
 
 .gap-5 {
   gap: 2rem;
-}
-
-.gray-scale {
-  filter: grayscale(1);
 }
 
 .hidden {
