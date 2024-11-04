@@ -21,12 +21,23 @@ export function languageSwitcher() {
     const translations = await loadTranslations(language);
     if (translations) {
       elementsToTranslate.forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (element.tagName === 'A' && element.hasAttribute('aria-label')) {
-          element.setAttribute('aria-label', translations[key]);
-        } else {
-          element.innerHTML = translations[key]; // Usar innerHTML en lugar de textContent
-        }
+        const keys = element.getAttribute('data-translate').split(' ');
+        keys.forEach(key => {
+          const translation = translations[key];
+          if (translation) {
+            if (element.tagName === 'A' && element.hasAttribute('aria-label')) {
+              element.setAttribute('aria-label', translation);
+            } else if (element.hasAttribute('placeholder') && key.includes('placeholder')) {
+              element.setAttribute('placeholder', translation);
+            } else if (element.hasAttribute('title') && key.includes('title')) {
+              element.setAttribute('title', translation);
+            } else if (element.hasAttribute('alt') && key.includes('alt')) {
+              element.setAttribute('alt', translation);
+            } else {
+              element.innerHTML = translation;
+            }
+          }
+        });
       });
       // Cambiar el atributo lang del elemento <html>
       htmlElement.setAttribute('lang', language);

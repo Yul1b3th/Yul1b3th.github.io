@@ -520,16 +520,16 @@
   <section id="contact" class="contact section bg-dark" data-scroll-spy>
     <div class="container">
       <div class="section-title-dark">
-        <span aria-hidden="true">Contacto</span>
-        <h2>Contacto</h2>
+        <span aria-hidden="true" data-translate="contact-title">Contacto</span>
+        <h2 data-translate="contact-title">Contacto</h2>
       </div>
 
       <div class="contact-cards">
         <!-- Ubicación -->
         <div class="card center flex-column gap-1">
           <img src="./img/contact-location.svg" alt="" class="center gap-2" width="32" height="24">
-          <p><strong>Ubicación</strong></p>
-          <small>Barcelona, España</small>
+          <p><strong data-translate="contact-location-title">Ubicación</strong></p>
+          <small data-translate="contact-location">Barcelona, España</small>
         </div>
         <!-- Teléfono -->
         <!-- <div class="card center flex-column gap-1">
@@ -540,15 +540,15 @@
         <!-- Email -->
         <div class="card center flex-column gap-1">
           <img src="./img/contact-email.svg" alt="" class="center gap-2" width="29" height="22">
-          <p><strong>Email</strong></p>
+          <p><strong data-translate="contact-email-title1">Email</strong></p>
           <p>
-            <a href="mailto:yulibeth.rivero@gmail.com"> yulibeth.rivero@gmail.com </a>
+            <a href="mailto:yulibeth.rivero@gmail.com" data-translate="contact-email"> yulibeth.rivero@gmail.com </a>
           </p>
         </div>
         <!-- Redes Sociales -->
         <div class="card center flex-column gap-1">
           <img src="./img/contact-smo.svg" alt="" class="center gap-2" width="32" height="32">
-          <p><strong>Redes Sociales</strong></p>
+          <p><strong data-translate="contact-social-title">Redes Sociales</strong></p>
           <ul class="social-media">
             <li>
               <a href="https://www.linkedin.com/in/yulibeth-rivero/" target="_blank" rel="noopener noreferrer"
@@ -587,44 +587,47 @@
           <label for="name">
             <input id="name" type="text" name="name" class="form-control" placeholder="Ingresa tu nombre *"
               title="Nombre sólo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
-              autocomplete="name" required>
+              autocomplete="name" required data-translate="contact-name-placeholder contact-name-title">
           </label>
         </div>
 
         <input id="email" type="email" name="email" class="form-control" placeholder="Ingresa tu correo *"
-          title="Email incorrecto" autocomplete="email" required>
+          title="Email incorrecto" autocomplete="email" required
+          data-translate="contact-email-placeholder contact-email-title2">
 
         <div class="form-group">
           <label for="comments">
             <textarea id="comments" name="comments" class="form-control" rows="5" placeholder="Déjame tus comentarios *"
-              required></textarea>
+              required data-translate="contact-comments-placeholder"></textarea>
           </label>
         </div>
 
         <div class="contact-form-loader text-center none">
-          <img src="./img/loader.svg" alt="Enviando...">
+          <img src="./img/loader.svg" alt="Enviando..." data-translate="contact-loader-alt">
         </div>
 
-        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+        <button type="submit" class="btn btn-primary" data-translate="contact-submit">Enviar mensaje</button>
       </form>
 
       <div id="thanks" class="modal">
         <div class="modal-content">
           <div class="contact-form-response">
-            <p>
+            <p data-translate="contact-thanks-message">
               ¡Muchas Gracias!
               <br>
               Por tus comentarios
             </p>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img"
               aria-labelledby="svgTitle svgDesc">
-              <title id="svgTitle">Icono de cara sonriente</title>
-              <desc id="svgDesc">Un icono circular con una cara sonriente</desc>
-              <path d="M12,18c4,0,5-4,5-4H7C7,14,8,18,12,18z" />
+              <title id="svgTitle" data-translate="contact-thanks-title">Icono de cara sonriente</title>
+              <desc id="svgDesc" data-translate="contact-thanks-desc">Un icono circular con una cara sonriente</desc>
+              <path d="M12,18c4,0,5-4,5-4H7C7,14,8,18,12,18z"></path>
               <path
-                d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M12,20c-4.411,0-8-3.589-8-8 s3.589-8,8-8s8,3.589,8,8S16.411,20,12,20z" />
+                d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M12,20c-4.411,0-8-3.589-8-8 s3.589-8,8-8s8,3.589,8,8S16.411,20,12,20z">
+              </path>
               <path
-                d="M13 12l2 .012C15.012 11.55 15.194 11 16 11s.988.55 1 1h2c0-1.206-.799-3-3-3S13 10.794 13 12zM8 11c.806 0 .988.55 1 1h2c0-1.206-.799-3-3-3s-3 1.794-3 3l2 .012C7.012 11.55 7.194 11 8 11z" />
+                d="M13 12l2 .012C15.012 11.55 15.194 11 16 11s.988.55 1 1h2c0-1.206-.799-3-3-3S13 10.794 13 12zM8 11c.806 0 .988.55 1 1h2c0-1.206-.799-3-3-3s-3 1.794-3 3l2 .012C7.012 11.55 7.194 11 8 11z">
+              </path>
             </svg>
           </div>
         </div>
