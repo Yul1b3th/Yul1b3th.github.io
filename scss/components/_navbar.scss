@@ -8,19 +8,29 @@
   z-index: 10;
   display: flex;
   align-items: center;
-  background: hsla(vars.$dark-hue, vars.$dark-saturation, vars.$dark-lightness, 0.8);
+  background-color: vars.$dark;
+
+  a {
+    text-decoration: none;
+  }
+
+  span {
+    display: none;
+  }
 
   .container-nav {
     display: flex;
-    justify-content: space-between; /* Cambiado a space-between para alinear el logo a la izquierda y los enlaces a la derecha */
-    width: 98%;
+    justify-content: space-between;
+    width: 90%;
     position: relative;
     text-align: center;
     margin: 0 auto;
 
     label {
-      display: inline-block; // Asegura que el label se comporte como un contenedor inline
-      margin-right: 0.5rem; // Ajusta el margen según sea necesario
+      select {
+        cursor: pointer;
+        background-color: vars.$dark;
+      }
     }
 
     .navbar-brand {
@@ -28,24 +38,20 @@
       font-size: 2rem;
       font-weight: 600;
     }
-    
+
     button.navbar-toggler {
-      position: absolute;
       z-index: 2;
-      right: 1rem;
       width: fit-content;
       aspect-ratio: 1;
       background: transparent url(../../img/icon-hamburger.svg) no-repeat center;
       border: 0;
       cursor: pointer;
-      top: 0;
-      bottom: 0;
       border: 1px solid transparent;
-      
+
       &:hover {
         outline: 1px solid vars.$primary;
       }
-      
+
       &[aria-expanded='true'] {
         background-image: url(../../img/icon-close.svg);
       }
@@ -65,20 +71,22 @@
       transition: transform 500ms ease-in-out;
       background-color: hsla(vars.$dark-hue, vars.$dark-saturation, vars.$dark-lightness, 1);
       color: hsla(vars.$white-hue, vars.$white-saturation, vars.$white-lightness, 1);
+
       .navbar-nav {
         padding: 0 3rem;
+
         .nav-link {
           display: block;
           padding: 1.3rem;
           border-bottom: 1px solid transparent;
           color: vars.$white;
-          
+
           &:hover,
           &.active {
             background-color: hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 0.2);
             border-bottom-color: hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 0.2);
           }
-          
+
           &.active {
             color: hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 1);
           }
@@ -90,35 +98,57 @@
       }
     }
 
-  @media (min-width: 768px) {
-    .navbar-toggler {
-      display: none;
-    }
-    .navbar-collapse {
-      position: static;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: center;
-      transform: none;
-      background-color: transparent;
-      color: inherit;
-      .navbar-brand{
+    @media (min-width: 1200px) {
+      span {
+        display: block;
+      }
+
+      font-size: 0.9;
+
+      .navbar-toggler {
         display: none;
       }
-      .navbar-nav {
+
+      .navbar-collapse {
+        position: static;
         display: flex;
         flex-direction: row;
-        padding: 0;
-        .nav-link {
-          padding: 0 1rem;
-          border-bottom: none;
+        justify-content: flex-end;
+        align-items: center;
+        transform: none;
+        color: inherit;
+
+        .navbar-brand {
+          display: none;
         }
 
+        .navbar-nav {
+          display: flex;
+          flex-direction: row;
+          padding: 0;
+
+          .nav-link {
+            padding: 0;
+            border-bottom: 0;
+
+            &:hover,
+            &.active {
+              background-color: unset;
+              border-bottom-color: hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 0.2);
+              text-decoration-line: underline;
+            }
+
+            &.active {
+              color: hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 1);
+              text-decoration-line: underline;
+            }
+
+            &:hover {
+              background-color: unset;
+            }
+          }
+        }
       }
     }
   }
-  }
-
-
 }

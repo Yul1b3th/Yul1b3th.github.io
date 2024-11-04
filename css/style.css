@@ -224,6 +224,10 @@ select {
   opacity: 0;
 }
 
+.d-none {
+  display: none !important;
+}
+
 .mb-md {
   margin-bottom: 0.5rem;
 }
@@ -448,7 +452,7 @@ select {
 }
 
 *:focus-visible {
-  outline: 0.16rem solid #ffb727;
+  outline: 0.05rem solid #ffb727;
   outline-offset: 0.3125rem;
 }
 
@@ -553,19 +557,25 @@ select {
   z-index: 10;
   display: flex;
   align-items: center;
-  background: hsla(0, 0%, 11%, 0.8);
+  background-color: #1C1C1C;
+}
+.navbar a {
+  text-decoration: none;
+}
+.navbar span {
+  display: none;
 }
 .navbar .container-nav {
   display: flex;
-  justify-content: space-between; /* Cambiado a space-between para alinear el logo a la izquierda y los enlaces a la derecha */
-  width: 98%;
+  justify-content: space-between;
+  width: 90%;
   position: relative;
   text-align: center;
   margin: 0 auto;
 }
-.navbar .container-nav label {
-  display: inline-block;
-  margin-right: 0.5rem;
+.navbar .container-nav label select {
+  cursor: pointer;
+  background-color: #1C1C1C;
 }
 .navbar .container-nav .navbar-brand {
   color: #ffffff;
@@ -573,16 +583,12 @@ select {
   font-weight: 600;
 }
 .navbar .container-nav button.navbar-toggler {
-  position: absolute;
   z-index: 2;
-  right: 1rem;
   width: fit-content;
   aspect-ratio: 1;
   background: transparent url(../../img/icon-hamburger.svg) no-repeat center;
   border: 0;
   cursor: pointer;
-  top: 0;
-  bottom: 0;
   border: 1px solid transparent;
 }
 .navbar .container-nav button.navbar-toggler:hover {
@@ -625,7 +631,13 @@ select {
 .navbar .container-nav .navbar-collapse[data-visible=true] {
   transform: translateX(0);
 }
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
+  .navbar .container-nav {
+    font-size: 0.9;
+  }
+  .navbar .container-nav span {
+    display: block;
+  }
   .navbar .container-nav .navbar-toggler {
     display: none;
   }
@@ -636,7 +648,6 @@ select {
     justify-content: flex-end;
     align-items: center;
     transform: none;
-    background-color: transparent;
     color: inherit;
   }
   .navbar .container-nav .navbar-collapse .navbar-brand {
@@ -648,8 +659,20 @@ select {
     padding: 0;
   }
   .navbar .container-nav .navbar-collapse .navbar-nav .nav-link {
-    padding: 0 1rem;
-    border-bottom: none;
+    padding: 0;
+    border-bottom: 0;
+  }
+  .navbar .container-nav .navbar-collapse .navbar-nav .nav-link:hover, .navbar .container-nav .navbar-collapse .navbar-nav .nav-link.active {
+    background-color: unset;
+    border-bottom-color: hsla(40, 100%, 58%, 0.2);
+    text-decoration-line: underline;
+  }
+  .navbar .container-nav .navbar-collapse .navbar-nav .nav-link.active {
+    color: hsl(40, 100%, 58%);
+    text-decoration-line: underline;
+  }
+  .navbar .container-nav .navbar-collapse .navbar-nav .nav-link:hover {
+    background-color: unset;
   }
 }
 
