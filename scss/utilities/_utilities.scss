@@ -2,10 +2,6 @@
 
 /* General */
 
-.box-shadow-1 {
-  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
-}
-
 .d-block {
   display: block;
 }
@@ -44,10 +40,6 @@
 
 .gap-5 {
   gap: 2rem;
-}
-
-.gray-scale {
-  filter: grayscale(1);
 }
 
 .hidden {
@@ -173,8 +165,8 @@
 }
 
 .projects ul, .experience ul, .education ul, .courses ul {
-    list-style: disc;
-    margin-left: 1.5rem;
+  list-style: disc;
+  margin-left: 1.5rem;
 }
 
 p.year {
