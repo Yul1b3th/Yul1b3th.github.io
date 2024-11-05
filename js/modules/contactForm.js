@@ -1,5 +1,5 @@
 export function contactForm() {
-  ( ( d ) => {
+  ((d) => {
     const $form = d.querySelector('.contact-form'),
       $loader = d.querySelector('.contact-form-loader'),
       $response = d.querySelector('.contact-form-response');
@@ -8,7 +8,11 @@ export function contactForm() {
       e.preventDefault(); // Evitar que el formulario se envíe
       $loader.classList.remove('none');
 
-      emailjs.sendForm('service_41ccklt', 'template_i1spjqs', e.target)
+      fetch('https://formsubmit.co/ajax/yulibeth.rivero@gmail.com', {
+        method: 'POST',
+        body: new FormData(e.target),
+      })
+        .then((res) => (res.ok ? res.json() : Promise.reject(res)))
         .then((json) => {
           console.log(json);
           location.hash = '#thanks';
