@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     text-align: center;
 
-    @media (min-width: 768px) {
+    @media (min-width: 992px) {
       flex-wrap: nowrap;
       text-align: left;
     }
@@ -15,13 +15,13 @@
       border-radius: 50%;
       overflow: hidden;
       max-width: 330px;
-      @media (min-width: 768px) {
+      @media (min-width: 992px) {
         flex: 0 0 calc(30% - 1rem);
       }
     }
     
     .home-text {
-      @media (min-width: 768px) {
+      @media (min-width: 992px) {
         flex: 0 0 calc(70% - 1rem);
       }
       h1{
@@ -40,7 +40,7 @@
               height: 1.5rem;
             }
           }
-          @media (min-width: 768px) {
+          @media (min-width: 992px) {
             justify-content: left;
           }
       }
