@@ -754,7 +754,7 @@ select {
   flex-wrap: wrap;
   text-align: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .home .container {
     flex-wrap: nowrap;
     text-align: left;
@@ -765,12 +765,12 @@ select {
   overflow: hidden;
   max-width: 330px;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .home .container .home-img {
     flex: 0 0 calc(30% - 1rem);
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .home .container .home-text {
     flex: 0 0 calc(70% - 1rem);
   }
@@ -790,7 +790,7 @@ select {
   width: 1.5rem;
   height: 1.5rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .home .container .home-text .social-list {
     justify-content: left;
   }
@@ -806,7 +806,7 @@ select {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .about-me .container .tech-skills .tech-skills-card {
     flex-wrap: nowrap;
   }
