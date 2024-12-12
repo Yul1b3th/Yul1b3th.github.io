@@ -30,6 +30,9 @@
       select {
         cursor: pointer;
         background-color: vars.$dark;
+        &:hover {
+          color: vars.$primary;
+        }
       }
     }
 
@@ -37,6 +40,9 @@
       color: vars.$white;
       font-size: 2rem;
       font-weight: 600;
+      &:hover {
+        color: vars.$primary;
+      }
     }
 
     button.navbar-toggler {
@@ -76,19 +82,36 @@
         padding: 0 3rem;
 
         .nav-link {
+          position: relative;
           display: block;
           padding: 1.3rem;
-          border-bottom: 1px solid transparent;
           color: vars.$white;
 
           &:hover,
           &.active {
             background-color: hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 0.2);
-            border-bottom-color: hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 0.2);
           }
 
           &.active {
-            color: hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 1);
+            color: vars.$primary;
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background-color: vars.$primary;
+            transform: scaleY(1.5);
+            transform-origin: bottom;
+            transition: width 0.3s ease-in-out;
+          }
+
+          &:hover::before,
+          &.active::before {
+            width: 100%;
           }
         }
       }
@@ -129,18 +152,14 @@
 
           .nav-link {
             padding: 0;
-            border-bottom: 0;
 
             &:hover,
             &.active {
               background-color: unset;
-              border-bottom-color: hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 0.2);
-              text-decoration-line: underline;
             }
 
             &.active {
               color: hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 1);
-              text-decoration-line: underline;
             }
 
             &:hover {
