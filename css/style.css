@@ -113,55 +113,46 @@ select {
 
 @font-face {
   font-family: "BeVietnamPro";
-  src: url("../../fonts/bevietnampro-regular.woff") format("woff");
+  font-style: normal;
   font-weight: 400;
   font-display: swap;
+  src: url("../../assets/fonts/BeVietnamPro-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "BeVietnamPro";
-  src: url("../../fonts/bevietnampro-italic.woff") format("woff");
+  font-style: italic;
   font-weight: 400;
   font-display: swap;
-  font-style: italic;
+  src: url("../../assets/fonts/BeVietnamPro-Italic.ttf") format("truetype");
 }
 @font-face {
   font-family: "BeVietnamPro";
-  src: url("../../fonts/bevietnampro-medium.woff") format("woff");
-  font-weight: 500;
-  font-display: swap;
-}
-@font-face {
-  font-family: "BeVietnamPro";
-  src: url("../../fonts/bevietnampro-mediumitalic.woff") format("woff");
-  font-weight: 500;
-  font-display: swap;
-  font-style: italic;
-}
-@font-face {
-  font-family: "BeVietnamPro";
-  src: url("../../fonts/bevietnampro-semibold.woff") format("woff");
+  font-style: normal;
   font-weight: 600;
   font-display: swap;
+  src: url("../../assets/fonts/BeVietnamPro-SemiBold.ttf") format("truetype");
 }
 @font-face {
   font-family: "BeVietnamPro";
-  src: url("../../fonts/bevietnampro-semibolditalic.woff") format("woff");
+  font-style: normal;
+  font-style: italic;
   font-weight: 600;
   font-display: swap;
-  font-style: italic;
+  src: url("../../assets/fonts/BeVietnamPro-SemiBoldItalic.ttf") format("truetype");
 }
 @font-face {
   font-family: "BeVietnamPro";
-  src: url("../../fonts/bevietnampro-bold.woff") format("woff");
+  font-style: normal;
   font-weight: 700;
   font-display: swap;
+  src: url("../../assets/fonts/BeVietnamPro-Bold.ttf") format("truetype");
 }
 @font-face {
   font-family: "BeVietnamPro";
-  src: url("../../fonts/bevietnampro-bolditalic.woff") format("woff");
+  font-style: italic;
   font-weight: 700;
   font-display: swap;
-  font-style: italic;
+  src: url("../../assets/fonts/BeVietnamPro-BoldItalic.ttf") format("truetype");
 }
 /* Variables de colores */
 /* Variables de colores en HSL */
