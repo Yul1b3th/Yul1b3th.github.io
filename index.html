@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -49,7 +49,7 @@
         <a
           class="navbar-brand"
           href="#"
-          onclick="event.preventDefault();"
+          onclick="event.preventDefault()"
           data-translate="navbar-brand"
           >YR</a
         >
@@ -255,9 +255,9 @@
                 class="text-white"
                 data-translate="home-description"
               >
-                Apasionada por el desarrollo web y motivada por las últimas tendencias tecnológicas,
-                estoy especializada en frontend con&nbsp;Angular; tengo experiencia en proyectos
-                dinámicos y&nbsp;en&nbsp;metodologías Agile.
+                Desarrolladora Frontend en&nbsp;Angular con experiencia en proyectos dinámicos y
+                metodologías Agile, apasionada por el desarrollo web y motivada por las últimas
+                tendencias tecnológicas.
               </p>
             </div>
             <ul class="social-list my-1">
@@ -393,6 +393,12 @@
               Angular. Esto incluye la optimización del Design System, la base de datos, el backend
               y el frontend.
             </p>
+            <p data-translate="about-me-description-4">
+              En la actualidad, me sigo actualizando con Angular moderno y las últimas tendencias,
+              participando en hackatones y aplicando mejoras al proyecto final del bootcamp en
+              Angular. Esto incluye la optimización del Design System, la base de datos, el backend
+              y el frontend.
+            </p>
           </div>
 
           <!-- Tech Skills -->
@@ -430,7 +436,7 @@
                   Back End
                 </h4>
                 <p data-translate="tech-skills-backend-description">
-                  Back End: Nest, MySQL, PHP (utilizado en WordPress, PrestaShop, Magento).
+                  Back End: Nest, MySQL, PHP (utilizado en WordPress, PrestaShop, Magento), Java.
                 </p>
               </div>
 
@@ -532,6 +538,76 @@
           </div>
 
           <div class="center flex-column gap-4">
+            <!-- EZHub -->
+            <div class="card">
+              <h3 data-translate="projects-ezhub-title">EZHub</h3>
+              <p data-translate="projects-ezhub-description">
+                Aplicación en desarrollo para la búsqueda de habitaciones por geolocalización,
+                diseñada como proyecto final de mi bootcamp de Angular en IT Academy. La aplicación
+                permite interactuar con el backend para gestionar usuarios, propiedades y
+                habitaciones, e incluye autenticación de usuarios con JWT y encriptación de
+                contraseñas. Desarrollada con Angular, Nest, MySQL, Mapbox y TailwindCSS.
+              </p>
+              <p data-translate="projects-ezhub-repositories">
+                Repositorios:
+                <a
+                  href="https://github.com/Yul1b3th/ezhub-frontend"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Repositorio Frontend de EZHub"
+                  >Frontend</a
+                >
+                |
+                <a
+                  href="https://github.com/Yul1b3th/ezhub-backend"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Repositorio Backend de EZHub"
+                  >Backend</a
+                >
+              </p>
+              <a
+                href="https://ezhub.vercel.app/"
+                class="btn btn-small"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Demo de EZHub"
+                data-translate="projects-ezhub-demo"
+                >Demo</a
+              >
+            </div>
+
+            <!-- EZHub DS -->
+            <div class="card">
+              <h3 data-translate="projects-ezhubds-title">EZHub DS</h3>
+
+              <p data-translate="projects-ezhubds-description">
+                Design System desarrollado con Angular enfocado en la reutilización de componentes,
+                escalabilidad y consistencia visual en aplicaciones frontend.
+              </p>
+
+              <p data-translate="projects-ezhubds-repositories">
+                Repositorio:
+                <a
+                  href="https://github.com/Yul1b3th/design-system"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Repositorio de EZHub DS"
+                  >Frontend</a
+                >
+              </p>
+
+              <a
+                href="https://ezhub-ds.vercel.app/"
+                class="btn btn-small"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Demo de EZHub DS"
+                data-translate="projects-ezhubds-demo"
+                >Demo</a
+              >
+            </div>
+
             <!-- ITA Challenges -->
             <div class="card">
               <h3 data-translate="projects-ita-challenges-title">ITA Challenges</h3>
@@ -611,45 +687,6 @@
               >
             </div>
 
-            <!-- EZHub -->
-            <div class="card">
-              <h3 data-translate="projects-ezhub-title">EZHub</h3>
-              <p data-translate="projects-ezhub-description">
-                Aplicación en desarrollo para la búsqueda de habitaciones por geolocalización,
-                diseñada como proyecto final de mi bootcamp de Angular en IT Academy. La aplicación
-                permite interactuar con el backend para gestionar usuarios, propiedades y
-                habitaciones, e incluye autenticación de usuarios con JWT y encriptación de
-                contraseñas. Desarrollada con Angular, Nest, MySQL, Mapbox y TailwindCSS.
-              </p>
-              <p data-translate="projects-ezhub-repositories">
-                Repositorios:
-                <a
-                  href="https://github.com/Yul1b3th/ezhub-frontend"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Repositorio Frontend de EZHub"
-                  >Frontend</a
-                >
-                |
-                <a
-                  href="https://github.com/Yul1b3th/ezhub-backend"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Repositorio Backend de EZHub"
-                  >Backend</a
-                >
-              </p>
-              <a
-                href="https://ezhub.vercel.app/"
-                class="btn btn-small"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Demo de EZHub"
-                data-translate="projects-ezhub-demo"
-                >Demo</a
-              >
-            </div>
-
             <!-- TryTime -->
             <div class="card">
               <h3 data-translate="projects-trytime-title">TryTime</h3>
@@ -704,43 +741,56 @@
           <div class="center flex-column gap-4">
             <!-- TRAGSATEC -->
             <div class="card">
-              <h3 data-translate="experience-tragsatec-title">Front End Developer</h3>
+              <h3 data-translate="experience-tragsatec-title">Front End Developer (Angular)</h3>
+
               <p
                 class="year"
                 data-translate="experience-tragsatec-year"
               >
-                Mar. 2024 - Sep. 2024
+                Ene. 2025 – Mar. 2026
               </p>
+
               <p>
                 <strong data-translate="experience-tragsatec-company">Tragsatec | España.</strong>
               </p>
+
               <ul>
                 <li data-translate="experience-tragsatec-task1">
-                  Desarrollar pantallas con búsquedas, tablas y formularios reactivos en
-                  Angular/Material.
+                  Desarrollar funcionalidades en AJG mediante configuración TypeScript, consumiendo
+                  y extendiendo la librería corporativa para formularios y tablas dinámicas con
+                  lógica condicional.
                 </li>
                 <li data-translate="experience-tragsatec-task2">
-                  Integrar APIs REST (Swagger), mapear DTOs y normalizar datos.
+                  Implementar gestión de estado con Angular Signals para sincronización de UI.
                 </li>
                 <li data-translate="experience-tragsatec-task3">
-                  Implementar validaciones condicionales y ejecutar pruebas unitarias con
-                  Jasmine/Karma.
+                  Integrar APIs REST (CRUD), mapeo de DTOs y asincronía con RxJS.
+                </li>
+                <li data-translate="experience-tragsatec-task4">
+                  Mejorar la UX/UI y accesibilidad mediante rediseño de vistas y estilos (SASS).
+                </li>
+                <li data-translate="experience-tragsatec-task5">
+                  Colaborar en entorno Agile (Scrum) con Azure DevOps y Git Flow; pruebas unitarias
+                  (Jasmine/Karma) y corrección de bugs.
                 </li>
               </ul>
             </div>
 
-            <!-- IT Academy - Barcelona Activa -->
+            <!-- IT ACADEMY -->
             <div class="card">
-              <h3 data-translate="experience-itacademy-title">Front End Developer</h3>
+              <h3 data-translate="experience-itacademy-title">Front End Developer (Angular)</h3>
+
               <p
                 class="year"
                 data-translate="experience-itacademy-year"
               >
                 Mar. 2024 - Dic. 2024
               </p>
+
               <p>
                 <strong data-translate="experience-itacademy-company">IT Academy | España.</strong>
               </p>
+
               <ul>
                 <li data-translate="experience-itacademy-task1">
                   Implementar nuevas características interactivas y realizar pruebas unitarias con
@@ -757,7 +807,9 @@
 
             <!-- Grupo Anaya, S.A.U. -->
             <div class="card">
-              <h3 data-translate="experience-anaya-title">Front End Developer</h3>
+              <h3 data-translate="experience-anaya-title">
+                Front End Developer (JavaScript/jQuery)
+              </h3>
               <p
                 class="year"
                 data-translate="experience-anaya-year"
@@ -994,6 +1046,22 @@
             <h2 data-translate="courses-title">Cursos</h2>
           </div>
           <div class="resume-items">
+            <!-- CURSO JAVA SE 11 -->
+            <div class="card">
+              <h3 data-translate="education-java-title">Curso Java SE 11 Programming I</h3>
+
+              <p
+                class="year"
+                data-translate="education-java-year"
+              >
+                2026 - 2026 (4 semanas)
+              </p>
+
+              <p data-translate="courses-java-institution">
+                La Salle Universidad Ramon Llull | España.
+              </p>
+            </div>
+
             <div class="card">
               <h3 data-translate="courses-scrum-title">Scrum Framework</h3>
               <p
@@ -1002,6 +1070,7 @@
               >
                 2023 - 2023 (50 horas)
               </p>
+
               <p data-translate="courses-scrum-institution">
                 Proyecto Universidad Empresa, S.L. (PUE) | España.
               </p>
@@ -1277,70 +1346,13 @@
 
     <footer class="footer">
       <div class="py-1 text-center">
-        <p class="mb-md mt-1">
-          <a href="mailto:yulibeth.rivero@gmail.com">yulibeth.rivero@gmail.com</a>
-        </p>
-        <ul class="social-list mb-1">
-          <li>
-            <a
-              href="https://www.linkedin.com/in/yulibeth-rivero/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <svg
-                focusable="false"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"
-                ></path>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/Yul1b3th"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-            >
-              <svg
-                focusable="false"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 496 512"
-              >
-                <path
-                  d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-                ></path>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://wa.me/34602342003"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-            >
-              <svg
-                focusable="false"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
-                ></path>
-              </svg>
-            </a>
-          </li>
-        </ul>
+        <p>© <span id="year"></span> Yulibeth Rivero</p>
       </div>
     </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 
     <button
       class="scroll-top-btn hidden"
