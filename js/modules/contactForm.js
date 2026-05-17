@@ -1,4 +1,17 @@
 export function contactForm() {
+  const form = document.querySelector('.contact-form'); // tu <form class="contact-form">
+  const fd = new FormData(form);
+
+  console.log(fd);
+
+  // Recorrer y ver clave/valor
+  fd.forEach((value, key) => console.log(key, value));
+
+  console.log(Object.fromEntries(fd)); // objeto clave/valor
+  console.table([...fd.entries()]); // tabla
+  for (const [k, v] of fd) console.log(k, v); // iterar pares
+  console.log(new URLSearchParams(fd).toString()); // querystring
+
   ((d) => {
     const $form = d.querySelector('.contact-form'),
       $loader = d.querySelector('.contact-form-loader'),
@@ -6,6 +19,11 @@ export function contactForm() {
 
     $form.addEventListener('submit', (e) => {
       e.preventDefault(); // Evitar que el formulario se envíe
+
+      const fd = new FormData(e.target);
+      console.table([...fd.entries()]); // tabla
+      console.log(Object.fromEntries(fd)); // objeto clave/valor
+
       $loader.classList.remove('none');
 
       fetch('https://formsubmit.co/ajax/yulibeth.rivero@gmail.com', {
