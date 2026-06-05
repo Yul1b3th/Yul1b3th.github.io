@@ -1,0 +1,66 @@
+// main.scss
+
+// ==========================================================================
+// 1. ABSTRACTS (Herramientas invisibles: variables, funciones y mixins)
+// ==========================================================================
+// Nota: No generan CSS por sí mismos, pero están disponibles para el core.
+@use 'abstracts/variables' as *;
+@use 'abstracts/functions' as *;
+@use 'abstracts/mixins' as *;
+
+// ==========================================================================
+// 2. VENDOR (Estilos de terceros)
+// ==========================================================================
+@use 'vendor/fonts' as *;
+
+// ==========================================================================
+// 3. BASE (Configuración global del sitio y reseteos)
+// ==========================================================================
+@use 'base/reset' as *;
+@use 'base/base' as *;
+@use 'base/typography' as *;
+
+// ==========================================================================
+// 4. LAYOUT (Estructura de la página y andamiaje)
+// ==========================================================================
+@use 'layout/grid' as *;
+@use 'layout/containers' as *;
+@use 'layout/helpers' as *;
+
+// ==========================================================================
+// 5. COMPONENTS (Piezas UI pequeñas y reutilizables)
+// ==========================================================================
+@use 'components/navbar' as *;
+@use 'components/buttons' as *;
+@use 'components/card' as *;
+@use 'components/section-title' as *;
+@use 'components/resume-items' as *;
+@use 'components/social-media' as *;
+@use 'components/scroll-top-btn' as *;
+@use 'components/lazy-load-images' as *;
+@use 'components/footer' as *;
+
+// ==========================================================================
+// 6. SECTIONS (Bloques de contenido específicos de la página)
+// ==========================================================================
+@use 'sections/home' as *;
+@use 'sections/about-me' as *;
+@use 'sections/projects' as *;
+@use 'sections/experience' as *;
+@use 'sections/education' as *;
+@use 'sections/courses' as *;
+@use 'sections/contact' as *;
+
+// ==========================================================================
+// 7. THEMES (Variaciones de estilos: Modo Oscuro / Modo Claro)
+// ==========================================================================
+@use 'themes/light' as *;
+@use 'themes/dark' as *;
+
+// ==========================================================================
+// 8. UTILITIES (Clases helper atómicas de máxima prioridad)
+// ==========================================================================
+@use 'utilities/spacing' as *;
+@use 'utilities/colors' as *;
+@use 'utilities/visibility' as *;
+@use 'utilities/utilities' as *;

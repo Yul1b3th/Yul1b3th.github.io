@@ -1,4 +1,8 @@
-@use '../variables' as vars;
+// scss/components/_navbar.scss
+
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+@use '../abstracts/mixins' as mx;
 
 /*-------- NAV --------*/
 .navbar {
@@ -6,166 +10,168 @@
   width: 100%;
   height: 4rem;
   z-index: 10;
-  display: flex;
-  align-items: center;
-  background-color: vars.$dark;
+  @include mx.apply-flex-container(row, center, center);
+  @include mx.apply-color(background-color, neutral, 'dark-400');
+  @include mx.apply-color(color, utility, white);
 
   a {
     text-decoration: none;
   }
 
-  span {
-    display: none;
+  .nav-separator {
+    display: none; // Oculto por defecto en móvil
+    @include mx.apply-color(color, neutral, 'dark-100');
   }
 
   .container-nav {
-    display: flex;
-    justify-content: space-between;
+    @include mx.apply-flex-container(row, space-between, center);
     width: 92%;
     position: relative;
-    text-align: center;
     margin: 0 auto;
+
+    // Ajuste Responsivo Semántico para el contenedor principal
+    @include mx.apply-media-breakpoint(xl) {
+      max-width: 1200px;
+      width: 96%;
+    }
+  }
+
+  .navbar-actions {
+    @include mx.apply-flex-container(row, center, center, fn.get-spacing(md));
 
     label {
       select {
         cursor: pointer;
-        background-color: vars.$dark;
+        padding: 0;
+        @include mx.apply-border-radius(0.25rem);
+        @include mx.apply-color(background-color, neutral, 'dark-400');
+        @include mx.apply-color(color, utility, white);
+        @include mx.apply-transition(color 0.2s);
+
         &:hover {
-          color: vars.$primary;
+          @include mx.apply-color(color, primary, default);
+        }
+      }
+    }
+  }
+
+  .navbar-brand {
+    @include mx.apply-color(color, utility, white);
+    font-size: 2rem;
+    font-weight: 600;
+    @include mx.apply-transition(color 0.2s);
+
+    &:hover {
+      @include mx.apply-color(color, primary, default);
+    }
+  }
+
+  button.navbar-toggler {
+    z-index: 2;
+    width: fit-content;
+    aspect-ratio: 1;
+    background: transparent url(../../img/icon-hamburger.svg) no-repeat center;
+    border: 0;
+    cursor: pointer;
+
+    &:hover {
+      outline: 1px solid fn.get-color(primary, default);
+    }
+
+    &[aria-expanded='true'] {
+      background-image: url(../../img/icon-close.svg);
+    }
+  }
+
+  .navbar-collapse {
+    position: fixed;
+    z-index: 1;
+    inset: 0;
+    margin: 0;
+    list-style: none;
+    @include mx.apply-flex-container(column, space-around, center, fn.get-spacing(md));
+    transform: translateX(100%);
+    @include mx.apply-transition(transform, 500ms);
+    @include mx.apply-color(background-color, neutral, 'dark-400');
+
+    .navbar-brand {
+      font-size: 1.75rem;
+    }
+
+    .navbar-nav {
+      list-style: none;
+      padding: 0 3rem;
+      @include mx.apply-flex-container(column, center, center, fn.get-spacing(md));
+
+      .nav-link {
+        position: relative;
+        display: block;
+        padding: 0.75rem 1.5rem;
+        @include mx.apply-color(color, utility, white);
+        @include mx.apply-transition(all, 0.3s);
+
+        &:hover,
+        &.active {
+          @include mx.apply-color-opacity(background-color, 0.1, primary, default);
+          @include mx.apply-color(color, primary, default);
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 1.5px;
+          @include mx.apply-color(background-color, primary, default);
+          transform: scaleY(1.5);
+          transform-origin: bottom;
+          @include mx.apply-transition(width, 0.3s);
+        }
+
+        &:hover::before,
+        &.active::before {
+          width: 100%;
         }
       }
     }
 
-    .navbar-brand {
-      color: vars.$white;
-      font-size: 2rem;
-      font-weight: 600;
-      &:hover {
-        color: vars.$primary;
-      }
+    &[data-visible='true'] {
+      transform: translateX(0);
+    }
+  }
+
+  /*-------- VISTA DESKTOP UNIFICADA (Ecosistema de Mixins) --------*/
+  @include mx.apply-media-breakpoint(xl) {
+    .nav-separator {
+      display: block; // Se muestra la barra decorativa en pantallas grandes
     }
 
     button.navbar-toggler {
-      z-index: 2;
-      width: fit-content;
-      aspect-ratio: 1;
-      background: transparent url(../../img/icon-hamburger.svg) no-repeat center;
-      border: 0;
-      cursor: pointer;
-      border: 1px solid transparent;
-
-      &:hover {
-        outline: 1px solid vars.$primary;
-      }
-
-      &[aria-expanded='true'] {
-        background-image: url(../../img/icon-close.svg);
-      }
+      display: none; // Apagamos el menú hamburguesa
     }
 
     .navbar-collapse {
-      position: fixed;
-      z-index: 1;
-      inset: 0;
-      margin: 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      text-align: center;
-      transform: translateX(100%);
-      transition: transform 500ms ease-in-out;
-      background-color: hsla(vars.$dark-hue, vars.$dark-saturation, vars.$dark-lightness, 1);
-      color: hsla(vars.$white-hue, vars.$white-saturation, vars.$white-lightness, 1);
+      position: static;
+      // Sobrescribimos el flujo vertical de móvil a fila horizontal limpia usando mixins
+      @include mx.apply-flex-container(row, flex-end, center, fn.get-spacing(md));
+      transform: none;
+      background-color: transparent;
 
-      .navbar-nav {
-        padding: 0 3rem;
-
-        .nav-link {
-          position: relative;
-          display: block;
-          padding: 1.3rem;
-          color: vars.$white;
-
-          &:hover,
-          &.active {
-            background-color: hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 0.2);
-          }
-
-          &.active {
-            color: vars.$primary;
-          }
-
-          &::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1.5px;
-            background-color: vars.$primary;
-            transform: scaleY(1.5);
-            transform-origin: bottom;
-            transition: width 0.3s ease-in-out;
-          }
-
-          &:hover::before,
-          &.active::before {
-            width: 100%;
-          }
-        }
-      }
-
-      &[data-visible='true'] {
-        transform: translateX(0);
-      }
-    }
-
-    @media (min-width: 1200px) {
-      max-width: 1200px;
-      width: 96%;
-
-      span {
-        display: block;
-      }
-
-      .navbar-toggler {
+      .navbar-brand {
         display: none;
       }
 
-      .navbar-collapse {
-        position: static;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        transform: none;
-        color: inherit;
+      .navbar-nav {
+        @include mx.apply-flex-container(row, center, center, fn.get-spacing(md));
+        padding: 0;
 
-        .navbar-brand {
-          display: none;
-        }
-
-        .navbar-nav {
-          display: flex;
-          flex-direction: row;
+        .nav-link {
           padding: 0;
 
-          .nav-link {
-            padding: 0;
-
-            &:hover,
-            &.active {
-              background-color: unset;
-            }
-
-            &.active {
-              color: hsla(vars.$primary-hue, vars.$primary-saturation, vars.$primary-lightness, 1);
-            }
-
-            &:hover {
-              background-color: unset;
-            }
+          &:hover,
+          &.active {
+            background-color: transparent; // Evitamos que herede el fondo opaco de la variante móvil
           }
         }
       }

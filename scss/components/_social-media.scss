@@ -1,0 +1,42 @@
+// scss/components/_social-media.scss
+
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+@use '../abstracts/mixins' as mx;
+
+/*-------- Social styles --------*/
+.social-media {
+  @include mx.apply-flex-container(row, center, center, 1.5rem);
+
+  a {
+    @include mx.apply-flex-container;
+
+    svg {
+      @include mx.apply-color(fill, neutral, 'dark-400');
+      width: 1.2rem;
+      @include mx.apply-transition(fill, 0.2s);
+
+      &:hover {
+        @include mx.apply-color(fill, primary, default);
+      }
+    }
+  }
+}
+
+.social-list {
+  @include mx.apply-flex-container(row, center, center, fn.get-spacing(md)); // Usa tu token de 1rem
+
+  a {
+    @include mx.apply-flex-container(row, center, center, 0);
+
+    svg {
+      @include mx.apply-color(fill, utility, white);
+      width: 1rem;
+      @include mx.apply-transition(fill, 0.2s);
+
+      &:hover {
+        @include mx.apply-color(fill, primary, default);
+      }
+    }
+  }
+}

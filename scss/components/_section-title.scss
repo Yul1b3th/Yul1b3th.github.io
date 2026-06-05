@@ -1,0 +1,55 @@
+// scss/components/_section-title.scss
+
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+@use '../abstracts/mixins' as mx;
+
+.section-title {
+  text-align: center;
+  padding: 1.875rem 0;
+  position: relative;
+
+  h2 {
+    font-size: fn.get-font-size('4xl'); // Mapea dinámicamente tus 2rem
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    @include mx.apply-color(color, neutral, 'dark-400'); // Tu color oscuro principal
+    position: relative;
+    z-index: 2;
+  }
+
+  // El texto decorativo que va de fondo
+  span {
+    position: absolute;
+    top: 1.875rem;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    font-weight: 700;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    line-height: 0;
+
+    // Aplicamos opacidad del 10% de forma segura al color oscuro
+    @include mx.apply-color-opacity(color, 0.1, neutral, 'dark-400');
+
+    @media (min-width: fn.get-breakpoint(lg)) {
+      // Mapea tus 992px del sistema
+      font-size: 3.25rem;
+    }
+  }
+
+  // --- Variante para fondos oscuros (Modificador BEM limpio) ---
+  &--dark {
+    h2 {
+      @include mx.apply-color(color, utility, white);
+    }
+
+    span {
+      // Aplicamos opacidad del 10% sobre tu fondo claro/gris
+      @include mx.apply-color-opacity(color, 0.1, utility, white);
+    }
+  }
+}

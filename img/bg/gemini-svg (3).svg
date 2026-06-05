@@ -1,0 +1,83 @@
+<svg width="100%" height="100%" viewBox="0 0 1440 900" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Landing Page Light Section Background</title>
+    
+    <defs>
+        <!-- Degradado lineal muy suave y abstracto para las formas orgánicas -->
+        <linearGradient id="lightLinearGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#7FE6C0; stop-opacity:0.06" />
+            <stop offset="40%" style="stop-color:#E2E8F0; stop-opacity:0.4" />
+            <stop offset="100%" style="stop-color:#F1F5F9; stop-opacity:0.8" />
+        </linearGradient>
+
+        <!-- Degradado circular para dar volumen sin saturar -->
+        <radialGradient id="lightRadial" cx="80%" cy="20%" r="60%">
+            <stop offset="0%" style="stop-color:#7FE6C0; stop-opacity:0.08" />
+            <stop offset="100%" style="stop-color:#FFFFFF; stop-opacity:0" />
+        </radialGradient>
+    </defs>
+
+    <!-- 1. Base del Fondo Claro (Gris purificado muy suave) -->
+    <rect width="1440" height="900" fill="#F8FAFC"  fill-opacity="0.05"/>
+
+    <!-- 2. Gran resplandor de color menta súper sutil en la esquina superior derecha -->
+    <circle cx="1200" cy="150" r="450" fill="url(#lightRadial)" />
+
+    <!-- 3. Formas Orgánicas Onduladas (Estilo capas fluidas de tu referencia) -->
+    <!-- Curva inferior izquierda -->
+    <path d="M0,600 C150,650 350,550 500,680 C620,780 700,900 800,900 L0,900 Z" fill="url(#lightLinearGradient)" opacity="0.6" />
+    
+    <!-- Curva flotante superior izquierda -->
+    <path d="M0,0 L350,0 C250,120 120,180 0,80 Z" fill="#7FE6C0" fill-opacity="0.03" />
+
+    <!-- 4. Cuadrícula de puntos técnica (Gris suave, casi imperceptible) -->
+    <g id="lightDotGrid" transform="translate(80, 250)">
+        <circle cx="0" cy="0" r="1.5" fill="#1C1C1C" fill-opacity="0.05" />
+        <circle cx="25" cy="0" r="1.5" fill="#1C1C1C" fill-opacity="0.05" />
+        <circle cx="50" cy="0" r="1.5" fill="#1C1C1C" fill-opacity="0.05" />
+        <circle cx="75" cy="0" r="1.5" fill="#1C1C1C" fill-opacity="0.05" />
+        <circle cx="0" cy="25" r="1.5" fill="#1C1C1C" fill-opacity="0.05" />
+        <circle cx="25" cy="25" r="1.5" fill="#1C1C1C" fill-opacity="0.05" />
+        <circle cx="50" cy="25" r="1.5" fill="#1C1C1C" fill-opacity="0.05" />
+        <circle cx="75" cy="25" r="1.5" fill="#1C1C1C" fill-opacity="0.05" />
+        <circle cx="0" cy="50" r="1.5" fill="#1C1C1C" fill-opacity="0.05" />
+        <circle cx="25" cy="50" r="1.5" fill="#1C1C1C" fill-opacity="0.05" />
+        <circle cx="50" cy="50" r="1.5" fill="#1C1C1C" fill-opacity="0.05" />
+        <circle cx="75" cy="50" r="1.5" fill="#1C1C1C" fill-opacity="0.05" />
+    </g>
+
+    <!-- 5. Elementos Abstractos de Desarrollo (Líneas y tecnología) -->
+    <!-- Líneas de estructura finas -->
+    <line x1="0" y1="150" x2="1440" y2="150" stroke="#1C1C1C" stroke-opacity="0.02" stroke-width="1" />
+    <line x1="1100" y1="0" x2="1100" y2="900" stroke="#1C1C1C" stroke-opacity="0.02" stroke-width="1" />
+
+    <!-- Bloque abstracto simulando una ventana de código limpia en el lateral derecho -->
+    <g transform="translate(1050, 380) rotate(-2)">
+        <!-- Ventana principal con sombra muy sutil blanca/gris -->
+        <rect x="0" y="0" width="320" height="200" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" />
+        <!-- Botones de la ventana -->
+        <circle cx="25" cy="25" r="5" fill="#1C1C1C" fill-opacity="0.1" />
+        <circle cx="40" cy="25" r="5" fill="#1C1C1C" fill-opacity="0.1" />
+        <circle cx="55" cy="25" r="5" fill="#1C1C1C" fill-opacity="0.1" />
+        <!-- Líneas simulando UI de forma minimalista -->
+        <rect x="25" y="60" width="120" height="12" rx="4" fill="#7FE6C0" fill-opacity="0.2" />
+        <rect x="25" y="85" width="220" height="8" rx="4" fill="#1C1C1C" fill-opacity="0.05" />
+        <rect x="25" y="105" width="180" height="8" rx="4" fill="#1C1C1C" fill-opacity="0.05" />
+        <rect x="25" y="125" width="240" height="8" rx="4" fill="#1C1C1C" fill-opacity="0.05" />
+        <!-- Gráfico de barras abstracto -->
+        <rect x="25" y="155" width="40" height="20" rx="4" fill="#7FE6C0" fill-opacity="0.15" />
+        <rect x="75" y="150" width="50" height="25" rx="4" fill="#7FE6C0" fill-opacity="0.3" />
+    </g>
+
+    <!-- Pequeños acentos geométricos flotantes (Círculo con trazo discontinuo) -->
+    <circle cx="550" cy="200" r="30" fill="none" stroke="#1C1C1C" stroke-opacity="0.05" stroke-width="1.5" stroke-dasharray="4 4" />
+    
+    <!-- Signos "Plus" discretos -->
+    <g transform="translate(900, 180)" stroke="#1C1C1C" stroke-opacity="0.1" stroke-width="1.5">
+        <line x1="0" y1="-6" x2="0" y2="6" />
+        <line x1="-6" y1="0" x2="6" y2="0" />
+    </g>
+    <g transform="translate(200, 780)" stroke="#7FE6C0" stroke-opacity="0.3" stroke-width="2">
+        <line x1="0" y1="-8" x2="0" y2="8" />
+        <line x1="-8" y1="0" x2="8" y2="0" />
+    </g>
+</svg>

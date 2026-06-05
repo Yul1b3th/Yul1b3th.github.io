@@ -1,0 +1,72 @@
+<svg width="100%" height="100%" viewBox="0 0 1440 900" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Landing Page Light Section - Fluid Waves &amp; Matrix Dots (Optimized Contrast)</title>
+    
+    <defs>
+        <linearGradient id="lightLinearGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#7FE6C0; stop-opacity:0.08" />
+            <stop offset="50%" style="stop-color:#E2E8F0; stop-opacity:0.3" />
+            <stop offset="100%" style="stop-color:#F1F5F9; stop-opacity:0.6" />
+        </linearGradient>
+
+        <linearGradient id="waveGradientSecondary" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#7FE6C0; stop-opacity:0.04" />
+            <stop offset="100%" style="stop-color:#E2E8F0; stop-opacity:0.1" />
+        </linearGradient>
+
+        <radialGradient id="lightRadial" cx="85%" cy="20%" r="60%">
+            <stop offset="0%" style="stop-color:#7FE6C0; stop-opacity:0.12" />
+            <stop offset="100%" style="stop-color:#FFFFFF; stop-opacity:0" />
+        </radialGradient>
+    </defs>
+
+    <rect width="1440" height="900" fill="#F8FAFC" fill-opacity="1" />
+
+    <circle cx="1200" cy="150" r="450" fill="url(#lightRadial)" />
+
+    <g id="matrixCurvedDots">
+        <g fill="#1C1C1C" fill-opacity="0.06">
+            <circle cx="100" cy="180" r="1.5" /><circle cx="140" cy="185" r="1.5" /><circle cx="180" cy="195" r="1.5" /><circle cx="220" cy="210" r="1.5" /><circle cx="260" cy="230" r="1.5" /><circle cx="300" cy="255" r="1.5" /><circle cx="340" cy="285" r="1.5" /><circle cx="380" cy="320" r="1.5" />
+            <circle cx="100" cy="205" r="1.5" /><circle cx="140" cy="210" r="1.5" /><circle cx="180" cy="220" r="1.5" /><circle cx="220" cy="235" r="1.5" /><circle cx="260" cy="255" r="1.5" /><circle cx="300" r="1.5" cy="280" /><circle cx="340" cy="310" r="1.5" /><circle cx="380" cy="345" r="1.5" />
+            <circle cx="100" cy="230" r="1.5" /><circle cx="140" cy="235" r="1.5" /><circle cx="180" cy="245" r="1.5" /><circle cx="220" cy="260" r="1.5" /><circle cx="260" cy="280" r="1.5" /><circle cx="300" cy="305" r="1.5" /><circle cx="340" cy="335" r="1.5" /><circle cx="380" cy="370" r="1.5" />
+            <circle cx="100" cy="255" r="1.5" /><circle cx="140" cy="260" r="1.5" /><circle cx="180" cy="270" r="1.5" /><circle cx="220" cy="285" r="1.5" /><circle cx="260" cy="305" r="1.5" /><circle cx="300" cy="330" r="1.5" /><circle cx="340" cy="360" r="1.5" /><circle cx="380" cy="395" r="1.5" />
+        </g>
+        
+        <g fill="#B6CDDC" fill-opacity="0" transform="translate(750, 200)">
+            <circle cx="200" cy="150" r="2" /><circle cx="235" cy="130" r="2" /><circle cx="270" cy="115" r="2" /><circle cx="305" cy="105" r="2" /><circle cx="340" cy="100" r="2" /><circle cx="375" cy="100" r="2" /><circle cx="410" cy="105" r="2" />
+            <circle cx="200" cy="175" r="2" /><circle cx="235" cy="155" r="2" /><circle cx="270" cy="140" r="2" /><circle cx="305" cy="130" r="2" /><circle cx="340" cy="125" r="2" /><circle cx="375" cy="125" r="2" /><circle cx="410" cy="130" r="2" />
+            <circle cx="200" cy="200" r="2" /><circle cx="235" cy="180" r="2" /><circle cx="270" cy="165" r="2" /><circle cx="305" cy="155" r="2" /><circle cx="340" cy="150" r="2" /><circle cx="375" cy="150" r="2" /><circle cx="410" cy="155" r="2" />
+            <circle cx="200" cy="225" r="2" /><circle cx="235" cy="205" r="2" /><circle cx="270" cy="190" r="2" /><circle cx="305" cy="180" r="2" /><circle cx="340" cy="175" r="2" /><circle cx="375" cy="175" r="2" /><circle cx="410" cy="180" r="2" />
+            <circle cx="200" cy="250" r="2" /><circle cx="235" cy="230" r="2" /><circle cx="270" cy="215" r="2" /><circle cx="305" cy="205" r="2" /><circle cx="340" cy="200" r="2" /><circle cx="375" cy="200" r="2" /><circle cx="410" cy="205" r="2" />
+        </g>
+    </g>
+
+    <path d="M0,550 C200,580 350,500 550,650 C700,760 750,900 900,900 L0,900 Z" fill="url(#lightLinearGradient)" opacity="0.5" />
+    <path d="M0,650 C150,680 280,590 420,720 C530,810 600,900 750,900 L0,900 Z" fill="url(#waveGradientSecondary)" opacity="0.7" />
+    <path d="M1440,300 C1350,420 1200,500 1150,650 C1100,800 1250,850 1440,900 Z" fill="url(#lightLinearGradient)" opacity="0.4" />
+    <path d="M0,0 L450,0 C320,160 150,220 0,110 Z" fill="#7FE6C0" fill-opacity="0.04" />
+    <path d="M0,0 L350,0 C250,120 120,180 0,80 Z" fill="url(#waveGradientSecondary)" opacity="0.3" />
+
+    <g id="lightDotGrid" transform="translate(80, 450)">
+        <circle cx="0" cy="0" r="1.5" fill="#1C1C1C" fill-opacity="0.04" /><circle cx="25" cy="0" r="1.5" fill="#1C1C1C" fill-opacity="0.04" /><circle cx="50" cy="0" r="1.5" fill="#1C1C1C" fill-opacity="0.04" />
+        <circle cx="0" cy="25" r="1.5" fill="#1C1C1C" fill-opacity="0.04" /><circle cx="25" cy="25" r="1.5" fill="#1C1C1C" fill-opacity="0.04" /><circle cx="50" cy="25" r="1.5" fill="#1C1C1C" fill-opacity="0.04" />
+        <circle cx="0" cy="50" r="1.5" fill="#1C1C1C" fill-opacity="0.04" /><circle cx="25" cy="50" r="1.5" fill="#1C1C1C" fill-opacity="0.04" /><circle cx="50" cy="50" r="1.5" fill="#1C1C1C" fill-opacity="0.04" />
+    </g>
+
+    <line x1="0" y1="150" x2="1440" y2="150" stroke="#1C1C1C" stroke-opacity="0.02" stroke-width="1" />
+    <line x1="1100" y1="0" x2="1100" y2="900" stroke="#1C1C1C" stroke-opacity="0.015" stroke-width="1" />
+    <line x1="350" y1="0" x2="350" y2="900" stroke="#1C1C1C" stroke-opacity="0.01" stroke-width="1" />
+
+    <circle cx="1300" cy="250" r="70" fill="none" stroke="#b6cddc" stroke-opacity="0.45" stroke-width="1.2" />
+    <circle cx="1300" cy="250" r="40" fill="none" stroke="#b6cddc" stroke-opacity="0.3" stroke-width="1.2" />
+
+    <circle cx="600" cy="300" r="25" fill="none" stroke="#1C1C1C" stroke-opacity="0.04" stroke-width="1.2" stroke-dasharray="4 4" />
+    
+    <g transform="translate(950, 180)" stroke="#B6CDDC" stroke-opacity="0.5" stroke-width="1.5">
+        <line x1="0" y1="-6" x2="0" y2="6" />
+        <line x1="-6" y1="0" x2="6" y2="0" />
+    </g>
+    <g transform="translate(520, 720)" stroke="#7FE6C0" stroke-opacity="0.25" stroke-width="2">
+        <line x1="0" y1="-8" x2="0" y2="8" />
+        <line x1="-8" y1="0" x2="8" y2="0" />
+    </g>
+</svg>

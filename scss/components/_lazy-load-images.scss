@@ -1,13 +1,17 @@
-@use '../variables' as vars;
+// scss/components/_lazy-load-images.scss
+
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+@use '../abstracts/mixins' as mx;
 
 /*-------- LAZY LOAD IMAGES --------*/
 .bg-lazy-load-img,
 .lazy-load-img {
   opacity: 0;
-  transition: opacity 1000ms;
+  @include mx.apply-transition(opacity, 1000ms);
 
   &.fade-lazy-load-img {
-    opacity: 1.0 !important;
-    transition: opacity ease-out 1s;
+    opacity: 1 !important;
+    @include mx.apply-transition(opacity, 1s, ease-out);
   }
 }
