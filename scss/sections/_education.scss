@@ -1,0 +1,17 @@
+// scss/sections/_education.scss
+
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+@use '../abstracts/mixins' as mx;
+
+.education {
+  background-color: fn.get-background-color('deep-dark');
+  // background-color: #eff3ff;
+  background-image: url('../img/bg/gemini-svg (8).svg');
+  background-image: url('../img/bg/gemini-svg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
+}
