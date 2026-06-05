@@ -1,0 +1,27 @@
+// scss/components/_card.scss
+
+@use 'sass:color';
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+@use '../abstracts/mixins' as mx;
+
+.card {
+  @include mx.apply-color(background-color, neutral, 'gray-light');
+  @include mx.apply-border(1px, solid, neutral, 'light'); // Reemplaza #e0e0e0 por tu gris light
+  @include mx.apply-border-radius(8px);
+  @include mx.apply-box-shadow(0px 2px 12px rgba(0, 0, 0, 0.1));
+  @include mx.apply-spacing(margin-bottom, md); // Usa tu espaciado dinámico (2rem / ~20px)
+  @include mx.apply-transition(all, 0.3s, ease);
+  padding: 1.25rem;
+  width: 100%;
+
+  &:hover {
+    @include mx.apply-border(1px, solid, primary, default);
+
+    // Ajuste de sombra sutil y difuminada:
+    // 0px (X) 8px (Y) 24px (Blur) y el color con una opacidad baja (0.25)
+    @include mx.apply-box-shadow(
+      0px 8px 24px color.change(fn.get-color(primary, bright), $alpha: 0.25)
+    );
+  }
+}

@@ -1,0 +1,81 @@
+// abstracts/_functions.scss
+
+@use 'sass:map';
+@use 'sass:color';
+@use 'sass:meta';
+@use './variables' as *;
+
+// === Funciones genéricas ===
+
+// Obtiene un valor de cualquier mapa con verificación de clave
+@function get-map-value($map, $key) {
+  @if map.has-key($map, $key) {
+    @return map.get($map, $key);
+  } @else {
+    @error "La clave `#{$key}` no existe en el mapa proporcionado.";
+  }
+}
+
+// === Tipografía y Diseño ===
+// Obtiene una fuente por nombre
+@function get-font($font-name) {
+  @return get-map-value($fonts, $font-name);
+}
+
+// Obtiene un tamaño de fuente
+@function get-font-size($size-name) {
+  @return get-map-value($font-sizes, $size-name);
+}
+
+// Obtiene una altura de línea
+@function get-line-height($size-name) {
+  @return get-map-value($line-heights, $size-name);
+}
+
+// Obtiene un espaciado
+@function get-spacing($size-name) {
+  @return get-map-value($spacing, $size-name);
+}
+@function get-breakpoint($size-name) {
+  @return get-map-value($breakpoints, $size-name);
+}
+
+// === Funciones de colores ===
+// Obtiene un color por nombre
+@function get-color($color-name...) {
+  $color-map: $colors;
+
+  @each $name in $color-name {
+    @if map.has-key($color-map, $name) {
+      $color-map: map.get($color-map, $name);
+    } @else {
+      @error "La clave `#{$name}` no existe en el mapa de colores.";
+    }
+  }
+
+  @if meta.type-of($color-map) == 'map' {
+    @error "El valor `#{$color-name}` no resuelve en un color final.";
+  }
+
+  @return $color-map;
+}
+
+// Obtiene un color de fondo por nombre
+@function get-background-color($background-name...) {
+  $color-map: $backgrounds;
+
+  @each $name in $background-name {
+    @if map.has-key($color-map, $name) {
+      $color-map: map.get($color-map, $name);
+    } @else {
+      @error "La clave `#{$name}` no existe en el mapa de colores de fondo.";
+    }
+  }
+
+  @return $color-map;
+}
+
+// Obtiene un breakpoint
+@function get-breakpoint($size-name) {
+  @return get-map-value($breakpoints, $size-name);
+}

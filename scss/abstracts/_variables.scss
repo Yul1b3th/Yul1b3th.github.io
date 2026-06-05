@@ -1,0 +1,114 @@
+// abstracts/_variables.scss
+
+@use 'sass:map';
+
+// === Tipografías ===
+$fonts: (
+  primary: (
+    'BeVietnamPro',
+    'Arial, sans-serif',
+  ),
+  secondary: 'Arial, sans-serif',
+);
+
+// === Tamaños de fuente ===
+$font-sizes: (
+  xs: 0.75rem,
+  sm: 0.875rem,
+  base: 1rem,
+  lg: 1.125rem,
+  xl: 1.25rem,
+  '2xl': 1.5rem,
+  '3xl': 1.75rem,
+  '4xl': 2rem,
+  '5xl': 2.5rem,
+);
+
+// === Alturas de línea ===
+$line-heights: (
+  xs: 1,
+  sm: 1.25,
+  base: 1.5,
+  lg: 1.75,
+  xl: 2,
+);
+
+// === Espaciados ===
+$spacing: (
+  zero: 0,
+  xs: 0.25rem,
+  sm: 0.5rem,
+  md: 1rem,
+  lg: 2rem,
+  xl: 4rem,
+);
+
+// === Colores ===
+$colors: (
+  primary: (
+    default: #7fe6c0,
+    light: #a3e8d4,
+    dark: #0d4d3b,
+    bright: #3fdaa1,
+    link: #053426,
+  ),
+  secondary: (
+    default: #81dfdf,
+    light: #b3e8e9,
+    dark: #3a7d7e,
+  ),
+  tertiary: (
+    default: #eff5f5,
+  ),
+  status: (
+    success: #22c55e,
+    danger: #ef4444,
+    warning: #f59e0b,
+    info: #26549e,
+  ),
+  neutral: (
+    'dark-400': #0b132b,
+    'dark-300': #0f0f0f,
+    'dark-200': #1c1c1c,
+    dark: #212121,
+    'dark-100': #333333,
+    'gray-dark': #3f3f3f,
+    gray: #d1d1d1,
+    light: #e5e5e5,
+    'light-200': #e9ecef,
+    'light-300': #eff3ff,
+    'gray-light': #fbfbfb,
+  ),
+  utility: (
+    white: #ffffff,
+    black: #000000,
+    transparent: transparent,
+  ),
+);
+
+// === Mapas de colores expandidos ===
+$backgrounds: map.merge(
+  map.get($colors, neutral),
+  (
+    default: map.get(map.get($colors, neutral), 'gray-light'),
+    inverted: map.get(map.get($colors, neutral), 'dark-200'),
+    'deep-dark': map.get(map.get($colors, neutral), 'dark-400'),
+  )
+);
+
+// === Breakpoints ===
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1100px,
+);

@@ -1,0 +1,19 @@
+// scss/sections/_courses.scss
+
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+@use '../abstracts/mixins' as mx;
+
+.courses {
+  background-color: fn.get-background-color('deep-dark');
+  // background-color: #eff3ff;
+  background-image: url('../img/bg/gemini-svg (8).svg');
+  background-image: url('../img/bg/gemini-svg.svg');
+  background-color: #eff3ff;
+  background-image: url('../img/bg/gemini-svg (4).svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
+}

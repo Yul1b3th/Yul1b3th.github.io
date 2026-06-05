@@ -1,0 +1,41 @@
+// scss/utilities/_colors.scss
+
+@use 'sass:map';
+@use 'sass:color';
+@use 'sass:meta';
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+@mixin generate-color-classes($color-map, $prefix: '') {
+  @each $color-name, $color-value in $color-map {
+    // Nueva sintaxis estricta de Sass para evitar colisiones con CSS nativo:
+    $new-prefix: if(
+      sass($prefix == ''): $color-name; else: $prefix + '-' + $color-name,
+    );
+
+    @if meta.type-of($color-value) == 'map' {
+      @include generate-color-classes($color-value, $new-prefix);
+    } @else {
+      .text-#{$new-prefix} {
+        color: $color-value;
+      }
+
+      .bg-#{$new-prefix} {
+        background-color: $color-value;
+      }
+
+      .border-#{$new-prefix} {
+        border-color: $color-value;
+      }
+    }
+  }
+}
+
+body.light-mode {
+  @include generate-color-classes($colors);
+}
+
+body.dark-mode {
+  @include generate-color-classes($colors);
+}
