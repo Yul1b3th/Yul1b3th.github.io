@@ -44,7 +44,7 @@
   </head>
 
   <body>
-    <nav class="navbar text-white">
+    <nav class="navbar">
       <div class="container-nav">
         <a
           class="navbar-brand"
@@ -53,7 +53,8 @@
           data-translate="navbar-brand"
           >YR</a
         >
-        <div class="center gap-3">
+
+        <div class="navbar-actions">
           <label for="language-selector">
             <select
               id="language-selector"
@@ -63,7 +64,9 @@
               <option value="es">Es</option>
             </select>
           </label>
-          <span> | </span>
+
+          <span class="nav-separator"> | </span>
+
           <button
             id="btn-menu"
             class="navbar-toggler"
@@ -76,9 +79,10 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
+
           <div
             id="navbarNav"
-            class="navbar-collapse gap-3"
+            class="navbar-collapse"
             data-visible="false"
           >
             <a
@@ -87,7 +91,8 @@
               data-translate="navbar-brand"
               >Yulibeth Rivero</a
             >
-            <ul class="navbar-nav gap-3">
+
+            <ul class="navbar-nav">
               <li>
                 <a
                   class="nav-link"
@@ -152,7 +157,9 @@
                 >
               </li>
             </ul>
-            <span> | </span>
+
+            <span class="nav-separator"> | </span>
+
             <ul class="social-list">
               <li>
                 <a
@@ -224,10 +231,10 @@
       <!-- home -->
       <section
         id="home"
-        class="home section center bg-dark"
+        class="home"
         data-scroll-spy
       >
-        <div class="container center">
+        <div class="container">
           <div class="home-img">
             <img
               src="./img/yulibeth-rivero.webp"
@@ -239,22 +246,9 @@
 
           <div class="home-text">
             <div>
-              <h1
-                class="text-white mt-1"
-                data-translate="home-title"
-              >
-                Hola, soy Yulibeth!
-              </h1>
-              <h2
-                class="text-white"
-                data-translate="home-subtitle"
-              >
-                Front End Web Developer
-              </h2>
-              <p
-                class="text-white"
-                data-translate="home-description"
-              >
+              <h1 data-translate="home-title">Hola, soy Yulibeth!</h1>
+              <h2 data-translate="home-subtitle">Front End Web Developer</h2>
+              <p data-translate="home-description">
                 Desarrolladora Frontend en&nbsp;Angular con experiencia en proyectos dinámicos y
                 metodologías Agile, apasionada por el desarrollo web y motivada por las últimas
                 tendencias tecnológicas.
@@ -356,7 +350,7 @@
           </div>
 
           <!-- Section Content -->
-          <div class="section-content mb-2">
+          <div class="section-content mb-md">
             <p data-translate="about-me-description-1">
               Desde 2016, trabajo en el desarrollo web utilizando diversas tecnologías de diseño,
               frontend y backend. También, tengo experiencia trabajando en equipos que implementan
@@ -528,7 +522,7 @@
         data-scroll-spy
       >
         <div class="container">
-          <div class="section-title-dark">
+          <div class="section-title section-title--dark">
             <span
               aria-hidden="true"
               data-translate="projects-title"
@@ -862,7 +856,7 @@
                 class="year"
                 data-translate="experience-vip-year"
               >
-                Jun. 2019 - Dic. 2022
+                Mar. 2016 - May. 2019
               </p>
               <p>
                 <strong data-translate="experience-vip-company"
@@ -913,7 +907,7 @@
         data-scroll-spy
       >
         <div class="container">
-          <div class="section-title-dark">
+          <div class="section-title section-title--dark">
             <span data-translate="education-title">Formación</span>
             <h2 data-translate="education-title">Formación</h2>
           </div>
@@ -1123,7 +1117,7 @@
         data-scroll-spy
       >
         <div class="container">
-          <div class="section-title-dark">
+          <div class="section-title section-title--dark">
             <span
               aria-hidden="true"
               data-translate="contact-title"
@@ -1281,7 +1275,7 @@
               </label>
             </div>
 
-            <div class="contact-form-loader text-center none">
+            <div class="contact-form-loader text-center d-none">
               <img
                 src="./img/loader.svg"
                 alt="Enviando..."

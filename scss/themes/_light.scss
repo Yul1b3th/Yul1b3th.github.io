@@ -1,0 +1,57 @@
+@use "sass:map";
+@use "../abstracts/variables" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+body.light-mode {
+  @include apply-theme-colors(
+    (neutral, "gray-light"),
+    (neutral, "gray-dark"),
+    (neutral, dark),
+    (utility, white)
+  );
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include apply-color(color, neutral, "dark-200");
+  }
+
+  p,
+  small,
+  strong,
+  em,
+  blockquote,
+  a {
+    @include apply-color(color, neutral, "gray-dark");
+  }
+
+  blockquote {
+    border-left: 4px solid get-color(primary, default);
+    background-color: get-background-color(default);
+  }
+
+  a {
+    @include apply-color(color, primary, dark);
+    @include apply-transition(color, 0.3s, ease-in-out);
+    &:hover {
+      @include apply-color(color, secondary, dark);
+    }
+  }
+
+  code,
+  pre {
+    @include apply-color(color, neutral, "gray-dark");
+    @include apply-color(background-color, neutral, "light-200");
+    // background-color: red;
+    @include apply-theme-colors(
+      (neutral, "light-200"),
+      (neutral, "gray-dark"),
+      (neutral, "dark-100"),
+      (utility, white)
+    );
+  }
+}

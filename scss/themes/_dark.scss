@@ -1,0 +1,34 @@
+@use "sass:map";
+@use "../abstracts/variables" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+body.dark-mode {
+  @include apply-theme-colors(
+    (neutral, "gray-light"),
+    (neutral, "gray-dark"),
+    (neutral, dark),
+    (utility, white)
+  );
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  small,
+  strong,
+  em,
+  blockquote,
+  a {
+    @include apply-color(color, neutral, "dark-300");
+    @include apply-color(color, utility, white);
+  }
+
+  code,
+  pre {
+    @include apply-color(background-color, neutral, "dark-100");
+  }
+}

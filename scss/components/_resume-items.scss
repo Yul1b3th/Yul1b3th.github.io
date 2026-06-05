@@ -1,0 +1,50 @@
+// scss/components/_resume-items.scss
+
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+@use '../abstracts/mixins' as mx;
+
+.resume-items {
+  @include mx.apply-flex-container(
+    column,
+    center,
+    center,
+    fn.get-spacing(lg)
+  ); // Flexbox con tu gap dinámico
+  width: 100%;
+
+  .card {
+    width: 100%;
+  }
+
+  ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.year {
+  @include mx.apply-color(
+    background-color,
+    neutral,
+    'light-300'
+  ); // Tu nuevo azul/gris claro muy limpio
+  padding: 0.3125rem 0.9375rem;
+  display: inline-block;
+  font-weight: 600;
+  @include mx.apply-spacing(margin-bottom, sm);
+}
+
+/*-------- Responsive Breakpoints --------*/
+@media (min-width: fn.get-breakpoint(lg)) {
+  // Conectado a tus 992px globales
+  .resume-items {
+    .card {
+      width: 80%;
+    }
+  }
+}

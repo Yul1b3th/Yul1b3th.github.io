@@ -24,7 +24,7 @@ export function contactForm() {
       console.table([...fd.entries()]); // tabla
       console.log(Object.fromEntries(fd)); // objeto clave/valor
 
-      $loader.classList.remove('none');
+      $loader.classList.remove('d-none');
 
       fetch('https://formsubmit.co/ajax/yulibeth.rivero@gmail.com', {
         method: 'POST',
@@ -42,7 +42,7 @@ export function contactForm() {
           $response.querySelector('h3').innerHTML = `Error ${err.status}: ${message}`;
         })
         .finally(() => {
-          $loader.classList.add('none');
+          $loader.classList.add('d-none');
           setTimeout(() => {
             location.hash = '#close';
           }, 3000);

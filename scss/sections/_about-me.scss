@@ -1,15 +1,36 @@
-@use '../variables' as vars;
+// scss/sections/_about-me.scss
+
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+@use '../abstracts/mixins' as mx;
 
 .about-me {
+  background-color: fn.get-background-color('deep-dark');
+  background-color: #eff3ff;
+  background-image: url('../img/bg/gemini-svg (4).svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
   .container {
+    h3 {
+      text-align: center;
+    }
     .tech-skills {
       .tech-skills-card {
-        display: flex;
-        gap: 20px;
-        justify-content: space-between;
+        @include mx.apply-flex-container(
+          $direction: row,
+          $justify: space-between,
+          $gap: fn.get-spacing(md)
+        );
         flex-wrap: wrap;
+        .card {
+          text-align: center;
+        }
 
-        @media (min-width: 992px) {
+        @media (min-width: fn.get-breakpoint(lg)) {
+          // Conectado a tus 992px globales
           flex-wrap: nowrap;
         }
       }
@@ -17,13 +38,15 @@
 
     .soft-skills {
       .soft-skills-items {
-        display: flex;
-        justify-content: space-evenly;
+        // Flexbox en columna por defecto para móviles
+        @include mx.apply-flex-container(column, space-evenly, center, fn.get-spacing(lg));
         flex-wrap: wrap;
-        flex-direction: column;
-        gap: 20px;
 
-        @media (min-width: 992px) {
+        div {
+          @include mx.apply-flex-container(column, center, center, fn.get-spacing(xs));
+        }
+
+        @media (min-width: fn.get-breakpoint(lg)) {
           flex-direction: row;
           gap: 0;
         }

@@ -1,0 +1,61 @@
+// base/_base.scss
+
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+/*-------- Estilos Base Globales --------*/
+html {
+  scroll-behavior: smooth;
+  font-size: 16px; // Base inmutable para el cálculo de los rem
+  line-height: get-line-height(base);
+
+  // Reemplazo e integración limpia del breakpoint móvil-first para escritorio - 1200px
+  @include apply-media-breakpoint(lg) {
+    font-size: 18px;
+  }
+}
+
+body {
+  @include apply-font-family(primary);
+  @include apply-color(color, neutral, 'gray-dark');
+  @include apply-color(background-color, utility, white);
+  min-height: 100vh;
+  overflow-x: hidden;
+  text-rendering: optimizeSpeed;
+}
+
+/*-------- Enlaces Globales --------*/
+a {
+  @include apply-color(color, primary, link);
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
+  @include apply-transition(color);
+
+  &:hover {
+    text-decoration: underline;
+    @include apply-color(color, primary, bright);
+  }
+
+  &.btn {
+    &:active,
+    &:visited {
+      color: inherit;
+    }
+  }
+}
+
+/*-------- Multimedia --------*/
+img,
+picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*-------- Accesibilidad de Foco --------*/
+*:focus-visible {
+  outline: 0.125rem solid get-color(primary, default);
+  outline-offset: 0.3125rem;
+}

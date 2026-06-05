@@ -1,14 +1,22 @@
-@use '../variables' as vars;
+// scss/components/_footer.scss
+
+@use '../abstracts/variables' as vars;
+@use '../abstracts/functions' as fn;
+@use '../abstracts/mixins' as mx;
 
 /*-------- FOOTER --------*/
 .footer {
-  background-color: vars.$dark;
-  color: vars.$white;
+  @include mx.apply-color(background-color, neutral, 'dark-400'); // Tu nuevo color oscuro principal
+  @include mx.apply-color(color, utility, white); // color: white;
+  @include mx.apply-spacing(padding, md); // padding: 1rem; (md equivale a 1rem en tu mapa)
+  text-align: center; // Centrado de texto global
+
   a {
-    color: vars.$white;
+    @include mx.apply-color(color, utility, white);
+    @include mx.apply-transition(color, 0.2s);
 
     &:hover {
-      color: vars.$primary;
+      @include mx.apply-color(color, primary, default);
     }
   }
 }

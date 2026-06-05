@@ -10,6 +10,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "sass": "^1.99.0"
-  }
+    "sass": "^1.100.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yul1b3th/Yul1b3th.github.io.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Yul1b3th/Yul1b3th.github.io/issues"
+  },
+  "homepage": "https://github.com/Yul1b3th/Yul1b3th.github.io#readme"
 }

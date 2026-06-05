@@ -1,5 +1,7 @@
-@use "sass:map";
-@use './variables' as vars;
+// layout/_containers.scss
+
+@use 'sass:map';
+@use '../abstracts/variables' as vars;
 
 .container {
   margin-left: auto;
