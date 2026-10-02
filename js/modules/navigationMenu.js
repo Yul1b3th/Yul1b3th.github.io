@@ -1,46 +1,42 @@
+// Menú móvil con bloqueo del scroll de la página mientras está abierto
+// Se cierra con Escape, al elegir un enlace o al pasar a escritorio
+
+const desktop = window.matchMedia('(min-width: 1200px)');
+
 export function navigationMenu() {
-  const body = document.querySelector('body');
   const nav = document.querySelector('.navbar-collapse');
   const navToggle = document.querySelector('.navbar-toggler');
   const navLinks = document.querySelectorAll('.nav-link');
-  const interactiveElements = nav.querySelectorAll('a, button, select');
+  const scrollRoots = [document.documentElement, document.body];
+  // Lo que queda tapado por el menú no se puede enfocar mientras está abierto
+  const covered = document.querySelectorAll('.container-nav > .navbar-brand, .skip-link, main, footer, .scroll-top-btn');
 
-  // Función para alternar la visibilidad del menú
-  const toggleMenu = () => {
-    const isVisible = nav.getAttribute("data-visible") === "true";
-    const newVisibility = !isVisible;
+  const isOpen = () => nav.getAttribute('data-visible') === 'true';
 
-    if (newVisibility) {
-      body.classList.add('overflow-hidden');
-    } else {
-      body.classList.remove('overflow-hidden');
-    }
+  const setOpen = (open, { returnFocus = false } = {}) => {
+    nav.setAttribute('data-visible', String(open));
+    navToggle.setAttribute('aria-expanded', String(open));
+    scrollRoots.forEach((el) => el.classList.toggle('overflow-hidden', open));
+    covered.forEach((el) => (el.inert = open));
+    if (open) nav.querySelector('a')?.focus();
+    if (returnFocus) navToggle.focus();
+  };
 
-    nav.setAttribute("data-visible", newVisibility);
-    navToggle.setAttribute("aria-expanded", newVisibility);
+  navToggle.addEventListener('click', () => setOpen(!isOpen()));
 
-    // Establecer el tabindex de los elementos interactivos solo en dispositivos móviles
-    if (window.innerWidth < 992) {
-      const tabindexValue = newVisibility ? '0' : '-1';
-      interactiveElements.forEach(el => el.setAttribute('tabindex', tabindexValue));
-    }
-  }
+  navLinks.forEach((link) =>
+    link.addEventListener('click', (event) => {
+      navLinks.forEach((l) => l.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+      if (!desktop.matches) setOpen(false);
+    }),
+  );
 
-  // Función para manejar el click en un enlace del menú
-  const handleLinkClick = (event) => {
-    navLinks.forEach(link => link.classList.remove('active'));
-    event.target.classList.add('active');
-    if (window.innerWidth < 992) { // Solo alternar el menú en dispositivos móviles
-      toggleMenu();
-    }
-  }
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && isOpen()) setOpen(false, { returnFocus: true });
+  });
 
-  // Añade los event listeners
-  navToggle.addEventListener('click', toggleMenu);
-  navLinks.forEach(link => link.addEventListener('click', handleLinkClick));
-
-  // Inicialmente, deshabilita los enlaces del menú solo en dispositivos móviles
-  if (window.innerWidth < 992) {
-    interactiveElements.forEach(link => link.setAttribute('tabindex', '-1'));
-  }
+  desktop.addEventListener('change', (event) => {
+    if (event.matches && isOpen()) setOpen(false);
+  });
 }

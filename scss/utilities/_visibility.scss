@@ -36,6 +36,11 @@
   display: none !important;
 }
 
+// Bloquea el scroll de la página, por ejemplo con el menú móvil abierto
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
 // Oculto a la vista pero disponible para lectores de pantalla
 .visually-hidden {
   position: absolute !important;
