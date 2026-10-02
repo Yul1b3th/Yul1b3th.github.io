@@ -30,12 +30,12 @@
     @include mx.apply-flex-container(row, center, center, 0);
 
     svg {
-      @include mx.apply-color(fill, text-inverse);
+      @include mx.apply-color(fill, text-on-emphasis);
       width: 1rem;
       @include mx.apply-transition(fill, 0.2s);
 
       &:hover {
-        @include mx.apply-color(fill, link-inverse-hover);
+        @include mx.apply-color(fill, link-emphasis-hover);
       }
     }
   }

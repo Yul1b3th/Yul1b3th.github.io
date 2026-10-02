@@ -6,17 +6,17 @@
 
 /*-------- FOOTER --------*/
 .footer {
-  @include mx.apply-color(background-color, bg-inverse); // Tu nuevo color oscuro principal
-  @include mx.apply-color(color, text-inverse); // color: white;
+  @include mx.apply-color(background-color, bg-emphasis); // Tu nuevo color oscuro principal
+  @include mx.apply-color(color, text-on-emphasis); // color: white;
   @include mx.apply-spacing(padding, md); // padding: 1rem; (md equivale a 1rem en tu mapa)
   text-align: center; // Centrado de texto global
 
   a {
-    @include mx.apply-color(color, text-inverse);
+    @include mx.apply-color(color, text-on-emphasis);
     @include mx.apply-transition(color, 0.2s);
 
     &:hover {
-      @include mx.apply-color(color, link-inverse-hover);
+      @include mx.apply-color(color, link-emphasis-hover);
     }
   }
 }
