@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" data-translate="meta-description" content="Currículum de Yulibeth Rivero, Frontend Developer en Angular con experiencia en entornos Agile. Aplicaciones escalables, robustas y accesibles con principios de UX.">
     <title>Yulibeth Rivero</title>
-    <link rel="shortcut icon" href="img/favicons/yulibeth-rivero.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="img/favicons/yulibeth-rivero.png">
+    <link rel="icon" href="img/favicons/yulibeth-rivero.ico" sizes="any">
+    <link rel="icon" href="img/favicons/yulibeth-rivero.png" type="image/png">
     <script>
       // Aplica el tema guardado antes de pintar para que no parpadee
       try {
@@ -21,12 +21,13 @@
     <script type="module" src="./js/main.min.js" defer></script>
   </head>
   <body>
+    <a class="skip-link" href="#main" data-translate="skip-link">Saltar al contenido</a>
     <nav class="navbar">
       <div class="container-nav">
-        <a class="navbar-brand" href="#" onclick="event.preventDefault()" data-translate="navbar-brand">YR</a>
+        <a class="navbar-brand" href="#home" data-translate="navbar-brand">YR</a>
         <div class="navbar-actions">
           <div id="navbarNav" class="navbar-collapse" data-visible="false">
-            <a class="navbar-brand" href="#" data-translate="navbar-brand">YR</a>
+            <a class="navbar-brand" href="#home" data-translate="navbar-brand">YR</a>
             <ul class="navbar-nav">
               <li><a class="nav-link" href="#home" data-scroll-spy data-translate="home">Inicio</a></li>
               <li><a class="nav-link" href="#about-me" data-scroll-spy data-translate="about-me">Sobre Mí</a></li>
@@ -98,7 +99,7 @@
         </div>
       </div>
     </nav>
-    <main>
+    <main id="main" tabindex="-1">
 
       <!-- home -->
 
@@ -544,15 +545,16 @@
           </div>
           <form class="card contact-form">
             <div class="form-group">
-              <label for="name">
-                <input id="name" type="text" name="name" class="form-control" placeholder="Ingresa tu nombre *" title="Nombre sólo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" autocomplete="name" required data-translate="contact-name-placeholder contact-name-title">
-              </label>
+              <label class="visually-hidden" for="name" data-translate="contact-name-label">Nombre</label>
+              <input id="name" type="text" name="name" class="form-control" placeholder="Ingresa tu nombre *" title="Nombre sólo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" autocomplete="name" required data-translate="contact-name-placeholder contact-name-title">
             </div>
-            <input id="email" type="email" name="email" class="form-control" placeholder="Ingresa tu correo *" title="Email incorrecto" autocomplete="email" required data-translate="contact-email-placeholder contact-email-title2">
             <div class="form-group">
-              <label for="comments">
-                <textarea id="comments" name="comments" class="form-control" rows="5" placeholder="Déjame tus comentarios *" required data-translate="contact-comments-placeholder"></textarea>
-              </label>
+              <label class="visually-hidden" for="email" data-translate="contact-email-label">Correo electrónico</label>
+              <input id="email" type="email" name="email" class="form-control" placeholder="Ingresa tu correo *" title="Email incorrecto" autocomplete="email" required data-translate="contact-email-placeholder contact-email-title2">
+            </div>
+            <div class="form-group">
+              <label class="visually-hidden" for="comments" data-translate="contact-comments-label">Comentarios</label>
+              <textarea id="comments" name="comments" class="form-control" rows="5" placeholder="Déjame tus comentarios *" required data-translate="contact-comments-placeholder"></textarea>
             </div>
             <div class="contact-form-loader text-center d-none">
               <img src="./img/loader.svg" alt="Enviando..." data-translate="contact-loader-alt">
@@ -581,10 +583,6 @@
         <p>© <span id="year"></span> Yulibeth Rivero</p>
       </div>
     </footer>
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-
-    </script>
     <button class="scroll-top-btn hidden" type="button" aria-label="Volver arriba" data-translate="scroll-top-label"><svg class="scroll-top-btn__icon" aria-hidden="true"><use href="img/icons.svg#keyboard_control_key"></use></svg></button>
   </body>
 </html>

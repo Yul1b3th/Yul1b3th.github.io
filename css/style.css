@@ -2,45 +2,128 @@
 @font-face {
   font-family: "BeVietnamPro";
   font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("../assets/fonts/BeVietnamPro-Thin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "BeVietnamPro";
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url("../assets/fonts/BeVietnamPro-ThinItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "BeVietnamPro";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("../assets/fonts/BeVietnamPro-ExtraLight.woff2") format("woff2");
+}
+@font-face {
+  font-family: "BeVietnamPro";
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url("../assets/fonts/BeVietnamPro-ExtraLightItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "BeVietnamPro";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../assets/fonts/BeVietnamPro-Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "BeVietnamPro";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../assets/fonts/BeVietnamPro-LightItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "BeVietnamPro";
+  font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../../assets/fonts/BeVietnamPro-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/BeVietnamPro-Regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "BeVietnamPro";
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url("../../assets/fonts/BeVietnamPro-Italic.ttf") format("truetype");
+  src: url("../assets/fonts/BeVietnamPro-Italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "BeVietnamPro";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/BeVietnamPro-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "BeVietnamPro";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/BeVietnamPro-MediumItalic.woff2") format("woff2");
 }
 @font-face {
   font-family: "BeVietnamPro";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("../../assets/fonts/BeVietnamPro-SemiBold.ttf") format("truetype");
+  src: url("../assets/fonts/BeVietnamPro-SemiBold.woff2") format("woff2");
 }
 @font-face {
   font-family: "BeVietnamPro";
-  font-style: normal;
   font-style: italic;
   font-weight: 600;
   font-display: swap;
-  src: url("../../assets/fonts/BeVietnamPro-SemiBoldItalic.ttf") format("truetype");
+  src: url("../assets/fonts/BeVietnamPro-SemiBoldItalic.woff2") format("woff2");
 }
 @font-face {
   font-family: "BeVietnamPro";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("../../assets/fonts/BeVietnamPro-Bold.ttf") format("truetype");
+  src: url("../assets/fonts/BeVietnamPro-Bold.woff2") format("woff2");
 }
 @font-face {
   font-family: "BeVietnamPro";
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src: url("../../assets/fonts/BeVietnamPro-BoldItalic.ttf") format("truetype");
+  src: url("../assets/fonts/BeVietnamPro-BoldItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "BeVietnamPro";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../assets/fonts/BeVietnamPro-ExtraBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "BeVietnamPro";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../assets/fonts/BeVietnamPro-ExtraBoldItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "BeVietnamPro";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../assets/fonts/BeVietnamPro-Black.woff2") format("woff2");
+}
+@font-face {
+  font-family: "BeVietnamPro";
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../assets/fonts/BeVietnamPro-BlackItalic.woff2") format("woff2");
 }
 /* Archivo generado con npm run build:tokens. No editar a mano */
 :root {
@@ -699,6 +782,37 @@ picture {
 *:focus-visible {
   outline: 0.125rem solid var(--color-border-focus);
   outline-offset: 0.3125rem;
+}
+
+/*-------- Enlace para saltar al contenido --------*/
+.skip-link {
+  --color-border-focus: var(--color-border-focus-emphasis);
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-bg-brand);
+  color: var(--color-text-on-brand);
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+.skip-link:focus {
+  transform: none;
+}
+[data-theme=hc] .skip-link {
+  --color-border-focus: var(--color-text-on-emphasis);
+}
+@media (prefers-contrast: more) {
+  :root:not([data-theme]) .skip-link {
+    --color-border-focus: var(--color-text-on-emphasis);
+  }
+}
+
+main:focus {
+  outline: none;
 }
 
 /*-------- Separación de secciones en modo oscuro --------*/
@@ -1852,18 +1966,6 @@ button.btn:active {
   height: 1.75rem;
 }
 
-/*-------- LAZY LOAD IMAGES --------*/
-.bg-lazy-load-img,
-.lazy-load-img {
-  opacity: 0;
-  transition: opacity 1000ms ease-in-out;
-}
-.bg-lazy-load-img.fade-lazy-load-img,
-.lazy-load-img.fade-lazy-load-img {
-  opacity: 1 !important;
-  transition: opacity 1s ease-out;
-}
-
 /*-------- FOOTER --------*/
 .footer {
   background-color: var(--color-bg-emphasis);
@@ -2580,6 +2682,18 @@ button.btn:active {
 
 .d-none {
   display: none !important;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 .img-responsive {
