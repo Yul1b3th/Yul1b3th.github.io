@@ -180,7 +180,7 @@
   --color-decor-halo-2: var(--color-blue-300);
   --color-decor-halo-3: var(--color-teal-300);
   --color-decor-grid: var(--color-navy-200);
-  --color-decor-emphasis-grid: var(--color-navy-800);
+  --color-decor-emphasis-grid: var(--color-navy-700);
   --color-decor-emphasis-halo-1: var(--color-violet-500);
   --color-decor-emphasis-halo-2: var(--color-blue-500);
   --color-decor-emphasis-halo-3: var(--color-teal-500);
@@ -251,7 +251,7 @@
     --color-decor-halo-2: var(--color-blue-600);
     --color-decor-halo-3: var(--color-teal-600);
     --color-decor-grid: var(--color-navy-700);
-    --color-decor-emphasis-grid: var(--color-navy-800);
+    --color-decor-emphasis-grid: var(--color-navy-700);
     --color-decor-emphasis-halo-1: var(--color-violet-500);
     --color-decor-emphasis-halo-2: var(--color-blue-500);
     --color-decor-emphasis-halo-3: var(--color-teal-500);
@@ -392,7 +392,7 @@
   --color-decor-halo-2: var(--color-blue-600);
   --color-decor-halo-3: var(--color-teal-600);
   --color-decor-grid: var(--color-navy-700);
-  --color-decor-emphasis-grid: var(--color-navy-800);
+  --color-decor-emphasis-grid: var(--color-navy-700);
   --color-decor-emphasis-halo-1: var(--color-violet-500);
   --color-decor-emphasis-halo-2: var(--color-blue-500);
   --color-decor-emphasis-halo-3: var(--color-teal-500);
@@ -1490,7 +1490,7 @@ button.btn:active {
   }
 }
 /* Fondos decorativos de secciones con la paleta de InnoVatech */
-/* En alto contraste los colores decorativos se igualan al fondo y desaparecen */
+/* En alto contraste no se muestra ninguna decoración */
 .bg-glow,
 .bg-sweep,
 .bg-halo {
@@ -1583,47 +1583,93 @@ button.btn:active {
   --halo-grid: var(--color-decor-emphasis-grid);
 }
 
-/* Tres halos que se solapan en la esquina superior y se funden con el fondo */
+/* Tres halos en diagonal muy difuminados para que los colores pasen de uno a otro */
 .bg-halo::before {
-  inset: 0;
-  background: radial-gradient(30rem 24rem at 86% 6%, color-mix(in srgb, var(--halo-1) 60%, transparent), transparent 70%), radial-gradient(26rem 22rem at 100% 34%, color-mix(in srgb, var(--halo-2) 55%, transparent), transparent 70%), radial-gradient(24rem 20rem at 70% -4%, color-mix(in srgb, var(--halo-3) 50%, transparent), transparent 70%);
-  filter: blur(20px);
+  inset: -10%;
+  background: radial-gradient(42rem 22rem at 50% 4%, color-mix(in srgb, var(--halo-3) 45%, transparent), transparent 70%), radial-gradient(38rem 26rem at 76% 14%, color-mix(in srgb, var(--halo-1) 55%, transparent), transparent 70%), radial-gradient(34rem 26rem at 98% 38%, color-mix(in srgb, var(--halo-2) 50%, transparent), transparent 70%);
+  filter: blur(60px);
 }
 
-/* Rejilla de líneas que avanza despacio y se desvanece lejos de los halos */
+/* Rejilla de puntos sutil en la esquina contraria a los halos */
 .bg-halo::after {
   inset: 0;
-  background-image: linear-gradient(var(--halo-grid) 1px, transparent 1px), linear-gradient(90deg, var(--halo-grid) 1px, transparent 1px);
-  background-size: 3rem 3rem;
-  mask: radial-gradient(90% 75% at 85% 15%, #000 10%, transparent 75%);
-  animation: grid-drift 24s linear infinite;
+  background: radial-gradient(var(--halo-grid) 1px, transparent 1.5px) 0 0/1.25rem 1.25rem;
+  mask: radial-gradient(55% 60% at 0% 100%, #000, transparent 70%);
 }
 
-@keyframes grid-drift {
-  to {
-    background-position: 3rem 3rem;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .bg-halo::after {
-    animation: none;
-  }
-}
-/* El mismo bloque en la esquina superior izquierda */
+/* Halos a la izquierda y puntos a la derecha */
 .bg-halo--start::before,
 .bg-halo--start::after {
   transform: scaleX(-1);
 }
 
+/*-------- Red de nodos: elemento decorativo que ocupa solo una zona --------*/
+/* Uso: <div class="bg-network" aria-hidden="true"></div> dentro de una sección con fondo */
+.bg-network {
+  --network-1: var(--color-decor-emphasis-halo-3);
+  --network-2: var(--color-decor-emphasis-halo-2);
+  --network-3: var(--color-decor-emphasis-halo-1);
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  width: min(48rem, 55%);
+  height: 42%;
+  pointer-events: none;
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--network-2) 70%, transparent));
+}
+
+.bg-network::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(135deg, var(--network-1), var(--network-2) 50%, var(--network-3));
+  mask: url("../img/bg/network.svg") center/100% 100% no-repeat, linear-gradient(to left, #000 35%, transparent 95%);
+  mask-composite: intersect;
+}
+
+/*-------- Arcos de luz: separan el final de una sección --------*/
+/* Uso: <div class="bg-streaks" aria-hidden="true"></div> al final de una sección con fondo */
+.bg-streaks {
+  --streaks-1: var(--color-decor-emphasis-halo-1);
+  --streaks-2: var(--color-decor-emphasis-halo-2);
+  --streaks-3: var(--color-decor-emphasis-halo-3);
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 15rem;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--streaks-2) 60%, transparent));
+}
+
+.bg-streaks::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(90deg, var(--streaks-1), var(--streaks-2) 50%, var(--streaks-3));
+  mask: url("../img/bg/streaks.svg") center/100% 100% no-repeat;
+}
+
+@media (max-width: 47.99rem) {
+  .bg-network {
+    width: 100%;
+    height: 45%;
+    opacity: 0.5;
+  }
+}
 /*-------- Alto contraste sin decoración --------*/
 [data-theme=hc] :is(.bg-glow, .bg-sweep, .bg-halo)::before,
-[data-theme=hc] :is(.bg-glow, .bg-sweep, .bg-halo)::after {
+[data-theme=hc] :is(.bg-glow, .bg-sweep, .bg-halo)::after,
+[data-theme=hc] :is(.bg-network, .bg-streaks) {
   display: none;
 }
 
 @media (prefers-contrast: more) {
   :root:not([data-theme]) :is(.bg-glow, .bg-sweep, .bg-halo)::before,
-  :root:not([data-theme]) :is(.bg-glow, .bg-sweep, .bg-halo)::after {
+  :root:not([data-theme]) :is(.bg-glow, .bg-sweep, .bg-halo)::after,
+  :root:not([data-theme]) :is(.bg-network, .bg-streaks) {
     display: none;
   }
 }
