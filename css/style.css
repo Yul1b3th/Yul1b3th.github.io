@@ -223,15 +223,15 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     --color-bg-page: var(--color-navy-950);
-    --color-bg-surface: var(--color-navy-900);
-    --color-bg-muted: var(--color-navy-800);
+    --color-bg-surface: var(--color-navy-950);
+    --color-bg-muted: var(--color-navy-900);
     --color-bg-brand: var(--color-mint-200);
     --color-bg-brand-subtle: var(--color-mint-950);
     --color-bg-emphasis: var(--color-navy-950);
     --color-text-default: var(--color-navy-50);
     --color-text-heading: var(--color-navy-50);
-    --color-text-body: var(--color-navy-200);
-    --color-text-muted: var(--color-navy-300);
+    --color-text-body: var(--color-neutral-200);
+    --color-text-muted: var(--color-neutral-400);
     --color-text-on-emphasis: var(--color-navy-50);
     --color-text-on-brand: var(--color-navy-950);
     --color-text-disabled: var(--color-navy-600);
@@ -248,12 +248,12 @@
     --color-decor-sky: var(--color-blue-900);
     --color-decor-lavender: var(--color-violet-900);
     --color-decor-rose: var(--color-violet-950);
-    --color-decor-periwinkle-bold: var(--color-violet-800);
-    --color-decor-lavender-bold: var(--color-blue-800);
+    --color-decor-periwinkle-bold: var(--color-violet-900);
+    --color-decor-lavender-bold: var(--color-blue-900);
     --color-decor-sky-bold: var(--color-mint-900);
-    --color-decor-halo-1: var(--color-violet-600);
-    --color-decor-halo-2: var(--color-blue-600);
-    --color-decor-halo-3: var(--color-teal-600);
+    --color-decor-halo-1: var(--color-violet-800);
+    --color-decor-halo-2: var(--color-blue-800);
+    --color-decor-halo-3: var(--color-teal-800);
     --color-decor-grid: var(--color-navy-700);
     --color-decor-emphasis-grid: var(--color-navy-700);
     --color-decor-emphasis-halo-1: var(--color-violet-500);
@@ -265,7 +265,7 @@
     --color-decor-emphasis-teal-bold: var(--color-teal-700);
     --color-decor-emphasis-sky-bold: var(--color-blue-700);
     --color-decor-emphasis-lavender-bold: var(--color-violet-700);
-    --color-border-surface: var(--color-navy-900);
+    --color-border-surface: var(--color-navy-950);
     --color-border-default: var(--color-navy-800);
     --color-border-strong: var(--color-navy-400);
     --color-border-brand: var(--color-mint-200);
@@ -277,7 +277,7 @@
     --color-action-primary-text: var(--color-navy-950);
     --color-action-primary-border: var(--color-mint-200);
     --color-action-secondary-text: var(--color-navy-50);
-    --color-action-secondary-bg-hover: var(--color-navy-800);
+    --color-action-secondary-bg-hover: var(--color-navy-900);
     --color-success-text: var(--color-green-300);
     --color-success-bg: var(--color-green-950);
     --color-success-border: var(--color-green-400);
@@ -368,15 +368,15 @@
 /* Temas elegidos por el usuario */
 [data-theme=dark] {
   --color-bg-page: var(--color-navy-950);
-  --color-bg-surface: var(--color-navy-900);
-  --color-bg-muted: var(--color-navy-800);
+  --color-bg-surface: var(--color-navy-950);
+  --color-bg-muted: var(--color-navy-900);
   --color-bg-brand: var(--color-mint-200);
   --color-bg-brand-subtle: var(--color-mint-950);
   --color-bg-emphasis: var(--color-navy-950);
   --color-text-default: var(--color-navy-50);
   --color-text-heading: var(--color-navy-50);
-  --color-text-body: var(--color-navy-200);
-  --color-text-muted: var(--color-navy-300);
+  --color-text-body: var(--color-neutral-200);
+  --color-text-muted: var(--color-neutral-400);
   --color-text-on-emphasis: var(--color-navy-50);
   --color-text-on-brand: var(--color-navy-950);
   --color-text-disabled: var(--color-navy-600);
@@ -393,12 +393,12 @@
   --color-decor-sky: var(--color-blue-900);
   --color-decor-lavender: var(--color-violet-900);
   --color-decor-rose: var(--color-violet-950);
-  --color-decor-periwinkle-bold: var(--color-violet-800);
-  --color-decor-lavender-bold: var(--color-blue-800);
+  --color-decor-periwinkle-bold: var(--color-violet-900);
+  --color-decor-lavender-bold: var(--color-blue-900);
   --color-decor-sky-bold: var(--color-mint-900);
-  --color-decor-halo-1: var(--color-violet-600);
-  --color-decor-halo-2: var(--color-blue-600);
-  --color-decor-halo-3: var(--color-teal-600);
+  --color-decor-halo-1: var(--color-violet-800);
+  --color-decor-halo-2: var(--color-blue-800);
+  --color-decor-halo-3: var(--color-teal-800);
   --color-decor-grid: var(--color-navy-700);
   --color-decor-emphasis-grid: var(--color-navy-700);
   --color-decor-emphasis-halo-1: var(--color-violet-500);
@@ -410,7 +410,7 @@
   --color-decor-emphasis-teal-bold: var(--color-teal-700);
   --color-decor-emphasis-sky-bold: var(--color-blue-700);
   --color-decor-emphasis-lavender-bold: var(--color-violet-700);
-  --color-border-surface: var(--color-navy-900);
+  --color-border-surface: var(--color-navy-950);
   --color-border-default: var(--color-navy-800);
   --color-border-strong: var(--color-navy-400);
   --color-border-brand: var(--color-mint-200);
@@ -422,7 +422,7 @@
   --color-action-primary-text: var(--color-navy-950);
   --color-action-primary-border: var(--color-mint-200);
   --color-action-secondary-text: var(--color-navy-50);
-  --color-action-secondary-bg-hover: var(--color-navy-800);
+  --color-action-secondary-bg-hover: var(--color-navy-900);
   --color-success-text: var(--color-green-300);
   --color-success-bg: var(--color-green-950);
   --color-success-border: var(--color-green-400);
