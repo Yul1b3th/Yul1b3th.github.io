@@ -7,10 +7,16 @@
 .home {
   background-color: fn.get-color(bg-emphasis);
   min-height: 100vh;
+  min-height: 100svh;
   width: 100%;
   color: fn.get-color(text-on-emphasis);
   display: flex;
+
   .container {
+    // Deja libre la altura de la barra fija más un margen
+    padding-top: calc(4rem + 2.5rem);
+    padding-bottom: 3.5rem;
+
     @include mx.apply-flex-container(
       row,
       center,
@@ -29,8 +35,12 @@
     .home-img {
       @include mx.apply-border-radius(50%);
       overflow: hidden;
-      max-width: 330px;
+      max-width: min(260px, 70vw);
       width: 100%;
+
+      @media (min-width: fn.get-breakpoint(md)) {
+        max-width: 330px;
+      }
 
       @media (min-width: fn.get-breakpoint(lg)) {
         flex: 0 0 calc(30% - 1rem);
@@ -38,9 +48,30 @@
     }
 
     .home-text {
+      // Separación entre texto, redes y botón también en móvil
+      @include mx.apply-flex-container(column, center, center, 1.75rem);
+
+      h1 {
+        margin-bottom: 0.75rem;
+      }
+
+      h2 {
+        margin-bottom: 1.25rem;
+      }
+
+      p {
+        max-width: 38rem;
+        margin-inline: auto;
+      }
+
       @media (min-width: fn.get-breakpoint(lg)) {
         flex: 0 0 calc(70% - 1rem);
-        @include mx.apply-flex-container($direction: column, $gap: fn.get-spacing(md));
+        align-items: flex-start;
+        gap: fn.get-spacing(lg);
+
+        p {
+          margin-inline: 0;
+        }
       }
 
       .social-list {

@@ -12,10 +12,12 @@ body {
 
 h1 {
   @include apply-typography('5xl', 'sm', 700, 'sm');
+  font-size: clamp(2.125rem, 1.6rem + 2.2vw, get-font-size('5xl'));
 }
 
 h2 {
   @include apply-typography('4xl', 'sm', 600, 'md');
+  font-size: clamp(1.625rem, 1.3rem + 1.4vw, get-font-size('4xl'));
 }
 
 h3 {
