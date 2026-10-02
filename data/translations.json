@@ -162,7 +162,11 @@
     "theme-dark": "Dark",
     "theme-hc": "High contrast",
     "menu-label": "Menu",
-    "scroll-top-label": "Back to top"
+    "scroll-top-label": "Back to top",
+    "skip-link": "Skip to content",
+    "contact-name-label": "Name",
+    "contact-email-label": "Email address",
+    "contact-comments-label": "Comments"
   },
   "es": {
     "home": "Inicio",
@@ -327,6 +331,10 @@
     "theme-dark": "Oscuro",
     "theme-hc": "Alto contraste",
     "menu-label": "Menú",
-    "scroll-top-label": "Volver arriba"
+    "scroll-top-label": "Volver arriba",
+    "skip-link": "Saltar al contenido",
+    "contact-name-label": "Nombre",
+    "contact-email-label": "Correo electrónico",
+    "contact-comments-label": "Comentarios"
   }
 }

@@ -27,7 +27,9 @@ export function languageSwitcher() {
         keys.forEach(key => {
           const translation = translations[key];
           if (translation) {
-            if (element.tagName === 'A' && element.hasAttribute('aria-label')) {
+            if (element.tagName === 'META') {
+              element.setAttribute('content', translation);
+            } else if (element.tagName === 'A' && element.hasAttribute('aria-label')) {
               element.setAttribute('aria-label', translation);
             } else if (key.endsWith('-label') && element.hasAttribute('aria-label')) {
               element.setAttribute('aria-label', translation);
