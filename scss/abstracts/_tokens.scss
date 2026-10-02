@@ -126,9 +126,17 @@ $color-decor-mint: var(--color-decor-mint);
 $color-decor-sky: var(--color-decor-sky);
 $color-decor-lavender: var(--color-decor-lavender);
 $color-decor-rose: var(--color-decor-rose);
+$color-decor-teal: var(--color-decor-teal);
+$color-decor-peach-bold: var(--color-decor-peach-bold);
+$color-decor-pink-bold: var(--color-decor-pink-bold);
+$color-decor-lavender-bold: var(--color-decor-lavender-bold);
+$color-decor-sky-bold: var(--color-decor-sky-bold);
 $color-decor-emphasis-mint: var(--color-decor-emphasis-mint);
 $color-decor-emphasis-sky: var(--color-decor-emphasis-sky);
 $color-decor-emphasis-lavender: var(--color-decor-emphasis-lavender);
+$color-decor-emphasis-teal-bold: var(--color-decor-emphasis-teal-bold);
+$color-decor-emphasis-sky-bold: var(--color-decor-emphasis-sky-bold);
+$color-decor-emphasis-lavender-bold: var(--color-decor-emphasis-lavender-bold);
 $color-border-surface: var(--color-border-surface);
 $color-border-default: var(--color-border-default);
 $color-border-strong: var(--color-border-strong);
@@ -180,9 +188,17 @@ $theme-light: (
   'color-decor-sky': #DCE9FF,
   'color-decor-lavender': #EBE6FF,
   'color-decor-rose': #FFE2DF,
+  'color-decor-teal': #C5F0F0,
+  'color-decor-peach-bold': #FFCA8B,
+  'color-decor-pink-bold': #FFC6C0,
+  'color-decor-lavender-bold': #D8CCFF,
+  'color-decor-sky-bold': #BAD5FF,
   'color-decor-emphasis-mint': #002419,
   'color-decor-emphasis-sky': #091E41,
   'color-decor-emphasis-lavender': #241641,
+  'color-decor-emphasis-teal-bold': #076465,
+  'color-decor-emphasis-sky-bold': #2C59A1,
+  'color-decor-emphasis-lavender-bold': #654AA1,
   'color-border-surface': #EFF3FF,
   'color-border-default': #D1D1D1,
   'color-border-strong': #8B8B8B,
@@ -234,9 +250,17 @@ $theme-dark: (
   'color-decor-sky': #122F5E,
   'color-decor-lavender': #37255D,
   'color-decor-rose': #241641,
+  'color-decor-teal': #003637,
+  'color-decor-peach-bold': #024D4E,
+  'color-decor-pink-bold': #4D387E,
+  'color-decor-lavender-bold': #1F447E,
+  'color-decor-sky-bold': #003828,
   'color-decor-emphasis-mint': #002419,
   'color-decor-emphasis-sky': #091E41,
   'color-decor-emphasis-lavender': #241641,
+  'color-decor-emphasis-teal-bold': #076465,
+  'color-decor-emphasis-sky-bold': #2C59A1,
+  'color-decor-emphasis-lavender-bold': #654AA1,
   'color-border-surface': #262F49,
   'color-border-default': #384465,
   'color-border-strong': #899FD9,
@@ -288,9 +312,17 @@ $theme-hc: (
   'color-decor-sky': #FFFFFF,
   'color-decor-lavender': #FFFFFF,
   'color-decor-rose': #FFFFFF,
+  'color-decor-teal': #FFFFFF,
+  'color-decor-peach-bold': #FFFFFF,
+  'color-decor-pink-bold': #FFFFFF,
+  'color-decor-lavender-bold': #FFFFFF,
+  'color-decor-sky-bold': #FFFFFF,
   'color-decor-emphasis-mint': #1C1C1C,
   'color-decor-emphasis-sky': #1C1C1C,
   'color-decor-emphasis-lavender': #1C1C1C,
+  'color-decor-emphasis-teal-bold': #1C1C1C,
+  'color-decor-emphasis-sky-bold': #1C1C1C,
+  'color-decor-emphasis-lavender-bold': #1C1C1C,
   'color-border-surface': #1C1C1C,
   'color-border-default': #1C1C1C,
   'color-border-strong': #1C1C1C,

@@ -172,9 +172,17 @@
   --color-decor-sky: var(--color-blue-100);
   --color-decor-lavender: var(--color-violet-100);
   --color-decor-rose: var(--color-red-100);
+  --color-decor-teal: var(--color-teal-100);
+  --color-decor-peach-bold: var(--color-amber-200);
+  --color-decor-pink-bold: var(--color-red-200);
+  --color-decor-lavender-bold: var(--color-violet-200);
+  --color-decor-sky-bold: var(--color-blue-200);
   --color-decor-emphasis-mint: var(--color-mint-950);
   --color-decor-emphasis-sky: var(--color-blue-950);
   --color-decor-emphasis-lavender: var(--color-violet-950);
+  --color-decor-emphasis-teal-bold: var(--color-teal-700);
+  --color-decor-emphasis-sky-bold: var(--color-blue-700);
+  --color-decor-emphasis-lavender-bold: var(--color-violet-700);
   --color-border-surface: var(--color-navy-50);
   --color-border-default: var(--color-neutral-200);
   --color-border-strong: var(--color-neutral-500);
@@ -228,9 +236,17 @@
     --color-decor-sky: var(--color-blue-900);
     --color-decor-lavender: var(--color-violet-900);
     --color-decor-rose: var(--color-violet-950);
+    --color-decor-teal: var(--color-teal-900);
+    --color-decor-peach-bold: var(--color-teal-800);
+    --color-decor-pink-bold: var(--color-violet-800);
+    --color-decor-lavender-bold: var(--color-blue-800);
+    --color-decor-sky-bold: var(--color-mint-900);
     --color-decor-emphasis-mint: var(--color-mint-950);
     --color-decor-emphasis-sky: var(--color-blue-950);
     --color-decor-emphasis-lavender: var(--color-violet-950);
+    --color-decor-emphasis-teal-bold: var(--color-teal-700);
+    --color-decor-emphasis-sky-bold: var(--color-blue-700);
+    --color-decor-emphasis-lavender-bold: var(--color-violet-700);
     --color-border-surface: var(--color-navy-900);
     --color-border-default: var(--color-navy-800);
     --color-border-strong: var(--color-navy-400);
@@ -284,9 +300,17 @@
     --color-decor-sky: var(--color-neutral-0);
     --color-decor-lavender: var(--color-neutral-0);
     --color-decor-rose: var(--color-neutral-0);
+    --color-decor-teal: var(--color-neutral-0);
+    --color-decor-peach-bold: var(--color-neutral-0);
+    --color-decor-pink-bold: var(--color-neutral-0);
+    --color-decor-lavender-bold: var(--color-neutral-0);
+    --color-decor-sky-bold: var(--color-neutral-0);
     --color-decor-emphasis-mint: var(--color-neutral-950);
     --color-decor-emphasis-sky: var(--color-neutral-950);
     --color-decor-emphasis-lavender: var(--color-neutral-950);
+    --color-decor-emphasis-teal-bold: var(--color-neutral-950);
+    --color-decor-emphasis-sky-bold: var(--color-neutral-950);
+    --color-decor-emphasis-lavender-bold: var(--color-neutral-950);
     --color-border-surface: var(--color-neutral-950);
     --color-border-default: var(--color-neutral-950);
     --color-border-strong: var(--color-neutral-950);
@@ -339,9 +363,17 @@
   --color-decor-sky: var(--color-blue-900);
   --color-decor-lavender: var(--color-violet-900);
   --color-decor-rose: var(--color-violet-950);
+  --color-decor-teal: var(--color-teal-900);
+  --color-decor-peach-bold: var(--color-teal-800);
+  --color-decor-pink-bold: var(--color-violet-800);
+  --color-decor-lavender-bold: var(--color-blue-800);
+  --color-decor-sky-bold: var(--color-mint-900);
   --color-decor-emphasis-mint: var(--color-mint-950);
   --color-decor-emphasis-sky: var(--color-blue-950);
   --color-decor-emphasis-lavender: var(--color-violet-950);
+  --color-decor-emphasis-teal-bold: var(--color-teal-700);
+  --color-decor-emphasis-sky-bold: var(--color-blue-700);
+  --color-decor-emphasis-lavender-bold: var(--color-violet-700);
   --color-border-surface: var(--color-navy-900);
   --color-border-default: var(--color-navy-800);
   --color-border-strong: var(--color-navy-400);
@@ -393,9 +425,17 @@
   --color-decor-sky: var(--color-neutral-0);
   --color-decor-lavender: var(--color-neutral-0);
   --color-decor-rose: var(--color-neutral-0);
+  --color-decor-teal: var(--color-neutral-0);
+  --color-decor-peach-bold: var(--color-neutral-0);
+  --color-decor-pink-bold: var(--color-neutral-0);
+  --color-decor-lavender-bold: var(--color-neutral-0);
+  --color-decor-sky-bold: var(--color-neutral-0);
   --color-decor-emphasis-mint: var(--color-neutral-950);
   --color-decor-emphasis-sky: var(--color-neutral-950);
   --color-decor-emphasis-lavender: var(--color-neutral-950);
+  --color-decor-emphasis-teal-bold: var(--color-neutral-950);
+  --color-decor-emphasis-sky-bold: var(--color-neutral-950);
+  --color-decor-emphasis-lavender-bold: var(--color-neutral-950);
   --color-border-surface: var(--color-neutral-950);
   --color-border-default: var(--color-neutral-950);
   --color-border-strong: var(--color-neutral-950);
@@ -1402,36 +1442,132 @@ button.btn:active {
     transition: none;
   }
 }
-/* Fondo decorativo con manchas de color difuminadas */
+/* Fondos decorativos de secciones con la paleta de InnoVatech */
 /* En alto contraste los colores decorativos se igualan al fondo y desaparecen */
-.bg-aurora {
-  --aurora-mint: var(--color-decor-mint);
-  --aurora-sky: var(--color-decor-sky);
-  --aurora-lavender: var(--color-decor-lavender);
-  --aurora-rose: var(--color-decor-rose);
+.bg-glow,
+.bg-sweep,
+.bg-ribbon {
   position: relative;
   isolation: isolate;
   overflow: hidden;
 }
 
-/* Variante para secciones con bg.emphasis */
-.bg-aurora--emphasis {
-  --aurora-mint: var(--color-decor-emphasis-mint);
-  --aurora-sky: var(--color-decor-emphasis-sky);
-  --aurora-lavender: var(--color-decor-emphasis-lavender);
-  --aurora-rose: var(--color-decor-emphasis-lavender);
-}
-
-/* Manchas grandes que se mezclan entre sí */
-.bg-aurora::before {
+.bg-glow::before,
+.bg-sweep::before,
+.bg-sweep::after,
+.bg-ribbon::before,
+.bg-ribbon::after {
   position: absolute;
   z-index: -1;
-  inset: 0;
   content: "";
   pointer-events: none;
-  background: radial-gradient(70% 45% at 0% 0%, var(--aurora-mint), transparent 70%), radial-gradient(60% 40% at 100% 10%, var(--aurora-lavender), transparent 70%), radial-gradient(65% 45% at 100% 100%, var(--aurora-sky), transparent 70%), radial-gradient(60% 40% at 0% 100%, var(--aurora-rose), transparent 70%);
 }
 
+/*-------- Manchas: color suave en las esquinas --------*/
+.bg-glow {
+  --glow-1: var(--color-decor-mint);
+  --glow-2: var(--color-decor-lavender);
+  --glow-3: var(--color-decor-sky);
+  --glow-4: var(--color-decor-rose);
+}
+
+.bg-glow--emphasis {
+  --glow-1: var(--color-decor-emphasis-mint);
+  --glow-2: var(--color-decor-emphasis-lavender);
+  --glow-3: var(--color-decor-emphasis-sky);
+  --glow-4: var(--color-decor-emphasis-lavender);
+}
+
+.bg-glow::before {
+  inset: 0;
+  background: radial-gradient(70% 45% at 0% 0%, var(--glow-1), transparent 70%), radial-gradient(60% 40% at 100% 10%, var(--glow-2), transparent 70%), radial-gradient(65% 45% at 100% 100%, var(--glow-3), transparent 70%), radial-gradient(60% 40% at 0% 100%, var(--glow-4), transparent 70%);
+}
+
+/*-------- Barrido: franjas difuminadas en diagonal --------*/
+.bg-sweep {
+  --sweep-1: var(--color-decor-peach-bold);
+  --sweep-2: var(--color-decor-pink-bold);
+  --sweep-3: var(--color-decor-lavender-bold);
+  --sweep-4: var(--color-decor-sky-bold);
+}
+
+.bg-sweep--emphasis {
+  --sweep-1: var(--color-decor-emphasis-teal-bold);
+  --sweep-2: var(--color-decor-emphasis-sky-bold);
+  --sweep-3: var(--color-decor-emphasis-lavender-bold);
+  --sweep-4: var(--color-decor-emphasis-teal-bold);
+}
+
+.bg-sweep::before {
+  right: -15%;
+  bottom: 6%;
+  left: -15%;
+  height: 14rem;
+  border-radius: 50%;
+  background: linear-gradient(90deg, transparent, var(--sweep-1) 20%, var(--sweep-2) 55%, var(--sweep-3) 85%, transparent);
+  filter: blur(56px);
+  transform: rotate(-7deg);
+}
+
+.bg-sweep::after {
+  top: 12%;
+  right: -15%;
+  left: 25%;
+  height: 9rem;
+  border-radius: 50%;
+  background: linear-gradient(90deg, transparent, var(--sweep-4) 35%, var(--sweep-3) 75%, transparent);
+  filter: blur(64px);
+  opacity: 0.8;
+  transform: rotate(5deg);
+}
+
+/*-------- Cinta: entra por la esquina superior y se pierde por el lateral --------*/
+.bg-ribbon {
+  --ribbon-1: var(--color-decor-lavender-bold);
+  --ribbon-2: var(--color-decor-sky-bold);
+  --ribbon-3: var(--color-decor-teal);
+  --ribbon-glow: var(--color-decor-lavender);
+}
+
+.bg-ribbon--emphasis {
+  --ribbon-1: var(--color-decor-emphasis-lavender-bold);
+  --ribbon-2: var(--color-decor-emphasis-sky-bold);
+  --ribbon-3: var(--color-decor-emphasis-teal-bold);
+  --ribbon-glow: var(--color-decor-emphasis-lavender);
+}
+
+/* Halo suave detrás de la cinta */
+.bg-ribbon::before {
+  inset: 0;
+  background: radial-gradient(60% 50% at 100% 0%, var(--ribbon-glow), transparent 70%);
+}
+
+.bg-ribbon::after {
+  top: -3rem;
+  right: -4rem;
+  width: min(52rem, 70vw);
+  aspect-ratio: 5/4;
+  background: linear-gradient(200deg, var(--ribbon-1), var(--ribbon-2) 50%, var(--ribbon-3));
+  mask: url("../img/bg/ribbon.svg") center/100% 100% no-repeat;
+}
+
+/* La misma cinta desde la esquina superior izquierda */
+.bg-ribbon--start::before {
+  background: radial-gradient(60% 50% at 0% 0%, var(--ribbon-glow), transparent 70%);
+}
+
+.bg-ribbon--start::after {
+  right: auto;
+  left: -4rem;
+  transform: scaleX(-1);
+}
+
+@media (max-width: 47.99rem) {
+  .bg-ribbon::after {
+    width: 90vw;
+    opacity: 0.6;
+  }
+}
 .card {
   background-color: var(--color-bg-muted);
   border: 1px solid var(--color-border-default);
@@ -1624,10 +1760,6 @@ button.btn:active {
 
 .home {
   background-color: var(--color-bg-emphasis);
-  background-image: url("../img/home-bg.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   min-height: 100vh;
   width: 100%;
   color: var(--color-text-on-emphasis);
