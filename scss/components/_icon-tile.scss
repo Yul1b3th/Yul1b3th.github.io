@@ -1,0 +1,33 @@
+/* Baldosa para iconos de marca: el icono no depende del fondo de la sección */
+/* Uso con SVG: <span class="icon-tile" aria-hidden="true"><svg><use href="icons.svg#check"></use></svg></span> */
+/* Uso con archivo: <span class="icon-tile" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../img/icono.svg')"></span></span> */
+/* La ruta de --icon se calcula desde la hoja de estilos, no desde el HTML */
+.icon-tile {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: var(--icon-tile-size, 3rem);
+  height: var(--icon-tile-size, 3rem);
+  border: 1px solid var(--color-icon-tile-border);
+  border-radius: 30%;
+  background: var(--color-icon-tile-bg);
+  color: var(--color-icon-brand);
+}
+
+.icon-tile--lg {
+  --icon-tile-size: 4.5rem;
+}
+
+.icon-tile > svg {
+  width: 55%;
+  height: 55%;
+  fill: currentColor;
+}
+
+/* Iconos de un solo color guardados como archivo, pintados con el color del token */
+.icon-tile__mask {
+  width: 55%;
+  height: 55%;
+  background-color: currentColor;
+  mask: var(--icon) center / contain no-repeat;
+}

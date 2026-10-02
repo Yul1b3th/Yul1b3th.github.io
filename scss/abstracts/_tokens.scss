@@ -122,6 +122,9 @@ $color-link-active: var(--color-link-active);
 $color-link-emphasis-default: var(--color-link-emphasis-default);
 $color-link-emphasis-hover: var(--color-link-emphasis-hover);
 $color-link-emphasis-active: var(--color-link-emphasis-active);
+$color-icon-brand: var(--color-icon-brand);
+$color-icon-tile-bg: var(--color-icon-tile-bg);
+$color-icon-tile-border: var(--color-icon-tile-border);
 $color-decor-mint: var(--color-decor-mint);
 $color-decor-sky: var(--color-decor-sky);
 $color-decor-lavender: var(--color-decor-lavender);
@@ -190,6 +193,9 @@ $theme-light: (
   'color-link-emphasis-default': #7FE6C0,
   'color-link-emphasis-hover': #C4F3DF,
   'color-link-emphasis-active': #5ACEA6,
+  'color-icon-brand': #00664C,
+  'color-icon-tile-bg': #E6FBF2,
+  'color-icon-tile-border': #C4F3DF,
   'color-decor-mint': #C4F3DF,
   'color-decor-sky': #DCE9FF,
   'color-decor-lavender': #EBE6FF,
@@ -258,6 +264,9 @@ $theme-dark: (
   'color-link-emphasis-default': #7FE6C0,
   'color-link-emphasis-hover': #C4F3DF,
   'color-link-emphasis-active': #5ACEA6,
+  'color-icon-brand': #7FE6C0,
+  'color-icon-tile-bg': #002419,
+  'color-icon-tile-border': #003828,
   'color-decor-mint': #003828,
   'color-decor-sky': #122F5E,
   'color-decor-lavender': #37255D,
@@ -326,6 +335,9 @@ $theme-hc: (
   'color-link-emphasis-default': #7FE6C0,
   'color-link-emphasis-hover': #C4F3DF,
   'color-link-emphasis-active': #5ACEA6,
+  'color-icon-brand': #1C1C1C,
+  'color-icon-tile-bg': #FFFFFF,
+  'color-icon-tile-border': #1C1C1C,
   'color-decor-mint': #FFFFFF,
   'color-decor-sky': #FFFFFF,
   'color-decor-lavender': #FFFFFF,
