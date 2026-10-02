@@ -12,7 +12,8 @@
 .bg-glow::before,
 .bg-sweep::before,
 .bg-sweep::after,
-.bg-halo::before {
+.bg-halo::before,
+.bg-halo::after {
   position: absolute;
   z-index: -1;
   content: '';
@@ -86,12 +87,14 @@
   --halo-1: var(--color-decor-halo-1);
   --halo-2: var(--color-decor-halo-2);
   --halo-3: var(--color-decor-halo-3);
+  --halo-grid: var(--color-decor-grid);
 }
 
 .bg-halo--emphasis {
   --halo-1: var(--color-decor-emphasis-halo-1);
   --halo-2: var(--color-decor-emphasis-halo-2);
   --halo-3: var(--color-decor-emphasis-halo-3);
+  --halo-grid: var(--color-decor-emphasis-grid);
 }
 
 /* Tres halos que se solapan en la esquina superior y se funden con el fondo */
@@ -104,8 +107,32 @@
   filter: blur(20px);
 }
 
+/* Rejilla de líneas que avanza despacio y se desvanece lejos de los halos */
+.bg-halo::after {
+  inset: 0;
+  background-image:
+    linear-gradient(var(--halo-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--halo-grid) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+  mask: radial-gradient(90% 75% at 85% 15%, #000 10%, transparent 75%);
+  animation: grid-drift 24s linear infinite;
+}
+
+@keyframes grid-drift {
+  to {
+    background-position: 3rem 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-halo::after {
+    animation: none;
+  }
+}
+
 /* El mismo bloque en la esquina superior izquierda */
-.bg-halo--start::before {
+.bg-halo--start::before,
+.bg-halo--start::after {
   transform: scaleX(-1);
 }
 

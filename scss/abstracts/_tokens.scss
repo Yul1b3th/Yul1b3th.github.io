@@ -133,6 +133,8 @@ $color-decor-sky-bold: var(--color-decor-sky-bold);
 $color-decor-halo-1: var(--color-decor-halo-1);
 $color-decor-halo-2: var(--color-decor-halo-2);
 $color-decor-halo-3: var(--color-decor-halo-3);
+$color-decor-grid: var(--color-decor-grid);
+$color-decor-emphasis-grid: var(--color-decor-emphasis-grid);
 $color-decor-emphasis-halo-1: var(--color-decor-emphasis-halo-1);
 $color-decor-emphasis-halo-2: var(--color-decor-emphasis-halo-2);
 $color-decor-emphasis-halo-3: var(--color-decor-emphasis-halo-3);
@@ -200,6 +202,8 @@ $theme-light: (
   'color-decor-halo-1': #C2AEFF,
   'color-decor-halo-2': #91BBFF,
   'color-decor-halo-3': #61CACA,
+  'color-decor-grid': #C0D2FF,
+  'color-decor-emphasis-grid': #384465,
   'color-decor-emphasis-halo-1': #9976EA,
   'color-decor-emphasis-halo-2': #4F8BEB,
   'color-decor-emphasis-halo-3': #2E999A,
@@ -267,6 +271,8 @@ $theme-dark: (
   'color-decor-halo-1': #7A5CC0,
   'color-decor-halo-2': #396DC0,
   'color-decor-halo-3': #157A7B,
+  'color-decor-grid': #4A5A82,
+  'color-decor-emphasis-grid': #384465,
   'color-decor-emphasis-halo-1': #9976EA,
   'color-decor-emphasis-halo-2': #4F8BEB,
   'color-decor-emphasis-halo-3': #2E999A,
@@ -334,6 +340,8 @@ $theme-hc: (
   'color-decor-halo-1': #FFFFFF,
   'color-decor-halo-2': #FFFFFF,
   'color-decor-halo-3': #FFFFFF,
+  'color-decor-grid': #FFFFFF,
+  'color-decor-emphasis-grid': #1C1C1C,
   'color-decor-emphasis-halo-1': #1C1C1C,
   'color-decor-emphasis-halo-2': #1C1C1C,
   'color-decor-emphasis-halo-3': #1C1C1C,
