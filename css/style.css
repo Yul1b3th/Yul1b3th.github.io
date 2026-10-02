@@ -1143,19 +1143,9 @@ a:hover {
   align-items: center;
   gap: 0;
   color: var(--color-text-on-emphasis);
-  background-color: color-mix(in srgb, var(--color-bg-emphasis) 80%, transparent);
-  backdrop-filter: blur(12px) saturate(140%);
-  border-bottom: 1px solid color-mix(in srgb, var(--color-text-on-emphasis) 12%, transparent);
-}
-[data-theme=hc] .navbar {
   background-color: var(--color-bg-emphasis);
-  backdrop-filter: none;
-}
-@media (prefers-contrast: more) {
-  :root:not([data-theme]) .navbar {
-    background-color: var(--color-bg-emphasis);
-    backdrop-filter: none;
-  }
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text-on-emphasis) 12%, transparent);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
 }
 .navbar a {
   text-decoration: none;

@@ -13,15 +13,10 @@
   @include mx.apply-flex-container(row, center, center);
   @include mx.apply-color(color, text-on-emphasis);
 
-  // Cristal esmerilado para separar el menú del contenido que pasa por debajo
-  @include mx.apply-color-opacity(background-color, 0.8, bg-emphasis);
-  backdrop-filter: blur(12px) saturate(140%);
+  // Fondo sólido con línea y sombra suave para separarlo del contenido
+  @include mx.apply-color(background-color, bg-emphasis);
   border-bottom: 1px solid fn.get-color-alpha(text-on-emphasis, 0.12);
-
-  @include mx.apply-high-contrast {
-    background-color: fn.get-color(bg-emphasis);
-    backdrop-filter: none;
-  }
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.18);
 
   a {
     text-decoration: none;
