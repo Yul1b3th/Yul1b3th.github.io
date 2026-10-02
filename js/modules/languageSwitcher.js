@@ -1,5 +1,7 @@
+import { initSelector } from './selector.js';
+
 export function languageSwitcher() {
-  const languageSelector = document.getElementById('language-selector');
+  const languageRoot = document.getElementById('language-selector');
   const elementsToTranslate = document.querySelectorAll('[data-translate]');
   const htmlElement = document.documentElement;
   const downloadCvBtn = document.getElementById('download-cv-btn');
@@ -27,6 +29,8 @@ export function languageSwitcher() {
           if (translation) {
             if (element.tagName === 'A' && element.hasAttribute('aria-label')) {
               element.setAttribute('aria-label', translation);
+            } else if (key.endsWith('-label') && element.hasAttribute('aria-label')) {
+              element.setAttribute('aria-label', translation);
             } else if (element.hasAttribute('placeholder') && key.includes('placeholder')) {
               element.setAttribute('placeholder', translation);
             } else if (element.hasAttribute('title') && key.includes('title')) {
@@ -44,10 +48,16 @@ export function languageSwitcher() {
       // Cambiar el enlace del botón de descarga del CV
       const cvLink = `./assets/yulibeth-rivero-${language}.pdf`;
       downloadCvBtn.setAttribute('href', cvLink);
+      // Avisa a los selectores para que actualicen su texto
+      document.dispatchEvent(new CustomEvent('languagechange', { detail: language }));
     }
   };
 
   const getDefaultLanguage = () => {
+    try {
+      const saved = localStorage.getItem('language');
+      if (saved === 'es' || saved === 'en') return saved;
+    } catch {}
     const browserLanguage = navigator.language || navigator.languages[0];
     if (browserLanguage.startsWith('es')) {
       return 'es';
@@ -58,13 +68,17 @@ export function languageSwitcher() {
     }
   };
 
-  languageSelector.addEventListener('change', (event) => {
-    const selectedLanguage = event.target.value;
-    translatePage(selectedLanguage);
+  const languageSelector = initSelector(languageRoot, {
+    onChange: (language) => {
+      try {
+        localStorage.setItem('language', language);
+      } catch {}
+      translatePage(language);
+    },
   });
 
-  // Set default language based on browser language
+  // Idioma guardado o el del navegador
   const defaultLanguage = getDefaultLanguage();
-  languageSelector.value = defaultLanguage;
+  languageSelector.setValue(defaultLanguage, { silent: true });
   translatePage(defaultLanguage);
 }

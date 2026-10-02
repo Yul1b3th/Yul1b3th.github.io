@@ -38,21 +38,6 @@
 
   .navbar-actions {
     @include mx.apply-flex-container(row, center, center, fn.get-spacing(md));
-
-    label {
-      select {
-        cursor: pointer;
-        padding: 0;
-        @include mx.apply-border-radius(0.25rem);
-        @include mx.apply-color(background-color, bg-emphasis);
-        @include mx.apply-color(color, text-on-emphasis);
-        @include mx.apply-transition(color 0.2s);
-
-        &:hover {
-          @include mx.apply-color(color, link-emphasis-default);
-        }
-      }
-    }
   }
 
   .navbar-brand {
@@ -66,20 +51,48 @@
     }
   }
 
+  .navbar-settings {
+    // Por encima del menú abierto en móvil para seguir visibles
+    position: relative;
+    z-index: 2;
+    @include mx.apply-flex-container(row, center, center, fn.get-spacing(sm));
+  }
+
   button.navbar-toggler {
     z-index: 2;
-    width: fit-content;
-    aspect-ratio: 1;
-    background: transparent url(../../img/icon-hamburger.svg) no-repeat center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
     border: 0;
+    @include mx.apply-border-radius(50%);
+    background: transparent;
+    @include mx.apply-color(color, text-on-emphasis);
     cursor: pointer;
 
     &:hover {
-      outline: 1px solid fn.get-color(link-emphasis-default);
+      @include mx.apply-color-opacity(background-color, 0.12, text-on-emphasis);
+    }
+
+    .navbar-toggler__icon {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+
+    .navbar-toggler__icon--close {
+      display: none;
     }
 
     &[aria-expanded='true'] {
-      background-image: url(../../img/icon-close.svg);
+      .navbar-toggler__icon--open {
+        display: none;
+      }
+
+      .navbar-toggler__icon--close {
+        display: block;
+      }
     }
   }
 
