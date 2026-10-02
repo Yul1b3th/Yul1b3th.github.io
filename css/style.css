@@ -168,6 +168,9 @@
   --color-link-emphasis-default: var(--color-mint-200);
   --color-link-emphasis-hover: var(--color-mint-100);
   --color-link-emphasis-active: var(--color-mint-300);
+  --color-icon-brand: var(--color-mint-700);
+  --color-icon-tile-bg: var(--color-mint-50);
+  --color-icon-tile-border: var(--color-mint-100);
   --color-decor-mint: var(--color-mint-100);
   --color-decor-sky: var(--color-blue-100);
   --color-decor-lavender: var(--color-violet-100);
@@ -238,6 +241,9 @@
     --color-link-emphasis-default: var(--color-mint-200);
     --color-link-emphasis-hover: var(--color-mint-100);
     --color-link-emphasis-active: var(--color-mint-300);
+    --color-icon-brand: var(--color-mint-200);
+    --color-icon-tile-bg: var(--color-mint-950);
+    --color-icon-tile-border: var(--color-mint-900);
     --color-decor-mint: var(--color-mint-900);
     --color-decor-sky: var(--color-blue-900);
     --color-decor-lavender: var(--color-violet-900);
@@ -308,6 +314,9 @@
     --color-link-emphasis-default: var(--color-mint-200);
     --color-link-emphasis-hover: var(--color-mint-100);
     --color-link-emphasis-active: var(--color-mint-300);
+    --color-icon-brand: var(--color-neutral-950);
+    --color-icon-tile-bg: var(--color-neutral-0);
+    --color-icon-tile-border: var(--color-neutral-950);
     --color-decor-mint: var(--color-neutral-0);
     --color-decor-sky: var(--color-neutral-0);
     --color-decor-lavender: var(--color-neutral-0);
@@ -377,6 +386,9 @@
   --color-link-emphasis-default: var(--color-mint-200);
   --color-link-emphasis-hover: var(--color-mint-100);
   --color-link-emphasis-active: var(--color-mint-300);
+  --color-icon-brand: var(--color-mint-200);
+  --color-icon-tile-bg: var(--color-mint-950);
+  --color-icon-tile-border: var(--color-mint-900);
   --color-decor-mint: var(--color-mint-900);
   --color-decor-sky: var(--color-blue-900);
   --color-decor-lavender: var(--color-violet-900);
@@ -445,6 +457,9 @@
   --color-link-emphasis-default: var(--color-mint-200);
   --color-link-emphasis-hover: var(--color-mint-100);
   --color-link-emphasis-active: var(--color-mint-300);
+  --color-icon-brand: var(--color-neutral-950);
+  --color-icon-tile-bg: var(--color-neutral-0);
+  --color-icon-tile-border: var(--color-neutral-950);
   --color-decor-mint: var(--color-neutral-0);
   --color-decor-sky: var(--color-neutral-0);
   --color-decor-lavender: var(--color-neutral-0);
@@ -1636,6 +1651,40 @@ button.btn:active {
     display: none;
   }
 }
+/* Baldosa para iconos de marca: el icono no depende del fondo de la sección */
+/* Uso con SVG: <span class="icon-tile" aria-hidden="true"><svg><use href="icons.svg#check"></use></svg></span> */
+/* Uso con archivo: <span class="icon-tile" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../img/icono.svg')"></span></span> */
+/* La ruta de --icon se calcula desde la hoja de estilos, no desde el HTML */
+.icon-tile {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  width: var(--icon-tile-size, 3rem);
+  height: var(--icon-tile-size, 3rem);
+  border: 1px solid var(--color-icon-tile-border);
+  border-radius: 30%;
+  background: var(--color-icon-tile-bg);
+  color: var(--color-icon-brand);
+}
+
+.icon-tile--lg {
+  --icon-tile-size: 4.5rem;
+}
+
+.icon-tile > svg {
+  width: 55%;
+  height: 55%;
+  fill: currentColor;
+}
+
+/* Iconos de un solo color guardados como archivo, pintados con el color del token */
+.icon-tile__mask {
+  width: 55%;
+  height: 55%;
+  background-color: currentColor;
+  mask: var(--icon) center/contain no-repeat;
+}
+
 .card {
   background-color: var(--color-bg-muted);
   border: 1px solid var(--color-border-default);
@@ -1933,15 +1982,6 @@ button.btn:active {
   }
 }
 
-[data-theme=hc] .soft-skills-items img {
-  filter: brightness(0);
-}
-@media (prefers-contrast: more) {
-  :root:not([data-theme]) .soft-skills-items img {
-    filter: brightness(0);
-  }
-}
-
 .projects {
   background-color: var(--color-bg-emphasis);
   min-height: 100vh;
@@ -2144,15 +2184,6 @@ button.btn:active {
   height: 4rem;
   margin-top: 2rem;
   width: 4rem;
-}
-
-[data-theme=hc] .contact-cards img {
-  filter: brightness(0);
-}
-@media (prefers-contrast: more) {
-  :root:not([data-theme]) .contact-cards img {
-    filter: brightness(0);
-  }
 }
 
 .m-zero {

@@ -181,10 +181,3 @@
     width: 4rem;
   }
 }
-
-// En alto contraste los iconos de color pasan a negro
-.contact-cards img {
-  @include mx.apply-high-contrast {
-    filter: brightness(0);
-  }
-}
