@@ -60,7 +60,7 @@ a {
 
 /*-------- Enlaces externos --------*/
 // Icono de nueva pestaña con texto oculto para lectores de pantalla
-a[target='_blank']:not(.social-list a, .social-media a)::after {
+a[target='_blank']:not(.btn, .social-list a, .social-media a)::after {
   content: '' / ' (se abre en una pestaña nueva)';
   display: inline-block;
   width: 1em;
@@ -71,7 +71,7 @@ a[target='_blank']:not(.social-list a, .social-media a)::after {
   mask: url('../img/icons/open_in_new.svg') center / contain no-repeat;
 }
 
-:lang(en) a[target='_blank']:not(.social-list a, .social-media a)::after {
+:lang(en) a[target='_blank']:not(.btn, .social-list a, .social-media a)::after {
   content: '' / ' (opens in a new tab)';
 }
 

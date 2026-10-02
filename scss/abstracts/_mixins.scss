@@ -51,6 +51,19 @@
   #{$property}: get-color-alpha($name, $alpha);
 }
 
+// Estilos solo en alto contraste, elegido o del sistema
+@mixin apply-high-contrast {
+  [data-theme='hc'] & {
+    @content;
+  }
+
+  @media (prefers-contrast: more) {
+    :root:not([data-theme]) & {
+      @content;
+    }
+  }
+}
+
 // === Diseño Responsivo y Estilos Visuales ===
 @mixin apply-media-breakpoint($size) {
   @media (min-width: get-breakpoint($size)) {
