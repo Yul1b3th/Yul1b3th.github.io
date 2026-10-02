@@ -17,7 +17,7 @@
       @include mx.apply-transition(fill, 0.2s);
 
       &:hover {
-        @include mx.apply-color(fill, text-brand);
+        @include mx.apply-color(fill, link-hover);
       }
     }
   }
@@ -35,7 +35,7 @@
       @include mx.apply-transition(fill, 0.2s);
 
       &:hover {
-        @include mx.apply-color(fill, text-inverse-brand);
+        @include mx.apply-color(fill, link-inverse-hover);
       }
     }
   }

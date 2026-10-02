@@ -102,11 +102,15 @@ $color-text-default: var(--color-text-default);
 $color-text-heading: var(--color-text-heading);
 $color-text-body: var(--color-text-body);
 $color-text-muted: var(--color-text-muted);
-$color-text-brand: var(--color-text-brand);
 $color-text-inverse: var(--color-text-inverse);
-$color-text-inverse-brand: var(--color-text-inverse-brand);
 $color-text-on-brand: var(--color-text-on-brand);
 $color-text-disabled: var(--color-text-disabled);
+$color-link-default: var(--color-link-default);
+$color-link-hover: var(--color-link-hover);
+$color-link-active: var(--color-link-active);
+$color-link-inverse-default: var(--color-link-inverse-default);
+$color-link-inverse-hover: var(--color-link-inverse-hover);
+$color-link-inverse-active: var(--color-link-inverse-active);
 $color-border-default: var(--color-border-default);
 $color-border-strong: var(--color-border-strong);
 $color-border-brand: var(--color-border-brand);
@@ -143,11 +147,15 @@ $theme-light: (
   'color-text-heading': #0B132B,
   'color-text-body': #3F3F3F,
   'color-text-muted': #5A5A5A,
-  'color-text-brand': #00664C,
   'color-text-inverse': #EFF3FF,
-  'color-text-inverse-brand': #7FE6C0,
   'color-text-on-brand': #1C1C1C,
   'color-text-disabled': #A1A1A1,
+  'color-link-default': #002419,
+  'color-link-hover': #00503A,
+  'color-link-active': #00664C,
+  'color-link-inverse-default': #7FE6C0,
+  'color-link-inverse-hover': #C4F3DF,
+  'color-link-inverse-active': #5ACEA6,
   'color-border-default': #D1D1D1,
   'color-border-strong': #8B8B8B,
   'color-border-brand': #7FE6C0,
@@ -184,15 +192,20 @@ $theme-dark: (
   'color-text-heading': #EFF3FF,
   'color-text-body': #C0D2FF,
   'color-text-muted': #A2B9F3,
-  'color-text-brand': #7FE6C0,
   'color-text-inverse': #0B132B,
-  'color-text-inverse-brand': #00664C,
   'color-text-on-brand': #0B132B,
   'color-text-disabled': #5C6D9C,
+  'color-link-default': #7FE6C0,
+  'color-link-hover': #C4F3DF,
+  'color-link-active': #5ACEA6,
+  'color-link-inverse-default': #002419,
+  'color-link-inverse-hover': #00503A,
+  'color-link-inverse-active': #00664C,
   'color-border-default': #384465,
   'color-border-strong': #899FD9,
   'color-border-brand': #7FE6C0,
   'color-border-focus': #EFF3FF,
+  'color-border-focus-inverse': #00664C,
   'color-action-primary-bg': #7FE6C0,
   'color-action-primary-bg-hover': #5ACEA6,
   'color-action-primary-bg-active': #38B48C,
@@ -225,15 +238,20 @@ $theme-hc: (
   'color-text-heading': #1C1C1C,
   'color-text-body': #1C1C1C,
   'color-text-muted': #303030,
-  'color-text-brand': #00503A,
   'color-text-inverse': #FFFFFF,
-  'color-text-inverse-brand': #7FE6C0,
   'color-text-on-brand': #1C1C1C,
   'color-text-disabled': #6D6D6D,
+  'color-link-default': #002419,
+  'color-link-hover': #003828,
+  'color-link-active': #00503A,
+  'color-link-inverse-default': #7FE6C0,
+  'color-link-inverse-hover': #C4F3DF,
+  'color-link-inverse-active': #5ACEA6,
   'color-border-default': #1C1C1C,
   'color-border-strong': #1C1C1C,
   'color-border-brand': #1C1C1C,
   'color-border-focus': #1C1C1C,
+  'color-border-focus-inverse': #7FE6C0,
   'color-action-primary-bg': #7FE6C0,
   'color-action-primary-bg-hover': #C4F3DF,
   'color-action-primary-bg-active': #5ACEA6,

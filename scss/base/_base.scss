@@ -27,15 +27,27 @@ body {
 
 /*-------- Enlaces Globales --------*/
 a {
-  @include apply-color(color, text-brand);
+  @include apply-color(color, link-default);
   text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
   font-weight: 600;
   cursor: pointer;
   @include apply-transition(color);
 
+  // Visitado igual que en reposo
+  &:visited {
+    @include apply-color(color, link-default);
+  }
+
+  // Subrayado más grueso para que el cambio no dependa solo del color
   &:hover {
-    text-decoration: underline;
-    @include apply-color(color, text-default);
+    @include apply-color(color, link-hover);
+    text-decoration-thickness: 2px;
+  }
+
+  &:active {
+    @include apply-color(color, link-active);
   }
 
   &.btn {
@@ -55,6 +67,13 @@ picture {
 }
 
 /*-------- Accesibilidad de Foco --------*/
+// Sobre fondo oscuro el foco usa el verde claro
+.navbar,
+.home,
+.footer {
+  --color-border-focus: var(--color-border-focus-inverse);
+}
+
 *:focus-visible {
   outline: 0.125rem solid get-color(border-focus);
   outline-offset: 0.3125rem;

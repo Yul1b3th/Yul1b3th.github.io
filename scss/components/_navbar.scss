@@ -49,7 +49,7 @@
         @include mx.apply-transition(color 0.2s);
 
         &:hover {
-          @include mx.apply-color(color, text-inverse-brand);
+          @include mx.apply-color(color, link-inverse-default);
         }
       }
     }
@@ -62,7 +62,7 @@
     @include mx.apply-transition(color 0.2s);
 
     &:hover {
-      @include mx.apply-color(color, text-inverse-brand);
+      @include mx.apply-color(color, link-inverse-default);
     }
   }
 
@@ -75,7 +75,7 @@
     cursor: pointer;
 
     &:hover {
-      outline: 1px solid fn.get-color(text-inverse-brand);
+      outline: 1px solid fn.get-color(link-inverse-default);
     }
 
     &[aria-expanded='true'] {
@@ -112,8 +112,8 @@
 
         &:hover,
         &.active {
-          @include mx.apply-color-opacity(background-color, 0.1, text-inverse-brand);
-          @include mx.apply-color(color, text-inverse-brand);
+          @include mx.apply-color-opacity(background-color, 0.1, link-inverse-default);
+          @include mx.apply-color(color, link-inverse-default);
         }
 
         &::before {
@@ -123,7 +123,7 @@
           left: 0;
           width: 0;
           height: 1.5px;
-          @include mx.apply-color(background-color, text-inverse-brand);
+          @include mx.apply-color(background-color, link-inverse-default);
           transform: scaleY(1.5);
           transform-origin: bottom;
           @include mx.apply-transition(width, 0.3s);
