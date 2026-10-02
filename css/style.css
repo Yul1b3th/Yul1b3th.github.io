@@ -172,15 +172,9 @@
   --color-decor-sky: var(--color-blue-100);
   --color-decor-lavender: var(--color-violet-100);
   --color-decor-rose: var(--color-red-100);
-  --color-decor-mint-bold: var(--color-mint-200);
-  --color-decor-sky-bold: var(--color-blue-200);
-  --color-decor-lavender-bold: var(--color-violet-200);
   --color-decor-emphasis-mint: var(--color-mint-950);
   --color-decor-emphasis-sky: var(--color-blue-950);
   --color-decor-emphasis-lavender: var(--color-violet-950);
-  --color-decor-emphasis-mint-bold: var(--color-mint-800);
-  --color-decor-emphasis-sky-bold: var(--color-blue-800);
-  --color-decor-emphasis-lavender-bold: var(--color-violet-800);
   --color-border-surface: var(--color-navy-50);
   --color-border-default: var(--color-neutral-200);
   --color-border-strong: var(--color-neutral-500);
@@ -234,15 +228,9 @@
     --color-decor-sky: var(--color-blue-900);
     --color-decor-lavender: var(--color-violet-900);
     --color-decor-rose: var(--color-violet-950);
-    --color-decor-mint-bold: var(--color-mint-800);
-    --color-decor-sky-bold: var(--color-blue-800);
-    --color-decor-lavender-bold: var(--color-violet-800);
     --color-decor-emphasis-mint: var(--color-mint-950);
     --color-decor-emphasis-sky: var(--color-blue-950);
     --color-decor-emphasis-lavender: var(--color-violet-950);
-    --color-decor-emphasis-mint-bold: var(--color-mint-800);
-    --color-decor-emphasis-sky-bold: var(--color-blue-800);
-    --color-decor-emphasis-lavender-bold: var(--color-violet-800);
     --color-border-surface: var(--color-navy-900);
     --color-border-default: var(--color-navy-800);
     --color-border-strong: var(--color-navy-400);
@@ -296,15 +284,9 @@
     --color-decor-sky: var(--color-neutral-0);
     --color-decor-lavender: var(--color-neutral-0);
     --color-decor-rose: var(--color-neutral-0);
-    --color-decor-mint-bold: var(--color-neutral-0);
-    --color-decor-sky-bold: var(--color-neutral-0);
-    --color-decor-lavender-bold: var(--color-neutral-0);
     --color-decor-emphasis-mint: var(--color-neutral-950);
     --color-decor-emphasis-sky: var(--color-neutral-950);
     --color-decor-emphasis-lavender: var(--color-neutral-950);
-    --color-decor-emphasis-mint-bold: var(--color-neutral-950);
-    --color-decor-emphasis-sky-bold: var(--color-neutral-950);
-    --color-decor-emphasis-lavender-bold: var(--color-neutral-950);
     --color-border-surface: var(--color-neutral-950);
     --color-border-default: var(--color-neutral-950);
     --color-border-strong: var(--color-neutral-950);
@@ -357,15 +339,9 @@
   --color-decor-sky: var(--color-blue-900);
   --color-decor-lavender: var(--color-violet-900);
   --color-decor-rose: var(--color-violet-950);
-  --color-decor-mint-bold: var(--color-mint-800);
-  --color-decor-sky-bold: var(--color-blue-800);
-  --color-decor-lavender-bold: var(--color-violet-800);
   --color-decor-emphasis-mint: var(--color-mint-950);
   --color-decor-emphasis-sky: var(--color-blue-950);
   --color-decor-emphasis-lavender: var(--color-violet-950);
-  --color-decor-emphasis-mint-bold: var(--color-mint-800);
-  --color-decor-emphasis-sky-bold: var(--color-blue-800);
-  --color-decor-emphasis-lavender-bold: var(--color-violet-800);
   --color-border-surface: var(--color-navy-900);
   --color-border-default: var(--color-navy-800);
   --color-border-strong: var(--color-navy-400);
@@ -417,15 +393,9 @@
   --color-decor-sky: var(--color-neutral-0);
   --color-decor-lavender: var(--color-neutral-0);
   --color-decor-rose: var(--color-neutral-0);
-  --color-decor-mint-bold: var(--color-neutral-0);
-  --color-decor-sky-bold: var(--color-neutral-0);
-  --color-decor-lavender-bold: var(--color-neutral-0);
   --color-decor-emphasis-mint: var(--color-neutral-950);
   --color-decor-emphasis-sky: var(--color-neutral-950);
   --color-decor-emphasis-lavender: var(--color-neutral-950);
-  --color-decor-emphasis-mint-bold: var(--color-neutral-950);
-  --color-decor-emphasis-sky-bold: var(--color-neutral-950);
-  --color-decor-emphasis-lavender-bold: var(--color-neutral-950);
   --color-border-surface: var(--color-neutral-950);
   --color-border-default: var(--color-neutral-950);
   --color-border-strong: var(--color-neutral-950);
@@ -1432,16 +1402,13 @@ button.btn:active {
     transition: none;
   }
 }
-/* Fondo decorativo con manchas de color difuminadas y una cinta curva en un lateral */
+/* Fondo decorativo con manchas de color difuminadas */
 /* En alto contraste los colores decorativos se igualan al fondo y desaparecen */
 .bg-aurora {
   --aurora-mint: var(--color-decor-mint);
   --aurora-sky: var(--color-decor-sky);
   --aurora-lavender: var(--color-decor-lavender);
   --aurora-rose: var(--color-decor-rose);
-  --aurora-ribbon-1: var(--color-decor-mint-bold);
-  --aurora-ribbon-2: var(--color-decor-sky-bold);
-  --aurora-ribbon-3: var(--color-decor-lavender-bold);
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -1453,47 +1420,18 @@ button.btn:active {
   --aurora-sky: var(--color-decor-emphasis-sky);
   --aurora-lavender: var(--color-decor-emphasis-lavender);
   --aurora-rose: var(--color-decor-emphasis-lavender);
-  --aurora-ribbon-1: var(--color-decor-emphasis-mint-bold);
-  --aurora-ribbon-2: var(--color-decor-emphasis-sky-bold);
-  --aurora-ribbon-3: var(--color-decor-emphasis-lavender-bold);
-}
-
-.bg-aurora::before,
-.bg-aurora::after {
-  position: absolute;
-  z-index: -1;
-  content: "";
-  pointer-events: none;
 }
 
 /* Manchas grandes que se mezclan entre sí */
 .bg-aurora::before {
+  position: absolute;
+  z-index: -1;
   inset: 0;
+  content: "";
+  pointer-events: none;
   background: radial-gradient(70% 45% at 0% 0%, var(--aurora-mint), transparent 70%), radial-gradient(60% 40% at 100% 10%, var(--aurora-lavender), transparent 70%), radial-gradient(65% 45% at 100% 100%, var(--aurora-sky), transparent 70%), radial-gradient(60% 40% at 0% 100%, var(--aurora-rose), transparent 70%);
 }
 
-/* Cinta curva que entra por el lateral derecho */
-.bg-aurora::after {
-  inset-block: -4rem;
-  right: -8rem;
-  width: min(36rem, 45vw);
-  background: linear-gradient(170deg, var(--aurora-ribbon-3), var(--aurora-ribbon-2) 45%, var(--aurora-ribbon-1));
-  mask: url("../img/bg/ribbon.svg") center/100% 100% no-repeat;
-}
-
-/* La misma cinta por el lateral izquierdo */
-.bg-aurora--left::after {
-  right: auto;
-  left: -8rem;
-  transform: scaleX(-1);
-}
-
-/* En pantallas pequeñas solo quedan las manchas */
-@media (max-width: 47.99rem) {
-  .bg-aurora::after {
-    display: none;
-  }
-}
 .card {
   background-color: var(--color-bg-muted);
   border: 1px solid var(--color-border-default);
