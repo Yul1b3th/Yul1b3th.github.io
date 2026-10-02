@@ -106,13 +106,22 @@
     inset: 0;
     margin: 0;
     list-style: none;
-    @include mx.apply-flex-container(column, space-around, center, fn.get-spacing(md));
-    transform: translateX(100%);
-    @include mx.apply-transition(transform, 500ms);
+    // El contenido empieza debajo de la fila de ajustes y deja aire al final
+    @include mx.apply-flex-container(column, space-between, center, fn.get-spacing(lg));
+    padding: 6.5rem 1rem 3rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     @include mx.apply-color(background-color, bg-emphasis);
 
+    // Cerrado queda fuera de la pantalla y fuera del orden de tabulación
+    transform: translateX(100%);
+    visibility: hidden;
+    transition:
+      transform 500ms ease,
+      visibility 0s linear 500ms;
+
     .navbar-brand {
-      font-size: 1.75rem;
+      font-size: 2rem;
     }
 
     .navbar-nav {
@@ -155,6 +164,12 @@
 
     &[data-visible='true'] {
       transform: translateX(0);
+      visibility: visible;
+      transition: transform 500ms ease;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
     }
   }
 
@@ -170,6 +185,10 @@
 
     .navbar-collapse {
       position: static;
+      padding: 0;
+      overflow: visible;
+      visibility: visible;
+      transition: none;
       // Sobrescribimos el flujo vertical de móvil a fila horizontal limpia usando mixins
       @include mx.apply-flex-container(row, flex-end, center, fn.get-spacing(md));
       transform: none;
