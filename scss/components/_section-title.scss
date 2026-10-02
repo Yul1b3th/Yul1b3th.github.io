@@ -15,7 +15,7 @@
     text-transform: uppercase;
     margin-bottom: 0;
     padding-bottom: 0;
-    @include mx.apply-color(color, neutral, 'dark-400'); // Tu color oscuro principal
+    @include mx.apply-color(color, text-heading); // Tu color oscuro principal
     position: relative;
     z-index: 2;
   }
@@ -33,7 +33,7 @@
     line-height: 0;
 
     // Aplicamos opacidad del 10% de forma segura al color oscuro
-    @include mx.apply-color-opacity(color, 0.1, neutral, 'dark-400');
+    @include mx.apply-color-opacity(color, 0.1, text-heading);
 
     @media (min-width: fn.get-breakpoint(lg)) {
       // Mapea tus 992px del sistema
@@ -44,12 +44,12 @@
   // --- Variante para fondos oscuros (Modificador BEM limpio) ---
   &--dark {
     h2 {
-      @include mx.apply-color(color, utility, white);
+      @include mx.apply-color(color, text-inverse);
     }
 
     span {
       // Aplicamos opacidad del 10% sobre tu fondo claro/gris
-      @include mx.apply-color-opacity(color, 0.1, utility, white);
+      @include mx.apply-color-opacity(color, 0.1, text-inverse);
     }
   }
 }

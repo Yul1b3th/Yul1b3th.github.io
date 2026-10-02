@@ -12,12 +12,12 @@
     @include mx.apply-flex-container;
 
     svg {
-      @include mx.apply-color(fill, neutral, 'dark-400');
+      @include mx.apply-color(fill, text-heading);
       width: 1.2rem;
       @include mx.apply-transition(fill, 0.2s);
 
       &:hover {
-        @include mx.apply-color(fill, primary, default);
+        @include mx.apply-color(fill, text-brand);
       }
     }
   }
@@ -30,12 +30,12 @@
     @include mx.apply-flex-container(row, center, center, 0);
 
     svg {
-      @include mx.apply-color(fill, utility, white);
+      @include mx.apply-color(fill, text-inverse);
       width: 1rem;
       @include mx.apply-transition(fill, 0.2s);
 
       &:hover {
-        @include mx.apply-color(fill, primary, default);
+        @include mx.apply-color(fill, text-inverse-brand);
       }
     }
   }

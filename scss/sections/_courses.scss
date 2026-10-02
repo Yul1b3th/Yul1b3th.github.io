@@ -5,11 +5,10 @@
 @use '../abstracts/mixins' as mx;
 
 .courses {
-  background-color: fn.get-background-color('deep-dark');
   // background-color: #eff3ff;
   background-image: url('../img/bg/gemini-svg (8).svg');
   background-image: url('../img/bg/gemini-svg.svg');
-  background-color: #eff3ff;
+  background-color: fn.get-color(bg-surface);
   background-image: url('../img/bg/gemini-svg (4).svg');
   background-repeat: no-repeat;
   background-size: cover;

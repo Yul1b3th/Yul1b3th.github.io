@@ -18,8 +18,8 @@ html {
 
 body {
   @include apply-font-family(primary);
-  @include apply-color(color, neutral, 'gray-dark');
-  @include apply-color(background-color, utility, white);
+  @include apply-color(color, text-body);
+  @include apply-color(background-color, bg-page);
   min-height: 100vh;
   overflow-x: hidden;
   text-rendering: optimizeSpeed;
@@ -27,7 +27,7 @@ body {
 
 /*-------- Enlaces Globales --------*/
 a {
-  @include apply-color(color, primary, link);
+  @include apply-color(color, text-brand);
   text-decoration: underline;
   font-weight: 600;
   cursor: pointer;
@@ -35,7 +35,7 @@ a {
 
   &:hover {
     text-decoration: underline;
-    @include apply-color(color, primary, bright);
+    @include apply-color(color, text-default);
   }
 
   &.btn {
@@ -56,6 +56,6 @@ picture {
 
 /*-------- Accesibilidad de Foco --------*/
 *:focus-visible {
-  outline: 0.125rem solid get-color(primary, default);
+  outline: 0.125rem solid get-color(border-focus);
   outline-offset: 0.3125rem;
 }

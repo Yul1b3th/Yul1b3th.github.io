@@ -5,8 +5,7 @@
 @use '../abstracts/mixins' as mx;
 
 .experience {
-  background-color: fn.get-background-color('deep-dark');
-  background-color: #eff3ff;
+  background-color: fn.get-color(bg-surface);
   background-image: url('../img/bg/gemini-svg.svg');
   background-image: url('../img/bg/gemini-svg (8).svg');
   background-repeat: no-repeat;

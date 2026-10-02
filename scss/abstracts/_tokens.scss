@@ -1,0 +1,256 @@
+// Archivo generado con npm run build:tokens. No editar a mano
+
+// Primitivos como valores fijos para usar en Sass
+$color-mint-50: #E6FBF2;
+$color-mint-100: #C4F3DF;
+$color-mint-200: #7FE6C0;
+$color-mint-300: #5ACEA6;
+$color-mint-400: #38B48C;
+$color-mint-500: #249E79;
+$color-mint-600: #047E5E;
+$color-mint-700: #00664C;
+$color-mint-800: #00503A;
+$color-mint-900: #003828;
+$color-mint-950: #002419;
+$color-navy-50: #EFF3FF;
+$color-navy-100: #DFE9FF;
+$color-navy-200: #C0D2FF;
+$color-navy-300: #A2B9F3;
+$color-navy-400: #899FD9;
+$color-navy-500: #768AC0;
+$color-navy-600: #5C6D9C;
+$color-navy-700: #4A5A82;
+$color-navy-800: #384465;
+$color-navy-900: #262F49;
+$color-navy-950: #0B132B;
+$color-neutral-0: #FFFFFF;
+$color-neutral-50: #FBFBFB;
+$color-neutral-100: #E5E5E5;
+$color-neutral-200: #D1D1D1;
+$color-neutral-300: #B9B9B9;
+$color-neutral-400: #A1A1A1;
+$color-neutral-500: #8B8B8B;
+$color-neutral-600: #6D6D6D;
+$color-neutral-700: #5A5A5A;
+$color-neutral-800: #3F3F3F;
+$color-neutral-900: #303030;
+$color-neutral-950: #1C1C1C;
+$color-teal-50: #E7FAFA;
+$color-teal-100: #C5F0F0;
+$color-teal-200: #81DFDF;
+$color-teal-300: #61CACA;
+$color-teal-400: #42B1B1;
+$color-teal-500: #2E999A;
+$color-teal-600: #157A7B;
+$color-teal-700: #076465;
+$color-teal-800: #024D4E;
+$color-teal-900: #003637;
+$color-teal-950: #002424;
+$color-green-50: #E2FDE6;
+$color-green-100: #B8F7C3;
+$color-green-200: #5BED84;
+$color-green-300: #1CD664;
+$color-green-400: #00B953;
+$color-green-500: #00A047;
+$color-green-600: #008037;
+$color-green-700: #00692C;
+$color-green-800: #005120;
+$color-green-900: #003914;
+$color-green-950: #00250B;
+$color-red-50: #FFF3F2;
+$color-red-100: #FFE2DF;
+$color-red-200: #FFC6C0;
+$color-red-300: #FFA098;
+$color-red-400: #FF776F;
+$color-red-500: #FD4848;
+$color-red-600: #D02E32;
+$color-red-700: #AE2126;
+$color-red-800: #89151A;
+$color-red-900: #65070E;
+$color-red-950: #470105;
+$color-amber-50: #FFF5E9;
+$color-amber-100: #FFE4C7;
+$color-amber-200: #FFCA8B;
+$color-amber-300: #FFA71E;
+$color-amber-400: #E08F00;
+$color-amber-500: #C27C00;
+$color-amber-600: #9B6100;
+$color-amber-700: #7F5000;
+$color-amber-800: #633D00;
+$color-amber-900: #462A00;
+$color-amber-950: #2F1B00;
+$color-blue-50: #F1F7FF;
+$color-blue-100: #DCE9FF;
+$color-blue-200: #BAD5FF;
+$color-blue-300: #91BBFF;
+$color-blue-400: #66A0FF;
+$color-blue-500: #4F8BEB;
+$color-blue-600: #396DC0;
+$color-blue-700: #2C59A1;
+$color-blue-800: #1F447E;
+$color-blue-900: #122F5E;
+$color-blue-950: #091E41;
+
+// Semánticos como variables CSS para que cambien con el tema
+$color-bg-page: var(--color-bg-page);
+$color-bg-surface: var(--color-bg-surface);
+$color-bg-muted: var(--color-bg-muted);
+$color-bg-brand: var(--color-bg-brand);
+$color-bg-brand-subtle: var(--color-bg-brand-subtle);
+$color-bg-inverse: var(--color-bg-inverse);
+$color-text-default: var(--color-text-default);
+$color-text-heading: var(--color-text-heading);
+$color-text-body: var(--color-text-body);
+$color-text-muted: var(--color-text-muted);
+$color-text-brand: var(--color-text-brand);
+$color-text-inverse: var(--color-text-inverse);
+$color-text-inverse-brand: var(--color-text-inverse-brand);
+$color-text-on-brand: var(--color-text-on-brand);
+$color-text-disabled: var(--color-text-disabled);
+$color-border-default: var(--color-border-default);
+$color-border-strong: var(--color-border-strong);
+$color-border-brand: var(--color-border-brand);
+$color-border-focus: var(--color-border-focus);
+$color-action-primary-bg: var(--color-action-primary-bg);
+$color-action-primary-bg-hover: var(--color-action-primary-bg-hover);
+$color-action-primary-bg-active: var(--color-action-primary-bg-active);
+$color-action-primary-text: var(--color-action-primary-text);
+$color-action-primary-border: var(--color-action-primary-border);
+$color-action-secondary-text: var(--color-action-secondary-text);
+$color-action-secondary-bg-hover: var(--color-action-secondary-bg-hover);
+$color-success-text: var(--color-success-text);
+$color-success-bg: var(--color-success-bg);
+$color-success-border: var(--color-success-border);
+$color-danger-text: var(--color-danger-text);
+$color-danger-bg: var(--color-danger-bg);
+$color-danger-border: var(--color-danger-border);
+$color-warning-text: var(--color-warning-text);
+$color-warning-bg: var(--color-warning-bg);
+$color-warning-border: var(--color-warning-border);
+$color-info-text: var(--color-info-text);
+$color-info-bg: var(--color-info-bg);
+$color-info-border: var(--color-info-border);
+
+// Valores de cada modo resueltos en HEX
+$theme-light: (
+  'color-bg-page': #FFFFFF,
+  'color-bg-surface': #EFF3FF,
+  'color-bg-muted': #FBFBFB,
+  'color-bg-brand': #7FE6C0,
+  'color-bg-brand-subtle': #E6FBF2,
+  'color-bg-inverse': #0B132B,
+  'color-text-default': #1C1C1C,
+  'color-text-heading': #0B132B,
+  'color-text-body': #3F3F3F,
+  'color-text-muted': #5A5A5A,
+  'color-text-brand': #00664C,
+  'color-text-inverse': #EFF3FF,
+  'color-text-inverse-brand': #7FE6C0,
+  'color-text-on-brand': #1C1C1C,
+  'color-text-disabled': #A1A1A1,
+  'color-border-default': #D1D1D1,
+  'color-border-strong': #8B8B8B,
+  'color-border-brand': #7FE6C0,
+  'color-border-focus': #00664C,
+  'color-action-primary-bg': #7FE6C0,
+  'color-action-primary-bg-hover': #5ACEA6,
+  'color-action-primary-bg-active': #38B48C,
+  'color-action-primary-text': #1C1C1C,
+  'color-action-primary-border': #7FE6C0,
+  'color-action-secondary-text': #1C1C1C,
+  'color-action-secondary-bg-hover': #E5E5E5,
+  'color-success-text': #00692C,
+  'color-success-bg': #E2FDE6,
+  'color-success-border': #00A047,
+  'color-danger-text': #AE2126,
+  'color-danger-bg': #FFF3F2,
+  'color-danger-border': #FD4848,
+  'color-warning-text': #7F5000,
+  'color-warning-bg': #FFF5E9,
+  'color-warning-border': #C27C00,
+  'color-info-text': #2C59A1,
+  'color-info-bg': #F1F7FF,
+  'color-info-border': #4F8BEB,
+);
+
+$theme-dark: (
+  'color-bg-page': #0B132B,
+  'color-bg-surface': #262F49,
+  'color-bg-muted': #384465,
+  'color-bg-brand': #7FE6C0,
+  'color-bg-brand-subtle': #002419,
+  'color-bg-inverse': #EFF3FF,
+  'color-text-default': #EFF3FF,
+  'color-text-heading': #EFF3FF,
+  'color-text-body': #C0D2FF,
+  'color-text-muted': #A2B9F3,
+  'color-text-brand': #7FE6C0,
+  'color-text-inverse': #0B132B,
+  'color-text-inverse-brand': #00664C,
+  'color-text-on-brand': #0B132B,
+  'color-text-disabled': #5C6D9C,
+  'color-border-default': #384465,
+  'color-border-strong': #899FD9,
+  'color-border-brand': #7FE6C0,
+  'color-border-focus': #EFF3FF,
+  'color-action-primary-bg': #7FE6C0,
+  'color-action-primary-bg-hover': #5ACEA6,
+  'color-action-primary-bg-active': #38B48C,
+  'color-action-primary-text': #0B132B,
+  'color-action-primary-border': #7FE6C0,
+  'color-action-secondary-text': #EFF3FF,
+  'color-action-secondary-bg-hover': #384465,
+  'color-success-text': #1CD664,
+  'color-success-bg': #00250B,
+  'color-success-border': #00B953,
+  'color-danger-text': #FFA098,
+  'color-danger-bg': #470105,
+  'color-danger-border': #FF776F,
+  'color-warning-text': #FFA71E,
+  'color-warning-bg': #2F1B00,
+  'color-warning-border': #E08F00,
+  'color-info-text': #91BBFF,
+  'color-info-bg': #091E41,
+  'color-info-border': #66A0FF,
+);
+
+$theme-hc: (
+  'color-bg-page': #FFFFFF,
+  'color-bg-surface': #FFFFFF,
+  'color-bg-muted': #FBFBFB,
+  'color-bg-brand': #7FE6C0,
+  'color-bg-brand-subtle': #E6FBF2,
+  'color-bg-inverse': #1C1C1C,
+  'color-text-default': #1C1C1C,
+  'color-text-heading': #1C1C1C,
+  'color-text-body': #1C1C1C,
+  'color-text-muted': #303030,
+  'color-text-brand': #00503A,
+  'color-text-inverse': #FFFFFF,
+  'color-text-inverse-brand': #7FE6C0,
+  'color-text-on-brand': #1C1C1C,
+  'color-text-disabled': #6D6D6D,
+  'color-border-default': #1C1C1C,
+  'color-border-strong': #1C1C1C,
+  'color-border-brand': #1C1C1C,
+  'color-border-focus': #1C1C1C,
+  'color-action-primary-bg': #7FE6C0,
+  'color-action-primary-bg-hover': #C4F3DF,
+  'color-action-primary-bg-active': #5ACEA6,
+  'color-action-primary-text': #1C1C1C,
+  'color-action-primary-border': #1C1C1C,
+  'color-action-secondary-text': #1C1C1C,
+  'color-action-secondary-bg-hover': #E5E5E5,
+  'color-success-text': #005120,
+  'color-success-bg': #E2FDE6,
+  'color-success-border': #005120,
+  'color-danger-text': #89151A,
+  'color-danger-bg': #FFF3F2,
+  'color-danger-border': #89151A,
+  'color-warning-text': #633D00,
+  'color-warning-bg': #FFF5E9,
+  'color-warning-border': #633D00,
+  'color-info-text': #1F447E,
+  'color-info-bg': #F1F7FF,
+  'color-info-border': #1F447E,
+);

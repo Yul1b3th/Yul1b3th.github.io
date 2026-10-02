@@ -17,18 +17,18 @@
   top: 0;
   @include mx.apply-transition(all, 1s);
   z-index: 999;
-  @include mx.apply-color-opacity(background-color, 0.8, neutral, 'dark-400');
+  @include mx.apply-color-opacity(background-color, 0.8, bg-inverse);
 
   // ANIDAMOS EL CONTENIDO AQUÍ:
   &-content {
-    @include mx.apply-color(background-color, utility, white); // Fondo blanco para la tarjeta
+    @include mx.apply-color(background-color, bg-page);
     @include mx.apply-border-radius(12px); // Bordes redondeados elegantes
-    @include mx.apply-border(1px, solid, neutral, 'light'); // Borde sutil y sólido del sistema
+    @include mx.apply-border(1px, solid, border-default);
     padding: 2rem; // Espaciado interno para respirar
 
     // Sombra suave y difuminada usando el color de acento al 15% de opacidad
     @include mx.apply-box-shadow(
-      0px 12px 32px color.change(fn.get-color(primary, bright), $alpha: 0.15)
+      0px 12px 32px fn.get-color-alpha(border-brand, 0.15)
     );
   }
 }
@@ -48,14 +48,14 @@
   top: 1rem;
 
   svg {
-    @include mx.apply-color(fill, primary, default);
+    @include mx.apply-color(fill, border-brand);
     height: 3rem;
     width: 3rem;
   }
 }
 
 .contact {
-  background-color: fn.get-background-color('deep-dark');
+  background-color: fn.get-color(bg-inverse);
   // background-color: #eff3ff;
   background-image: url('../img/bg/gemini-svg (8).svg');
   background-image: url('../img/bg/gemini-svg.svg');
@@ -113,8 +113,7 @@
 
   input {
     border: 0;
-    // Borde inferior delgado con 40% de opacidad sobre el color oscuro
-    @include mx.apply-color-opacity(border-bottom-color, 0.4, neutral, 'dark-400');
+    @include mx.apply-color(border-bottom-color, border-strong);
     border-bottom-style: solid;
     border-bottom-width: thin;
   }
@@ -122,20 +121,20 @@
   textarea {
     border-style: solid;
     border-width: thin;
-    @include mx.apply-color-opacity(border-color, 0.4, neutral, 'dark-400');
+    @include mx.apply-color(border-color, border-strong);
     resize: none;
     width: 100%;
   }
 
   *::placeholder {
-    @include mx.apply-color-opacity(color, 0.5, neutral, 'dark-400');
+    @include mx.apply-color(color, text-muted);
   }
 
   input:focus,
   textarea:focus {
-    @include mx.apply-color(border-color, primary, default);
+    @include mx.apply-color(border-color, border-focus);
     // Cambiado el box-shadow antiguo por el mixin especializado de estados de focus
-    @include mx.input-state-focus(fn.get-color(primary, default));
+    @include mx.input-state-focus(border-focus);
   }
 
   @media (min-width: fn.get-breakpoint(md)) {
@@ -176,13 +175,13 @@
 }
 
 .contact-form-response {
-  @include mx.apply-color(background-color, utility, white);
+  @include mx.apply-color(background-color, bg-page);
   padding: 1rem;
   text-align: center;
   width: 400px;
 
   svg {
-    @include mx.apply-color(fill, primary, default);
+    @include mx.apply-color(fill, border-brand);
     height: 4rem;
     margin-top: 2rem;
     width: 4rem;
