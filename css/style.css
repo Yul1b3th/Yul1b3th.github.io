@@ -701,6 +701,20 @@ picture {
   outline-offset: 0.3125rem;
 }
 
+/*-------- Separación de secciones en modo oscuro --------*/
+[data-theme=dark] .section,
+[data-theme=dark] .footer {
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, var(--color-decor-emphasis-halo-3) 30%, var(--color-decor-emphasis-halo-1) 70%, transparent) 1;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .section,
+  :root:not([data-theme]) .footer {
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(90deg, transparent, var(--color-decor-emphasis-halo-3) 30%, var(--color-decor-emphasis-halo-1) 70%, transparent) 1;
+  }
+}
+
 body {
   font-family: "BeVietnamPro", "Arial, sans-serif";
   font-size: 1rem;

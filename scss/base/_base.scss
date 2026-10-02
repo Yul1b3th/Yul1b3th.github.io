@@ -95,3 +95,20 @@ picture {
   outline: 0.125rem solid get-color(border-focus);
   outline-offset: 0.3125rem;
 }
+
+/*-------- Separación de secciones en modo oscuro --------*/
+// Todas las secciones comparten fondo y una línea con degradado marca dónde empieza cada una
+.section,
+.footer {
+  @include apply-dark-theme {
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(
+        90deg,
+        transparent,
+        get-color(decor-emphasis-halo-3) 30%,
+        get-color(decor-emphasis-halo-1) 70%,
+        transparent
+      )
+      1;
+  }
+}
