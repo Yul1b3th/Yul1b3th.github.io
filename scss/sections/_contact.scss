@@ -56,12 +56,6 @@
 
 .contact {
   background-color: fn.get-color(bg-emphasis);
-  // background-color: #eff3ff;
-  background-image: url('../img/bg/gemini-svg (8).svg');
-  background-image: url('../img/bg/gemini-svg.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   min-height: 100vh;
   width: 100%;
 }
@@ -185,5 +179,12 @@
     height: 4rem;
     margin-top: 2rem;
     width: 4rem;
+  }
+}
+
+// En alto contraste los iconos de color pasan a negro
+.contact-cards img {
+  @include mx.apply-high-contrast {
+    filter: brightness(0);
   }
 }

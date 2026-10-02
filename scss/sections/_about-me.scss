@@ -6,10 +6,6 @@
 
 .about-me {
   background-color: fn.get-color(bg-surface);
-  background-image: url('../img/bg/gemini-svg (4).svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   min-height: 100vh;
   width: 100%;
   .container {
@@ -51,5 +47,12 @@
         }
       }
     }
+  }
+}
+
+// En alto contraste los iconos de color pasan a negro
+.soft-skills-items img {
+  @include mx.apply-high-contrast {
+    filter: brightness(0);
   }
 }

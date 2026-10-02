@@ -157,6 +157,13 @@
   --color-link-emphasis-default: var(--color-mint-200);
   --color-link-emphasis-hover: var(--color-mint-100);
   --color-link-emphasis-active: var(--color-mint-300);
+  --color-decor-primary: var(--color-mint-200);
+  --color-decor-secondary: var(--color-teal-100);
+  --color-decor-tertiary: var(--color-blue-200);
+  --color-decor-emphasis-primary: var(--color-mint-900);
+  --color-decor-emphasis-secondary: var(--color-teal-900);
+  --color-decor-emphasis-tertiary: var(--color-blue-900);
+  --color-border-surface: var(--color-navy-50);
   --color-border-default: var(--color-neutral-200);
   --color-border-strong: var(--color-neutral-500);
   --color-border-brand: var(--color-mint-200);
@@ -205,6 +212,13 @@
     --color-link-emphasis-default: var(--color-mint-200);
     --color-link-emphasis-hover: var(--color-mint-100);
     --color-link-emphasis-active: var(--color-mint-300);
+    --color-decor-primary: var(--color-mint-800);
+    --color-decor-secondary: var(--color-teal-800);
+    --color-decor-tertiary: var(--color-blue-800);
+    --color-decor-emphasis-primary: var(--color-mint-900);
+    --color-decor-emphasis-secondary: var(--color-teal-900);
+    --color-decor-emphasis-tertiary: var(--color-blue-900);
+    --color-border-surface: var(--color-navy-900);
     --color-border-default: var(--color-navy-800);
     --color-border-strong: var(--color-navy-400);
     --color-border-brand: var(--color-mint-200);
@@ -253,6 +267,13 @@
     --color-link-emphasis-default: var(--color-mint-200);
     --color-link-emphasis-hover: var(--color-mint-100);
     --color-link-emphasis-active: var(--color-mint-300);
+    --color-decor-primary: var(--color-neutral-0);
+    --color-decor-secondary: var(--color-neutral-0);
+    --color-decor-tertiary: var(--color-neutral-0);
+    --color-decor-emphasis-primary: var(--color-neutral-950);
+    --color-decor-emphasis-secondary: var(--color-neutral-950);
+    --color-decor-emphasis-tertiary: var(--color-neutral-950);
+    --color-border-surface: var(--color-neutral-950);
     --color-border-default: var(--color-neutral-950);
     --color-border-strong: var(--color-neutral-950);
     --color-border-brand: var(--color-neutral-950);
@@ -300,6 +321,13 @@
   --color-link-emphasis-default: var(--color-mint-200);
   --color-link-emphasis-hover: var(--color-mint-100);
   --color-link-emphasis-active: var(--color-mint-300);
+  --color-decor-primary: var(--color-mint-800);
+  --color-decor-secondary: var(--color-teal-800);
+  --color-decor-tertiary: var(--color-blue-800);
+  --color-decor-emphasis-primary: var(--color-mint-900);
+  --color-decor-emphasis-secondary: var(--color-teal-900);
+  --color-decor-emphasis-tertiary: var(--color-blue-900);
+  --color-border-surface: var(--color-navy-900);
   --color-border-default: var(--color-navy-800);
   --color-border-strong: var(--color-navy-400);
   --color-border-brand: var(--color-mint-200);
@@ -346,6 +374,13 @@
   --color-link-emphasis-default: var(--color-mint-200);
   --color-link-emphasis-hover: var(--color-mint-100);
   --color-link-emphasis-active: var(--color-mint-300);
+  --color-decor-primary: var(--color-neutral-0);
+  --color-decor-secondary: var(--color-neutral-0);
+  --color-decor-tertiary: var(--color-neutral-0);
+  --color-decor-emphasis-primary: var(--color-neutral-950);
+  --color-decor-emphasis-secondary: var(--color-neutral-950);
+  --color-decor-emphasis-tertiary: var(--color-neutral-950);
+  --color-border-surface: var(--color-neutral-950);
   --color-border-default: var(--color-neutral-950);
   --color-border-strong: var(--color-neutral-950);
   --color-border-brand: var(--color-neutral-950);
@@ -530,7 +565,7 @@ a.btn:active, a.btn:visited {
 }
 
 /*-------- Enlaces externos --------*/
-a[target=_blank]:not(.social-list a, .social-media a)::after {
+a[target=_blank]:not(.btn, .social-list a, .social-media a)::after {
   content: ""/" (se abre en una pestaña nueva)";
   display: inline-block;
   width: 1em;
@@ -541,7 +576,7 @@ a[target=_blank]:not(.social-list a, .social-media a)::after {
   mask: url("../img/icons/open_in_new.svg") center/contain no-repeat;
 }
 
-:lang(en) a[target=_blank]:not(.social-list a, .social-media a)::after {
+:lang(en) a[target=_blank]:not(.btn, .social-list a, .social-media a)::after {
   content: ""/" (opens in a new tab)";
 }
 
@@ -1351,6 +1386,45 @@ button.btn:active {
     transition: none;
   }
 }
+/* Fondo decorativo con manchas de color y cintas curvas */
+/* En alto contraste los colores decorativos se igualan al fondo y desaparecen */
+.bg-aurora {
+  --aurora-1: var(--color-decor-primary);
+  --aurora-2: var(--color-decor-secondary);
+  --aurora-3: var(--color-decor-tertiary);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* Variante para secciones con bg.emphasis */
+.bg-aurora--emphasis {
+  --aurora-1: var(--color-decor-emphasis-primary);
+  --aurora-2: var(--color-decor-emphasis-secondary);
+  --aurora-3: var(--color-decor-emphasis-tertiary);
+}
+
+.bg-aurora::before,
+.bg-aurora::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+}
+
+.bg-aurora::before {
+  inset: 0;
+  background: radial-gradient(45rem 30rem at 0% 0%, var(--aurora-1), transparent 70%), radial-gradient(40rem 28rem at 100% 30%, var(--aurora-3), transparent 70%), radial-gradient(40rem 30rem at 20% 100%, var(--aurora-2), transparent 70%);
+  opacity: 0.7;
+}
+
+.bg-aurora::after {
+  inset: auto 0 0;
+  height: min(30rem, 70%);
+  background: linear-gradient(100deg, var(--aurora-2), var(--aurora-1) 45%, var(--aurora-3));
+  mask: url("../img/bg/ribbon.svg") bottom/100% 100% no-repeat;
+}
+
 .card {
   background-color: var(--color-bg-muted);
   border: 1px solid var(--color-border-default);
@@ -1426,6 +1500,7 @@ button.btn:active {
 
 .year {
   background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-surface);
   padding: 0.3125rem 0.9375rem;
   display: inline-block;
   font-weight: 600;
@@ -1607,10 +1682,6 @@ button.btn:active {
 
 .about-me {
   background-color: var(--color-bg-surface);
-  background-image: url("../img/bg/gemini-svg (4).svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   min-height: 100vh;
   width: 100%;
 }
@@ -1655,24 +1726,23 @@ button.btn:active {
   }
 }
 
+[data-theme=hc] .soft-skills-items img {
+  filter: brightness(0);
+}
+@media (prefers-contrast: more) {
+  :root:not([data-theme]) .soft-skills-items img {
+    filter: brightness(0);
+  }
+}
+
 .projects {
   background-color: var(--color-bg-emphasis);
-  background-image: url("../img/bg/gemini-svg (8).svg");
-  background-image: url("../img/bg/gemini-svg.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   min-height: 100vh;
   width: 100%;
 }
 
 .experience {
   background-color: var(--color-bg-surface);
-  background-image: url("../img/bg/gemini-svg.svg");
-  background-image: url("../img/bg/gemini-svg (8).svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   min-height: 100vh;
   width: 100%;
 }
@@ -1683,23 +1753,12 @@ button.btn:active {
 
 .education {
   background-color: var(--color-bg-emphasis);
-  background-image: url("../img/bg/gemini-svg (8).svg");
-  background-image: url("../img/bg/gemini-svg.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   min-height: 100vh;
   width: 100%;
 }
 
 .courses {
-  background-image: url("../img/bg/gemini-svg (8).svg");
-  background-image: url("../img/bg/gemini-svg.svg");
   background-color: var(--color-bg-surface);
-  background-image: url("../img/bg/gemini-svg (4).svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   min-height: 100vh;
   width: 100%;
 }
@@ -1752,11 +1811,6 @@ button.btn:active {
 
 .contact {
   background-color: var(--color-bg-emphasis);
-  background-image: url("../img/bg/gemini-svg (8).svg");
-  background-image: url("../img/bg/gemini-svg.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   min-height: 100vh;
   width: 100%;
 }
@@ -1883,6 +1937,15 @@ button.btn:active {
   height: 4rem;
   margin-top: 2rem;
   width: 4rem;
+}
+
+[data-theme=hc] .contact-cards img {
+  filter: brightness(0);
+}
+@media (prefers-contrast: more) {
+  :root:not([data-theme]) .contact-cards img {
+    filter: brightness(0);
+  }
 }
 
 .m-zero {
