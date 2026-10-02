@@ -133,6 +133,17 @@
   --color-blue-800: #1F447E;
   --color-blue-900: #122F5E;
   --color-blue-950: #091E41;
+  --color-violet-50: #F7F5FF;
+  --color-violet-100: #EBE6FF;
+  --color-violet-200: #D8CCFF;
+  --color-violet-300: #C2AEFF;
+  --color-violet-400: #AD8EFF;
+  --color-violet-500: #9976EA;
+  --color-violet-600: #7A5CC0;
+  --color-violet-700: #654AA1;
+  --color-violet-800: #4D387E;
+  --color-violet-900: #37255D;
+  --color-violet-950: #241641;
 }
 
 /* Modo claro por defecto */
@@ -157,12 +168,19 @@
   --color-link-emphasis-default: var(--color-mint-200);
   --color-link-emphasis-hover: var(--color-mint-100);
   --color-link-emphasis-active: var(--color-mint-300);
-  --color-decor-primary: var(--color-mint-200);
-  --color-decor-secondary: var(--color-teal-100);
-  --color-decor-tertiary: var(--color-blue-200);
-  --color-decor-emphasis-primary: var(--color-mint-900);
-  --color-decor-emphasis-secondary: var(--color-teal-900);
-  --color-decor-emphasis-tertiary: var(--color-blue-900);
+  --color-decor-mint: var(--color-mint-100);
+  --color-decor-sky: var(--color-blue-100);
+  --color-decor-lavender: var(--color-violet-100);
+  --color-decor-rose: var(--color-red-100);
+  --color-decor-mint-bold: var(--color-mint-200);
+  --color-decor-sky-bold: var(--color-blue-200);
+  --color-decor-lavender-bold: var(--color-violet-200);
+  --color-decor-emphasis-mint: var(--color-mint-950);
+  --color-decor-emphasis-sky: var(--color-blue-950);
+  --color-decor-emphasis-lavender: var(--color-violet-950);
+  --color-decor-emphasis-mint-bold: var(--color-mint-800);
+  --color-decor-emphasis-sky-bold: var(--color-blue-800);
+  --color-decor-emphasis-lavender-bold: var(--color-violet-800);
   --color-border-surface: var(--color-navy-50);
   --color-border-default: var(--color-neutral-200);
   --color-border-strong: var(--color-neutral-500);
@@ -212,12 +230,19 @@
     --color-link-emphasis-default: var(--color-mint-200);
     --color-link-emphasis-hover: var(--color-mint-100);
     --color-link-emphasis-active: var(--color-mint-300);
-    --color-decor-primary: var(--color-mint-800);
-    --color-decor-secondary: var(--color-teal-800);
-    --color-decor-tertiary: var(--color-blue-800);
-    --color-decor-emphasis-primary: var(--color-mint-900);
-    --color-decor-emphasis-secondary: var(--color-teal-900);
-    --color-decor-emphasis-tertiary: var(--color-blue-900);
+    --color-decor-mint: var(--color-mint-900);
+    --color-decor-sky: var(--color-blue-900);
+    --color-decor-lavender: var(--color-violet-900);
+    --color-decor-rose: var(--color-violet-950);
+    --color-decor-mint-bold: var(--color-mint-800);
+    --color-decor-sky-bold: var(--color-blue-800);
+    --color-decor-lavender-bold: var(--color-violet-800);
+    --color-decor-emphasis-mint: var(--color-mint-950);
+    --color-decor-emphasis-sky: var(--color-blue-950);
+    --color-decor-emphasis-lavender: var(--color-violet-950);
+    --color-decor-emphasis-mint-bold: var(--color-mint-800);
+    --color-decor-emphasis-sky-bold: var(--color-blue-800);
+    --color-decor-emphasis-lavender-bold: var(--color-violet-800);
     --color-border-surface: var(--color-navy-900);
     --color-border-default: var(--color-navy-800);
     --color-border-strong: var(--color-navy-400);
@@ -267,12 +292,19 @@
     --color-link-emphasis-default: var(--color-mint-200);
     --color-link-emphasis-hover: var(--color-mint-100);
     --color-link-emphasis-active: var(--color-mint-300);
-    --color-decor-primary: var(--color-neutral-0);
-    --color-decor-secondary: var(--color-neutral-0);
-    --color-decor-tertiary: var(--color-neutral-0);
-    --color-decor-emphasis-primary: var(--color-neutral-950);
-    --color-decor-emphasis-secondary: var(--color-neutral-950);
-    --color-decor-emphasis-tertiary: var(--color-neutral-950);
+    --color-decor-mint: var(--color-neutral-0);
+    --color-decor-sky: var(--color-neutral-0);
+    --color-decor-lavender: var(--color-neutral-0);
+    --color-decor-rose: var(--color-neutral-0);
+    --color-decor-mint-bold: var(--color-neutral-0);
+    --color-decor-sky-bold: var(--color-neutral-0);
+    --color-decor-lavender-bold: var(--color-neutral-0);
+    --color-decor-emphasis-mint: var(--color-neutral-950);
+    --color-decor-emphasis-sky: var(--color-neutral-950);
+    --color-decor-emphasis-lavender: var(--color-neutral-950);
+    --color-decor-emphasis-mint-bold: var(--color-neutral-950);
+    --color-decor-emphasis-sky-bold: var(--color-neutral-950);
+    --color-decor-emphasis-lavender-bold: var(--color-neutral-950);
     --color-border-surface: var(--color-neutral-950);
     --color-border-default: var(--color-neutral-950);
     --color-border-strong: var(--color-neutral-950);
@@ -321,12 +353,19 @@
   --color-link-emphasis-default: var(--color-mint-200);
   --color-link-emphasis-hover: var(--color-mint-100);
   --color-link-emphasis-active: var(--color-mint-300);
-  --color-decor-primary: var(--color-mint-800);
-  --color-decor-secondary: var(--color-teal-800);
-  --color-decor-tertiary: var(--color-blue-800);
-  --color-decor-emphasis-primary: var(--color-mint-900);
-  --color-decor-emphasis-secondary: var(--color-teal-900);
-  --color-decor-emphasis-tertiary: var(--color-blue-900);
+  --color-decor-mint: var(--color-mint-900);
+  --color-decor-sky: var(--color-blue-900);
+  --color-decor-lavender: var(--color-violet-900);
+  --color-decor-rose: var(--color-violet-950);
+  --color-decor-mint-bold: var(--color-mint-800);
+  --color-decor-sky-bold: var(--color-blue-800);
+  --color-decor-lavender-bold: var(--color-violet-800);
+  --color-decor-emphasis-mint: var(--color-mint-950);
+  --color-decor-emphasis-sky: var(--color-blue-950);
+  --color-decor-emphasis-lavender: var(--color-violet-950);
+  --color-decor-emphasis-mint-bold: var(--color-mint-800);
+  --color-decor-emphasis-sky-bold: var(--color-blue-800);
+  --color-decor-emphasis-lavender-bold: var(--color-violet-800);
   --color-border-surface: var(--color-navy-900);
   --color-border-default: var(--color-navy-800);
   --color-border-strong: var(--color-navy-400);
@@ -374,12 +413,19 @@
   --color-link-emphasis-default: var(--color-mint-200);
   --color-link-emphasis-hover: var(--color-mint-100);
   --color-link-emphasis-active: var(--color-mint-300);
-  --color-decor-primary: var(--color-neutral-0);
-  --color-decor-secondary: var(--color-neutral-0);
-  --color-decor-tertiary: var(--color-neutral-0);
-  --color-decor-emphasis-primary: var(--color-neutral-950);
-  --color-decor-emphasis-secondary: var(--color-neutral-950);
-  --color-decor-emphasis-tertiary: var(--color-neutral-950);
+  --color-decor-mint: var(--color-neutral-0);
+  --color-decor-sky: var(--color-neutral-0);
+  --color-decor-lavender: var(--color-neutral-0);
+  --color-decor-rose: var(--color-neutral-0);
+  --color-decor-mint-bold: var(--color-neutral-0);
+  --color-decor-sky-bold: var(--color-neutral-0);
+  --color-decor-lavender-bold: var(--color-neutral-0);
+  --color-decor-emphasis-mint: var(--color-neutral-950);
+  --color-decor-emphasis-sky: var(--color-neutral-950);
+  --color-decor-emphasis-lavender: var(--color-neutral-950);
+  --color-decor-emphasis-mint-bold: var(--color-neutral-950);
+  --color-decor-emphasis-sky-bold: var(--color-neutral-950);
+  --color-decor-emphasis-lavender-bold: var(--color-neutral-950);
   --color-border-surface: var(--color-neutral-950);
   --color-border-default: var(--color-neutral-950);
   --color-border-strong: var(--color-neutral-950);
@@ -565,7 +611,7 @@ a.btn:active, a.btn:visited {
 }
 
 /*-------- Enlaces externos --------*/
-a[target=_blank]:not(.btn, .social-list a, .social-media a)::after {
+a[target=_blank]:not(.social-list a, .social-media a)::after {
   content: ""/" (se abre en una pestaña nueva)";
   display: inline-block;
   width: 1em;
@@ -576,7 +622,7 @@ a[target=_blank]:not(.btn, .social-list a, .social-media a)::after {
   mask: url("../img/icons/open_in_new.svg") center/contain no-repeat;
 }
 
-:lang(en) a[target=_blank]:not(.btn, .social-list a, .social-media a)::after {
+:lang(en) a[target=_blank]:not(.social-list a, .social-media a)::after {
   content: ""/" (opens in a new tab)";
 }
 
@@ -1386,12 +1432,16 @@ button.btn:active {
     transition: none;
   }
 }
-/* Fondo decorativo con manchas de color y cintas curvas */
+/* Fondo decorativo con manchas de color difuminadas y una cinta curva en un lateral */
 /* En alto contraste los colores decorativos se igualan al fondo y desaparecen */
 .bg-aurora {
-  --aurora-1: var(--color-decor-primary);
-  --aurora-2: var(--color-decor-secondary);
-  --aurora-3: var(--color-decor-tertiary);
+  --aurora-mint: var(--color-decor-mint);
+  --aurora-sky: var(--color-decor-sky);
+  --aurora-lavender: var(--color-decor-lavender);
+  --aurora-rose: var(--color-decor-rose);
+  --aurora-ribbon-1: var(--color-decor-mint-bold);
+  --aurora-ribbon-2: var(--color-decor-sky-bold);
+  --aurora-ribbon-3: var(--color-decor-lavender-bold);
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -1399,9 +1449,13 @@ button.btn:active {
 
 /* Variante para secciones con bg.emphasis */
 .bg-aurora--emphasis {
-  --aurora-1: var(--color-decor-emphasis-primary);
-  --aurora-2: var(--color-decor-emphasis-secondary);
-  --aurora-3: var(--color-decor-emphasis-tertiary);
+  --aurora-mint: var(--color-decor-emphasis-mint);
+  --aurora-sky: var(--color-decor-emphasis-sky);
+  --aurora-lavender: var(--color-decor-emphasis-lavender);
+  --aurora-rose: var(--color-decor-emphasis-lavender);
+  --aurora-ribbon-1: var(--color-decor-emphasis-mint-bold);
+  --aurora-ribbon-2: var(--color-decor-emphasis-sky-bold);
+  --aurora-ribbon-3: var(--color-decor-emphasis-lavender-bold);
 }
 
 .bg-aurora::before,
@@ -1412,19 +1466,34 @@ button.btn:active {
   pointer-events: none;
 }
 
+/* Manchas grandes que se mezclan entre sí */
 .bg-aurora::before {
   inset: 0;
-  background: radial-gradient(45rem 30rem at 0% 0%, var(--aurora-1), transparent 70%), radial-gradient(40rem 28rem at 100% 30%, var(--aurora-3), transparent 70%), radial-gradient(40rem 30rem at 20% 100%, var(--aurora-2), transparent 70%);
-  opacity: 0.7;
+  background: radial-gradient(70% 45% at 0% 0%, var(--aurora-mint), transparent 70%), radial-gradient(60% 40% at 100% 10%, var(--aurora-lavender), transparent 70%), radial-gradient(65% 45% at 100% 100%, var(--aurora-sky), transparent 70%), radial-gradient(60% 40% at 0% 100%, var(--aurora-rose), transparent 70%);
 }
 
+/* Cinta curva que entra por el lateral derecho */
 .bg-aurora::after {
-  inset: auto 0 0;
-  height: min(30rem, 70%);
-  background: linear-gradient(100deg, var(--aurora-2), var(--aurora-1) 45%, var(--aurora-3));
-  mask: url("../img/bg/ribbon.svg") bottom/100% 100% no-repeat;
+  inset-block: -4rem;
+  right: -8rem;
+  width: min(36rem, 45vw);
+  background: linear-gradient(170deg, var(--aurora-ribbon-3), var(--aurora-ribbon-2) 45%, var(--aurora-ribbon-1));
+  mask: url("../img/bg/ribbon.svg") center/100% 100% no-repeat;
 }
 
+/* La misma cinta por el lateral izquierdo */
+.bg-aurora--left::after {
+  right: auto;
+  left: -8rem;
+  transform: scaleX(-1);
+}
+
+/* En pantallas pequeñas solo quedan las manchas */
+@media (max-width: 47.99rem) {
+  .bg-aurora::after {
+    display: none;
+  }
+}
 .card {
   background-color: var(--color-bg-muted);
   border: 1px solid var(--color-border-default);

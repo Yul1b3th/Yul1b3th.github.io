@@ -1,9 +1,13 @@
-/* Fondo decorativo con manchas de color y cintas curvas */
+/* Fondo decorativo con manchas de color difuminadas y una cinta curva en un lateral */
 /* En alto contraste los colores decorativos se igualan al fondo y desaparecen */
 .bg-aurora {
-  --aurora-1: var(--color-decor-primary);
-  --aurora-2: var(--color-decor-secondary);
-  --aurora-3: var(--color-decor-tertiary);
+  --aurora-mint: var(--color-decor-mint);
+  --aurora-sky: var(--color-decor-sky);
+  --aurora-lavender: var(--color-decor-lavender);
+  --aurora-rose: var(--color-decor-rose);
+  --aurora-ribbon-1: var(--color-decor-mint-bold);
+  --aurora-ribbon-2: var(--color-decor-sky-bold);
+  --aurora-ribbon-3: var(--color-decor-lavender-bold);
 
   position: relative;
   isolation: isolate;
@@ -12,9 +16,13 @@
 
 /* Variante para secciones con bg.emphasis */
 .bg-aurora--emphasis {
-  --aurora-1: var(--color-decor-emphasis-primary);
-  --aurora-2: var(--color-decor-emphasis-secondary);
-  --aurora-3: var(--color-decor-emphasis-tertiary);
+  --aurora-mint: var(--color-decor-emphasis-mint);
+  --aurora-sky: var(--color-decor-emphasis-sky);
+  --aurora-lavender: var(--color-decor-emphasis-lavender);
+  --aurora-rose: var(--color-decor-emphasis-lavender);
+  --aurora-ribbon-1: var(--color-decor-emphasis-mint-bold);
+  --aurora-ribbon-2: var(--color-decor-emphasis-sky-bold);
+  --aurora-ribbon-3: var(--color-decor-emphasis-lavender-bold);
 }
 
 .bg-aurora::before,
@@ -25,18 +33,35 @@
   pointer-events: none;
 }
 
+/* Manchas grandes que se mezclan entre sí */
 .bg-aurora::before {
   inset: 0;
   background:
-    radial-gradient(45rem 30rem at 0% 0%, var(--aurora-1), transparent 70%),
-    radial-gradient(40rem 28rem at 100% 30%, var(--aurora-3), transparent 70%),
-    radial-gradient(40rem 30rem at 20% 100%, var(--aurora-2), transparent 70%);
-  opacity: 0.7;
+    radial-gradient(70% 45% at 0% 0%, var(--aurora-mint), transparent 70%),
+    radial-gradient(60% 40% at 100% 10%, var(--aurora-lavender), transparent 70%),
+    radial-gradient(65% 45% at 100% 100%, var(--aurora-sky), transparent 70%),
+    radial-gradient(60% 40% at 0% 100%, var(--aurora-rose), transparent 70%);
 }
 
+/* Cinta curva que entra por el lateral derecho */
 .bg-aurora::after {
-  inset: auto 0 0;
-  height: min(30rem, 70%);
-  background: linear-gradient(100deg, var(--aurora-2), var(--aurora-1) 45%, var(--aurora-3));
-  mask: url('../img/bg/ribbon.svg') bottom / 100% 100% no-repeat;
+  inset-block: -4rem;
+  right: -8rem;
+  width: min(36rem, 45vw);
+  background: linear-gradient(170deg, var(--aurora-ribbon-3), var(--aurora-ribbon-2) 45%, var(--aurora-ribbon-1));
+  mask: url('../img/bg/ribbon.svg') center / 100% 100% no-repeat;
+}
+
+/* La misma cinta por el lateral izquierdo */
+.bg-aurora--left::after {
+  right: auto;
+  left: -8rem;
+  transform: scaleX(-1);
+}
+
+/* En pantallas pequeñas solo quedan las manchas */
+@media (max-width: 47.99rem) {
+  .bg-aurora::after {
+    display: none;
+  }
 }
