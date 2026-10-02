@@ -17,7 +17,7 @@
   top: 0;
   @include mx.apply-transition(all, 1s);
   z-index: 999;
-  @include mx.apply-color-opacity(background-color, 0.8, bg-inverse);
+  @include mx.apply-color-opacity(background-color, 0.8, bg-emphasis);
 
   // ANIDAMOS EL CONTENIDO AQUÍ:
   &-content {
@@ -55,7 +55,7 @@
 }
 
 .contact {
-  background-color: fn.get-color(bg-inverse);
+  background-color: fn.get-color(bg-emphasis);
   // background-color: #eff3ff;
   background-image: url('../img/bg/gemini-svg (8).svg');
   background-image: url('../img/bg/gemini-svg.svg');

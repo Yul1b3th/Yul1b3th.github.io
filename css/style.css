@@ -143,24 +143,25 @@
   --color-bg-muted: var(--color-neutral-50);
   --color-bg-brand: var(--color-mint-200);
   --color-bg-brand-subtle: var(--color-mint-50);
-  --color-bg-inverse: var(--color-navy-950);
+  --color-bg-emphasis: var(--color-navy-950);
   --color-text-default: var(--color-neutral-950);
   --color-text-heading: var(--color-navy-950);
   --color-text-body: var(--color-neutral-800);
   --color-text-muted: var(--color-neutral-700);
-  --color-text-inverse: var(--color-navy-50);
+  --color-text-on-emphasis: var(--color-navy-50);
   --color-text-on-brand: var(--color-neutral-950);
   --color-text-disabled: var(--color-neutral-400);
   --color-link-default: var(--color-mint-950);
   --color-link-hover: var(--color-mint-800);
   --color-link-active: var(--color-mint-700);
-  --color-link-inverse-default: var(--color-mint-200);
-  --color-link-inverse-hover: var(--color-mint-100);
-  --color-link-inverse-active: var(--color-mint-300);
+  --color-link-emphasis-default: var(--color-mint-200);
+  --color-link-emphasis-hover: var(--color-mint-100);
+  --color-link-emphasis-active: var(--color-mint-300);
   --color-border-default: var(--color-neutral-200);
   --color-border-strong: var(--color-neutral-500);
   --color-border-brand: var(--color-mint-200);
   --color-border-focus: var(--color-mint-700);
+  --color-border-focus-emphasis: var(--color-mint-200);
   --color-action-primary-bg: var(--color-mint-200);
   --color-action-primary-bg-hover: var(--color-mint-300);
   --color-action-primary-bg-active: var(--color-mint-400);
@@ -190,25 +191,25 @@
     --color-bg-muted: var(--color-navy-800);
     --color-bg-brand: var(--color-mint-200);
     --color-bg-brand-subtle: var(--color-mint-950);
-    --color-bg-inverse: var(--color-navy-50);
+    --color-bg-emphasis: var(--color-navy-950);
     --color-text-default: var(--color-navy-50);
     --color-text-heading: var(--color-navy-50);
     --color-text-body: var(--color-navy-200);
     --color-text-muted: var(--color-navy-300);
-    --color-text-inverse: var(--color-navy-950);
+    --color-text-on-emphasis: var(--color-navy-50);
     --color-text-on-brand: var(--color-navy-950);
     --color-text-disabled: var(--color-navy-600);
     --color-link-default: var(--color-mint-200);
     --color-link-hover: var(--color-mint-100);
     --color-link-active: var(--color-mint-300);
-    --color-link-inverse-default: var(--color-mint-950);
-    --color-link-inverse-hover: var(--color-mint-800);
-    --color-link-inverse-active: var(--color-mint-700);
+    --color-link-emphasis-default: var(--color-mint-200);
+    --color-link-emphasis-hover: var(--color-mint-100);
+    --color-link-emphasis-active: var(--color-mint-300);
     --color-border-default: var(--color-navy-800);
     --color-border-strong: var(--color-navy-400);
     --color-border-brand: var(--color-mint-200);
     --color-border-focus: var(--color-navy-50);
-    --color-border-focus-inverse: var(--color-mint-700);
+    --color-border-focus-emphasis: var(--color-mint-200);
     --color-action-primary-bg: var(--color-mint-200);
     --color-action-primary-bg-hover: var(--color-mint-300);
     --color-action-primary-bg-active: var(--color-mint-400);
@@ -238,25 +239,25 @@
     --color-bg-muted: var(--color-neutral-50);
     --color-bg-brand: var(--color-mint-200);
     --color-bg-brand-subtle: var(--color-mint-50);
-    --color-bg-inverse: var(--color-neutral-950);
+    --color-bg-emphasis: var(--color-neutral-950);
     --color-text-default: var(--color-neutral-950);
     --color-text-heading: var(--color-neutral-950);
     --color-text-body: var(--color-neutral-950);
     --color-text-muted: var(--color-neutral-900);
-    --color-text-inverse: var(--color-neutral-0);
+    --color-text-on-emphasis: var(--color-neutral-0);
     --color-text-on-brand: var(--color-neutral-950);
     --color-text-disabled: var(--color-neutral-600);
     --color-link-default: var(--color-mint-950);
     --color-link-hover: var(--color-mint-900);
     --color-link-active: var(--color-mint-800);
-    --color-link-inverse-default: var(--color-mint-200);
-    --color-link-inverse-hover: var(--color-mint-100);
-    --color-link-inverse-active: var(--color-mint-300);
+    --color-link-emphasis-default: var(--color-mint-200);
+    --color-link-emphasis-hover: var(--color-mint-100);
+    --color-link-emphasis-active: var(--color-mint-300);
     --color-border-default: var(--color-neutral-950);
     --color-border-strong: var(--color-neutral-950);
     --color-border-brand: var(--color-neutral-950);
     --color-border-focus: var(--color-neutral-950);
-    --color-border-focus-inverse: var(--color-mint-200);
+    --color-border-focus-emphasis: var(--color-mint-200);
     --color-action-primary-bg: var(--color-mint-200);
     --color-action-primary-bg-hover: var(--color-mint-100);
     --color-action-primary-bg-active: var(--color-mint-300);
@@ -285,25 +286,25 @@
   --color-bg-muted: var(--color-navy-800);
   --color-bg-brand: var(--color-mint-200);
   --color-bg-brand-subtle: var(--color-mint-950);
-  --color-bg-inverse: var(--color-navy-50);
+  --color-bg-emphasis: var(--color-navy-950);
   --color-text-default: var(--color-navy-50);
   --color-text-heading: var(--color-navy-50);
   --color-text-body: var(--color-navy-200);
   --color-text-muted: var(--color-navy-300);
-  --color-text-inverse: var(--color-navy-950);
+  --color-text-on-emphasis: var(--color-navy-50);
   --color-text-on-brand: var(--color-navy-950);
   --color-text-disabled: var(--color-navy-600);
   --color-link-default: var(--color-mint-200);
   --color-link-hover: var(--color-mint-100);
   --color-link-active: var(--color-mint-300);
-  --color-link-inverse-default: var(--color-mint-950);
-  --color-link-inverse-hover: var(--color-mint-800);
-  --color-link-inverse-active: var(--color-mint-700);
+  --color-link-emphasis-default: var(--color-mint-200);
+  --color-link-emphasis-hover: var(--color-mint-100);
+  --color-link-emphasis-active: var(--color-mint-300);
   --color-border-default: var(--color-navy-800);
   --color-border-strong: var(--color-navy-400);
   --color-border-brand: var(--color-mint-200);
   --color-border-focus: var(--color-navy-50);
-  --color-border-focus-inverse: var(--color-mint-700);
+  --color-border-focus-emphasis: var(--color-mint-200);
   --color-action-primary-bg: var(--color-mint-200);
   --color-action-primary-bg-hover: var(--color-mint-300);
   --color-action-primary-bg-active: var(--color-mint-400);
@@ -331,25 +332,25 @@
   --color-bg-muted: var(--color-neutral-50);
   --color-bg-brand: var(--color-mint-200);
   --color-bg-brand-subtle: var(--color-mint-50);
-  --color-bg-inverse: var(--color-neutral-950);
+  --color-bg-emphasis: var(--color-neutral-950);
   --color-text-default: var(--color-neutral-950);
   --color-text-heading: var(--color-neutral-950);
   --color-text-body: var(--color-neutral-950);
   --color-text-muted: var(--color-neutral-900);
-  --color-text-inverse: var(--color-neutral-0);
+  --color-text-on-emphasis: var(--color-neutral-0);
   --color-text-on-brand: var(--color-neutral-950);
   --color-text-disabled: var(--color-neutral-600);
   --color-link-default: var(--color-mint-950);
   --color-link-hover: var(--color-mint-900);
   --color-link-active: var(--color-mint-800);
-  --color-link-inverse-default: var(--color-mint-200);
-  --color-link-inverse-hover: var(--color-mint-100);
-  --color-link-inverse-active: var(--color-mint-300);
+  --color-link-emphasis-default: var(--color-mint-200);
+  --color-link-emphasis-hover: var(--color-mint-100);
+  --color-link-emphasis-active: var(--color-mint-300);
   --color-border-default: var(--color-neutral-950);
   --color-border-strong: var(--color-neutral-950);
   --color-border-brand: var(--color-neutral-950);
   --color-border-focus: var(--color-neutral-950);
-  --color-border-focus-inverse: var(--color-mint-200);
+  --color-border-focus-emphasis: var(--color-mint-200);
   --color-action-primary-bg: var(--color-mint-200);
   --color-action-primary-bg-hover: var(--color-mint-100);
   --color-action-primary-bg-active: var(--color-mint-300);
@@ -540,7 +541,7 @@ picture {
 .navbar,
 .home,
 .footer {
-  --color-border-focus: var(--color-border-focus-inverse);
+  --color-border-focus: var(--color-border-focus-emphasis);
 }
 
 *:focus-visible {
@@ -989,15 +990,15 @@ a:hover {
   justify-content: center;
   align-items: center;
   gap: 0;
-  background-color: var(--color-bg-inverse);
-  color: var(--color-text-inverse);
+  background-color: var(--color-bg-emphasis);
+  color: var(--color-text-on-emphasis);
 }
 .navbar a {
   text-decoration: none;
 }
 .navbar .nav-separator {
   display: none;
-  color: color-mix(in srgb, var(--color-text-inverse) 30%, transparent);
+  color: color-mix(in srgb, var(--color-text-on-emphasis) 30%, transparent);
 }
 .navbar .container-nav {
   display: flex;
@@ -1026,21 +1027,21 @@ a:hover {
   cursor: pointer;
   padding: 0;
   border-radius: 0.25rem;
-  background-color: var(--color-bg-inverse);
-  color: var(--color-text-inverse);
+  background-color: var(--color-bg-emphasis);
+  color: var(--color-text-on-emphasis);
   transition: color 0.2s 0.3s ease-in-out;
 }
 .navbar .navbar-actions label select:hover {
-  color: var(--color-link-inverse-default);
+  color: var(--color-link-emphasis-default);
 }
 .navbar .navbar-brand {
-  color: var(--color-text-inverse);
+  color: var(--color-text-on-emphasis);
   font-size: 2rem;
   font-weight: 600;
   transition: color 0.2s 0.3s ease-in-out;
 }
 .navbar .navbar-brand:hover {
-  color: var(--color-link-inverse-default);
+  color: var(--color-link-emphasis-default);
 }
 .navbar button.navbar-toggler {
   z-index: 2;
@@ -1051,7 +1052,7 @@ a:hover {
   cursor: pointer;
 }
 .navbar button.navbar-toggler:hover {
-  outline: 1px solid var(--color-link-inverse-default);
+  outline: 1px solid var(--color-link-emphasis-default);
 }
 .navbar button.navbar-toggler[aria-expanded=true] {
   background-image: url(../../img/icon-close.svg);
@@ -1069,7 +1070,7 @@ a:hover {
   gap: 1rem;
   transform: translateX(100%);
   transition: transform 500ms ease-in-out;
-  background-color: var(--color-bg-inverse);
+  background-color: var(--color-bg-emphasis);
 }
 .navbar .navbar-collapse .navbar-brand {
   font-size: 1.75rem;
@@ -1087,12 +1088,12 @@ a:hover {
   position: relative;
   display: block;
   padding: 0.75rem 1.5rem;
-  color: var(--color-text-inverse);
+  color: var(--color-text-on-emphasis);
   transition: all 0.3s ease-in-out;
 }
 .navbar .navbar-collapse .navbar-nav .nav-link:hover, .navbar .navbar-collapse .navbar-nav .nav-link.active {
-  background-color: color-mix(in srgb, var(--color-link-inverse-default) 10%, transparent);
-  color: var(--color-link-inverse-default);
+  background-color: color-mix(in srgb, var(--color-link-emphasis-default) 10%, transparent);
+  color: var(--color-link-emphasis-default);
 }
 .navbar .navbar-collapse .navbar-nav .nav-link::before {
   content: "";
@@ -1101,7 +1102,7 @@ a:hover {
   left: 0;
   width: 0;
   height: 1.5px;
-  background-color: var(--color-link-inverse-default);
+  background-color: var(--color-link-emphasis-default);
   transform: scaleY(1.5);
   transform-origin: bottom;
   transition: width 0.3s ease-in-out;
@@ -1242,10 +1243,10 @@ button.btn:active {
   }
 }
 .section-title--dark h2 {
-  color: var(--color-text-inverse);
+  color: var(--color-text-on-emphasis);
 }
 .section-title--dark span {
-  color: color-mix(in srgb, var(--color-text-inverse) 10%, transparent);
+  color: color-mix(in srgb, var(--color-text-on-emphasis) 10%, transparent);
 }
 
 .resume-items {
@@ -1320,12 +1321,12 @@ button.btn:active {
   gap: 0;
 }
 .social-list a svg {
-  fill: var(--color-text-inverse);
+  fill: var(--color-text-on-emphasis);
   width: 1rem;
   transition: fill 0.2s ease-in-out;
 }
 .social-list a svg:hover {
-  fill: var(--color-link-inverse-hover);
+  fill: var(--color-link-emphasis-hover);
 }
 
 /*-------- SCROLL TOP BUTTON --------*/
@@ -1375,28 +1376,28 @@ button.btn:active {
 
 /*-------- FOOTER --------*/
 .footer {
-  background-color: var(--color-bg-inverse);
-  color: var(--color-text-inverse);
+  background-color: var(--color-bg-emphasis);
+  color: var(--color-text-on-emphasis);
   padding: 1rem;
   text-align: center;
 }
 .footer a {
-  color: var(--color-text-inverse);
+  color: var(--color-text-on-emphasis);
   transition: color 0.2s ease-in-out;
 }
 .footer a:hover {
-  color: var(--color-link-inverse-hover);
+  color: var(--color-link-emphasis-hover);
 }
 
 .home {
-  background-color: var(--color-bg-inverse);
+  background-color: var(--color-bg-emphasis);
   background-image: url("../img/home-bg.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   min-height: 100vh;
   width: 100%;
-  color: var(--color-text-inverse);
+  color: var(--color-text-on-emphasis);
   display: flex;
 }
 .home .container {
@@ -1504,7 +1505,7 @@ button.btn:active {
 }
 
 .projects {
-  background-color: var(--color-bg-inverse);
+  background-color: var(--color-bg-emphasis);
   background-image: url("../img/bg/gemini-svg (8).svg");
   background-image: url("../img/bg/gemini-svg.svg");
   background-repeat: no-repeat;
@@ -1530,7 +1531,7 @@ button.btn:active {
 }
 
 .education {
-  background-color: var(--color-bg-inverse);
+  background-color: var(--color-bg-emphasis);
   background-image: url("../img/bg/gemini-svg (8).svg");
   background-image: url("../img/bg/gemini-svg.svg");
   background-repeat: no-repeat;
@@ -1568,7 +1569,7 @@ button.btn:active {
   top: 0;
   transition: all 1s ease-in-out;
   z-index: 999;
-  background-color: color-mix(in srgb, var(--color-bg-inverse) 80%, transparent);
+  background-color: color-mix(in srgb, var(--color-bg-emphasis) 80%, transparent);
 }
 .modal-content {
   background-color: var(--color-bg-page);
@@ -1599,7 +1600,7 @@ button.btn:active {
 }
 
 .contact {
-  background-color: var(--color-bg-inverse);
+  background-color: var(--color-bg-emphasis);
   background-image: url("../img/bg/gemini-svg (8).svg");
   background-image: url("../img/bg/gemini-svg.svg");
   background-repeat: no-repeat;

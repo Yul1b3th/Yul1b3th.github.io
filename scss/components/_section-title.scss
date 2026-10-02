@@ -44,12 +44,12 @@
   // --- Variante para fondos oscuros (Modificador BEM limpio) ---
   &--dark {
     h2 {
-      @include mx.apply-color(color, text-inverse);
+      @include mx.apply-color(color, text-on-emphasis);
     }
 
     span {
       // Aplicamos opacidad del 10% sobre tu fondo claro/gris
-      @include mx.apply-color-opacity(color, 0.1, text-inverse);
+      @include mx.apply-color-opacity(color, 0.1, text-on-emphasis);
     }
   }
 }
