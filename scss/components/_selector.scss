@@ -1,0 +1,127 @@
+/* Selector: botón que abre una lista de opciones excluyentes (tema, idioma) */
+.selector {
+  --selector-text: var(--color-text-default);
+  --selector-border: var(--color-border-default);
+  --selector-hover: var(--color-action-secondary-bg-hover);
+  --selector-focus: var(--color-border-focus);
+
+  position: relative;
+  display: inline-flex;
+}
+
+/* Variante para bg.emphasis, como la barra de navegación */
+.selector--emphasis {
+  --selector-text: var(--color-text-on-emphasis);
+  --selector-border: color-mix(in srgb, var(--color-text-on-emphasis) 35%, transparent);
+  --selector-hover: color-mix(in srgb, var(--color-text-on-emphasis) 12%, transparent);
+  --selector-focus: var(--color-border-focus-emphasis);
+}
+
+.selector__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 2.5rem;
+  padding: 0 0.5rem 0 0.75rem;
+  border: 1px solid var(--selector-border);
+  border-radius: 4rem;
+  background: transparent;
+  color: var(--selector-text);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.selector__button:hover {
+  background: var(--selector-hover);
+}
+
+.selector__button:focus-visible {
+  outline: 2px solid var(--selector-focus);
+  outline-offset: 2px;
+}
+
+.selector__icon,
+.selector__chevron,
+.selector__option-icon,
+.selector__check {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.selector__chevron {
+  transition: transform 150ms ease;
+}
+
+.selector__button[aria-expanded='true'] .selector__chevron {
+  transform: rotate(180deg);
+}
+
+.selector__menu {
+  position: absolute;
+  top: calc(100% + 0.375rem);
+  right: 0;
+  z-index: 20;
+  min-width: 12rem;
+  margin: 0;
+  padding: 0.375rem;
+  list-style: none;
+  border: 1px solid var(--color-border-default);
+  border-radius: 0.75rem;
+  background: var(--color-bg-page);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.16);
+}
+
+.selector__menu[hidden] {
+  display: none;
+}
+
+.selector__option {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  width: 100%;
+  min-height: 2.5rem;
+  padding: 0 0.625rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--color-text-default);
+  font: inherit;
+  font-size: 0.9375rem;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.selector__option:hover {
+  background: var(--color-action-secondary-bg-hover);
+}
+
+.selector__option:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: -2px;
+}
+
+/* La opción elegida se marca con peso y con el icono check */
+.selector__option[aria-checked='true'] {
+  font-weight: 600;
+}
+
+.selector__check {
+  margin-left: auto;
+  visibility: hidden;
+}
+
+.selector__option[aria-checked='true'] .selector__check {
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .selector__chevron {
+    transition: none;
+  }
+}

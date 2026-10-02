@@ -154,7 +154,15 @@
     "contact-submit": "Send message",
     "contact-thanks-message": "Thank you very much!<br>For your comments",
     "contact-thanks-title": "Smiley face icon",
-    "contact-thanks-desc": "A circular icon with a smiling face"
+    "contact-thanks-desc": "A circular icon with a smiling face",
+    "language-label": "Language",
+    "theme-label": "Theme",
+    "theme-system": "System",
+    "theme-light": "Light",
+    "theme-dark": "Dark",
+    "theme-hc": "High contrast",
+    "menu-label": "Menu",
+    "scroll-top-label": "Back to top"
   },
   "es": {
     "home": "Inicio",
@@ -311,6 +319,14 @@
     "contact-submit": "Enviar mensaje",
     "contact-thanks-message": "¡Muchas Gracias!<br>Por tus comentarios",
     "contact-thanks-title": "Icono de cara sonriente",
-    "contact-thanks-desc": "Un icono circular con una cara sonriente"
+    "contact-thanks-desc": "Un icono circular con una cara sonriente",
+    "language-label": "Idioma",
+    "theme-label": "Tema",
+    "theme-system": "Sistema",
+    "theme-light": "Claro",
+    "theme-dark": "Oscuro",
+    "theme-hc": "Alto contraste",
+    "menu-label": "Menú",
+    "scroll-top-label": "Volver arriba"
   }
 }
