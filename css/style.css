@@ -176,14 +176,12 @@
   --color-decor-pink-bold: var(--color-red-200);
   --color-decor-lavender-bold: var(--color-violet-200);
   --color-decor-sky-bold: var(--color-blue-200);
-  --color-decor-orb-1: var(--color-violet-300);
-  --color-decor-orb-2: var(--color-blue-300);
-  --color-decor-orb-3: var(--color-teal-300);
-  --color-decor-dot: var(--color-navy-200);
-  --color-decor-emphasis-orb-1: var(--color-violet-500);
-  --color-decor-emphasis-orb-2: var(--color-blue-500);
-  --color-decor-emphasis-orb-3: var(--color-teal-500);
-  --color-decor-emphasis-dot: var(--color-navy-800);
+  --color-decor-halo-1: var(--color-violet-300);
+  --color-decor-halo-2: var(--color-blue-300);
+  --color-decor-halo-3: var(--color-teal-300);
+  --color-decor-emphasis-halo-1: var(--color-violet-500);
+  --color-decor-emphasis-halo-2: var(--color-blue-500);
+  --color-decor-emphasis-halo-3: var(--color-teal-500);
   --color-decor-emphasis-mint: var(--color-mint-950);
   --color-decor-emphasis-sky: var(--color-blue-950);
   --color-decor-emphasis-lavender: var(--color-violet-950);
@@ -247,14 +245,12 @@
     --color-decor-pink-bold: var(--color-violet-800);
     --color-decor-lavender-bold: var(--color-blue-800);
     --color-decor-sky-bold: var(--color-mint-900);
-    --color-decor-orb-1: var(--color-violet-600);
-    --color-decor-orb-2: var(--color-blue-600);
-    --color-decor-orb-3: var(--color-teal-600);
-    --color-decor-dot: var(--color-navy-700);
-    --color-decor-emphasis-orb-1: var(--color-violet-500);
-    --color-decor-emphasis-orb-2: var(--color-blue-500);
-    --color-decor-emphasis-orb-3: var(--color-teal-500);
-    --color-decor-emphasis-dot: var(--color-navy-800);
+    --color-decor-halo-1: var(--color-violet-600);
+    --color-decor-halo-2: var(--color-blue-600);
+    --color-decor-halo-3: var(--color-teal-600);
+    --color-decor-emphasis-halo-1: var(--color-violet-500);
+    --color-decor-emphasis-halo-2: var(--color-blue-500);
+    --color-decor-emphasis-halo-3: var(--color-teal-500);
     --color-decor-emphasis-mint: var(--color-mint-950);
     --color-decor-emphasis-sky: var(--color-blue-950);
     --color-decor-emphasis-lavender: var(--color-violet-950);
@@ -318,14 +314,12 @@
     --color-decor-pink-bold: var(--color-neutral-0);
     --color-decor-lavender-bold: var(--color-neutral-0);
     --color-decor-sky-bold: var(--color-neutral-0);
-    --color-decor-orb-1: var(--color-neutral-0);
-    --color-decor-orb-2: var(--color-neutral-0);
-    --color-decor-orb-3: var(--color-neutral-0);
-    --color-decor-dot: var(--color-neutral-0);
-    --color-decor-emphasis-orb-1: var(--color-neutral-950);
-    --color-decor-emphasis-orb-2: var(--color-neutral-950);
-    --color-decor-emphasis-orb-3: var(--color-neutral-950);
-    --color-decor-emphasis-dot: var(--color-neutral-950);
+    --color-decor-halo-1: var(--color-neutral-0);
+    --color-decor-halo-2: var(--color-neutral-0);
+    --color-decor-halo-3: var(--color-neutral-0);
+    --color-decor-emphasis-halo-1: var(--color-neutral-950);
+    --color-decor-emphasis-halo-2: var(--color-neutral-950);
+    --color-decor-emphasis-halo-3: var(--color-neutral-950);
     --color-decor-emphasis-mint: var(--color-neutral-950);
     --color-decor-emphasis-sky: var(--color-neutral-950);
     --color-decor-emphasis-lavender: var(--color-neutral-950);
@@ -388,14 +382,12 @@
   --color-decor-pink-bold: var(--color-violet-800);
   --color-decor-lavender-bold: var(--color-blue-800);
   --color-decor-sky-bold: var(--color-mint-900);
-  --color-decor-orb-1: var(--color-violet-600);
-  --color-decor-orb-2: var(--color-blue-600);
-  --color-decor-orb-3: var(--color-teal-600);
-  --color-decor-dot: var(--color-navy-700);
-  --color-decor-emphasis-orb-1: var(--color-violet-500);
-  --color-decor-emphasis-orb-2: var(--color-blue-500);
-  --color-decor-emphasis-orb-3: var(--color-teal-500);
-  --color-decor-emphasis-dot: var(--color-navy-800);
+  --color-decor-halo-1: var(--color-violet-600);
+  --color-decor-halo-2: var(--color-blue-600);
+  --color-decor-halo-3: var(--color-teal-600);
+  --color-decor-emphasis-halo-1: var(--color-violet-500);
+  --color-decor-emphasis-halo-2: var(--color-blue-500);
+  --color-decor-emphasis-halo-3: var(--color-teal-500);
   --color-decor-emphasis-mint: var(--color-mint-950);
   --color-decor-emphasis-sky: var(--color-blue-950);
   --color-decor-emphasis-lavender: var(--color-violet-950);
@@ -457,14 +449,12 @@
   --color-decor-pink-bold: var(--color-neutral-0);
   --color-decor-lavender-bold: var(--color-neutral-0);
   --color-decor-sky-bold: var(--color-neutral-0);
-  --color-decor-orb-1: var(--color-neutral-0);
-  --color-decor-orb-2: var(--color-neutral-0);
-  --color-decor-orb-3: var(--color-neutral-0);
-  --color-decor-dot: var(--color-neutral-0);
-  --color-decor-emphasis-orb-1: var(--color-neutral-950);
-  --color-decor-emphasis-orb-2: var(--color-neutral-950);
-  --color-decor-emphasis-orb-3: var(--color-neutral-950);
-  --color-decor-emphasis-dot: var(--color-neutral-950);
+  --color-decor-halo-1: var(--color-neutral-0);
+  --color-decor-halo-2: var(--color-neutral-0);
+  --color-decor-halo-3: var(--color-neutral-0);
+  --color-decor-emphasis-halo-1: var(--color-neutral-950);
+  --color-decor-emphasis-halo-2: var(--color-neutral-950);
+  --color-decor-emphasis-halo-3: var(--color-neutral-950);
   --color-decor-emphasis-mint: var(--color-neutral-950);
   --color-decor-emphasis-sky: var(--color-neutral-950);
   --color-decor-emphasis-lavender: var(--color-neutral-950);
@@ -1481,7 +1471,7 @@ button.btn:active {
 /* En alto contraste los colores decorativos se igualan al fondo y desaparecen */
 .bg-glow,
 .bg-sweep,
-.bg-orbs {
+.bg-halo {
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -1490,8 +1480,7 @@ button.btn:active {
 .bg-glow::before,
 .bg-sweep::before,
 .bg-sweep::after,
-.bg-orbs::before,
-.bg-orbs::after {
+.bg-halo::before {
   position: absolute;
   z-index: -1;
   content: "";
@@ -1556,70 +1545,40 @@ button.btn:active {
   transform: rotate(5deg);
 }
 
-/*-------- Esferas: esferas con brillo sobre una rejilla de puntos --------*/
-.bg-orbs {
-  --orb-1: var(--color-decor-orb-1);
-  --orb-2: var(--color-decor-orb-2);
-  --orb-3: var(--color-decor-orb-3);
-  --orb-dot: var(--color-decor-dot);
+/*-------- Halo: degradados radiales unidos en un solo bloque --------*/
+.bg-halo {
+  --halo-1: var(--color-decor-halo-1);
+  --halo-2: var(--color-decor-halo-2);
+  --halo-3: var(--color-decor-halo-3);
 }
 
-.bg-orbs--emphasis {
-  --orb-1: var(--color-decor-emphasis-orb-1);
-  --orb-2: var(--color-decor-emphasis-orb-2);
-  --orb-3: var(--color-decor-emphasis-orb-3);
-  --orb-dot: var(--color-decor-emphasis-dot);
+.bg-halo--emphasis {
+  --halo-1: var(--color-decor-emphasis-halo-1);
+  --halo-2: var(--color-decor-emphasis-halo-2);
+  --halo-3: var(--color-decor-emphasis-halo-3);
 }
 
-/* Halos de color en los bordes y rejilla de puntos que se desvanece hacia el centro */
-.bg-orbs::before {
+/* Tres halos que se solapan en la esquina superior y se funden con el fondo */
+.bg-halo::before {
   inset: 0;
-  background: radial-gradient(circle closest-side, color-mix(in srgb, var(--orb-1) 45%, transparent), transparent) right -17rem top -13rem/40rem 40rem, radial-gradient(circle closest-side, color-mix(in srgb, var(--orb-3) 40%, transparent), transparent) left -4rem bottom -4rem/22rem 22rem, radial-gradient(circle closest-side, color-mix(in srgb, var(--orb-2) 40%, transparent), transparent) right calc(22% - 2.75rem) bottom calc(18% - 2.75rem)/10rem 10rem, radial-gradient(var(--orb-dot) 1px, transparent 1.5px) 0 0/1.5rem 1.5rem;
-  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
-  mask: radial-gradient(75% 65% at 50% 45%, transparent 30%, #000 100%);
+  background: radial-gradient(30rem 24rem at 86% 6%, color-mix(in srgb, var(--halo-1) 60%, transparent), transparent 70%), radial-gradient(26rem 22rem at 100% 34%, color-mix(in srgb, var(--halo-2) 55%, transparent), transparent 70%), radial-gradient(24rem 20rem at 70% -4%, color-mix(in srgb, var(--halo-3) 50%, transparent), transparent 70%);
+  filter: blur(20px);
 }
 
-/* Esferas con reflejo de luz arriba a la izquierda, recortadas en círculo */
-.bg-orbs::after {
-  inset: 0;
-  background: radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--orb-1), #fff 70%), var(--orb-1) 35%, color-mix(in srgb, var(--orb-1), #000 50%) 75%, color-mix(in srgb, var(--orb-1), #000 65%)) right -8rem top -4rem/22rem 22rem, radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--orb-3), #fff 70%), var(--orb-3) 35%, color-mix(in srgb, var(--orb-3), #000 50%) 75%, color-mix(in srgb, var(--orb-3), #000 65%)) left 3% bottom 8%/10rem 10rem, radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--orb-2), #fff 70%), var(--orb-2) 35%, color-mix(in srgb, var(--orb-2), #000 50%) 75%, color-mix(in srgb, var(--orb-2), #000 65%)) right 22% bottom 18%/4.5rem 4.5rem;
-  background-repeat: no-repeat;
-  mask: radial-gradient(circle closest-side, #000 97%, transparent 100%) right -8rem top -4rem/22rem 22rem, radial-gradient(circle closest-side, #000 97%, transparent 100%) left 3% bottom 8%/10rem 10rem, radial-gradient(circle closest-side, #000 97%, transparent 100%) right 22% bottom 18%/4.5rem 4.5rem;
-  mask-repeat: no-repeat;
-  animation: orbs-float 14s ease-in-out infinite alternate;
-}
-
-/* Las esferas y los halos a la izquierda */
-.bg-orbs--start::before,
-.bg-orbs--start::after {
+/* El mismo bloque en la esquina superior izquierda */
+.bg-halo--start::before {
   transform: scaleX(-1);
 }
 
-@keyframes orbs-float {
-  to {
-    translate: 0 -1.25rem;
-  }
-}
-/* En pantallas pequeñas las esferas quedarían bajo el texto */
-@media (max-width: 47.99rem) {
-  .bg-orbs::after {
-    display: none;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .bg-orbs::after {
-    animation: none;
-  }
-}
 /*-------- Alto contraste sin decoración --------*/
-[data-theme=hc] :is(.bg-glow, .bg-sweep, .bg-orbs)::before,
-[data-theme=hc] :is(.bg-glow, .bg-sweep, .bg-orbs)::after {
+[data-theme=hc] :is(.bg-glow, .bg-sweep, .bg-halo)::before,
+[data-theme=hc] :is(.bg-glow, .bg-sweep, .bg-halo)::after {
   display: none;
 }
 
 @media (prefers-contrast: more) {
-  :root:not([data-theme]) :is(.bg-glow, .bg-sweep, .bg-orbs)::before,
-  :root:not([data-theme]) :is(.bg-glow, .bg-sweep, .bg-orbs)::after {
+  :root:not([data-theme]) :is(.bg-glow, .bg-sweep, .bg-halo)::before,
+  :root:not([data-theme]) :is(.bg-glow, .bg-sweep, .bg-halo)::after {
     display: none;
   }
 }
