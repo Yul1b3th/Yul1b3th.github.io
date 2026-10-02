@@ -120,34 +120,6 @@
   transform: scaleX(-1);
 }
 
-/*-------- Red de nodos: elemento decorativo que ocupa solo una zona --------*/
-/* Uso: <div class="bg-network" aria-hidden="true"></div> dentro de una sección con fondo */
-.bg-network {
-  --network-1: var(--color-decor-emphasis-halo-3);
-  --network-2: var(--color-decor-emphasis-halo-2);
-  --network-3: var(--color-decor-emphasis-halo-1);
-
-  position: absolute;
-  z-index: -1;
-  right: 0;
-  bottom: 0;
-  width: min(48rem, 55%);
-  height: 42%;
-  pointer-events: none;
-  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--network-2) 70%, transparent));
-}
-
-.bg-network::before {
-  position: absolute;
-  inset: 0;
-  content: '';
-  background: linear-gradient(135deg, var(--network-1), var(--network-2) 50%, var(--network-3));
-  mask:
-    url('../img/bg/network.svg') center / 100% 100% no-repeat,
-    linear-gradient(to left, #000 35%, transparent 95%);
-  mask-composite: intersect;
-}
-
 /*-------- Arcos de luz: separan el final de una sección --------*/
 /* Uso: <div class="bg-streaks" aria-hidden="true"></div> al final de una sección con fondo */
 .bg-streaks {
@@ -173,25 +145,17 @@
   mask: url('../img/bg/streaks.svg') center / 100% 100% no-repeat;
 }
 
-@media (max-width: 47.99rem) {
-  .bg-network {
-    width: 100%;
-    height: 45%;
-    opacity: 0.5;
-  }
-}
-
 /*-------- Alto contraste sin decoración --------*/
 [data-theme='hc'] :is(.bg-glow, .bg-sweep, .bg-halo)::before,
 [data-theme='hc'] :is(.bg-glow, .bg-sweep, .bg-halo)::after,
-[data-theme='hc'] :is(.bg-network, .bg-streaks) {
+[data-theme='hc'] .bg-streaks {
   display: none;
 }
 
 @media (prefers-contrast: more) {
   :root:not([data-theme]) :is(.bg-glow, .bg-sweep, .bg-halo)::before,
   :root:not([data-theme]) :is(.bg-glow, .bg-sweep, .bg-halo)::after,
-  :root:not([data-theme]) :is(.bg-network, .bg-streaks) {
+  :root:not([data-theme]) .bg-streaks {
     display: none;
   }
 }
