@@ -1182,6 +1182,10 @@ button.btn:active {
   min-height: 100vh;
   width: 100%;
 }
+.experience .card ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
 
 .education {
   background-color: #0b132b;
