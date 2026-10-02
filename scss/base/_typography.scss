@@ -19,24 +19,24 @@ h2 {
 }
 
 h3 {
-  @include apply-typography('3xl', 'sm', 600, 'md', (neutral, 'dark-200'));
+  @include apply-typography('3xl', 'sm', 600, 'md', text-default);
 }
 
 h4:not(:last-child) {
   // Corregimos la estructura para que busque dentro del mapa 'neutral'
-  @include apply-typography('base', 'sm', 600, 'sm', (neutral, 'dark-200'));
+  @include apply-typography('base', 'sm', 600, 'sm', text-default);
 }
 
 h5 {
-  @include apply-typography('xl', 'base', 500, 'md', (neutral, 'dark-200'));
+  @include apply-typography('xl', 'base', 500, 'md', text-default);
 }
 
 h6 {
-  @include apply-typography('lg', 'base', 500, 'md', (neutral, 'dark-200'));
+  @include apply-typography('lg', 'base', 500, 'md', text-default);
 }
 
 p:not(:last-child) {
-  @include apply-typography('base', 'base', 400, 'md', (neutral, 'gray-dark'));
+  @include apply-typography('base', 'base', 400, 'md', text-body);
 }
 
 small {

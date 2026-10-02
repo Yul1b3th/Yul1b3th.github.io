@@ -28,11 +28,7 @@
 }
 
 .year {
-  @include mx.apply-color(
-    background-color,
-    neutral,
-    'light-300'
-  ); // Tu nuevo azul/gris claro muy limpio
+  @include mx.apply-color(background-color, bg-surface);
   padding: 0.3125rem 0.9375rem;
   display: inline-block;
   font-weight: 600;

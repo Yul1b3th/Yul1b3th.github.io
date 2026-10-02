@@ -7,9 +7,9 @@
 /*-------- BUTTONS --------*/
 a.btn,
 button.btn {
-  @include mx.apply-color(background-color, primary, default);
-  @include mx.apply-color(color, neutral, 'dark-300');
-  @include mx.apply-border(2px, solid, primary, default);
+  @include mx.apply-color(background-color, action-primary-bg);
+  @include mx.apply-color(color, action-primary-text);
+  @include mx.apply-border(2px, solid, action-primary-border);
   @include mx.apply-border-radius(4rem);
   cursor: pointer;
   display: inline-block;
@@ -24,24 +24,24 @@ button.btn {
 
   // 1. EL ESTADO VISITED VA PRIMERO
   &:visited {
-    @include mx.apply-color(background-color, primary, default);
-    @include mx.apply-color(color, neutral, 'dark-300');
-    @include mx.apply-border(2px, solid, primary, default);
+    @include mx.apply-color(background-color, action-primary-bg);
+    @include mx.apply-color(color, action-primary-text);
+    @include mx.apply-border(2px, solid, action-primary-border);
   }
 
   // 2. EL HOVER VA DESPUÉS (Gana prioridad en cascada al pasar el cursor)
   &:hover {
     text-decoration: none;
-    @include mx.apply-color(background-color, primary, bright);
-    @include mx.apply-color(color, neutral, 'dark-300');
-    @include mx.apply-border(2px, solid, primary, bright);
+    @include mx.apply-color(background-color, action-primary-bg-hover);
+    @include mx.apply-color(color, action-primary-text);
+    @include mx.apply-border(2px, solid, action-primary-border);
   }
 
   // 3. EL ACTIVE VA AL FINAL (Se aplica exactamente al hacer click)
   &:active {
-    @include mx.apply-color(background-color, primary, bright);
-    @include mx.apply-color(color, neutral, 'dark-300');
-    @include mx.apply-border(2px, solid, primary, bright);
+    @include mx.apply-color(background-color, action-primary-bg-active);
+    @include mx.apply-color(color, action-primary-text);
+    @include mx.apply-border(2px, solid, action-primary-border);
   }
 }
 

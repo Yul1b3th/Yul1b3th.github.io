@@ -11,8 +11,8 @@
   height: 4rem;
   z-index: 10;
   @include mx.apply-flex-container(row, center, center);
-  @include mx.apply-color(background-color, neutral, 'dark-400');
-  @include mx.apply-color(color, utility, white);
+  @include mx.apply-color(background-color, bg-inverse);
+  @include mx.apply-color(color, text-inverse);
 
   a {
     text-decoration: none;
@@ -20,7 +20,7 @@
 
   .nav-separator {
     display: none; // Oculto por defecto en móvil
-    @include mx.apply-color(color, neutral, 'dark-100');
+    @include mx.apply-color-opacity(color, 0.3, text-inverse);
   }
 
   .container-nav {
@@ -44,25 +44,25 @@
         cursor: pointer;
         padding: 0;
         @include mx.apply-border-radius(0.25rem);
-        @include mx.apply-color(background-color, neutral, 'dark-400');
-        @include mx.apply-color(color, utility, white);
+        @include mx.apply-color(background-color, bg-inverse);
+        @include mx.apply-color(color, text-inverse);
         @include mx.apply-transition(color 0.2s);
 
         &:hover {
-          @include mx.apply-color(color, primary, default);
+          @include mx.apply-color(color, text-inverse-brand);
         }
       }
     }
   }
 
   .navbar-brand {
-    @include mx.apply-color(color, utility, white);
+    @include mx.apply-color(color, text-inverse);
     font-size: 2rem;
     font-weight: 600;
     @include mx.apply-transition(color 0.2s);
 
     &:hover {
-      @include mx.apply-color(color, primary, default);
+      @include mx.apply-color(color, text-inverse-brand);
     }
   }
 
@@ -75,7 +75,7 @@
     cursor: pointer;
 
     &:hover {
-      outline: 1px solid fn.get-color(primary, default);
+      outline: 1px solid fn.get-color(text-inverse-brand);
     }
 
     &[aria-expanded='true'] {
@@ -92,7 +92,7 @@
     @include mx.apply-flex-container(column, space-around, center, fn.get-spacing(md));
     transform: translateX(100%);
     @include mx.apply-transition(transform, 500ms);
-    @include mx.apply-color(background-color, neutral, 'dark-400');
+    @include mx.apply-color(background-color, bg-inverse);
 
     .navbar-brand {
       font-size: 1.75rem;
@@ -107,13 +107,13 @@
         position: relative;
         display: block;
         padding: 0.75rem 1.5rem;
-        @include mx.apply-color(color, utility, white);
+        @include mx.apply-color(color, text-inverse);
         @include mx.apply-transition(all, 0.3s);
 
         &:hover,
         &.active {
-          @include mx.apply-color-opacity(background-color, 0.1, primary, default);
-          @include mx.apply-color(color, primary, default);
+          @include mx.apply-color-opacity(background-color, 0.1, text-inverse-brand);
+          @include mx.apply-color(color, text-inverse-brand);
         }
 
         &::before {
@@ -123,7 +123,7 @@
           left: 0;
           width: 0;
           height: 1.5px;
-          @include mx.apply-color(background-color, primary, default);
+          @include mx.apply-color(background-color, text-inverse-brand);
           transform: scaleY(1.5);
           transform-origin: bottom;
           @include mx.apply-transition(width, 0.3s);

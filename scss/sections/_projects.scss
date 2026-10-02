@@ -5,7 +5,7 @@
 @use '../abstracts/mixins' as mx;
 
 .projects {
-  background-color: fn.get-background-color('deep-dark');
+  background-color: fn.get-color(bg-inverse);
   // background-color: #eff3ff;
   background-image: url('../img/bg/gemini-svg (8).svg');
   background-image: url('../img/bg/gemini-svg.svg');

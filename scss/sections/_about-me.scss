@@ -5,8 +5,7 @@
 @use '../abstracts/mixins' as mx;
 
 .about-me {
-  background-color: fn.get-background-color('deep-dark');
-  background-color: #eff3ff;
+  background-color: fn.get-color(bg-surface);
   background-image: url('../img/bg/gemini-svg (4).svg');
   background-repeat: no-repeat;
   background-size: cover;

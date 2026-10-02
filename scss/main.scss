@@ -12,6 +12,7 @@
 // 2. VENDOR (Estilos de terceros)
 // ==========================================================================
 @use 'vendor/fonts' as *;
+@use 'vendor/innovatech-tokens' as *;
 
 // ==========================================================================
 // 3. BASE (Configuración global del sitio y reseteos)
@@ -52,15 +53,8 @@
 @use 'sections/contact' as *;
 
 // ==========================================================================
-// 7. THEMES (Variaciones de estilos: Modo Oscuro / Modo Claro)
-// ==========================================================================
-@use 'themes/light' as *;
-@use 'themes/dark' as *;
-
-// ==========================================================================
-// 8. UTILITIES (Clases helper atómicas de máxima prioridad)
+// 7. UTILITIES (Clases helper atómicas de máxima prioridad)
 // ==========================================================================
 @use 'utilities/spacing' as *;
-@use 'utilities/colors' as *;
 @use 'utilities/visibility' as *;
 @use 'utilities/utilities' as *;

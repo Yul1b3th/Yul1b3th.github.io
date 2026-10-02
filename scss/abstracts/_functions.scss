@@ -4,6 +4,7 @@
 @use 'sass:color';
 @use 'sass:meta';
 @use './variables' as *;
+@use './tokens' as tokens;
 
 // === Funciones genéricas ===
 
@@ -41,38 +42,17 @@
 }
 
 // === Funciones de colores ===
-// Obtiene un color por nombre
-@function get-color($color-name...) {
-  $color-map: $colors;
-
-  @each $name in $color-name {
-    @if map.has-key($color-map, $name) {
-      $color-map: map.get($color-map, $name);
-    } @else {
-      @error "La clave `#{$name}` no existe en el mapa de colores.";
-    }
+// Devuelve la variable CSS de un token semántico de color
+@function get-color($name) {
+  @if not map.has-key(tokens.$theme-light, 'color-#{$name}') {
+    @error "El token de color `#{$name}` no existe.";
   }
-
-  @if meta.type-of($color-map) == 'map' {
-    @error "El valor `#{$color-name}` no resuelve en un color final.";
-  }
-
-  @return $color-map;
+  @return var(--color-#{$name});
 }
 
-// Obtiene un color de fondo por nombre
-@function get-background-color($background-name...) {
-  $color-map: $backgrounds;
-
-  @each $name in $background-name {
-    @if map.has-key($color-map, $name) {
-      $color-map: map.get($color-map, $name);
-    } @else {
-      @error "La clave `#{$name}` no existe en el mapa de colores de fondo.";
-    }
-  }
-
-  @return $color-map;
+// Devuelve un token semántico con transparencia
+@function get-color-alpha($name, $alpha) {
+  @return color-mix(in srgb, get-color($name) #{$alpha * 100%}, transparent);
 }
 
 // Obtiene un breakpoint

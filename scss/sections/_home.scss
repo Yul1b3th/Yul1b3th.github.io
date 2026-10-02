@@ -5,14 +5,14 @@
 @use '../abstracts/mixins' as mx;
 
 .home {
-  background-color: fn.get-background-color('deep-dark');
+  background-color: fn.get-color(bg-inverse);
   background-image: url('../img/home-bg.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   min-height: 100vh;
   width: 100%;
-  color: fn.get-color(utility, white);
+  color: fn.get-color(text-inverse);
   display: flex;
   .container {
     @include mx.apply-flex-container(
@@ -50,7 +50,7 @@
       .social-list {
         a {
           @include mx.apply-border-radius(50%);
-          @include mx.apply-border(2px, solid, primary, default);
+          @include mx.apply-border(2px, solid, border-brand);
           overflow: hidden;
           padding: 0.3rem;
           width: 3.125rem;
