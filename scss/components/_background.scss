@@ -3,7 +3,7 @@
 
 .bg-glow,
 .bg-sweep,
-.bg-ribbon {
+.bg-orbs {
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -12,8 +12,8 @@
 .bg-glow::before,
 .bg-sweep::before,
 .bg-sweep::after,
-.bg-ribbon::before,
-.bg-ribbon::after {
+.bg-orbs::before,
+.bg-orbs::after {
   position: absolute;
   z-index: -1;
   content: '';
@@ -82,50 +82,83 @@
   transform: rotate(5deg);
 }
 
-/*-------- Cinta: entra por la esquina superior y se pierde por el lateral --------*/
-.bg-ribbon {
-  --ribbon-1: var(--color-decor-lavender-bold);
-  --ribbon-2: var(--color-decor-sky-bold);
-  --ribbon-3: var(--color-decor-teal);
-  --ribbon-glow: var(--color-decor-lavender);
+/*-------- Esferas: esferas con brillo sobre una rejilla de puntos --------*/
+.bg-orbs {
+  --orb-1: var(--color-decor-orb-1);
+  --orb-2: var(--color-decor-orb-2);
+  --orb-3: var(--color-decor-orb-3);
+  --orb-dot: var(--color-decor-dot);
 }
 
-.bg-ribbon--emphasis {
-  --ribbon-1: var(--color-decor-emphasis-lavender-bold);
-  --ribbon-2: var(--color-decor-emphasis-sky-bold);
-  --ribbon-3: var(--color-decor-emphasis-teal-bold);
-  --ribbon-glow: var(--color-decor-emphasis-lavender);
+.bg-orbs--emphasis {
+  --orb-1: var(--color-decor-emphasis-orb-1);
+  --orb-2: var(--color-decor-emphasis-orb-2);
+  --orb-3: var(--color-decor-emphasis-orb-3);
+  --orb-dot: var(--color-decor-emphasis-dot);
 }
 
-/* Halo suave detrás de la cinta */
-.bg-ribbon::before {
+/* Halos de color en los bordes y rejilla de puntos que se desvanece hacia el centro */
+.bg-orbs::before {
   inset: 0;
-  background: radial-gradient(60% 50% at 100% 0%, var(--ribbon-glow), transparent 70%);
+  background:
+    radial-gradient(circle closest-side, color-mix(in srgb, var(--orb-1) 45%, transparent), transparent) right -17rem top -13rem / 40rem 40rem,
+    radial-gradient(circle closest-side, color-mix(in srgb, var(--orb-3) 40%, transparent), transparent) left -4rem bottom -4rem / 22rem 22rem,
+    radial-gradient(circle closest-side, color-mix(in srgb, var(--orb-2) 40%, transparent), transparent) right calc(22% - 2.75rem) bottom calc(18% - 2.75rem) / 10rem 10rem,
+    radial-gradient(var(--orb-dot) 1px, transparent 1.5px) 0 0 / 1.5rem 1.5rem;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+  mask: radial-gradient(75% 65% at 50% 45%, transparent 30%, #000 100%);
 }
 
-.bg-ribbon::after {
-  top: -3rem;
-  right: -4rem;
-  width: min(52rem, 70vw);
-  aspect-ratio: 5 / 4;
-  background: linear-gradient(200deg, var(--ribbon-1), var(--ribbon-2) 50%, var(--ribbon-3));
-  mask: url('../img/bg/ribbon.svg') center / 100% 100% no-repeat;
+/* Esferas con reflejo de luz arriba a la izquierda, recortadas en círculo */
+.bg-orbs::after {
+  inset: 0;
+  background:
+    radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--orb-1), #fff 70%), var(--orb-1) 35%, color-mix(in srgb, var(--orb-1), #000 50%) 75%, color-mix(in srgb, var(--orb-1), #000 65%)) right -8rem top -4rem / 22rem 22rem,
+    radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--orb-3), #fff 70%), var(--orb-3) 35%, color-mix(in srgb, var(--orb-3), #000 50%) 75%, color-mix(in srgb, var(--orb-3), #000 65%)) left 3% bottom 8% / 10rem 10rem,
+    radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--orb-2), #fff 70%), var(--orb-2) 35%, color-mix(in srgb, var(--orb-2), #000 50%) 75%, color-mix(in srgb, var(--orb-2), #000 65%)) right 22% bottom 18% / 4.5rem 4.5rem;
+  background-repeat: no-repeat;
+  mask:
+    radial-gradient(circle closest-side, #000 97%, transparent 100%) right -8rem top -4rem / 22rem 22rem,
+    radial-gradient(circle closest-side, #000 97%, transparent 100%) left 3% bottom 8% / 10rem 10rem,
+    radial-gradient(circle closest-side, #000 97%, transparent 100%) right 22% bottom 18% / 4.5rem 4.5rem;
+  mask-repeat: no-repeat;
+  animation: orbs-float 14s ease-in-out infinite alternate;
 }
 
-/* La misma cinta desde la esquina superior izquierda */
-.bg-ribbon--start::before {
-  background: radial-gradient(60% 50% at 0% 0%, var(--ribbon-glow), transparent 70%);
-}
-
-.bg-ribbon--start::after {
-  right: auto;
-  left: -4rem;
+/* Las esferas y los halos a la izquierda */
+.bg-orbs--start::before,
+.bg-orbs--start::after {
   transform: scaleX(-1);
 }
 
+@keyframes orbs-float {
+  to {
+    translate: 0 -1.25rem;
+  }
+}
+
+/* En pantallas pequeñas las esferas quedarían bajo el texto */
 @media (max-width: 47.99rem) {
-  .bg-ribbon::after {
-    width: 90vw;
-    opacity: 0.6;
+  .bg-orbs::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-orbs::after {
+    animation: none;
+  }
+}
+
+/*-------- Alto contraste sin decoración --------*/
+[data-theme='hc'] :is(.bg-glow, .bg-sweep, .bg-orbs)::before,
+[data-theme='hc'] :is(.bg-glow, .bg-sweep, .bg-orbs)::after {
+  display: none;
+}
+
+@media (prefers-contrast: more) {
+  :root:not([data-theme]) :is(.bg-glow, .bg-sweep, .bg-orbs)::before,
+  :root:not([data-theme]) :is(.bg-glow, .bg-sweep, .bg-orbs)::after {
+    display: none;
   }
 }
