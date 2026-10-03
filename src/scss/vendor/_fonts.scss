@@ -19,7 +19,7 @@ $_weights: (
     font-style: normal;
     font-weight: $weight;
     font-display: swap;
-    src: url('../assets/fonts/BeVietnamPro-#{$name}.woff2') format('woff2');
+    src: url('../public/fonts/BeVietnamPro-#{$name}.woff2') format('woff2');
   }
 
   // La cursiva de Regular se llama solo Italic
@@ -34,6 +34,6 @@ $_weights: (
     font-style: italic;
     font-weight: $weight;
     font-display: swap;
-    src: url('../assets/fonts/BeVietnamPro-#{$italic}.woff2') format('woff2');
+    src: url('../public/fonts/BeVietnamPro-#{$italic}.woff2') format('woff2');
   }
 }

@@ -1,6 +1,6 @@
 import { initSelector } from './selector.js';
 
-export function languageSwitcher() {
+export function initLanguageSwitcher() {
   const languageRoot = document.getElementById('language-selector');
   const elementsToTranslate = document.querySelectorAll('[data-translate]');
   const htmlElement = document.documentElement;
@@ -8,7 +8,7 @@ export function languageSwitcher() {
 
   const loadTranslations = async (language) => {
     try {
-      const response = await fetch('./data/translations.json');
+      const response = await fetch('./public/data/translations.json');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -48,7 +48,7 @@ export function languageSwitcher() {
       // Cambiar el atributo lang del elemento <html>
       htmlElement.setAttribute('lang', language);
       // Cambiar el enlace del botón de descarga del CV
-      const cvLink = `./assets/yulibeth-rivero-${language}.pdf`;
+      const cvLink = `./public/cv/yulibeth-rivero-${language}.pdf`;
       downloadCvBtn.setAttribute('href', cvLink);
       // Avisa a los selectores para que actualicen su texto
       document.dispatchEvent(new CustomEvent('languagechange', { detail: language }));

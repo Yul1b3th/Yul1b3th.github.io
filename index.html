@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" data-translate="meta-description" content="Currículum de Yulibeth Rivero, Frontend Developer en Angular con experiencia en entornos Agile. Aplicaciones escalables, robustas y accesibles con principios de UX.">
     <title>Yulibeth Rivero</title>
-    <link rel="icon" href="img/favicons/yulibeth-rivero.ico" sizes="any">
-    <link rel="icon" href="img/favicons/yulibeth-rivero.png" type="image/png">
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="./public/favicon/favicon.svg">
+    <link rel="icon" href="./public/favicon/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="./public/favicon/apple-touch-icon.png" sizes="180x180">
+    <link rel="manifest" href="./public/favicon/site.webmanifest">
     <script>
       // Aplica el tema guardado antes de pintar para que no parpadee
       try {
@@ -17,8 +20,8 @@
     <link rel="stylesheet" href="./css/styles.css">
 
     <!-- Preload de la imagen -->
-    <link rel="preload" href="./img/yulibeth-rivero.webp" as="image">
-    <script type="module" src="./js/main.js"></script>
+    <link rel="preload" href="./public/images/yulibeth-rivero.webp" as="image">
+    <script type="module" src="./src/js/main.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main" data-translate="skip-link">Saltar al contenido</a>
@@ -62,31 +65,31 @@
           <div class="navbar-settings">
             <div class="selector selector--emphasis" id="language-selector">
               <button class="selector__button" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="language-menu">
-                <svg class="selector__icon" aria-hidden="true"><use href="img/icons.svg#language"></use></svg>
+                <svg class="selector__icon" aria-hidden="true"><use href="public/icons/icons.svg#language"></use></svg>
                 <span data-selector-text>ES</span>
-                <svg class="selector__chevron" aria-hidden="true"><use href="img/icons.svg#keyboard_arrow_down"></use></svg>
+                <svg class="selector__chevron" aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg>
               </button>
               <ul class="selector__menu" id="language-menu" role="menu" aria-label="Idioma" data-translate="language-label" hidden>
-                <li role="none"><button class="selector__option" type="button" role="menuitemradio" aria-checked="true" data-value="es" data-short="ES" lang="es">Español<svg class="selector__check" aria-hidden="true"><use href="img/icons.svg#check"></use></svg></button></li>
-                <li role="none"><button class="selector__option" type="button" role="menuitemradio" aria-checked="false" data-value="en" data-short="EN" lang="en">English<svg class="selector__check" aria-hidden="true"><use href="img/icons.svg#check"></use></svg></button></li>
+                <li role="none"><button class="selector__option" type="button" role="menuitemradio" aria-checked="true" data-value="es" data-short="ES" lang="es">Español<svg class="selector__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg></button></li>
+                <li role="none"><button class="selector__option" type="button" role="menuitemradio" aria-checked="false" data-value="en" data-short="EN" lang="en">English<svg class="selector__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg></button></li>
               </ul>
             </div>
             <div class="selector selector--emphasis" id="theme-selector">
               <button class="selector__button" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="theme-menu">
-                <svg class="selector__icon" data-selector-icon aria-hidden="true"><use href="img/icons.svg#computer"></use></svg>
-                <svg class="selector__chevron" aria-hidden="true"><use href="img/icons.svg#keyboard_arrow_down"></use></svg>
+                <svg class="selector__icon" data-selector-icon aria-hidden="true"><use href="public/icons/icons.svg#computer"></use></svg>
+                <svg class="selector__chevron" aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg>
               </button>
               <ul class="selector__menu" id="theme-menu" role="menu" aria-label="Tema" data-translate="theme-label" hidden>
-                <li role="none"><button class="selector__option" type="button" role="menuitemradio" aria-checked="true" data-value="system"><svg class="selector__option-icon" aria-hidden="true"><use href="img/icons.svg#computer"></use></svg><span data-translate="theme-system">Sistema</span><svg class="selector__check" aria-hidden="true"><use href="img/icons.svg#check"></use></svg></button></li>
-                <li role="none"><button class="selector__option" type="button" role="menuitemradio" aria-checked="false" data-value="light"><svg class="selector__option-icon" aria-hidden="true"><use href="img/icons.svg#light_mode"></use></svg><span data-translate="theme-light">Claro</span><svg class="selector__check" aria-hidden="true"><use href="img/icons.svg#check"></use></svg></button></li>
-                <li role="none"><button class="selector__option" type="button" role="menuitemradio" aria-checked="false" data-value="dark"><svg class="selector__option-icon" aria-hidden="true"><use href="img/icons.svg#dark_mode"></use></svg><span data-translate="theme-dark">Oscuro</span><svg class="selector__check" aria-hidden="true"><use href="img/icons.svg#check"></use></svg></button></li>
-                <li role="none"><button class="selector__option" type="button" role="menuitemradio" aria-checked="false" data-value="hc"><svg class="selector__option-icon" aria-hidden="true"><use href="img/icons.svg#contrast"></use></svg><span data-translate="theme-hc">Alto contraste</span><svg class="selector__check" aria-hidden="true"><use href="img/icons.svg#check"></use></svg></button></li>
+                <li role="none"><button class="selector__option" type="button" role="menuitemradio" aria-checked="true" data-value="system"><svg class="selector__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#computer"></use></svg><span data-translate="theme-system">Sistema</span><svg class="selector__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg></button></li>
+                <li role="none"><button class="selector__option" type="button" role="menuitemradio" aria-checked="false" data-value="light"><svg class="selector__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#light_mode"></use></svg><span data-translate="theme-light">Claro</span><svg class="selector__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg></button></li>
+                <li role="none"><button class="selector__option" type="button" role="menuitemradio" aria-checked="false" data-value="dark"><svg class="selector__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#dark_mode"></use></svg><span data-translate="theme-dark">Oscuro</span><svg class="selector__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg></button></li>
+                <li role="none"><button class="selector__option" type="button" role="menuitemradio" aria-checked="false" data-value="hc"><svg class="selector__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#contrast"></use></svg><span data-translate="theme-hc">Alto contraste</span><svg class="selector__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg></button></li>
               </ul>
             </div>
           </div>
           <button id="btn-menu" class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Menú" data-translate="menu-label">
-            <svg class="navbar-toggler__icon navbar-toggler__icon--open" aria-hidden="true"><use href="img/icons.svg#menu"></use></svg>
-            <svg class="navbar-toggler__icon navbar-toggler__icon--close" aria-hidden="true"><use href="img/icons.svg#close"></use></svg>
+            <svg class="navbar-toggler__icon navbar-toggler__icon--open" aria-hidden="true"><use href="public/icons/icons.svg#menu"></use></svg>
+            <svg class="navbar-toggler__icon navbar-toggler__icon--close" aria-hidden="true"><use href="public/icons/icons.svg#close"></use></svg>
           </button>
         </div>
       </div>
@@ -98,7 +101,7 @@
       <section id="home" class="home bg-halo bg-halo--emphasis" data-scroll-spy>
         <div class="container">
           <div class="home-img">
-            <img src="./img/yulibeth-rivero.webp" alt="Yulibeth Rivero" width="390" height="390">
+            <img src="./public/images/yulibeth-rivero.webp" alt="Yulibeth Rivero" width="390" height="390">
           </div>
           <div class="home-text">
             <div>
@@ -124,7 +127,7 @@
                 </a>
               </li>
             </ul>
-            <div><a class="btn" id="download-cv-btn" data-translate="download-cv" href="./assets/yulibeth-rivero-es.pdf" target="_blank" rel="noopener noreferrer">Descargar CV</a></div>
+            <div><a class="btn" id="download-cv-btn" data-translate="download-cv" href="./public/cv/yulibeth-rivero-es.pdf" target="_blank" rel="noopener noreferrer">Descargar CV</a></div>
           </div>
         </div>
       </section>
@@ -188,19 +191,19 @@
 
               <!-- Autonomía -->
               <div class="center flex-column gap-2">
-                <span class="icon-tile icon-tile--lg" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../img/autonomia.svg')"></span></span>
+                <span class="icon-tile icon-tile--lg" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../public/images/autonomia.svg')"></span></span>
                 <h4 data-translate="soft-skills-autonomy">Autonomía</h4>
               </div>
 
               <!-- Orientación al logro -->
               <div class="center flex-column gap-2">
-                <span class="icon-tile icon-tile--lg" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../img/orientacion-al-logro.svg')"></span></span>
+                <span class="icon-tile icon-tile--lg" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../public/images/orientacion-al-logro.svg')"></span></span>
                 <h4 data-translate="soft-skills-achievement-orientation">Orientación al logro</h4>
               </div>
 
               <!-- Trabajo en equipo -->
               <div class="center flex-column gap-2">
-                <span class="icon-tile icon-tile--lg" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../img/trabajo-en-equipo.svg')"></span></span>
+                <span class="icon-tile icon-tile--lg" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../public/images/trabajo-en-equipo.svg')"></span></span>
                 <h4 data-translate="soft-skills-teamwork">Trabajo en equipo</h4>
               </div>
             </div>
@@ -486,21 +489,21 @@
 
             <!-- Ubicación -->
             <div class="card center flex-column gap-1">
-              <span class="icon-tile" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../img/icons/location_on.svg')"></span></span>
+              <span class="icon-tile" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../public/icons/location_on.svg')"></span></span>
               <p><strong data-translate="contact-location-title">Ubicación</strong></p>
               <p data-translate="contact-location">Barcelona, España</p>
             </div>
 
             <!-- Email -->
             <div class="card center flex-column gap-1">
-              <span class="icon-tile" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../img/icons/mail.svg')"></span></span>
+              <span class="icon-tile" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../public/icons/mail.svg')"></span></span>
               <p><strong data-translate="contact-email-title1">Email</strong></p>
               <p><a href="mailto:yulibeth.rivero@gmail.com" data-translate="contact-email">yulibeth.rivero@gmail.com</a></p>
             </div>
 
             <!-- Redes Sociales -->
             <div class="card center flex-column gap-1">
-              <span class="icon-tile" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../img/icons/share.svg')"></span></span>
+              <span class="icon-tile" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../public/icons/share.svg')"></span></span>
               <p><strong data-translate="contact-social-title">Redes Sociales</strong></p>
               <ul class="social-media">
                 <li>
@@ -534,7 +537,7 @@
               <textarea id="comments" name="comments" class="form-control" rows="5" placeholder="Déjame tus comentarios *" required data-translate="contact-comments-placeholder"></textarea>
             </div>
             <div class="contact-form-loader text-center d-none">
-              <img src="./img/loader.svg" alt="Enviando..." data-translate="contact-loader-alt">
+              <img src="./public/images/loader.svg" alt="Enviando..." data-translate="contact-loader-alt">
             </div>
             <button type="submit" class="btn btn-primary" data-translate="contact-submit">Enviar mensaje</button>
           </form>
@@ -560,6 +563,6 @@
         <p>© <span id="year"></span> Yulibeth Rivero</p>
       </div>
     </footer>
-    <button class="scroll-top-btn hidden" type="button" aria-label="Volver arriba" data-translate="scroll-top-label"><svg class="scroll-top-btn__icon" aria-hidden="true"><use href="img/icons.svg#keyboard_control_key"></use></svg></button>
+    <button class="scroll-top-btn hidden" type="button" aria-label="Volver arriba" data-translate="scroll-top-label"><svg class="scroll-top-btn__icon" aria-hidden="true"><use href="public/icons/icons.svg#keyboard_control_key"></use></svg></button>
   </body>
 </html>

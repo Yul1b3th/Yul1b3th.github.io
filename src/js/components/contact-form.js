@@ -1,4 +1,4 @@
-export function contactForm() {
+export function initContactForm() {
   const $form = document.querySelector('.contact-form');
   const $loader = document.querySelector('.contact-form-loader');
   const $response = document.querySelector('.contact-form-response');

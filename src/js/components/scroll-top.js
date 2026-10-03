@@ -1,4 +1,4 @@
-export function scrollTopButton () {
+export function initScrollTop() {
     const $toTop = document.querySelector('.scroll-top-btn');
 
     window.addEventListener('scroll', () => {

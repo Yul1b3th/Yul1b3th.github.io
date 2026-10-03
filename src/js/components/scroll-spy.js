@@ -1,4 +1,4 @@
-export function scrollSpyObserver () {
+export function initScrollSpy() {
       const $sections = document.querySelectorAll('section[data-scroll-spy]');
     const callback = (entries) => {
       entries.forEach((entry) => {

@@ -142,7 +142,7 @@
   inset: 0;
   content: '';
   background: linear-gradient(90deg, var(--streaks-1), var(--streaks-2) 50%, var(--streaks-3));
-  mask: url('../img/bg/streaks.svg') center / 100% 100% no-repeat;
+  mask: url('../public/images/streaks.svg') center / 100% 100% no-repeat;
 }
 
 /*-------- Alto contraste sin decoración --------*/

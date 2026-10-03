@@ -68,7 +68,7 @@ a[target='_blank']:not(.social-list a, .social-media a)::after {
   margin-left: 0.25em;
   vertical-align: -0.125em;
   background-color: currentColor;
-  mask: url('../img/icons/open_in_new.svg') center / contain no-repeat;
+  mask: url('../public/icons/open_in_new.svg') center / contain no-repeat;
 }
 
 :lang(en) a[target='_blank']:not(.social-list a, .social-media a)::after {

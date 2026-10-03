@@ -3,7 +3,7 @@
 
 const desktop = window.matchMedia('(min-width: 1200px)');
 
-export function navigationMenu() {
+export function initNavigation() {
   const nav = document.querySelector('.navbar-collapse');
   const navToggle = document.querySelector('.navbar-toggler');
   const navLinks = document.querySelectorAll('.nav-link');
