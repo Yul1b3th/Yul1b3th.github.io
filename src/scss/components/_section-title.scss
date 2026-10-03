@@ -6,9 +6,8 @@
 
 .section-title {
   text-align: center;
-  padding: 1.875rem 0;
-  // Compensa lo que la marca de agua sobresale por encima del título
-  margin-top: 1.5rem;
+  // Menos espacio arriba porque la marca de agua ya sobresale por encima del título
+  padding: 0.5rem 0 1.875rem;
   position: relative;
 
   h2 {
@@ -25,7 +24,7 @@
   // El texto decorativo que va de fondo
   span {
     position: absolute;
-    top: 1.875rem;
+    top: 0.5rem;
     left: 0;
     right: 0;
     z-index: 1;
