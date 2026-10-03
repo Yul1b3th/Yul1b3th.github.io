@@ -1,6 +1,7 @@
 // scss/sections/_home.scss
 
 @use '../abstracts/variables' as vars;
+@use '../abstracts/project';
 @use '../abstracts/functions' as fn;
 @use '../abstracts/mixins' as mx;
 
@@ -14,7 +15,7 @@
 
   .container {
     // Deja libre la altura de la barra fija más un margen
-    padding-top: calc(#{vars.$navbar-height} + 2.5rem);
+    padding-top: calc(#{project.$navbar-height} + 2.5rem);
     padding-bottom: 3.5rem;
 
     @include mx.apply-flex-container(

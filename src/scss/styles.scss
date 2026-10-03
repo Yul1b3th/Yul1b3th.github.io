@@ -1,40 +1,37 @@
 // styles.scss
 
 // ==========================================================================
-// 1. ABSTRACTS (Herramientas invisibles: variables, funciones y mixins)
+// 1. ABSTRACTS (variables, funciones y mixins)
 // ==========================================================================
-// Nota: No generan CSS por sí mismos, pero están disponibles para el core.
+// No generan CSS por sí mismos, los usan el resto de capas
 @use 'abstracts/variables' as *;
 @use 'abstracts/functions' as *;
 @use 'abstracts/mixins' as *;
 
 // ==========================================================================
-// 2. VENDOR (Estilos de terceros)
+// 2. BASE (Configuración global del sitio y reseteos)
 // ==========================================================================
-@use 'vendor/innovatech-tokens' as *;
-
-// ==========================================================================
-// 3. BASE (Configuración global del sitio y reseteos)
-// ==========================================================================
+@use 'base/custom-properties' as *;
 @use 'base/fonts' as *;
 @use 'base/reset' as *;
 @use 'base/base' as *;
+@use 'base/accessibility' as *;
 @use 'base/typography' as *;
 
 // ==========================================================================
-// 4. LAYOUT (Estructura de la página y andamiaje)
+// 3. LAYOUT (Estructura de la página y andamiaje)
 // ==========================================================================
 @use 'layout/grid' as *;
 @use 'layout/containers' as *;
 @use 'layout/helpers' as *;
 
 // ==========================================================================
-// 5. COMPONENTS (Piezas UI pequeñas y reutilizables)
+// 4. COMPONENTS (Piezas UI pequeñas y reutilizables)
 // ==========================================================================
 @use 'components/navbar' as *;
 @use 'components/buttons' as *;
 @use 'components/selector' as *;
-@use 'components/background' as *;
+@use 'components/background' as * with ($streaks-url: '../public/images/streaks.svg');
 @use 'components/icon-tile' as *;
 @use 'components/card' as *;
 @use 'components/section-title' as *;
@@ -44,7 +41,7 @@
 @use 'components/footer' as *;
 
 // ==========================================================================
-// 6. SECTIONS (Bloques de contenido específicos de la página)
+// 5. SECTIONS (Bloques de contenido específicos de la página)
 // ==========================================================================
 @use 'sections/home' as *;
 @use 'sections/about-me' as *;
@@ -55,7 +52,7 @@
 @use 'sections/contact' as *;
 
 // ==========================================================================
-// 7. UTILITIES (Clases helper atómicas de máxima prioridad)
+// 6. UTILITIES (Clases helper atómicas de máxima prioridad)
 // ==========================================================================
 @use 'utilities/spacing' as *;
 @use 'utilities/visibility' as *;

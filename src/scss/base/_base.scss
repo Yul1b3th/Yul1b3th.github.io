@@ -1,6 +1,7 @@
 // base/_base.scss
 
 @use '../abstracts/variables' as vars;
+@use '../abstracts/project';
 @use '../abstracts/mixins' as *;
 @use '../abstracts/functions' as *;
 
@@ -8,7 +9,7 @@
 html {
   scroll-behavior: smooth;
   // Al saltar a una sección, el título no queda debajo de la barra fija
-  scroll-padding-top: vars.$navbar-height;
+  scroll-padding-top: project.$navbar-height;
   font-size: 16px; // Base inmutable para el cálculo de los rem
   line-height: get-line-height(base);
 
@@ -91,41 +92,6 @@ picture {
 .home,
 .footer {
   --color-border-focus: var(--color-border-focus-emphasis);
-}
-
-*:focus-visible {
-  outline: 0.125rem solid get-color(border-focus);
-  outline-offset: 0.3125rem;
-}
-
-/*-------- Enlace para saltar al contenido --------*/
-// Oculto hasta recibir el foco, aparece sobre el menú
-.skip-link {
-  --color-border-focus: var(--color-border-focus-emphasis);
-  position: fixed;
-  top: 0.75rem;
-  left: 0.75rem;
-  z-index: 100;
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.5rem;
-  @include apply-color(background-color, bg-brand);
-  @include apply-color(color, text-on-brand);
-  font-weight: 600;
-  text-decoration: none;
-  transform: translateY(-200%);
-
-  &:focus {
-    transform: none;
-  }
-
-  @include apply-high-contrast {
-    --color-border-focus: var(--color-text-on-emphasis);
-  }
-}
-
-// El destino del salto no muestra contorno al recibir el foco
-main:focus {
-  outline: none;
 }
 
 /*-------- Separación de secciones en modo oscuro --------*/

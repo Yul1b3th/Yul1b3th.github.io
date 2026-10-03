@@ -1,3 +1,6 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
 // Selector accesible con patrón de menú y opciones excluyentes
 // Teclado: flechas, Inicio, Fin, Escape y Tab
 

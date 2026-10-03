@@ -1,3 +1,9 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Ruta a src/assets/streaks.svg desde la hoja compilada, cada proyecto la ajusta con @use … with
+$streaks-url: 'streaks.svg' !default;
+
 /* Fondos decorativos de secciones con la paleta de InnoVatech */
 /* En alto contraste no se muestra ninguna decoración */
 
@@ -142,7 +148,7 @@
   inset: 0;
   content: '';
   background: linear-gradient(90deg, var(--streaks-1), var(--streaks-2) 50%, var(--streaks-3));
-  mask: url('../public/images/streaks.svg') center / 100% 100% no-repeat;
+  mask: url($streaks-url) center / 100% 100% no-repeat;
 }
 
 /*-------- Alto contraste sin decoración --------*/

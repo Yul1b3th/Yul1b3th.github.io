@@ -1,4 +1,7 @@
-// abstracts/_functions.scss
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Funciones para leer los mapas y los tokens desde Sass
 
 @use 'sass:map';
 @use 'sass:color';
@@ -53,9 +56,4 @@
 // Devuelve un token semántico con transparencia
 @function get-color-alpha($name, $alpha) {
   @return color-mix(in srgb, get-color($name) #{$alpha * 100%}, transparent);
-}
-
-// Obtiene un breakpoint
-@function get-breakpoint($size-name) {
-  @return get-map-value($breakpoints, $size-name);
 }

@@ -1,3 +1,6 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
 // Tema de color: system, light, dark o hc
 // Con system no se pone atributo y manda la preferencia del sistema
 

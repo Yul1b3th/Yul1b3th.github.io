@@ -1,6 +1,7 @@
 // scss/components/_navbar.scss
 
 @use '../abstracts/variables' as vars;
+@use '../abstracts/project';
 @use '../abstracts/functions' as fn;
 @use '../abstracts/mixins' as mx;
 
@@ -8,7 +9,7 @@
 .navbar {
   position: fixed;
   width: 100%;
-  height: vars.$navbar-height;
+  height: project.$navbar-height;
   z-index: 10;
   @include mx.apply-flex-container(row, center, center);
   @include mx.apply-color(color, text-on-emphasis);

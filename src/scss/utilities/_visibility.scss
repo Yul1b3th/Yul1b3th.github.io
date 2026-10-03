@@ -1,8 +1,7 @@
-// utilities/_visibility.scss
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
 
-@use "../abstracts/variables" as *;
-@use "../abstracts/functions" as *;
-@use "../abstracts/mixins" as *;
+// Utilidades de visibilidad
 
 .hidden {
   display: none !important;
@@ -49,7 +48,7 @@
   padding: 0 !important;
   margin: -1px !important;
   overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
   white-space: nowrap !important;
   border: 0 !important;
 }

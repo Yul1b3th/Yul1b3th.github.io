@@ -1,5 +1,9 @@
-// base/_fonts.scss
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
 // Familia completa Be Vietnam Pro en WOFF2, el navegador solo descarga los pesos que se usan
+// Ruta a la carpeta de fuentes desde la hoja compilada, cada proyecto la ajusta con @use … with
+$fonts-path: '../public/fonts' !default;
 
 $_weights: (
   'Thin': 100,
@@ -19,7 +23,7 @@ $_weights: (
     font-style: normal;
     font-weight: $weight;
     font-display: swap;
-    src: url('../public/fonts/BeVietnamPro-#{$name}.woff2') format('woff2');
+    src: url('#{$fonts-path}/BeVietnamPro-#{$name}.woff2') format('woff2');
   }
 
   // La cursiva de Regular se llama solo Italic
@@ -34,6 +38,6 @@ $_weights: (
     font-style: italic;
     font-weight: $weight;
     font-display: swap;
-    src: url('../public/fonts/BeVietnamPro-#{$italic}.woff2') format('woff2');
+    src: url('#{$fonts-path}/BeVietnamPro-#{$italic}.woff2') format('woff2');
   }
 }
