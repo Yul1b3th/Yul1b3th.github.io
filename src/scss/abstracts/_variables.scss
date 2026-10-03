@@ -2,11 +2,9 @@
 
 // === Tipografías ===
 $fonts: (
-  primary: (
-    'BeVietnamPro',
-    'Arial, sans-serif',
-  ),
-  secondary: 'Arial, sans-serif',
+  // Lista sin comillas en los genéricos, si no el navegador busca una fuente llamada «Arial, sans-serif»
+  primary: ('Be Vietnam Pro', Arial, sans-serif),
+  secondary: (Arial, sans-serif),
 );
 
 // === Tamaños de fuente ===

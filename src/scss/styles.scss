@@ -11,12 +11,12 @@
 // ==========================================================================
 // 2. VENDOR (Estilos de terceros)
 // ==========================================================================
-@use 'vendor/fonts' as *;
 @use 'vendor/innovatech-tokens' as *;
 
 // ==========================================================================
 // 3. BASE (Configuración global del sitio y reseteos)
 // ==========================================================================
+@use 'base/fonts' as *;
 @use 'base/reset' as *;
 @use 'base/base' as *;
 @use 'base/typography' as *;

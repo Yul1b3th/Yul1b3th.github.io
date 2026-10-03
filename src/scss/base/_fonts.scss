@@ -1,4 +1,4 @@
-// vendor/_fonts.scss
+// base/_fonts.scss
 // Familia completa Be Vietnam Pro en WOFF2, el navegador solo descarga los pesos que se usan
 
 $_weights: (
@@ -15,7 +15,7 @@ $_weights: (
 
 @each $name, $weight in $_weights {
   @font-face {
-    font-family: 'BeVietnamPro';
+    font-family: 'Be Vietnam Pro';
     font-style: normal;
     font-weight: $weight;
     font-display: swap;
@@ -30,7 +30,7 @@ $_weights: (
   }
 
   @font-face {
-    font-family: 'BeVietnamPro';
+    font-family: 'Be Vietnam Pro';
     font-style: italic;
     font-weight: $weight;
     font-display: swap;
