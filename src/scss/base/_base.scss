@@ -7,6 +7,8 @@
 /*-------- Estilos Base Globales --------*/
 html {
   scroll-behavior: smooth;
+  // Al saltar a una sección, el título no queda debajo de la barra fija
+  scroll-padding-top: vars.$navbar-height;
   font-size: 16px; // Base inmutable para el cálculo de los rem
   line-height: get-line-height(base);
 

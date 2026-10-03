@@ -52,6 +52,9 @@ $breakpoints: (
   xxl: 1400px,
 );
 
+// Altura de la barra de navegación fija, la usan la barra, la portada y los anclas
+$navbar-height: 4rem;
+
 $container-max-widths: (
   sm: 540px,
   md: 720px,

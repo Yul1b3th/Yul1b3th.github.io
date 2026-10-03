@@ -14,7 +14,7 @@
 
   .container {
     // Deja libre la altura de la barra fija más un margen
-    padding-top: calc(4rem + 2.5rem);
+    padding-top: calc(#{vars.$navbar-height} + 2.5rem);
     padding-bottom: 3.5rem;
 
     @include mx.apply-flex-container(
