@@ -35,6 +35,7 @@
   --color-neutral-800: #3F3F3F;
   --color-neutral-900: #303030;
   --color-neutral-950: #1C1C1C;
+  --color-neutral-1000: #0F0F0F;
   --color-teal-50: #E7FAFA;
   --color-teal-100: #C5F0F0;
   --color-teal-200: #81DFDF;
@@ -117,7 +118,7 @@
   --color-text-body: var(--color-neutral-800);
   --color-text-muted: var(--color-neutral-700);
   --color-text-on-emphasis: var(--color-navy-50);
-  --color-text-on-brand: var(--color-neutral-950);
+  --color-text-on-brand: var(--color-neutral-1000);
   --color-text-disabled: var(--color-neutral-400);
   --color-link-default: var(--color-mint-950);
   --color-link-hover: var(--color-mint-800);
@@ -158,9 +159,9 @@
   --color-action-primary-bg: var(--color-mint-200);
   --color-action-primary-bg-hover: var(--color-mint-300);
   --color-action-primary-bg-active: var(--color-mint-400);
-  --color-action-primary-text: var(--color-neutral-950);
+  --color-action-primary-text: var(--color-neutral-1000);
   --color-action-primary-border: var(--color-mint-200);
-  --color-action-secondary-text: var(--color-neutral-950);
+  --color-action-secondary-text: var(--color-neutral-1000);
   --color-action-secondary-bg-hover: var(--color-neutral-100);
   --color-success-text: var(--color-green-700);
   --color-success-bg: var(--color-green-50);
@@ -264,7 +265,7 @@
     --color-text-body: var(--color-neutral-950);
     --color-text-muted: var(--color-neutral-900);
     --color-text-on-emphasis: var(--color-neutral-0);
-    --color-text-on-brand: var(--color-neutral-950);
+    --color-text-on-brand: var(--color-neutral-1000);
     --color-text-disabled: var(--color-neutral-600);
     --color-link-default: var(--color-mint-950);
     --color-link-hover: var(--color-mint-900);
@@ -305,9 +306,9 @@
     --color-action-primary-bg: var(--color-mint-200);
     --color-action-primary-bg-hover: var(--color-mint-100);
     --color-action-primary-bg-active: var(--color-mint-300);
-    --color-action-primary-text: var(--color-neutral-950);
+    --color-action-primary-text: var(--color-neutral-1000);
     --color-action-primary-border: var(--color-neutral-950);
-    --color-action-secondary-text: var(--color-neutral-950);
+    --color-action-secondary-text: var(--color-neutral-1000);
     --color-action-secondary-bg-hover: var(--color-neutral-100);
     --color-success-text: var(--color-green-800);
     --color-success-bg: var(--color-green-50);
@@ -408,7 +409,7 @@
   --color-text-body: var(--color-neutral-950);
   --color-text-muted: var(--color-neutral-900);
   --color-text-on-emphasis: var(--color-neutral-0);
-  --color-text-on-brand: var(--color-neutral-950);
+  --color-text-on-brand: var(--color-neutral-1000);
   --color-text-disabled: var(--color-neutral-600);
   --color-link-default: var(--color-mint-950);
   --color-link-hover: var(--color-mint-900);
@@ -449,9 +450,9 @@
   --color-action-primary-bg: var(--color-mint-200);
   --color-action-primary-bg-hover: var(--color-mint-100);
   --color-action-primary-bg-active: var(--color-mint-300);
-  --color-action-primary-text: var(--color-neutral-950);
+  --color-action-primary-text: var(--color-neutral-1000);
   --color-action-primary-border: var(--color-neutral-950);
-  --color-action-secondary-text: var(--color-neutral-950);
+  --color-action-secondary-text: var(--color-neutral-1000);
   --color-action-secondary-bg-hover: var(--color-neutral-100);
   --color-success-text: var(--color-green-800);
   --color-success-bg: var(--color-green-50);
