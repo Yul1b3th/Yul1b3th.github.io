@@ -9,7 +9,6 @@ This repository contains the source code for my web resume. You can see the resu
 - **Contact Form**: Includes an interactive form that allows visitors to contact me quickly and easily.
 - **Social Media Links**: Links to relevant social media profiles are provided, making it easy for visitors to learn more about me.
 - **Resume Download Button**: Allows visitors to download my resume in PDF format with a single click.
-- **WhatsApp Quick Contact**: Clicking the WhatsApp icon initiates a conversation directly, providing a quick and accessible way to reach me.
 
 ## 💻 Technologies Used
 
