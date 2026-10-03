@@ -18,6 +18,26 @@ This repository contains the source code for my web resume. You can see the resu
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - Adds interactivity to enhance the user experience.
 
 
+## 🚀 Run Locally
+
+No installation is needed: the CSS is already compiled. The page only needs a local server, because the JavaScript is split into modules and browsers do not load them when `index.html` is opened with a double click.
+
+With [Node.js](https://nodejs.org/) installed, from the project folder:
+
+```bash
+npx serve .
+```
+
+Then open the local address shown in the terminal (by default, `http://localhost:3000`).
+
+**To edit the styles**
+
+```bash
+npm install
+npm run dev        # recompiles on every save
+npm run build:css  # compressed CSS, before publishing
+```
+
 ## 🤝 Contributions
 
 If you want to collaborate on my website or report any issues, feel free to create an issue or submit a pull request.

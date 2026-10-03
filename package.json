@@ -4,7 +4,8 @@
   "description": "This repository contains the source code for my web resume. You can see the resume in action [here](https://yul1b3th.github.io).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:css": "sass scss/styles.scss css/styles.css --style=compressed --no-source-map",
+    "dev": "sass --watch scss/styles.scss:css/styles.css"
   },
   "keywords": [],
   "author": "",
