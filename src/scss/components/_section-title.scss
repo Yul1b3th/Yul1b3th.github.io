@@ -7,6 +7,8 @@
 .section-title {
   text-align: center;
   padding: 1.875rem 0;
+  // Compensa lo que la marca de agua sobresale por encima del título
+  margin-top: 1.5rem;
   position: relative;
 
   h2 {
