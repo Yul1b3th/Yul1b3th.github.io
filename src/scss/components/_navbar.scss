@@ -23,12 +23,12 @@
     text-decoration: none;
   }
 
-  .nav-separator {
+  .navbar__separator {
     display: none; // Oculto por defecto en móvil
     @include mx.apply-color-opacity(color, 0.3, text-on-emphasis);
   }
 
-  .container-nav {
+  .navbar__container {
     @include mx.apply-flex-container(row, space-between, center);
     width: 92%;
     position: relative;
@@ -41,11 +41,11 @@
     }
   }
 
-  .navbar-actions {
+  .navbar__actions {
     @include mx.apply-flex-container(row, center, center, fn.get-spacing(md));
   }
 
-  .navbar-brand {
+  .navbar__brand {
     @include mx.apply-color(color, text-on-emphasis);
     font-size: 2rem;
     font-weight: 600;
@@ -56,14 +56,14 @@
     }
   }
 
-  .navbar-settings {
+  .navbar__settings {
     // Por encima del menú abierto en móvil para seguir visibles
     position: relative;
     z-index: 2;
     @include mx.apply-flex-container(row, center, center, fn.get-spacing(sm));
   }
 
-  button.navbar-toggler {
+  button.navbar__toggler {
     z-index: 2;
     display: inline-flex;
     align-items: center;
@@ -81,27 +81,27 @@
       @include mx.apply-color-opacity(background-color, 0.12, text-on-emphasis);
     }
 
-    .navbar-toggler__icon {
+    .navbar__toggler-icon {
       width: 1.75rem;
       height: 1.75rem;
     }
 
-    .navbar-toggler__icon--close {
+    .navbar__toggler-icon--close {
       display: none;
     }
 
     &[aria-expanded='true'] {
-      .navbar-toggler__icon--open {
+      .navbar__toggler-icon--open {
         display: none;
       }
 
-      .navbar-toggler__icon--close {
+      .navbar__toggler-icon--close {
         display: block;
       }
     }
   }
 
-  .navbar-collapse {
+  .navbar__collapse {
     position: fixed;
     z-index: 1;
     inset: 0;
@@ -121,16 +121,16 @@
       transform 500ms ease,
       visibility 0s linear 500ms;
 
-    .navbar-brand {
+    .navbar__brand {
       font-size: 2rem;
     }
 
-    .navbar-nav {
+    .navbar__nav {
       list-style: none;
       padding: 0 3rem;
       @include mx.apply-flex-container(column, center, center, fn.get-spacing(md));
 
-      .nav-link {
+      .navbar__link {
         position: relative;
         display: block;
         padding: 0.75rem 1.5rem;
@@ -138,7 +138,7 @@
         @include mx.apply-transition(all, 0.3s);
 
         &:hover,
-        &.active {
+        &--active {
           @include mx.apply-color-opacity(background-color, 0.1, link-emphasis-default);
           @include mx.apply-color(color, link-emphasis-default);
         }
@@ -157,7 +157,7 @@
         }
 
         &:hover::before,
-        &.active::before {
+        &--active::before {
           width: 100%;
         }
       }
@@ -176,15 +176,15 @@
 
   /*-------- VISTA DESKTOP UNIFICADA (Ecosistema de Mixins) --------*/
   @include mx.apply-media-breakpoint(xl) {
-    .nav-separator {
+    .navbar__separator {
       display: block; // Se muestra la barra decorativa en pantallas grandes
     }
 
-    button.navbar-toggler {
+    button.navbar__toggler {
       display: none; // Apagamos el menú hamburguesa
     }
 
-    .navbar-collapse {
+    .navbar__collapse {
       position: static;
       padding: 0;
       overflow: visible;
@@ -195,19 +195,19 @@
       transform: none;
       background-color: transparent;
 
-      .navbar-brand {
+      .navbar__brand {
         display: none;
       }
 
-      .navbar-nav {
+      .navbar__nav {
         @include mx.apply-flex-container(row, center, center, fn.get-spacing(md));
         padding: 0;
 
-        .nav-link {
+        .navbar__link {
           padding: 0;
 
           &:hover,
-          &.active {
+          &--active {
             background-color: transparent; // Evitamos que herede el fondo opaco de la variante móvil
           }
         }

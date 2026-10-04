@@ -33,7 +33,7 @@
       text-align: left;
     }
 
-    .home-img {
+    .home__img {
       @include mx.apply-border-radius(50%);
       overflow: hidden;
       max-width: min(260px, 70vw);
@@ -48,7 +48,7 @@
       }
     }
 
-    .home-text {
+    .home__text {
       // Separación entre texto, redes y botón también en móvil
       @include mx.apply-flex-container(column, center, center, 1.75rem);
 

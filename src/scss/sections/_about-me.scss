@@ -13,7 +13,7 @@
       text-align: center;
     }
     .tech-skills {
-      .tech-skills-card {
+      .tech-skills__card {
         @include mx.apply-flex-container(
           $direction: row,
           $justify: space-between,
@@ -32,7 +32,7 @@
     }
 
     .soft-skills {
-      .soft-skills-items {
+      .soft-skills__items {
         // Flexbox en columna por defecto para móviles
         @include mx.apply-flex-container(column, space-evenly, center, fn.get-spacing(lg));
         flex-wrap: wrap;

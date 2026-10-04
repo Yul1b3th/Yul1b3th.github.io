@@ -5,11 +5,11 @@ export function initScrollSpy() {
         let id = entry.target.getAttribute('id');
         let link = document.querySelector(`a[data-scroll-spy][href='#${id}']`);
         if (entry.isIntersecting) {
-          link.classList.add('active');
+          link.classList.add('navbar__link--active');
           // Actualiza la URL con el ID de la sección actual
           history.pushState(null, null, '#' + id);
         } else {
-          link.classList.remove('active');
+          link.classList.remove('navbar__link--active');
         };
       });
     };
@@ -19,7 +19,7 @@ export function initScrollSpy() {
     const observer = new IntersectionObserver(callback, options);
     $sections.forEach((el) => observer.observe(el));
 
-    const logo = document.querySelector('.navbar-brand');
+    const logo = document.querySelector('.navbar__brand');
     logo.addEventListener('click', function (event) {
       event.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });

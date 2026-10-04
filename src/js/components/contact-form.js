@@ -1,7 +1,7 @@
 export function initContactForm() {
   const $form = document.querySelector('.contact-form');
-  const $loader = document.querySelector('.contact-form-loader');
-  const $response = document.querySelector('.contact-form-response');
+  const $loader = document.querySelector('.contact-form__loader');
+  const $response = document.querySelector('.contact-form__response');
 
   $form.addEventListener('submit', (e) => {
     e.preventDefault();

@@ -24,21 +24,21 @@
   <body>
     <a class="skip-link" href="#main" data-translate="skip-link">Saltar al contenido</a>
     <nav class="navbar">
-      <div class="container-nav">
-        <a class="navbar-brand" href="#home" data-translate="navbar-brand">YR</a>
-        <div class="navbar-actions">
-          <div id="navbarNav" class="navbar-collapse" data-visible="false">
-            <a class="navbar-brand" href="#home" data-translate="navbar-brand">YR</a>
-            <ul class="navbar-nav">
-              <li><a class="nav-link" href="#home" data-scroll-spy data-translate="home">Inicio</a></li>
-              <li><a class="nav-link" href="#about-me" data-scroll-spy data-translate="about-me">Sobre Mí</a></li>
-              <li><a class="nav-link" href="#projects" data-scroll-spy data-translate="projects">Proyectos</a></li>
-              <li><a class="nav-link" href="#experience" data-scroll-spy data-translate="experience">Experiencia</a></li>
-              <li><a class="nav-link" href="#education" data-scroll-spy data-translate="education">Educación</a></li>
-              <li><a class="nav-link" href="#courses" data-scroll-spy data-translate="courses">Cursos</a></li>
-              <li><a class="nav-link" href="#contact" data-scroll-spy data-translate="contact">Contacto</a></li>
+      <div class="navbar__container">
+        <a class="navbar__brand" href="#home" data-translate="navbar-brand">YR</a>
+        <div class="navbar__actions">
+          <div id="navbarNav" class="navbar__collapse" data-visible="false">
+            <a class="navbar__brand" href="#home" data-translate="navbar-brand">YR</a>
+            <ul class="navbar__nav">
+              <li><a class="navbar__link" href="#home" data-scroll-spy data-translate="home">Inicio</a></li>
+              <li><a class="navbar__link" href="#about-me" data-scroll-spy data-translate="about-me">Sobre Mí</a></li>
+              <li><a class="navbar__link" href="#projects" data-scroll-spy data-translate="projects">Proyectos</a></li>
+              <li><a class="navbar__link" href="#experience" data-scroll-spy data-translate="experience">Experiencia</a></li>
+              <li><a class="navbar__link" href="#education" data-scroll-spy data-translate="education">Educación</a></li>
+              <li><a class="navbar__link" href="#courses" data-scroll-spy data-translate="courses">Cursos</a></li>
+              <li><a class="navbar__link" href="#contact" data-scroll-spy data-translate="contact">Contacto</a></li>
             </ul>
-            <span class="nav-separator" aria-hidden="true">|</span>
+            <span class="navbar__separator" aria-hidden="true">|</span>
             <ul class="social-list">
               <li>
                 <a href="https://www.linkedin.com/in/yulibeth-rivero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -58,9 +58,9 @@
               </li>
             </ul>
           </div>
-          <span class="nav-separator" aria-hidden="true">|</span>
+          <span class="navbar__separator" aria-hidden="true">|</span>
           <!-- Ajustes de idioma y tema -->
-          <div class="navbar-settings">
+          <div class="navbar__settings">
             <div class="selector selector--emphasis" id="language-selector">
               <button class="selector__button" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="language-menu">
                 <svg class="selector__icon" aria-hidden="true"><use href="public/icons/icons.svg#language"></use></svg>
@@ -85,9 +85,9 @@
               </ul>
             </div>
           </div>
-          <button id="btn-menu" class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Menú" data-translate="menu-label">
-            <svg class="navbar-toggler__icon navbar-toggler__icon--open" aria-hidden="true"><use href="public/icons/icons.svg#menu"></use></svg>
-            <svg class="navbar-toggler__icon navbar-toggler__icon--close" aria-hidden="true"><use href="public/icons/icons.svg#close"></use></svg>
+          <button id="btn-menu" class="navbar__toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Menú" data-translate="menu-label">
+            <svg class="navbar__toggler-icon navbar__toggler-icon--open" aria-hidden="true"><use href="public/icons/icons.svg#menu"></use></svg>
+            <svg class="navbar__toggler-icon navbar__toggler-icon--close" aria-hidden="true"><use href="public/icons/icons.svg#close"></use></svg>
           </button>
         </div>
       </div>
@@ -98,10 +98,10 @@
 
       <section id="home" class="home bg-halo bg-halo--emphasis" data-scroll-spy>
         <div class="container">
-          <div class="home-img">
+          <div class="home__img">
             <img src="./public/images/yulibeth-rivero.webp" alt="Yulibeth Rivero" width="390" height="390" fetchpriority="high">
           </div>
-          <div class="home-text">
+          <div class="home__text">
             <div>
               <h1 data-translate="home-title">Hola, soy Yulibeth!</h1>
               <h2 data-translate="home-subtitle">Frontend Developer</h2>
@@ -142,7 +142,7 @@
           </div>
 
           <!-- Section Content -->
-          <div class="section-content mb-md">
+          <div class="section__content mb-md">
             <p data-translate="about-me-description-1">Desde 2016 trabajo en desarrollo web, evolucionando desde maquetación y frontend hasta aplicaciones modernas con Angular, TypeScript y arquitecturas escalables. Trabajo con Angular 16+, desarrollando componentes reutilizables, formularios dinámicos, gestión de estado con Angular Signals, integración de APIs REST, pruebas unitarias y mejoras de UX/UI en aplicaciones enterprise.</p>
             <p data-translate="about-me-description-2">Tengo experiencia en mapeo de DTOs, asincronía con RxJS, testing y colaboración con Git Flow y Azure DevOps. Además, continúo profundizando en Angular moderno, arquitectura frontend y buenas prácticas de desarrollo.</p>
             <p data-translate="about-me-description-3">También sigo implementando mejoras y nuevas funcionalidades en mis proyectos personales para continuar evolucionando técnicamente:<br><br>• EZHub DS → Design System con Angular. Disponible en&nbsp;<a href="https://ezhub-ds.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Ir a EZHub DS">EZHub DS</a>.<br><br>• EZHub → aplicación de búsqueda de habitaciones con geolocalización (Angular + NestJS + MySQL). Disponible en&nbsp;<a href="https://ezhub.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Ir a EZHub">EZHub</a>.</p>
@@ -153,7 +153,7 @@
           <div class="tech-skills mb-2">
             <h3 class="text-center" data-translate="tech-skills-title">Tech Skills</h3>
             <p data-translate="tech-skills-description">En mi carrera, he trabajado con una variedad de tecnologías, como:</p>
-            <div class="tech-skills-card text-center">
+            <div class="tech-skills__card text-center">
 
               <!-- Frontend -->
               <div class="card">
@@ -185,7 +185,7 @@
           <div class="soft-skills">
             <h3 class="text-center" data-translate="soft-skills-title">Soft Skills</h3>
             <p data-translate="soft-skills-description">Soy autónoma, orientada al logro y al cliente, y me adapto bien a los cambios. Disfruto del trabajo en equipo y de colaborar para alcanzar objetivos comunes.</p>
-            <div class="soft-skills-items">
+            <div class="soft-skills__items">
 
               <!-- Autonomía -->
               <div class="center flex-column gap-2">
@@ -224,7 +224,7 @@
               <h3 data-translate="projects-ezhub-title">EZHub</h3>
               <p data-translate="projects-ezhub-description">Aplicación en desarrollo para la búsqueda de habitaciones por geolocalización, diseñada como proyecto final de mi bootcamp de Angular en IT Academy. La aplicación permite interactuar con el backend para gestionar usuarios, propiedades y habitaciones, e incluye autenticación de usuarios con JWT y encriptación de contraseñas. Desarrollada con Angular, Nest, MySQL, Mapbox y TailwindCSS.</p>
               <p data-translate="projects-ezhub-repositories">Repositorios: <a href="https://github.com/Yul1b3th/ezhub-frontend" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Frontend de EZHub">Frontend</a> | <a href="https://github.com/Yul1b3th/ezhub-backend" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Backend de EZHub">Backend</a></p>
-              <a href="https://ezhub.vercel.app/" class="btn btn-small" target="_blank" rel="noopener noreferrer" data-translate="projects-ezhub-demo">Demo</a>
+              <a href="https://ezhub.vercel.app/" class="btn btn--small" target="_blank" rel="noopener noreferrer" data-translate="projects-ezhub-demo">Demo</a>
             </div>
 
             <!-- EZHub DS -->
@@ -232,7 +232,7 @@
               <h3 data-translate="projects-ezhubds-title">EZHub DS</h3>
               <p data-translate="projects-ezhubds-description">Design System desarrollado con Angular enfocado en la reutilización de componentes, escalabilidad y consistencia visual en aplicaciones frontend. Incluye componentes reutilizables, sistema de estilos, arquitectura modular y enfoque en mantenibilidad y experiencia de usuario.</p>
               <p data-translate="projects-ezhubds-repositories">Repositorio: <a href="https://github.com/Yul1b3th/design-system" target="_blank" rel="noopener noreferrer" aria-label="Repositorio de EZHub DS">Frontend</a></p>
-              <a href="https://ezhub-ds.vercel.app/" class="btn btn-small" target="_blank" rel="noopener noreferrer" data-translate="projects-ezhubds-demo">Demo</a>
+              <a href="https://ezhub-ds.vercel.app/" class="btn btn--small" target="_blank" rel="noopener noreferrer" data-translate="projects-ezhubds-demo">Demo</a>
             </div>
 
             <!-- ITA Challenges -->
@@ -240,7 +240,7 @@
               <h3 data-translate="projects-ita-challenges-title">ITA Challenges</h3>
               <p data-translate="projects-ita-challenges-description">Aplicación en desarrollo de la IT Academy que permite a los estudiantes participar en retos de programación y hacer seguimiento de su progreso. En 2024, colaboré activamente implementando funcionalidades interactivas, realizando pruebas unitarias con Jest y gestionando tareas en GitHub.</p>
               <p data-translate="projects-ita-challenges-repositories">Repositorios: <a href="https://github.com/IT-Academy-BCN/ita-challenges-frontend" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Frontend de ITA Challenges">Frontend</a> | <a href="https://github.com/IT-Academy-BCN/ita-challenges-backend" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Backend de ITA Challenges">Backend</a></p>
-              <a href="http://dev.ita-challenges.eurecatacademy.org/ita-challenge/challenges" class="btn btn-small" target="_blank" rel="noopener noreferrer" data-translate="projects-ita-challenges-demo">Demo</a>
+              <a href="http://dev.ita-challenges.eurecatacademy.org/ita-challenge/challenges" class="btn btn--small" target="_blank" rel="noopener noreferrer" data-translate="projects-ita-challenges-demo">Demo</a>
             </div>
 
             <!-- EduMap -->
@@ -248,7 +248,7 @@
               <h3 data-translate="projects-edumap-title">EduMap</h3>
               <p data-translate="projects-edumap-description">Aplicación que permite a los usuarios visualizar y analizar datos relacionados con el acceso y la equidad en la educación a través de mapas interactivos. Los datos, obtenidos de OpenData Barcelona, permiten explorar indicadores por distrito, como ingresos familiares y distribución de centros educativos. Este proyecto fue parte de una hackatón en IT Academy, realizada el 22 de octubre de 2024, por un equipo compuesto por profesionales de las disciplinas de Data Analyst, Backend y Frontend.</p>
               <p data-translate="projects-edumap-repositories">Repositorios: <a href="https://github.com/Yul1b3th/edu-front" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Frontend de EduMap">Frontend</a> | <a href="https://github.com/amarinite/hackatonITAcademy" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Backend de EduMap">Backend</a></p>
-              <a href="https://edu-front-delta.vercel.app/" class="btn btn-small" target="_blank" rel="noopener noreferrer" data-translate="projects-edumap-demo">Demo</a>
+              <a href="https://edu-front-delta.vercel.app/" class="btn btn--small" target="_blank" rel="noopener noreferrer" data-translate="projects-edumap-demo">Demo</a>
             </div>
 
             <!-- TryTime -->
@@ -256,7 +256,7 @@
               <h3 data-translate="projects-trytime-title">TryTime</h3>
               <p data-translate="projects-trytime-description">Aplicación web que genera actividades aleatorias, diseñada para la hackatón de IT Academy en 2024. Desarrollada con Angular y Server-Side Rendering (SSR) para mejorar el rendimiento y SEO. TryTime permite a los usuarios obtener actividades aleatorias de la Bored API, con opciones de filtrado por tipo de actividad. Incluye manejo de errores de red, optimización de CORS con proxy y un diseño responsivo adaptado a dispositivos móviles y escritorio.</p>
               <p data-translate="projects-trytime-repositories">Repositorio: <a href="https://github.com/Yul1b3th/hackaton-cibernarium-boored" target="_blank" rel="noopener noreferrer" aria-label="Repositorio de TryTime">Frontend</a></p>
-              <a href="https://hackaton-cibernarium-boored.vercel.app/" class="btn btn-small" target="_blank" rel="noopener noreferrer" data-translate="projects-trytime-demo">Demo</a>
+              <a href="https://hackaton-cibernarium-boored.vercel.app/" class="btn btn--small" target="_blank" rel="noopener noreferrer" data-translate="projects-trytime-demo">Demo</a>
             </div>
           </div>
         </div>
@@ -275,7 +275,7 @@
             <!-- TRAGSATEC -->
             <div class="card">
               <h3 data-translate="experience-tragsatec-title">Angular Developer</h3>
-              <p class="year" data-translate="experience-tragsatec-year">Ene. 2025 - Mar. 2026</p>
+              <p class="resume-items__year" data-translate="experience-tragsatec-year">Ene. 2025 - Mar. 2026</p>
               <p><strong data-translate="experience-tragsatec-company">Tragsatec | España.</strong></p>
               <ul>
                 <li data-translate="experience-tragsatec-task1">Desarrollo de funcionalidades con Angular (v17–v20), TypeScript y Angular Material, consumiendo la librería corporativa para el diseño de formularios y tablas dinámicas con lógica condicional.</li>
@@ -289,7 +289,7 @@
             <!-- IT ACADEMY -->
             <div class="card">
               <h3 data-translate="experience-itacademy-title">Angular Developer</h3>
-              <p class="year" data-translate="experience-itacademy-year">Sep. 2023 - Dic. 2024</p>
+              <p class="resume-items__year" data-translate="experience-itacademy-year">Sep. 2023 - Dic. 2024</p>
               <p><strong data-translate="experience-itacademy-company">IT Academy | España.</strong></p>
               <ul>
                 <li data-translate="experience-itacademy-task1">Implementación de funcionalidades con Angular (v16–v17) y Bootstrap.</li>
@@ -301,7 +301,7 @@
             <!-- GRUPO ANAYA -->
             <div class="card">
               <h3 data-translate="experience-anaya-title">JavaScript Developer</h3>
-              <p class="year" data-translate="experience-anaya-year">Feb. 2023 - Jul. 2023</p>
+              <p class="resume-items__year" data-translate="experience-anaya-year">Feb. 2023 - Jul. 2023</p>
               <p><strong data-translate="experience-anaya-company">Grupo Anaya, S.A.U. | España.</strong></p>
               <ul>
                 <li data-translate="experience-anaya-task1">Adaptación de contenido impreso de libros a formatos web.</li>
@@ -312,7 +312,7 @@
             <!-- PRINCIPIOS INTERACTIVOS -->
             <div class="card">
               <h3 data-translate="experience-principios-title">Maquetadora Web</h3>
-              <p class="year" data-translate="experience-principios-year">Jun. 2019 - Dic. 2022</p>
+              <p class="resume-items__year" data-translate="experience-principios-year">Jun. 2019 - Dic. 2022</p>
               <p><strong data-translate="experience-principios-company">Principios Interactivos, S.L. | España.</strong></p>
               <ul>
                 <li data-translate="experience-principios-task1">Diseño y maquetación de campañas digitales para CaixaBank Digital.</li>
@@ -323,7 +323,7 @@
             <!-- VIP RENTAL -->
             <div class="card">
               <h3 data-translate="experience-vip-title">Desarrolladora Web</h3>
-              <p class="year" data-translate="experience-vip-year">Mar. 2016 - May. 2019</p>
+              <p class="resume-items__year" data-translate="experience-vip-year">Mar. 2016 - May. 2019</p>
               <p><strong data-translate="experience-vip-company">VIP Rental Barcelona, S.L.U. | España.</strong></p>
               <ul>
                 <li data-translate="experience-vip-task1">Administración de e-commerce en WordPress, PrestaShop y Magento, optimizando UI, rendimiento, accesibilidad y SEO.</li>
@@ -334,7 +334,7 @@
             <!-- INTERCID -->
             <div class="card">
               <h3 data-translate="experience-owner-title">Propietaria</h3>
-              <p class="year" data-translate="experience-owner-year">Mar. 2007 - Nov. 2014</p>
+              <p class="resume-items__year" data-translate="experience-owner-year">Mar. 2007 - Nov. 2014</p>
               <p><strong data-translate="experience-owner-company">Intercid, C.A. | Venezuela.</strong></p>
               <ul>
                 <li data-translate="experience-owner-task1">Dirección del e-commerce de dispositivos tecnológicos.</li>
@@ -356,7 +356,7 @@
           <div class="center flex-column gap-4">
             <div class="card">
               <h3 data-translate="education-informatica-title">Ingeniero en Informática</h3>
-              <p class="year" data-translate="education-informatica-year">Oct. 1998 - Mar. 2004</p>
+              <p class="resume-items__year" data-translate="education-informatica-year">Oct. 1998 - Mar. 2004</p>
               <p><strong data-translate="education-informatica-institution">Universidad "Fermín Toro" | Venezuela.</strong></p>
               <ul>
                 <li data-translate="education-informatica-duration">5 años.</li>
@@ -364,7 +364,7 @@
             </div>
             <div class="card">
               <h3 data-translate="education-angular-title">Frontend Developer Angular</h3>
-              <p class="year" data-translate="education-angular-year">Sep. 2023 - Feb. 2024</p>
+              <p class="resume-items__year" data-translate="education-angular-year">Sep. 2023 - Feb. 2024</p>
               <p><strong data-translate="education-angular-institution">IT Academy | España.</strong></p>
               <ul>
                 <li data-translate="education-angular-duration">Bootcamp de 360 horas.</li>
@@ -372,7 +372,7 @@
             </div>
             <div class="card">
               <h3 data-translate="education-certification3-title">CP3: Desarrollo de Aplicaciones con Tecnología Web</h3>
-              <p class="year" data-translate="education-certification3-year">2023 - 2024</p>
+              <p class="resume-items__year" data-translate="education-certification3-year">2023 - 2024</p>
               <p><strong data-translate="education-certification3-institution">Certificado de Profesionalidad de Nivel 3 | CIFO | España.</strong></p>
               <ul>
                 <li data-translate="education-certification3-duration">180 horas.</li>
@@ -380,7 +380,7 @@
             </div>
             <div class="card">
               <h3 data-translate="education-vue2023-title">Frontend Developer Vue</h3>
-              <p class="year" data-translate="education-vue2023-year">2023</p>
+              <p class="resume-items__year" data-translate="education-vue2023-year">2023</p>
               <p><strong data-translate="education-vue2023-institution">La Salle Universidad Ramon Llull | España.</strong></p>
               <ul>
                 <li data-translate="education-vue2023-duration">Bootcamp de 240 horas.</li>
@@ -388,7 +388,7 @@
             </div>
             <div class="card">
               <h3 data-translate="education-vue2022-title">Frontend Developer Vue</h3>
-              <p class="year" data-translate="education-vue2022-year">2022</p>
+              <p class="resume-items__year" data-translate="education-vue2022-year">2022</p>
               <p><strong data-translate="education-vue2022-institution">Eurecat | España.</strong></p>
               <ul>
                 <li data-translate="education-vue2022-duration">Bootcamp de 240 horas.</li>
@@ -396,7 +396,7 @@
             </div>
             <div class="card">
               <h3 data-translate="education-certification2-title">CP2: Confección y Publicación de Páginas Web</h3>
-              <p class="year" data-translate="education-certification2-year">2016</p>
+              <p class="resume-items__year" data-translate="education-certification2-year">2016</p>
               <p><strong data-translate="education-certification2-institution">Certificado de Profesionalidad de Nivel 2 | CIFO | España.</strong></p>
               <ul>
                 <li data-translate="education-certification2-duration">560 horas.</li>
@@ -419,56 +419,56 @@
             <!-- GOOGLE UX DESIGN -->
             <div class="card">
               <h3 data-translate="courses-ux-title">Google UX Design Professional Certificate</h3>
-              <p class="year" data-translate="courses-ux-year">2026 (260 horas)</p>
+              <p class="resume-items__year" data-translate="courses-ux-year">2026 (260 horas)</p>
               <p data-translate="courses-ux-institution">Coursera.</p>
             </div>
 
             <!-- DESARROLLO WEB PHP / MYSQL -->
             <div class="card">
               <h3 data-translate="courses-php-title">Desarrollo Web (PHP / MySQL)</h3>
-              <p class="year" data-translate="courses-php-year">2026 (80 horas)</p>
+              <p class="resume-items__year" data-translate="courses-php-year">2026 (80 horas)</p>
               <p data-translate="courses-php-institution">La Salle Universidad Ramon Llull | España.</p>
             </div>
 
             <!-- GOOGLE PROMPTING ESSENTIALS -->
             <div class="card">
               <h3 data-translate="courses-prompting-title">Google Prompting Essentials</h3>
-              <p class="year" data-translate="courses-prompting-year">2026 (8 horas)</p>
+              <p class="resume-items__year" data-translate="courses-prompting-year">2026 (8 horas)</p>
               <p data-translate="courses-prompting-institution">Coursera.</p>
             </div>
 
             <!-- JAVA SE 11 -->
             <div class="card">
               <h3 data-translate="courses-java-title">Java SE 11</h3>
-              <p class="year" data-translate="courses-java-year">2026 (60 horas)</p>
+              <p class="resume-items__year" data-translate="courses-java-year">2026 (60 horas)</p>
               <p data-translate="courses-java-institution">La Salle Universidad Ramon Llull | España.</p>
             </div>
 
             <!-- SCRUM -->
             <div class="card">
               <h3 data-translate="courses-scrum-title">Scrum Framework</h3>
-              <p class="year" data-translate="courses-scrum-year">2023 (50 horas)</p>
+              <p class="resume-items__year" data-translate="courses-scrum-year">2023 (50 horas)</p>
               <p data-translate="courses-scrum-institution">Proyecto Universidad Empresa, S.L. (PUE) | España.</p>
             </div>
 
             <!-- WORDPRESS -->
             <div class="card">
               <h3 data-translate="courses-wordpress-title">WordPress</h3>
-              <p class="year" data-translate="courses-wordpress-year">2017 (100 horas)</p>
+              <p class="resume-items__year" data-translate="courses-wordpress-year">2017 (100 horas)</p>
               <p data-translate="courses-wordpress-institution">CIFO | España.</p>
             </div>
 
             <!-- PHOTOSHOP -->
             <div class="card">
               <h3 data-translate="courses-photoshop-title">Procesamiento de Imágenes para la Web con Photoshop</h3>
-              <p class="year" data-translate="courses-photoshop-year">2017 (100 horas)</p>
+              <p class="resume-items__year" data-translate="courses-photoshop-year">2017 (100 horas)</p>
               <p data-translate="courses-photoshop-institution">CIFO | España.</p>
             </div>
 
             <!-- PRESTASHOP -->
             <div class="card">
               <h3 data-translate="courses-prestashop-title">Creación de tiendas online con Prestashop</h3>
-              <p class="year" data-translate="courses-prestashop-year">2017 (100 horas)</p>
+              <p class="resume-items__year" data-translate="courses-prestashop-year">2017 (100 horas)</p>
               <p data-translate="courses-prestashop-institution">Barcelona Activa | España.</p>
             </div>
           </div>
@@ -483,7 +483,7 @@
             <span aria-hidden="true" data-translate="contact-title">Contacto</span>
             <h2 data-translate="contact-title">Contacto</h2>
           </div>
-          <div class="contact-cards">
+          <div class="contact__cards">
 
             <!-- Ubicación -->
             <div class="card center flex-column gap-1">
@@ -522,26 +522,26 @@
             </div>
           </div>
           <form class="card contact-form">
-            <div class="form-group">
+            <div class="contact-form__group">
               <label class="visually-hidden" for="name" data-translate="contact-name-label">Nombre</label>
-              <input id="name" type="text" name="name" class="form-control" placeholder="Ingresa tu nombre *" title="Nombre sólo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" autocomplete="name" required data-translate="contact-name-placeholder contact-name-title">
+              <input id="name" type="text" name="name" class="contact-form__control" placeholder="Ingresa tu nombre *" title="Nombre sólo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" autocomplete="name" required data-translate="contact-name-placeholder contact-name-title">
             </div>
-            <div class="form-group">
+            <div class="contact-form__group">
               <label class="visually-hidden" for="email" data-translate="contact-email-label">Correo electrónico</label>
-              <input id="email" type="email" name="email" class="form-control" placeholder="Ingresa tu correo *" title="Email incorrecto" autocomplete="email" required data-translate="contact-email-placeholder contact-email-title2">
+              <input id="email" type="email" name="email" class="contact-form__control" placeholder="Ingresa tu correo *" title="Email incorrecto" autocomplete="email" required data-translate="contact-email-placeholder contact-email-title2">
             </div>
-            <div class="form-group">
+            <div class="contact-form__group">
               <label class="visually-hidden" for="comments" data-translate="contact-comments-label">Comentarios</label>
-              <textarea id="comments" name="comments" class="form-control" rows="5" placeholder="Déjame tus comentarios *" required data-translate="contact-comments-placeholder"></textarea>
+              <textarea id="comments" name="comments" class="contact-form__control" rows="5" placeholder="Déjame tus comentarios *" required data-translate="contact-comments-placeholder"></textarea>
             </div>
-            <div class="contact-form-loader text-center d-none">
+            <div class="contact-form__loader text-center d-none">
               <img src="./public/images/loader.svg" alt="Enviando..." data-translate="contact-loader-alt">
             </div>
-            <button type="submit" class="btn btn-primary" data-translate="contact-submit">Enviar mensaje</button>
+            <button type="submit" class="btn" data-translate="contact-submit">Enviar mensaje</button>
           </form>
           <div id="thanks" class="modal">
-            <div class="modal-content">
-              <div class="contact-form-response">
+            <div class="modal__content">
+              <div class="contact-form__response">
                 <p data-translate="contact-thanks-message">¡Muchas Gracias!<br>Por tus comentarios</p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="svgTitle svgDesc">
                   <title id="svgTitle" data-translate="contact-thanks-title">Icono de cara sonriente</title>

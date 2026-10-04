@@ -20,7 +20,7 @@
   @include mx.apply-color-opacity(background-color, 0.8, bg-emphasis);
 
   // ANIDAMOS EL CONTENIDO AQUÍ:
-  &-content {
+  &__content {
     @include mx.apply-color(background-color, bg-page);
     @include mx.apply-border-radius(12px); // Bordes redondeados elegantes
     @include mx.apply-border(1px, solid, border-default);
@@ -38,7 +38,7 @@
   pointer-events: auto;
 }
 
-.modal-content {
+.modal__content {
   position: relative;
 }
 
@@ -60,7 +60,7 @@
   width: 100%;
 }
 
-.contact-cards {
+.contact__cards {
   @include mx.apply-flex-container(column, center, center, fn.get-spacing(lg));
   text-align: center;
 
@@ -91,7 +91,7 @@
   max-width: 800px;
   padding: 1rem;
 
-  .form-group {
+  .contact-form__group {
     @include mx.apply-flex-container(column, center, stretch);
   }
 
@@ -136,18 +136,18 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto auto;
 
-    .form-group:nth-child(1),
-    .form-group:nth-child(2) {
+    .contact-form__group:nth-child(1),
+    .contact-form__group:nth-child(2) {
       grid-column: span 1;
     }
 
-    .form-group:nth-child(3),
-    .contact-form-loader,
+    .contact-form__group:nth-child(3),
+    .contact-form__loader,
     button {
       grid-column: span 2;
     }
 
-    .contact-form-loader {
+    .contact-form__loader {
       justify-self: center;
     }
 
@@ -162,13 +162,13 @@
 
     .textarea,
     button,
-    .contact-form-loader {
+    .contact-form__loader {
       grid-column: span 2;
     }
   }
 }
 
-.contact-form-response {
+.contact-form__response {
   @include mx.apply-color(background-color, bg-page);
   padding: 1rem;
   text-align: center;

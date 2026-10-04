@@ -4,12 +4,12 @@
 const desktop = window.matchMedia('(min-width: 1200px)');
 
 export function initNavigation() {
-  const nav = document.querySelector('.navbar-collapse');
-  const navToggle = document.querySelector('.navbar-toggler');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const nav = document.querySelector('.navbar__collapse');
+  const navToggle = document.querySelector('.navbar__toggler');
+  const navLinks = document.querySelectorAll('.navbar__link');
   const scrollRoots = [document.documentElement, document.body];
   // Lo que queda tapado por el menú no se puede enfocar mientras está abierto
-  const covered = document.querySelectorAll('.container-nav > .navbar-brand, .skip-link, main, footer, .scroll-top-btn');
+  const covered = document.querySelectorAll('.navbar__container > .navbar__brand, .skip-link, main, footer, .scroll-top-btn');
 
   const isOpen = () => nav.getAttribute('data-visible') === 'true';
 
@@ -26,8 +26,8 @@ export function initNavigation() {
 
   navLinks.forEach((link) =>
     link.addEventListener('click', (event) => {
-      navLinks.forEach((l) => l.classList.remove('active'));
-      event.currentTarget.classList.add('active');
+      navLinks.forEach((l) => l.classList.remove('navbar__link--active'));
+      event.currentTarget.classList.add('navbar__link--active');
       if (!desktop.matches) setOpen(false);
     }),
   );
