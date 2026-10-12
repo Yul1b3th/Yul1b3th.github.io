@@ -5,7 +5,7 @@
 @use '../abstracts/functions' as fn;
 @use '../abstracts/mixins' as mx;
 
-.modal {
+.contact-modal {
   align-items: center;
   bottom: 0;
   @include mx.apply-flex-container(row, center, center);
@@ -15,7 +15,7 @@
   position: fixed;
   right: 0;
   top: 0;
-  @include mx.apply-transition(all, 1s);
+  transition: opacity var(--duration-moderate) var(--ease-standard);
   z-index: 999;
   @include mx.apply-color-opacity(background-color, 0.8, bg-emphasis);
 
@@ -33,16 +33,16 @@
   }
 }
 
-.modal#thanks:target {
+.contact-modal#thanks:target {
   opacity: 1;
   pointer-events: auto;
 }
 
-.modal__content {
+.contact-modal__content {
   position: relative;
 }
 
-.modal-close {
+.contact-modal__close {
   position: absolute;
   right: 1rem;
   top: 1rem;

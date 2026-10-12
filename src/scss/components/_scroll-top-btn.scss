@@ -16,7 +16,7 @@
   @include mx.apply-color(background-color, action-primary-bg);
   @include mx.apply-color(color, action-primary-text);
   border: 0;
-  @include mx.apply-transition(all, 0.2s, ease-out);
+  transition: background-color var(--duration-fast) var(--ease-standard);
   @include mx.apply-flex-container(row, center, center, 0);
   cursor: pointer;
 

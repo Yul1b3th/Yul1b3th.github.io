@@ -8,10 +8,12 @@
 .card {
   @include mx.apply-color(background-color, bg-muted);
   @include mx.apply-border(1px, solid, border-default);
-  @include mx.apply-border-radius(8px);
-  @include mx.apply-box-shadow(0px 2px 12px rgba(0, 0, 0, 0.1));
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
   @include mx.apply-spacing(margin-bottom, md); // Usa tu espaciado dinámico (2rem / ~20px)
-  @include mx.apply-transition(all, 0.3s, ease);
+  transition:
+    border-color var(--duration-base) var(--ease-standard),
+    box-shadow var(--duration-base) var(--ease-standard);
   padding: 1.25rem;
   width: 100%;
 

@@ -36,7 +36,7 @@ a {
   text-underline-offset: 0.2em;
   font-weight: 600;
   cursor: pointer;
-  @include apply-transition(color);
+  transition: color var(--duration-base) var(--ease-standard);
 
   // Visitado igual que en reposo
   &:visited {

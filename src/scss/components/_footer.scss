@@ -13,7 +13,7 @@
 
   a {
     @include mx.apply-color(color, text-on-emphasis);
-    @include mx.apply-transition(color, 0.2s);
+    transition: color var(--duration-base) var(--ease-standard);
 
     &:hover {
       @include mx.apply-color(color, link-emphasis-hover);

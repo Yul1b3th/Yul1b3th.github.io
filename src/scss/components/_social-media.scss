@@ -15,7 +15,7 @@
       fill: currentColor;
       @include mx.apply-color(color, text-heading);
       width: 1.2rem;
-      @include mx.apply-transition(color, 0.2s);
+      transition: color var(--duration-base) var(--ease-standard);
 
       &:hover {
         @include mx.apply-color(color, link-hover);
@@ -34,7 +34,7 @@
       fill: currentColor;
       @include mx.apply-color(color, text-on-emphasis);
       width: 1rem;
-      @include mx.apply-transition(color, 0.2s);
+      transition: color var(--duration-base) var(--ease-standard);
 
       &:hover {
         @include mx.apply-color(color, link-emphasis-hover);
