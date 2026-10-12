@@ -1,52 +1,60 @@
 // Archivo de innovatech-ds. No editar aquí
 // Se cambia en innovatech-ds y se copia con npm run sync
 
-// Animaciones de entrada al hacer scroll con IntersectionObserver
-// Sin JavaScript o con movimiento reducido el contenido se ve siempre
-
-.reveal {
-  transition:
-    opacity var(--duration-slow) var(--ease-decelerate),
-    transform var(--duration-slow) var(--ease-decelerate);
-  transition-delay: var(--reveal-delay, 0ms);
-}
+// Animaciones de entrada al cargar y al hacer scroll con IntersectionObserver
+// Usan animation y no transition para no pisar las transiciones de cada componente
 
 /* Solo se ocultan cuando reveal.js ha añadido la clase al html */
 .js-reveal .reveal:not(.is-visible) {
   opacity: 0;
-  transform: translateY(1.5rem);
 }
 
-.js-reveal .reveal--fade:not(.is-visible) {
-  transform: none;
+.js-reveal .reveal.is-visible {
+  animation: reveal-up var(--duration-slow) var(--ease-decelerate) backwards;
+  animation-delay: var(--reveal-delay, 0ms);
 }
 
-.js-reveal .reveal--scale:not(.is-visible) {
-  transform: scale(0.95);
+.js-reveal .reveal--fade.is-visible {
+  animation-name: reveal-fade;
+}
+
+.js-reveal .reveal--scale.is-visible {
+  animation-name: reveal-scale;
 }
 
 /* Entrada al cargar la página, para la portada */
 .enter {
-  animation: enter var(--duration-slow) var(--ease-emphasized-decelerate) both;
+  animation: reveal-up var(--duration-slow) var(--ease-emphasized-decelerate) backwards;
   animation-delay: var(--enter-delay, 0ms);
 }
 
-@keyframes enter {
+@keyframes reveal-up {
   from {
     opacity: 0;
-    transform: translateY(1rem);
+    transform: translateY(1.5rem);
+  }
+}
+
+@keyframes reveal-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes reveal-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal,
+  .js-reveal .reveal.is-visible,
   .enter {
-    transition: none;
     animation: none;
   }
 
   .js-reveal .reveal:not(.is-visible) {
     opacity: 1;
-    transform: none;
   }
 }
