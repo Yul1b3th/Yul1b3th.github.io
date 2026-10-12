@@ -6,7 +6,7 @@ import { initScrollSpy } from './components/scroll-spy.js';
 import { initContactForm } from './components/contact-form.js';
 import { initScrollTop } from './components/scroll-top.js';
 import { initFooter } from './components/footer.js';
-import { initReveal } from './utils/reveal.js';
+import { initAnimate } from './utils/animate.js';
 
 initNavigation();
 initThemeSwitcher();
@@ -15,4 +15,4 @@ initScrollSpy();
 initContactForm();
 initScrollTop();
 initFooter();
-initReveal();
+initAnimate();
