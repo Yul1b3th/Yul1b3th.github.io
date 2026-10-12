@@ -56,7 +56,7 @@
 }
 
 .selector__chevron {
-  transition: transform 150ms ease;
+  transition: transform var(--duration-fast) var(--ease-standard);
 }
 
 .selector__button[aria-expanded='true'] .selector__chevron {
