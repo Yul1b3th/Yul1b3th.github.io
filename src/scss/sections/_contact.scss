@@ -48,7 +48,8 @@
   top: 1rem;
 
   svg {
-    @include mx.apply-color(fill, border-brand);
+    fill: currentColor;
+    @include mx.apply-color(color, border-brand);
     height: 3rem;
     width: 3rem;
   }
@@ -175,7 +176,8 @@
   width: 400px;
 
   svg {
-    @include mx.apply-color(fill, border-brand);
+    fill: currentColor;
+    @include mx.apply-color(color, border-brand);
     height: 4rem;
     margin-top: 2rem;
     width: 4rem;

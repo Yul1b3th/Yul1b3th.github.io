@@ -5,12 +5,17 @@
 @use '../abstracts/mixins' as mx;
 
 /*-------- BUTTONS --------*/
+// El borde sigue al fondo en cada estado, salvo en alto contraste
+// Mismas reglas que .button de innovatech-ds
 a.btn,
 button.btn {
-  @include mx.apply-color(background-color, action-primary-bg);
+  --btn-bg: var(--color-action-primary-bg);
+  --btn-border: var(--btn-bg);
   @include mx.apply-color(color, action-primary-text);
-  @include mx.apply-border(2px, solid, action-primary-border);
+  background-color: var(--btn-bg);
+  border: 2px solid var(--btn-border);
   @include mx.apply-border-radius(4rem);
+  box-shadow: var(--shadow-raised);
   cursor: pointer;
   display: inline-block;
   font-size: fn.get-font-size(base);
@@ -19,29 +24,33 @@ button.btn {
   text-align: center;
   text-decoration: none;
   width: 11.625rem;
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
 
-  @include mx.apply-transition(color, 0.2s);
+  @include mx.apply-high-contrast {
+    --btn-border: var(--color-action-primary-border);
+  }
 
-  // 1. EL ESTADO VISITED VA PRIMERO
   &:visited {
-    @include mx.apply-color(background-color, action-primary-bg);
     @include mx.apply-color(color, action-primary-text);
-    @include mx.apply-border(2px, solid, action-primary-border);
   }
 
-  // 2. EL HOVER VA DESPUÉS (Gana prioridad en cascada al pasar el cursor)
   &:hover {
+    --btn-bg: var(--color-action-primary-bg-hover);
+    box-shadow: var(--shadow-card);
     text-decoration: none;
-    @include mx.apply-color(background-color, action-primary-bg-hover);
-    @include mx.apply-color(color, action-primary-text);
-    @include mx.apply-border(2px, solid, action-primary-border);
   }
 
-  // 3. EL ACTIVE VA AL FINAL (Se aplica exactamente al hacer click)
   &:active {
-    @include mx.apply-color(background-color, action-primary-bg-active);
-    @include mx.apply-color(color, action-primary-text);
-    @include mx.apply-border(2px, solid, action-primary-border);
+    --btn-bg: var(--color-action-primary-bg-active);
+    box-shadow: var(--shadow-pressed);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
   }
 }
 
