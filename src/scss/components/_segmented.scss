@@ -1,0 +1,88 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Control segmentado para elegir una sola opción entre pocas
+// Usa radios nativos dentro de un fieldset, así funciona con teclado sin JavaScript
+
+.segmented {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.segmented__legend {
+  margin-bottom: var(--space-sm);
+  padding: 0;
+  color: var(--color-text-default);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.segmented__options {
+  display: inline-flex;
+  gap: var(--space-xs);
+  padding: var(--space-xs);
+  border: 1px solid var(--color-border-selected);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg-page);
+}
+
+.segmented__option {
+  position: relative;
+  display: inline-flex;
+}
+
+/* El radio queda oculto pero sigue siendo el que recibe el foco */
+.segmented__input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.segmented__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  min-width: 3rem;
+  min-height: 2.25rem;
+  padding: 0 var(--space-md);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-default);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard);
+}
+
+.segmented__input:hover:not(:checked, :disabled) + .segmented__label {
+  background-color: var(--color-action-secondary-bg-hover);
+}
+
+.segmented__input:checked + .segmented__label {
+  background-color: var(--color-action-selected-bg);
+  color: var(--color-action-selected-text);
+}
+
+.segmented__input:focus-visible + .segmented__label {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.segmented__input:disabled + .segmented__label {
+  color: var(--color-text-disabled);
+}
+
+.segmented__input:disabled {
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .segmented__label {
+    transition: none;
+  }
+}

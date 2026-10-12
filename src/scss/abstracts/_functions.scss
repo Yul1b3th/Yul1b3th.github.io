@@ -40,6 +40,26 @@
 @function get-spacing($size-name) {
   @return get-map-value($spacing, $size-name);
 }
+// Obtiene un peso de fuente
+@function get-font-weight($weight-name) {
+  @return get-map-value($font-weights, $weight-name);
+}
+
+// Obtiene una duración de movimiento
+@function get-duration($name) {
+  @return get-map-value($durations, $name);
+}
+
+// Obtiene una curva de movimiento
+@function get-easing($name) {
+  @return get-map-value($easings, $name);
+}
+
+// Obtiene una sombra
+@function get-shadow($name) {
+  @return get-map-value($shadows, $name);
+}
+
 @function get-breakpoint($size-name) {
   @return get-map-value($breakpoints, $size-name);
 }

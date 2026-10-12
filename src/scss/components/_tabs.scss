@@ -1,0 +1,69 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Pestañas con el patrón de WAI-ARIA, la activa en mint-900
+// Se activan con clic o con las flechas, ver js/components/tabs.js
+
+.tabs__list {
+  display: flex;
+  gap: var(--space-xs);
+  overflow-x: auto;
+  border-bottom: 1px solid var(--color-border-default);
+}
+
+.tabs__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: 3rem;
+  margin-bottom: -1px;
+  padding: 0 var(--space-md);
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard);
+}
+
+.tabs__tab:hover {
+  background-color: var(--color-action-secondary-bg-hover);
+}
+
+.tabs__tab[aria-selected='true'] {
+  border-bottom-color: var(--color-border-tab-active);
+  color: var(--color-text-tab-active);
+}
+
+.tabs__tab:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: -2px;
+}
+
+.tabs__tab > svg {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+
+.tabs__panel {
+  padding: var(--space-ml) 0;
+}
+
+.tabs__panel[hidden] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tabs__tab {
+    transition: none;
+  }
+}

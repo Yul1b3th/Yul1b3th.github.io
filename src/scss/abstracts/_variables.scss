@@ -2,46 +2,27 @@
 // Se cambia en innovatech-ds y se copia con npm run sync
 
 // Mapas comunes a todos los proyectos
-// Tipografía y espaciado pasarán a tokens JSON, hasta entonces se cambian aquí
+// Tipografía, espaciado, movimiento, sombras y radios vienen de los tokens JSON en _tokens.scss
+
+@use './tokens';
 
 // === Tipografías ===
-$fonts: (
-  // Lista sin comillas en los genéricos, si no el navegador busca una fuente llamada «Arial, sans-serif»
-  primary: ('Be Vietnam Pro', Arial, sans-serif),
-  secondary: (Arial, sans-serif),
-);
-
-// === Tamaños de fuente ===
-$font-sizes: (
-  xs: 0.75rem,
-  sm: 0.875rem,
-  base: 1rem,
-  lg: 1.125rem,
-  xl: 1.25rem,
-  '2xl': 1.5rem,
-  '3xl': 1.75rem,
-  '4xl': 2rem,
-  '5xl': 2.5rem,
-);
-
-// === Alturas de línea ===
-$line-heights: (
-  xs: 1,
-  sm: 1.25,
-  base: 1.5,
-  lg: 1.75,
-  xl: 2,
-);
+$fonts: tokens.$tokens-fonts;
+$font-sizes: tokens.$tokens-font-sizes;
+$line-heights: tokens.$tokens-line-heights;
+$font-weights: tokens.$tokens-font-weights;
+$text-styles: tokens.$tokens-text-styles;
 
 // === Espaciados ===
-$spacing: (
-  zero: 0,
-  xs: 0.25rem,
-  sm: 0.5rem,
-  md: 1rem,
-  lg: 2rem,
-  xl: 4rem,
-);
+$spacing: tokens.$tokens-spacing;
+
+// === Movimiento y sombras ===
+$durations: tokens.$tokens-durations;
+$easings: tokens.$tokens-easings;
+$shadows: tokens.$tokens-shadows;
+
+// === Radios ===
+$radii: tokens.$tokens-radii;
 
 // === Colores ===
 // Los colores vienen de los tokens de InnoVatech en _tokens.scss
