@@ -24,18 +24,16 @@ $shadows: tokens.$tokens-shadows;
 // === Radios ===
 $radii: tokens.$tokens-radii;
 
+// === Bordes, opacidad y capas ===
+$border-widths: tokens.$tokens-border-widths;
+$opacities: tokens.$tokens-opacities;
+$z-indexes: tokens.$tokens-z-indexes;
+
 // === Colores ===
 // Los colores vienen de los tokens de InnoVatech en _tokens.scss
 
 // === Breakpoints ===
-$breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px,
-);
+$breakpoints: tokens.$tokens-breakpoints;
 
 $container-max-widths: (
   sm: 540px,

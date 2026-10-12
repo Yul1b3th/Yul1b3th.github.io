@@ -1,0 +1,118 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Casilla y botón de opción sobre los controles nativos
+// Comparten tamaño, colores y estados, cambia solo la forma de la marca
+
+.checkbox,
+.radio {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  min-height: 2.75rem;
+  padding-block: calc((2.75rem - 1.5rem) / 2);
+  color: var(--color-text-body);
+  cursor: pointer;
+}
+
+.checkbox__input,
+.radio__input {
+  flex: none;
+  position: relative;
+  display: grid;
+  place-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0.125rem 0 0;
+  border: var(--border-width-md) solid var(--color-border-strong);
+  background-color: var(--color-bg-page);
+  appearance: none;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard);
+}
+
+.checkbox__input {
+  border-radius: calc(var(--radius-sm) / 2);
+}
+
+.radio__input {
+  border-radius: 50%;
+}
+
+.checkbox__input:hover:not(:disabled),
+.radio__input:hover:not(:disabled) {
+  border-color: var(--color-text-default);
+}
+
+.checkbox__input:focus-visible,
+.radio__input:focus-visible {
+  outline: var(--border-width-md) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.checkbox__input:is(:checked, :indeterminate),
+.radio__input:checked {
+  border-color: var(--color-action-selected-bg);
+  background-color: var(--color-action-selected-bg);
+}
+
+/* Marca de la casilla dibujada con clip-path */
+.checkbox__input::before {
+  content: '';
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: var(--color-action-selected-text);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0, 43% 62%);
+  transform: scale(0);
+}
+
+.checkbox__input:checked::before {
+  transform: scale(1);
+}
+
+.checkbox__input:indeterminate::before {
+  height: 0.125rem;
+  clip-path: none;
+  transform: scale(1);
+}
+
+/* Punto del radio */
+.radio__input::before {
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--color-action-selected-text);
+  transform: scale(0);
+}
+
+.radio__input:checked::before {
+  transform: scale(1);
+}
+
+.checkbox__input:disabled,
+.radio__input:disabled {
+  border-color: var(--color-action-disabled-bg);
+  background-color: var(--color-action-disabled-bg);
+  cursor: not-allowed;
+}
+
+.checkbox__input:disabled::before,
+.radio__input:disabled::before {
+  background-color: var(--color-text-disabled);
+}
+
+.checkbox:has(:disabled),
+.radio:has(:disabled) {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .checkbox__input,
+  .radio__input {
+    transition: none;
+  }
+}

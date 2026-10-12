@@ -107,7 +107,7 @@
   --color-violet-950: #241641;
 }
 
-/* Tipografía, espaciado, movimiento, sombras y radios, iguales en todos los temas */
+/* Tipografía, espaciado, movimiento, sombras, radios, bordes, opacidad, capas y puntos de corte, iguales en todos los temas */
 :root {
   --font-family-primary: 'Be Vietnam Pro', Arial, sans-serif;
   --font-family-secondary: Arial, sans-serif;
@@ -152,6 +152,31 @@
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-pill: 999px;
+  --border-width-sm: 1px;
+  --border-width-md: 2px;
+  --border-width-lg: 4px;
+  --opacity-0: 0;
+  --opacity-25: 0.25;
+  --opacity-50: 0.5;
+  --opacity-75: 0.75;
+  --opacity-100: 1;
+  --z-index-base: 0;
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-overlay: 1040;
+  --z-index-drawer: 1045;
+  --z-index-modal: 1050;
+  --z-index-popover: 1070;
+  --z-index-tooltip: 1080;
+  --z-index-toast: 1090;
+  --z-index-skip: 1100;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xxl: 1400px;
 }
 
 /* Modo claro por defecto */

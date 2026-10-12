@@ -60,6 +60,10 @@
   @return get-map-value($shadows, $name);
 }
 
+@function get-z-index($name) {
+  @return get-map-value($z-indexes, $name);
+}
+
 @function get-breakpoint($size-name) {
   @return get-map-value($breakpoints, $size-name);
 }

@@ -1,0 +1,156 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Campo de formulario con etiqueta, control, ayuda y error
+// El error se marca con aria-invalid en el control, no con una clase
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  min-width: 0;
+}
+
+.field__label {
+  color: var(--color-text-default);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.25;
+}
+
+.field__required {
+  color: var(--color-danger-text);
+}
+
+.field__control {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: var(--space-sm) var(--space-md);
+  border: var(--border-width-sm) solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-page);
+  color: var(--color-text-default);
+  font: inherit;
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  transition:
+    border-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.field__control::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+.field__control:hover:not(:disabled) {
+  border-color: var(--color-text-default);
+}
+
+/* Foco con anillo de 2 px que no cambia el tamaño del campo */
+.field__control:focus-visible {
+  border-color: var(--color-border-focus);
+  outline: none;
+  box-shadow: 0 0 0 1px var(--color-border-focus);
+}
+
+.field__control[aria-invalid='true'] {
+  border-color: var(--color-danger-text);
+}
+
+.field__control[aria-invalid='true']:focus-visible {
+  box-shadow: 0 0 0 1px var(--color-danger-text);
+}
+
+.field__control:disabled {
+  border-color: var(--color-action-disabled-bg);
+  background-color: var(--color-action-disabled-bg);
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+textarea.field__control {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+/* Select nativo con una flecha dibujada en CSS */
+.field__select {
+  position: relative;
+}
+
+.field__select .field__control {
+  padding-right: var(--space-xl);
+  appearance: none;
+  cursor: pointer;
+}
+
+.field__select::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: var(--space-md);
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: var(--border-width-md) solid var(--color-text-default);
+  border-bottom: var(--border-width-md) solid var(--color-text-default);
+  pointer-events: none;
+  transform: translateY(-70%) rotate(45deg);
+}
+
+.field__hint {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.field__error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin: 0;
+  color: var(--color-danger-text);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.field__error > svg {
+  flex: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  fill: currentColor;
+}
+
+/* Grupo de casillas o radios con su leyenda */
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.fieldset__legend {
+  margin-bottom: var(--space-xs);
+  padding: 0;
+  color: var(--color-text-default);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.fieldset--inline {
+  flex-flow: row wrap;
+  column-gap: var(--space-ml);
+}
+
+.fieldset--inline > .fieldset__legend {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field__control {
+    transition: none;
+  }
+}
