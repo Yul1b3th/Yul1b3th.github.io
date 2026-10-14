@@ -1,0 +1,28 @@
+{
+  "arrowParens": "always",
+  "bracketSameLine": false,
+  "bracketSpacing": true,
+  "embeddedLanguageFormatting": "auto",
+  "experimentalTernaries": true,
+  "jsxSingleQuote": true,
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "embeddedLanguageFormatting": "off",
+        "htmlWhitespaceSensitivity": "css",
+        "printWidth": 200,
+        "singleAttributePerLine": false
+      }
+    }
+  ],
+  "printWidth": 100,
+  "proseWrap": "always",
+  "quoteProps": "preserve",
+  "semi": true,
+  "singleQuote": true,
+  "singleAttributePerLine": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false
+}

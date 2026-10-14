@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "prettier": "^3.9.10",
     "sass": "^1.100.0"
   },
   "repository": {
