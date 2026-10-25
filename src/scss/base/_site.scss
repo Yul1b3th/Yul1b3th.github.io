@@ -61,6 +61,18 @@ a {
   }
 }
 
+// La barra lleva su propio color y su línea, sin el color de visitado ni el subrayado
+.navbar__brand:visited,
+.navbar__brand:active,
+.navbar__link:visited,
+.navbar__link:active {
+  color: inherit;
+}
+
+.navbar__link:hover {
+  text-decoration: none;
+}
+
 /*-------- Enlaces externos --------*/
 // Icono de nueva pestaña con texto oculto para lectores de pantalla
 a[target='_blank']:not(.social-list a, .social-media a, .button--icon)::after {
@@ -125,6 +137,12 @@ picture {
 ul,
 ol {
   list-style: none;
+}
+
+// h1 y h2 heredan el color de su sección, como antes de la base del sistema
+h1,
+h2 {
+  color: inherit;
 }
 
 // El interlineado sale del html, como antes, y no del 1.1 del reset del sistema
