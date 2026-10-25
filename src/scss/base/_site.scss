@@ -1,4 +1,4 @@
-// base/_base.scss
+// base/_site.scss, estilos base propios del CV que se cargan después de la base del sistema
 
 @use '../abstracts/variables' as vars;
 @use '../abstracts/project';
@@ -63,7 +63,7 @@ a {
 
 /*-------- Enlaces externos --------*/
 // Icono de nueva pestaña con texto oculto para lectores de pantalla
-a[target='_blank']:not(.social-list a, .social-media a)::after {
+a[target='_blank']:not(.social-list a, .social-media a, .button--icon)::after {
   content: '' / ' (se abre en una pestaña nueva)';
   display: inline-block;
   width: 1em;
@@ -74,7 +74,7 @@ a[target='_blank']:not(.social-list a, .social-media a)::after {
   mask: url('../public/icons/open_in_new.svg') center / contain no-repeat;
 }
 
-:lang(en) a[target='_blank']:not(.social-list a, .social-media a)::after {
+:lang(en) a[target='_blank']:not(.social-list a, .social-media a, .button--icon)::after {
   content: '' / ' (opens in a new tab)';
 }
 
@@ -108,5 +108,60 @@ picture {
         transparent
       )
       1;
+  }
+}
+
+/*-------- Reglas que venían del reset antiguo del CV --------*/
+// El diseño del CV se apoya en márgenes a cero y listas sin viñetas
+// Se mantienen aquí; el reset y la base vienen del sistema, sin quitar el foco
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+// El interlineado sale del html, como antes, y no del 1.1 del reset del sistema
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  min-height: 2rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+}
+
+// Sin animaciones ni scroll suave para quien prefiere menos movimiento
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
