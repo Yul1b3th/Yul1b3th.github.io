@@ -84,6 +84,27 @@ a {
   }
 }
 
+// En escritorio los enlaces van a la derecha, junto a las redes, como en la barra anterior
+@media (min-width: 992px) {
+  .navbar--expand-lg .navbar__nav {
+    margin-left: auto;
+  }
+
+  .navbar.navbar--expand-lg .navbar__actions {
+    margin-left: var(--space-sm);
+  }
+}
+
+// Barra vertical que separa enlaces, redes y selectores
+.navbar__separator {
+  align-items: center;
+  padding-inline: var(--space-xs);
+  color: rgb(255 255 255 / 0.3);
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
 // Línea fina bajo la barra para separarla del inicio
 .navbar--dark {
   border-bottom: 1px solid rgb(255 255 255 / 0.12);
