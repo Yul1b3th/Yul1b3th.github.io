@@ -1,0 +1,78 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Menú inferior de una aplicación, de tres a cinco destinos con icono y texto
+// El icono va en un círculo de 44 px, el tamaño de toque de WCAG 2.5.5
+
+.bottom-nav {
+  position: sticky;
+  bottom: 0;
+  z-index: var(--z-index-sticky);
+  background-color: var(--color-bg-page);
+  box-shadow: var(--shadow-bar);
+}
+
+.bottom-nav__list {
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: var(--space-xs) var(--space-sm) calc(var(--space-xs) + env(safe-area-inset-bottom));
+  list-style: none;
+}
+
+.bottom-nav__link {
+  display: grid;
+  justify-items: center;
+  gap: 0.125rem;
+  min-width: 4rem;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+
+.bottom-nav__icon {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.bottom-nav__icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}
+
+.bottom-nav__link:hover .bottom-nav__icon {
+  background-color: var(--color-action-ghost-bg-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Destino actual con el verde oscuro de las pestañas */
+.bottom-nav__link[aria-current='page'] {
+  color: var(--color-text-tab-active);
+}
+
+.bottom-nav__link[aria-current='page'] .bottom-nav__icon {
+  background-color: var(--color-action-ghost-bg-hover);
+}
+
+.bottom-nav__link:focus-visible {
+  outline: 2px solid transparent;
+}
+
+.bottom-nav__link:focus-visible .bottom-nav__icon {
+  outline: var(--border-width-md) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bottom-nav__icon {
+    transition: none;
+  }
+}

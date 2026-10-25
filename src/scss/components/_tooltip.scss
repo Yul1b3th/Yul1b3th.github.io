@@ -1,0 +1,172 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Ayuda corta que aparece al pasar el ratón o con el foco, con flecha hacia el elemento
+// Se cierra con Escape y se puede pasar el ratón por encima (WCAG 1.4.13)
+
+.tooltip {
+  --tooltip-gap: 0.5rem;
+  --tooltip-arrow: 0.375rem;
+  --tooltip-shift-x: -50%;
+  --tooltip-shift-y: 0;
+  --tooltip-enter-x: 0;
+  --tooltip-enter-y: 0.25rem;
+
+  position: relative;
+  display: inline-flex;
+}
+
+.tooltip__content {
+  position: absolute;
+  bottom: calc(100% + var(--tooltip-gap));
+  left: 50%;
+  z-index: var(--z-index-tooltip);
+  width: max-content;
+  max-width: 16rem;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-emphasis);
+  box-shadow: var(--shadow-raised);
+  color: var(--color-text-on-emphasis);
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(
+    calc(var(--tooltip-shift-x) + var(--tooltip-enter-x)),
+    calc(var(--tooltip-shift-y) + var(--tooltip-enter-y))
+  );
+  transition:
+    opacity var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard),
+    visibility 0s linear var(--duration-fast);
+}
+
+/* Flecha que sale del elemento, del mismo color que la ayuda */
+.tooltip__content::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border: var(--tooltip-arrow) solid transparent;
+  border-top-color: var(--color-bg-emphasis);
+  transform: translateX(-50%);
+}
+
+/* Puente invisible para poder llevar el ratón hasta la ayuda */
+.tooltip__content::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: var(--tooltip-gap);
+}
+
+.tooltip:is(:hover, :focus-within):not(.is-dismissed) .tooltip__content {
+  --tooltip-enter-x: 0;
+  --tooltip-enter-y: 0;
+
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
+}
+
+/* Debajo del elemento */
+.tooltip--bottom {
+  --tooltip-enter-y: -0.25rem;
+}
+
+.tooltip--bottom .tooltip__content {
+  top: calc(100% + var(--tooltip-gap));
+  bottom: auto;
+}
+
+.tooltip--bottom .tooltip__content::before {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: var(--color-bg-emphasis);
+}
+
+.tooltip--bottom .tooltip__content::after {
+  top: auto;
+  bottom: 100%;
+}
+
+/* A los lados, inicio y fin siguen la dirección del texto */
+.tooltip:is(.tooltip--start, .tooltip--end) {
+  --tooltip-shift-x: 0;
+  --tooltip-shift-y: -50%;
+  --tooltip-enter-y: 0;
+}
+
+.tooltip:is(.tooltip--start, .tooltip--end) .tooltip__content {
+  top: 50%;
+  bottom: auto;
+  left: auto;
+}
+
+.tooltip:is(.tooltip--start, .tooltip--end) .tooltip__content::before {
+  top: 50%;
+  left: auto;
+  border-top-color: transparent;
+  transform: translateY(-50%);
+}
+
+.tooltip:is(.tooltip--start, .tooltip--end) .tooltip__content::after {
+  top: 0;
+  width: var(--tooltip-gap);
+  height: 100%;
+}
+
+.tooltip--start {
+  --tooltip-enter-x: 0.25rem;
+}
+
+.tooltip--start .tooltip__content {
+  inset-inline-end: calc(100% + var(--tooltip-gap));
+}
+
+.tooltip--start .tooltip__content::before {
+  inset-inline-start: 100%;
+  border-inline-start-color: var(--color-bg-emphasis);
+}
+
+.tooltip--start .tooltip__content::after {
+  inset-inline-start: 100%;
+}
+
+.tooltip--end {
+  --tooltip-enter-x: -0.25rem;
+}
+
+.tooltip--end .tooltip__content {
+  inset-inline-start: calc(100% + var(--tooltip-gap));
+}
+
+.tooltip--end .tooltip__content::before {
+  inset-inline-end: 100%;
+  border-inline-end-color: var(--color-bg-emphasis);
+}
+
+.tooltip--end .tooltip__content::after {
+  inset-inline-end: 100%;
+}
+
+/* En alto contraste la ayuda lleva borde para separarse del fondo */
+@media (forced-colors: active) {
+  .tooltip__content {
+    border: 1px solid CanvasText;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tooltip__content,
+  .tooltip:is(:hover, :focus-within) .tooltip__content {
+    transition: none;
+  }
+}

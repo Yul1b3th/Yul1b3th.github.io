@@ -1,0 +1,49 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Indicador de carga en azul marino sobre una pista verde de marca
+// Lleva role status y un texto oculto que dice qué se está cargando
+
+.spinner {
+  --spinner-size: 1.5rem;
+  --spinner-width: 3px;
+
+  display: inline-block;
+  flex: none;
+  width: var(--spinner-size);
+  height: var(--spinner-size);
+  border: var(--spinner-width) solid var(--spinner-track, color-mix(in srgb, var(--color-border-brand) 55%, transparent));
+  border-top-color: currentColor;
+  border-radius: 50%;
+  color: var(--color-action-selected-bg);
+  animation: spinner-rotate 0.75s linear infinite;
+}
+
+.spinner--sm {
+  --spinner-size: 1rem;
+  --spinner-width: 2px;
+}
+
+.spinner--lg {
+  --spinner-size: 3rem;
+  --spinner-width: 4px;
+}
+
+/* Dentro de un botón usa el color del texto del botón */
+.button .spinner {
+  --spinner-track: color-mix(in srgb, currentColor 25%, transparent);
+  color: inherit;
+}
+
+@keyframes spinner-rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/* Con movimiento reducido gira más despacio, como Bootstrap, porque indica que algo pasa */
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 1.5s;
+  }
+}

@@ -1,0 +1,75 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Paginación para recorrer resultados por páginas
+// La página actual lleva aria-current y las flechas un aria-label
+
+.pagination__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pagination__link {
+  display: inline-grid;
+  place-items: center;
+  min-width: 2.75rem;
+  height: 2.75rem;
+  padding: 0 var(--space-sm);
+  border: var(--border-width-sm) solid transparent;
+  border-radius: var(--radius-pill);
+  color: var(--color-text-default);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.pagination__link:hover {
+  background-color: var(--color-action-secondary-bg-hover);
+}
+
+.pagination__link:focus-visible {
+  outline: var(--border-width-md) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.pagination__link[aria-current='page'] {
+  background-color: var(--color-action-selected-bg);
+  color: var(--color-action-selected-text);
+}
+
+.pagination__link[aria-disabled='true'] {
+  color: var(--color-text-disabled);
+  pointer-events: none;
+}
+
+.pagination__link svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+
+/* Las flechas son keyboard_arrow_down giradas */
+.pagination__link--prev svg {
+  transform: rotate(90deg);
+}
+
+.pagination__link--next svg {
+  transform: rotate(-90deg);
+}
+
+.pagination__ellipsis {
+  min-width: 2rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pagination__link {
+    transition: none;
+  }
+}

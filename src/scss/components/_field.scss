@@ -47,11 +47,14 @@
   border-color: var(--color-text-default);
 }
 
-/* Foco con anillo de 2 px que no cambia el tamaño del campo */
+/* Foco con borde mint-500 de 3:1 y halo difuminado del verde de marca */
 .field__control:focus-visible {
-  border-color: var(--color-border-focus);
-  outline: none;
-  box-shadow: 0 0 0 1px var(--color-border-focus);
+  border-color: var(--color-border-focus-input);
+  outline: 2px solid transparent;
+  box-shadow:
+    0 0 0 1px var(--color-border-focus-input),
+    0 0 0 4px color-mix(in srgb, var(--color-border-brand) 45%, transparent),
+    0 0 14px 2px color-mix(in srgb, var(--color-border-brand) 55%, transparent);
 }
 
 .field__control[aria-invalid='true'] {
@@ -96,6 +99,66 @@ textarea.field__control {
   border-bottom: var(--border-width-md) solid var(--color-text-default);
   pointer-events: none;
   transform: translateY(-70%) rotate(45deg);
+}
+
+/* Contraseña con un botón de ojo dentro del campo */
+.field__password {
+  position: relative;
+}
+
+.field__password .field__control {
+  padding-right: 3.25rem;
+}
+
+.field__password-toggle {
+  position: absolute;
+  top: 50%;
+  right: var(--space-xs);
+  transform: translateY(-50%);
+}
+
+/* Etiqueta con un icono de información que abre una ayuda */
+.field__label-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.field__info {
+  --button-text: var(--color-info-text);
+}
+
+/* Fecha con el icono calendar_month en lugar del icono del navegador */
+.field__date {
+  position: relative;
+}
+
+.field__date-icon {
+  display: none;
+}
+
+@supports selector(::-webkit-calendar-picker-indicator) {
+  .field__date-icon {
+    position: absolute;
+    top: 50%;
+    right: var(--space-md);
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--color-text-default);
+    fill: currentColor;
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+
+  .field__date .field__control::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 0;
+    width: 3rem;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
 }
 
 .field__hint {

@@ -1,0 +1,87 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Badge, etiqueta corta de estado o cantidad que no se pulsa
+// Chip, etiqueta que se puede elegir o quitar, en _chip.scss
+
+.badge {
+  --badge-text: var(--color-text-default);
+  --badge-bg: var(--color-bg-muted);
+  --badge-border: var(--color-border-default);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.125rem var(--space-sm);
+  border: var(--border-width-sm) solid var(--badge-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* Rellenos con texto blanco, la versión por defecto */
+.badge--success {
+  --badge-text: var(--color-badge-text);
+  --badge-bg: var(--color-badge-success-bg);
+  --badge-border: var(--color-badge-success-bg);
+}
+
+.badge--warning {
+  --badge-text: var(--color-badge-text);
+  --badge-bg: var(--color-badge-warning-bg);
+  --badge-border: var(--color-badge-warning-bg);
+}
+
+.badge--danger {
+  --badge-text: var(--color-badge-text);
+  --badge-bg: var(--color-badge-danger-bg);
+  --badge-border: var(--color-badge-danger-bg);
+}
+
+.badge--info {
+  --badge-text: var(--color-badge-text);
+  --badge-bg: var(--color-badge-info-bg);
+  --badge-border: var(--color-badge-info-bg);
+}
+
+/* Novedad o destacado, en violeta para no confundirse con la marca ni con éxito */
+.badge--brand {
+  --badge-text: var(--color-badge-text);
+  --badge-bg: var(--color-badge-brand-bg);
+  --badge-border: var(--color-badge-brand-bg);
+}
+
+/* Versión suave con texto oscuro, con los colores de los mensajes de estado */
+.badge--subtle.badge--success {
+  --badge-text: var(--color-success-text);
+  --badge-bg: var(--color-success-bg);
+  --badge-border: var(--color-success-border);
+}
+
+.badge--subtle.badge--warning {
+  --badge-text: var(--color-warning-text);
+  --badge-bg: var(--color-warning-bg);
+  --badge-border: var(--color-warning-border);
+}
+
+.badge--subtle.badge--danger {
+  --badge-text: var(--color-danger-text);
+  --badge-bg: var(--color-danger-bg);
+  --badge-border: var(--color-danger-border);
+}
+
+.badge--subtle.badge--info {
+  --badge-text: var(--color-info-text);
+  --badge-bg: var(--color-info-bg);
+  --badge-border: var(--color-info-border);
+}
+
+.badge--subtle.badge--brand {
+  --badge-text: var(--color-text-default);
+  --badge-bg: var(--color-bg-featured);
+  --badge-border: var(--color-border-default);
+}

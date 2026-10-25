@@ -1,0 +1,110 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Notificación flotante que confirma una acción sin interrumpir
+// Se crean con showToast() dentro de una región aria-live
+
+.toast-region {
+  position: fixed;
+  right: var(--space-ml);
+  bottom: var(--space-ml);
+  left: var(--space-ml);
+  z-index: var(--z-index-toast);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  pointer-events: none;
+}
+
+.toast {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: min(28rem, 100%);
+  padding: var(--space-sm) var(--space-sm) var(--space-sm) var(--space-md);
+  border-left: var(--border-width-lg) solid var(--toast-accent, var(--color-border-brand));
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-emphasis);
+  box-shadow: var(--shadow-hover);
+  color: var(--color-text-on-emphasis);
+  pointer-events: auto;
+  animation: toast-enter var(--duration-moderate) var(--ease-emphasized-decelerate);
+}
+
+.toast--success {
+  --toast-accent: var(--color-success-border);
+}
+
+.toast--warning {
+  --toast-accent: var(--color-warning-border);
+}
+
+.toast--error {
+  --toast-accent: var(--color-danger-border);
+}
+
+.toast__icon {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--toast-accent, var(--color-border-brand));
+  fill: currentColor;
+}
+
+.toast__text {
+  flex: 1;
+  margin: 0;
+}
+
+.toast__close {
+  --button-text: var(--color-text-on-emphasis);
+  --button-bg-hover: color-mix(in srgb, var(--color-text-on-emphasis) 12%, transparent);
+  --button-bg-active: color-mix(in srgb, var(--color-text-on-emphasis) 20%, transparent);
+}
+
+.toast__close:focus-visible {
+  outline-color: var(--color-border-focus-emphasis);
+}
+
+/* Línea que se vacía durante el tiempo de visualización y se para en pausa */
+.toast__progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background-color: var(--toast-accent, var(--color-border-brand));
+  transform-origin: left;
+  animation: toast-progress var(--toast-duration, 6000ms) linear forwards;
+}
+
+.toast.is-paused .toast__progress {
+  animation-play-state: paused;
+}
+
+@keyframes toast-progress {
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes toast-enter {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toast {
+    animation: none;
+  }
+
+  /* Sin la línea, el aviso se cierra igual cuando acaba el tiempo */
+  .toast__progress {
+    display: none;
+  }
+}

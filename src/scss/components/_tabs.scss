@@ -8,6 +8,8 @@
   display: flex;
   gap: var(--space-xs);
   overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
   border-bottom: 1px solid var(--color-border-default);
 }
 

@@ -1,0 +1,38 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Separador horizontal o vertical sobre hr
+// Con texto en medio usa un div con role separator
+
+.divider {
+  height: 0;
+  margin: var(--space-ml) 0;
+  border: 0;
+  border-top: var(--border-width-sm) solid var(--color-border-default);
+}
+
+.divider--vertical {
+  align-self: stretch;
+  width: 0;
+  height: auto;
+  margin: 0 var(--space-md);
+  border-top: 0;
+  border-left: var(--border-width-sm) solid var(--color-border-default);
+}
+
+.divider--label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  height: auto;
+  border-top: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.divider--label::before,
+.divider--label::after {
+  content: '';
+  flex: 1;
+  border-top: var(--border-width-sm) solid var(--color-border-default);
+}

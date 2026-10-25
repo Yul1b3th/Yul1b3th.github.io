@@ -34,6 +34,12 @@
   background-color: var(--color-bg-dialog-header);
 }
 
+/* Botón de cerrar con el mismo fondo y la misma sombra ligera que compartir */
+.modal__header .button--icon {
+  --button-bg-hover: var(--color-action-ghost-bg-hover);
+  --button-bg-active: var(--color-action-ghost-bg-hover);
+}
+
 .modal__title {
   margin: 0;
   color: var(--color-text-default);
@@ -69,6 +75,38 @@
     opacity: 0;
     transform: translateY(1rem) scale(0.98);
   }
+}
+
+/* Imagen arriba del cuerpo, como el modal del ingrediente */
+.modal__media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Confirmación centrada con un icono de estado */
+.modal--confirm .modal__body {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-sm);
+  text-align: center;
+}
+
+.modal__status-icon {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: var(--color-success-bg);
+  color: var(--color-success-text);
+}
+
+.modal__status-icon svg {
+  width: 2rem;
+  height: 2rem;
+  fill: currentColor;
 }
 
 @media (prefers-reduced-motion: reduce) {

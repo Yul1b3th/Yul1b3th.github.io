@@ -1,0 +1,74 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Barra de búsqueda dentro de un form con role search
+// Mismo foco con halo verde que los campos
+
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search__icon {
+  position: absolute;
+  left: var(--space-md);
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--color-text-muted);
+  fill: currentColor;
+  pointer-events: none;
+}
+
+.search__input {
+  width: 100%;
+  min-height: 3rem;
+  padding: var(--space-sm) var(--space-md) var(--space-sm) calc(var(--space-md) * 2 + 1.25rem);
+  border: var(--border-width-sm) solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg-page);
+  color: var(--color-text-default);
+  font: inherit;
+  box-shadow: var(--shadow-raised);
+  transition:
+    border-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.search__input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+.search__input:hover {
+  border-color: var(--color-border-hover-accent);
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--color-border-brand) 30%, transparent),
+    var(--shadow-hover);
+}
+
+.search__input:focus-visible {
+  border-color: var(--color-border-focus-input);
+  outline: 2px solid transparent;
+  box-shadow:
+    0 0 0 1px var(--color-border-focus-input),
+    0 0 0 4px color-mix(in srgb, var(--color-border-brand) 45%, transparent),
+    0 0 14px 2px color-mix(in srgb, var(--color-border-brand) 55%, transparent);
+}
+
+/* Con botón de buscar el campo deja sitio a la derecha */
+.search--with-button .search__input {
+  padding-right: 7rem;
+}
+
+.search__submit {
+  position: absolute;
+  right: 0.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search__input {
+    transition: none;
+  }
+}

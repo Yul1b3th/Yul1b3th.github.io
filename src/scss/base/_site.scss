@@ -1,0 +1,112 @@
+// base/_base.scss
+
+@use '../abstracts/variables' as vars;
+@use '../abstracts/project';
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+
+/*-------- Estilos Base Globales --------*/
+html {
+  scroll-behavior: smooth;
+  // Al saltar a una sección, el título no queda debajo de la barra fija
+  scroll-padding-top: project.$navbar-height;
+  font-size: 16px; // Base inmutable para el cálculo de los rem
+  line-height: get-line-height(base);
+
+  // Reemplazo e integración limpia del breakpoint móvil-first para escritorio - 1200px
+  @include apply-media-breakpoint(lg) {
+    font-size: 18px;
+  }
+}
+
+body {
+  @include apply-font-family(primary);
+  @include apply-color(color, text-body);
+  @include apply-color(background-color, bg-page);
+  min-height: 100vh;
+  overflow-x: hidden;
+  text-rendering: optimizeSpeed;
+}
+
+/*-------- Enlaces Globales --------*/
+a {
+  @include apply-color(color, link-default);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color var(--duration-base) var(--ease-standard);
+
+  // Visitado igual que en reposo
+  &:visited {
+    @include apply-color(color, link-default);
+  }
+
+  // Subrayado más grueso para que el cambio no dependa solo del color
+  &:hover {
+    @include apply-color(color, link-hover);
+    text-decoration-thickness: 2px;
+  }
+
+  &:active {
+    @include apply-color(color, link-active);
+  }
+
+  &.btn {
+    &:active,
+    &:visited {
+      color: inherit;
+    }
+  }
+}
+
+/*-------- Enlaces externos --------*/
+// Icono de nueva pestaña con texto oculto para lectores de pantalla
+a[target='_blank']:not(.social-list a, .social-media a)::after {
+  content: '' / ' (se abre en una pestaña nueva)';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.25em;
+  vertical-align: -0.125em;
+  background-color: currentColor;
+  mask: url('../public/icons/open_in_new.svg') center / contain no-repeat;
+}
+
+:lang(en) a[target='_blank']:not(.social-list a, .social-media a)::after {
+  content: '' / ' (opens in a new tab)';
+}
+
+/*-------- Multimedia --------*/
+img,
+picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*-------- Accesibilidad de Foco --------*/
+// Sobre fondo oscuro el foco usa el verde claro
+.navbar,
+.home,
+.footer {
+  --color-border-focus: var(--color-border-focus-emphasis);
+}
+
+/*-------- Separación de secciones en modo oscuro --------*/
+// Todas las secciones comparten fondo y una línea con degradado marca dónde empieza cada una
+.section,
+.footer {
+  @include apply-dark-theme {
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(
+        90deg,
+        transparent,
+        get-color(decor-emphasis-halo-3) 30%,
+        get-color(decor-emphasis-halo-1) 70%,
+        transparent
+      )
+      1;
+  }
+}

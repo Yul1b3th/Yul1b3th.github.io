@@ -1,0 +1,96 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Chip para filtros y etiquetas que se eligen o se quitan
+// El chip que se elige es un button con aria-pressed
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  min-height: 2.25rem;
+  padding: 0 var(--space-md);
+  border: var(--border-width-sm) solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg-page);
+  color: var(--color-text-default);
+  font: inherit;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    color var(--duration-fast) var(--ease-standard);
+}
+
+.chip:hover {
+  background-color: var(--color-action-secondary-bg-hover);
+}
+
+.chip[aria-pressed='true'] {
+  border-color: var(--color-border-selected);
+  background-color: var(--color-bg-selected);
+}
+
+.chip:focus-visible {
+  outline: var(--border-width-md) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.chip > svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  fill: currentColor;
+}
+
+/* La marca de elegido solo se ve cuando está pulsado */
+.chip__check {
+  display: none;
+}
+
+.chip[aria-pressed='true'] .chip__check {
+  display: block;
+}
+
+.chip--static {
+  cursor: default;
+}
+
+.chip--static:hover {
+  background-color: var(--color-bg-page);
+}
+
+.chip__remove {
+  display: inline-grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-right: calc(var(--space-sm) * -1);
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.chip__remove:hover {
+  background-color: var(--color-action-secondary-bg-hover);
+}
+
+.chip__remove:focus-visible {
+  outline: var(--border-width-md) solid var(--color-border-focus);
+}
+
+.chip__remove svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chip {
+    transition: none;
+  }
+}
