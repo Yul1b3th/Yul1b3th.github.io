@@ -1,0 +1,13 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Utilidades de texto
+// Cortar a una, dos o tres líneas con puntos suspensivos, como el legacy
+
+@use '../abstracts' as *;
+
+@each $lines in (1, 2, 3) {
+  .line-clamp-#{$lines} {
+    @include line-clamp($lines);
+  }
+}
