@@ -95,14 +95,18 @@ a {
   }
 }
 
-// Barra vertical que separa enlaces, redes y selectores
+// Línea vertical fina que separa enlaces, redes y selectores, como en la barra anterior
 .navbar__separator {
-  align-items: center;
-  padding-inline: var(--space-xs);
-  color: rgb(255 255 255 / 0.3);
-  font-size: 1.5rem;
-  font-weight: 300;
-  line-height: 1;
+  width: 1px;
+  height: 1.75rem;
+  margin-inline: var(--space-md);
+  background-color: rgb(255 255 255 / 0.3);
+  font-size: 0;
+}
+
+// Más aire entre LinkedIn y GitHub
+.navbar__utility.button--icon + .navbar__utility.button--icon {
+  margin-left: var(--space-sm);
 }
 
 // Línea fina bajo la barra para separarla del inicio
