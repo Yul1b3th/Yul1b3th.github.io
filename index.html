@@ -27,101 +27,105 @@
   </head>
   <body>
     <a class="skip-link" href="#main" data-translate="skip-link">Saltar al contenido</a>
-    <nav class="navbar">
-      <div class="navbar__container">
+    <header class="navbar navbar--landing navbar--dark navbar--expand-lg" data-navbar-spy>
+      <div class="navbar__inner">
         <a class="navbar__brand" href="#home" data-translate="navbar-brand">YR</a>
+        <nav class="navbar__nav" aria-label="Principal">
+          <ul class="navbar__list">
+              <li><a class="navbar__link" href="#home" data-translate="home">Inicio</a></li>
+              <li><a class="navbar__link" href="#about-me" data-translate="about-me">Sobre Mí</a></li>
+              <li><a class="navbar__link" href="#projects" data-translate="projects">Proyectos</a></li>
+              <li><a class="navbar__link" href="#experience" data-translate="experience">Experiencia</a></li>
+              <li><a class="navbar__link" href="#education" data-translate="education">Educación</a></li>
+              <li><a class="navbar__link" href="#courses" data-translate="courses">Cursos</a></li>
+              <li><a class="navbar__link" href="#contact" data-translate="contact">Contacto</a></li>
+          </ul>
+        </nav>
         <div class="navbar__actions">
-          <div id="navbarNav" class="navbar__collapse" data-visible="false">
-            <a class="navbar__brand" href="#home" data-translate="navbar-brand">YR</a>
-            <ul class="navbar__nav">
-              <li><a class="navbar__link" href="#home" data-scroll-spy data-translate="home">Inicio</a></li>
-              <li><a class="navbar__link" href="#about-me" data-scroll-spy data-translate="about-me">Sobre Mí</a></li>
-              <li><a class="navbar__link" href="#projects" data-scroll-spy data-translate="projects">Proyectos</a></li>
-              <li><a class="navbar__link" href="#experience" data-scroll-spy data-translate="experience">Experiencia</a></li>
-              <li><a class="navbar__link" href="#education" data-scroll-spy data-translate="education">Educación</a></li>
-              <li><a class="navbar__link" href="#courses" data-scroll-spy data-translate="courses">Cursos</a></li>
-              <li><a class="navbar__link" href="#contact" data-scroll-spy data-translate="contact">Contacto</a></li>
-            </ul>
-            <span class="navbar__separator" aria-hidden="true">|</span>
-            <ul class="social-list">
-              <li>
-                <a href="https://www.linkedin.com/in/yulibeth-rivero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <svg focusable="false" aria-hidden="true" viewBox="0 0 448 512"><use href="public/icons/icons.svg#linkedin"></use></svg>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/Yul1b3th" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                  <svg focusable="false" aria-hidden="true" viewBox="0 0 496 512"><use href="public/icons/icons.svg#github"></use></svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <span class="navbar__separator" aria-hidden="true">|</span>
-          <!-- Ajustes de idioma y tema -->
-          <div class="navbar__settings">
-            <div class="selector selector--emphasis" id="language-selector">
-              <button class="selector__button" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="language-menu">
-                <svg class="selector__icon" aria-hidden="true"><use href="public/icons/icons.svg#language"></use></svg>
-                <span data-selector-text>ES</span>
-                <svg class="selector__chevron" aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg>
+          <a class="button button--icon navbar__utility" href="https://www.linkedin.com/in/yulibeth-rivero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg aria-hidden="true" viewBox="0 0 448 512"><use href="public/icons/icons.svg#linkedin"></use></svg>
+            </a>
+            <a class="button button--icon navbar__utility" href="https://github.com/Yul1b3th" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg aria-hidden="true" viewBox="0 0 496 512"><use href="public/icons/icons.svg#github"></use></svg>
+            </a>
+          <div class="dropdown dropdown--emphasis" id="language-dropdown">
+              <button class="dropdown__button" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="language-menu">
+                <svg class="dropdown__icon" aria-hidden="true"><use href="public/icons/icons.svg#language"></use></svg>
+                <span data-dropdown-text>ES</span>
+                <svg class="dropdown__chevron" aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg>
               </button>
-              <ul class="selector__menu" id="language-menu" role="menu" aria-label="Idioma" data-translate="language-label" hidden>
+              <ul class="dropdown__menu" id="language-menu" role="menu" aria-label="Idioma" data-translate="language-label" hidden>
                 <li role="none">
-                  <button class="selector__option" type="button" role="menuitemradio" aria-checked="true" data-value="es" data-short="ES" lang="es">
-                    Español<svg class="selector__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
+                  <button class="dropdown__option" type="button" role="menuitemradio" aria-checked="true" data-value="es" data-short="ES" lang="es">
+                    Español<svg class="dropdown__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
                   </button>
                 </li>
                 <li role="none">
-                  <button class="selector__option" type="button" role="menuitemradio" aria-checked="false" data-value="en" data-short="EN" lang="en">
-                    English<svg class="selector__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
+                  <button class="dropdown__option" type="button" role="menuitemradio" aria-checked="false" data-value="en" data-short="EN" lang="en">
+                    English<svg class="dropdown__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
                   </button>
                 </li>
               </ul>
             </div>
-            <div class="selector selector--emphasis" id="theme-selector">
-              <button class="selector__button" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="theme-menu">
-                <svg class="selector__icon" data-selector-icon aria-hidden="true"><use href="public/icons/icons.svg#computer"></use></svg>
-                <svg class="selector__chevron" aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg>
+          <div class="dropdown dropdown--emphasis" id="theme-dropdown">
+              <button class="dropdown__button" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="theme-menu">
+                <svg class="dropdown__icon" data-dropdown-icon aria-hidden="true"><use href="public/icons/icons.svg#computer"></use></svg>
+                <svg class="dropdown__chevron" aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg>
               </button>
-              <ul class="selector__menu" id="theme-menu" role="menu" aria-label="Tema" data-translate="theme-label" hidden>
+              <ul class="dropdown__menu" id="theme-menu" role="menu" aria-label="Tema" data-translate="theme-label" hidden>
                 <li role="none">
-                  <button class="selector__option" type="button" role="menuitemradio" aria-checked="true" data-value="system">
-                    <svg class="selector__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#computer"></use></svg><span data-translate="theme-system">Sistema</span
-                    ><svg class="selector__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
+                  <button class="dropdown__option" type="button" role="menuitemradio" aria-checked="true" data-value="system">
+                    <svg class="dropdown__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#computer"></use></svg><span data-translate="theme-system">Sistema</span
+                    ><svg class="dropdown__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
                   </button>
                 </li>
                 <li role="none">
-                  <button class="selector__option" type="button" role="menuitemradio" aria-checked="false" data-value="light">
-                    <svg class="selector__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#light_mode"></use></svg><span data-translate="theme-light">Claro</span
-                    ><svg class="selector__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
+                  <button class="dropdown__option" type="button" role="menuitemradio" aria-checked="false" data-value="light">
+                    <svg class="dropdown__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#light_mode"></use></svg><span data-translate="theme-light">Claro</span
+                    ><svg class="dropdown__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
                   </button>
                 </li>
                 <li role="none">
-                  <button class="selector__option" type="button" role="menuitemradio" aria-checked="false" data-value="dark">
-                    <svg class="selector__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#dark_mode"></use></svg><span data-translate="theme-dark">Oscuro</span
-                    ><svg class="selector__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
+                  <button class="dropdown__option" type="button" role="menuitemradio" aria-checked="false" data-value="dark">
+                    <svg class="dropdown__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#dark_mode"></use></svg><span data-translate="theme-dark">Oscuro</span
+                    ><svg class="dropdown__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
                   </button>
                 </li>
                 <li role="none">
-                  <button class="selector__option" type="button" role="menuitemradio" aria-checked="false" data-value="hc">
-                    <svg class="selector__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#contrast"></use></svg><span data-translate="theme-hc">Alto contraste</span
-                    ><svg class="selector__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
+                  <button class="dropdown__option" type="button" role="menuitemradio" aria-checked="false" data-value="hc">
+                    <svg class="dropdown__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#contrast"></use></svg><span data-translate="theme-hc">Alto contraste</span
+                    ><svg class="dropdown__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
                   </button>
                 </li>
               </ul>
             </div>
-          </div>
-          <button id="btn-menu" class="navbar__toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Menú" data-translate="menu-label">
-            <svg class="navbar__toggler-icon navbar__toggler-icon--open" aria-hidden="true"><use href="public/icons/icons.svg#menu"></use></svg>
-            <svg class="navbar__toggler-icon navbar__toggler-icon--close" aria-hidden="true"><use href="public/icons/icons.svg#close"></use></svg>
-          </button>
         </div>
+        <button class="button button--icon navbar__toggle" type="button" aria-label="Menú" data-translate="menu-label" aria-controls="navbar-drawer" data-drawer-open="navbar-drawer">
+          <svg aria-hidden="true"><use href="public/icons/icons.svg#menu"></use></svg>
+        </button>
       </div>
-    </nav>
+    </header>
+    <dialog class="drawer drawer--full drawer--end drawer--emphasis" id="navbar-drawer" aria-label="Menú" data-translate="menu-label">
+      <div class="drawer__header">
+        <a class="navbar__brand" href="#home" data-translate="navbar-brand">YR</a>
+        <button class="button button--icon" type="button" aria-label="Cerrar menú" data-translate="close-menu-label" data-drawer-close>
+          <svg aria-hidden="true"><use href="public/icons/icons.svg#close"></use></svg>
+        </button>
+      </div>
+      <nav class="drawer__body" aria-label="Principal" data-navbar-links></nav>
+      <div class="drawer__footer">
+            <a class="button button--icon " href="https://www.linkedin.com/in/yulibeth-rivero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg aria-hidden="true" viewBox="0 0 448 512"><use href="public/icons/icons.svg#linkedin"></use></svg>
+            </a>
+            <a class="button button--icon " href="https://github.com/Yul1b3th" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg aria-hidden="true" viewBox="0 0 496 512"><use href="public/icons/icons.svg#github"></use></svg>
+            </a>
+      </div>
+    </dialog>
     <main id="main" tabindex="-1">
       <!-- home -->
 
-      <section id="home" class="home bg-halo bg-halo--emphasis" data-scroll-spy>
+      <section id="home" class="home bg-halo bg-halo--emphasis">
         <div class="container">
           <div class="home__img animate animate--fade-up" data-animate-trigger="load">
             <img src="./public/images/yulibeth-rivero.webp" alt="Yulibeth Rivero" width="390" height="390" fetchpriority="high" />
@@ -154,7 +158,7 @@
 
       <!-- About me -->
 
-      <section id="about-me" class="about-me section bg-sweep" data-scroll-spy>
+      <section id="about-me" class="about-me section bg-sweep">
         <div class="container">
           <!-- Section Title -->
           <div class="section-title animate animate--fade-up">
@@ -254,7 +258,7 @@
 
       <!-- Projects -->
 
-      <section id="projects" class="projects section bg-glow bg-glow--emphasis" data-scroll-spy>
+      <section id="projects" class="projects section bg-glow bg-glow--emphasis">
         <div class="container">
           <div class="section-title section-title--dark animate animate--fade-up">
             <span aria-hidden="true" data-translate="projects-title">Proyectos</span>
@@ -345,7 +349,7 @@
 
       <!-- Experience -->
 
-      <section id="experience" class="experience section bg-halo bg-halo--start" data-scroll-spy>
+      <section id="experience" class="experience section bg-halo bg-halo--start">
         <div class="container">
           <div class="section-title animate animate--fade-up">
             <span aria-hidden="true" data-translate="experience-title">EXPERIENCIA</span>
@@ -434,7 +438,7 @@
 
       <!-- Education -->
 
-      <section id="education" class="education section bg-sweep bg-sweep--emphasis" data-scroll-spy>
+      <section id="education" class="education section bg-sweep bg-sweep--emphasis">
         <div class="container">
           <div class="section-title section-title--dark animate animate--fade-up">
             <span data-translate="education-title">Formación</span>
@@ -495,7 +499,7 @@
 
       <!-- Courses -->
 
-      <section id="courses" class="courses section bg-glow" data-scroll-spy>
+      <section id="courses" class="courses section bg-glow">
         <div class="container">
           <div class="section-title animate animate--fade-up">
             <span aria-hidden="true" data-translate="courses-title">Cursos</span>
@@ -563,7 +567,7 @@
 
       <!-- Contact -->
 
-      <section id="contact" class="contact section bg-halo bg-halo--emphasis bg-halo--start" data-scroll-spy>
+      <section id="contact" class="contact section bg-halo bg-halo--emphasis bg-halo--start">
         <div class="container">
           <div class="section-title section-title--dark animate animate--fade-up">
             <span aria-hidden="true" data-translate="contact-title">Contacto</span>

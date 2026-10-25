@@ -1,7 +1,7 @@
-import { initSelector } from './selector.js';
+import { initDropdown } from './dropdown.js';
 
 export function initLanguageSwitcher() {
-  const languageRoot = document.getElementById('language-selector');
+  const languageRoot = document.getElementById('language-dropdown');
   const elementsToTranslate = document.querySelectorAll('[data-translate]');
   const htmlElement = document.documentElement;
   const downloadCvBtn = document.getElementById('download-cv-btn');
@@ -50,7 +50,7 @@ export function initLanguageSwitcher() {
       // Cambiar el enlace del botón de descarga del CV
       const cvLink = `./public/cv/yulibeth-rivero-${language}.pdf`;
       downloadCvBtn.setAttribute('href', cvLink);
-      // Avisa a los selectores para que actualicen su texto
+      // Avisa a los desplegables para que actualicen su texto
       document.dispatchEvent(new CustomEvent('languagechange', { detail: language }));
     }
   };
@@ -70,7 +70,7 @@ export function initLanguageSwitcher() {
     }
   };
 
-  const languageSelector = initSelector(languageRoot, {
+  const languageSelector = initDropdown(languageRoot, {
     onChange: (language) => {
       try {
         localStorage.setItem('language', language);
