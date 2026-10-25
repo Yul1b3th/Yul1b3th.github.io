@@ -1,3 +1,4 @@
+// Usa Prettier como formateador predeterminado para estos lenguajes en este workspace.
 {
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

@@ -1,28 +1,27 @@
 {
+  "proseWrap": "always",
+  "quoteProps": "preserve",
+  "semi": true,
+  "singleAttributePerLine": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
   "arrowParens": "always",
   "bracketSameLine": false,
   "bracketSpacing": true,
   "embeddedLanguageFormatting": "auto",
-  "experimentalTernaries": true,
   "jsxSingleQuote": true,
+  "printWidth": 100,
+  "singleQuote": true,
   "overrides": [
     {
       "files": "*.html",
       "options": {
-        "embeddedLanguageFormatting": "off",
+        "embeddedLanguageFormatting": "auto",
         "htmlWhitespaceSensitivity": "css",
         "printWidth": 200,
         "singleAttributePerLine": false
       }
     }
-  ],
-  "printWidth": 100,
-  "proseWrap": "always",
-  "quoteProps": "preserve",
-  "semi": true,
-  "singleQuote": true,
-  "singleAttributePerLine": true,
-  "tabWidth": 2,
-  "trailingComma": "es5",
-  "useTabs": false
+  ]
 }
