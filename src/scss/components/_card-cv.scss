@@ -8,7 +8,7 @@
 
   display: block;
   width: 100%;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
   padding: 1.25rem;
   background-color: var(--color-bg-muted);
 }
@@ -18,4 +18,9 @@
   --card-border: var(--color-border-brand);
 
   box-shadow: var(--shadow-hover);
+}
+
+/* En listas que ya separan con gap, como la de cursos, el margen sobra */
+.resume-items > .card--cv {
+  margin-bottom: 0;
 }

@@ -14,7 +14,9 @@
     }
     /* Tarjetas de Tech y Soft Skills con la card del sistema, 3 columnas en escritorio */
     .skills-grid {
+      gap: var(--space-lg);
       margin-top: fn.get-spacing(md);
+      margin-bottom: var(--space-xl);
     }
 
     @media (min-width: fn.get-breakpoint(lg)) {
