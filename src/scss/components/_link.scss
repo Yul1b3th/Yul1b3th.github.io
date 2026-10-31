@@ -4,6 +4,8 @@
 // Enlace de texto y enlace que se abre en una pestaña nueva
 // El icono open_in_new va siempre que el enlace o el botón abra otra pestaña
 
+@use '../abstracts' as *;
+
 .link {
   color: var(--color-link-default);
   font-weight: var(--font-weight-semibold);
@@ -42,7 +44,7 @@
   vertical-align: -0.125em;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .link {
     transition: none;
   }

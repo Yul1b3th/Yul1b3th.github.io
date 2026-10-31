@@ -4,6 +4,8 @@
 // Pestañas con el patrón de WAI-ARIA, la activa en mint-900
 // Se activan con clic o con las flechas, ver js/components/tabs.js
 
+@use '../abstracts' as *;
+
 .tabs__list {
   display: flex;
   gap: var(--space-xs);
@@ -58,14 +60,23 @@
 
 .tabs__panel {
   padding: var(--space-ml) 0;
+  transition: opacity var(--duration-base) var(--ease-decelerate);
+}
+
+/* El panel nuevo entra con un fundido corto en lugar de cambiar de golpe */
+@starting-style {
+  .tabs__panel:not([hidden]) {
+    opacity: 0;
+  }
 }
 
 .tabs__panel[hidden] {
   display: none;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .tabs__tab {
+@include apply-reduced-motion {
+  .tabs__tab,
+  .tabs__panel {
     transition: none;
   }
 }

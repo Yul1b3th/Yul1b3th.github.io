@@ -4,7 +4,9 @@
 // Muestra el botón de volver arriba al bajar más de una pantalla
 // Al pulsarlo sube y pone el foco arriba, sin animación con movimiento reducido
 
-export function initBackToTop(button = document.querySelector('.back-to-top')) {
+import { prefersReducedMotion } from '../utils/motion.js';
+
+export function initBackToTop(button = document.querySelector('.back-to-top:not(.back-to-top--static)')) {
   if (!button) return;
   const update = () => button.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.75);
   window.addEventListener('scroll', update, { passive: true });
@@ -14,7 +16,7 @@ export function initBackToTop(button = document.querySelector('.back-to-top')) {
     const target = document.querySelector(button.getAttribute('href'));
     if (!target) return;
     event.preventDefault();
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduced = prefersReducedMotion();
     window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
     if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
     target.focus({ preventScroll: true });

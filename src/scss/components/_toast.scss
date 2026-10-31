@@ -4,6 +4,8 @@
 // Notificación flotante que confirma una acción sin interrumpir
 // Se crean con showToast() dentro de una región aria-live
 
+@use '../abstracts' as *;
+
 .toast-region {
   position: fixed;
   right: var(--space-ml);
@@ -63,6 +65,7 @@
   --button-text: var(--color-text-on-emphasis);
   --button-bg-hover: color-mix(in srgb, var(--color-text-on-emphasis) 12%, transparent);
   --button-bg-active: color-mix(in srgb, var(--color-text-on-emphasis) 20%, transparent);
+  --button-text-hover: var(--color-text-on-emphasis);
 }
 
 .toast__close:focus-visible {
@@ -98,7 +101,7 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .toast {
     animation: none;
   }

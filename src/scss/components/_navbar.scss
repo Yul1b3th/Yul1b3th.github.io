@@ -188,7 +188,7 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .navbar,
   .navbar__link,
   .navbar__link::after {

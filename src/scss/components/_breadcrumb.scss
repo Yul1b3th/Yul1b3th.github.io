@@ -4,6 +4,8 @@
 // Migas de pan para saber dónde estás y volver a un nivel anterior
 // La página actual lleva aria-current y no es un enlace
 
+@use '../abstracts' as *;
+
 .breadcrumb__list {
   display: flex;
   flex-wrap: wrap;
@@ -51,7 +53,7 @@
   font-weight: var(--font-weight-semibold);
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .breadcrumb__link {
     transition: none;
   }

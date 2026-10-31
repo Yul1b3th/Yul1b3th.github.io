@@ -55,27 +55,28 @@
   --badge-border: var(--color-badge-brand-bg);
 }
 
-/* Versión suave con texto oscuro, con los colores de los mensajes de estado */
+/* Versión suave con el fondo, el borde y el icono de los alerts */
+/* El texto va un paso más oscuro porque la letra es pequeña (contraste 7:1) */
 .badge--subtle.badge--success {
-  --badge-text: var(--color-success-text);
+  --badge-text: var(--color-badge-success-subtle-text);
   --badge-bg: var(--color-success-bg);
   --badge-border: var(--color-success-border);
 }
 
 .badge--subtle.badge--warning {
-  --badge-text: var(--color-warning-text);
+  --badge-text: var(--color-badge-warning-subtle-text);
   --badge-bg: var(--color-warning-bg);
   --badge-border: var(--color-warning-border);
 }
 
 .badge--subtle.badge--danger {
-  --badge-text: var(--color-danger-text);
+  --badge-text: var(--color-badge-danger-subtle-text);
   --badge-bg: var(--color-danger-bg);
   --badge-border: var(--color-danger-border);
 }
 
 .badge--subtle.badge--info {
-  --badge-text: var(--color-info-text);
+  --badge-text: var(--color-badge-info-subtle-text);
   --badge-bg: var(--color-info-bg);
   --badge-border: var(--color-info-border);
 }

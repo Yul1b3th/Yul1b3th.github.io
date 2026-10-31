@@ -4,6 +4,8 @@
 // Paginación para recorrer resultados por páginas
 // La página actual lleva aria-current y las flechas un aria-label
 
+@use '../abstracts' as *;
+
 .pagination__list {
   display: flex;
   flex-wrap: wrap;
@@ -68,7 +70,7 @@
   text-align: center;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .pagination__link {
     transition: none;
   }

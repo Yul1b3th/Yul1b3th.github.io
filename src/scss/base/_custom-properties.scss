@@ -29,7 +29,7 @@
   --color-neutral-0: #FFFFFF;
   --color-neutral-50: #FBFBFB;
   --color-neutral-75: #F5F5F5;
-  --color-neutral-100: #E5E5E5;
+  --color-neutral-100: #EBEBEB;
   --color-neutral-200: #D1D1D1;
   --color-neutral-300: #B9B9B9;
   --color-neutral-400: #A1A1A1;
@@ -74,16 +74,16 @@
   --color-red-800: #89151A;
   --color-red-900: #65070E;
   --color-red-950: #470105;
-  --color-amber-50: #FFF5E9;
-  --color-amber-100: #FFE4C7;
-  --color-amber-200: #FFCA8B;
-  --color-amber-300: #FFA71E;
-  --color-amber-400: #E08F00;
-  --color-amber-500: #C27C00;
-  --color-amber-600: #9B6100;
-  --color-amber-700: #7F5000;
-  --color-amber-800: #633D00;
-  --color-amber-900: #462A00;
+  --color-amber-50: #FBF7E7;
+  --color-amber-100: #F5E8C1;
+  --color-amber-200: #EED17E;
+  --color-amber-300: #E3B502;
+  --color-amber-400: #C79B07;
+  --color-amber-500: #B18405;
+  --color-amber-600: #916502;
+  --color-amber-700: #7D5200;
+  --color-amber-800: #633D02;
+  --color-amber-900: #462901;
   --color-amber-950: #2F1B00;
   --color-blue-50: #EFF8FE;
   --color-blue-100: #D5ECFC;
@@ -169,6 +169,8 @@
   --opacity-50: 0.5;
   --opacity-75: 0.75;
   --opacity-100: 1;
+  --opacity-state-hover: 0.02;
+  --opacity-state-pressed: 0.04;
   --z-index-base: 0;
   --z-index-dropdown: 1000;
   --z-index-sticky: 1020;
@@ -194,6 +196,7 @@
   --color-bg-page: var(--color-neutral-50);
   --color-bg-surface: var(--color-navy-50);
   --color-bg-muted: var(--color-neutral-50);
+  --color-bg-hover: var(--color-mint-50);
   --color-bg-brand: var(--color-mint-200);
   --color-bg-brand-subtle: var(--color-mint-50);
   --color-bg-emphasis: var(--color-navy-950);
@@ -202,6 +205,7 @@
   --color-bg-dialog-header: var(--color-neutral-75);
   --color-bg-page-header: var(--color-teal-25);
   --color-bg-header: var(--color-neutral-75);
+  --color-bg-table-header: var(--color-teal-25);
   --color-bg-skeleton: var(--color-neutral-100);
   --color-bg-skeleton-shine: var(--color-neutral-75);
   --color-text-default: var(--color-neutral-950);
@@ -269,15 +273,16 @@
   --color-action-disabled-bg: var(--color-neutral-100);
   --color-action-secondary-bg: var(--color-neutral-0);
   --color-action-ghost-bg-hover: var(--color-mint-50);
-  --color-action-option-bg: var(--color-navy-950);
+  --color-action-option-bg: var(--color-navy-900);
   --color-action-option-text: var(--color-neutral-0);
-  --color-action-option-bg-hover: var(--color-navy-50);
-  --color-action-option-text-hover: var(--color-navy-950);
+  --color-action-option-bg-hover: var(--color-navy-950);
+  --color-action-option-text-hover: var(--color-neutral-0);
   --color-action-option-outline-bg: var(--color-neutral-0);
   --color-action-option-outline-text: var(--color-neutral-1000);
   --color-action-option-outline-border: var(--color-navy-950);
-  --color-action-option-outline-bg-hover: var(--color-navy-900);
-  --color-action-option-outline-text-hover: var(--color-neutral-0);
+  --color-action-option-outline-bg-hover: var(--color-navy-50);
+  --color-action-option-outline-text-hover: var(--color-navy-950);
+  --color-action-close-bg-hover: var(--color-neutral-100);
   --color-success-text: var(--color-green-700);
   --color-success-bg: var(--color-green-50);
   --color-success-border: var(--color-green-500);
@@ -296,6 +301,10 @@
   --color-badge-warning-bg: var(--color-amber-700);
   --color-badge-danger-bg: var(--color-red-800);
   --color-badge-info-bg: var(--color-blue-800);
+  --color-badge-success-subtle-text: var(--color-green-800);
+  --color-badge-warning-subtle-text: var(--color-amber-800);
+  --color-badge-danger-subtle-text: var(--color-red-800);
+  --color-badge-info-subtle-text: var(--color-blue-800);
 }
 
 /* Modo oscuro según el sistema si no hay tema elegido */
@@ -304,6 +313,7 @@
     --color-bg-page: var(--color-navy-950);
     --color-bg-surface: var(--color-navy-950);
     --color-bg-muted: var(--color-navy-900);
+    --color-bg-hover: var(--color-navy-900);
     --color-bg-brand: var(--color-mint-200);
     --color-bg-brand-subtle: var(--color-mint-950);
     --color-bg-emphasis: var(--color-navy-950);
@@ -312,6 +322,7 @@
     --color-bg-dialog-header: var(--color-navy-950);
     --color-bg-page-header: var(--color-navy-900);
     --color-bg-header: var(--color-navy-900);
+    --color-bg-table-header: var(--color-navy-900);
     --color-bg-skeleton: var(--color-navy-900);
     --color-bg-skeleton-shine: var(--color-navy-800);
     --color-text-default: var(--color-navy-50);
@@ -386,8 +397,9 @@
     --color-action-option-outline-bg: var(--color-navy-950);
     --color-action-option-outline-text: var(--color-navy-50);
     --color-action-option-outline-border: var(--color-navy-50);
-    --color-action-option-outline-bg-hover: var(--color-navy-100);
-    --color-action-option-outline-text-hover: var(--color-navy-950);
+    --color-action-option-outline-bg-hover: var(--color-navy-900);
+    --color-action-option-outline-text-hover: var(--color-navy-50);
+    --color-action-close-bg-hover: var(--color-neutral-100);
     --color-success-text: var(--color-green-300);
     --color-success-bg: var(--color-green-950);
     --color-success-border: var(--color-green-400);
@@ -406,6 +418,10 @@
     --color-badge-warning-bg: var(--color-amber-700);
     --color-badge-danger-bg: var(--color-red-800);
     --color-badge-info-bg: var(--color-blue-800);
+    --color-badge-success-subtle-text: var(--color-green-200);
+    --color-badge-warning-subtle-text: var(--color-amber-200);
+    --color-badge-danger-subtle-text: var(--color-red-200);
+    --color-badge-info-subtle-text: var(--color-blue-200);
   }
 }
 
@@ -415,6 +431,7 @@
     --color-bg-page: var(--color-neutral-0);
     --color-bg-surface: var(--color-neutral-0);
     --color-bg-muted: var(--color-neutral-50);
+    --color-bg-hover: var(--color-neutral-100);
     --color-bg-brand: var(--color-mint-200);
     --color-bg-brand-subtle: var(--color-mint-50);
     --color-bg-emphasis: var(--color-neutral-950);
@@ -423,6 +440,7 @@
     --color-bg-dialog-header: var(--color-neutral-50);
     --color-bg-page-header: var(--color-neutral-50);
     --color-bg-header: var(--color-neutral-50);
+    --color-bg-table-header: var(--color-neutral-100);
     --color-bg-skeleton: var(--color-neutral-100);
     --color-bg-skeleton-shine: var(--color-neutral-50);
     --color-text-default: var(--color-neutral-950);
@@ -499,6 +517,7 @@
     --color-action-option-outline-border: var(--color-neutral-1000);
     --color-action-option-outline-bg-hover: var(--color-neutral-950);
     --color-action-option-outline-text-hover: var(--color-neutral-0);
+    --color-action-close-bg-hover: var(--color-neutral-100);
     --color-success-text: var(--color-green-800);
     --color-success-bg: var(--color-green-50);
     --color-success-border: var(--color-green-800);
@@ -517,6 +536,10 @@
     --color-badge-warning-bg: var(--color-amber-800);
     --color-badge-danger-bg: var(--color-red-800);
     --color-badge-info-bg: var(--color-blue-800);
+    --color-badge-success-subtle-text: var(--color-green-900);
+    --color-badge-warning-subtle-text: var(--color-amber-900);
+    --color-badge-danger-subtle-text: var(--color-red-900);
+    --color-badge-info-subtle-text: var(--color-blue-900);
   }
 }
 
@@ -525,6 +548,7 @@
   --color-bg-page: var(--color-navy-950);
   --color-bg-surface: var(--color-navy-950);
   --color-bg-muted: var(--color-navy-900);
+  --color-bg-hover: var(--color-navy-900);
   --color-bg-brand: var(--color-mint-200);
   --color-bg-brand-subtle: var(--color-mint-950);
   --color-bg-emphasis: var(--color-navy-950);
@@ -533,6 +557,7 @@
   --color-bg-dialog-header: var(--color-navy-950);
   --color-bg-page-header: var(--color-navy-900);
   --color-bg-header: var(--color-navy-900);
+  --color-bg-table-header: var(--color-navy-900);
   --color-bg-skeleton: var(--color-navy-900);
   --color-bg-skeleton-shine: var(--color-navy-800);
   --color-text-default: var(--color-navy-50);
@@ -607,8 +632,9 @@
   --color-action-option-outline-bg: var(--color-navy-950);
   --color-action-option-outline-text: var(--color-navy-50);
   --color-action-option-outline-border: var(--color-navy-50);
-  --color-action-option-outline-bg-hover: var(--color-navy-100);
-  --color-action-option-outline-text-hover: var(--color-navy-950);
+  --color-action-option-outline-bg-hover: var(--color-navy-900);
+  --color-action-option-outline-text-hover: var(--color-navy-50);
+  --color-action-close-bg-hover: var(--color-neutral-100);
   --color-success-text: var(--color-green-300);
   --color-success-bg: var(--color-green-950);
   --color-success-border: var(--color-green-400);
@@ -627,12 +653,17 @@
   --color-badge-warning-bg: var(--color-amber-700);
   --color-badge-danger-bg: var(--color-red-800);
   --color-badge-info-bg: var(--color-blue-800);
+  --color-badge-success-subtle-text: var(--color-green-200);
+  --color-badge-warning-subtle-text: var(--color-amber-200);
+  --color-badge-danger-subtle-text: var(--color-red-200);
+  --color-badge-info-subtle-text: var(--color-blue-200);
 }
 
 [data-theme="hc"] {
   --color-bg-page: var(--color-neutral-0);
   --color-bg-surface: var(--color-neutral-0);
   --color-bg-muted: var(--color-neutral-50);
+  --color-bg-hover: var(--color-neutral-100);
   --color-bg-brand: var(--color-mint-200);
   --color-bg-brand-subtle: var(--color-mint-50);
   --color-bg-emphasis: var(--color-neutral-950);
@@ -641,6 +672,7 @@
   --color-bg-dialog-header: var(--color-neutral-50);
   --color-bg-page-header: var(--color-neutral-50);
   --color-bg-header: var(--color-neutral-50);
+  --color-bg-table-header: var(--color-neutral-100);
   --color-bg-skeleton: var(--color-neutral-100);
   --color-bg-skeleton-shine: var(--color-neutral-50);
   --color-text-default: var(--color-neutral-950);
@@ -717,6 +749,7 @@
   --color-action-option-outline-border: var(--color-neutral-1000);
   --color-action-option-outline-bg-hover: var(--color-neutral-950);
   --color-action-option-outline-text-hover: var(--color-neutral-0);
+  --color-action-close-bg-hover: var(--color-neutral-100);
   --color-success-text: var(--color-green-800);
   --color-success-bg: var(--color-green-50);
   --color-success-border: var(--color-green-800);
@@ -735,4 +768,8 @@
   --color-badge-warning-bg: var(--color-amber-800);
   --color-badge-danger-bg: var(--color-red-800);
   --color-badge-info-bg: var(--color-blue-800);
+  --color-badge-success-subtle-text: var(--color-green-900);
+  --color-badge-warning-subtle-text: var(--color-amber-900);
+  --color-badge-danger-subtle-text: var(--color-red-900);
+  --color-badge-info-subtle-text: var(--color-blue-900);
 }

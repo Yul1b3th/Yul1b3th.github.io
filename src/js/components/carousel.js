@@ -4,6 +4,8 @@
 // Carrusel accesible con el patrón de WAI-ARIA, configurable con atributos data
 // La reproducción automática siempre trae botón de pausa y se para con el ratón o el teclado
 
+import { prefersReducedMotion } from '../utils/motion.js';
+
 const MIN_INTERVAL = 5000;
 
 export function initCarousels(root = document) {
@@ -16,8 +18,30 @@ export function initCarousels(root = document) {
     const { carouselAutoplay, carouselInterval, carouselLoop } = carousel.dataset;
     const loop = carouselLoop !== 'false';
     const interval = Math.max(Number(carouselInterval) || MIN_INTERVAL, MIN_INTERVAL);
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduced = prefersReducedMotion();
+    // Sobre la foto o en fila tipo Netflix las flechas van a los lados y la ayuda también
+    const sideTips = carousel.matches('.carousel--overlay, .carousel--row');
+    const row = carousel.classList.contains('carousel--row');
     let index = 0;
+
+    // Ayuda visible con el nombre de los botones de icono, a un lado si van sobre la foto
+    const addTooltip = (button, name, side) => {
+      if (!button) return null;
+      const wrap = document.createElement('span');
+      wrap.className = `tooltip carousel__tooltip carousel__tooltip--${name}${sideTips ? ` tooltip--${side}` : ''}`;
+      const content = document.createElement('span');
+      content.className = 'tooltip__content';
+      content.setAttribute('aria-hidden', 'true');
+      content.textContent = button.getAttribute('aria-label') ?? '';
+      button.replaceWith(wrap);
+      wrap.append(button, content);
+      const reset = () => wrap.classList.remove('is-dismissed');
+      wrap.addEventListener('mouseleave', reset);
+      wrap.addEventListener('focusout', reset);
+      return content;
+    };
+    addTooltip(prev, 'prev', 'end');
+    addTooltip(next, 'next', 'start');
 
     slides.forEach((slide, i) => {
       slide.setAttribute('role', 'group');
@@ -36,22 +60,34 @@ export function initCarousels(root = document) {
       return dot;
     });
 
+    // En fila se avanza una página entera, tantas tarjetas como se ven
+    const step = () => {
+      if (!row) return 1;
+      const start = slides[0].offsetLeft;
+      return Math.max(1, slides.filter((slide) => slide.offsetLeft - start + slide.offsetWidth <= track.clientWidth + 1).length);
+    };
+    const last = () => (row ? Math.max(0, slides.length - step()) : slides.length - 1);
+
     const paint = () => {
       dots.forEach((dot, i) => dot.setAttribute('aria-current', String(i === index)));
       if (!loop) {
         if (prev) prev.disabled = index === 0;
-        if (next) next.disabled = index === slides.length - 1;
+        if (next) next.disabled = index >= last();
       }
     };
 
     const goTo = (i) => {
+      if (row) {
+        if (i > last()) i = loop && index >= last() ? 0 : last();
+        if (i < 0) i = loop && index === 0 ? last() : 0;
+      }
       index = (i + slides.length) % slides.length;
-      track.scrollTo({ left: slides[index].offsetLeft - track.offsetLeft, behavior: reduced ? 'auto' : 'smooth' });
+      track.scrollTo({ left: slides[index].offsetLeft - track.offsetLeft, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
       paint();
     };
 
-    prev?.addEventListener('click', () => goTo(index - 1));
-    next?.addEventListener('click', () => goTo(index + 1));
+    prev?.addEventListener('click', () => goTo(index - step()));
+    next?.addEventListener('click', () => goTo(index + step()));
 
     // Al deslizar se toma como actual la diapositiva más cercana al inicio, también con varias a la vez
     track.addEventListener('scroll', () => {
@@ -103,28 +139,42 @@ export function initCarousels(root = document) {
     play.className = 'button button--icon button--sm carousel__play';
     play.innerHTML = '<span class="carousel__play-icon" aria-hidden="true"></span>';
     carousel.querySelector('.carousel__controls').prepend(play);
+    const playTip = addTooltip(play, 'play', 'end');
 
     let timer;
     let userPaused = reduced;
     let hovered = false;
 
-    const setPlaying = (playing) => {
-      clearInterval(timer);
-      if (playing) timer = setInterval(() => goTo(index + 1), interval);
-      play.setAttribute('aria-pressed', String(playing));
-      play.setAttribute('aria-label', playing ? 'Pausar' : 'Reproducir');
-      track.setAttribute('aria-live', playing ? 'off' : 'polite');
+    // El botón solo cambia con un clic; ratón y foco pausan sin tocar el botón
+    const render = () => {
+      play.dataset.playing = String(!userPaused);
+      play.setAttribute('aria-label', userPaused ? 'Reproducir' : 'Pausar');
+      playTip.textContent = play.getAttribute('aria-label');
     };
-    const refresh = () => setPlaying(!userPaused && !hovered && !carousel.contains(document.activeElement));
+    const run = (on) => {
+      clearInterval(timer);
+      if (on) timer = setInterval(() => goTo(index + 1), interval);
+      track.setAttribute('aria-live', on ? 'off' : 'polite');
+    };
+    const refresh = () => {
+      const focused = carousel.contains(document.activeElement) && document.activeElement !== play;
+      render();
+      run(!userPaused && !hovered && !focused);
+    };
 
     play.addEventListener('click', () => {
-      userPaused = play.getAttribute('aria-pressed') === 'true';
-      setPlaying(!userPaused);
+      userPaused = !userPaused;
+      refresh();
     });
     carousel.addEventListener('mouseenter', () => { hovered = true; refresh(); });
     carousel.addEventListener('mouseleave', () => { hovered = false; refresh(); });
-    carousel.addEventListener('focusin', (event) => { if (event.target !== play) setPlaying(false); });
+    carousel.addEventListener('focusin', refresh);
     carousel.addEventListener('focusout', () => setTimeout(refresh));
+    // Si la persona elige reducir el movimiento, el pase se para
+    document.addEventListener('motionchange', () => {
+      if (prefersReducedMotion()) userPaused = true;
+      refresh();
+    });
     refresh();
   });
 }

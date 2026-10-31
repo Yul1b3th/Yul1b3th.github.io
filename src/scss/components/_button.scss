@@ -83,6 +83,7 @@
   --button-text: var(--color-action-secondary-text);
   --button-border: var(--color-action-secondary-border);
   --button-border-hover: var(--color-action-secondary-border);
+  --button-shadow-hover: inset 0 0 0 2px var(--button-border-hover), var(--shadow-card);
 }
 
 /* Acción destructiva, como borrar o cancelar un pedido */
@@ -93,9 +94,10 @@
   --button-text: var(--color-action-danger-text);
   --button-border: var(--color-action-danger-border);
   --button-border-hover: var(--color-action-danger-border);
+  --button-shadow-hover: inset 0 0 0 2px var(--button-border-hover), var(--shadow-card);
 }
 
-/* Opción relleno en azul marino, para elegir entre pocas alternativas */
+/* Opción seleccionada con un tono más oscuro al pasar el ratón */
 .button--option {
   --button-bg: var(--color-action-option-bg);
   --button-bg-hover: var(--color-action-option-bg-hover);
@@ -104,7 +106,7 @@
   --button-text-hover: var(--color-action-option-text-hover);
 }
 
-/* Opción con contorno azul marino que se rellena al pasar el ratón */
+/* Opción con contorno y fondo suave al pasar el ratón */
 .button--option-outline {
   --button-bg: var(--color-action-option-outline-bg);
   --button-bg-hover: var(--color-action-option-outline-bg-hover);
@@ -112,7 +114,8 @@
   --button-text: var(--color-action-option-outline-text);
   --button-text-hover: var(--color-action-option-outline-text-hover);
   --button-border: var(--color-action-option-outline-border);
-  --button-border-hover: var(--button-bg-hover);
+  --button-border-hover: var(--color-action-option-outline-border);
+  --button-shadow-hover: inset 0 0 0 2px var(--button-border-hover), var(--shadow-card);
 }
 
 /* Entrar con una cuenta externa, fondo blanco como piden las normas de marca de Google */
@@ -168,7 +171,7 @@
   --button-border: transparent;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .button {
     transition: none;
   }

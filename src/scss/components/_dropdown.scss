@@ -1,6 +1,8 @@
 // Archivo de innovatech-ds. No editar aquí
 // Se cambia en innovatech-ds y se copia con npm run sync
 
+@use '../abstracts' as *;
+
 /* Dropdown, botón que abre una lista de opciones excluyentes (tema, idioma) */
 .dropdown {
   --dropdown-text: var(--color-text-default);
@@ -55,6 +57,13 @@
   height: 1.25rem;
 }
 
+/* Línea que separa grupos de opciones, como el tema y el movimiento */
+.dropdown__separator {
+  height: 0;
+  margin: var(--space-xs) 0;
+  border-top: var(--border-width-sm) solid var(--color-border-default);
+}
+
 .dropdown__chevron {
   transition: transform var(--duration-fast) var(--ease-standard);
 }
@@ -65,7 +74,7 @@
 
 .dropdown__menu {
   position: absolute;
-  top: calc(100% + 0.375rem);
+  top: calc(100% + 0.625rem);
   right: 0;
   z-index: var(--z-index-dropdown);
   min-width: 12rem;
@@ -81,6 +90,32 @@
     opacity var(--duration-fast) var(--ease-standard),
     transform var(--duration-fast) var(--ease-standard),
     display var(--duration-fast) allow-discrete;
+}
+
+/* Flecha que apunta al botón del que sale el menú, del mismo fondo y borde */
+.dropdown__menu::before {
+  content: '';
+  position: absolute;
+  top: -0.4375rem;
+  right: 1rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-top: 1px solid var(--color-border-default);
+  border-left: 1px solid var(--color-border-default);
+  background: var(--color-bg-page);
+  transform: rotate(45deg);
+}
+
+/* Alineado al inicio del botón, para menús en la parte izquierda */
+.dropdown--start .dropdown__menu {
+  right: auto;
+  left: 0;
+  transform-origin: top left;
+}
+
+.dropdown--start .dropdown__menu::before {
+  right: auto;
+  left: 1rem;
 }
 
 /* Entra y sale con un fundido corto en lugar de aparecer de golpe */
@@ -113,7 +148,9 @@
   text-align: left;
   white-space: nowrap;
   cursor: pointer;
-  transition: background-color var(--duration-fast) var(--ease-standard);
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
 }
 
 .dropdown__option:hover {
@@ -126,8 +163,17 @@
 }
 
 /* La opción elegida se marca con peso y con el icono check */
+/* La elegida lleva fondo azul marino suave, línea a la izquierda y check */
+/* Sin negrita para que el menú no cambie de ancho; la línea es una sombra y no ocupa sitio */
 .dropdown__option[aria-checked='true'] {
-  font-weight: var(--font-weight-semibold);
+  background: var(--color-bg-selected);
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+  box-shadow: inset 3px 0 0 var(--color-border-selected);
+}
+
+.dropdown__option[aria-checked='true']:hover {
+  background: color-mix(in srgb, var(--color-border-selected) 12%, var(--color-bg-selected));
 }
 
 .dropdown__check {
@@ -139,7 +185,7 @@
   visibility: visible;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .dropdown__chevron,
   .dropdown__menu,
   .dropdown__option {

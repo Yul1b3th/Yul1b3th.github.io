@@ -4,6 +4,8 @@
 // Botón para volver arriba, aparece al bajar un poco
 // Es un enlace a #top, así funciona aunque no cargue el JavaScript
 
+@use '../abstracts' as *;
+
 .back-to-top {
   position: fixed;
   right: var(--space-ml);
@@ -40,6 +42,14 @@
     box-shadow var(--duration-fast) var(--ease-standard);
 }
 
+/* Siempre visible y en su sitio, para mostrarlo en la documentación */
+.back-to-top--static {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
 .back-to-top:hover {
   background-color: var(--color-action-primary-bg-hover);
   box-shadow: var(--shadow-card);
@@ -61,7 +71,7 @@
   fill: currentColor;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .back-to-top,
   .back-to-top.is-visible {
     transition: none;

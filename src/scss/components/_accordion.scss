@@ -4,6 +4,8 @@
 // Acordeón sobre details y summary nativos, sin JavaScript
 // Con el mismo atributo name en cada details solo queda uno abierto
 
+@use '../abstracts' as *;
+
 .accordion {
   border: var(--border-width-sm) solid var(--color-border-default);
   border-radius: var(--radius-md);
@@ -39,7 +41,7 @@
 }
 
 .accordion__header:hover {
-  background-color: var(--color-action-secondary-bg-hover);
+  background-color: var(--color-bg-hover);
 }
 
 .accordion__header:focus-visible {
@@ -90,7 +92,7 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .accordion__header,
   .accordion__icon,
   .accordion__item::details-content {

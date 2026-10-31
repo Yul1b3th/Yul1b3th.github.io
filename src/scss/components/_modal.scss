@@ -4,6 +4,8 @@
 // Modal sobre el elemento dialog nativo, con cabecera, cuerpo y pie como en Carbon
 // Escape lo cierra el navegador y el foco se queda dentro, ver js/components/modal.js
 
+@use '../abstracts' as *;
+
 .modal {
   width: min(32rem, calc(100% - 2rem));
   max-height: calc(100% - 2rem);
@@ -34,10 +36,10 @@
   background-color: var(--color-bg-dialog-header);
 }
 
-/* Botón de cerrar con el mismo fondo y la misma sombra ligera que compartir */
+/* Botón de cierre con el token de fondo reservado para las X */
 .modal__header .button--icon {
-  --button-bg-hover: var(--color-action-ghost-bg-hover);
-  --button-bg-active: var(--color-action-ghost-bg-hover);
+  --button-bg-hover: var(--color-action-close-bg-hover);
+  --button-bg-active: var(--color-action-close-bg-hover);
 }
 
 .modal__title {
@@ -109,7 +111,7 @@
   fill: currentColor;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .modal[open] {
     animation: none;
   }

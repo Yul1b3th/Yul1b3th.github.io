@@ -4,6 +4,8 @@
 // Casilla y botón de opción sobre los controles nativos
 // Comparten tamaño, colores y estados, cambia solo la forma de la marca
 
+@use '../abstracts' as *;
+
 .checkbox,
 .radio {
   display: inline-flex;
@@ -110,7 +112,7 @@
   cursor: not-allowed;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .checkbox__input,
   .radio__input {
     transition: none;

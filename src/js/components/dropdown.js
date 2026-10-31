@@ -4,10 +4,13 @@
 // Desplegable accesible con patrón de menú y opciones excluyentes
 // Teclado: flechas, Inicio, Fin, Escape y Tab
 
-export function initDropdown(root, { onChange } = {}) {
+export function initDropdown(root, { onChange, onToggle } = {}) {
   const button = root.querySelector('.dropdown__button');
   const menu = root.querySelector('.dropdown__menu');
   const options = [...menu.querySelectorAll('[role="menuitemradio"]')];
+  // Casillas independientes, como Reducir movimiento, que no cierran el menú
+  const checks = [...menu.querySelectorAll('[role="menuitemcheckbox"]')];
+  const items = [...options, ...checks];
 
   const checkedOption = () => options.find((o) => o.getAttribute('aria-checked') === 'true') ?? options[0];
 
@@ -51,17 +54,17 @@ export function initDropdown(root, { onChange } = {}) {
       open();
     } else if (event.key === 'ArrowUp') {
       event.preventDefault();
-      open(options.at(-1));
+      open(items.at(-1));
     }
   });
 
   menu.addEventListener('keydown', (event) => {
-    const index = options.indexOf(document.activeElement);
+    const index = items.indexOf(document.activeElement);
     const moves = {
-      ArrowDown: options[(index + 1) % options.length],
-      ArrowUp: options[(index - 1 + options.length) % options.length],
-      Home: options[0],
-      End: options.at(-1),
+      ArrowDown: items[(index + 1) % items.length],
+      ArrowUp: items[(index - 1 + items.length) % items.length],
+      Home: items[0],
+      End: items.at(-1),
     };
     if (moves[event.key]) {
       event.preventDefault();
@@ -81,6 +84,17 @@ export function initDropdown(root, { onChange } = {}) {
     }),
   );
 
+  const setChecked = (value, checked, { silent = false } = {}) => {
+    const check = checks.find((c) => c.dataset.value === value);
+    if (!check) return;
+    check.setAttribute('aria-checked', String(checked));
+    if (!silent) onToggle?.(value, checked);
+  };
+
+  checks.forEach((check) =>
+    check.addEventListener('click', () => setChecked(check.dataset.value, check.getAttribute('aria-checked') !== 'true')),
+  );
+
   // Cierra al pulsar fuera del desplegable
   document.addEventListener('pointerdown', (event) => {
     if (!root.contains(event.target)) close({ returnFocus: false });
@@ -90,5 +104,5 @@ export function initDropdown(root, { onChange } = {}) {
   document.addEventListener('languagechange', () => paint(checkedOption()));
 
   paint(checkedOption());
-  return { setValue };
+  return { setValue, setChecked };
 }

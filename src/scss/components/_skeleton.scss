@@ -4,6 +4,8 @@
 // Esqueleto de carga con la forma del contenido que va a llegar
 // El contenedor lleva aria-busy y el esqueleto aria-hidden
 
+@use '../abstracts' as *;
+
 .skeleton {
   display: block;
   border-radius: var(--radius-sm);
@@ -50,7 +52,7 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .skeleton {
     animation: none;
   }

@@ -4,12 +4,14 @@
 // Abre y cierra paneles sobre dialog nativo en 500 ms, como el menú del CV
 // Mantiene el foco dentro, lo devuelve al botón y actualiza aria-expanded
 
+import { prefersReducedMotion } from '../utils/motion.js';
+
 const FOCUSABLE = 'a[href], button:not(:disabled), input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex]:not([tabindex="-1"])';
 
 // Cierra con la animación de salida, sin ella con movimiento reducido
 export function closeDrawer(drawer) {
   if (!drawer.open || drawer.classList.contains('is-closing')) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (prefersReducedMotion()) {
     drawer.close();
     return;
   }

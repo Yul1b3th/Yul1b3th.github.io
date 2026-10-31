@@ -4,6 +4,8 @@
 // Base, aplica los tokens a las etiquetas HTML (fondo, títulos, párrafos, enlaces y foco)
 // Va después del reset, como el Reboot de Bootstrap
 
+@use '../abstracts' as *;
+
 body {
   background-color: var(--color-bg-page);
   color: var(--color-text-body);
@@ -37,7 +39,7 @@ a:not([class]):hover {
   outline-offset: 2px;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   a:not([class]) {
     transition: none;
   }

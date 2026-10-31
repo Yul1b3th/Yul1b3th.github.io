@@ -4,6 +4,8 @@
 // Barra de búsqueda dentro de un form con role search
 // Mismo foco con halo verde que los campos
 
+@use '../abstracts' as *;
+
 .search {
   position: relative;
   display: flex;
@@ -67,7 +69,7 @@
   right: 0.25rem;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .search__input {
     transition: none;
   }

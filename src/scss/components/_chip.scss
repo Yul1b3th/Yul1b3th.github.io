@@ -4,6 +4,8 @@
 // Chip para filtros y etiquetas que se eligen o se quitan
 // El chip que se elige es un button con aria-pressed
 
+@use '../abstracts' as *;
+
 .chip {
   display: inline-flex;
   align-items: center;
@@ -76,7 +78,11 @@
 }
 
 .chip__remove:hover {
-  background-color: var(--color-action-secondary-bg-hover);
+  background-color: var(--color-action-close-bg-hover);
+}
+
+.chip__remove:active {
+  background-color: var(--color-action-close-bg-hover);
 }
 
 .chip__remove:focus-visible {
@@ -89,7 +95,7 @@
   fill: currentColor;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .chip {
     transition: none;
   }

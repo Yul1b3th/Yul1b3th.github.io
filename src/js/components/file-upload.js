@@ -56,7 +56,7 @@ export function initFileUploads(root = document) {
           ? `<img class="file-upload__thumb" src="${entry.url}" alt="">`
           : '<span class="file-upload__thumb" aria-hidden="true"></span>';
         item.innerHTML = `${thumb}<span class="file-upload__info"><span class="file-upload__name"></span><span class="file-upload__size">${formatSize(entry.file.size)}</span></span>
-          <button class="button button--icon button--sm" type="button"><svg aria-hidden="true"><use href="${icons}#close"></use></svg></button>`;
+          <button class="button button--icon button--sm file-upload__remove" type="button"><svg aria-hidden="true"><use href="${icons}#close"></use></svg></button>`;
         item.querySelector('.file-upload__name').textContent = entry.file.name;
         const remove = item.querySelector('button');
         remove.setAttribute('aria-label', `Quitar ${entry.file.name}`);

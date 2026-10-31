@@ -4,6 +4,8 @@
 // Avatar con foto o iniciales, en tres tamaños
 // En grupo se solapan con un borde del color del fondo
 
+@use '../abstracts' as *;
+
 .avatar {
   --avatar-size: 2.5rem;
 
@@ -78,7 +80,7 @@
   margin-left: calc(var(--space-sm) * -1);
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   :is(a, button).avatar {
     transition: none;
   }

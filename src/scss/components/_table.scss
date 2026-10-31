@@ -4,6 +4,8 @@
 // Tabla de datos con cabecera fija en el contenedor, rayas y orden opcional
 // El contenedor se puede desplazar en horizontal y recibe el foco
 
+@use '../abstracts' as *;
+
 .table-wrapper {
   max-width: 100%;
   overflow-x: auto;
@@ -19,13 +21,17 @@
 .table {
   width: 100%;
   border-collapse: collapse;
+  background-color: var(--color-bg-page);
   color: var(--color-text-body);
   font-size: var(--font-size-sm);
 }
 
 .table caption {
-  padding: var(--space-md) var(--space-md) 0;
+  padding: var(--space-md);
+  border-bottom: var(--border-width-sm) solid var(--color-border-default);
+  background-color: var(--color-bg-table-header);
   color: var(--color-text-default);
+  font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   text-align: left;
 }
@@ -39,7 +45,7 @@
 }
 
 .table thead th {
-  background-color: var(--color-bg-muted);
+  background-color: var(--color-bg-table-header);
   color: var(--color-text-default);
   font-weight: var(--font-weight-semibold);
   white-space: nowrap;
@@ -50,7 +56,7 @@
 }
 
 .table--striped tbody tr:nth-child(even) {
-  background-color: var(--color-bg-muted);
+  background-color: var(--color-bg-header);
 }
 
 .table--hover tbody tr {
@@ -58,7 +64,7 @@
 }
 
 .table--hover tbody tr:hover {
-  background-color: var(--color-bg-selected);
+  background-color: var(--color-bg-hover);
 }
 
 .table__number {
@@ -100,7 +106,7 @@ th[aria-sort='ascending'] .table__sort svg {
   transform: rotate(180deg);
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .table--hover tbody tr {
     transition: none;
   }

@@ -4,6 +4,8 @@
 // Subida de archivos sobre input type file nativo, con zona para arrastrar y lista
 // La validación y la lista las gestiona js/components/file-upload.js
 
+@use '../abstracts' as *;
+
 .file-upload {
   display: flex;
   flex-direction: column;
@@ -80,6 +82,11 @@
   border-radius: var(--radius-sm);
 }
 
+.file-upload__remove {
+  --button-bg-hover: var(--color-action-close-bg-hover);
+  --button-bg-active: var(--color-action-close-bg-hover);
+}
+
 .file-upload__thumb {
   flex: none;
   width: 3rem;
@@ -108,7 +115,7 @@
   font-size: var(--font-size-sm);
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .file-upload__dropzone {
     transition: none;
   }

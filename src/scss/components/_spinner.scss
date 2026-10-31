@@ -1,38 +1,108 @@
 // Archivo de innovatech-ds. No editar aquí
 // Se cambia en innovatech-ds y se copia con npm run sync
 
-// Indicador de carga en azul marino sobre una pista verde de marca
-// Lleva role status y un texto oculto que dice qué se está cargando
+// Indicador de carga moderno, un arco que empieza grueso y redondo y acaba en punta
+// Lleva role status y un texto, oculto o visible, que dice qué se está cargando
+
+@use '../abstracts' as *;
+
+// Forma del arco como máscara, así el color sale de los tokens
+$spinner-shape: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50.0 2.0 L46.6 2.1 L43.3 2.5 L40.0 3.1 L36.7 3.9 L33.5 4.9 L30.3 6.2 L27.3 7.7 L24.4 9.4 L21.6 11.3 L19.0 13.4 L16.5 15.6 L14.1 18.1 L12.0 20.7 L10.0 23.4 L8.3 26.3 L6.7 29.3 L5.3 32.4 L4.2 35.6 L3.3 38.8 L2.7 42.1 L2.2 45.5 L2.0 48.8 L2.1 52.2 L2.3 55.6 L2.8 58.9 L3.6 62.2 L4.5 65.4 L5.7 68.6 L7.2 71.6 L8.8 74.6 L10.6 77.4 L12.6 80.1 L14.8 82.7 L17.2 85.1 L19.8 87.3 L22.5 89.3 L25.3 91.2 L28.2 92.8 L31.3 94.2 L34.5 95.4 L37.7 96.4 L41.0 97.1 L44.3 97.7 L47.7 97.9 L51.0 98.0 L54.4 97.8 L57.8 97.4 L61.1 96.7 L64.3 95.8 L67.5 94.7 L70.6 93.4 L73.6 91.8 L76.5 90.0 L79.2 88.1 L81.8 85.9 L84.3 83.6 L86.5 81.1 L88.6 78.5 L90.5 75.7 L92.2 72.8 L93.7 69.8 L95.0 66.6 L96.1 63.4 L96.9 60.2 L97.5 56.8 L97.9 53.5 L98.0 50.1 L97.9 46.7 L97.5 43.4 L97.0 40.1 L96.1 36.8 L95.1 33.6 L95.0 33.6 L96.0 36.8 L96.8 40.1 L97.3 43.4 L97.5 46.8 L97.6 50.1 L97.3 53.4 L96.8 56.7 L96.1 60.0 L95.2 63.2 L94.1 66.3 L92.7 69.3 L91.1 72.2 L89.4 74.9 L87.4 77.6 L85.3 80.0 L83.0 82.3 L80.5 84.5 L78.0 86.4 L75.2 88.2 L72.4 89.7 L69.5 91.1 L66.5 92.2 L63.5 93.1 L60.4 93.8 L57.3 94.3 L54.1 94.6 L51.0 94.6 L47.8 94.4 L44.7 94.0 L41.7 93.4 L38.7 92.5 L35.8 91.5 L33.0 90.2 L30.3 88.8 L27.7 87.2 L25.2 85.4 L22.9 83.4 L20.7 81.3 L18.7 79.1 L16.9 76.7 L15.2 74.2 L13.7 71.6 L12.4 69.0 L11.4 66.2 L10.5 63.4 L9.8 60.6 L9.3 57.7 L9.0 54.8 L9.0 51.9 L9.1 49.0 L9.5 46.2 L10.0 43.3 L10.7 40.6 L11.6 37.9 L12.8 35.3 L14.0 32.8 L15.5 30.4 L17.1 28.1 L18.8 26.0 L20.7 24.0 L22.8 22.1 L24.9 20.4 L27.2 18.8 L29.5 17.5 L31.9 16.3 L34.4 15.2 L36.9 14.4 L39.5 13.8 L42.1 13.3 L44.8 13.0 L47.4 12.9 L50.0 13.0Z'/%3E%3Ccircle cx='50' cy='7.5' r='5.5'/%3E%3C/svg%3E");
 
 .spinner {
   --spinner-size: 1.5rem;
-  --spinner-width: 3px;
+  --spinner-speed: 0.8s;
 
+  position: relative;
   display: inline-block;
   flex: none;
   width: var(--spinner-size);
   height: var(--spinner-size);
-  border: var(--spinner-width) solid var(--spinner-track, color-mix(in srgb, var(--color-border-brand) 55%, transparent));
-  border-top-color: currentColor;
-  border-radius: 50%;
   color: var(--color-action-selected-bg);
-  animation: spinner-rotate 0.75s linear infinite;
+  background-color: currentColor;
+  mask: $spinner-shape center / contain no-repeat;
+  animation: spinner-rotate var(--spinner-speed) linear infinite;
 }
 
 .spinner--sm {
   --spinner-size: 1rem;
-  --spinner-width: 2px;
 }
 
 .spinner--lg {
   --spinner-size: 3rem;
-  --spinner-width: 4px;
+}
+
+/* Verde oscuro de marca en lugar de azul marino */
+.spinner--brand {
+  color: var(--color-border-focus);
 }
 
 /* Dentro de un botón usa el color del texto del botón */
 .button .spinner {
-  --spinner-track: color-mix(in srgb, currentColor 25%, transparent);
   color: inherit;
+}
+
+/* Tres arcos de colores que se solapan y giran a distinta velocidad */
+.spinner--orbit {
+  background-color: transparent;
+  mask: none;
+  animation: none;
+}
+
+.spinner--orbit::before,
+.spinner--orbit::after,
+.spinner--orbit > .spinner__arc {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: currentColor;
+  mask: $spinner-shape center / contain no-repeat;
+  animation: spinner-rotate var(--spinner-speed) linear infinite;
+}
+
+.spinner--orbit::before {
+  color: var(--color-action-selected-bg);
+}
+
+.spinner--orbit::after {
+  color: var(--color-border-brand);
+  animation-duration: calc(var(--spinner-speed) * 1.5);
+  animation-delay: calc(var(--spinner-speed) * -0.33);
+}
+
+.spinner--orbit > .spinner__arc {
+  inset: 18%;
+  color: var(--color-border-focus);
+  animation-direction: reverse;
+  animation-duration: calc(var(--spinner-speed) * 1.25);
+}
+
+/* Tarjeta de carga que tapa una zona mientras llega su contenido */
+.spinner-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-index-overlay);
+  display: grid;
+  place-items: center;
+  border-radius: inherit;
+  background-color: color-mix(in srgb, var(--color-bg-emphasis) 45%, transparent);
+}
+
+.spinner-overlay > .spinner-label {
+  padding: var(--space-lg) var(--space-xl);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-page);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Arco y texto visible debajo, para cargas que tardan más de un segundo */
+.spinner-label {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--color-text-body);
+  font-size: var(--font-size-sm);
 }
 
 @keyframes spinner-rotate {
@@ -41,9 +111,12 @@
   }
 }
 
-/* Con movimiento reducido gira más despacio, como Bootstrap, porque indica que algo pasa */
-@media (prefers-reduced-motion: reduce) {
-  .spinner {
-    animation-duration: 1.5s;
+/* Con movimiento reducido gira más despacio, porque indica que algo está pasando */
+@include apply-reduced-motion {
+  .spinner,
+  .spinner--orbit::before,
+  .spinner--orbit::after,
+  .spinner--orbit > .spinner__arc {
+    --spinner-speed: 2.4s;
   }
 }

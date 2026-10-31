@@ -4,6 +4,8 @@
 // Mensaje de estado con icono, texto y barra lateral de color
 // Los fondos suaves de color se usan solo aquí
 
+@use '../abstracts' as *;
+
 .alert {
   --alert-text: var(--color-info-text);
   --alert-bg: var(--color-info-bg);
@@ -13,11 +15,23 @@
   align-items: flex-start;
   gap: var(--space-sm);
   padding: var(--space-md);
-  border: var(--border-width-sm) solid var(--alert-text);
+  border: var(--border-width-sm) solid var(--alert-border);
   border-inline-start-width: 4px;
   border-radius: var(--radius-md);
   background-color: var(--alert-bg);
   color: var(--color-text-body);
+}
+
+/* Al cerrarlo se desvanece y sube un poco antes de desaparecer */
+.alert {
+  transition:
+    opacity var(--duration-base) var(--ease-accelerate),
+    transform var(--duration-base) var(--ease-accelerate);
+}
+
+.alert.is-closing {
+  opacity: 0;
+  transform: translateY(-0.25rem);
 }
 
 .alert--success {
@@ -72,4 +86,10 @@
   --button-bg-hover: color-mix(in srgb, var(--alert-text) 12%, transparent);
   --button-bg-active: color-mix(in srgb, var(--alert-text) 20%, transparent);
   margin: calc(var(--space-xs) * -1) 0 calc(var(--space-xs) * -1) auto;
+}
+
+@include apply-reduced-motion {
+  .alert {
+    transition: none;
+  }
 }

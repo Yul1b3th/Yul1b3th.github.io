@@ -4,6 +4,8 @@
 // Panel lateral sobre dialog nativo, a pantalla completa o con ancho fijo
 // Entra desde el lado del botón que lo abre con drawer--start o drawer--end
 
+@use '../abstracts' as *;
+
 .drawer {
   --drawer-from: 100%;
 
@@ -117,9 +119,16 @@
   --navbar-focus: var(--color-border-focus-emphasis);
 }
 
-.drawer--emphasis .button--icon {
+.drawer--emphasis .drawer__header .button--icon {
   --button-text: var(--color-text-on-emphasis);
-  --button-bg-hover: color-mix(in srgb, var(--color-text-on-emphasis) 12%, transparent);
+  --button-bg-hover: var(--color-action-close-bg-hover);
+  --button-bg-active: var(--color-action-close-bg-hover);
+  --button-text-hover: var(--color-neutral-1000);
+}
+
+.drawer__header .button--icon {
+  --button-bg-hover: var(--color-action-close-bg-hover);
+  --button-bg-active: var(--color-action-close-bg-hover);
 }
 
 @keyframes drawer-enter {
@@ -134,7 +143,7 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .drawer[open],
   .drawer.is-closing {
     animation: none;

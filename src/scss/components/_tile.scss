@@ -4,6 +4,8 @@
 // Tarjeta que se elige, con una casilla o un radio nativo dentro, como las selectable tiles de Carbon
 // Elegida en azul marino con fondo navy-50 y check azul marino con aro blanco, el color de seleccionado
 
+@use '../abstracts' as *;
+
 .tile {
   position: relative;
   display: grid;
@@ -25,9 +27,10 @@
   overflow: hidden;
 }
 
+/* Mismo hover que card--interactive, borde fino de marca y la sombra sube un nivel */
 .tile:hover {
   border-color: var(--color-border-brand);
-  box-shadow: var(--shadow-raised);
+  box-shadow: var(--shadow-hover);
 }
 
 /* La casilla real queda encima y transparente para el teclado y el lector */
@@ -41,10 +44,14 @@
 
 /* La imagen llega a los bordes de la tarjeta, como la imagen de la card */
 .tile__media {
+  justify-self: stretch;
   width: calc(100% + var(--space-sm) * 2);
   aspect-ratio: 1;
   margin: calc(var(--space-sm) * -1) calc(var(--space-sm) * -1) 0;
   border-radius: calc(var(--radius-md) - var(--border-width-sm)) calc(var(--radius-md) - var(--border-width-sm)) 0 0;
+  display: block;
+  max-width: none;
+  height: auto;
   object-fit: cover;
 }
 
@@ -59,6 +66,11 @@
 .tile__meta {
   color: var(--color-text-muted);
   font-size: var(--font-size-sm);
+}
+
+/* En la tarjeta vertical el precio se centra igual que el título */
+.tile:not(.tile--row) .tile__meta {
+  text-align: center;
 }
 
 .tile__check {
@@ -152,7 +164,7 @@
   grid-template-columns: minmax(0, 1fr);
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .tile,
   .tile__check {
     transition: none;

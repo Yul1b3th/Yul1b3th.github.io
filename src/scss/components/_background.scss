@@ -4,6 +4,8 @@
 // Ruta a src/assets/streaks.svg desde la hoja compilada, cada proyecto la ajusta con @use … with
 $streaks-url: 'streaks.svg' !default;
 
+@use '../abstracts' as *;
+
 /* Fondos decorativos de secciones con la paleta de InnoVatech */
 /* En alto contraste no se muestra ninguna decoración */
 
@@ -149,6 +151,15 @@ $streaks-url: 'streaks.svg' !default;
   content: '';
   background: linear-gradient(90deg, var(--streaks-1), var(--streaks-2) 50%, var(--streaks-3));
   mask: url($streaks-url) center / 100% 100% no-repeat;
+}
+
+/* Degradado suave de cielo a lavanda, el de las fotos de ejemplo y la banda de la card */
+.bg-soft {
+  background: linear-gradient(135deg, var(--color-decor-sky), var(--color-decor-lavender));
+
+  @include apply-high-contrast {
+    background: var(--color-bg-page);
+  }
 }
 
 /*-------- Alto contraste sin decoración --------*/

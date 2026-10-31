@@ -89,6 +89,18 @@
   }
 }
 
+// Menos movimiento, pedido por el sistema o con data-motion="reduce" en el html
+// Se usa en la raíz del archivo y envuelve reglas completas
+@mixin apply-reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+
+  [data-motion='reduce'] {
+    @content;
+  }
+}
+
 // === Diseño Responsivo y Estilos Visuales ===
 @mixin apply-media-breakpoint($size) {
   @media (min-width: get-breakpoint($size)) {

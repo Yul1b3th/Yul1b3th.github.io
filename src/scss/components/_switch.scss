@@ -4,6 +4,8 @@
 // Interruptor para activar o desactivar algo al momento
 // Es un checkbox nativo con role switch, el propio input dibuja la pista
 
+@use '../abstracts' as *;
+
 .switch {
   display: inline-flex;
   align-items: center;
@@ -79,7 +81,7 @@
   cursor: not-allowed;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .switch__input,
   .switch__input::before {
     transition: none;

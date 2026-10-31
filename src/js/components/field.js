@@ -30,3 +30,41 @@ export function initPasswordToggles(root = document) {
     input.form?.addEventListener('submit', () => set(false));
   });
 }
+
+// Botón de borrar dentro del campo, oculto mientras está vacío
+export function initClearButtons(root = document) {
+  root.querySelectorAll('.field__clearable').forEach((wrapper) => {
+    const input = wrapper.querySelector('input');
+    const clear = wrapper.querySelector('.field__clear');
+    if (!input || !clear) return;
+
+    const sync = () => {
+      clear.hidden = input.value === '';
+    };
+    clear.setAttribute('aria-controls', input.id);
+    clear.addEventListener('click', () => {
+      input.value = '';
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+      input.focus();
+    });
+    input.addEventListener('input', sync);
+    sync();
+  });
+}
+
+// Contador de caracteres con el máximo de maxlength o de data-max
+// Anuncia el aviso al llegar al límite sin repetir cada tecla
+export function initCounters(root = document) {
+  root.querySelectorAll('[data-field-counter]').forEach((counter) => {
+    const input = document.getElementById(counter.dataset.fieldCounter);
+    if (!input) return;
+    const max = Number(input.getAttribute('maxlength') ?? input.dataset.max ?? 0);
+    const update = () => {
+      const length = input.value.length;
+      counter.textContent = max ? `${length} / ${max}` : String(length);
+      counter.classList.toggle('is-over', max > 0 && length >= max);
+    };
+    input.addEventListener('input', update);
+    update();
+  });
+}

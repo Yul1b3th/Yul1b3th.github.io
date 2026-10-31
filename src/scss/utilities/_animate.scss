@@ -4,6 +4,8 @@
 // Animaciones de entrada con el bloque animate y sus modificadores
 // Los ajustes van en atributos data-animate-* que lee js/utils/animate.js
 
+@use '../abstracts' as *;
+
 .animate {
   --animate-name: animate-fade-up;
 }
@@ -57,7 +59,7 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .js-animate .animate.is-visible,
   .animate[data-animate-trigger='load'] {
     animation: none;

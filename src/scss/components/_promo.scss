@@ -2,12 +2,12 @@
 // Se cambia en innovatech-ds y se copia con npm run sync
 
 // Destacado para una oferta o un producto, como «Today's Top Pizza»
-// Texto a un lado e imagen al otro, con fondo de los colores decorativos de la marca
+// Texto a un lado e imagen al otro, con fondo decorativo que deja destacar la acción menta
 
 @use '../abstracts' as *;
 
 .promo {
-  --promo-bg: linear-gradient(135deg, var(--color-decor-mint), var(--color-decor-sky) 55%, var(--color-decor-lavender));
+  --promo-bg: linear-gradient(135deg, var(--color-decor-sky), var(--color-decor-lavender) 55%, var(--color-decor-rose));
   --promo-text: var(--color-text-body);
   --promo-title: var(--color-text-heading);
   --promo-eyebrow: var(--color-text-tab-active);
