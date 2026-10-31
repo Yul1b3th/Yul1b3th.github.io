@@ -83,6 +83,7 @@ textarea:not([rows]) {
 }
 
 /* Lo que se enlaza con un ancla deja aire arriba, también bajo una barra fija */
-:target {
+/* Las secciones no, porque su fondo ya da aire y se vería la sección anterior */
+:target:not(section) {
   scroll-margin-block: 5ex;
 }

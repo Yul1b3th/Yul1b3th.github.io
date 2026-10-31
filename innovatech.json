@@ -122,7 +122,7 @@
     "src/scss/base/_base.scss": "91c6a73811393770",
     "src/scss/base/_custom-properties.scss": "6d053981a8839baf",
     "src/scss/base/_fonts.scss": "cb5d324b7df90294",
-    "src/scss/base/_reset.scss": "e1396b6f66230d3b",
+    "src/scss/base/_reset.scss": "a9fdf0206e7320a3",
     "src/scss/components/_accordion.scss": "5c7a25dd4eddfbee",
     "src/scss/components/_action-bar.scss": "92a72e0410a4efed",
     "src/scss/components/_alert.scss": "c60e09696c9147ad",
