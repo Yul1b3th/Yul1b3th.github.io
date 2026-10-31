@@ -12,39 +12,14 @@
     h3 {
       text-align: center;
     }
-    .tech-skills {
-      .tech-skills__card {
-        @include mx.apply-flex-container(
-          $direction: row,
-          $justify: space-between,
-          $gap: fn.get-spacing(md)
-        );
-        flex-wrap: wrap;
-        .card {
-          text-align: center;
-        }
-
-        @media (min-width: fn.get-breakpoint(lg)) {
-          // Conectado a tus 992px globales
-          flex-wrap: nowrap;
-        }
-      }
+    /* Tarjetas de Tech y Soft Skills con la card del sistema, 3 columnas en escritorio */
+    .skills-grid {
+      margin-top: fn.get-spacing(md);
     }
 
-    .soft-skills {
-      .soft-skills__items {
-        // Flexbox en columna por defecto para móviles
-        @include mx.apply-flex-container(column, space-evenly, center, fn.get-spacing(lg));
-        flex-wrap: wrap;
-
-        div {
-          @include mx.apply-flex-container(column, center, center, fn.get-spacing(xs));
-        }
-
-        @media (min-width: fn.get-breakpoint(lg)) {
-          flex-direction: row;
-          gap: 0;
-        }
+    @media (min-width: fn.get-breakpoint(lg)) {
+      .skills-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
   }

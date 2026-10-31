@@ -1,0 +1,21 @@
+// Tarjetas de contenido del CV, sobre la card del sistema
+// Llevan el relleno y el fondo de antes; la card del sistema da el borde, la sombra y las esquinas
+
+@use '../abstracts' as *;
+
+.card--cv {
+  --card-border: var(--color-border-default);
+
+  display: block;
+  width: 100%;
+  margin-bottom: var(--space-md);
+  padding: 1.25rem;
+  background-color: var(--color-bg-muted);
+}
+
+/* Mismo hover que card--interactive del sistema, borde fino de marca y más sombra, sin halo */
+.card--cv:hover {
+  --card-border: var(--color-border-brand);
+
+  box-shadow: var(--shadow-hover);
+}

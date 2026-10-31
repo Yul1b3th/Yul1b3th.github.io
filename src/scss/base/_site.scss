@@ -210,14 +210,19 @@ select {
 }
 
 // Sin animaciones ni scroll suave para quien prefiere menos movimiento
-@media (prefers-reduced-motion: reduce) {
+// Vale la preferencia del sistema y la opción Reducir movimiento del menú de apariencia
+html[data-motion='reduce'] {
+  scroll-behavior: auto;
+}
+
+@include apply-reduced-motion {
   html {
     scroll-behavior: auto;
   }
 
-  *,
-  *::before,
-  *::after {
+  *:not(.spinner, .spinner *),
+  *:not(.spinner)::before,
+  *:not(.spinner)::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

@@ -37,6 +37,7 @@
 @use 'components/background' as * with ($streaks-url: '../public/images/streaks.svg');
 @use 'components/icon-tile' as *;
 @use 'components/card' as *;
+@use 'components/card-cv' as *;
 @use 'components/section-title' as *;
 @use 'components/resume-items' as *;
 @use 'components/social-media' as *;
