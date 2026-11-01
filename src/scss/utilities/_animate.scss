@@ -22,6 +22,18 @@
   --animate-name: animate-zoom-in;
 }
 
+/* Sube desde más abajo, como la portada de Microsoft 365, para la entrada de la portada */
+.animate--rise {
+  --animate-name: animate-rise;
+}
+
+/* Retrasos en CSS para escalonar la entrada sin esperar al script, de 100 en 100 ms */
+@for $i from 1 through 6 {
+  .animate[data-animate-delay='#{$i * 100}'] {
+    --animate-delay: #{$i * 100}ms;
+  }
+}
+
 /* Al cargar la página se anima solo con CSS, sin esperar al script */
 .animate[data-animate-trigger='load'] {
   --animate-easing: var(--ease-emphasized-decelerate);
@@ -49,6 +61,13 @@
   from {
     opacity: 0;
     transform: translateY(1.5rem);
+  }
+}
+
+@keyframes animate-rise {
+  from {
+    opacity: 0;
+    transform: translateY(4rem);
   }
 }
 
