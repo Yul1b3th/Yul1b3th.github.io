@@ -1,112 +1,46 @@
-// base/_base.scss
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
 
-@use '../abstracts/variables' as vars;
-@use '../abstracts/project';
-@use '../abstracts/mixins' as *;
-@use '../abstracts/functions' as *;
+// Base, aplica los tokens a las etiquetas HTML (fondo, títulos, párrafos, enlaces y foco)
+// Va después del reset, como el Reboot de Bootstrap
 
-/*-------- Estilos Base Globales --------*/
-html {
-  scroll-behavior: smooth;
-  // Al saltar a una sección, el título no queda debajo de la barra fija
-  scroll-padding-top: project.$navbar-height;
-  font-size: 16px; // Base inmutable para el cálculo de los rem
-  line-height: get-line-height(base);
-
-  // Reemplazo e integración limpia del breakpoint móvil-first para escritorio - 1200px
-  @include apply-media-breakpoint(lg) {
-    font-size: 18px;
-  }
-}
+@use '../abstracts' as *;
 
 body {
-  @include apply-font-family(primary);
-  @include apply-color(color, text-body);
-  @include apply-color(background-color, bg-page);
-  min-height: 100vh;
-  overflow-x: hidden;
-  text-rendering: optimizeSpeed;
+  background-color: var(--color-bg-page);
+  color: var(--color-text-body);
+  font-family: var(--font-family-primary);
 }
 
-/*-------- Enlaces Globales --------*/
-a {
-  @include apply-color(color, link-default);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
-  font-weight: 600;
-  cursor: pointer;
-  transition: color var(--duration-base) var(--ease-standard);
-
-  // Visitado igual que en reposo
-  &:visited {
-    @include apply-color(color, link-default);
-  }
-
-  // Subrayado más grueso para que el cambio no dependa solo del color
-  &:hover {
-    @include apply-color(color, link-hover);
-    text-decoration-thickness: 2px;
-  }
-
-  &:active {
-    @include apply-color(color, link-active);
-  }
-
-  &.btn {
-    &:active,
-    &:visited {
-      color: inherit;
-    }
-  }
+/* Títulos h1 a h6 en 1C1C1C */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text-heading);
 }
 
-/*-------- Enlaces externos --------*/
-// Icono de nueva pestaña con texto oculto para lectores de pantalla
-a[target='_blank']:not(.social-list a, .social-media a)::after {
-  content: '' / ' (se abre en una pestaña nueva)';
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  margin-left: 0.25em;
-  vertical-align: -0.125em;
-  background-color: currentColor;
-  mask: url('../public/icons/open_in_new.svg') center / contain no-repeat;
+/* Enlaces sin clase con color de enlace, subrayado y transición suave */
+a:not([class]) {
+  color: var(--color-link-default);
+  text-decoration-skip-ink: auto;
+  transition: color var(--duration-fast) var(--ease-standard);
 }
 
-:lang(en) a[target='_blank']:not(.social-list a, .social-media a)::after {
-  content: '' / ' (opens in a new tab)';
+a:not([class]):hover {
+  color: var(--color-link-hover);
 }
 
-/*-------- Multimedia --------*/
-img,
-picture {
-  max-width: 100%;
-  height: auto;
-  display: block;
+/* Foco de teclado visible en todo lo que no tenga uno propio (WCAG 2.4.7) */
+:focus-visible {
+  outline: var(--border-width-md) solid var(--color-border-focus);
+  outline-offset: 2px;
 }
 
-/*-------- Accesibilidad de Foco --------*/
-// Sobre fondo oscuro el foco usa el verde claro
-.navbar,
-.home,
-.footer {
-  --color-border-focus: var(--color-border-focus-emphasis);
-}
-
-/*-------- Separación de secciones en modo oscuro --------*/
-// Todas las secciones comparten fondo y una línea con degradado marca dónde empieza cada una
-.section,
-.footer {
-  @include apply-dark-theme {
-    border-top: 1px solid transparent;
-    border-image: linear-gradient(
-        90deg,
-        transparent,
-        get-color(decor-emphasis-halo-3) 30%,
-        get-color(decor-emphasis-halo-1) 70%,
-        transparent
-      )
-      1;
+@include apply-reduced-motion {
+  a:not([class]) {
+    transition: none;
   }
 }

@@ -1,0 +1,193 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+@use '../abstracts' as *;
+
+/* Dropdown, botón que abre una lista de opciones excluyentes (tema, idioma) */
+.dropdown {
+  --dropdown-text: var(--color-text-default);
+  --dropdown-border: var(--color-border-default);
+  --dropdown-hover: var(--color-action-secondary-bg-hover);
+  --dropdown-focus: var(--color-border-focus);
+
+  position: relative;
+  display: inline-flex;
+}
+
+/* Variante para bg.emphasis, como la barra de navegación */
+.dropdown--emphasis {
+  --dropdown-text: var(--color-text-on-emphasis);
+  --dropdown-border: color-mix(in srgb, var(--color-text-on-emphasis) 35%, transparent);
+  --dropdown-hover: color-mix(in srgb, var(--color-text-on-emphasis) 12%, transparent);
+  --dropdown-focus: var(--color-border-focus-emphasis);
+}
+
+.dropdown__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 2.5rem;
+  padding: 0 0.5rem 0 0.75rem;
+  border: 1px solid var(--dropdown-border);
+  border-radius: 4rem;
+  background: transparent;
+  color: var(--dropdown-text);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.dropdown__button:hover {
+  background: var(--dropdown-hover);
+}
+
+.dropdown__button:focus-visible {
+  outline: 2px solid var(--dropdown-focus);
+  outline-offset: 2px;
+}
+
+.dropdown__icon,
+.dropdown__chevron,
+.dropdown__option-icon,
+.dropdown__check {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Línea que separa grupos de opciones, como el tema y el movimiento */
+.dropdown__separator {
+  height: 0;
+  margin: var(--space-xs) 0;
+  border-top: var(--border-width-sm) solid var(--color-border-default);
+}
+
+.dropdown__chevron {
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.dropdown__button[aria-expanded='true'] .dropdown__chevron {
+  transform: rotate(180deg);
+}
+
+.dropdown__menu {
+  position: absolute;
+  top: calc(100% + 0.625rem);
+  right: 0;
+  z-index: var(--z-index-dropdown);
+  min-width: 12rem;
+  margin: 0;
+  padding: 0.375rem;
+  list-style: none;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-page);
+  box-shadow: var(--shadow-hover);
+  transform-origin: top right;
+  transition:
+    opacity var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard),
+    display var(--duration-fast) allow-discrete;
+}
+
+/* Flecha que apunta al botón del que sale el menú, del mismo fondo y borde */
+.dropdown__menu::before {
+  content: '';
+  position: absolute;
+  top: -0.4375rem;
+  right: 1rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-top: 1px solid var(--color-border-default);
+  border-left: 1px solid var(--color-border-default);
+  background: var(--color-bg-page);
+  transform: rotate(45deg);
+}
+
+/* Alineado al inicio del botón, para menús en la parte izquierda */
+.dropdown--start .dropdown__menu {
+  right: auto;
+  left: 0;
+  transform-origin: top left;
+}
+
+.dropdown--start .dropdown__menu::before {
+  right: auto;
+  left: 1rem;
+}
+
+/* Entra y sale con un fundido corto en lugar de aparecer de golpe */
+.dropdown__menu[hidden] {
+  display: none;
+  opacity: 0;
+  transform: translateY(-0.25rem) scale(0.98);
+}
+
+@starting-style {
+  .dropdown__menu:not([hidden]) {
+    opacity: 0;
+    transform: translateY(-0.25rem) scale(0.98);
+  }
+}
+
+.dropdown__option {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  width: 100%;
+  min-height: 2.5rem;
+  padding: 0 0.625rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--color-text-default);
+  font: inherit;
+  font-size: 0.9375rem;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  /* La línea de la izquierda no se anima, así no se curva al perder el activo */
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.dropdown__option:hover {
+  background: var(--color-action-secondary-bg-hover);
+}
+
+.dropdown__option:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: -2px;
+}
+
+/* La opción elegida se marca con peso y con el icono check */
+/* La elegida lleva fondo azul marino suave, línea a la izquierda y check */
+/* Sin negrita para que el menú no cambie de ancho; la línea es una sombra y no ocupa sitio */
+.dropdown__option[aria-checked='true'] {
+  background: var(--color-bg-selected);
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+  box-shadow: inset 3px 0 0 var(--color-border-selected);
+}
+
+.dropdown__option[aria-checked='true']:hover {
+  background: color-mix(in srgb, var(--color-border-selected) 12%, var(--color-bg-selected));
+}
+
+.dropdown__check {
+  margin-left: auto;
+  visibility: hidden;
+}
+
+.dropdown__option[aria-checked='true'] .dropdown__check {
+  visibility: visible;
+}
+
+@include apply-reduced-motion {
+  .dropdown__chevron,
+  .dropdown__menu,
+  .dropdown__option {
+    transition: none;
+  }
+}

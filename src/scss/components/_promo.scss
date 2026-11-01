@@ -1,0 +1,142 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Destacado para una oferta o un producto, como «Today's Top Pizza»
+// Texto a un lado e imagen al otro, con fondo decorativo que deja destacar la acción menta
+
+@use '../abstracts' as *;
+
+.promo {
+  --promo-bg: linear-gradient(135deg, var(--color-decor-sky), var(--color-decor-lavender) 55%, var(--color-decor-rose));
+  --promo-text: var(--color-text-body);
+  --promo-title: var(--color-text-heading);
+  --promo-eyebrow: var(--color-text-tab-active);
+
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-md);
+  overflow: hidden;
+  padding: var(--space-ml);
+  border-radius: var(--radius-md);
+  background: var(--promo-bg);
+  box-shadow: var(--shadow-card);
+  color: var(--promo-text);
+  isolation: isolate;
+
+  @include apply-high-contrast {
+    border: var(--border-width-sm) solid var(--color-border-default);
+  }
+}
+
+/* Halo decorativo detrás del plato, sin significado */
+.promo::before {
+  content: '';
+  position: absolute;
+  inset: auto -20% -40% auto;
+  z-index: -1;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--color-decor-halo-3) 55%, transparent), transparent);
+}
+
+.promo__eyebrow {
+  margin: 0;
+  color: var(--promo-eyebrow);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.promo__title {
+  margin: 0;
+  color: var(--promo-title);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.15;
+}
+
+.promo__text {
+  margin: 0;
+}
+
+.promo__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-xs);
+}
+
+.promo__price {
+  color: var(--promo-title);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.promo__media {
+  justify-self: center;
+  width: min(11rem, 60%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: var(--shadow-hover);
+  object-fit: cover;
+}
+
+/* Asimétrica, el texto ocupa dos tercios y el plato grande se corta por la esquina */
+.promo--split {
+  --promo-bg: linear-gradient(160deg, var(--color-bg-page) 0 45%, var(--color-decor-mint) 45% 100%);
+
+  padding-right: 45%;
+}
+
+.promo--split .promo__media {
+  position: absolute;
+  right: -12%;
+  bottom: -18%;
+  width: 55%;
+  max-width: 20rem;
+}
+
+.promo--split::before {
+  display: none;
+}
+
+/* Oscura con el azul marino y un halo verde, la que más destaca */
+.promo--dark {
+  --promo-bg: radial-gradient(120% 90% at 100% 100%, color-mix(in srgb, var(--color-bg-brand) 35%, transparent), transparent 60%), var(--color-bg-emphasis);
+  --promo-text: var(--color-text-on-emphasis);
+  --promo-title: var(--color-text-on-emphasis);
+  --promo-eyebrow: var(--color-link-emphasis-default);
+}
+
+/* A todo el ancho del móvil, sin esquinas */
+.promo--bleed {
+  margin-inline: calc(var(--space-md) * -1);
+  border-radius: 0;
+}
+
+@include apply-media-breakpoint(md) {
+  .promo {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: center;
+    padding: var(--space-lg);
+  }
+
+  .promo:not(.promo--split) .promo__media {
+    grid-column: 2;
+    grid-row: 1 / span 5;
+  }
+
+  .promo--split {
+    grid-template-columns: minmax(0, 1fr);
+    padding-right: 45%;
+  }
+
+  .promo--bleed {
+    margin-inline: 0;
+    border-radius: var(--radius-md);
+  }
+}

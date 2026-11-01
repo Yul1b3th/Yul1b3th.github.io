@@ -4,6 +4,8 @@
 // Animaciones de entrada con el bloque animate y sus modificadores
 // Los ajustes van en atributos data-animate-* que lee js/utils/animate.js
 
+@use '../abstracts' as *;
+
 .animate {
   --animate-name: animate-fade-up;
 }
@@ -20,8 +22,28 @@
   --animate-name: animate-zoom-in;
 }
 
+/* Sube 100 px mientras aparece, como la portada de Microsoft 365, para el bloque de la portada */
+.animate--rise {
+  --animate-name: animate-rise;
+  --animate-easing: var(--ease-in-out);
+}
+
+/* Duraciones en CSS para no esperar al script, la de portada es la de Microsoft */
+@each $name in (fast, base, moderate, slow, hero) {
+  .animate[data-animate-duration='#{$name}'] {
+    --animate-duration: var(--duration-#{$name});
+  }
+}
+
+/* Retrasos en CSS para escalonar la entrada sin esperar al script, de 100 en 100 ms */
+@for $i from 1 through 6 {
+  .animate[data-animate-delay='#{$i * 100}'] {
+    --animate-delay: #{$i * 100}ms;
+  }
+}
+
 /* Al cargar la página se anima solo con CSS, sin esperar al script */
-.animate[data-animate-trigger='load'] {
+.animate[data-animate-trigger='load']:not(.animate--rise) {
   --animate-easing: var(--ease-emphasized-decelerate);
 }
 
@@ -50,6 +72,13 @@
   }
 }
 
+@keyframes animate-rise {
+  from {
+    opacity: 0;
+    transform: translateY(6.25rem);
+  }
+}
+
 @keyframes animate-zoom-in {
   from {
     opacity: 0;
@@ -57,7 +86,7 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .js-animate .animate.is-visible,
   .animate[data-animate-trigger='load'] {
     animation: none;

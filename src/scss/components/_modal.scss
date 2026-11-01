@@ -4,6 +4,8 @@
 // Modal sobre el elemento dialog nativo, con cabecera, cuerpo y pie como en Carbon
 // Escape lo cierra el navegador y el foco se queda dentro, ver js/components/modal.js
 
+@use '../abstracts' as *;
+
 .modal {
   width: min(32rem, calc(100% - 2rem));
   max-height: calc(100% - 2rem);
@@ -32,6 +34,12 @@
   gap: var(--space-md);
   padding: var(--space-sm) var(--space-sm) var(--space-sm) var(--space-ml);
   background-color: var(--color-bg-dialog-header);
+}
+
+/* Botón de cierre con el token de fondo reservado para las X */
+.modal__header .button--icon {
+  --button-bg-hover: var(--color-action-close-bg-hover);
+  --button-bg-active: var(--color-action-close-bg-hover);
 }
 
 .modal__title {
@@ -71,7 +79,39 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+/* Imagen arriba del cuerpo, como el modal del ingrediente */
+.modal__media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Confirmación centrada con un icono de estado */
+.modal--confirm .modal__body {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-sm);
+  text-align: center;
+}
+
+.modal__status-icon {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: var(--color-success-bg);
+  color: var(--color-success-text);
+}
+
+.modal__status-icon svg {
+  width: 2rem;
+  height: 2rem;
+  fill: currentColor;
+}
+
+@include apply-reduced-motion {
   .modal[open] {
     animation: none;
   }

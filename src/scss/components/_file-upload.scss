@@ -1,0 +1,122 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Subida de archivos sobre input type file nativo, con zona para arrastrar y lista
+// La validación y la lista las gestiona js/components/file-upload.js
+
+@use '../abstracts' as *;
+
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.file-upload__dropzone {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg) var(--space-md);
+  border: var(--border-width-md) dashed var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-page);
+  text-align: center;
+  transition:
+    border-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard);
+}
+
+/* Al pasar archivos por encima, borde y halo verdes como el foco de los campos */
+.file-upload__dropzone.is-dragover {
+  border-color: var(--color-border-focus-input);
+  background-color: var(--color-bg-selected);
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--color-border-brand) 45%, transparent),
+    0 0 14px 2px color-mix(in srgb, var(--color-border-brand) 55%, transparent);
+}
+
+.file-upload__text {
+  margin: 0;
+  color: var(--color-text-body);
+}
+
+/* El input sigue en la página para el teclado y el lector, pero no se ve */
+.file-upload__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.file-upload__input:focus-visible + .file-upload__button {
+  outline: var(--border-width-md) solid var(--color-border-focus);
+  outline-offset: 3px;
+}
+
+.file-upload__input:disabled + .file-upload__button {
+  --button-text: var(--color-text-disabled);
+  --button-border: var(--color-action-disabled-bg);
+  cursor: not-allowed;
+}
+
+.file-upload__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin: var(--space-xs) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.file-upload__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  border: var(--border-width-sm) solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+}
+
+.file-upload__remove {
+  --button-bg-hover: var(--color-action-close-bg-hover);
+  --button-bg-active: var(--color-action-close-bg-hover);
+}
+
+.file-upload__thumb {
+  flex: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: calc(var(--radius-sm) / 2);
+  background-color: var(--color-bg-muted);
+  object-fit: cover;
+}
+
+.file-upload__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.file-upload__name {
+  display: block;
+  overflow: hidden;
+  color: var(--color-text-default);
+  font-weight: var(--font-weight-semibold);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-upload__size {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+@include apply-reduced-motion {
+  .file-upload__dropzone {
+    transition: none;
+  }
+}

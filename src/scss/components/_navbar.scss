@@ -1,219 +1,197 @@
-// scss/components/_navbar.scss
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
 
-@use '../abstracts/variables' as vars;
-@use '../abstracts/project';
-@use '../abstracts/functions' as fn;
-@use '../abstracts/mixins' as mx;
+// Barra de navegación con logotipo, enlaces, utilidades y una acción principal
+// Color y posición son modificadores que se combinan, como en Bootstrap
 
-/*-------- NAV --------*/
+@use '../abstracts' as *;
+
 .navbar {
+  --navbar-solid: var(--color-bg-page);
+  --navbar-bg: var(--navbar-solid);
+  --navbar-text: var(--color-text-default);
+  --navbar-link-active: var(--color-text-tab-active);
+  --navbar-line: var(--color-border-tab-active);
+  --navbar-focus: var(--color-border-focus);
+
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-sticky);
+  background-color: var(--navbar-bg);
+  box-shadow: var(--shadow-header);
+  color: var(--navbar-text);
+  transition: box-shadow var(--duration-moderate) var(--ease-standard);
+}
+
+/* Sombra más marcada cuando la página ya ha hecho scroll, como en el legacy */
+.navbar--scrolled {
+  box-shadow: var(--shadow-header-scrolled);
+}
+
+/* Versión oscura con el azul marino de marca */
+.navbar--dark {
+  --navbar-solid: var(--color-bg-emphasis);
+  --navbar-text: var(--color-text-on-emphasis);
+  --navbar-link-active: var(--color-link-emphasis-default);
+  --navbar-line: var(--color-link-emphasis-default);
+  --navbar-focus: var(--color-border-focus-emphasis);
+}
+
+/* Sin pegarse arriba, se va con el scroll */
+.navbar--static {
+  position: static;
+}
+
+/* Fija arriba aunque el contenedor no lo permita */
+.navbar--fixed,
+.navbar--landing {
   position: fixed;
-  width: 100%;
-  height: project.$navbar-height;
-  z-index: 10;
-  @include mx.apply-flex-container(row, center, center);
-  @include mx.apply-color(color, text-on-emphasis);
+  right: 0;
+  left: 0;
+}
 
-  // Fondo sólido con línea y sombra suave para separarlo del contenido
-  @include mx.apply-color(background-color, bg-emphasis);
-  border-bottom: 1px solid fn.get-color-alpha(text-on-emphasis, 0.12);
-  box-shadow: 0 4px 16px rgb(0 0 0 / 0.18);
+/* Landing de una sola página, fija y con el fondo al 90 % */
+.navbar--landing {
+  --navbar-bg: color-mix(in srgb, var(--navbar-solid) 90%, transparent);
+}
 
-  a {
-    text-decoration: none;
-  }
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  min-height: 4rem;
+  margin-inline: auto;
+  padding-inline: var(--space-ml);
+  max-width: 76rem;
+}
 
-  .navbar__separator {
-    display: none; // Oculto por defecto en móvil
-    @include mx.apply-color-opacity(color, 0.3, text-on-emphasis);
-  }
+.navbar__brand {
+  flex: none;
+  margin-right: auto;
+  color: inherit;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+}
 
-  .navbar__container {
-    @include mx.apply-flex-container(row, space-between, center);
-    width: 92%;
-    position: relative;
-    margin: 0 auto;
+.navbar__nav {
+  display: none;
+}
 
-    // Ajuste Responsivo Semántico para el contenedor principal
-    @include mx.apply-media-breakpoint(xl) {
-      max-width: 1200px;
-      width: 96%;
+.navbar__list {
+  display: flex;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 var(--space-sm);
+  color: inherit;
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: color var(--duration-base) var(--ease-standard);
+}
+
+/* Línea de la página o sección actual, crece con transform */
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  right: var(--space-sm);
+  bottom: 0.5rem;
+  left: var(--space-sm);
+  height: var(--border-width-md);
+  background-color: var(--navbar-line);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-moderate) var(--ease-standard);
+}
+
+.navbar__link:hover,
+.navbar__link[aria-current]:not([aria-current='false']) {
+  color: var(--navbar-link-active);
+}
+
+.navbar__link:hover::after,
+.navbar__link[aria-current]:not([aria-current='false'])::after {
+  transform: scaleX(1);
+}
+
+.navbar__brand:focus-visible,
+.navbar__link:focus-visible {
+  border-radius: var(--radius-sm);
+  outline: var(--border-width-md) solid var(--navbar-focus);
+  outline-offset: 2px;
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* Utilidades que en móvil pasan al panel */
+.navbar__utility {
+  display: none;
+}
+
+.navbar .button--icon {
+  --button-text: var(--navbar-text);
+}
+
+.navbar__actions .button {
+  white-space: nowrap;
+}
+
+/* Botón de menú al principio: va antes del logotipo y el panel entra por la izquierda */
+.navbar--toggle-start .navbar__toggle {
+  order: -1;
+}
+
+/* Botones de icono sobre el fondo oscuro */
+.navbar--dark .button--icon {
+  --button-bg-hover: color-mix(in srgb, var(--color-text-on-emphasis) 12%, transparent);
+  --button-bg-active: color-mix(in srgb, var(--color-text-on-emphasis) 20%, transparent);
+}
+
+.navbar--dark .button--icon:focus-visible {
+  outline-color: var(--color-border-focus-emphasis);
+}
+
+/* Desde el punto de corte se ve la barra completa y desaparece el botón de menú */
+@each $size in (md, lg, xl) {
+  @include apply-media-breakpoint($size) {
+    .navbar--expand-#{$size} .navbar__nav {
+      display: block;
     }
-  }
 
-  .navbar__actions {
-    @include mx.apply-flex-container(row, center, center, fn.get-spacing(md));
-  }
-
-  .navbar__brand {
-    @include mx.apply-color(color, text-on-emphasis);
-    font-size: 2rem;
-    font-weight: 600;
-    transition: color var(--duration-base) var(--ease-standard);
-
-    &:hover {
-      @include mx.apply-color(color, link-emphasis-default);
-    }
-  }
-
-  .navbar__settings {
-    // Por encima del menú abierto en móvil para seguir visibles
-    position: relative;
-    z-index: 2;
-    @include mx.apply-flex-container(row, center, center, fn.get-spacing(sm));
-  }
-
-  button.navbar__toggler {
-    z-index: 2;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    padding: 0;
-    border: 0;
-    @include mx.apply-border-radius(50%);
-    background: transparent;
-    @include mx.apply-color(color, text-on-emphasis);
-    cursor: pointer;
-
-    &:hover {
-      @include mx.apply-color-opacity(background-color, 0.12, text-on-emphasis);
+    .navbar--expand-#{$size} .navbar__brand {
+      margin-right: var(--space-lg);
     }
 
-    .navbar__toggler-icon {
-      width: 1.75rem;
-      height: 1.75rem;
+    .navbar--expand-#{$size} .navbar__actions {
+      margin-left: auto;
     }
 
-    .navbar__toggler-icon--close {
+    .navbar--expand-#{$size} .navbar__utility {
+      display: inline-flex;
+    }
+
+    .navbar--expand-#{$size} .navbar__toggle {
       display: none;
     }
-
-    &[aria-expanded='true'] {
-      .navbar__toggler-icon--open {
-        display: none;
-      }
-
-      .navbar__toggler-icon--close {
-        display: block;
-      }
-    }
   }
+}
 
-  .navbar__collapse {
-    position: fixed;
-    z-index: 1;
-    inset: 0;
-    margin: 0;
-    list-style: none;
-    // El contenido empieza debajo de la fila de ajustes y deja aire al final
-    @include mx.apply-flex-container(column, space-between, center, fn.get-spacing(lg));
-    padding: 6.5rem 1rem 3rem;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    @include mx.apply-color(background-color, bg-emphasis);
-
-    // Cerrado queda fuera de la pantalla y fuera del orden de tabulación
-    transform: translateX(100%);
-    visibility: hidden;
-    transition:
-      transform 500ms ease,
-      visibility 0s linear 500ms;
-
-    .navbar__brand {
-      font-size: 2rem;
-    }
-
-    .navbar__nav {
-      list-style: none;
-      padding: 0 3rem;
-      @include mx.apply-flex-container(column, center, center, fn.get-spacing(md));
-
-      .navbar__link {
-        position: relative;
-        display: block;
-        padding: 0.75rem 1.5rem;
-        @include mx.apply-color(color, text-on-emphasis);
-        transition:
-          background-color var(--duration-base) var(--ease-standard),
-          color var(--duration-base) var(--ease-standard);
-
-        &:hover,
-        &--active {
-          @include mx.apply-color-opacity(background-color, 0.1, link-emphasis-default);
-          @include mx.apply-color(color, link-emphasis-default);
-        }
-
-        &::before {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 1.5px;
-          @include mx.apply-color(background-color, link-emphasis-default);
-          transform: scale(0, 1.5);
-          transform-origin: left bottom;
-          transition: transform var(--duration-moderate) var(--ease-standard);
-        }
-
-        &:hover::before,
-        &--active::before {
-          transform: scale(1, 1.5);
-        }
-      }
-    }
-
-    &[data-visible='true'] {
-      transform: translateX(0);
-      visibility: visible;
-      transition: transform 500ms ease;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      transition: none;
-    }
-  }
-
-  /*-------- VISTA DESKTOP UNIFICADA (Ecosistema de Mixins) --------*/
-  @include mx.apply-media-breakpoint(xl) {
-    .navbar__separator {
-      display: block; // Se muestra la barra decorativa en pantallas grandes
-    }
-
-    button.navbar__toggler {
-      display: none; // Apagamos el menú hamburguesa
-    }
-
-    .navbar__collapse {
-      position: static;
-      padding: 0;
-      overflow: visible;
-      visibility: visible;
-      transition: none;
-      // Sobrescribimos el flujo vertical de móvil a fila horizontal limpia usando mixins
-      @include mx.apply-flex-container(row, flex-end, center, fn.get-spacing(md));
-      transform: none;
-      background-color: transparent;
-
-      .navbar__brand {
-        display: none;
-      }
-
-      .navbar__nav {
-        @include mx.apply-flex-container(row, center, center, fn.get-spacing(md));
-        padding: 0;
-
-        .navbar__link {
-          padding: 0;
-
-          &:hover,
-          &--active {
-            background-color: transparent; // Evitamos que herede el fondo opaco de la variante móvil
-          }
-        }
-      }
-    }
+@include apply-reduced-motion {
+  .navbar,
+  .navbar__link,
+  .navbar__link::after {
+    transition: none;
   }
 }

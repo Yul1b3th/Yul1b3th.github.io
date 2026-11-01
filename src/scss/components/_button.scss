@@ -11,7 +11,9 @@
   --button-bg-hover: var(--color-action-primary-bg-hover);
   --button-bg-active: var(--color-action-primary-bg-active);
   --button-text: var(--color-action-primary-text);
+  --button-text-hover: var(--button-text);
   --button-border: var(--button-bg);
+  --button-border-hover: var(--button-border);
   --button-shadow: var(--shadow-raised);
   --button-shadow-hover: var(--shadow-card);
 
@@ -21,7 +23,7 @@
   gap: var(--space-sm);
   min-height: 2.75rem;
   padding: 0 var(--space-ml);
-  border: 2px solid var(--button-border);
+  border: var(--border-width-sm) solid var(--button-border);
   border-radius: var(--radius-pill);
   background-color: var(--button-bg);
   box-shadow: var(--button-shadow);
@@ -45,17 +47,25 @@
 
 .button:hover {
   --button-bg: var(--button-bg-hover);
+  border-color: var(--button-border-hover);
+  color: var(--button-text-hover);
   box-shadow: var(--button-shadow-hover);
 }
 
 .button:active {
   --button-bg: var(--button-bg-active);
-  box-shadow: var(--shadow-pressed);
+  box-shadow: var(--button-shadow-active, var(--shadow-pressed));
 }
 
 .button:focus-visible {
   outline: 2px solid var(--color-border-focus);
   outline-offset: 3px;
+}
+
+.button__logo {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .button > svg {
@@ -65,15 +75,15 @@
   fill: currentColor;
 }
 
-/* Secundario con contorno oscuro, siempre junto a un primario */
+/* Secundario con fondo y contorno, la misma sombra que el primario */
 .button--secondary {
-  --button-bg: transparent;
+  --button-bg: var(--color-action-secondary-bg);
   --button-bg-hover: var(--color-action-secondary-bg-hover);
   --button-bg-active: var(--color-action-secondary-bg-hover);
   --button-text: var(--color-action-secondary-text);
   --button-border: var(--color-action-secondary-border);
-  --button-shadow: none;
-  --button-shadow-hover: none;
+  --button-border-hover: var(--color-action-secondary-border);
+  --button-shadow-hover: inset 0 0 0 2px var(--button-border-hover), var(--shadow-card);
 }
 
 /* Acción destructiva, como borrar o cancelar un pedido */
@@ -82,17 +92,52 @@
   --button-bg-hover: var(--color-action-danger-bg-hover);
   --button-bg-active: var(--color-action-danger-bg-hover);
   --button-text: var(--color-action-danger-text);
+  --button-border: var(--color-action-danger-border);
+  --button-border-hover: var(--color-action-danger-border);
+  --button-shadow-hover: inset 0 0 0 2px var(--button-border-hover), var(--shadow-card);
+}
+
+/* Opción seleccionada con un tono más oscuro al pasar el ratón */
+.button--option {
+  --button-bg: var(--color-action-option-bg);
+  --button-bg-hover: var(--color-action-option-bg-hover);
+  --button-bg-active: var(--color-action-option-bg-hover);
+  --button-text: var(--color-action-option-text);
+  --button-text-hover: var(--color-action-option-text-hover);
+}
+
+/* Opción con contorno y fondo suave al pasar el ratón */
+.button--option-outline {
+  --button-bg: var(--color-action-option-outline-bg);
+  --button-bg-hover: var(--color-action-option-outline-bg-hover);
+  --button-bg-active: var(--color-action-option-outline-bg-hover);
+  --button-text: var(--color-action-option-outline-text);
+  --button-text-hover: var(--color-action-option-outline-text-hover);
+  --button-border: var(--color-action-option-outline-border);
+  --button-border-hover: var(--color-action-option-outline-border);
+  --button-shadow-hover: inset 0 0 0 2px var(--button-border-hover), var(--shadow-card);
+}
+
+/* Entrar con una cuenta externa, fondo blanco como piden las normas de marca de Google */
+.button--social {
+  --button-bg: var(--color-action-secondary-bg);
+  --button-bg-hover: var(--color-action-ghost-bg-hover);
+  --button-bg-active: var(--color-action-ghost-bg-hover);
+  --button-text: var(--color-text-default);
+  --button-border: var(--color-border-strong);
+  --button-border-hover: var(--color-border-strong);
 }
 
 /* Solo icono, necesita aria-label con el nombre de la acción */
 .button--icon {
   --button-bg: transparent;
-  --button-bg-hover: var(--color-action-secondary-bg-hover);
-  --button-bg-active: var(--color-action-secondary-bg-hover);
+  --button-bg-hover: var(--color-action-ghost-bg-hover);
+  --button-bg-active: var(--color-action-ghost-bg-hover);
   --button-text: var(--color-text-default);
   --button-border: transparent;
   --button-shadow: none;
-  --button-shadow-hover: none;
+  --button-shadow-hover: var(--shadow-sm);
+  --button-shadow-active: var(--shadow-pressed-sm);
   width: 2.75rem;
   padding: 0;
 }
@@ -126,7 +171,7 @@
   --button-border: transparent;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .button {
     transition: none;
   }

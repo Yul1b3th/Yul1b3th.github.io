@@ -28,7 +28,8 @@ $color-navy-900: #262F49;
 $color-navy-950: #0B132B;
 $color-neutral-0: #FFFFFF;
 $color-neutral-50: #FBFBFB;
-$color-neutral-100: #E5E5E5;
+$color-neutral-75: #F5F5F5;
+$color-neutral-100: #EBEBEB;
 $color-neutral-200: #D1D1D1;
 $color-neutral-300: #B9B9B9;
 $color-neutral-400: #A1A1A1;
@@ -39,6 +40,7 @@ $color-neutral-800: #3F3F3F;
 $color-neutral-900: #303030;
 $color-neutral-950: #1C1C1C;
 $color-neutral-1000: #0F0F0F;
+$color-teal-25: #EFF5F5;
 $color-teal-50: #E7FAFA;
 $color-teal-100: #C5F0F0;
 $color-teal-200: #81DFDF;
@@ -50,17 +52,17 @@ $color-teal-700: #076465;
 $color-teal-800: #024D4E;
 $color-teal-900: #003637;
 $color-teal-950: #002424;
-$color-green-50: #E2FDE6;
-$color-green-100: #B8F7C3;
-$color-green-200: #5BED84;
-$color-green-300: #1CD664;
-$color-green-400: #00B953;
-$color-green-500: #00A047;
-$color-green-600: #008037;
-$color-green-700: #00692C;
-$color-green-800: #005120;
-$color-green-900: #003914;
-$color-green-950: #00250B;
+$color-green-50: #E7FCE2;
+$color-green-100: #C4F6B9;
+$color-green-200: #82E96B;
+$color-green-300: #60D244;
+$color-green-400: #4EB634;
+$color-green-500: #439E2D;
+$color-green-600: #347E21;
+$color-green-700: #2A681A;
+$color-green-800: #1E5012;
+$color-green-900: #133809;
+$color-green-950: #0A2405;
 $color-red-50: #FFF3F2;
 $color-red-100: #FFE2DF;
 $color-red-200: #FFC6C0;
@@ -72,28 +74,28 @@ $color-red-700: #AE2126;
 $color-red-800: #89151A;
 $color-red-900: #65070E;
 $color-red-950: #470105;
-$color-amber-50: #FFF5E9;
-$color-amber-100: #FFE4C7;
-$color-amber-200: #FFCA8B;
-$color-amber-300: #FFA71E;
-$color-amber-400: #E08F00;
-$color-amber-500: #C27C00;
-$color-amber-600: #9B6100;
-$color-amber-700: #7F5000;
-$color-amber-800: #633D00;
-$color-amber-900: #462A00;
+$color-amber-50: #FBF7E7;
+$color-amber-100: #F5E8C1;
+$color-amber-200: #EED17E;
+$color-amber-300: #E3B502;
+$color-amber-400: #C79B07;
+$color-amber-500: #B18405;
+$color-amber-600: #916502;
+$color-amber-700: #7D5200;
+$color-amber-800: #633D02;
+$color-amber-900: #462901;
 $color-amber-950: #2F1B00;
-$color-blue-50: #F1F7FF;
-$color-blue-100: #DCE9FF;
-$color-blue-200: #BAD5FF;
-$color-blue-300: #91BBFF;
-$color-blue-400: #66A0FF;
-$color-blue-500: #4F8BEB;
-$color-blue-600: #396DC0;
-$color-blue-700: #2C59A1;
-$color-blue-800: #1F447E;
-$color-blue-900: #122F5E;
-$color-blue-950: #091E41;
+$color-blue-50: #EFF8FE;
+$color-blue-100: #D5ECFC;
+$color-blue-200: #ACD9FA;
+$color-blue-300: #74C1F6;
+$color-blue-400: #21A9F3;
+$color-blue-500: #0993D8;
+$color-blue-600: #0475AC;
+$color-blue-700: #055F8D;
+$color-blue-800: #004A6F;
+$color-blue-900: #02344F;
+$color-blue-950: #012236;
 $color-violet-50: #F7F5FF;
 $color-violet-100: #EBE6FF;
 $color-violet-200: #D8CCFF;
@@ -110,16 +112,24 @@ $color-violet-950: #241641;
 $color-bg-page: var(--color-bg-page);
 $color-bg-surface: var(--color-bg-surface);
 $color-bg-muted: var(--color-bg-muted);
+$color-bg-card: var(--color-bg-card);
+$color-bg-hover: var(--color-bg-hover);
 $color-bg-brand: var(--color-bg-brand);
 $color-bg-brand-subtle: var(--color-bg-brand-subtle);
 $color-bg-emphasis: var(--color-bg-emphasis);
 $color-bg-selected: var(--color-bg-selected);
 $color-bg-featured: var(--color-bg-featured);
 $color-bg-dialog-header: var(--color-bg-dialog-header);
+$color-bg-page-header: var(--color-bg-page-header);
+$color-bg-header: var(--color-bg-header);
+$color-bg-table-header: var(--color-bg-table-header);
+$color-bg-skeleton: var(--color-bg-skeleton);
+$color-bg-skeleton-shine: var(--color-bg-skeleton-shine);
 $color-text-default: var(--color-text-default);
 $color-text-heading: var(--color-text-heading);
 $color-text-body: var(--color-text-body);
 $color-text-muted: var(--color-text-muted);
+$color-text-brand: var(--color-text-brand);
 $color-text-on-emphasis: var(--color-text-on-emphasis);
 $color-text-on-brand: var(--color-text-on-brand);
 $color-text-disabled: var(--color-text-disabled);
@@ -154,7 +164,17 @@ $color-decor-emphasis-lavender: var(--color-decor-emphasis-lavender);
 $color-decor-emphasis-teal-bold: var(--color-decor-emphasis-teal-bold);
 $color-decor-emphasis-sky-bold: var(--color-decor-emphasis-sky-bold);
 $color-decor-emphasis-lavender-bold: var(--color-decor-emphasis-lavender-bold);
+$color-decor-wave-1: var(--color-decor-wave-1);
+$color-decor-wave-2: var(--color-decor-wave-2);
+$color-decor-wave-3: var(--color-decor-wave-3);
+$color-decor-wave-soft-1: var(--color-decor-wave-soft-1);
+$color-decor-wave-soft-2: var(--color-decor-wave-soft-2);
+$color-decor-wave-soft-3: var(--color-decor-wave-soft-3);
+$color-decor-divider-1: var(--color-decor-divider-1);
+$color-decor-divider-2: var(--color-decor-divider-2);
+$color-decor-divider-3: var(--color-decor-divider-3);
 $color-border-surface: var(--color-border-surface);
+$color-border-card: var(--color-border-card);
 $color-border-default: var(--color-border-default);
 $color-border-strong: var(--color-border-strong);
 $color-border-brand: var(--color-border-brand);
@@ -162,20 +182,35 @@ $color-border-focus: var(--color-border-focus);
 $color-border-focus-emphasis: var(--color-border-focus-emphasis);
 $color-border-selected: var(--color-border-selected);
 $color-border-tab-active: var(--color-border-tab-active);
+$color-border-focus-input: var(--color-border-focus-input);
+$color-border-hover-accent: var(--color-border-hover-accent);
 $color-action-primary-bg: var(--color-action-primary-bg);
 $color-action-primary-bg-hover: var(--color-action-primary-bg-hover);
 $color-action-primary-bg-active: var(--color-action-primary-bg-active);
 $color-action-primary-text: var(--color-action-primary-text);
 $color-action-primary-border: var(--color-action-primary-border);
 $color-action-secondary-text: var(--color-action-secondary-text);
+$color-action-secondary-border: var(--color-action-secondary-border);
 $color-action-secondary-bg-hover: var(--color-action-secondary-bg-hover);
 $color-action-selected-bg: var(--color-action-selected-bg);
 $color-action-selected-text: var(--color-action-selected-text);
-$color-action-secondary-border: var(--color-action-secondary-border);
 $color-action-danger-bg: var(--color-action-danger-bg);
 $color-action-danger-bg-hover: var(--color-action-danger-bg-hover);
 $color-action-danger-text: var(--color-action-danger-text);
+$color-action-danger-border: var(--color-action-danger-border);
 $color-action-disabled-bg: var(--color-action-disabled-bg);
+$color-action-secondary-bg: var(--color-action-secondary-bg);
+$color-action-ghost-bg-hover: var(--color-action-ghost-bg-hover);
+$color-action-option-bg: var(--color-action-option-bg);
+$color-action-option-text: var(--color-action-option-text);
+$color-action-option-bg-hover: var(--color-action-option-bg-hover);
+$color-action-option-text-hover: var(--color-action-option-text-hover);
+$color-action-option-outline-bg: var(--color-action-option-outline-bg);
+$color-action-option-outline-text: var(--color-action-option-outline-text);
+$color-action-option-outline-border: var(--color-action-option-outline-border);
+$color-action-option-outline-bg-hover: var(--color-action-option-outline-bg-hover);
+$color-action-option-outline-text-hover: var(--color-action-option-outline-text-hover);
+$color-action-close-bg-hover: var(--color-action-close-bg-hover);
 $color-success-text: var(--color-success-text);
 $color-success-bg: var(--color-success-bg);
 $color-success-border: var(--color-success-border);
@@ -188,22 +223,40 @@ $color-warning-border: var(--color-warning-border);
 $color-info-text: var(--color-info-text);
 $color-info-bg: var(--color-info-bg);
 $color-info-border: var(--color-info-border);
+$color-badge-text: var(--color-badge-text);
+$color-badge-brand-bg: var(--color-badge-brand-bg);
+$color-badge-success-bg: var(--color-badge-success-bg);
+$color-badge-warning-bg: var(--color-badge-warning-bg);
+$color-badge-danger-bg: var(--color-badge-danger-bg);
+$color-badge-info-bg: var(--color-badge-info-bg);
+$color-badge-success-subtle-text: var(--color-badge-success-subtle-text);
+$color-badge-warning-subtle-text: var(--color-badge-warning-subtle-text);
+$color-badge-danger-subtle-text: var(--color-badge-danger-subtle-text);
+$color-badge-info-subtle-text: var(--color-badge-info-subtle-text);
 
 // Valores de cada modo resueltos en HEX
 $theme-light: (
-  'color-bg-page': #FFFFFF,
+  'color-bg-page': #FBFBFB,
   'color-bg-surface': #EFF3FF,
   'color-bg-muted': #FBFBFB,
+  'color-bg-card': #FBFBFB,
+  'color-bg-hover': #E6FBF2,
   'color-bg-brand': #7FE6C0,
   'color-bg-brand-subtle': #E6FBF2,
   'color-bg-emphasis': #0B132B,
   'color-bg-selected': #EFF3FF,
   'color-bg-featured': #F7F5FF,
-  'color-bg-dialog-header': #E7FAFA,
+  'color-bg-dialog-header': #F5F5F5,
+  'color-bg-page-header': #EFF5F5,
+  'color-bg-header': #F5F5F5,
+  'color-bg-table-header': #EFF5F5,
+  'color-bg-skeleton': #EBEBEB,
+  'color-bg-skeleton-shine': #F5F5F5,
   'color-text-default': #1C1C1C,
-  'color-text-heading': #0B132B,
+  'color-text-heading': #1C1C1C,
   'color-text-body': #303030,
   'color-text-muted': #5A5A5A,
+  'color-text-brand': #00664C,
   'color-text-on-emphasis': #EFF3FF,
   'color-text-on-brand': #0F0F0F,
   'color-text-disabled': #A1A1A1,
@@ -218,27 +271,37 @@ $theme-light: (
   'color-icon-tile-bg': #EFF3FF,
   'color-icon-tile-border': #DFE9FF,
   'color-decor-mint': #C4F3DF,
-  'color-decor-sky': #DCE9FF,
+  'color-decor-sky': #D5ECFC,
   'color-decor-lavender': #EBE6FF,
   'color-decor-rose': #FFE2DF,
   'color-decor-periwinkle-bold': #C0D2FF,
   'color-decor-lavender-bold': #D8CCFF,
-  'color-decor-sky-bold': #BAD5FF,
+  'color-decor-sky-bold': #ACD9FA,
   'color-decor-halo-1': #C2AEFF,
-  'color-decor-halo-2': #91BBFF,
+  'color-decor-halo-2': #74C1F6,
   'color-decor-halo-3': #61CACA,
   'color-decor-grid': #C0D2FF,
   'color-decor-emphasis-grid': #4A5A82,
   'color-decor-emphasis-halo-1': #9976EA,
-  'color-decor-emphasis-halo-2': #4F8BEB,
+  'color-decor-emphasis-halo-2': #0993D8,
   'color-decor-emphasis-halo-3': #2E999A,
   'color-decor-emphasis-mint': #002419,
-  'color-decor-emphasis-sky': #091E41,
+  'color-decor-emphasis-sky': #012236,
   'color-decor-emphasis-lavender': #241641,
   'color-decor-emphasis-teal-bold': #076465,
-  'color-decor-emphasis-sky-bold': #2C59A1,
+  'color-decor-emphasis-sky-bold': #055F8D,
   'color-decor-emphasis-lavender-bold': #654AA1,
+  'color-decor-wave-1': #38B48C,
+  'color-decor-wave-2': #9976EA,
+  'color-decor-wave-3': #42B1B1,
+  'color-decor-wave-soft-1': #C2AEFF,
+  'color-decor-wave-soft-2': #A2B9F3,
+  'color-decor-wave-soft-3': #61CACA,
+  'color-decor-divider-1': #A2B9F3,
+  'color-decor-divider-2': #C2AEFF,
+  'color-decor-divider-3': #5ACEA6,
   'color-border-surface': #EFF3FF,
+  'color-border-card': #FBFBFB,
   'color-border-default': #D1D1D1,
   'color-border-strong': #8B8B8B,
   'color-border-brand': #7FE6C0,
@@ -246,48 +309,81 @@ $theme-light: (
   'color-border-focus-emphasis': #7FE6C0,
   'color-border-selected': #0B132B,
   'color-border-tab-active': #003828,
+  'color-border-focus-input': #249E79,
+  'color-border-hover-accent': #5ACEA6,
   'color-action-primary-bg': #7FE6C0,
   'color-action-primary-bg-hover': #5ACEA6,
   'color-action-primary-bg-active': #38B48C,
   'color-action-primary-text': #0F0F0F,
   'color-action-primary-border': #7FE6C0,
   'color-action-secondary-text': #0F0F0F,
-  'color-action-secondary-bg-hover': #E5E5E5,
+  'color-action-secondary-border': #003828,
+  'color-action-secondary-bg-hover': #E6FBF2,
   'color-action-selected-bg': #0B132B,
   'color-action-selected-text': #FFFFFF,
-  'color-action-secondary-border': #0F0F0F,
-  'color-action-danger-bg': #AE2126,
-  'color-action-danger-bg-hover': #89151A,
-  'color-action-danger-text': #FFFFFF,
-  'color-action-disabled-bg': #E5E5E5,
-  'color-success-text': #00692C,
-  'color-success-bg': #E2FDE6,
-  'color-success-border': #00A047,
+  'color-action-danger-bg': #FFFFFF,
+  'color-action-danger-bg-hover': #FFF3F2,
+  'color-action-danger-text': #0F0F0F,
+  'color-action-danger-border': #65070E,
+  'color-action-disabled-bg': #EBEBEB,
+  'color-action-secondary-bg': #FFFFFF,
+  'color-action-ghost-bg-hover': #E6FBF2,
+  'color-action-option-bg': #262F49,
+  'color-action-option-text': #FFFFFF,
+  'color-action-option-bg-hover': #0B132B,
+  'color-action-option-text-hover': #FFFFFF,
+  'color-action-option-outline-bg': #FFFFFF,
+  'color-action-option-outline-text': #0F0F0F,
+  'color-action-option-outline-border': #0B132B,
+  'color-action-option-outline-bg-hover': #EFF3FF,
+  'color-action-option-outline-text-hover': #0B132B,
+  'color-action-close-bg-hover': #EBEBEB,
+  'color-success-text': #2A681A,
+  'color-success-bg': #E7FCE2,
+  'color-success-border': #439E2D,
   'color-danger-text': #AE2126,
   'color-danger-bg': #FFF3F2,
   'color-danger-border': #FD4848,
-  'color-warning-text': #7F5000,
-  'color-warning-bg': #FFF5E9,
-  'color-warning-border': #C27C00,
-  'color-info-text': #2C59A1,
-  'color-info-bg': #F1F7FF,
-  'color-info-border': #4F8BEB,
+  'color-warning-text': #7D5200,
+  'color-warning-bg': #FBF7E7,
+  'color-warning-border': #B18405,
+  'color-info-text': #055F8D,
+  'color-info-bg': #EFF8FE,
+  'color-info-border': #0993D8,
+  'color-badge-text': #FFFFFF,
+  'color-badge-brand-bg': #4D387E,
+  'color-badge-success-bg': #1E5012,
+  'color-badge-warning-bg': #7D5200,
+  'color-badge-danger-bg': #89151A,
+  'color-badge-info-bg': #004A6F,
+  'color-badge-success-subtle-text': #1E5012,
+  'color-badge-warning-subtle-text': #633D02,
+  'color-badge-danger-subtle-text': #89151A,
+  'color-badge-info-subtle-text': #004A6F,
 );
 
 $theme-dark: (
   'color-bg-page': #0B132B,
   'color-bg-surface': #0B132B,
   'color-bg-muted': #262F49,
+  'color-bg-card': #262F49,
+  'color-bg-hover': #262F49,
   'color-bg-brand': #7FE6C0,
   'color-bg-brand-subtle': #002419,
   'color-bg-emphasis': #0B132B,
   'color-bg-selected': #262F49,
   'color-bg-featured': #241641,
-  'color-bg-dialog-header': #002424,
+  'color-bg-dialog-header': #0B132B,
+  'color-bg-page-header': #262F49,
+  'color-bg-header': #262F49,
+  'color-bg-table-header': #262F49,
+  'color-bg-skeleton': #262F49,
+  'color-bg-skeleton-shine': #384465,
   'color-text-default': #EFF3FF,
   'color-text-heading': #EFF3FF,
   'color-text-body': #D1D1D1,
   'color-text-muted': #A1A1A1,
+  'color-text-brand': #7FE6C0,
   'color-text-on-emphasis': #EFF3FF,
   'color-text-on-brand': #0F0F0F,
   'color-text-disabled': #5C6D9C,
@@ -302,27 +398,37 @@ $theme-dark: (
   'color-icon-tile-bg': #262F49,
   'color-icon-tile-border': #384465,
   'color-decor-mint': #003828,
-  'color-decor-sky': #122F5E,
+  'color-decor-sky': #02344F,
   'color-decor-lavender': #37255D,
   'color-decor-rose': #241641,
   'color-decor-periwinkle-bold': #37255D,
-  'color-decor-lavender-bold': #122F5E,
+  'color-decor-lavender-bold': #02344F,
   'color-decor-sky-bold': #003828,
   'color-decor-halo-1': #4D387E,
-  'color-decor-halo-2': #1F447E,
+  'color-decor-halo-2': #004A6F,
   'color-decor-halo-3': #024D4E,
   'color-decor-grid': #4A5A82,
   'color-decor-emphasis-grid': #4A5A82,
   'color-decor-emphasis-halo-1': #9976EA,
-  'color-decor-emphasis-halo-2': #4F8BEB,
+  'color-decor-emphasis-halo-2': #0993D8,
   'color-decor-emphasis-halo-3': #2E999A,
   'color-decor-emphasis-mint': #002419,
-  'color-decor-emphasis-sky': #091E41,
+  'color-decor-emphasis-sky': #012236,
   'color-decor-emphasis-lavender': #241641,
   'color-decor-emphasis-teal-bold': #076465,
-  'color-decor-emphasis-sky-bold': #2C59A1,
+  'color-decor-emphasis-sky-bold': #055F8D,
   'color-decor-emphasis-lavender-bold': #654AA1,
+  'color-decor-wave-1': #5ACEA6,
+  'color-decor-wave-2': #AD8EFF,
+  'color-decor-wave-3': #42B1B1,
+  'color-decor-wave-soft-1': #654AA1,
+  'color-decor-wave-soft-2': #5C6D9C,
+  'color-decor-wave-soft-3': #076465,
+  'color-decor-divider-1': #4A5A82,
+  'color-decor-divider-2': #654AA1,
+  'color-decor-divider-3': #076465,
   'color-border-surface': #0B132B,
+  'color-border-card': #384465,
   'color-border-default': #384465,
   'color-border-strong': #899FD9,
   'color-border-brand': #7FE6C0,
@@ -330,6 +436,8 @@ $theme-dark: (
   'color-border-focus-emphasis': #7FE6C0,
   'color-border-selected': #EFF3FF,
   'color-border-tab-active': #7FE6C0,
+  'color-border-focus-input': #7FE6C0,
+  'color-border-hover-accent': #5ACEA6,
   'color-action-primary-bg': #7FE6C0,
   'color-action-primary-bg-hover': #5ACEA6,
   'color-action-primary-bg-active': #38B48C,
@@ -339,39 +447,70 @@ $theme-dark: (
   'color-action-secondary-bg-hover': #262F49,
   'color-action-selected-bg': #EFF3FF,
   'color-action-selected-text': #0B132B,
-  'color-action-secondary-border': #EFF3FF,
+  'color-action-secondary-border': #5ACEA6,
   'color-action-danger-bg': #FFA098,
   'color-action-danger-bg-hover': #FFC6C0,
   'color-action-danger-text': #0F0F0F,
+  'color-action-danger-border': #FFA098,
   'color-action-disabled-bg': #262F49,
-  'color-success-text': #1CD664,
-  'color-success-bg': #00250B,
-  'color-success-border': #00B953,
+  'color-action-secondary-bg': #0B132B,
+  'color-action-ghost-bg-hover': #262F49,
+  'color-action-option-bg': #EFF3FF,
+  'color-action-option-text': #0B132B,
+  'color-action-option-bg-hover': #C0D2FF,
+  'color-action-option-text-hover': #0B132B,
+  'color-action-option-outline-bg': #0B132B,
+  'color-action-option-outline-text': #EFF3FF,
+  'color-action-option-outline-border': #EFF3FF,
+  'color-action-option-outline-bg-hover': #262F49,
+  'color-action-option-outline-text-hover': #EFF3FF,
+  'color-action-close-bg-hover': #EBEBEB,
+  'color-success-text': #60D244,
+  'color-success-bg': #0A2405,
+  'color-success-border': #4EB634,
   'color-danger-text': #FFA098,
   'color-danger-bg': #470105,
   'color-danger-border': #FF776F,
-  'color-warning-text': #FFA71E,
+  'color-warning-text': #E3B502,
   'color-warning-bg': #2F1B00,
-  'color-warning-border': #E08F00,
-  'color-info-text': #91BBFF,
-  'color-info-bg': #091E41,
-  'color-info-border': #66A0FF,
+  'color-warning-border': #C79B07,
+  'color-info-text': #74C1F6,
+  'color-info-bg': #012236,
+  'color-info-border': #21A9F3,
+  'color-badge-text': #FFFFFF,
+  'color-badge-brand-bg': #4D387E,
+  'color-badge-success-bg': #1E5012,
+  'color-badge-warning-bg': #7D5200,
+  'color-badge-danger-bg': #89151A,
+  'color-badge-info-bg': #004A6F,
+  'color-badge-success-subtle-text': #82E96B,
+  'color-badge-warning-subtle-text': #EED17E,
+  'color-badge-danger-subtle-text': #FFC6C0,
+  'color-badge-info-subtle-text': #ACD9FA,
 );
 
 $theme-hc: (
   'color-bg-page': #FFFFFF,
   'color-bg-surface': #FFFFFF,
   'color-bg-muted': #FBFBFB,
+  'color-bg-card': #FFFFFF,
+  'color-bg-hover': #EBEBEB,
   'color-bg-brand': #7FE6C0,
   'color-bg-brand-subtle': #E6FBF2,
   'color-bg-emphasis': #1C1C1C,
-  'color-bg-selected': #E5E5E5,
+  'color-bg-selected': #EBEBEB,
   'color-bg-featured': #FBFBFB,
   'color-bg-dialog-header': #FBFBFB,
+  'color-bg-page-header': #FBFBFB,
+  'color-bg-header': #FBFBFB,
+  'color-bg-table-header': #EBEBEB,
+  'color-bg-skeleton': #EBEBEB,
+  'color-bg-skeleton-shine': #FBFBFB,
   'color-text-default': #1C1C1C,
   'color-text-heading': #1C1C1C,
   'color-text-body': #1C1C1C,
   'color-text-muted': #303030,
+  'color-text-brand': #1C1C1C,
   'color-text-on-emphasis': #FFFFFF,
   'color-text-on-brand': #0F0F0F,
   'color-text-disabled': #6D6D6D,
@@ -406,7 +545,17 @@ $theme-hc: (
   'color-decor-emphasis-teal-bold': #1C1C1C,
   'color-decor-emphasis-sky-bold': #1C1C1C,
   'color-decor-emphasis-lavender-bold': #1C1C1C,
+  'color-decor-wave-1': #FFFFFF,
+  'color-decor-wave-2': #FFFFFF,
+  'color-decor-wave-3': #FFFFFF,
+  'color-decor-wave-soft-1': #FFFFFF,
+  'color-decor-wave-soft-2': #FFFFFF,
+  'color-decor-wave-soft-3': #FFFFFF,
+  'color-decor-divider-1': #FFFFFF,
+  'color-decor-divider-2': #FFFFFF,
+  'color-decor-divider-3': #FFFFFF,
   'color-border-surface': #1C1C1C,
+  'color-border-card': #1C1C1C,
   'color-border-default': #1C1C1C,
   'color-border-strong': #1C1C1C,
   'color-border-brand': #1C1C1C,
@@ -414,32 +563,57 @@ $theme-hc: (
   'color-border-focus-emphasis': #7FE6C0,
   'color-border-selected': #1C1C1C,
   'color-border-tab-active': #1C1C1C,
+  'color-border-focus-input': #1C1C1C,
+  'color-border-hover-accent': #1C1C1C,
   'color-action-primary-bg': #7FE6C0,
   'color-action-primary-bg-hover': #C4F3DF,
   'color-action-primary-bg-active': #5ACEA6,
   'color-action-primary-text': #0F0F0F,
   'color-action-primary-border': #1C1C1C,
   'color-action-secondary-text': #0F0F0F,
-  'color-action-secondary-bg-hover': #E5E5E5,
+  'color-action-secondary-bg-hover': #EBEBEB,
   'color-action-selected-bg': #1C1C1C,
   'color-action-selected-text': #FFFFFF,
   'color-action-secondary-border': #0F0F0F,
   'color-action-danger-bg': #89151A,
   'color-action-danger-bg-hover': #65070E,
   'color-action-danger-text': #FFFFFF,
-  'color-action-disabled-bg': #E5E5E5,
-  'color-success-text': #005120,
-  'color-success-bg': #E2FDE6,
-  'color-success-border': #005120,
+  'color-action-danger-border': #65070E,
+  'color-action-disabled-bg': #EBEBEB,
+  'color-action-secondary-bg': #FFFFFF,
+  'color-action-ghost-bg-hover': #EBEBEB,
+  'color-action-option-bg': #1C1C1C,
+  'color-action-option-text': #FFFFFF,
+  'color-action-option-bg-hover': #FFFFFF,
+  'color-action-option-text-hover': #1C1C1C,
+  'color-action-option-outline-bg': #FFFFFF,
+  'color-action-option-outline-text': #0F0F0F,
+  'color-action-option-outline-border': #0F0F0F,
+  'color-action-option-outline-bg-hover': #1C1C1C,
+  'color-action-option-outline-text-hover': #FFFFFF,
+  'color-action-close-bg-hover': #EBEBEB,
+  'color-success-text': #1E5012,
+  'color-success-bg': #E7FCE2,
+  'color-success-border': #1E5012,
   'color-danger-text': #89151A,
   'color-danger-bg': #FFF3F2,
   'color-danger-border': #89151A,
-  'color-warning-text': #633D00,
-  'color-warning-bg': #FFF5E9,
-  'color-warning-border': #633D00,
-  'color-info-text': #1F447E,
-  'color-info-bg': #F1F7FF,
-  'color-info-border': #1F447E,
+  'color-warning-text': #633D02,
+  'color-warning-bg': #FBF7E7,
+  'color-warning-border': #633D02,
+  'color-info-text': #004A6F,
+  'color-info-bg': #EFF8FE,
+  'color-info-border': #004A6F,
+  'color-badge-text': #FFFFFF,
+  'color-badge-brand-bg': #4D387E,
+  'color-badge-success-bg': #1E5012,
+  'color-badge-warning-bg': #633D02,
+  'color-badge-danger-bg': #89151A,
+  'color-badge-info-bg': #004A6F,
+  'color-badge-success-subtle-text': #133809,
+  'color-badge-warning-subtle-text': #462901,
+  'color-badge-danger-subtle-text': #65070E,
+  'color-badge-info-subtle-text': #02344F,
 );
 
 // Tipografía, espaciado, movimiento, sombras, radios, bordes, opacidad, capas y puntos de corte como mapas de Sass
@@ -491,6 +665,7 @@ $tokens-durations: (
   'base': 200ms,
   'moderate': 300ms,
   'slow': 500ms,
+  'hero': 1200ms,
 );
 
 $tokens-easings: (
@@ -499,16 +674,24 @@ $tokens-easings: (
   'accelerate': cubic-bezier(0.3, 0, 1, 1),
   'emphasized-decelerate': cubic-bezier(0.05, 0.7, 0.1, 1),
   'emphasized-accelerate': cubic-bezier(0.3, 0, 0.8, 0.15),
+  'in-out': cubic-bezier(0.42, 0, 0.58, 1),
 );
 
 $tokens-shadows: (
   'raised': (0px 1px 2px 0px rgb(15 15 15 / 0.12), 0px 3px 8px 0px rgb(15 15 15 / 0.14)),
+  'sm': (0px 1px 2px 0px rgb(15 15 15 / 0.12)),
   'card': (0px 1px 3px 0px rgb(15 15 15 / 0.1), 0px 4px 12px 0px rgb(15 15 15 / 0.08)),
   'pressed': (inset 0px 2px 4px 0px rgb(15 15 15 / 0.28)),
+  'pressed-sm': (inset 0px 1px 2px 0px rgb(15 15 15 / 0.18)),
   'dialog': (0px 8px 24px 0px rgb(15 15 15 / 0.24)),
+  'hover': (0px 8px 16px 0px rgb(15 15 15 / 0.15)),
+  'header': (0px 2px 4px 0px rgb(15 15 15 / 0.15), 0px 0px 0px 1px rgb(15 15 15 / 0.15)),
+  'header-scrolled': (0px 4px 8px 0px rgb(15 15 15 / 0.2), 0px 0px 0px 2px rgb(15 15 15 / 0.2)),
+  'bar': (0px -1px 0px 0px rgb(15 15 15 / 0.12), 0px -4px 12px 0px rgb(15 15 15 / 0.1)),
 );
 
 $tokens-radii: (
+  'xs': 4px,
   'sm': 8px,
   'md': 12px,
   'pill': 999px,
@@ -526,6 +709,13 @@ $tokens-opacities: (
   '50': 0.5,
   '75': 0.75,
   '100': 1,
+  'state-hover': 0.02,
+  'state-pressed': 0.04,
+  'decor-subtle': 0.45,
+  'decor': 0.6,
+  'decor-strong': 0.85,
+  'glass': 0.12,
+  'glass-border': 0.24,
 );
 
 $tokens-z-indexes: (

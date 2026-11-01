@@ -15,6 +15,7 @@
 @use 'base/fonts' as *;
 @use 'base/reset' as *;
 @use 'base/base' as *;
+@use 'base/site' as *;
 @use 'base/accessibility' as *;
 @use 'base/typography' as *;
 
@@ -28,12 +29,15 @@
 // ==========================================================================
 // 4. COMPONENTS (Piezas UI pequeñas y reutilizables)
 // ==========================================================================
+@use 'components/button' as *;
 @use 'components/navbar' as *;
+@use 'components/drawer' as *;
 @use 'components/buttons' as *;
-@use 'components/selector' as *;
-@use 'components/background' as * with ($streaks-url: '../public/images/streaks.svg');
+@use 'components/dropdown' as *;
+@use 'components/background' as * with ($streaks-url: '../public/images/streaks.svg', $decor-path: '../public/images/');
 @use 'components/icon-tile' as *;
 @use 'components/card' as *;
+@use 'components/card-cv' as *;
 @use 'components/section-title' as *;
 @use 'components/resume-items' as *;
 @use 'components/social-media' as *;

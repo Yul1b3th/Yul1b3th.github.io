@@ -1,0 +1,59 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Esqueleto de carga con la forma del contenido que va a llegar
+// El contenedor lleva aria-busy y el esqueleto aria-hidden
+
+@use '../abstracts' as *;
+
+.skeleton {
+  display: block;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-skeleton);
+  background-image: linear-gradient(
+    90deg,
+    var(--color-bg-skeleton) 25%,
+    var(--color-bg-skeleton-shine) 50%,
+    var(--color-bg-skeleton) 75%
+  );
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  animation: skeleton-shine 1.4s var(--ease-standard) infinite;
+}
+
+.skeleton--text {
+  height: 1em;
+  margin-block: 0.25em;
+}
+
+.skeleton--title {
+  width: 70%;
+  height: 1.5em;
+}
+
+.skeleton--media {
+  aspect-ratio: 16 / 10;
+  border-radius: 0;
+}
+
+.skeleton--button {
+  width: 8rem;
+  height: 2.25rem;
+  border-radius: var(--radius-pill);
+}
+
+@keyframes skeleton-shine {
+  from {
+    background-position: 100% 0;
+  }
+
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@include apply-reduced-motion {
+  .skeleton {
+    animation: none;
+  }
+}

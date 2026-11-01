@@ -1,0 +1,172 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Tarjeta que se elige, con una casilla o un radio nativo dentro, como las selectable tiles de Carbon
+// Elegida en azul marino con fondo navy-50 y check azul marino con aro blanco, el color de seleccionado
+
+@use '../abstracts' as *;
+
+.tile {
+  position: relative;
+  display: grid;
+  gap: var(--space-xs);
+  padding: var(--space-sm);
+  border: var(--border-width-sm) solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-page);
+  box-shadow: var(--shadow-sm);
+  color: var(--color-text-default);
+  cursor: pointer;
+  transition:
+    border-color var(--duration-fast) var(--ease-standard),
+    background-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.tile {
+  overflow: hidden;
+}
+
+/* Mismo hover que card--interactive, borde fino de marca y la sombra sube un nivel */
+.tile:hover {
+  border-color: var(--color-border-brand);
+  box-shadow: var(--shadow-hover);
+}
+
+/* La casilla real queda encima y transparente para el teclado y el lector */
+.tile__input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* La imagen llega a los bordes de la tarjeta, como la imagen de la card */
+.tile__media {
+  justify-self: stretch;
+  width: calc(100% + var(--space-sm) * 2);
+  aspect-ratio: 1;
+  margin: calc(var(--space-sm) * -1) calc(var(--space-sm) * -1) 0;
+  border-radius: calc(var(--radius-md) - var(--border-width-sm)) calc(var(--radius-md) - var(--border-width-sm)) 0 0;
+  display: block;
+  max-width: none;
+  height: auto;
+  object-fit: cover;
+}
+
+.tile__title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.tile__meta {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* En la tarjeta vertical el precio se centra igual que el título */
+.tile:not(.tile--row) .tile__meta {
+  text-align: center;
+}
+
+.tile__check {
+  position: absolute;
+  top: var(--space-xs);
+  right: var(--space-xs);
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--color-action-selected-bg);
+  box-shadow: 0 0 0 2px var(--color-bg-page);
+  color: var(--color-action-selected-text);
+  opacity: 0;
+  transform: scale(0.6);
+  transition:
+    opacity var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
+}
+
+.tile__check svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
+.tile:has(.tile__input:checked) {
+  border-color: var(--color-border-selected);
+  background-color: var(--color-bg-selected);
+}
+
+.tile:has(.tile__input:checked) .tile__check {
+  opacity: 1;
+  transform: none;
+}
+
+.tile:has(.tile__input:focus-visible) {
+  outline: var(--border-width-md) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* En fila, para listas de opciones con precio como la masa de la pizza */
+.tile--row {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+}
+
+.tile--row .tile__title {
+  text-align: left;
+}
+
+.tile--row .tile__check {
+  position: static;
+  grid-column: 1;
+  grid-row: 1;
+  opacity: 1;
+  transform: none;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px var(--color-border-strong);
+}
+
+.tile--row .tile__check svg {
+  opacity: 0;
+}
+
+.tile--row:has(.tile__input:checked) .tile__check {
+  background-color: var(--color-action-selected-bg);
+  box-shadow: none;
+  color: var(--color-action-selected-text);
+}
+
+.tile--row:has(.tile__input:checked) .tile__check svg {
+  opacity: 1;
+}
+
+.tile-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  gap: var(--space-sm);
+  width: 100%;
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.tile-group--list {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@include apply-reduced-motion {
+  .tile,
+  .tile__check {
+    transition: none;
+  }
+}

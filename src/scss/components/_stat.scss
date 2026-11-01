@@ -1,0 +1,53 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Tarjeta de dato, una cifra con su etiqueta, como «Current wait for pickup»
+// Fondo con el degradado decorativo de las tarjetas del sistema
+
+@use '../abstracts' as *;
+
+.stat {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-xs) var(--space-md);
+  padding: var(--space-md) var(--space-ml);
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-decor-sky), var(--color-decor-lavender));
+  box-shadow: var(--shadow-card);
+  color: var(--color-text-body);
+
+  @include apply-high-contrast {
+    border: var(--border-width-sm) solid var(--color-border-default);
+  }
+}
+
+.stat__icon {
+  grid-row: span 2;
+}
+
+.stat__label {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.stat__value {
+  margin: 0;
+  color: var(--color-text-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+}
+
+.stat__value small {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+}
+
+.stat-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: var(--space-md);
+}

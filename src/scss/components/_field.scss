@@ -4,6 +4,8 @@
 // Campo de formulario con etiqueta, control, ayuda y error
 // El error se marca con aria-invalid en el control, no con una clase
 
+@use '../abstracts' as *;
+
 .field {
   display: flex;
   flex-direction: column;
@@ -47,11 +49,17 @@
   border-color: var(--color-text-default);
 }
 
-/* Foco con anillo de 2 px que no cambia el tamaño del campo */
+/* Foco con borde de 2 px en border.focus, sin halo, como el campo con contorno de Material */
+/* El color es el mismo del anillo de foco del sistema y contrasta 7:1 en claro */
 .field__control:focus-visible {
   border-color: var(--color-border-focus);
-  outline: none;
+  outline: 2px solid transparent;
   box-shadow: 0 0 0 1px var(--color-border-focus);
+}
+
+/* La etiqueta acompaña al foco para que se vea qué campo está activo */
+.field:focus-within > .field__label {
+  color: var(--color-border-focus);
 }
 
 .field__control[aria-invalid='true'] {
@@ -98,6 +106,128 @@ textarea.field__control {
   transform: translateY(-70%) rotate(45deg);
 }
 
+/* Prefijo o sufijo de texto, por ejemplo la moneda o la unidad */
+/* El borde y el foco pasan al grupo y el campo de dentro va sin borde */
+.field__group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  min-height: 2.75rem;
+  padding: 0 var(--space-md);
+  border: var(--border-width-sm) solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-page);
+  transition:
+    border-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.field__group:hover {
+  border-color: var(--color-text-default);
+}
+
+.field__group:focus-within {
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 1px var(--color-border-focus);
+}
+
+.field__group > .field__control {
+  flex: 1;
+  min-height: 0;
+  padding-inline: 0;
+  border: 0;
+  background: transparent;
+}
+
+.field__group > .field__control:focus-visible {
+  box-shadow: none;
+}
+
+.field__affix {
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+/* Botón para borrar el texto, solo visible cuando hay algo escrito */
+.field__clearable {
+  position: relative;
+}
+
+.field__clearable .field__control {
+  padding-right: 3.25rem;
+}
+
+.field__clear {
+  position: absolute;
+  top: 50%;
+  right: var(--space-xs);
+  transform: translateY(-50%);
+}
+
+.field__clear[hidden] {
+  display: none;
+}
+
+/* Contraseña con un botón de ojo dentro del campo */
+.field__password {
+  position: relative;
+}
+
+.field__password .field__control {
+  padding-right: 3.25rem;
+}
+
+.field__password-toggle {
+  position: absolute;
+  top: 50%;
+  right: var(--space-xs);
+  transform: translateY(-50%);
+}
+
+/* Etiqueta con un icono de información que abre una ayuda */
+.field__label-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.field__info {
+  --button-text: var(--color-info-text);
+}
+
+/* Fecha con el icono calendar_month en lugar del icono del navegador */
+.field__date {
+  position: relative;
+}
+
+.field__date-icon {
+  display: none;
+}
+
+@supports selector(::-webkit-calendar-picker-indicator) {
+  .field__date-icon {
+    position: absolute;
+    top: 50%;
+    right: var(--space-md);
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--color-text-default);
+    fill: currentColor;
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+
+  .field__date .field__control::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 0;
+    width: 3rem;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
+
 .field__hint {
   margin: 0;
   color: var(--color-text-muted);
@@ -119,6 +249,69 @@ textarea.field__control {
   width: 1.125rem;
   height: 1.125rem;
   fill: currentColor;
+}
+
+/* Aviso que no bloquea el envío, como el estado warning de Carbon */
+.field--warning .field__control {
+  border-color: var(--color-warning-border);
+}
+
+.field__warning {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin: 0;
+  color: var(--color-warning-text);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.field__warning > svg {
+  flex: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  fill: currentColor;
+}
+
+/* Solo lectura, se puede leer, copiar y enfocar, pero no cambiar */
+.field__control[readonly] {
+  border-style: dashed;
+  background-color: var(--color-bg-muted);
+}
+
+/* El error sustituye a la ayuda, así no se acumulan mensajes debajo */
+.field:has(.field__error) .field__hint {
+  display: none;
+}
+
+/* Contador de caracteres, a la derecha bajo el campo */
+.field__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.field__counter {
+  margin-left: auto;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.field__counter.is-over {
+  color: var(--color-danger-text);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Tamaños, 36 px para formularios densos y 48 px para un campo solo, como Carbon */
+.field--sm .field__control {
+  min-height: 2.25rem;
+  padding-block: var(--space-xs);
+  font-size: var(--font-size-sm);
+}
+
+.field--lg .field__control {
+  min-height: 3rem;
 }
 
 /* Grupo de casillas o radios con su leyenda */
@@ -149,7 +342,7 @@ textarea.field__control {
   width: 100%;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .field__control {
     transition: none;
   }

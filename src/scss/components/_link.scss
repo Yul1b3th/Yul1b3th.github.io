@@ -1,0 +1,51 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Enlace de texto y enlace que se abre en una pestaña nueva
+// El icono open_in_new va siempre que el enlace o el botón abra otra pestaña
+
+@use '../abstracts' as *;
+
+.link {
+  color: var(--color-link-default);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: underline;
+  text-decoration-thickness: var(--border-width-sm);
+  text-underline-offset: 0.2em;
+  transition: color var(--duration-base) var(--ease-standard);
+}
+
+.link:visited {
+  color: var(--color-link-default);
+}
+
+.link:hover {
+  color: var(--color-link-hover);
+  text-decoration-thickness: var(--border-width-md);
+}
+
+.link:active {
+  color: var(--color-link-active);
+}
+
+.link:focus-visible {
+  border-radius: calc(var(--radius-sm) / 2);
+  outline: var(--border-width-md) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Icono que sigue al texto y baja de línea con la última palabra */
+.link__icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.2em;
+  fill: currentColor;
+  vertical-align: -0.125em;
+}
+
+@include apply-reduced-motion {
+  .link {
+    transition: none;
+  }
+}

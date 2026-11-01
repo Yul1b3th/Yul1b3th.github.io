@@ -1,0 +1,113 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Tabla de datos con cabecera fija en el contenedor, rayas y orden opcional
+// El contenedor se puede desplazar en horizontal y recibe el foco
+
+@use '../abstracts' as *;
+
+.table-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+  border: var(--border-width-sm) solid var(--color-border-default);
+  border-radius: var(--radius-md);
+}
+
+.table-wrapper:focus-visible {
+  outline: var(--border-width-md) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-bg-page);
+  color: var(--color-text-body);
+  font-size: var(--font-size-sm);
+}
+
+.table caption {
+  padding: var(--space-md);
+  border-bottom: var(--border-width-sm) solid var(--color-border-default);
+  background-color: var(--color-bg-table-header);
+  color: var(--color-text-default);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  text-align: left;
+}
+
+.table th,
+.table td {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: var(--border-width-sm) solid var(--color-border-default);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.table thead th {
+  background-color: var(--color-bg-table-header);
+  color: var(--color-text-default);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+.table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.table--striped tbody tr:nth-child(even) {
+  background-color: var(--color-bg-header);
+}
+
+.table--hover tbody tr {
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.table--hover tbody tr:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.table__number {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/* Botón de ordenar dentro de la cabecera */
+.table__sort {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.table__sort:focus-visible {
+  border-radius: calc(var(--radius-sm) / 2);
+  outline: var(--border-width-md) solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.table__sort svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+  opacity: var(--opacity-25);
+}
+
+th[aria-sort] .table__sort svg {
+  opacity: var(--opacity-100);
+}
+
+th[aria-sort='ascending'] .table__sort svg {
+  transform: rotate(180deg);
+}
+
+@include apply-reduced-motion {
+  .table--hover tbody tr {
+    transition: none;
+  }
+}

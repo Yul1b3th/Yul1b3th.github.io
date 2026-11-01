@@ -89,6 +89,18 @@
   }
 }
 
+// Menos movimiento, pedido por el sistema o con data-motion="reduce" en el html
+// Se usa en la raíz del archivo y envuelve reglas completas
+@mixin apply-reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+
+  [data-motion='reduce'] {
+    @content;
+  }
+}
+
 // === Diseño Responsivo y Estilos Visuales ===
 @mixin apply-media-breakpoint($size) {
   @media (min-width: get-breakpoint($size)) {
@@ -138,10 +150,19 @@
 @mixin input-state-focus($name) {
   border-color: get-color($name);
   box-shadow: 0 0 0 3px get-color-alpha($name, 0.5);
-  outline: none;
+  outline: 2px solid transparent;
 }
 
 // === Mixins relacionados con animación / transiciones ===
 @mixin apply-transition($properties: all, $duration: 0.3s, $timing-function: ease-in-out) {
   transition: $properties $duration $timing-function;
+}
+
+// Corta el texto a un número de líneas con puntos suspensivos
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  line-clamp: $lines;
 }

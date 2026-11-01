@@ -4,6 +4,8 @@
 // Control segmentado para elegir una sola opción entre pocas
 // Usa radios nativos dentro de un fieldset, así funciona con teclado sin JavaScript
 
+@use '../abstracts' as *;
+
 .segmented {
   margin: 0;
   padding: 0;
@@ -81,7 +83,7 @@
   cursor: not-allowed;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@include apply-reduced-motion {
   .segmented__label {
     transition: none;
   }

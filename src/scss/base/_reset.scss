@@ -1,21 +1,23 @@
-// base/_reset.scss
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
 
-/* https://piccalil.li/blog/a-modern-css-reset/ */
-/* Box sizing rules */
+// Reset, solo neutraliza las diferencias entre navegadores (márgenes, box-sizing, imágenes)
+// No pone colores ni fuentes, sigue A (more) Modern CSS Reset de Andy Bell
+
 *,
 *::before,
 *::after {
-  margin: 0px;
-  padding: 0px;
   box-sizing: border-box;
 }
 
-/* Ensure box-sizing is inherited */
+/* Evita que el móvil agrande el texto por su cuenta */
 html {
-  box-sizing: border-box;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
-/* Remove default margin */
+/* Quita el margen inferior por defecto para controlarlo desde el CSS propio */
 body,
 h1,
 h2,
@@ -29,87 +31,59 @@ dd {
   margin-block-end: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+body {
+  margin: 0;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Las listas con role list se usan sin viñetas */
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
 }
 
-ul,
-ol {
-  list-style: none;
+/* Interlineado más corto en títulos y controles */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
 }
 
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
+/* Títulos con líneas equilibradas */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
 }
 
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
-/* Inherit fonts for inputs and buttons */
+/* Los controles heredan la fuente de la página */
 input,
 button,
 textarea,
 select {
-  font: inherit;
-}
-
-/* Set a minimum height for form elements */
-button,
-input,
-select,
-textarea {
-  min-height: 2rem;
-}
-
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Remove default outline on focus */
-:focus {
-  outline: none;
-}
-
-/* Reset styles for buttons and forms */
-button,
-input,
-textarea,
-select {
-  background: none;
-  border: none;
-  padding: 0;
   font-family: inherit;
   font-size: inherit;
-  color: inherit;
+}
+
+/* Un textarea sin rows no queda diminuto */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Lo que se enlaza con un ancla deja aire arriba, también bajo una barra fija */
+/* Las secciones no, porque su fondo ya da aire y se vería la sección anterior */
+:target:not(section) {
+  scroll-margin-block: 5ex;
 }

@@ -6,11 +6,10 @@
 @use '../abstracts/mixins' as mx;
 
 .home {
-  background-color: fn.get-color(bg-emphasis);
   min-height: 100vh;
   min-height: 100svh;
   width: 100%;
-  color: fn.get-color(text-on-emphasis);
+  color: fn.get-color(text-default);
   display: flex;
 
   .container {
@@ -36,6 +35,8 @@
     .home__img {
       @include mx.apply-border-radius(50%);
       overflow: hidden;
+      // Sombra suave sin aro para despegar la foto del fondo
+      box-shadow: var(--shadow-dialog);
       max-width: min(260px, 70vw);
       width: 100%;
 
@@ -58,6 +59,7 @@
 
       h2 {
         margin-bottom: 1.25rem;
+        color: var(--color-text-brand);
       }
 
       p {
@@ -76,13 +78,44 @@
       }
 
       .social-list {
+        // Botones de cristal, translúcidos y con desenfoque sobre el fondo del inicio
+        // En claro es un velo blanco y en oscuro un velo claro muy tenue con borde de luz
         a {
+          --glass-tint: var(--color-bg-card);
+          --glass-fill: var(--opacity-50);
+          --glass-fill-hover: var(--opacity-75);
+          --glass-edge: var(--opacity-75);
+
           @include mx.apply-border-radius(50%);
-          @include mx.apply-border(2px, solid, border-brand);
           overflow: hidden;
           padding: 0.3rem;
           width: 3.125rem;
           height: 3.125rem;
+          border: var(--border-width-sm) solid color-mix(in srgb, var(--glass-tint) calc(var(--glass-edge) * 100%), transparent);
+          background-color: color-mix(in srgb, var(--glass-tint) calc(var(--glass-fill) * 100%), transparent);
+          backdrop-filter: blur(8px);
+          box-shadow: var(--shadow-card);
+          transition:
+            background-color var(--duration-base) var(--ease-standard),
+            box-shadow var(--duration-base) var(--ease-standard);
+
+          &:hover {
+            background-color: color-mix(in srgb, var(--glass-tint) calc(var(--glass-fill-hover) * 100%), transparent);
+            box-shadow: var(--shadow-hover);
+          }
+
+          @include mx.apply-dark-theme {
+            --glass-tint: var(--color-text-default);
+            --glass-fill: var(--opacity-glass);
+            --glass-fill-hover: var(--opacity-25);
+            --glass-edge: var(--opacity-glass-border);
+          }
+
+          @include mx.apply-high-contrast {
+            border-color: var(--color-border-default);
+            background-color: var(--color-bg-page);
+            backdrop-filter: none;
+          }
 
           svg {
             width: 1.5rem;

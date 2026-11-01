@@ -1,22 +1,25 @@
 // Archivo de innovatech-ds. No editar aquí
 // Se cambia en innovatech-ds y se copia con npm run sync
 
-// Selector accesible con patrón de menú y opciones excluyentes
+// Desplegable accesible con patrón de menú y opciones excluyentes
 // Teclado: flechas, Inicio, Fin, Escape y Tab
 
-export function initSelector(root, { onChange } = {}) {
-  const button = root.querySelector('.selector__button');
-  const menu = root.querySelector('.selector__menu');
+export function initDropdown(root, { onChange, onToggle } = {}) {
+  const button = root.querySelector('.dropdown__button');
+  const menu = root.querySelector('.dropdown__menu');
   const options = [...menu.querySelectorAll('[role="menuitemradio"]')];
+  // Casillas independientes, como Reducir movimiento, que no cierran el menú
+  const checks = [...menu.querySelectorAll('[role="menuitemcheckbox"]')];
+  const items = [...options, ...checks];
 
   const checkedOption = () => options.find((o) => o.getAttribute('aria-checked') === 'true') ?? options[0];
 
   // Copia el icono y el texto corto de la opción elegida al botón
   const paint = (option) => {
-    const icon = button.querySelector('[data-selector-icon] use');
-    const optionIcon = option.querySelector('.selector__option-icon use');
+    const icon = button.querySelector('[data-dropdown-icon] use');
+    const optionIcon = option.querySelector('.dropdown__option-icon use');
     if (icon && optionIcon) icon.setAttribute('href', optionIcon.getAttribute('href'));
-    const text = button.querySelector('[data-selector-text]');
+    const text = button.querySelector('[data-dropdown-text]');
     if (text) text.textContent = option.dataset.short ?? option.textContent.trim();
     const label = menu.getAttribute('aria-label') ?? root.dataset.label ?? '';
     button.setAttribute('aria-label', `${label}: ${option.textContent.trim()}`);
@@ -51,17 +54,17 @@ export function initSelector(root, { onChange } = {}) {
       open();
     } else if (event.key === 'ArrowUp') {
       event.preventDefault();
-      open(options.at(-1));
+      open(items.at(-1));
     }
   });
 
   menu.addEventListener('keydown', (event) => {
-    const index = options.indexOf(document.activeElement);
+    const index = items.indexOf(document.activeElement);
     const moves = {
-      ArrowDown: options[(index + 1) % options.length],
-      ArrowUp: options[(index - 1 + options.length) % options.length],
-      Home: options[0],
-      End: options.at(-1),
+      ArrowDown: items[(index + 1) % items.length],
+      ArrowUp: items[(index - 1 + items.length) % items.length],
+      Home: items[0],
+      End: items.at(-1),
     };
     if (moves[event.key]) {
       event.preventDefault();
@@ -81,7 +84,18 @@ export function initSelector(root, { onChange } = {}) {
     }),
   );
 
-  // Cierra al pulsar fuera del selector
+  const setChecked = (value, checked, { silent = false } = {}) => {
+    const check = checks.find((c) => c.dataset.value === value);
+    if (!check) return;
+    check.setAttribute('aria-checked', String(checked));
+    if (!silent) onToggle?.(value, checked);
+  };
+
+  checks.forEach((check) =>
+    check.addEventListener('click', () => setChecked(check.dataset.value, check.getAttribute('aria-checked') !== 'true')),
+  );
+
+  // Cierra al pulsar fuera del desplegable
   document.addEventListener('pointerdown', (event) => {
     if (!root.contains(event.target)) close({ returnFocus: false });
   });
@@ -90,5 +104,5 @@ export function initSelector(root, { onChange } = {}) {
   document.addEventListener('languagechange', () => paint(checkedOption()));
 
   paint(checkedOption());
-  return { setValue };
+  return { setValue, setChecked };
 }

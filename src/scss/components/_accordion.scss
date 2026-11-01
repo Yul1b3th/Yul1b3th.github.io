@@ -1,0 +1,101 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Acordeón sobre details y summary nativos, sin JavaScript
+// Con el mismo atributo name en cada details solo queda uno abierto
+
+@use '../abstracts' as *;
+
+.accordion {
+  border: var(--border-width-sm) solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.accordion__item + .accordion__item {
+  border-top: var(--border-width-sm) solid var(--color-border-default);
+}
+
+.accordion__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  min-height: 3rem;
+  padding: var(--space-sm) var(--space-ml);
+  color: var(--color-text-default);
+  font-weight: var(--font-weight-semibold);
+  background-color: var(--color-bg-header);
+  list-style: none;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+/* Al abrir, una línea separa el título del contenido */
+.accordion__item[open] .accordion__header {
+  border-bottom: var(--border-width-sm) solid var(--color-border-default);
+}
+
+.accordion__header::-webkit-details-marker {
+  display: none;
+}
+
+.accordion__header:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.accordion__header:focus-visible {
+  outline: var(--border-width-md) solid var(--color-border-focus);
+  outline-offset: -2px;
+}
+
+.accordion__icon {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+
+.accordion__item[open] .accordion__icon {
+  transform: rotate(180deg);
+}
+
+.accordion__body {
+  padding: var(--space-md) var(--space-ml) var(--space-ml);
+}
+
+.accordion__body > :first-child {
+  margin-top: 0;
+}
+
+.accordion__body > :last-child {
+  margin-bottom: 0;
+}
+
+/* Apertura y cierre suaves donde el navegador sabe animar hasta height auto */
+@supports (interpolate-size: allow-keywords) {
+  .accordion {
+    interpolate-size: allow-keywords;
+  }
+
+  .accordion__item::details-content {
+    height: 0;
+    overflow: clip;
+    transition:
+      height var(--duration-base) var(--ease-standard),
+      content-visibility var(--duration-base) var(--ease-standard) allow-discrete;
+  }
+
+  .accordion__item[open]::details-content {
+    height: auto;
+  }
+}
+
+@include apply-reduced-motion {
+  .accordion__header,
+  .accordion__icon,
+  .accordion__item::details-content {
+    transition: none;
+  }
+}

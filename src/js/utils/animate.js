@@ -4,7 +4,9 @@
 // Anima los elementos .animate al entrar en pantalla o al cargar la página
 // Lee data-animate-delay, data-animate-duration y data-animate-trigger
 
-const DURATIONS = ['fast', 'base', 'moderate', 'slow'];
+import { prefersReducedMotion } from './motion.js';
+
+const DURATIONS = ['fast', 'base', 'moderate', 'slow', 'hero'];
 
 export function initAnimate(root = document) {
   const elements = root.querySelectorAll('.animate:not(.is-visible)');
@@ -17,7 +19,7 @@ export function initAnimate(root = document) {
   });
 
   // Con movimiento reducido o sin soporte no se oculta nada
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduced = prefersReducedMotion();
   if (reduced || !('IntersectionObserver' in window)) return;
 
   document.documentElement.classList.add('js-animate');

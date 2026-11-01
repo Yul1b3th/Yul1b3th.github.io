@@ -1,0 +1,316 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Carrusel con scroll-snap, se desliza con el dedo y con los botones
+// Variantes overlay con los controles sobre la foto y multi con varias tarjetas a la vez
+
+@use '../abstracts' as *;
+
+.carousel {
+  position: relative;
+}
+
+.carousel__track {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  list-style: none;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+/* Con ratón se puede arrastrar; al soltar vuelve a encajar en una diapositiva */
+@media (pointer: fine) {
+  .carousel__track {
+    cursor: grab;
+  }
+}
+
+.carousel__track.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+  user-select: none;
+}
+
+.carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel__slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.carousel__slide img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Diapositiva con texto, como carousel-caption de Bootstrap */
+/* En el móvil va debajo de la foto y desde md encima, sobre un velo oscuro que asegura el contraste */
+.carousel__figure {
+  position: relative;
+  margin: 0;
+}
+
+.carousel__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.carousel__caption {
+  padding: var(--space-sm) 0 0;
+  color: var(--color-text-body);
+}
+
+.carousel__caption-title {
+  margin: 0 0 var(--space-xs);
+  color: var(--color-text-default);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.carousel__caption p {
+  margin: 0;
+}
+
+@include apply-media-breakpoint(md) {
+  .carousel__caption {
+    position: absolute;
+    inset: auto 0 0;
+    padding: var(--space-xl) var(--space-ml) var(--space-ml);
+    background: linear-gradient(to top, color-mix(in srgb, var(--color-bg-emphasis) 85%, transparent), transparent);
+    color: var(--color-text-on-emphasis);
+  }
+
+  .carousel__caption-title {
+    color: var(--color-text-on-emphasis);
+  }
+
+  /* Con texto, los indicadores bajan de la foto para no taparlo */
+  .carousel--overlay:has(.carousel__caption) .carousel__indicators {
+    display: none;
+  }
+}
+
+/* Título visible del carrusel, enlazado con aria-labelledby */
+.carousel__title {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-text-default);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+/* Las flechas son keyboard_arrow_down giradas */
+.carousel__prev svg {
+  transform: rotate(90deg);
+}
+
+.carousel__next svg {
+  transform: rotate(-90deg);
+}
+
+.carousel__indicators {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.carousel__indicator {
+  display: inline-grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.carousel__indicator::before {
+  content: '';
+  width: 0.625rem;
+  height: 0.625rem;
+  border: var(--border-width-md) solid var(--color-border-strong);
+  border-radius: 50%;
+  transition:
+    background-color var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
+}
+
+.carousel__indicator[aria-current='true']::before {
+  border-color: var(--color-action-selected-bg);
+  background-color: var(--color-action-selected-bg);
+  transform: scale(1.2);
+}
+
+.carousel__indicator:focus-visible {
+  border-radius: var(--radius-sm);
+  outline: var(--border-width-md) solid var(--color-border-focus);
+}
+
+/* Sin ayuda mientras la flecha está desactivada */
+.carousel__tooltip:has(> :disabled) .tooltip__content {
+  display: none;
+}
+
+/* Iconos de pausa y reproducir dibujados en CSS */
+.carousel__play-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  background-color: currentColor;
+  clip-path: polygon(0 0, 35% 0, 35% 100%, 0 100%, 0 0, 65% 0, 100% 0, 100% 100%, 65% 100%, 65% 0);
+}
+
+.carousel__play[data-playing='false'] .carousel__play-icon {
+  clip-path: polygon(10% 0, 100% 50%, 10% 100%);
+}
+
+/* Controles sobre la foto, las flechas a los lados y los puntos abajo */
+.carousel--overlay .carousel__controls {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.carousel--overlay .carousel__controls > * {
+  pointer-events: auto;
+}
+
+.carousel--overlay :is(.carousel__prev, .carousel__next, .carousel__play) {
+  --button-bg: color-mix(in srgb, var(--color-bg-page) 90%, transparent);
+  --button-shadow: var(--shadow-sm);
+}
+
+/* Se coloca el botón o, si lleva ayuda, su envoltorio */
+.carousel--overlay .carousel__controls > :is(.carousel__prev, .carousel__next, .carousel__play, .carousel__tooltip) {
+  position: absolute;
+}
+
+.carousel--overlay .carousel__controls > :is(.carousel__prev, .carousel__tooltip--prev) {
+  top: 50%;
+  left: var(--space-sm);
+  transform: translateY(-50%);
+}
+
+.carousel--overlay .carousel__controls > :is(.carousel__next, .carousel__tooltip--next) {
+  top: 50%;
+  right: var(--space-sm);
+  transform: translateY(-50%);
+}
+
+.carousel--overlay .carousel__controls > :is(.carousel__play, .carousel__tooltip--play) {
+  bottom: var(--space-sm);
+  left: var(--space-sm);
+}
+
+.carousel--overlay .carousel__indicators {
+  position: absolute;
+  bottom: var(--space-sm);
+  left: 50%;
+  padding: 0 var(--space-xs);
+  border-radius: var(--radius-pill);
+  background-color: color-mix(in srgb, var(--color-bg-page) 85%, transparent);
+  transform: translateX(-50%);
+}
+
+/* Varias tarjetas a la vez, la siguiente asoma en el móvil como en Netflix */
+.carousel--multi {
+  --carousel-per-view: 1.2;
+  --carousel-gap: var(--space-md);
+}
+
+.carousel--multi .carousel__track {
+  gap: var(--carousel-gap);
+  border-radius: 0;
+  scroll-padding-inline: 0;
+}
+
+.carousel--multi .carousel__slide {
+  flex-basis: calc((100% - (var(--carousel-per-view) - 1) * var(--carousel-gap)) / var(--carousel-per-view));
+  scroll-snap-stop: normal;
+}
+
+/* Fila tipo Netflix, varias tarjetas con flechas a los lados que avanzan una página */
+/* Sin indicadores ni pase automático; la flecha que no lleva a nada se oculta */
+.carousel--row .carousel__controls {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.carousel--row .carousel__controls > * {
+  pointer-events: auto;
+}
+
+.carousel--row .carousel__indicators {
+  display: none;
+}
+
+.carousel--row :is(.carousel__prev, .carousel__next) {
+  --button-bg: var(--color-bg-page);
+  --button-shadow: var(--shadow-card);
+}
+
+.carousel--row .carousel__controls > :is(.carousel__prev, .carousel__next, .carousel__tooltip) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel--row .carousel__controls > :is(.carousel__prev, .carousel__tooltip--prev) {
+  left: var(--space-xs);
+}
+
+.carousel--row .carousel__controls > :is(.carousel__next, .carousel__tooltip--next) {
+  right: var(--space-xs);
+}
+
+.carousel--row :is(.carousel__prev, .carousel__next):disabled {
+  visibility: hidden;
+}
+
+@include apply-media-breakpoint(md) {
+  .carousel--multi {
+    --carousel-per-view: 2;
+  }
+}
+
+@include apply-media-breakpoint(lg) {
+  .carousel--multi {
+    --carousel-per-view: 3;
+  }
+}
+
+@include apply-media-breakpoint(xl) {
+  .carousel--row {
+    --carousel-per-view: 4;
+  }
+}
+
+@include apply-reduced-motion {
+  .carousel__track {
+    scroll-behavior: auto;
+  }
+
+  .carousel__indicator::before {
+    transition: none;
+  }
+}

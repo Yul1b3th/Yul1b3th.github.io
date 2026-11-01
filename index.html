@@ -1,105 +1,155 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" data-translate="meta-description" content="Currículum de Yulibeth Rivero, Frontend Developer en Angular con experiencia en entornos Agile. Aplicaciones escalables, robustas y accesibles con principios de UX.">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      data-translate="meta-description"
+      content="Currículum de Yulibeth Rivero, Frontend Developer en Angular con experiencia en entornos Agile. Aplicaciones escalables, robustas y accesibles con principios de UX."
+    />
     <title>Yulibeth Rivero</title>
     <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="./public/favicon/favicon.svg">
-    <link rel="icon" href="./public/favicon/favicon.ico" sizes="any">
-    <link rel="apple-touch-icon" href="./public/favicon/apple-touch-icon.png" sizes="180x180">
-    <link rel="manifest" href="./public/favicon/site.webmanifest">
+    <link rel="icon" type="image/svg+xml" href="./public/favicon/favicon.svg" />
+    <link rel="icon" href="./public/favicon/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="./public/favicon/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="./public/favicon/site.webmanifest" />
     <script>
       // Aplica el tema guardado antes de pintar para que no parpadee
       try {
         const theme = localStorage.getItem('theme');
         if (theme) document.documentElement.setAttribute('data-theme', theme);
+        if (localStorage.getItem('motion') === 'reduce') document.documentElement.setAttribute('data-motion', 'reduce');
       } catch {}
     </script>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css" />
 
     <script type="module" src="./src/js/main.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main" data-translate="skip-link">Saltar al contenido</a>
-    <nav class="navbar">
-      <div class="navbar__container">
+    <header class="navbar navbar--landing navbar--expand-xl" data-navbar-spy>
+      <div class="navbar__inner">
         <a class="navbar__brand" href="#home" data-translate="navbar-brand">YR</a>
+        <nav class="navbar__nav" aria-label="Principal">
+          <ul class="navbar__list">
+              <li><a class="navbar__link" href="#home" data-translate="home">Inicio</a></li>
+              <li><a class="navbar__link" href="#about-me" data-translate="about-me">Sobre Mí</a></li>
+              <li><a class="navbar__link" href="#projects" data-translate="projects">Proyectos</a></li>
+              <li><a class="navbar__link" href="#experience" data-translate="experience">Experiencia</a></li>
+              <li><a class="navbar__link" href="#education" data-translate="education">Educación</a></li>
+              <li><a class="navbar__link" href="#courses" data-translate="courses">Cursos</a></li>
+              <li><a class="navbar__link" href="#contact" data-translate="contact">Contacto</a></li>
+          </ul>
+        </nav>
         <div class="navbar__actions">
-          <div id="navbarNav" class="navbar__collapse" data-visible="false">
-            <a class="navbar__brand" href="#home" data-translate="navbar-brand">YR</a>
-            <ul class="navbar__nav">
-              <li><a class="navbar__link" href="#home" data-scroll-spy data-translate="home">Inicio</a></li>
-              <li><a class="navbar__link" href="#about-me" data-scroll-spy data-translate="about-me">Sobre Mí</a></li>
-              <li><a class="navbar__link" href="#projects" data-scroll-spy data-translate="projects">Proyectos</a></li>
-              <li><a class="navbar__link" href="#experience" data-scroll-spy data-translate="experience">Experiencia</a></li>
-              <li><a class="navbar__link" href="#education" data-scroll-spy data-translate="education">Educación</a></li>
-              <li><a class="navbar__link" href="#courses" data-scroll-spy data-translate="courses">Cursos</a></li>
-              <li><a class="navbar__link" href="#contact" data-scroll-spy data-translate="contact">Contacto</a></li>
-            </ul>
-            <span class="navbar__separator" aria-hidden="true">|</span>
-            <ul class="social-list">
-              <li>
-                <a href="https://www.linkedin.com/in/yulibeth-rivero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <svg focusable="false" aria-hidden="true" viewBox="0 0 448 512"><use href="public/icons/icons.svg#linkedin"></use></svg>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/Yul1b3th" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                  <svg focusable="false" aria-hidden="true" viewBox="0 0 496 512"><use href="public/icons/icons.svg#github"></use></svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <span class="navbar__separator" aria-hidden="true">|</span>
-          <!-- Ajustes de idioma y tema -->
-          <div class="navbar__settings">
-            <div class="selector selector--emphasis" id="language-selector">
-              <button class="selector__button" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="language-menu">
-                <svg class="selector__icon" aria-hidden="true"><use href="public/icons/icons.svg#language"></use></svg>
-                <span data-selector-text>ES</span>
-                <svg class="selector__chevron" aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg>
+          <span class="navbar__separator navbar__utility" aria-hidden="true">|</span>
+          <a class="button button--icon navbar__utility" href="https://www.linkedin.com/in/yulibeth-rivero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg aria-hidden="true" viewBox="0 0 448 512"><use href="public/icons/icons.svg#linkedin"></use></svg>
+            </a>
+            <a class="button button--icon navbar__utility" href="https://github.com/Yul1b3th" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg aria-hidden="true" viewBox="0 0 496 512"><use href="public/icons/icons.svg#github"></use></svg>
+            </a>
+          <span class="navbar__separator navbar__utility" aria-hidden="true">|</span>
+          <div class="dropdown" id="language-dropdown">
+              <button class="dropdown__button" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="language-menu">
+                <svg class="dropdown__icon" aria-hidden="true"><use href="public/icons/icons.svg#language"></use></svg>
+                <span data-dropdown-text>ES</span>
+                <svg class="dropdown__chevron" aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg>
               </button>
-              <ul class="selector__menu" id="language-menu" role="menu" aria-label="Idioma" data-translate="language-label" hidden>
-                <li role="none"><button class="selector__option" type="button" role="menuitemradio" aria-checked="true" data-value="es" data-short="ES" lang="es">Español<svg class="selector__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg></button></li>
-                <li role="none"><button class="selector__option" type="button" role="menuitemradio" aria-checked="false" data-value="en" data-short="EN" lang="en">English<svg class="selector__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg></button></li>
+              <ul class="dropdown__menu" id="language-menu" role="menu" aria-label="Idioma" data-translate="language-label" hidden>
+                <li role="none">
+                  <button class="dropdown__option" type="button" role="menuitemradio" aria-checked="true" data-value="es" data-short="ES" lang="es">
+                    Español<svg class="dropdown__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
+                  </button>
+                </li>
+                <li role="none">
+                  <button class="dropdown__option" type="button" role="menuitemradio" aria-checked="false" data-value="en" data-short="EN" lang="en">
+                    English<svg class="dropdown__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
+                  </button>
+                </li>
               </ul>
             </div>
-            <div class="selector selector--emphasis" id="theme-selector">
-              <button class="selector__button" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="theme-menu">
-                <svg class="selector__icon" data-selector-icon aria-hidden="true"><use href="public/icons/icons.svg#computer"></use></svg>
-                <svg class="selector__chevron" aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg>
+          <div class="dropdown" id="theme-dropdown">
+              <button class="dropdown__button" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="theme-menu">
+                <svg class="dropdown__icon" data-dropdown-icon aria-hidden="true"><use href="public/icons/icons.svg#computer"></use></svg>
+                <svg class="dropdown__chevron" aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg>
               </button>
-              <ul class="selector__menu" id="theme-menu" role="menu" aria-label="Tema" data-translate="theme-label" hidden>
-                <li role="none"><button class="selector__option" type="button" role="menuitemradio" aria-checked="true" data-value="system"><svg class="selector__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#computer"></use></svg><span data-translate="theme-system">Sistema</span><svg class="selector__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg></button></li>
-                <li role="none"><button class="selector__option" type="button" role="menuitemradio" aria-checked="false" data-value="light"><svg class="selector__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#light_mode"></use></svg><span data-translate="theme-light">Claro</span><svg class="selector__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg></button></li>
-                <li role="none"><button class="selector__option" type="button" role="menuitemradio" aria-checked="false" data-value="dark"><svg class="selector__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#dark_mode"></use></svg><span data-translate="theme-dark">Oscuro</span><svg class="selector__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg></button></li>
-                <li role="none"><button class="selector__option" type="button" role="menuitemradio" aria-checked="false" data-value="hc"><svg class="selector__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#contrast"></use></svg><span data-translate="theme-hc">Alto contraste</span><svg class="selector__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg></button></li>
+              <ul class="dropdown__menu" id="theme-menu" role="menu" aria-label="Apariencia" data-translate="theme-label" hidden>
+                <li role="none">
+                  <button class="dropdown__option" type="button" role="menuitemradio" aria-checked="true" data-value="system">
+                    <svg class="dropdown__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#computer"></use></svg><span data-translate="theme-system">Sistema</span
+                    ><svg class="dropdown__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
+                  </button>
+                </li>
+                <li role="none">
+                  <button class="dropdown__option" type="button" role="menuitemradio" aria-checked="false" data-value="light">
+                    <svg class="dropdown__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#light_mode"></use></svg><span data-translate="theme-light">Claro</span
+                    ><svg class="dropdown__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
+                  </button>
+                </li>
+                <li role="none">
+                  <button class="dropdown__option" type="button" role="menuitemradio" aria-checked="false" data-value="dark">
+                    <svg class="dropdown__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#dark_mode"></use></svg><span data-translate="theme-dark">Oscuro</span
+                    ><svg class="dropdown__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
+                  </button>
+                </li>
+                <li role="none">
+                  <button class="dropdown__option" type="button" role="menuitemradio" aria-checked="false" data-value="hc">
+                    <svg class="dropdown__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#contrast"></use></svg><span data-translate="theme-hc">Alto contraste</span
+                    ><svg class="dropdown__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
+                  </button>
+                </li>
+                <li class="dropdown__separator" role="separator"></li>
+                <li role="none">
+                  <button class="dropdown__option" type="button" role="menuitemcheckbox" aria-checked="false" data-value="reduce-motion">
+                    <svg class="dropdown__option-icon" aria-hidden="true"><use href="public/icons/icons.svg#motion_photos_on"></use></svg><span data-translate="motion-reduce">Reducir movimiento</span
+                    ><svg class="dropdown__check" aria-hidden="true"><use href="public/icons/icons.svg#check"></use></svg>
+                  </button>
+                </li>
               </ul>
             </div>
-          </div>
-          <button id="btn-menu" class="navbar__toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Menú" data-translate="menu-label">
-            <svg class="navbar__toggler-icon navbar__toggler-icon--open" aria-hidden="true"><use href="public/icons/icons.svg#menu"></use></svg>
-            <svg class="navbar__toggler-icon navbar__toggler-icon--close" aria-hidden="true"><use href="public/icons/icons.svg#close"></use></svg>
-          </button>
         </div>
+        <button class="button button--icon navbar__toggle" type="button" aria-label="Menú" data-translate="menu-label" aria-controls="navbar-drawer" data-drawer-open="navbar-drawer">
+          <svg aria-hidden="true"><use href="public/icons/icons.svg#menu"></use></svg>
+        </button>
       </div>
-    </nav>
+    </header>
+    <dialog class="drawer drawer--full drawer--end drawer--emphasis" id="navbar-drawer" aria-label="Menú" data-translate="menu-label">
+      <div class="drawer__header">
+        <a class="navbar__brand" href="#home" data-translate="navbar-brand">YR</a>
+        <button class="button button--icon" type="button" aria-label="Cerrar menú" data-translate="close-menu-label" data-drawer-close>
+          <svg aria-hidden="true"><use href="public/icons/icons.svg#close"></use></svg>
+        </button>
+      </div>
+      <nav class="drawer__body" aria-label="Principal" data-navbar-links></nav>
+      <div class="drawer__footer">
+            <a class="button button--icon " href="https://www.linkedin.com/in/yulibeth-rivero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg aria-hidden="true" viewBox="0 0 448 512"><use href="public/icons/icons.svg#linkedin"></use></svg>
+            </a>
+            <a class="button button--icon " href="https://github.com/Yul1b3th" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg aria-hidden="true" viewBox="0 0 496 512"><use href="public/icons/icons.svg#github"></use></svg>
+            </a>
+      </div>
+    </dialog>
     <main id="main" tabindex="-1">
-
       <!-- home -->
 
-      <section id="home" class="home bg-halo bg-halo--emphasis" data-scroll-spy>
-        <div class="container">
-          <div class="home__img animate animate--fade-up" data-animate-trigger="load">
-            <img src="./public/images/yulibeth-rivero.webp" alt="Yulibeth Rivero" width="390" height="390" fetchpriority="high">
+      <section id="home" class="home bg-soft bg-soft--rose">
+        <div class="bg-layer bg-waves bg-waves--hero" aria-hidden="true"></div>
+        <div class="bg-layer bg-mesh" aria-hidden="true"></div>
+        <div class="container animate animate--rise" data-animate-trigger="load" data-animate-duration="hero">
+          <div class="home__img">
+            <img src="./public/images/yulibeth-rivero.webp" alt="Yulibeth Rivero" width="390" height="390" fetchpriority="high" />
           </div>
-          <div class="home__text animate animate--fade-up" data-animate-trigger="load" data-animate-delay="150">
+          <div class="home__text">
             <div>
               <h1 data-translate="home-title">Hola, soy Yulibeth!</h1>
               <h2 data-translate="home-subtitle">Frontend Developer</h2>
-              <p data-translate="home-description">Frontend Developer en Angular con experiencia en entornos Agile. Enfocada en desarrollar aplicaciones escalables, robustas y accesibles, aplicando principios de UX. Integro IA como apoyo en el desarrollo y la productividad.</p>
+              <p data-translate="home-description">
+                Frontend Developer en Angular con experiencia en entornos Agile. Enfocada en desarrollar aplicaciones escalables, robustas y accesibles, aplicando principios de UX. Integro IA como
+                apoyo en el desarrollo y la productividad.
+              </p>
             </div>
             <ul class="social-list">
               <li>
@@ -120,9 +170,11 @@
 
       <!-- About me -->
 
-      <section id="about-me" class="about-me section bg-sweep" data-scroll-spy>
+      <section id="about-me" class="about-me section bg-sweep">
+        <div class="bg-layer bg-grid bg-grid--sides" aria-hidden="true"></div>
+        <div class="bg-layer bg-dots" aria-hidden="true"></div>
+        <div class="bg-layer bg-divider" aria-hidden="true"></div>
         <div class="container">
-
           <!-- Section Title -->
           <div class="section-title animate animate--fade-up">
             <span aria-hidden="true" data-translate="about-me-title">Sobre mí</span>
@@ -131,119 +183,218 @@
 
           <!-- Section Content -->
           <div class="section__content mb-md">
-            <p data-translate="about-me-description-1">Desde 2016 trabajo en desarrollo web, evolucionando desde maquetación y frontend hasta aplicaciones modernas con Angular, TypeScript y arquitecturas escalables. Trabajo con Angular 16+, desarrollando componentes reutilizables, formularios dinámicos, gestión de estado con Angular Signals, integración de APIs REST, pruebas unitarias y mejoras de UX/UI en aplicaciones enterprise.</p>
-            <p data-translate="about-me-description-2">Tengo experiencia en mapeo de DTOs, asincronía con RxJS, testing y colaboración con Git Flow y Azure DevOps. Además, continúo profundizando en Angular moderno, arquitectura frontend y buenas prácticas de desarrollo.</p>
-            <p data-translate="about-me-description-3">También sigo implementando mejoras y nuevas funcionalidades en mis proyectos personales para continuar evolucionando técnicamente:<br><br>• EZHub DS → Design System con Angular. Disponible en&nbsp;<a href="https://ezhub-ds.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Ir a EZHub DS">EZHub DS</a>.<br><br>• EZHub → aplicación de búsqueda de habitaciones con geolocalización (Angular + NestJS + MySQL). Disponible en&nbsp;<a href="https://ezhub.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Ir a EZHub">EZHub</a>.</p>
-            <p data-translate="about-me-description-4">Actualmente busco nuevas oportunidades como Frontend Developer Angular, donde pueda aportar experiencia en desarrollo SPA, calidad de código y aprendizaje continuo.</p>
+            <p class="animate animate--fade-up" data-translate="about-me-description-1">
+              Desde 2016 trabajo en desarrollo web, evolucionando desde maquetación y frontend hasta aplicaciones modernas con Angular, TypeScript y arquitecturas escalables. Trabajo con Angular 16+,
+              desarrollando componentes reutilizables, formularios dinámicos, gestión de estado con Angular Signals, integración de APIs REST, pruebas unitarias y mejoras de UX/UI en aplicaciones
+              enterprise.
+            </p>
+            <p class="animate animate--fade-up" data-translate="about-me-description-2">
+              Tengo experiencia en mapeo de DTOs, asincronía con RxJS, testing y colaboración con Git Flow y Azure DevOps. Además, continúo profundizando en Angular moderno, arquitectura frontend y
+              buenas prácticas de desarrollo.
+            </p>
+            <p class="animate animate--fade-up" data-translate="about-me-description-3">
+              También sigo implementando mejoras y nuevas funcionalidades en mis proyectos personales para continuar evolucionando técnicamente:<br /><br />• EZHub DS → Design System con Angular.
+              Disponible en&nbsp;<a href="https://ezhub-ds.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Ir a EZHub DS">EZHub DS</a>.<br /><br />• EZHub → aplicación de búsqueda
+              de habitaciones con geolocalización (Angular + NestJS + MySQL). Disponible en&nbsp;<a href="https://ezhub.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Ir a EZHub"
+                >EZHub</a
+              >.
+            </p>
+            <p class="animate animate--fade-up" data-translate="about-me-description-4">
+              Actualmente busco nuevas oportunidades como Frontend Developer Angular, donde pueda aportar experiencia en desarrollo SPA, calidad de código y aprendizaje continuo.
+            </p>
           </div>
 
           <!-- Tech Skills -->
           <div class="tech-skills mb-2">
-            <h3 class="text-center" data-translate="tech-skills-title">Tech Skills</h3>
-            <p data-translate="tech-skills-description">En mi carrera, he trabajado con una variedad de tecnologías, como:</p>
-            <div class="tech-skills__card text-center">
-
-              <!-- Frontend -->
-              <div class="card animate animate--fade-up">
-                <h4 class="mb-md" data-translate="tech-skills-frontend">Frontend</h4>
-                <p data-translate="tech-skills-frontend-description">Desarrollo de interfaces con Angular 16+ (Signals, Material), TypeScript, RxJS, HTML5, CSS3, SASS, JavaScript (ES6+), Bootstrap, Tailwind CSS, Jest, Jasmine/Karma, Vue y jQuery.</p>
-              </div>
-
-              <!-- Backend -->
-              <div class="card animate animate--fade-up">
-                <h4 class="mb-md" data-translate="tech-skills-backend">Backend</h4>
-                <p data-translate="tech-skills-backend-description">Desarrollo y mantenimiento con APIs REST, Node.js, NestJS, MySQL, Oracle, Java y PHP.</p>
-              </div>
-
-              <!-- Diseño -->
-              <div class="card animate animate--fade-up">
-                <h4 class="mb-md" data-translate="tech-skills-design">Diseño</h4>
-                <p data-translate="tech-skills-design-description">Creación de interfaces atractivas y accesibles con un enfoque en la usabilidad utilizando Photoshop, Illustrator, Adobe XD, InDesign y Figma.</p>
-              </div>
-
-              <!-- Otros -->
-              <div class="card animate animate--fade-up">
-                <h4 class="mb-md" data-translate="tech-skills-others">Otros</h4>
-                <p data-translate="tech-skills-others-description">Gestión de proyectos y control de versiones con Scrum, Git, GitHub, Azure DevOps y Postman. GIS (SIG) y Mapbox. Prompting con IA aplicado a la optimización de código y la productividad.</p>
-              </div>
-            </div>
+            <h3 class="text-center animate animate--fade-up" data-translate="tech-skills-title">Tech Skills</h3>
+            <p class="animate animate--fade-up" data-translate="tech-skills-description">En mi carrera, he trabajado con una variedad de tecnologías, como:</p>
+            <ul class="card-grid skills-grid">
+              <li>
+                <article class="card animate animate--fade-up">
+                  <div class="card__media card__media--illustration"><img src="./public/images/undraw/progressive-web-app.svg" alt="" width="800" height="560" loading="lazy" /></div>
+                  <div class="card__body">
+                    <h4 class="card__title" data-translate="tech-skills-frontend">Frontend</h4>
+                    <ul class="card__tags"><li class="card__tag">Angular 16+</li><li class="card__tag">Angular Signals</li><li class="card__tag">Angular Material</li><li class="card__tag">TypeScript</li><li class="card__tag">RxJS</li><li class="card__tag">JavaScript ES6+</li><li class="card__tag">HTML5</li><li class="card__tag">CSS3</li><li class="card__tag">Sass</li><li class="card__tag">Bootstrap</li><li class="card__tag">Tailwind CSS</li><li class="card__tag">Vue</li><li class="card__tag">jQuery</li></ul>
+                  </div>
+                </article>
+              </li>
+              <li>
+                <article class="card animate animate--fade-up">
+                  <div class="card__media card__media--illustration"><img src="./public/images/undraw/bug-detected.svg" alt="" width="800" height="560" loading="lazy" /></div>
+                  <div class="card__body">
+                    <h4 class="card__title" data-translate="tech-skills-testing">Pruebas</h4>
+                    <ul class="card__tags"><li class="card__tag">Jest</li><li class="card__tag">Jasmine</li><li class="card__tag">Karma</li></ul>
+                  </div>
+                </article>
+              </li>
+              <li>
+                <article class="card animate animate--fade-up">
+                  <div class="card__media card__media--illustration"><img src="./public/images/undraw/database-tables.svg" alt="" width="800" height="560" loading="lazy" /></div>
+                  <div class="card__body">
+                    <h4 class="card__title" data-translate="tech-skills-backend-data">Backend y datos</h4>
+                    <ul class="card__tags"><li class="card__tag" data-translate="tech-tag-rest">APIs REST</li><li class="card__tag">Node.js</li><li class="card__tag">NestJS</li><li class="card__tag">MySQL</li><li class="card__tag">Oracle</li><li class="card__tag">Java</li><li class="card__tag">PHP</li></ul>
+                  </div>
+                </article>
+              </li>
+              <li>
+                <article class="card animate animate--fade-up">
+                  <div class="card__media card__media--illustration"><img src="./public/images/undraw/code-review.svg" alt="" width="800" height="560" loading="lazy" /></div>
+                  <div class="card__body">
+                    <h4 class="card__title" data-translate="tech-skills-tools">Herramientas y metodologías</h4>
+                    <ul class="card__tags"><li class="card__tag">Scrum</li><li class="card__tag">Git</li><li class="card__tag">GitHub</li><li class="card__tag">Git Flow</li><li class="card__tag">Azure DevOps</li><li class="card__tag">Postman</li><li class="card__tag">DBeaver</li><li class="card__tag">SonarQube</li><li class="card__tag">CI/CD</li></ul>
+                  </div>
+                </article>
+              </li>
+              <li>
+                <article class="card animate animate--fade-up">
+                  <div class="card__media card__media--illustration"><img src="./public/images/undraw/smartwatch-map.svg" alt="" width="800" height="560" loading="lazy" /></div>
+                  <div class="card__body">
+                    <h4 class="card__title" data-translate="tech-skills-gis-design">GIS y diseño</h4>
+                    <ul class="card__tags"><li class="card__tag">Mapbox</li><li class="card__tag">SIG/GIS</li><li class="card__tag">Figma</li><li class="card__tag">Adobe XD</li><li class="card__tag">Photoshop</li><li class="card__tag">Illustrator</li><li class="card__tag">InDesign</li></ul>
+                  </div>
+                </article>
+              </li>
+              <li>
+                <article class="card animate animate--fade-up">
+                  <div class="card__media card__media--illustration"><img src="./public/images/undraw/ai-agent.svg" alt="" width="800" height="560" loading="lazy" /></div>
+                  <div class="card__body">
+                    <h4 class="card__title" data-translate="tech-skills-ai">IA</h4>
+                    <p class="card__text card__text--full" data-translate="tech-skills-ai-description">Prompting aplicado a la optimización del código y la productividad.</p>
+                  </div>
+                </article>
+              </li>
+            </ul>
+          
           </div>
 
           <!-- Soft Skills -->
           <div class="soft-skills">
-            <h3 class="text-center" data-translate="soft-skills-title">Soft Skills</h3>
-            <p data-translate="soft-skills-description">Soy autónoma, orientada al logro y al cliente, y me adapto bien a los cambios. Disfruto del trabajo en equipo y de colaborar para alcanzar objetivos comunes.</p>
-            <div class="soft-skills__items">
-
-              <!-- Autonomía -->
-              <div class="center flex-column gap-2">
-                <span class="icon-tile icon-tile--lg" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../public/images/autonomia.svg')"></span></span>
-                <h4 data-translate="soft-skills-autonomy">Autonomía</h4>
-              </div>
-
-              <!-- Orientación al logro -->
-              <div class="center flex-column gap-2">
-                <span class="icon-tile icon-tile--lg" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../public/images/orientacion-al-logro.svg')"></span></span>
-                <h4 data-translate="soft-skills-achievement-orientation">Orientación al logro</h4>
-              </div>
-
-              <!-- Trabajo en equipo -->
-              <div class="center flex-column gap-2">
-                <span class="icon-tile icon-tile--lg" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../public/images/trabajo-en-equipo.svg')"></span></span>
-                <h4 data-translate="soft-skills-teamwork">Trabajo en equipo</h4>
-              </div>
-            </div>
+            <h3 class="text-center animate animate--fade-up" data-translate="soft-skills-title">Soft Skills</h3>
+            <p class="animate animate--fade-up" data-translate="soft-skills-description">
+              Soy autónoma, orientada al logro y al cliente, y me adapto bien a los cambios. Disfruto del trabajo en equipo y de colaborar para alcanzar objetivos comunes.
+            </p>
+            <ul class="card-grid skills-grid">
+              <li>
+                <article class="card animate animate--fade-up">
+                  <div class="card__body">
+                    <span class="icon-tile card__icon" aria-hidden="true"><svg><use href="public/icons/icons.svg#psychology"></use></svg></span>
+                    <h4 class="card__title" data-translate="soft-skills-autonomy">Autonomía</h4>
+                    <p class="card__text card__text--full" data-translate="soft-skills-autonomy-description">Aprendo de forma continua para trabajar con seguridad y autonomía, y resolver problemas de forma eficaz.</p>
+                  </div>
+                </article>
+              </li>
+              <li>
+                <article class="card animate animate--fade-up">
+                  <div class="card__body">
+                    <span class="icon-tile card__icon" aria-hidden="true"><svg><use href="public/icons/icons.svg#ads_click"></use></svg></span>
+                    <h4 class="card__title" data-translate="soft-skills-achievement-orientation">Orientación al logro</h4>
+                    <p class="card__text card__text--full" data-translate="soft-skills-achievement-orientation-description">Me comprometo con la calidad de cada entrega. El tiempo que dedico a mejorar una solución es, para mí, una inversión en aprendizaje.</p>
+                  </div>
+                </article>
+              </li>
+              <li>
+                <article class="card animate animate--fade-up">
+                  <div class="card__body">
+                    <span class="icon-tile card__icon" aria-hidden="true"><svg><use href="public/icons/icons.svg#groups"></use></svg></span>
+                    <h4 class="card__title" data-translate="soft-skills-teamwork">Trabajo en equipo</h4>
+                    <p class="card__text card__text--full" data-translate="soft-skills-teamwork-description">Escucho, comparto conocimiento y colaboro para alcanzar los objetivos comunes.</p>
+                  </div>
+                </article>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
 
       <!-- Projects -->
 
-      <section id="projects" class="projects section bg-glow bg-glow--emphasis" data-scroll-spy>
+      <section id="projects" class="projects section bg-soft bg-glow">
+        <div class="bg-layer bg-waves" aria-hidden="true"></div>
+        <div class="bg-layer bg-waves bg-waves--reverse" aria-hidden="true"></div>
+        <div class="bg-layer bg-dots" aria-hidden="true"></div>
+        <div class="bg-layer bg-divider" aria-hidden="true"></div>
         <div class="container">
-          <div class="section-title section-title--dark animate animate--fade-up">
+          <div class="section-title animate animate--fade-up">
             <span aria-hidden="true" data-translate="projects-title">Proyectos</span>
             <h2 data-translate="projects-title">Proyectos</h2>
           </div>
           <div class="center flex-column gap-4">
-
             <!-- EZHub -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="projects-ezhub-title">EZHub</h3>
-              <p data-translate="projects-ezhub-description">Aplicación en desarrollo para la búsqueda de habitaciones por geolocalización, diseñada como proyecto final de mi bootcamp de Angular en IT Academy. La aplicación permite interactuar con el backend para gestionar usuarios, propiedades y habitaciones, e incluye autenticación de usuarios con JWT y encriptación de contraseñas. Desarrollada con Angular, Nest, MySQL, Mapbox y TailwindCSS.</p>
-              <p data-translate="projects-ezhub-repositories">Repositorios: <a href="https://github.com/Yul1b3th/ezhub-frontend" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Frontend de EZHub">Frontend</a> | <a href="https://github.com/Yul1b3th/ezhub-backend" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Backend de EZHub">Backend</a></p>
+              <p data-translate="projects-ezhub-description">
+                Aplicación en desarrollo para la búsqueda de habitaciones por geolocalización, diseñada como proyecto final de mi bootcamp de Angular en IT Academy. La aplicación permite interactuar
+                con el backend para gestionar usuarios, propiedades y habitaciones, e incluye autenticación de usuarios con JWT y encriptación de contraseñas. Desarrollada con Angular, Nest, MySQL,
+                Mapbox y TailwindCSS.
+              </p>
+              <p data-translate="projects-ezhub-repositories">
+                Repositorios: <a href="https://github.com/Yul1b3th/ezhub-frontend" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Frontend de EZHub">Frontend</a> |
+                <a href="https://github.com/Yul1b3th/ezhub-backend" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Backend de EZHub">Backend</a>
+              </p>
               <a href="https://ezhub.vercel.app/" class="btn btn--small" target="_blank" rel="noopener noreferrer" data-translate="projects-ezhub-demo">Demo</a>
             </div>
 
             <!-- EZHub DS -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="projects-ezhubds-title">EZHub DS</h3>
-              <p data-translate="projects-ezhubds-description">Design System desarrollado con Angular enfocado en la reutilización de componentes, escalabilidad y consistencia visual en aplicaciones frontend. Incluye componentes reutilizables, sistema de estilos, arquitectura modular y enfoque en mantenibilidad y experiencia de usuario.</p>
-              <p data-translate="projects-ezhubds-repositories">Repositorio: <a href="https://github.com/Yul1b3th/design-system" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Frontend de EZHub DS">Frontend</a></p>
+              <p data-translate="projects-ezhubds-description">
+                Design System desarrollado con Angular enfocado en la reutilización de componentes, escalabilidad y consistencia visual en aplicaciones frontend. Incluye componentes reutilizables,
+                sistema de estilos, arquitectura modular y enfoque en mantenibilidad y experiencia de usuario.
+              </p>
+              <p data-translate="projects-ezhubds-repositories">
+                Repositorio: <a href="https://github.com/Yul1b3th/design-system" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Frontend de EZHub DS">Frontend</a>
+              </p>
               <a href="https://ezhub-ds.vercel.app/" class="btn btn--small" target="_blank" rel="noopener noreferrer" data-translate="projects-ezhubds-demo">Demo</a>
             </div>
 
             <!-- ITA Challenges -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="projects-ita-challenges-title">ITA Challenges</h3>
-              <p data-translate="projects-ita-challenges-description">Aplicación en desarrollo de la IT Academy que permite a los estudiantes participar en retos de programación y hacer seguimiento de su progreso. En 2024, colaboré activamente implementando funcionalidades interactivas, realizando pruebas unitarias con Jest y gestionando tareas en GitHub.</p>
-              <p data-translate="projects-ita-challenges-repositories">Repositorios: <a href="https://github.com/IT-Academy-BCN/ita-challenges-frontend" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Frontend de ITA Challenges">Frontend</a> | <a href="https://github.com/IT-Academy-BCN/ita-challenges-backend" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Backend de ITA Challenges">Backend</a></p>
-              <a href="http://dev.ita-challenges.eurecatacademy.org/ita-challenge/challenges" class="btn btn--small" target="_blank" rel="noopener noreferrer" data-translate="projects-ita-challenges-demo">Demo</a>
+              <p data-translate="projects-ita-challenges-description">
+                Aplicación en desarrollo de la IT Academy que permite a los estudiantes participar en retos de programación y hacer seguimiento de su progreso. En 2024, colaboré activamente
+                implementando funcionalidades interactivas, realizando pruebas unitarias con Jest y gestionando tareas en GitHub.
+              </p>
+              <p data-translate="projects-ita-challenges-repositories">
+                Repositorios:
+                <a href="https://github.com/IT-Academy-BCN/ita-challenges-frontend" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Frontend de ITA Challenges">Frontend</a> |
+                <a href="https://github.com/IT-Academy-BCN/ita-challenges-backend" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Backend de ITA Challenges">Backend</a>
+              </p>
+              <a
+                href="http://dev.ita-challenges.eurecatacademy.org/ita-challenge/challenges"
+                class="btn btn--small"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-translate="projects-ita-challenges-demo"
+                >Demo</a
+              >
             </div>
 
             <!-- EduMap -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="projects-edumap-title">EduMap</h3>
-              <p data-translate="projects-edumap-description">Aplicación que permite a los usuarios visualizar y analizar datos relacionados con el acceso y la equidad en la educación a través de mapas interactivos. Los datos, obtenidos de OpenData Barcelona, permiten explorar indicadores por distrito, como ingresos familiares y distribución de centros educativos. Este proyecto fue parte de una hackatón en IT Academy, realizada el 22 de octubre de 2024, por un equipo compuesto por profesionales de las disciplinas de Data Analyst, Backend y Frontend.</p>
-              <p data-translate="projects-edumap-repositories">Repositorios: <a href="https://github.com/Yul1b3th/edu-front" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Frontend de EduMap">Frontend</a> | <a href="https://github.com/amarinite/hackatonITAcademy" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Backend de EduMap">Backend</a></p>
+              <p data-translate="projects-edumap-description">
+                Aplicación que permite a los usuarios visualizar y analizar datos relacionados con el acceso y la equidad en la educación a través de mapas interactivos. Los datos, obtenidos de
+                OpenData Barcelona, permiten explorar indicadores por distrito, como ingresos familiares y distribución de centros educativos. Este proyecto fue parte de una hackatón en IT Academy,
+                realizada el 22 de octubre de 2024, por un equipo compuesto por profesionales de las disciplinas de Data Analyst, Backend y Frontend.
+              </p>
+              <p data-translate="projects-edumap-repositories">
+                Repositorios: <a href="https://github.com/Yul1b3th/edu-front" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Frontend de EduMap">Frontend</a> |
+                <a href="https://github.com/amarinite/hackatonITAcademy" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Backend de EduMap">Backend</a>
+              </p>
               <a href="https://edu-front-delta.vercel.app/" class="btn btn--small" target="_blank" rel="noopener noreferrer" data-translate="projects-edumap-demo">Demo</a>
             </div>
 
             <!-- TryTime -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="projects-trytime-title">TryTime</h3>
-              <p data-translate="projects-trytime-description">Aplicación web que genera actividades aleatorias, diseñada para la hackatón de IT Academy en 2024. Desarrollada con Angular y Server-Side Rendering (SSR) para mejorar el rendimiento y SEO. TryTime permite a los usuarios obtener actividades aleatorias de la Bored API, con opciones de filtrado por tipo de actividad. Incluye manejo de errores de red, optimización de CORS con proxy y un diseño responsivo adaptado a dispositivos móviles y escritorio.</p>
-              <p data-translate="projects-trytime-repositories">Repositorio: <a href="https://github.com/Yul1b3th/hackaton-cibernarium-boored" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Frontend de TryTime">Frontend</a></p>
+              <p data-translate="projects-trytime-description">
+                Aplicación web que genera actividades aleatorias, diseñada para la hackatón de IT Academy en 2024. Desarrollada con Angular y Server-Side Rendering (SSR) para mejorar el rendimiento y
+                SEO. TryTime permite a los usuarios obtener actividades aleatorias de la Bored API, con opciones de filtrado por tipo de actividad. Incluye manejo de errores de red, optimización de
+                CORS con proxy y un diseño responsivo adaptado a dispositivos móviles y escritorio.
+              </p>
+              <p data-translate="projects-trytime-repositories">
+                Repositorio: <a href="https://github.com/Yul1b3th/hackaton-cibernarium-boored" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Frontend de TryTime">Frontend</a>
+              </p>
               <a href="https://hackaton-cibernarium-boored.vercel.app/" class="btn btn--small" target="_blank" rel="noopener noreferrer" data-translate="projects-trytime-demo">Demo</a>
             </div>
           </div>
@@ -252,30 +403,38 @@
 
       <!-- Experience -->
 
-      <section id="experience" class="experience section bg-halo bg-halo--start" data-scroll-spy>
+      <section id="experience" class="experience section bg-halo bg-halo--start">
+        <div class="bg-layer bg-grid" aria-hidden="true"></div>
+        <div class="bg-layer bg-divider" aria-hidden="true"></div>
         <div class="container">
           <div class="section-title animate animate--fade-up">
             <span aria-hidden="true" data-translate="experience-title">EXPERIENCIA</span>
             <h2 data-translate="experience-title">EXPERIENCIA</h2>
           </div>
           <div class="center flex-column gap-4">
-
             <!-- TRAGSATEC -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="experience-tragsatec-title">Angular Developer</h3>
               <p class="resume-items__year" data-translate="experience-tragsatec-year">Ene. 2025 - Mar. 2026</p>
               <p><strong data-translate="experience-tragsatec-company">Tragsatec | España.</strong></p>
               <ul>
-                <li data-translate="experience-tragsatec-task1">Desarrollo de funcionalidades con Angular (v17–v20), TypeScript y Angular Material, consumiendo la librería corporativa para el diseño de formularios y tablas dinámicas con lógica condicional.</li>
+                <li data-translate="experience-tragsatec-task1">
+                  Desarrollo de funcionalidades con Angular (v17–v20), TypeScript y Angular Material, consumiendo la librería corporativa para el diseño de formularios y tablas dinámicas con lógica
+                  condicional.
+                </li>
                 <li data-translate="experience-tragsatec-task2">Implementación de estado reactivo con Angular Signals e integración de APIs REST (CRUD y mapeo de DTOs) mediante RxJS y HttpClient.</li>
                 <li data-translate="experience-tragsatec-task3">Rediseño de vistas con criterios de UX/UI y accesibilidad, utilizando SASS.</li>
-                <li data-translate="experience-tragsatec-task4">Gestión del entorno local mediante el levantamiento de microservicios Java/Spring Boot. Consultas y validaciones de datos en Oracle con DBeaver.</li>
-                <li data-translate="experience-tragsatec-task5">Integración de código mediante Git Flow y Azure DevOps. Participación en pipelines CI/CD, pruebas unitarias con Jasmine/Karma y validación de cobertura mediante SonarQube.</li>
+                <li data-translate="experience-tragsatec-task4">
+                  Gestión del entorno local mediante el levantamiento de microservicios Java/Spring Boot. Consultas y validaciones de datos en Oracle con DBeaver.
+                </li>
+                <li data-translate="experience-tragsatec-task5">
+                  Integración de código mediante Git Flow y Azure DevOps. Participación en pipelines CI/CD, pruebas unitarias con Jasmine/Karma y validación de cobertura mediante SonarQube.
+                </li>
               </ul>
             </div>
 
             <!-- IT ACADEMY -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="experience-itacademy-title">Angular Developer</h3>
               <p class="resume-items__year" data-translate="experience-itacademy-year">Sep. 2023 - Dic. 2024</p>
               <p><strong data-translate="experience-itacademy-company">IT Academy | España.</strong></p>
@@ -287,7 +446,7 @@
             </div>
 
             <!-- GRUPO ANAYA -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="experience-anaya-title">JavaScript Developer</h3>
               <p class="resume-items__year" data-translate="experience-anaya-year">Feb. 2023 - Jul. 2023</p>
               <p><strong data-translate="experience-anaya-company">Grupo Anaya, S.A.U. | España.</strong></p>
@@ -298,7 +457,7 @@
             </div>
 
             <!-- PRINCIPIOS INTERACTIVOS -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="experience-principios-title">Maquetadora Web</h3>
               <p class="resume-items__year" data-translate="experience-principios-year">Jun. 2019 - Dic. 2022</p>
               <p><strong data-translate="experience-principios-company">Principios Interactivos, S.L. | España.</strong></p>
@@ -309,7 +468,7 @@
             </div>
 
             <!-- VIP RENTAL -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="experience-vip-title">Desarrolladora Web</h3>
               <p class="resume-items__year" data-translate="experience-vip-year">Mar. 2016 - May. 2019</p>
               <p><strong data-translate="experience-vip-company">VIP Rental Barcelona, S.L.U. | España.</strong></p>
@@ -320,7 +479,7 @@
             </div>
 
             <!-- INTERCID -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="experience-owner-title">Propietaria</h3>
               <p class="resume-items__year" data-translate="experience-owner-year">Mar. 2007 - Nov. 2014</p>
               <p><strong data-translate="experience-owner-company">Intercid, C.A. | Venezuela.</strong></p>
@@ -335,14 +494,17 @@
 
       <!-- Education -->
 
-      <section id="education" class="education section bg-sweep bg-sweep--emphasis" data-scroll-spy>
+      <section id="education" class="education section bg-sweep">
+        <div class="bg-layer bg-beams" aria-hidden="true"></div>
+        <div class="bg-layer bg-orbs" aria-hidden="true"></div>
+        <div class="bg-layer bg-divider" aria-hidden="true"></div>
         <div class="container">
-          <div class="section-title section-title--dark animate animate--fade-up">
+          <div class="section-title animate animate--fade-up">
             <span data-translate="education-title">Formación</span>
             <h2 data-translate="education-title">Formación</h2>
           </div>
           <div class="center flex-column gap-4">
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="education-informatica-title">Ingeniero en Informática</h3>
               <p class="resume-items__year" data-translate="education-informatica-year">Oct. 1998 - Mar. 2004</p>
               <p><strong data-translate="education-informatica-institution">Universidad "Fermín Toro" | Venezuela.</strong></p>
@@ -350,7 +512,7 @@
                 <li data-translate="education-informatica-duration">5 años.</li>
               </ul>
             </div>
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="education-angular-title">Frontend Developer Angular</h3>
               <p class="resume-items__year" data-translate="education-angular-year">Sep. 2023 - Feb. 2024</p>
               <p><strong data-translate="education-angular-institution">IT Academy | España.</strong></p>
@@ -358,7 +520,7 @@
                 <li data-translate="education-angular-duration">Bootcamp de 360 horas.</li>
               </ul>
             </div>
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="education-certification3-title">CP3: Desarrollo de Aplicaciones con Tecnología Web</h3>
               <p class="resume-items__year" data-translate="education-certification3-year">2023 - 2024</p>
               <p><strong data-translate="education-certification3-institution">Certificado de Profesionalidad de Nivel 3 | CIFO | España.</strong></p>
@@ -366,7 +528,7 @@
                 <li data-translate="education-certification3-duration">180 horas.</li>
               </ul>
             </div>
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="education-vue2023-title">Frontend Developer Vue</h3>
               <p class="resume-items__year" data-translate="education-vue2023-year">2023</p>
               <p><strong data-translate="education-vue2023-institution">La Salle Universidad Ramon Llull | España.</strong></p>
@@ -374,7 +536,7 @@
                 <li data-translate="education-vue2023-duration">Bootcamp de 240 horas.</li>
               </ul>
             </div>
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="education-vue2022-title">Frontend Developer Vue</h3>
               <p class="resume-items__year" data-translate="education-vue2022-year">2022</p>
               <p><strong data-translate="education-vue2022-institution">Eurecat | España.</strong></p>
@@ -382,7 +544,7 @@
                 <li data-translate="education-vue2022-duration">Bootcamp de 240 horas.</li>
               </ul>
             </div>
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="education-certification2-title">CP2: Confección y Publicación de Páginas Web</h3>
               <p class="resume-items__year" data-translate="education-certification2-year">2016</p>
               <p><strong data-translate="education-certification2-institution">Certificado de Profesionalidad de Nivel 2 | CIFO | España.</strong></p>
@@ -396,65 +558,67 @@
 
       <!-- Courses -->
 
-      <section id="courses" class="courses section bg-glow" data-scroll-spy>
+      <section id="courses" class="courses section bg-glow">
+        <div class="bg-layer bg-waves bg-waves--soft" aria-hidden="true"></div>
+        <div class="bg-layer bg-dots bg-dots--top-start" aria-hidden="true"></div>
+        <div class="bg-layer bg-divider" aria-hidden="true"></div>
         <div class="container">
           <div class="section-title animate animate--fade-up">
             <span aria-hidden="true" data-translate="courses-title">Cursos</span>
             <h2 data-translate="courses-title">Cursos</h2>
           </div>
           <div class="resume-items">
-
             <!-- GOOGLE UX DESIGN -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="courses-ux-title">Google UX Design Professional Certificate</h3>
               <p class="resume-items__year" data-translate="courses-ux-year">2026 (260 horas)</p>
               <p data-translate="courses-ux-institution">Coursera.</p>
             </div>
 
             <!-- DESARROLLO WEB PHP / MYSQL -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="courses-php-title">Desarrollo Web (PHP / MySQL)</h3>
               <p class="resume-items__year" data-translate="courses-php-year">2026 (80 horas)</p>
               <p data-translate="courses-php-institution">La Salle Universidad Ramon Llull | España.</p>
             </div>
 
             <!-- GOOGLE PROMPTING ESSENTIALS -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="courses-prompting-title">Google Prompting Essentials</h3>
               <p class="resume-items__year" data-translate="courses-prompting-year">2026 (8 horas)</p>
               <p data-translate="courses-prompting-institution">Coursera.</p>
             </div>
 
             <!-- JAVA SE 11 -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="courses-java-title">Java SE 11</h3>
               <p class="resume-items__year" data-translate="courses-java-year">2026 (60 horas)</p>
               <p data-translate="courses-java-institution">La Salle Universidad Ramon Llull | España.</p>
             </div>
 
             <!-- SCRUM -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="courses-scrum-title">Scrum Framework</h3>
               <p class="resume-items__year" data-translate="courses-scrum-year">2023 (50 horas)</p>
               <p data-translate="courses-scrum-institution">Proyecto Universidad Empresa, S.L. (PUE) | España.</p>
             </div>
 
             <!-- WORDPRESS -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="courses-wordpress-title">WordPress</h3>
               <p class="resume-items__year" data-translate="courses-wordpress-year">2017 (100 horas)</p>
               <p data-translate="courses-wordpress-institution">CIFO | España.</p>
             </div>
 
             <!-- PHOTOSHOP -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="courses-photoshop-title">Procesamiento de Imágenes para la Web con Photoshop</h3>
               <p class="resume-items__year" data-translate="courses-photoshop-year">2017 (100 horas)</p>
               <p data-translate="courses-photoshop-institution">CIFO | España.</p>
             </div>
 
             <!-- PRESTASHOP -->
-            <div class="card animate animate--fade-up">
+            <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="courses-prestashop-title">Creación de tiendas online con Prestashop</h3>
               <p class="resume-items__year" data-translate="courses-prestashop-year">2017 (100 horas)</p>
               <p data-translate="courses-prestashop-institution">Barcelona Activa | España.</p>
@@ -465,30 +629,33 @@
 
       <!-- Contact -->
 
-      <section id="contact" class="contact section bg-halo bg-halo--emphasis bg-halo--start" data-scroll-spy>
+      <section id="contact" class="contact section bg-halo bg-halo--start">
+        <div class="bg-layer bg-ribbon" aria-hidden="true"></div>
+        <div class="bg-layer bg-floor" aria-hidden="true"></div>
+        <div class="bg-layer bg-dots bg-dots--top-end" aria-hidden="true"></div>
+        <div class="bg-layer bg-divider" aria-hidden="true"></div>
         <div class="container">
-          <div class="section-title section-title--dark animate animate--fade-up">
+          <div class="section-title animate animate--fade-up">
             <span aria-hidden="true" data-translate="contact-title">Contacto</span>
             <h2 data-translate="contact-title">Contacto</h2>
           </div>
           <div class="contact__cards">
-
             <!-- Ubicación -->
-            <div class="card center flex-column gap-1">
+            <div class="card card--cv center flex-column gap-1">
               <span class="icon-tile" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../public/icons/location_on.svg')"></span></span>
               <p><strong data-translate="contact-location-title">Ubicación</strong></p>
               <p data-translate="contact-location">Barcelona, España</p>
             </div>
 
             <!-- Email -->
-            <div class="card center flex-column gap-1">
+            <div class="card card--cv center flex-column gap-1">
               <span class="icon-tile" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../public/icons/mail.svg')"></span></span>
               <p><strong data-translate="contact-email-title1">Email</strong></p>
               <p><a href="mailto:yulibeth.rivero@gmail.com" data-translate="contact-email">yulibeth.rivero@gmail.com</a></p>
             </div>
 
             <!-- Redes Sociales -->
-            <div class="card center flex-column gap-1">
+            <div class="card card--cv center flex-column gap-1">
               <span class="icon-tile" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../public/icons/share.svg')"></span></span>
               <p><strong data-translate="contact-social-title">Redes Sociales</strong></p>
               <ul class="social-media">
@@ -505,28 +672,49 @@
               </ul>
             </div>
           </div>
-          <form class="card contact-form">
+          <form class="card card--cv contact-form">
             <div class="contact-form__group">
               <label class="visually-hidden" for="name" data-translate="contact-name-label">Nombre</label>
-              <input id="name" type="text" name="name" class="contact-form__control" placeholder="Ingresa tu nombre *" title="Nombre sólo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" autocomplete="name" required data-translate="contact-name-placeholder contact-name-title">
+              <input
+                id="name"
+                type="text"
+                name="name"
+                class="contact-form__control"
+                placeholder="Ingresa tu nombre *"
+                title="Nombre sólo acepta letras y espacios en blanco"
+                pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                autocomplete="name"
+                required
+                data-translate="contact-name-placeholder contact-name-title"
+              />
             </div>
             <div class="contact-form__group">
               <label class="visually-hidden" for="email" data-translate="contact-email-label">Correo electrónico</label>
-              <input id="email" type="email" name="email" class="contact-form__control" placeholder="Ingresa tu correo *" title="Email incorrecto" autocomplete="email" required data-translate="contact-email-placeholder contact-email-title2">
+              <input
+                id="email"
+                type="email"
+                name="email"
+                class="contact-form__control"
+                placeholder="Ingresa tu correo *"
+                title="Email incorrecto"
+                autocomplete="email"
+                required
+                data-translate="contact-email-placeholder contact-email-title2"
+              />
             </div>
             <div class="contact-form__group">
               <label class="visually-hidden" for="comments" data-translate="contact-comments-label">Comentarios</label>
               <textarea id="comments" name="comments" class="contact-form__control" rows="5" placeholder="Déjame tus comentarios *" required data-translate="contact-comments-placeholder"></textarea>
             </div>
             <div class="contact-form__loader text-center d-none">
-              <img src="./public/images/loader.svg" alt="Enviando..." data-translate="contact-loader-alt">
+              <img src="./public/images/loader.svg" alt="Enviando..." data-translate="contact-loader-alt" />
             </div>
             <button type="submit" class="btn" data-translate="contact-submit">Enviar mensaje</button>
           </form>
           <div id="thanks" class="contact-modal">
             <div class="contact-modal__content">
               <div class="contact-form__response">
-                <p data-translate="contact-thanks-message">¡Muchas Gracias!<br>Por tus comentarios</p>
+                <p data-translate="contact-thanks-message">¡Muchas Gracias!<br />Por tus comentarios</p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="svgTitle svgDesc">
                   <title id="svgTitle" data-translate="contact-thanks-title">Icono de cara sonriente</title>
                   <desc id="svgDesc" data-translate="contact-thanks-desc">Un icono circular con una cara sonriente</desc>
@@ -543,6 +731,8 @@
         <p>© <span id="year"></span> Yulibeth Rivero</p>
       </div>
     </footer>
-    <button class="scroll-top-btn hidden" type="button" aria-label="Volver arriba" data-translate="scroll-top-label"><svg class="scroll-top-btn__icon" aria-hidden="true"><use href="public/icons/icons.svg#keyboard_control_key"></use></svg></button>
+    <button class="scroll-top-btn hidden" type="button" aria-label="Volver arriba" data-translate="scroll-top-label">
+      <svg class="scroll-top-btn__icon" aria-hidden="true"><use href="public/icons/icons.svg#keyboard_control_key"></use></svg>
+    </button>
   </body>
 </html>

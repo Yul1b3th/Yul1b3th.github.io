@@ -4,6 +4,8 @@
 // Mensaje de estado con icono, texto y barra lateral de color
 // Los fondos suaves de color se usan solo aquí
 
+@use '../abstracts' as *;
+
 .alert {
   --alert-text: var(--color-info-text);
   --alert-bg: var(--color-info-bg);
@@ -13,11 +15,23 @@
   align-items: flex-start;
   gap: var(--space-sm);
   padding: var(--space-md);
-  border: 1px solid var(--alert-border);
+  border: var(--border-width-sm) solid var(--alert-border);
   border-inline-start-width: 4px;
   border-radius: var(--radius-md);
   background-color: var(--alert-bg);
   color: var(--color-text-body);
+}
+
+/* Al cerrarlo se desvanece y sube un poco antes de desaparecer */
+.alert {
+  transition:
+    opacity var(--duration-base) var(--ease-accelerate),
+    transform var(--duration-base) var(--ease-accelerate);
+}
+
+.alert.is-closing {
+  opacity: 0;
+  transform: translateY(-0.25rem);
 }
 
 .alert--success {
@@ -42,7 +56,8 @@
   flex: none;
   width: 1.5rem;
   height: 1.5rem;
-  fill: var(--alert-text);
+  color: var(--alert-text);
+  fill: currentColor;
 }
 
 .alert__content {
@@ -52,10 +67,29 @@
 
 .alert__title {
   margin: 0 0 var(--space-xs);
-  color: var(--alert-text);
+  color: var(--color-text-heading);
   font-weight: var(--font-weight-semibold);
 }
 
 .alert__text {
   margin: 0;
+}
+
+/* Mensaje que se puede cerrar, con el botón de icono del sistema */
+.alert--dismissible {
+  padding-right: var(--space-sm);
+}
+
+.alert__close {
+  flex: none;
+  --button-text: var(--alert-text);
+  --button-bg-hover: color-mix(in srgb, var(--alert-text) 12%, transparent);
+  --button-bg-active: color-mix(in srgb, var(--alert-text) 20%, transparent);
+  margin: calc(var(--space-xs) * -1) 0 calc(var(--space-xs) * -1) auto;
+}
+
+@include apply-reduced-motion {
+  .alert {
+    transition: none;
+  }
 }
