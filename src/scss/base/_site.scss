@@ -84,14 +84,62 @@ a {
   }
 }
 
+// Ancho y separación propios de la barra del CV, aquí y no en _navbar.scss porque ese archivo lo pisa la sincronización
+.navbar.navbar--landing .navbar__inner {
+  gap: 0.5rem;
+  width: 96%;
+  max-width: 75rem;
+}
+
 // En escritorio los enlaces van a la derecha, junto a las redes, como en la barra anterior
-@media (min-width: 992px) {
-  .navbar--expand-lg .navbar__nav {
-    margin-left: auto;
+@media (min-width: 1200px) {
+  .navbar.navbar--landing.navbar--expand-xl .navbar__brand {
+    margin-right: auto;
   }
 
-  .navbar.navbar--expand-lg .navbar__actions {
+  .navbar.navbar--landing.navbar--expand-xl .navbar__nav {
+    margin-left: 0;
+  }
+
+  .navbar.navbar--expand-xl .navbar__actions {
     margin-left: var(--space-sm);
+  }
+
+  .navbar.navbar--landing.navbar--expand-xl .navbar__link {
+    padding-inline: var(--space-xs);
+  }
+
+  .navbar.navbar--landing.navbar--expand-xl .navbar__actions .button--icon {
+    width: 44px;
+    min-height: 44px;
+    padding: 0;
+  }
+
+  .navbar.navbar--landing.navbar--expand-xl .navbar__actions .dropdown__button {
+    padding-inline: 0.375rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1299px) {
+  .navbar.navbar--landing.navbar--expand-xl .navbar__list {
+    gap: 0.375rem;
+  }
+
+  .navbar.navbar--landing.navbar--expand-xl .navbar__link {
+    padding-inline: 0.25rem;
+    white-space: nowrap;
+  }
+
+  .navbar.navbar--landing.navbar--expand-xl .navbar__actions {
+    gap: 0.125rem;
+  }
+
+  .navbar.navbar--landing.navbar--expand-xl .navbar__separator {
+    margin-inline: 0;
+  }
+
+  .navbar.navbar--landing.navbar--expand-xl .navbar__actions .dropdown__button {
+    padding-inline: 0.25rem;
   }
 }
 
@@ -99,19 +147,35 @@ a {
 .navbar__separator {
   width: 1px;
   height: 1.75rem;
-  margin-inline: var(--space-md);
+  margin-inline: var(--space-xs);
   background-color: rgb(255 255 255 / 0.3);
   font-size: 0;
 }
 
-// Más aire entre LinkedIn y GitHub
+.navbar.navbar--landing .navbar__link::after {
+  right: 0;
+  left: 0;
+}
+
+// Conserva el color del navbar para los iconos, incluidos los enlaces visitados
+.navbar .button--icon,
+.navbar .button--icon:visited,
+.navbar .button--icon:active {
+  color: var(--navbar-text);
+}
+
+// El contenedor ya aporta separación entre los botones de icono
 .navbar__utility.button--icon + .navbar__utility.button--icon {
-  margin-left: var(--space-sm);
+  margin-left: 0;
 }
 
 // Línea fina bajo la barra para separarla del inicio
 .navbar--dark {
   border-bottom: 1px solid rgb(255 255 255 / 0.12);
+}
+
+.navbar.navbar--landing {
+  --navbar-bg: var(--navbar-solid);
 }
 
 /*-------- Enlaces externos --------*/
