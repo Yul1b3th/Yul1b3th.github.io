@@ -148,9 +148,8 @@
   text-align: left;
   white-space: nowrap;
   cursor: pointer;
-  transition:
-    background-color var(--duration-fast) var(--ease-standard),
-    box-shadow var(--duration-fast) var(--ease-standard);
+  /* La línea de la izquierda no se anima, así no se curva al perder el activo */
+  transition: background-color var(--duration-fast) var(--ease-standard);
 }
 
 .dropdown__option:hover {
