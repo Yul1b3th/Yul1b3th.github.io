@@ -76,13 +76,32 @@
       }
 
       .social-list {
+        // Botones de cristal, translúcidos y con desenfoque sobre el fondo del inicio
+        // El tono sale de bg.card, así en oscuro el cristal es navy
         a {
           @include mx.apply-border-radius(50%);
-          @include mx.apply-border(2px, solid, border-brand);
           overflow: hidden;
           padding: 0.3rem;
           width: 3.125rem;
           height: 3.125rem;
+          border: var(--border-width-sm) solid color-mix(in srgb, var(--color-bg-card) calc(var(--opacity-75) * 100%), transparent);
+          background-color: color-mix(in srgb, var(--color-bg-card) calc(var(--opacity-50) * 100%), transparent);
+          backdrop-filter: blur(8px);
+          box-shadow: var(--shadow-card);
+          transition:
+            background-color var(--duration-base) var(--ease-standard),
+            box-shadow var(--duration-base) var(--ease-standard);
+
+          &:hover {
+            background-color: color-mix(in srgb, var(--color-bg-card) calc(var(--opacity-75) * 100%), transparent);
+            box-shadow: var(--shadow-hover);
+          }
+
+          @include mx.apply-high-contrast {
+            border-color: var(--color-border-default);
+            background-color: var(--color-bg-page);
+            backdrop-filter: none;
+          }
 
           svg {
             width: 1.5rem;
