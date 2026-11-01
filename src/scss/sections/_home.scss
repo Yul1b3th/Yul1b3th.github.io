@@ -79,15 +79,20 @@
 
       .social-list {
         // Botones de cristal, translúcidos y con desenfoque sobre el fondo del inicio
-        // El tono sale de bg.card, así en oscuro el cristal es navy
+        // En claro es un velo blanco y en oscuro un velo claro muy tenue con borde de luz
         a {
+          --glass-tint: var(--color-bg-card);
+          --glass-fill: var(--opacity-50);
+          --glass-fill-hover: var(--opacity-75);
+          --glass-edge: var(--opacity-75);
+
           @include mx.apply-border-radius(50%);
           overflow: hidden;
           padding: 0.3rem;
           width: 3.125rem;
           height: 3.125rem;
-          border: var(--border-width-sm) solid color-mix(in srgb, var(--color-bg-card) calc(var(--opacity-75) * 100%), transparent);
-          background-color: color-mix(in srgb, var(--color-bg-card) calc(var(--opacity-50) * 100%), transparent);
+          border: var(--border-width-sm) solid color-mix(in srgb, var(--glass-tint) calc(var(--glass-edge) * 100%), transparent);
+          background-color: color-mix(in srgb, var(--glass-tint) calc(var(--glass-fill) * 100%), transparent);
           backdrop-filter: blur(8px);
           box-shadow: var(--shadow-card);
           transition:
@@ -95,8 +100,15 @@
             box-shadow var(--duration-base) var(--ease-standard);
 
           &:hover {
-            background-color: color-mix(in srgb, var(--color-bg-card) calc(var(--opacity-75) * 100%), transparent);
+            background-color: color-mix(in srgb, var(--glass-tint) calc(var(--glass-fill-hover) * 100%), transparent);
             box-shadow: var(--shadow-hover);
+          }
+
+          @include mx.apply-dark-theme {
+            --glass-tint: var(--color-text-default);
+            --glass-fill: var(--opacity-glass);
+            --glass-fill-hover: var(--opacity-25);
+            --glass-edge: var(--opacity-glass-border);
           }
 
           @include mx.apply-high-contrast {
