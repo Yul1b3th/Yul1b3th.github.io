@@ -112,6 +112,7 @@ $color-violet-950: #241641;
 $color-bg-page: var(--color-bg-page);
 $color-bg-surface: var(--color-bg-surface);
 $color-bg-muted: var(--color-bg-muted);
+$color-bg-card: var(--color-bg-card);
 $color-bg-hover: var(--color-bg-hover);
 $color-bg-brand: var(--color-bg-brand);
 $color-bg-brand-subtle: var(--color-bg-brand-subtle);
@@ -163,6 +164,7 @@ $color-decor-emphasis-teal-bold: var(--color-decor-emphasis-teal-bold);
 $color-decor-emphasis-sky-bold: var(--color-decor-emphasis-sky-bold);
 $color-decor-emphasis-lavender-bold: var(--color-decor-emphasis-lavender-bold);
 $color-border-surface: var(--color-border-surface);
+$color-border-card: var(--color-border-card);
 $color-border-default: var(--color-border-default);
 $color-border-strong: var(--color-border-strong);
 $color-border-brand: var(--color-border-brand);
@@ -227,6 +229,7 @@ $theme-light: (
   'color-bg-page': #FBFBFB,
   'color-bg-surface': #EFF3FF,
   'color-bg-muted': #FBFBFB,
+  'color-bg-card': #FBFBFB,
   'color-bg-hover': #E6FBF2,
   'color-bg-brand': #7FE6C0,
   'color-bg-brand-subtle': #E6FBF2,
@@ -278,6 +281,7 @@ $theme-light: (
   'color-decor-emphasis-sky-bold': #055F8D,
   'color-decor-emphasis-lavender-bold': #654AA1,
   'color-border-surface': #EFF3FF,
+  'color-border-card': #FBFBFB,
   'color-border-default': #D1D1D1,
   'color-border-strong': #8B8B8B,
   'color-border-brand': #7FE6C0,
@@ -342,6 +346,7 @@ $theme-dark: (
   'color-bg-page': #0B132B,
   'color-bg-surface': #0B132B,
   'color-bg-muted': #262F49,
+  'color-bg-card': #262F49,
   'color-bg-hover': #262F49,
   'color-bg-brand': #7FE6C0,
   'color-bg-brand-subtle': #002419,
@@ -393,6 +398,7 @@ $theme-dark: (
   'color-decor-emphasis-sky-bold': #055F8D,
   'color-decor-emphasis-lavender-bold': #654AA1,
   'color-border-surface': #0B132B,
+  'color-border-card': #384465,
   'color-border-default': #384465,
   'color-border-strong': #899FD9,
   'color-border-brand': #7FE6C0,
@@ -457,6 +463,7 @@ $theme-hc: (
   'color-bg-page': #FFFFFF,
   'color-bg-surface': #FFFFFF,
   'color-bg-muted': #FBFBFB,
+  'color-bg-card': #FFFFFF,
   'color-bg-hover': #EBEBEB,
   'color-bg-brand': #7FE6C0,
   'color-bg-brand-subtle': #E6FBF2,
@@ -508,6 +515,7 @@ $theme-hc: (
   'color-decor-emphasis-sky-bold': #1C1C1C,
   'color-decor-emphasis-lavender-bold': #1C1C1C,
   'color-border-surface': #1C1C1C,
+  'color-border-card': #1C1C1C,
   'color-border-default': #1C1C1C,
   'color-border-strong': #1C1C1C,
   'color-border-brand': #1C1C1C,

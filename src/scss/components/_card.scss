@@ -7,7 +7,7 @@
 @use '../abstracts' as *;
 
 .card {
-  --card-border: transparent;
+  --card-border: var(--color-border-card);
 
   position: relative;
   display: flex;
@@ -15,15 +15,13 @@
   min-width: 0;
   overflow: hidden;
   border-radius: var(--radius-md);
-  background-color: var(--color-bg-page);
+  background-color: var(--color-bg-card);
   box-shadow: var(--shadow-card);
   color: var(--color-text-body);
   transition: box-shadow var(--duration-base) var(--ease-standard);
 
-  /* Sin borde visible, la sombra marca la tarjeta; en alto contraste vuelve el borde */
-  @include apply-high-contrast {
-    --card-border: var(--color-border-default);
-  }
+  /* En claro marca la sombra, en oscuro un escalón de fondo y un borde fino */
+  /* Los tokens bg.card y border.card cambian solos con cada tema */
 }
 
 /* El borde va encima de la imagen, así no queda una línea blanca alrededor de la foto */

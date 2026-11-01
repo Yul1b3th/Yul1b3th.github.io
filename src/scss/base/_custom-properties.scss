@@ -198,6 +198,7 @@
   --color-bg-page: var(--color-neutral-50);
   --color-bg-surface: var(--color-navy-50);
   --color-bg-muted: var(--color-neutral-50);
+  --color-bg-card: var(--color-neutral-50);
   --color-bg-hover: var(--color-mint-50);
   --color-bg-brand: var(--color-mint-200);
   --color-bg-brand-subtle: var(--color-mint-50);
@@ -249,6 +250,7 @@
   --color-decor-emphasis-sky-bold: var(--color-blue-700);
   --color-decor-emphasis-lavender-bold: var(--color-violet-700);
   --color-border-surface: var(--color-navy-50);
+  --color-border-card: var(--color-neutral-50);
   --color-border-default: var(--color-neutral-200);
   --color-border-strong: var(--color-neutral-500);
   --color-border-brand: var(--color-mint-200);
@@ -315,6 +317,7 @@
     --color-bg-page: var(--color-navy-950);
     --color-bg-surface: var(--color-navy-950);
     --color-bg-muted: var(--color-navy-900);
+    --color-bg-card: var(--color-navy-900);
     --color-bg-hover: var(--color-navy-900);
     --color-bg-brand: var(--color-mint-200);
     --color-bg-brand-subtle: var(--color-mint-950);
@@ -366,6 +369,7 @@
     --color-decor-emphasis-sky-bold: var(--color-blue-700);
     --color-decor-emphasis-lavender-bold: var(--color-violet-700);
     --color-border-surface: var(--color-navy-950);
+    --color-border-card: var(--color-navy-800);
     --color-border-default: var(--color-navy-800);
     --color-border-strong: var(--color-navy-400);
     --color-border-brand: var(--color-mint-200);
@@ -433,6 +437,7 @@
     --color-bg-page: var(--color-neutral-0);
     --color-bg-surface: var(--color-neutral-0);
     --color-bg-muted: var(--color-neutral-50);
+    --color-bg-card: var(--color-neutral-0);
     --color-bg-hover: var(--color-neutral-100);
     --color-bg-brand: var(--color-mint-200);
     --color-bg-brand-subtle: var(--color-mint-50);
@@ -484,6 +489,7 @@
     --color-decor-emphasis-sky-bold: var(--color-neutral-950);
     --color-decor-emphasis-lavender-bold: var(--color-neutral-950);
     --color-border-surface: var(--color-neutral-950);
+    --color-border-card: var(--color-neutral-950);
     --color-border-default: var(--color-neutral-950);
     --color-border-strong: var(--color-neutral-950);
     --color-border-brand: var(--color-neutral-950);
@@ -550,6 +556,7 @@
   --color-bg-page: var(--color-navy-950);
   --color-bg-surface: var(--color-navy-950);
   --color-bg-muted: var(--color-navy-900);
+  --color-bg-card: var(--color-navy-900);
   --color-bg-hover: var(--color-navy-900);
   --color-bg-brand: var(--color-mint-200);
   --color-bg-brand-subtle: var(--color-mint-950);
@@ -601,6 +608,7 @@
   --color-decor-emphasis-sky-bold: var(--color-blue-700);
   --color-decor-emphasis-lavender-bold: var(--color-violet-700);
   --color-border-surface: var(--color-navy-950);
+  --color-border-card: var(--color-navy-800);
   --color-border-default: var(--color-navy-800);
   --color-border-strong: var(--color-navy-400);
   --color-border-brand: var(--color-mint-200);
@@ -665,6 +673,7 @@
   --color-bg-page: var(--color-neutral-0);
   --color-bg-surface: var(--color-neutral-0);
   --color-bg-muted: var(--color-neutral-50);
+  --color-bg-card: var(--color-neutral-0);
   --color-bg-hover: var(--color-neutral-100);
   --color-bg-brand: var(--color-mint-200);
   --color-bg-brand-subtle: var(--color-mint-50);
@@ -716,6 +725,7 @@
   --color-decor-emphasis-sky-bold: var(--color-neutral-950);
   --color-decor-emphasis-lavender-bold: var(--color-neutral-950);
   --color-border-surface: var(--color-neutral-950);
+  --color-border-card: var(--color-neutral-950);
   --color-border-default: var(--color-neutral-950);
   --color-border-strong: var(--color-neutral-950);
   --color-border-brand: var(--color-neutral-950);
