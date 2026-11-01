@@ -32,12 +32,12 @@
 
     svg {
       fill: currentColor;
-      @include mx.apply-color(color, text-on-emphasis);
+      @include mx.apply-color(color, text-default);
       width: 1rem;
       transition: color var(--duration-base) var(--ease-standard);
 
       &:hover {
-        @include mx.apply-color(color, link-emphasis-hover);
+        @include mx.apply-color(color, link-hover);
       }
     }
   }

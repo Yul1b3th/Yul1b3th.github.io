@@ -28,7 +28,7 @@
   </head>
   <body>
     <a class="skip-link" href="#main" data-translate="skip-link">Saltar al contenido</a>
-    <header class="navbar navbar--landing navbar--dark navbar--expand-xl" data-navbar-spy>
+    <header class="navbar navbar--landing navbar--expand-xl" data-navbar-spy>
       <div class="navbar__inner">
         <a class="navbar__brand" href="#home" data-translate="navbar-brand">YR</a>
         <nav class="navbar__nav" aria-label="Principal">
@@ -51,7 +51,7 @@
               <svg aria-hidden="true" viewBox="0 0 496 512"><use href="public/icons/icons.svg#github"></use></svg>
             </a>
           <span class="navbar__separator navbar__utility" aria-hidden="true">|</span>
-          <div class="dropdown dropdown--emphasis" id="language-dropdown">
+          <div class="dropdown" id="language-dropdown">
               <button class="dropdown__button" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="language-menu">
                 <svg class="dropdown__icon" aria-hidden="true"><use href="public/icons/icons.svg#language"></use></svg>
                 <span data-dropdown-text>ES</span>
@@ -70,7 +70,7 @@
                 </li>
               </ul>
             </div>
-          <div class="dropdown dropdown--emphasis" id="theme-dropdown">
+          <div class="dropdown" id="theme-dropdown">
               <button class="dropdown__button" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="theme-menu">
                 <svg class="dropdown__icon" data-dropdown-icon aria-hidden="true"><use href="public/icons/icons.svg#computer"></use></svg>
                 <svg class="dropdown__chevron" aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg>
@@ -135,7 +135,9 @@
     <main id="main" tabindex="-1">
       <!-- home -->
 
-      <section id="home" class="home bg-halo bg-halo--emphasis">
+      <section id="home" class="home bg-soft bg-soft--rose">
+        <div class="bg-layer bg-waves bg-waves--hero" aria-hidden="true"></div>
+        <div class="bg-layer bg-mesh" aria-hidden="true"></div>
         <div class="container animate animate--rise" data-animate-trigger="load" data-animate-duration="hero">
           <div class="home__img">
             <img src="./public/images/yulibeth-rivero.webp" alt="Yulibeth Rivero" width="390" height="390" fetchpriority="high" />
@@ -169,6 +171,9 @@
       <!-- About me -->
 
       <section id="about-me" class="about-me section bg-sweep">
+        <div class="bg-layer bg-grid bg-grid--sides" aria-hidden="true"></div>
+        <div class="bg-layer bg-dots" aria-hidden="true"></div>
+        <div class="bg-layer bg-divider" aria-hidden="true"></div>
         <div class="container">
           <!-- Section Title -->
           <div class="section-title animate animate--fade-up">
@@ -303,9 +308,13 @@
 
       <!-- Projects -->
 
-      <section id="projects" class="projects section bg-glow bg-glow--emphasis">
+      <section id="projects" class="projects section bg-soft bg-glow">
+        <div class="bg-layer bg-waves" aria-hidden="true"></div>
+        <div class="bg-layer bg-waves bg-waves--reverse" aria-hidden="true"></div>
+        <div class="bg-layer bg-dots" aria-hidden="true"></div>
+        <div class="bg-layer bg-divider" aria-hidden="true"></div>
         <div class="container">
-          <div class="section-title section-title--dark animate animate--fade-up">
+          <div class="section-title animate animate--fade-up">
             <span aria-hidden="true" data-translate="projects-title">Proyectos</span>
             <h2 data-translate="projects-title">Proyectos</h2>
           </div>
@@ -395,6 +404,8 @@
       <!-- Experience -->
 
       <section id="experience" class="experience section bg-halo bg-halo--start">
+        <div class="bg-layer bg-grid" aria-hidden="true"></div>
+        <div class="bg-layer bg-divider" aria-hidden="true"></div>
         <div class="container">
           <div class="section-title animate animate--fade-up">
             <span aria-hidden="true" data-translate="experience-title">EXPERIENCIA</span>
@@ -483,9 +494,12 @@
 
       <!-- Education -->
 
-      <section id="education" class="education section bg-sweep bg-sweep--emphasis">
+      <section id="education" class="education section bg-sweep">
+        <div class="bg-layer bg-beams" aria-hidden="true"></div>
+        <div class="bg-layer bg-orbs" aria-hidden="true"></div>
+        <div class="bg-layer bg-divider" aria-hidden="true"></div>
         <div class="container">
-          <div class="section-title section-title--dark animate animate--fade-up">
+          <div class="section-title animate animate--fade-up">
             <span data-translate="education-title">Formación</span>
             <h2 data-translate="education-title">Formación</h2>
           </div>
@@ -545,6 +559,9 @@
       <!-- Courses -->
 
       <section id="courses" class="courses section bg-glow">
+        <div class="bg-layer bg-waves bg-waves--soft" aria-hidden="true"></div>
+        <div class="bg-layer bg-dots bg-dots--top-start" aria-hidden="true"></div>
+        <div class="bg-layer bg-divider" aria-hidden="true"></div>
         <div class="container">
           <div class="section-title animate animate--fade-up">
             <span aria-hidden="true" data-translate="courses-title">Cursos</span>
@@ -612,9 +629,13 @@
 
       <!-- Contact -->
 
-      <section id="contact" class="contact section bg-halo bg-halo--emphasis bg-halo--start">
+      <section id="contact" class="contact section bg-halo bg-halo--start">
+        <div class="bg-layer bg-ribbon" aria-hidden="true"></div>
+        <div class="bg-layer bg-floor" aria-hidden="true"></div>
+        <div class="bg-layer bg-dots bg-dots--top-end" aria-hidden="true"></div>
+        <div class="bg-layer bg-divider" aria-hidden="true"></div>
         <div class="container">
-          <div class="section-title section-title--dark animate animate--fade-up">
+          <div class="section-title animate animate--fade-up">
             <span aria-hidden="true" data-translate="contact-title">Contacto</span>
             <h2 data-translate="contact-title">Contacto</h2>
           </div>

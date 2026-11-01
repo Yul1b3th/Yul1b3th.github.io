@@ -34,7 +34,7 @@
 @use 'components/drawer' as *;
 @use 'components/buttons' as *;
 @use 'components/dropdown' as *;
-@use 'components/background' as * with ($streaks-url: '../public/images/streaks.svg');
+@use 'components/background' as * with ($streaks-url: '../public/images/streaks.svg', $decor-path: '../public/images/');
 @use 'components/icon-tile' as *;
 @use 'components/card' as *;
 @use 'components/card-cv' as *;

@@ -3,6 +3,8 @@
 
 // Ruta a src/assets/streaks.svg desde la hoja compilada, cada proyecto la ajusta con @use … with
 $streaks-url: 'streaks.svg' !default;
+// Carpeta de las máscaras waves y mesh, termina en barra si no está vacía
+$decor-path: '' !default;
 
 @use '../abstracts' as *;
 
@@ -162,17 +164,213 @@ $streaks-url: 'streaks.svg' !default;
   }
 }
 
+
+/*-------- Capas de líneas: ondas, malla, cuadrícula, puntos, haces y suelo --------*/
+/* Uso: <div class="bg-layer bg-waves" aria-hidden="true"></div> como primer hijo de la sección */
+/* Se combinan entre sí y con glow, sweep y halo; la sección se encarga de recortarlas */
+section:has(> .bg-layer),
+.bg-host {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.bg-layer {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bg-layer::before {
+  position: absolute;
+  content: '';
+}
+
+/* Ondas de líneas finas arriba de la sección, se apagan hacia abajo */
+.bg-waves::before {
+  top: -4rem;
+  right: 0;
+  left: 0;
+  height: 34rem;
+  background: linear-gradient(90deg, var(--color-decor-wave-3), var(--color-decor-wave-2) 50%, var(--color-decor-wave-1));
+  mask:
+    url('#{$decor-path}waves.svg') 0 0 / 100% 100% no-repeat,
+    linear-gradient(#000 40%, transparent);
+  mask-composite: intersect;
+  opacity: var(--opacity-decor);
+}
+
+/* La misma onda girada abajo, para enmarcar el contenido */
+.bg-waves--reverse::before {
+  top: auto;
+  bottom: -3rem;
+  height: 30rem;
+  background: linear-gradient(90deg, var(--color-decor-wave-soft-1), var(--color-decor-wave-soft-3) 50%, var(--color-decor-wave-1));
+  mask:
+    url('#{$decor-path}waves.svg') 0 0 / 100% 100% no-repeat,
+    linear-gradient(#000 40%, transparent);
+  mask-composite: intersect;
+  opacity: var(--opacity-decor-subtle);
+  transform: scale(-1, -1);
+}
+
+/* Ondas suaves y bajas al final de la sección */
+.bg-waves--soft::before {
+  top: auto;
+  bottom: -2rem;
+  height: 26rem;
+  background: linear-gradient(90deg, var(--color-decor-wave-soft-1), var(--color-decor-wave-soft-2) 50%, var(--color-decor-wave-soft-3));
+  mask:
+    url('#{$decor-path}waves-soft.svg') 0 0 / 100% 100% no-repeat,
+    linear-gradient(transparent, #000 60%);
+  mask-composite: intersect;
+  opacity: var(--opacity-decor-subtle);
+}
+
+/* Ondas protagonistas del inicio, suben en diagonal desde abajo a la derecha */
+/* En pantalla grande se apagan hacia la izquierda para no pasar por detrás del texto */
+.bg-waves--hero::before {
+  top: auto;
+  right: -20%;
+  bottom: -6%;
+  left: auto;
+  width: 120%;
+  height: 32%;
+  background: linear-gradient(90deg, var(--color-decor-wave-1), var(--color-decor-wave-2) 50%, var(--color-decor-wave-3));
+  mask:
+    url('#{$decor-path}waves-hero.svg') 0 0 / 100% 100% no-repeat,
+    linear-gradient(100deg, transparent 30%, #000 62%);
+  mask-composite: intersect;
+  opacity: var(--opacity-decor-subtle);
+
+  @include apply-media-breakpoint(lg) {
+    right: -6%;
+    bottom: -14%;
+    width: 70%;
+    height: 85%;
+    opacity: var(--opacity-decor-strong);
+  }
+}
+
+/* Malla curva y difuminada en la esquina superior izquierda */
+.bg-mesh::before {
+  top: -6%;
+  left: -4%;
+  width: 62%;
+  height: 90%;
+  background: linear-gradient(135deg, var(--color-decor-wave-2), var(--color-decor-wave-3));
+  mask:
+    url('#{$decor-path}mesh.svg') 0 0 / cover no-repeat,
+    radial-gradient(70% 70% at 0% 0%, #000 10%, transparent 75%);
+  mask-composite: intersect;
+  filter: blur(0.5px);
+  opacity: var(--opacity-decor-subtle);
+}
+
+/* Cuadrícula de líneas que se difumina desde arriba */
+.bg-grid::before {
+  inset: 0;
+  background:
+    linear-gradient(var(--color-decor-grid) 1px, transparent 1px) 0 0 / 3rem 3rem,
+    linear-gradient(90deg, var(--color-decor-grid) 1px, transparent 1px) 0 0 / 3rem 3rem;
+  mask: radial-gradient(70% 55% at 50% 0%, #000 20%, transparent 75%);
+}
+
+/* Solo en los lados, para dejar limpio el texto del centro */
+.bg-grid--sides::before {
+  mask:
+    linear-gradient(90deg, #000, transparent 22% 78%, #000),
+    linear-gradient(#000, transparent 70%);
+  mask-composite: intersect;
+}
+
+/* Puntos en una esquina, abajo a la derecha si no se indica otra */
+.bg-dots::before {
+  inset: 0;
+  background: radial-gradient(var(--color-decor-grid) 1.2px, transparent 1.6px) 0 0 / 1.25rem 1.25rem;
+  mask: radial-gradient(45% 50% at 100% 100%, #000, transparent 75%);
+}
+
+.bg-dots--top-start::before {
+  mask: radial-gradient(40% 45% at 0% 0%, #000, transparent 75%);
+}
+
+.bg-dots--top-end::before {
+  mask: radial-gradient(45% 55% at 100% 0%, #000, transparent 70%);
+}
+
+/* Haces diagonales finos desde la esquina superior izquierda */
+.bg-beams::before {
+  inset: 0;
+  background:
+    repeating-linear-gradient(115deg, transparent 0 46px, var(--color-decor-wave-soft-3) 46px 47px),
+    radial-gradient(60% 40% at 0% 0%, var(--color-decor-mint), transparent 70%);
+  mask: radial-gradient(80% 45% at 0% 0%, #000 20%, transparent 75%);
+}
+
+/* Halos difuminados abajo a la derecha */
+.bg-orbs::before {
+  inset: 0;
+  background:
+    radial-gradient(34rem 22rem at 92% 92%, var(--color-decor-halo-1), transparent 70%),
+    radial-gradient(28rem 20rem at 70% 100%, var(--color-decor-halo-3), transparent 70%);
+  filter: blur(30px);
+  opacity: var(--opacity-decor-subtle);
+}
+
+/* Suelo en perspectiva al pie de la sección */
+.bg-floor::before {
+  right: -50%;
+  bottom: -2%;
+  left: -50%;
+  height: 60%;
+  background:
+    linear-gradient(var(--color-decor-wave-soft-2) 1.5px, transparent 1.5px) 0 0 / 4rem 4rem,
+    linear-gradient(90deg, var(--color-decor-wave-soft-2) 1.5px, transparent 1.5px) 0 0 / 4rem 4rem;
+  mask: linear-gradient(to top, #000, transparent 85%);
+  opacity: var(--opacity-decor-subtle);
+  transform: perspective(420px) rotateX(68deg);
+  transform-origin: bottom;
+}
+
+/* Cinta de color suave que ocupa toda la sección */
+.bg-ribbon::before {
+  inset: 0;
+  background: linear-gradient(105deg, var(--color-decor-sky), var(--color-decor-lavender) 55%, var(--color-decor-sky));
+}
+
+/* Línea fina de color arriba de la sección para separarla de la anterior */
+.bg-divider {
+  inset: 0 0 auto;
+  z-index: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-decor-divider-1) 20%, var(--color-decor-divider-2) 50%, var(--color-decor-divider-3) 80%, transparent);
+}
+
+/* El degradado de la promo suave, de cielo a lavanda y rosa */
+.bg-soft--rose {
+  background: linear-gradient(135deg, var(--color-decor-sky), var(--color-decor-lavender) 55%, var(--color-decor-rose));
+
+  @include apply-high-contrast {
+    background: var(--color-bg-page);
+  }
+}
+
 /*-------- Alto contraste sin decoración --------*/
 [data-theme='hc'] :is(.bg-glow, .bg-sweep, .bg-halo)::before,
 [data-theme='hc'] :is(.bg-glow, .bg-sweep, .bg-halo)::after,
-[data-theme='hc'] .bg-streaks {
+[data-theme='hc'] .bg-streaks,
+[data-theme='hc'] .bg-layer {
   display: none;
 }
 
 @media (prefers-contrast: more) {
   :root:not([data-theme]) :is(.bg-glow, .bg-sweep, .bg-halo)::before,
   :root:not([data-theme]) :is(.bg-glow, .bg-sweep, .bg-halo)::after,
-  :root:not([data-theme]) .bg-streaks {
+  :root:not([data-theme]) .bg-streaks,
+  :root:not([data-theme]) .bg-layer {
     display: none;
   }
 }

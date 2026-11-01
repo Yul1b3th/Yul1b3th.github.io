@@ -129,6 +129,7 @@ $color-text-default: var(--color-text-default);
 $color-text-heading: var(--color-text-heading);
 $color-text-body: var(--color-text-body);
 $color-text-muted: var(--color-text-muted);
+$color-text-brand: var(--color-text-brand);
 $color-text-on-emphasis: var(--color-text-on-emphasis);
 $color-text-on-brand: var(--color-text-on-brand);
 $color-text-disabled: var(--color-text-disabled);
@@ -163,6 +164,15 @@ $color-decor-emphasis-lavender: var(--color-decor-emphasis-lavender);
 $color-decor-emphasis-teal-bold: var(--color-decor-emphasis-teal-bold);
 $color-decor-emphasis-sky-bold: var(--color-decor-emphasis-sky-bold);
 $color-decor-emphasis-lavender-bold: var(--color-decor-emphasis-lavender-bold);
+$color-decor-wave-1: var(--color-decor-wave-1);
+$color-decor-wave-2: var(--color-decor-wave-2);
+$color-decor-wave-3: var(--color-decor-wave-3);
+$color-decor-wave-soft-1: var(--color-decor-wave-soft-1);
+$color-decor-wave-soft-2: var(--color-decor-wave-soft-2);
+$color-decor-wave-soft-3: var(--color-decor-wave-soft-3);
+$color-decor-divider-1: var(--color-decor-divider-1);
+$color-decor-divider-2: var(--color-decor-divider-2);
+$color-decor-divider-3: var(--color-decor-divider-3);
 $color-border-surface: var(--color-border-surface);
 $color-border-card: var(--color-border-card);
 $color-border-default: var(--color-border-default);
@@ -246,6 +256,7 @@ $theme-light: (
   'color-text-heading': #1C1C1C,
   'color-text-body': #303030,
   'color-text-muted': #5A5A5A,
+  'color-text-brand': #00664C,
   'color-text-on-emphasis': #EFF3FF,
   'color-text-on-brand': #0F0F0F,
   'color-text-disabled': #A1A1A1,
@@ -280,6 +291,15 @@ $theme-light: (
   'color-decor-emphasis-teal-bold': #076465,
   'color-decor-emphasis-sky-bold': #055F8D,
   'color-decor-emphasis-lavender-bold': #654AA1,
+  'color-decor-wave-1': #38B48C,
+  'color-decor-wave-2': #9976EA,
+  'color-decor-wave-3': #42B1B1,
+  'color-decor-wave-soft-1': #C2AEFF,
+  'color-decor-wave-soft-2': #A2B9F3,
+  'color-decor-wave-soft-3': #61CACA,
+  'color-decor-divider-1': #A2B9F3,
+  'color-decor-divider-2': #C2AEFF,
+  'color-decor-divider-3': #5ACEA6,
   'color-border-surface': #EFF3FF,
   'color-border-card': #FBFBFB,
   'color-border-default': #D1D1D1,
@@ -363,6 +383,7 @@ $theme-dark: (
   'color-text-heading': #EFF3FF,
   'color-text-body': #D1D1D1,
   'color-text-muted': #A1A1A1,
+  'color-text-brand': #7FE6C0,
   'color-text-on-emphasis': #EFF3FF,
   'color-text-on-brand': #0F0F0F,
   'color-text-disabled': #5C6D9C,
@@ -397,6 +418,15 @@ $theme-dark: (
   'color-decor-emphasis-teal-bold': #076465,
   'color-decor-emphasis-sky-bold': #055F8D,
   'color-decor-emphasis-lavender-bold': #654AA1,
+  'color-decor-wave-1': #5ACEA6,
+  'color-decor-wave-2': #AD8EFF,
+  'color-decor-wave-3': #42B1B1,
+  'color-decor-wave-soft-1': #654AA1,
+  'color-decor-wave-soft-2': #5C6D9C,
+  'color-decor-wave-soft-3': #076465,
+  'color-decor-divider-1': #4A5A82,
+  'color-decor-divider-2': #654AA1,
+  'color-decor-divider-3': #076465,
   'color-border-surface': #0B132B,
   'color-border-card': #384465,
   'color-border-default': #384465,
@@ -480,6 +510,7 @@ $theme-hc: (
   'color-text-heading': #1C1C1C,
   'color-text-body': #1C1C1C,
   'color-text-muted': #303030,
+  'color-text-brand': #1C1C1C,
   'color-text-on-emphasis': #FFFFFF,
   'color-text-on-brand': #0F0F0F,
   'color-text-disabled': #6D6D6D,
@@ -514,6 +545,15 @@ $theme-hc: (
   'color-decor-emphasis-teal-bold': #1C1C1C,
   'color-decor-emphasis-sky-bold': #1C1C1C,
   'color-decor-emphasis-lavender-bold': #1C1C1C,
+  'color-decor-wave-1': #FFFFFF,
+  'color-decor-wave-2': #FFFFFF,
+  'color-decor-wave-3': #FFFFFF,
+  'color-decor-wave-soft-1': #FFFFFF,
+  'color-decor-wave-soft-2': #FFFFFF,
+  'color-decor-wave-soft-3': #FFFFFF,
+  'color-decor-divider-1': #FFFFFF,
+  'color-decor-divider-2': #FFFFFF,
+  'color-decor-divider-3': #FFFFFF,
   'color-border-surface': #1C1C1C,
   'color-border-card': #1C1C1C,
   'color-border-default': #1C1C1C,
@@ -671,6 +711,9 @@ $tokens-opacities: (
   '100': 1,
   'state-hover': 0.02,
   'state-pressed': 0.04,
+  'decor-subtle': 0.45,
+  'decor': 0.6,
+  'decor-strong': 0.85,
 );
 
 $tokens-z-indexes: (

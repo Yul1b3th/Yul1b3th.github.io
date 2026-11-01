@@ -6,11 +6,10 @@
 @use '../abstracts/mixins' as mx;
 
 .home {
-  background-color: fn.get-color(bg-emphasis);
   min-height: 100vh;
   min-height: 100svh;
   width: 100%;
-  color: fn.get-color(text-on-emphasis);
+  color: fn.get-color(text-default);
   display: flex;
 
   .container {
@@ -58,6 +57,7 @@
 
       h2 {
         margin-bottom: 1.25rem;
+        color: var(--color-text-brand);
       }
 
       p {

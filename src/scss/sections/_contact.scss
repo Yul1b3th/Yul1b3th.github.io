@@ -56,7 +56,7 @@
 }
 
 .contact {
-  background-color: fn.get-color(bg-emphasis);
+  background-color: fn.get-color(bg-page);
   min-height: 100vh;
   width: 100%;
 }
@@ -182,4 +182,9 @@
     margin-top: 2rem;
     width: 4rem;
   }
+}
+
+// Los puntos del halo van arriba con bg-dots--top-end, aquí se quitan los de abajo
+.contact.bg-halo::after {
+  display: none;
 }
