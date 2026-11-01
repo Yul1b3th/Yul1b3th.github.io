@@ -617,6 +617,7 @@ $tokens-durations: (
   'base': 200ms,
   'moderate': 300ms,
   'slow': 500ms,
+  'hero': 1200ms,
 );
 
 $tokens-easings: (
@@ -625,6 +626,7 @@ $tokens-easings: (
   'accelerate': cubic-bezier(0.3, 0, 1, 1),
   'emphasized-decelerate': cubic-bezier(0.05, 0.7, 0.1, 1),
   'emphasized-accelerate': cubic-bezier(0.3, 0, 0.8, 0.15),
+  'in-out': cubic-bezier(0.42, 0, 0.58, 1),
 );
 
 $tokens-shadows: (

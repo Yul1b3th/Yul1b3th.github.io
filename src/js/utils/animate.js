@@ -6,7 +6,7 @@
 
 import { prefersReducedMotion } from './motion.js';
 
-const DURATIONS = ['fast', 'base', 'moderate', 'slow'];
+const DURATIONS = ['fast', 'base', 'moderate', 'slow', 'hero'];
 
 export function initAnimate(root = document) {
   const elements = root.querySelectorAll('.animate:not(.is-visible)');
