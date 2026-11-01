@@ -105,8 +105,13 @@ a {
     margin-left: var(--space-sm);
   }
 
+  // Sin relleno lateral para que la línea mida lo mismo que la palabra; la separación la da el gap
+  .navbar.navbar--landing.navbar--expand-xl .navbar__list {
+    gap: var(--space-ml);
+  }
+
   .navbar.navbar--landing.navbar--expand-xl .navbar__link {
-    padding-inline: var(--space-xs);
+    padding-inline: 0;
   }
 
   .navbar.navbar--landing.navbar--expand-xl .navbar__actions .button--icon {
@@ -122,11 +127,10 @@ a {
 
 @media (min-width: 1200px) and (max-width: 1299px) {
   .navbar.navbar--landing.navbar--expand-xl .navbar__list {
-    gap: 0.375rem;
+    gap: var(--space-md);
   }
 
   .navbar.navbar--landing.navbar--expand-xl .navbar__link {
-    padding-inline: 0.25rem;
     white-space: nowrap;
   }
 
