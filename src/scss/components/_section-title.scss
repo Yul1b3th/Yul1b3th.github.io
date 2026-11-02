@@ -9,6 +9,7 @@
   // Menos espacio arriba porque la marca de agua ya sobresale por encima del título
   padding: 0.5rem 0 1.875rem;
   position: relative;
+  z-index: 1;
 
   h2 {
     font-size: fn.get-font-size('4xl'); // Mapea dinámicamente tus 2rem

@@ -175,6 +175,15 @@ section:has(> .bg-layer),
   overflow: hidden;
 }
 
+section:has(> .bg-layer) > .container {
+  position: relative;
+  z-index: 1;
+}
+
+section:has(> .bg-layer) > .bg-layer {
+  z-index: 0;
+}
+
 .bg-layer {
   position: absolute;
   inset: 0;
@@ -344,7 +353,6 @@ section:has(> .bg-layer),
 /* Línea fina de color arriba de la sección para separarla de la anterior */
 .bg-divider {
   inset: 0 0 auto;
-  z-index: 1;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--color-decor-divider-1) 20%, var(--color-decor-divider-2) 50%, var(--color-decor-divider-3) 80%, transparent);
 }
