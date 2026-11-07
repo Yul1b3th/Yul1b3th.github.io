@@ -353,7 +353,7 @@ section:has(> .bg-layer) > .bg-layer {
 /* Línea fina de color arriba de la sección para separarla de la anterior */
 .bg-divider {
   inset: 0 0 auto;
-  height: 1px;
+  height: var(--border-width-sm);
   background: linear-gradient(90deg, transparent, var(--color-decor-divider-1) 20%, var(--color-decor-divider-2) 50%, var(--color-decor-divider-3) 80%, transparent);
 }
 
@@ -380,5 +380,18 @@ section:has(> .bg-layer) > .bg-layer {
   :root:not([data-theme]) .bg-streaks,
   :root:not([data-theme]) .bg-layer {
     display: none;
+  }
+}
+
+/* En alto contraste la única capa que queda es la línea entre secciones, sólida */
+[data-theme='hc'] .bg-layer.bg-divider {
+  display: block;
+  background: var(--color-border-default);
+}
+
+@media (prefers-contrast: more) {
+  :root:not([data-theme]) .bg-layer.bg-divider {
+    display: block;
+    background: var(--color-border-default);
   }
 }
