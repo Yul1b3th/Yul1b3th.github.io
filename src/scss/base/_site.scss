@@ -10,13 +10,10 @@ html {
   scroll-behavior: smooth;
   // Al saltar a una sección, el título no queda debajo de la barra fija
   scroll-padding-top: project.$navbar-height;
-  font-size: 16px; // Base inmutable para el cálculo de los rem
+  // 100 % son 16 px por defecto y respeta el tamaño de letra que cada persona elige en su navegador
+  // Igual en todos los tamaños de pantalla, como Bootstrap y Material (7 de noviembre de 2026)
+  font-size: 100%;
   line-height: get-line-height(base);
-
-  // Reemplazo e integración limpia del breakpoint móvil-first para escritorio - 1200px
-  @include apply-media-breakpoint(lg) {
-    font-size: 18px;
-  }
 }
 
 body {
