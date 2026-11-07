@@ -20,6 +20,20 @@
   line-height: 1.25;
 }
 
+/* Marca de campo opcional dentro de la etiqueta, como GOV.UK y Carbon, sin asteriscos */
+.field__optional {
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-regular);
+}
+
+/* Nota al principio del formulario que explica qué es obligatorio */
+.field__legend-note {
+  margin: 0 0 var(--space-md);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* Obsoleto desde el 7 de noviembre de 2026, se marcan los opcionales con field__optional */
 .field__required {
   color: var(--color-danger-text);
 }

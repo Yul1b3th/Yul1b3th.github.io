@@ -228,6 +228,8 @@
   --opacity-glow-strong: 0.55;
   --opacity-decor-faint: 0.35;
   --opacity-decor-medium: 0.55;
+  --opacity-state-layer-hover: 0.08;
+  --opacity-state-layer-pressed: 0.12;
   --z-index-behind: -1;
   --z-index-base: 0;
   --z-index-raised: 1;
@@ -343,6 +345,9 @@
   --color-action-danger-border: var(--color-red-900);
   --color-action-disabled-bg: var(--color-neutral-100);
   --color-action-secondary-bg: var(--color-neutral-0);
+  --color-action-tonal-bg: var(--color-primary-100);
+  --color-action-tonal-text: var(--color-neutral-1000);
+  --color-action-tonal-border: var(--color-primary-100);
   --color-action-ghost-bg-hover: var(--color-primary-50);
   --color-action-option-bg: var(--color-secondary-900);
   --color-action-option-text: var(--color-neutral-0);
@@ -473,6 +478,9 @@
     --color-action-danger-border: var(--color-red-300);
     --color-action-disabled-bg: var(--color-secondary-900);
     --color-action-secondary-bg: var(--color-secondary-950);
+    --color-action-tonal-bg: var(--color-primary-900);
+    --color-action-tonal-text: var(--color-primary-50);
+    --color-action-tonal-border: var(--color-primary-900);
     --color-action-ghost-bg-hover: var(--color-secondary-900);
     --color-action-option-bg: var(--color-secondary-50);
     --color-action-option-text: var(--color-secondary-950);
@@ -604,6 +612,9 @@
     --color-action-danger-border: var(--color-red-900);
     --color-action-disabled-bg: var(--color-neutral-100);
     --color-action-secondary-bg: var(--color-neutral-0);
+    --color-action-tonal-bg: var(--color-neutral-0);
+    --color-action-tonal-text: var(--color-neutral-1000);
+    --color-action-tonal-border: var(--color-neutral-1000);
     --color-action-ghost-bg-hover: var(--color-neutral-100);
     --color-action-option-bg: var(--color-neutral-950);
     --color-action-option-text: var(--color-neutral-0);
@@ -734,6 +745,9 @@
   --color-action-danger-border: var(--color-red-300);
   --color-action-disabled-bg: var(--color-secondary-900);
   --color-action-secondary-bg: var(--color-secondary-950);
+  --color-action-tonal-bg: var(--color-primary-900);
+  --color-action-tonal-text: var(--color-primary-50);
+  --color-action-tonal-border: var(--color-primary-900);
   --color-action-ghost-bg-hover: var(--color-secondary-900);
   --color-action-option-bg: var(--color-secondary-50);
   --color-action-option-text: var(--color-secondary-950);
@@ -862,6 +876,9 @@
   --color-action-danger-border: var(--color-red-900);
   --color-action-disabled-bg: var(--color-neutral-100);
   --color-action-secondary-bg: var(--color-neutral-0);
+  --color-action-tonal-bg: var(--color-neutral-0);
+  --color-action-tonal-text: var(--color-neutral-1000);
+  --color-action-tonal-border: var(--color-neutral-1000);
   --color-action-ghost-bg-hover: var(--color-neutral-100);
   --color-action-option-bg: var(--color-neutral-950);
   --color-action-option-text: var(--color-neutral-0);

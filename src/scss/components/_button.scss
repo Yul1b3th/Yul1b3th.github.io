@@ -86,6 +86,19 @@
   --button-shadow-hover: inset 0 0 0 2px var(--button-border-hover), var(--shadow-card);
 }
 
+/* Tonal, relleno suave de la marca entre el primario y el secundario, como Material 3 */
+/* El hover y el pulsado oscurecen con una capa de estado, sin llegar al verde del primario */
+.button--tonal {
+  --button-bg: var(--color-action-tonal-bg);
+  --button-bg-hover: color-mix(in srgb, var(--color-action-tonal-text) calc(var(--opacity-state-layer-hover) * 100%), var(--color-action-tonal-bg));
+  --button-bg-active: color-mix(in srgb, var(--color-action-tonal-text) calc(var(--opacity-state-layer-pressed) * 100%), var(--color-action-tonal-bg));
+  --button-text: var(--color-action-tonal-text);
+  --button-border: var(--color-action-tonal-border);
+  --button-border-hover: var(--button-border);
+  --button-shadow: none;
+  --button-shadow-hover: var(--shadow-sm);
+}
+
 /* Acción destructiva, como borrar o cancelar un pedido */
 .button--danger {
   --button-bg: var(--color-action-danger-bg);

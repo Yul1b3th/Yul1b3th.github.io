@@ -200,6 +200,9 @@ $color-action-danger-text: var(--color-action-danger-text);
 $color-action-danger-border: var(--color-action-danger-border);
 $color-action-disabled-bg: var(--color-action-disabled-bg);
 $color-action-secondary-bg: var(--color-action-secondary-bg);
+$color-action-tonal-bg: var(--color-action-tonal-bg);
+$color-action-tonal-text: var(--color-action-tonal-text);
+$color-action-tonal-border: var(--color-action-tonal-border);
 $color-action-ghost-bg-hover: var(--color-action-ghost-bg-hover);
 $color-action-option-bg: var(--color-action-option-bg);
 $color-action-option-text: var(--color-action-option-text);
@@ -328,6 +331,9 @@ $theme-light: (
   'color-action-danger-border': #65070E,
   'color-action-disabled-bg': #EBEBEB,
   'color-action-secondary-bg': #FFFFFF,
+  'color-action-tonal-bg': #C4F3DF,
+  'color-action-tonal-text': #0F0F0F,
+  'color-action-tonal-border': #C4F3DF,
   'color-action-ghost-bg-hover': #E6FBF2,
   'color-action-option-bg': #262F49,
   'color-action-option-text': #FFFFFF,
@@ -456,6 +462,9 @@ $theme-dark: (
   'color-action-danger-border': #FFA098,
   'color-action-disabled-bg': #262F49,
   'color-action-secondary-bg': #0B132B,
+  'color-action-tonal-bg': #003828,
+  'color-action-tonal-text': #E6FBF2,
+  'color-action-tonal-border': #003828,
   'color-action-ghost-bg-hover': #262F49,
   'color-action-option-bg': #EFF3FF,
   'color-action-option-text': #0B132B,
@@ -584,6 +593,9 @@ $theme-hc: (
   'color-action-danger-border': #65070E,
   'color-action-disabled-bg': #EBEBEB,
   'color-action-secondary-bg': #FFFFFF,
+  'color-action-tonal-bg': #FFFFFF,
+  'color-action-tonal-text': #0F0F0F,
+  'color-action-tonal-border': #0F0F0F,
   'color-action-ghost-bg-hover': #EBEBEB,
   'color-action-option-bg': #1C1C1C,
   'color-action-option-text': #FFFFFF,
@@ -732,6 +744,8 @@ $tokens-opacities: (
   'glow-strong': 0.55,
   'decor-faint': 0.35,
   'decor-medium': 0.55,
+  'state-layer-hover': 0.08,
+  'state-layer-pressed': 0.12,
 );
 
 $tokens-z-indexes: (

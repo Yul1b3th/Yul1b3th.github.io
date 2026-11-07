@@ -135,14 +135,16 @@
   @media (min-width: fn.get-breakpoint(md)) {
     // Ajustado a tus 768px globales
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto;
 
-    .contact-form__group:nth-child(1),
-    .contact-form__group:nth-child(2) {
+    // La nota de obligatorios ocupa la fila de arriba, los grupos se cuentan por tipo
+    .contact-form__group:nth-of-type(1),
+    .contact-form__group:nth-of-type(2) {
       grid-column: span 1;
     }
 
-    .contact-form__group:nth-child(3),
+    .field__legend-note,
+    .contact-form__group:nth-of-type(3),
     .contact-form__loader,
     button {
       grid-column: span 2;
