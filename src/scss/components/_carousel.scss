@@ -1,7 +1,7 @@
 // Archivo de innovatech-ds. No editar aquí
 // Se cambia en innovatech-ds y se copia con npm run sync
 
-// Carrusel con scroll-snap, se desliza con el dedo y con los botones
+// Una foto a la vez se desliza como Bootstrap 5.3 y varias tarjetas usan scroll-snap
 // Variantes overlay con los controles sobre la foto y multi con varias tarjetas a la vez
 
 @use '../abstracts' as *;
@@ -49,8 +49,41 @@
 .carousel__slide img {
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+}
+
+/* Una foto a la vez, la nueva entra por un lado y la actual sale por el otro, como Bootstrap 5.3 */
+/* Todas ocupan la misma celda de la rejilla; al dar la vuelta la primera entra por la derecha */
+.carousel--slide .carousel__track {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  overflow: hidden;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+  touch-action: pan-y;
+}
+
+.carousel--slide .carousel__slide {
+  grid-area: 1 / 1;
+  min-width: 0;
+  visibility: hidden;
+  transition: transform var(--duration-slide) var(--ease-in-out);
+}
+
+.carousel--slide .carousel__slide:is(.is-active, .is-next, .is-prev) {
+  visibility: visible;
+}
+
+.carousel--slide .carousel__slide.is-next:not(.is-start),
+.carousel--slide .carousel__slide.is-active.is-end {
+  transform: translateX(100%);
+}
+
+.carousel--slide .carousel__slide.is-prev:not(.is-end),
+.carousel--slide .carousel__slide.is-active.is-start {
+  transform: translateX(-100%);
 }
 
 /* Diapositiva con texto, como carousel-caption de Bootstrap */
@@ -134,29 +167,48 @@
 .carousel__indicator {
   display: inline-grid;
   place-items: center;
-  width: 1.75rem;
+  min-width: 1.75rem;
   height: 2.75rem;
-  padding: 0;
+  padding: 0 var(--space-xs);
   border: 0;
   background: transparent;
   cursor: pointer;
 }
 
+/* Punto que en la diapositiva actual se alarga en píldora, como Bootstrap 6 */
+/* El relleno es un degradado de un color para poder animar cuánto falta en el pase automático */
 .carousel__indicator::before {
   content: '';
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.75rem;
+  height: 0.75rem;
   border: var(--border-width-md) solid var(--color-border-strong);
-  border-radius: 50%;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(var(--color-action-selected-bg), var(--color-action-selected-bg)) no-repeat left / 0% 100%;
   transition:
-    background-color var(--duration-fast) var(--ease-standard),
-    transform var(--duration-fast) var(--ease-standard);
+    width var(--duration-moderate) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard);
 }
 
 .carousel__indicator[aria-current='true']::before {
+  width: 1.875rem;
   border-color: var(--color-action-selected-bg);
-  background-color: var(--color-action-selected-bg);
-  transform: scale(1.2);
+  background-size: 100% 100%;
+}
+
+/* Con pase automático la píldora se llena en el tiempo de cada diapositiva y se para con la pausa */
+.carousel--autoplay .carousel__indicator[aria-current='true']::before {
+  background-size: 0% 100%;
+  animation: carousel-progress var(--carousel-interval, 5000ms) linear forwards paused;
+}
+
+.carousel--autoplay.is-playing .carousel__indicator[aria-current='true']::before {
+  animation-play-state: running;
+}
+
+@keyframes carousel-progress {
+  to {
+    background-size: 100% 100%;
+  }
 }
 
 .carousel__indicator:focus-visible {
@@ -310,7 +362,8 @@
     scroll-behavior: auto;
   }
 
-  .carousel__indicator::before {
+  .carousel__indicator::before,
+  .carousel--slide .carousel__slide {
     transition: none;
   }
 }

@@ -2,11 +2,12 @@
 // Se cambia en innovatech-ds y se copia con npm run sync
 
 // Carrusel accesible con el patrón de WAI-ARIA, configurable con atributos data
-// La reproducción automática siempre trae botón de pausa y se para con el ratón o el teclado
+// Una foto a la vez se desliza como Bootstrap 5.3 y varias tarjetas usan scroll-snap
 
 import { prefersReducedMotion } from '../utils/motion.js';
 
 const MIN_INTERVAL = 5000;
+const SWIPE = 40;
 
 export function initCarousels(root = document) {
   root.querySelectorAll('.carousel').forEach((carousel) => {
@@ -21,8 +22,14 @@ export function initCarousels(root = document) {
     const reduced = prefersReducedMotion();
     // Sobre la foto o en fila tipo Netflix las flechas van a los lados y la ayuda también
     const sideTips = carousel.matches('.carousel--overlay, .carousel--row');
+    const multi = carousel.classList.contains('carousel--multi');
     const row = carousel.classList.contains('carousel--row');
-    let index = 0;
+    let index = Math.min(Math.max(Number(carouselStart) || 1, 1), slides.length) - 1;
+    let sliding = false;
+    let onSlide = () => {};
+
+    carousel.classList.toggle('carousel--slide', !multi);
+    carousel.style.setProperty('--carousel-interval', `${interval}ms`);
 
     // Ayuda visible con el nombre de los botones de icono, a un lado si van sobre la foto
     const addTooltip = (button, name, side) => {
@@ -50,7 +57,7 @@ export function initCarousels(root = document) {
       slide.setAttribute('aria-label', `${i + 1} de ${slides.length}`);
     });
 
-    // Un indicador por diapositiva
+    // Un indicador por diapositiva, el actual es una píldora que se llena con el pase automático
     const dots = slides.map((_, i) => {
       const dot = document.createElement('button');
       dot.type = 'button';
@@ -77,38 +84,76 @@ export function initCarousels(root = document) {
       }
     };
 
-    // Al dar la vuelta salta sin recorrer todas las diapositivas
-    const goTo = (i) => {
-      let wrapped = i < 0 || i >= slides.length;
-      if (row) {
-        wrapped = (i > last() && loop && index >= last()) || (i < 0 && loop && index === 0);
-        if (i > last()) i = wrapped ? 0 : last();
-        if (i < 0) i = wrapped ? last() : 0;
-      }
-      index = (i + slides.length) % slides.length;
-      const behavior = wrapped || prefersReducedMotion() ? 'instant' : 'smooth';
-      track.scrollTo({ left: slides[index].offsetLeft - track.offsetLeft, behavior });
+    // Deslizar como Bootstrap, la nueva entra por un lado y la actual sale por el otro
+    const slideTo = (target, direction) => {
+      const current = slides[index];
+      const incoming = slides[target];
+      index = target;
       paint();
+      onSlide();
+      if (prefersReducedMotion()) {
+        current.classList.remove('is-active');
+        incoming.classList.add('is-active');
+        return;
+      }
+      sliding = true;
+      // La que entra se coloca a un lado sin transición y después se anima
+      incoming.style.transition = 'none';
+      incoming.classList.add(direction > 0 ? 'is-next' : 'is-prev');
+      incoming.getBoundingClientRect();
+      incoming.style.transition = '';
+      incoming.classList.add(direction > 0 ? 'is-start' : 'is-end');
+      current.classList.add(direction > 0 ? 'is-start' : 'is-end');
+      const done = (event) => {
+        if (event.target !== current || event.propertyName !== 'transform') return;
+        current.removeEventListener('transitionend', done);
+        incoming.classList.remove('is-next', 'is-prev', 'is-start', 'is-end');
+        incoming.classList.add('is-active');
+        current.classList.remove('is-active', 'is-start', 'is-end');
+        sliding = false;
+      };
+      current.addEventListener('transitionend', done);
     };
 
-    prev?.addEventListener('click', () => goTo(index - step()));
-    next?.addEventListener('click', () => goTo(index + step()));
-
-    // Al deslizar se toma como actual la diapositiva más cercana al inicio, también con varias a la vez
-    track.addEventListener('scroll', () => {
-      const left = track.scrollLeft;
-      const current = slides.reduce((best, slide, i) =>
-        Math.abs(slide.offsetLeft - track.offsetLeft - left) < Math.abs(slides[best].offsetLeft - track.offsetLeft - left) ? i : best, 0);
-      if (current !== index) {
-        index = current;
+    const goTo = (i, direction) => {
+      if (multi) {
+        if (row) {
+          if (i > last()) i = loop && index >= last() ? 0 : last();
+          if (i < 0) i = loop && index === 0 ? last() : 0;
+        }
+        index = (i + slides.length) % slides.length;
+        track.scrollTo({ left: slides[index].offsetLeft - track.offsetLeft, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
         paint();
+        onSlide();
+        return;
       }
-    }, { passive: true });
+      if (sliding) return;
+      if (!loop && (i < 0 || i >= slides.length)) return;
+      const target = (i + slides.length) % slides.length;
+      if (target === index) return;
+      slideTo(target, direction ?? (target > index ? 1 : -1));
+    };
 
-    // Arrastrar con el ratón, en el móvil ya se desliza con el dedo
+    prev?.addEventListener('click', () => goTo(index - step(), -1));
+    next?.addEventListener('click', () => goTo(index + step(), 1));
+
+    if (multi) {
+      // Al deslizar se toma como actual la tarjeta más cercana al inicio
+      track.addEventListener('scroll', () => {
+        const left = track.scrollLeft;
+        const current = slides.reduce((best, slide, i) =>
+          Math.abs(slide.offsetLeft - track.offsetLeft - left) < Math.abs(slides[best].offsetLeft - track.offsetLeft - left) ? i : best, 0);
+        if (current !== index) {
+          index = current;
+          paint();
+        }
+      }, { passive: true });
+    }
+
+    // Arrastrar con el ratón o el dedo, sin abrir el enlace que había debajo
     let drag = null;
     track.addEventListener('pointerdown', (event) => {
-      if (event.pointerType !== 'mouse' || event.button !== 0) return;
+      if (event.button !== 0 || (multi && event.pointerType !== 'mouse')) return;
       drag = { x: event.clientX, left: track.scrollLeft, moved: false };
       track.classList.add('is-dragging');
       track.setPointerCapture(event.pointerId);
@@ -117,29 +162,33 @@ export function initCarousels(root = document) {
       if (!drag) return;
       const dx = event.clientX - drag.x;
       if (Math.abs(dx) > 5) drag.moved = true;
-      track.scrollLeft = drag.left - dx;
+      if (multi) track.scrollLeft = drag.left - dx;
     });
-    const endDrag = () => {
+    const endDrag = (event) => {
       if (!drag) return;
       track.classList.remove('is-dragging');
-      const moved = drag.moved;
+      const { moved, x } = drag;
       drag = null;
       track.dataset.dragged = String(moved);
-      if (moved) goTo(index);
+      if (!moved) return;
+      if (multi) goTo(index);
+      else {
+        const dx = event.clientX - x;
+        if (Math.abs(dx) >= SWIPE) goTo(index + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
+      }
     };
     track.addEventListener('pointerup', endDrag);
     track.addEventListener('pointercancel', endDrag);
-    // Tras arrastrar no se abre el enlace que había debajo
     track.addEventListener('click', (event) => {
       if (track.dataset.dragged === 'true') event.preventDefault();
     }, true);
     track.addEventListener('dragstart', (event) => event.preventDefault());
 
     // Diapositiva inicial con data-carousel-start, contando desde 1
-    const start = Math.min(Math.max(Number(carouselStart) || 1, 1), slides.length) - 1;
-    if (start > 0) {
-      index = start;
-      requestAnimationFrame(() => track.scrollTo({ left: slides[start].offsetLeft - track.offsetLeft, behavior: 'instant' }));
+    if (multi) {
+      if (index > 0) requestAnimationFrame(() => track.scrollTo({ left: slides[index].offsetLeft - track.offsetLeft, behavior: 'instant' }));
+    } else {
+      slides[index].classList.add('is-active');
     }
 
     paint();
@@ -152,8 +201,12 @@ export function initCarousels(root = document) {
     play.innerHTML = '<span class="carousel__play-icon" aria-hidden="true"></span>';
     carousel.querySelector('.carousel__controls').prepend(play);
     const playTip = addTooltip(play, 'play', 'end');
+    carousel.classList.add('carousel--autoplay');
 
     let timer;
+    let remaining = interval;
+    let startedAt = 0;
+    let running = false;
     let userPaused = reduced;
     let hovered = false;
 
@@ -163,10 +216,27 @@ export function initCarousels(root = document) {
       play.setAttribute('aria-label', userPaused ? 'Reproducir' : 'Pausar');
       playTip.textContent = play.getAttribute('aria-label');
     };
+    // Cada diapositiva tiene su tiempo; al pausar se guarda lo que falta para que cuadre con la píldora
     const run = (on) => {
-      clearInterval(timer);
-      if (on) timer = setInterval(() => goTo(index + 1), interval);
+      if (on === running) return;
+      running = on;
+      clearTimeout(timer);
+      carousel.classList.toggle('is-playing', on);
       track.setAttribute('aria-live', on ? 'off' : 'polite');
+      if (on) {
+        startedAt = performance.now();
+        timer = setTimeout(() => goTo(index + 1, 1), remaining);
+      } else {
+        remaining = Math.max(0, remaining - (performance.now() - startedAt));
+      }
+    };
+    onSlide = () => {
+      remaining = interval;
+      if (running) {
+        clearTimeout(timer);
+        startedAt = performance.now();
+        timer = setTimeout(() => goTo(index + 1, 1), remaining);
+      }
     };
     const refresh = () => {
       const focused = carousel.contains(document.activeElement) && document.activeElement !== play;
