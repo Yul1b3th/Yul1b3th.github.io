@@ -673,14 +673,14 @@
             </div>
           </div>
           <form class="card card--cv contact-form">
-            <div class="contact-form__group">
-              <label class="visually-hidden" for="name" data-translate="contact-name-label">Nombre</label>
+            <div class="field contact-form__group">
+              <label class="field__label" for="name"><span data-translate="contact-name-label">Nombre</span> <span class="field__required" aria-hidden="true">*</span></label>
               <input
                 id="name"
                 type="text"
                 name="name"
-                class="contact-form__control"
-                placeholder="Ingresa tu nombre *"
+                class="field__control"
+                placeholder="Ingresa tu nombre"
                 title="Nombre sólo acepta letras y espacios en blanco"
                 pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                 autocomplete="name"
@@ -688,29 +688,29 @@
                 data-translate="contact-name-placeholder contact-name-title"
               />
             </div>
-            <div class="contact-form__group">
-              <label class="visually-hidden" for="email" data-translate="contact-email-label">Correo electrónico</label>
+            <div class="field contact-form__group">
+              <label class="field__label" for="email"><span data-translate="contact-email-label">Correo electrónico</span> <span class="field__required" aria-hidden="true">*</span></label>
               <input
                 id="email"
                 type="email"
                 name="email"
-                class="contact-form__control"
-                placeholder="Ingresa tu correo *"
+                class="field__control"
+                placeholder="Ingresa tu correo"
                 title="Email incorrecto"
                 autocomplete="email"
                 required
                 data-translate="contact-email-placeholder contact-email-title2"
               />
             </div>
-            <div class="contact-form__group">
-              <label class="visually-hidden" for="comments" data-translate="contact-comments-label">Comentarios</label>
-              <textarea id="comments" name="comments" class="contact-form__control" rows="5" placeholder="Déjame tus comentarios *" required data-translate="contact-comments-placeholder"></textarea>
+            <div class="field contact-form__group">
+              <label class="field__label" for="comments"><span data-translate="contact-comments-label">Comentarios</span> <span class="field__required" aria-hidden="true">*</span></label>
+              <textarea id="comments" name="comments" class="field__control" rows="5" placeholder="Déjame tus comentarios" required data-translate="contact-comments-placeholder"></textarea>
             </div>
             <p class="field__required-note" data-translate="contact-required-note">* Campos obligatorios</p>
             <div class="contact-form__loader text-center d-none">
               <img src="./public/images/loader.svg" alt="Enviando..." data-translate="contact-loader-alt" />
             </div>
-            <button type="submit" class="btn" data-translate="contact-submit">Enviar mensaje</button>
+            <button type="submit" class="button" data-translate="contact-submit">Enviar mensaje</button>
           </form>
           <div id="thanks" class="contact-modal">
             <div class="contact-modal__content">

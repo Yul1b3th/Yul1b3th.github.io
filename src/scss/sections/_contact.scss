@@ -96,41 +96,7 @@
     @include mx.apply-flex-container(column, center, stretch);
   }
 
-  input,
-  textarea {
-    @include mx.apply-border-radius(0.2rem);
-    @include mx.apply-font-family(primary); // Extrae tu fuente primaria del mapa
-    font-size: 0.85rem;
-    margin: 1rem auto;
-    padding: 0.5rem;
-    width: 100%;
-  }
-
-  input {
-    border: 0;
-    @include mx.apply-color(border-bottom-color, border-strong);
-    border-bottom-style: solid;
-    border-bottom-width: thin;
-  }
-
-  textarea {
-    border-style: solid;
-    border-width: thin;
-    @include mx.apply-color(border-color, border-strong);
-    resize: none;
-    width: 100%;
-  }
-
-  *::placeholder {
-    @include mx.apply-color(color, text-muted);
-  }
-
-  input:focus,
-  textarea:focus {
-    @include mx.apply-color(border-color, border-focus);
-    // Cambiado el box-shadow antiguo por el mixin especializado de estados de focus
-    @include mx.input-state-focus(border-focus);
-  }
+  // Los campos usan field del sistema: etiqueta visible, borde, foco y estados
 
   @media (min-width: fn.get-breakpoint(md)) {
     // Ajustado a tus 768px globales
