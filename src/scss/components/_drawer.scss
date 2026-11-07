@@ -131,6 +131,13 @@
   --button-bg-active: var(--color-action-close-bg-hover);
 }
 
+/* Iconos del pie, como las redes, claros sobre el panel oscuro */
+.drawer--emphasis .drawer__footer .button--icon {
+  --button-text: var(--color-text-on-emphasis);
+  --button-bg-hover: color-mix(in srgb, var(--color-text-on-emphasis) calc(var(--opacity-on-hover) * 100%), transparent);
+  --button-bg-active: color-mix(in srgb, var(--color-text-on-emphasis) calc(var(--opacity-on-pressed) * 100%), transparent);
+}
+
 @keyframes drawer-enter {
   from {
     transform: translateX(var(--drawer-from));
@@ -148,4 +155,9 @@
   .drawer.is-closing {
     animation: none;
   }
+}
+
+/* Con el panel abierto la página de detrás no se desplaza, como pide el patrón de diálogo modal */
+html:has(.drawer[open]) {
+  overflow: hidden;
 }
