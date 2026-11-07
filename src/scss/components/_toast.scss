@@ -63,8 +63,8 @@
 
 .toast__close {
   --button-text: var(--color-text-on-emphasis);
-  --button-bg-hover: color-mix(in srgb, var(--color-text-on-emphasis) 12%, transparent);
-  --button-bg-active: color-mix(in srgb, var(--color-text-on-emphasis) 20%, transparent);
+  --button-bg-hover: color-mix(in srgb, var(--color-text-on-emphasis) calc(var(--opacity-on-hover) * 100%), transparent);
+  --button-bg-active: color-mix(in srgb, var(--color-text-on-emphasis) calc(var(--opacity-on-pressed) * 100%), transparent);
   --button-text-hover: var(--color-text-on-emphasis);
 }
 

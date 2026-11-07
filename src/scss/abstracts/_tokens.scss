@@ -227,6 +227,7 @@ $color-badge-text: var(--color-badge-text);
 $color-badge-brand-bg: var(--color-badge-brand-bg);
 $color-badge-success-bg: var(--color-badge-success-bg);
 $color-badge-warning-bg: var(--color-badge-warning-bg);
+$color-badge-warning-text: var(--color-badge-warning-text);
 $color-badge-danger-bg: var(--color-badge-danger-bg);
 $color-badge-info-bg: var(--color-badge-info-bg);
 $color-badge-success-subtle-text: var(--color-badge-success-subtle-text);
@@ -345,15 +346,16 @@ $theme-light: (
   'color-danger-bg': #FFF3F2,
   'color-danger-border': #FD4848,
   'color-warning-text': #7D5200,
-  'color-warning-bg': #FBF7E7,
-  'color-warning-border': #B18405,
+  'color-warning-bg': #F5E8C1,
+  'color-warning-border': #916502,
   'color-info-text': #055F8D,
   'color-info-bg': #EFF8FE,
   'color-info-border': #0993D8,
   'color-badge-text': #FFFFFF,
   'color-badge-brand-bg': #4D387E,
   'color-badge-success-bg': #1E5012,
-  'color-badge-warning-bg': #7D5200,
+  'color-badge-warning-bg': #E3B502,
+  'color-badge-warning-text': #0F0F0F,
   'color-badge-danger-bg': #89151A,
   'color-badge-info-bg': #004A6F,
   'color-badge-success-subtle-text': #1E5012,
@@ -480,7 +482,8 @@ $theme-dark: (
   'color-badge-text': #FFFFFF,
   'color-badge-brand-bg': #4D387E,
   'color-badge-success-bg': #1E5012,
-  'color-badge-warning-bg': #7D5200,
+  'color-badge-warning-bg': #E3B502,
+  'color-badge-warning-text': #0F0F0F,
   'color-badge-danger-bg': #89151A,
   'color-badge-info-bg': #004A6F,
   'color-badge-success-subtle-text': #82E96B,
@@ -608,6 +611,7 @@ $theme-hc: (
   'color-badge-brand-bg': #4D387E,
   'color-badge-success-bg': #1E5012,
   'color-badge-warning-bg': #633D02,
+  'color-badge-warning-text': #FFFFFF,
   'color-badge-danger-bg': #89151A,
   'color-badge-info-bg': #004A6F,
   'color-badge-success-subtle-text': #133809,
@@ -716,6 +720,18 @@ $tokens-opacities: (
   'decor-strong': 0.85,
   'glass': 0.12,
   'glass-border': 0.24,
+  'on-hover': 0.12,
+  'on-pressed': 0.2,
+  'on-divider': 0.2,
+  'on-border': 0.35,
+  'translucent': 0.9,
+  'translucent-strong': 0.95,
+  'veil': 0.85,
+  'glow-soft': 0.3,
+  'glow': 0.45,
+  'glow-strong': 0.55,
+  'decor-faint': 0.35,
+  'decor-medium': 0.55,
 );
 
 $tokens-z-indexes: (

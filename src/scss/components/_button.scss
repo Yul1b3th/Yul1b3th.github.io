@@ -153,6 +153,38 @@
   padding: 0;
 }
 
+/* Cristal translúcido con desenfoque sobre fondos de color o fotos, como las redes del CV */
+/* En claro es un velo blanco y en oscuro un velo tenue con borde de luz */
+.button--glass {
+  --glass-tint: var(--color-bg-card);
+  --glass-fill: var(--opacity-50);
+  --glass-fill-hover: var(--opacity-75);
+  --glass-edge: var(--opacity-75);
+  --button-bg: color-mix(in srgb, var(--glass-tint) calc(var(--glass-fill) * 100%), transparent);
+  --button-bg-hover: color-mix(in srgb, var(--glass-tint) calc(var(--glass-fill-hover) * 100%), transparent);
+  --button-bg-active: var(--button-bg-hover);
+  --button-text: var(--color-text-default);
+  --button-border: color-mix(in srgb, var(--glass-tint) calc(var(--glass-edge) * 100%), transparent);
+  --button-border-hover: var(--button-border);
+  --button-shadow: var(--shadow-card);
+  --button-shadow-hover: var(--shadow-hover);
+  backdrop-filter: blur(8px);
+
+  @include apply-dark-theme {
+    --glass-tint: var(--color-text-default);
+    --glass-fill: var(--opacity-glass);
+    --glass-fill-hover: var(--opacity-25);
+    --glass-edge: var(--opacity-glass-border);
+  }
+
+  @include apply-high-contrast {
+    --button-bg: var(--color-bg-page);
+    --button-bg-hover: var(--color-bg-page);
+    --button-border: var(--color-border-default);
+    backdrop-filter: none;
+  }
+}
+
 /* El gris queda reservado para el estado deshabilitado */
 .button:is(:disabled, [aria-disabled='true']) {
   --button-bg: var(--color-action-disabled-bg);

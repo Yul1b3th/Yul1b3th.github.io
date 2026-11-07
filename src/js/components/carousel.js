@@ -15,7 +15,7 @@ export function initCarousels(root = document) {
     const prev = carousel.querySelector('.carousel__prev');
     const next = carousel.querySelector('.carousel__next');
     const indicators = carousel.querySelector('.carousel__indicators');
-    const { carouselAutoplay, carouselInterval, carouselLoop } = carousel.dataset;
+    const { carouselAutoplay, carouselInterval, carouselLoop, carouselStart } = carousel.dataset;
     const loop = carouselLoop !== 'false';
     const interval = Math.max(Number(carouselInterval) || MIN_INTERVAL, MIN_INTERVAL);
     const reduced = prefersReducedMotion();
@@ -134,6 +134,13 @@ export function initCarousels(root = document) {
       if (track.dataset.dragged === 'true') event.preventDefault();
     }, true);
     track.addEventListener('dragstart', (event) => event.preventDefault());
+
+    // Diapositiva inicial con data-carousel-start, contando desde 1
+    const start = Math.min(Math.max(Number(carouselStart) || 1, 1), slides.length) - 1;
+    if (start > 0) {
+      index = start;
+      requestAnimationFrame(() => track.scrollTo({ left: slides[start].offsetLeft - track.offsetLeft, behavior: 'instant' }));
+    }
 
     paint();
     if (carouselAutoplay !== 'true') return;

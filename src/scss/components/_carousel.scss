@@ -87,7 +87,7 @@
     position: absolute;
     inset: auto 0 0;
     padding: var(--space-xl) var(--space-ml) var(--space-ml);
-    background: linear-gradient(to top, color-mix(in srgb, var(--color-bg-emphasis) 85%, transparent), transparent);
+    background: linear-gradient(to top, color-mix(in srgb, var(--color-bg-emphasis) calc(var(--opacity-veil) * 100%), transparent), transparent);
     color: var(--color-text-on-emphasis);
   }
 
@@ -194,7 +194,7 @@
 }
 
 .carousel--overlay :is(.carousel__prev, .carousel__next, .carousel__play) {
-  --button-bg: color-mix(in srgb, var(--color-bg-page) 90%, transparent);
+  --button-bg: color-mix(in srgb, var(--color-bg-page) calc(var(--opacity-translucent) * 100%), transparent);
   --button-shadow: var(--shadow-sm);
 }
 
@@ -226,7 +226,7 @@
   left: 50%;
   padding: 0 var(--space-xs);
   border-radius: var(--radius-pill);
-  background-color: color-mix(in srgb, var(--color-bg-page) 85%, transparent);
+  background-color: color-mix(in srgb, var(--color-bg-page) calc(var(--opacity-veil) * 100%), transparent);
   transform: translateX(-50%);
 }
 

@@ -65,7 +65,7 @@
 }
 
 .drawer--emphasis .drawer__header {
-  border-bottom-color: color-mix(in srgb, var(--color-text-on-emphasis) 20%, transparent);
+  border-bottom-color: color-mix(in srgb, var(--color-text-on-emphasis) calc(var(--opacity-on-divider) * 100%), transparent);
 }
 
 .drawer--start .drawer__header {
@@ -88,7 +88,7 @@
 }
 
 .drawer--emphasis .drawer__footer {
-  border-top-color: color-mix(in srgb, var(--color-text-on-emphasis) 20%, transparent);
+  border-top-color: color-mix(in srgb, var(--color-text-on-emphasis) calc(var(--opacity-on-divider) * 100%), transparent);
 }
 
 /* La acción principal ocupa todo el ancho en el pie */

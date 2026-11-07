@@ -35,8 +35,8 @@
   border-color: var(--color-border-focus-input);
   background-color: var(--color-bg-selected);
   box-shadow:
-    0 0 0 4px color-mix(in srgb, var(--color-border-brand) 45%, transparent),
-    0 0 14px 2px color-mix(in srgb, var(--color-border-brand) 55%, transparent);
+    0 0 0 4px color-mix(in srgb, var(--color-border-brand) calc(var(--opacity-glow) * 100%), transparent),
+    0 0 14px 2px color-mix(in srgb, var(--color-border-brand) calc(var(--opacity-glow-strong) * 100%), transparent);
 }
 
 .file-upload__text {

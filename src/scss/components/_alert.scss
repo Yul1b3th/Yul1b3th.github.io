@@ -83,8 +83,8 @@
 .alert__close {
   flex: none;
   --button-text: var(--alert-text);
-  --button-bg-hover: color-mix(in srgb, var(--alert-text) 12%, transparent);
-  --button-bg-active: color-mix(in srgb, var(--alert-text) 20%, transparent);
+  --button-bg-hover: color-mix(in srgb, var(--alert-text) calc(var(--opacity-on-hover) * 100%), transparent);
+  --button-bg-active: color-mix(in srgb, var(--alert-text) calc(var(--opacity-on-pressed) * 100%), transparent);
   margin: calc(var(--space-xs) * -1) 0 calc(var(--space-xs) * -1) auto;
 }
 

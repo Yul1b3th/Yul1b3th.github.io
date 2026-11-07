@@ -46,7 +46,7 @@
 .search__input:hover {
   border-color: var(--color-border-hover-accent);
   box-shadow:
-    0 0 0 3px color-mix(in srgb, var(--color-border-brand) 30%, transparent),
+    0 0 0 3px color-mix(in srgb, var(--color-border-brand) calc(var(--opacity-glow-soft) * 100%), transparent),
     var(--shadow-hover);
 }
 
@@ -55,8 +55,8 @@
   outline: 2px solid transparent;
   box-shadow:
     0 0 0 1px var(--color-border-focus-input),
-    0 0 0 4px color-mix(in srgb, var(--color-border-brand) 45%, transparent),
-    0 0 14px 2px color-mix(in srgb, var(--color-border-brand) 55%, transparent);
+    0 0 0 4px color-mix(in srgb, var(--color-border-brand) calc(var(--opacity-glow) * 100%), transparent),
+    0 0 14px 2px color-mix(in srgb, var(--color-border-brand) calc(var(--opacity-glow-strong) * 100%), transparent);
 }
 
 /* Con botón de buscar el campo deja sitio a la derecha */

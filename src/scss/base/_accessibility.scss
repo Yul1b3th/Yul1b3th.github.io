@@ -39,3 +39,21 @@
 main:focus {
   outline: none;
 }
+
+/* Tamaño del texto elegido en los ajustes de la aplicación, con data-font-size en el html */
+/* Escala la raíz, así todo lo que va en rem crece igual; sin el atributo no cambia nada */
+html[data-font-size] {
+  font-size: calc(var(--font-base, 100%) * var(--font-scale, 1));
+}
+
+html[data-font-size='sm'] {
+  --font-scale: 0.875;
+}
+
+html[data-font-size='lg'] {
+  --font-scale: 1.125;
+}
+
+html[data-font-size='xl'] {
+  --font-scale: 1.25;
+}

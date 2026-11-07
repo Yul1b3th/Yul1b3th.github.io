@@ -38,7 +38,7 @@
   width: 70%;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(closest-side, color-mix(in srgb, var(--color-decor-halo-3) 55%, transparent), transparent);
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--color-decor-halo-3) calc(var(--opacity-decor-medium) * 100%), transparent), transparent);
 }
 
 .promo__eyebrow {
@@ -106,7 +106,7 @@
 
 /* Oscura con el azul marino y un halo verde, la que más destaca */
 .promo--dark {
-  --promo-bg: radial-gradient(120% 90% at 100% 100%, color-mix(in srgb, var(--color-bg-brand) 35%, transparent), transparent 60%), var(--color-bg-emphasis);
+  --promo-bg: radial-gradient(120% 90% at 100% 100%, color-mix(in srgb, var(--color-bg-brand) calc(var(--opacity-decor-faint) * 100%), transparent), transparent 60%), var(--color-bg-emphasis);
   --promo-text: var(--color-text-on-emphasis);
   --promo-title: var(--color-text-on-emphasis);
   --promo-eyebrow: var(--color-link-emphasis-default);

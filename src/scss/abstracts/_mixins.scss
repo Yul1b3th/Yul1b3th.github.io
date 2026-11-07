@@ -166,3 +166,26 @@
   -webkit-line-clamp: $lines;
   line-clamp: $lines;
 }
+
+// Tema por proyecto, al estilo de mat.theme de Angular Material
+// Uso en :root, por ejemplo :root { @include theme((primary: blue)); }
+@mixin theme($config) {
+  @each $role, $family in $config {
+    @if not list.index((primary, secondary, tertiary), $role) {
+      @error 'Rol desconocido #{$role}. Usa primary, secondary o tertiary';
+    }
+    // El paso 25 solo existe en teal, en las demás paletas cae en el 50
+    --color-#{$role}-25: var(--color-#{$family}-25, var(--color-#{$family}-50));
+    @each $step in (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950) {
+      --color-#{$role}-#{$step}: var(--color-#{$family}-#{$step});
+    }
+  }
+}
+
+// Cambia tokens semánticos sueltos sin tocar el resto, como mat.*-overrides
+// Uso :root { @include overrides(('action-primary-bg': var(--color-blue-200))); }
+@mixin overrides($tokens) {
+  @each $name, $value in $tokens {
+    --color-#{$name}: #{$value};
+  }
+}

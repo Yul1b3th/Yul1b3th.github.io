@@ -60,9 +60,10 @@
   --card-state: color-mix(in srgb, var(--color-text-default) calc(var(--opacity-state-pressed) * 100%), transparent);
 }
 
+/* Relleno de 16 px y 8 px entre elementos, como las cards de Material */
 .card__header,
 .card__footer {
-  padding: var(--space-md) var(--space-ml);
+  padding: var(--space-md);
 }
 
 .card__header {
@@ -104,8 +105,8 @@
 .card__body {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
-  padding: var(--space-md) var(--space-ml);
+  gap: var(--space-sm);
+  padding: var(--space-md);
 }
 
 .card__title {
