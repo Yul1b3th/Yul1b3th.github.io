@@ -33,9 +33,16 @@
   font-size: var(--font-size-sm);
 }
 
-/* Obsoleto desde el 7 de noviembre de 2026, se marcan los opcionales con field__optional */
+/* Asterisco de obligatorio como Material, del color del texto y no rojo para no parecer un error */
 .field__required {
-  color: var(--color-danger-text);
+  color: inherit;
+}
+
+/* Línea discreta cerca del botón que explica el asterisco */
+.field__required-note {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
 }
 
 .field__control {
