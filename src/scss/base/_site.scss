@@ -146,6 +146,19 @@ a {
   left: 0;
 }
 
+// Los enlaces con forma de botón usan los colores del botón, también visitados
+a.button {
+  &,
+  &:visited,
+  &:active {
+    color: var(--button-text);
+  }
+
+  &:hover {
+    color: var(--button-text-hover);
+  }
+}
+
 // Conserva el color del navbar para los iconos, incluidos los enlaces visitados
 .navbar .button--icon,
 .navbar .button--icon:visited,
