@@ -88,6 +88,12 @@ a {
   max-width: 75rem;
 }
 
+// La barra superior con el mismo ancho que el menú para que alineen
+.topbar__inner {
+  width: 96%;
+  max-width: 75rem;
+}
+
 // Los enlaces van a la derecha con navbar--nav-end del sistema, aquí solo la separación entre palabras
 @media (min-width: 1200px) {
   // Sin relleno lateral para que la línea mida lo mismo que la palabra; la separación la da el gap
