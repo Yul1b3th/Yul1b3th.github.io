@@ -719,7 +719,9 @@ $tokens-opacities: (
 );
 
 $tokens-z-indexes: (
+  'behind': -1,
   'base': 0,
+  'raised': 1,
   'dropdown': 1000,
   'sticky': 1020,
   'fixed': 1030,

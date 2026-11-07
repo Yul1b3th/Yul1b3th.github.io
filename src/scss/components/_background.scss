@@ -25,7 +25,7 @@ $decor-path: '' !default;
 .bg-halo::before,
 .bg-halo::after {
   position: absolute;
-  z-index: -1;
+  z-index: var(--z-index-behind);
   content: '';
   pointer-events: none;
 }
@@ -138,7 +138,7 @@ $decor-path: '' !default;
   --streaks-3: var(--color-decor-emphasis-halo-3);
 
   position: absolute;
-  z-index: -1;
+  z-index: var(--z-index-behind);
   right: 0;
   bottom: 0;
   left: 0;
@@ -177,17 +177,17 @@ section:has(> .bg-layer),
 
 section:has(> .bg-layer) > .container {
   position: relative;
-  z-index: 1;
+  z-index: var(--z-index-raised);
 }
 
 section:has(> .bg-layer) > .bg-layer {
-  z-index: 0;
+  z-index: var(--z-index-base);
 }
 
 .bg-layer {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: var(--z-index-behind);
   overflow: hidden;
   pointer-events: none;
 }

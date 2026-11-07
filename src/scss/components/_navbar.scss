@@ -178,6 +178,15 @@
       margin-left: auto;
     }
 
+    // Enlaces a la derecha junto a las utilidades, como el CV
+    .navbar--nav-end.navbar--expand-#{$size} .navbar__brand {
+      margin-right: auto;
+    }
+
+    .navbar--nav-end.navbar--expand-#{$size} .navbar__actions {
+      margin-left: var(--space-sm);
+    }
+
     .navbar--expand-#{$size} .navbar__utility {
       display: inline-flex;
     }

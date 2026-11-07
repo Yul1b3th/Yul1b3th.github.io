@@ -34,7 +34,7 @@
   content: '';
   position: absolute;
   inset: auto -20% -40% auto;
-  z-index: -1;
+  z-index: var(--z-index-behind);
   width: 70%;
   aspect-ratio: 1;
   border-radius: 50%;

@@ -67,7 +67,7 @@
   height: var(--tooltip-gap);
 }
 
-.tooltip:is(:hover, :focus-within):not(.is-dismissed) .tooltip__content {
+.tooltip:is(:hover, :has(:focus-visible)):not(.is-dismissed) .tooltip__content {
   --tooltip-enter-x: 0px;
   --tooltip-enter-y: 0px;
 
@@ -167,7 +167,7 @@
 
 @include apply-reduced-motion {
   .tooltip__content,
-  .tooltip:is(:hover, :focus-within) .tooltip__content {
+  .tooltip:is(:hover, :has(:focus-visible)) .tooltip__content {
     transition: none;
   }
 }

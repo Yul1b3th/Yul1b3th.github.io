@@ -65,7 +65,7 @@
 }
 
 .dropdown__chevron {
-  transition: transform var(--duration-fast) var(--ease-standard);
+  transition: transform var(--duration-base) var(--ease-standard);
 }
 
 .dropdown__button[aria-expanded='true'] .dropdown__chevron {
@@ -87,9 +87,9 @@
   box-shadow: var(--shadow-hover);
   transform-origin: top right;
   transition:
-    opacity var(--duration-fast) var(--ease-standard),
-    transform var(--duration-fast) var(--ease-standard),
-    display var(--duration-fast) allow-discrete;
+    opacity var(--duration-base) var(--ease-standard),
+    transform var(--duration-base) var(--ease-standard),
+    display var(--duration-base) allow-discrete;
 }
 
 /* Flecha que apunta al botón del que sale el menú, del mismo fondo y borde */

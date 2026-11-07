@@ -38,6 +38,7 @@ export function initCarousels(root = document) {
       const reset = () => wrap.classList.remove('is-dismissed');
       wrap.addEventListener('mouseleave', reset);
       wrap.addEventListener('focusout', reset);
+      wrap.addEventListener('pointerdown', () => wrap.classList.add('is-dismissed'));
       return content;
     };
     addTooltip(prev, 'prev', 'end');
@@ -76,13 +77,17 @@ export function initCarousels(root = document) {
       }
     };
 
+    // Al dar la vuelta salta sin recorrer todas las diapositivas
     const goTo = (i) => {
+      let wrapped = i < 0 || i >= slides.length;
       if (row) {
-        if (i > last()) i = loop && index >= last() ? 0 : last();
-        if (i < 0) i = loop && index === 0 ? last() : 0;
+        wrapped = (i > last() && loop && index >= last()) || (i < 0 && loop && index === 0);
+        if (i > last()) i = wrapped ? 0 : last();
+        if (i < 0) i = wrapped ? last() : 0;
       }
       index = (i + slides.length) % slides.length;
-      track.scrollTo({ left: slides[index].offsetLeft - track.offsetLeft, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+      const behavior = wrapped || prefersReducedMotion() ? 'instant' : 'smooth';
+      track.scrollTo({ left: slides[index].offsetLeft - track.offsetLeft, behavior });
       paint();
     };
 
