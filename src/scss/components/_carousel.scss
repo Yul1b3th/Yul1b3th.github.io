@@ -86,6 +86,22 @@
   transform: translateX(-100%);
 }
 
+/* Fundido en lugar de deslizar, como carousel-fade de Bootstrap */
+.carousel--fade .carousel__slide {
+  opacity: 0;
+  transform: none;
+  transition: opacity var(--duration-slide) var(--ease-in-out);
+}
+
+.carousel--fade .carousel__slide:is(.is-active, .is-leaving) {
+  visibility: visible;
+}
+
+.carousel--fade .carousel__slide.is-active {
+  z-index: var(--z-index-raised);
+  opacity: 1;
+}
+
 /* Diapositiva con texto, como carousel-caption de Bootstrap */
 /* En el móvil va debajo de la foto y desde md encima, sobre un velo oscuro que asegura el contraste */
 .carousel__figure {
@@ -164,12 +180,13 @@
   gap: var(--space-xs);
 }
 
+/* Ancho fijo para que la píldora crezca dentro sin mover los otros puntos ni las flechas */
 .carousel__indicator {
   display: inline-grid;
   place-items: center;
-  min-width: 1.75rem;
+  width: 2.375rem;
   height: 2.75rem;
-  padding: 0 var(--space-xs);
+  padding: 0;
   border: 0;
   background: transparent;
   cursor: pointer;
@@ -203,6 +220,12 @@
 
 .carousel--autoplay.is-playing .carousel__indicator[aria-current='true']::before {
   animation-play-state: running;
+}
+
+/* Parado por la persona, la píldora queda llena como en un carrusel sin pase automático */
+.carousel--autoplay.is-stopped .carousel__indicator[aria-current='true']::before {
+  background-size: 100% 100%;
+  animation: none;
 }
 
 @keyframes carousel-progress {
@@ -365,5 +388,11 @@
   .carousel__indicator::before,
   .carousel--slide .carousel__slide {
     transition: none;
+  }
+
+  /* Sin la cuenta atrás animada, como Bootstrap 6; la píldora queda llena */
+  .carousel--autoplay .carousel__indicator[aria-current='true']::before {
+    background-size: 100% 100%;
+    animation: none;
   }
 }

@@ -171,3 +171,8 @@
     transition: none;
   }
 }
+
+/* La animación solo es para el hover; al ocultarse tras un clic desaparece sin transición */
+.tooltip.is-dismissed .tooltip__content {
+  transition: none;
+}

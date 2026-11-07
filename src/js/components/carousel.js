@@ -2,7 +2,7 @@
 // Se cambia en innovatech-ds y se copia con npm run sync
 
 // Carrusel accesible con el patrón de WAI-ARIA, configurable con atributos data
-// Una foto a la vez se desliza como Bootstrap 5.3 y varias tarjetas usan scroll-snap
+// Una foto a la vez se desliza o funde como Bootstrap y varias tarjetas usan scroll-snap
 
 import { prefersReducedMotion } from '../utils/motion.js';
 
@@ -24,9 +24,15 @@ export function initCarousels(root = document) {
     const sideTips = carousel.matches('.carousel--overlay, .carousel--row');
     const multi = carousel.classList.contains('carousel--multi');
     const row = carousel.classList.contains('carousel--row');
+    const fade = carousel.classList.contains('carousel--fade');
+    // Con varias tarjetas se copian las primeras al final para seguir hacia delante al dar la vuelta
+    const endless = multi && !row && loop;
     let index = Math.min(Math.max(Number(carouselStart) || 1, 1), slides.length) - 1;
     let sliding = false;
     let onSlide = () => {};
+    let takeControl = () => {};
+    // Cada diapositiva puede tener su propio tiempo con data-carousel-interval
+    const slideInterval = (i) => Math.max(Number(slides[i].dataset.carouselInterval) || interval, MIN_INTERVAL);
 
     carousel.classList.toggle('carousel--slide', !multi);
     carousel.style.setProperty('--carousel-interval', `${interval}ms`);
@@ -45,11 +51,25 @@ export function initCarousels(root = document) {
       const reset = () => wrap.classList.remove('is-dismissed');
       wrap.addEventListener('mouseleave', reset);
       wrap.addEventListener('focusout', reset);
-      wrap.addEventListener('pointerdown', () => wrap.classList.add('is-dismissed'));
+      wrap.addEventListener('click', () => wrap.classList.add('is-dismissed'));
       return content;
     };
     addTooltip(prev, 'prev', 'end');
     addTooltip(next, 'next', 'start');
+
+    const left = (card) => card.offsetLeft - track.offsetLeft;
+    // Copias solo visuales, sin foco ni lector de pantalla
+    const clones = endless
+      ? slides.slice(0, Math.min(slides.length, 4)).map((slide) => {
+          const clone = slide.cloneNode(true);
+          clone.classList.add('is-clone');
+          clone.setAttribute('aria-hidden', 'true');
+          clone.inert = true;
+          clone.querySelectorAll('[id]').forEach((el) => el.removeAttribute('id'));
+          track.append(clone);
+          return clone;
+        })
+      : [];
 
     slides.forEach((slide, i) => {
       slide.setAttribute('role', 'group');
@@ -63,7 +83,10 @@ export function initCarousels(root = document) {
       dot.type = 'button';
       dot.className = 'carousel__indicator';
       dot.setAttribute('aria-label', `Ir a la ${i + 1} de ${slides.length}`);
-      dot.addEventListener('click', () => goTo(i));
+      dot.addEventListener('click', () => {
+        takeControl();
+        goTo(i);
+      });
       indicators?.append(dot);
       return dot;
     });
@@ -77,6 +100,7 @@ export function initCarousels(root = document) {
     const last = () => (row ? Math.max(0, slides.length - step()) : slides.length - 1);
 
     const paint = () => {
+      carousel.style.setProperty('--carousel-interval', `${slideInterval(index)}ms`);
       dots.forEach((dot, i) => dot.setAttribute('aria-current', String(i === index)));
       if (!loop) {
         if (prev) prev.disabled = index === 0;
@@ -97,6 +121,20 @@ export function initCarousels(root = document) {
         return;
       }
       sliding = true;
+      // Fundido, la actual se apaga mientras la nueva aparece encima
+      if (fade) {
+        current.classList.add('is-leaving');
+        current.classList.remove('is-active');
+        incoming.classList.add('is-active');
+        const faded = (event) => {
+          if (event.target !== current || event.propertyName !== 'opacity') return;
+          current.removeEventListener('transitionend', faded);
+          current.classList.remove('is-leaving');
+          sliding = false;
+        };
+        current.addEventListener('transitionend', faded);
+        return;
+      }
       // La que entra se coloca a un lado sin transición y después se anima
       incoming.style.transition = 'none';
       incoming.classList.add(direction > 0 ? 'is-next' : 'is-prev');
@@ -117,12 +155,24 @@ export function initCarousels(root = document) {
 
     const goTo = (i, direction) => {
       if (multi) {
+        const behavior = prefersReducedMotion() ? 'instant' : 'smooth';
         if (row) {
           if (i > last()) i = loop && index >= last() ? 0 : last();
           if (i < 0) i = loop && index === 0 ? last() : 0;
         }
-        index = (i + slides.length) % slides.length;
-        track.scrollTo({ left: slides[index].offsetLeft - track.offsetLeft, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+        if (endless && i >= slides.length) {
+          // Sigue hacia la copia de la primera y al parar vuelve a la real sin que se note
+          index = i - slides.length;
+          track.scrollTo({ left: left(clones[index]), behavior });
+        } else if (endless && i < 0) {
+          // Desde la primera salta a su copia y retrocede una tarjeta hasta la última
+          track.scrollTo({ left: left(clones[0]), behavior: 'instant' });
+          index = slides.length - 1;
+          track.scrollTo({ left: left(slides[index]), behavior });
+        } else {
+          index = (i + slides.length) % slides.length;
+          track.scrollTo({ left: left(slides[index]), behavior });
+        }
         paint();
         onSlide();
         return;
@@ -134,20 +184,35 @@ export function initCarousels(root = document) {
       slideTo(target, direction ?? (target > index ? 1 : -1));
     };
 
-    prev?.addEventListener('click', () => goTo(index - step(), -1));
-    next?.addEventListener('click', () => goTo(index + step(), 1));
+    prev?.addEventListener('click', () => {
+      takeControl();
+      goTo(index - step(), -1);
+    });
+    next?.addEventListener('click', () => {
+      takeControl();
+      goTo(index + step(), 1);
+    });
 
     if (multi) {
-      // Al deslizar se toma como actual la tarjeta más cercana al inicio
+      // Al deslizar se toma como actual la tarjeta más cercana al inicio, también si es una copia
+      const cards = [...slides, ...clones];
+      const nearest = () =>
+        cards.reduce((best, card, i) => (Math.abs(left(card) - track.scrollLeft) < Math.abs(left(cards[best]) - track.scrollLeft) ? i : best), 0);
       track.addEventListener('scroll', () => {
-        const left = track.scrollLeft;
-        const current = slides.reduce((best, slide, i) =>
-          Math.abs(slide.offsetLeft - track.offsetLeft - left) < Math.abs(slides[best].offsetLeft - track.offsetLeft - left) ? i : best, 0);
+        const current = nearest() % slides.length;
         if (current !== index) {
           index = current;
           paint();
         }
+        clearTimeout(settle);
+        settle = setTimeout(rewind, 150);
       }, { passive: true });
+      // Al parar sobre una copia se pasa a la tarjeta real equivalente
+      let settle;
+      const rewind = () => {
+        const i = nearest();
+        if (endless && i >= slides.length && !drag) track.scrollTo({ left: left(slides[i - slides.length]), behavior: 'instant' });
+      };
     }
 
     // Arrastrar con el ratón o el dedo, sin abrir el enlace que había debajo
@@ -174,7 +239,10 @@ export function initCarousels(root = document) {
       if (multi) goTo(index);
       else {
         const dx = event.clientX - x;
-        if (Math.abs(dx) >= SWIPE) goTo(index + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
+        if (Math.abs(dx) >= SWIPE) {
+          takeControl();
+          goTo(index + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
+        }
       }
     };
     track.addEventListener('pointerup', endDrag);
@@ -204,7 +272,7 @@ export function initCarousels(root = document) {
     carousel.classList.add('carousel--autoplay');
 
     let timer;
-    let remaining = interval;
+    let remaining = slideInterval(index);
     let startedAt = 0;
     let running = false;
     let userPaused = reduced;
@@ -212,6 +280,7 @@ export function initCarousels(root = document) {
 
     // El botón solo cambia con un clic; ratón y foco pausan sin tocar el botón
     const render = () => {
+      carousel.classList.toggle('is-stopped', userPaused);
       play.dataset.playing = String(!userPaused);
       play.setAttribute('aria-label', userPaused ? 'Reproducir' : 'Pausar');
       playTip.textContent = play.getAttribute('aria-label');
@@ -231,7 +300,7 @@ export function initCarousels(root = document) {
       }
     };
     onSlide = () => {
-      remaining = interval;
+      remaining = slideInterval(index);
       if (running) {
         clearTimeout(timer);
         startedAt = performance.now();
@@ -241,8 +310,15 @@ export function initCarousels(root = document) {
     const refresh = () => {
       const focused = carousel.contains(document.activeElement) && document.activeElement !== play;
       render();
-      run(!userPaused && !hovered && !focused);
+      run(!userPaused && !hovered && !focused && !document.hidden);
     };
+    // Como Bootstrap 6, si la persona usa flechas, puntos o desliza, el pase se para para siempre
+    takeControl = () => {
+      if (userPaused) return;
+      userPaused = true;
+      refresh();
+    };
+    document.addEventListener('visibilitychange', refresh);
 
     play.addEventListener('click', () => {
       userPaused = !userPaused;

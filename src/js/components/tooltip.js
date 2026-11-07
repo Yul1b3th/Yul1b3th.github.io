@@ -9,7 +9,8 @@ export function initTooltips(root = document) {
     const reset = () => tooltip.classList.remove('is-dismissed');
     tooltip.addEventListener('mouseleave', reset);
     tooltip.addEventListener('focusout', reset);
-    tooltip.addEventListener('pointerdown', () => tooltip.classList.add('is-dismissed'));
+    // Se ve mientras se pulsa y se oculta al terminar el clic
+    tooltip.addEventListener('click', () => tooltip.classList.add('is-dismissed'));
   });
 
   document.addEventListener('keydown', (event) => {
