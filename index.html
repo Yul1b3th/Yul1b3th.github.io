@@ -673,6 +673,7 @@
             </div>
           </div>
           <form class="card card--cv contact-form">
+            <p class="field__legend-note" data-translate="contact-required-note">Todos los campos son obligatorios.</p>
             <div class="contact-form__group">
               <label class="visually-hidden" for="name" data-translate="contact-name-label">Nombre</label>
               <input
@@ -680,7 +681,7 @@
                 type="text"
                 name="name"
                 class="contact-form__control"
-                placeholder="Ingresa tu nombre *"
+                placeholder="Ingresa tu nombre"
                 title="Nombre sólo acepta letras y espacios en blanco"
                 pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                 autocomplete="name"
@@ -695,7 +696,7 @@
                 type="email"
                 name="email"
                 class="contact-form__control"
-                placeholder="Ingresa tu correo *"
+                placeholder="Ingresa tu correo"
                 title="Email incorrecto"
                 autocomplete="email"
                 required
@@ -704,7 +705,7 @@
             </div>
             <div class="contact-form__group">
               <label class="visually-hidden" for="comments" data-translate="contact-comments-label">Comentarios</label>
-              <textarea id="comments" name="comments" class="contact-form__control" rows="5" placeholder="Déjame tus comentarios *" required data-translate="contact-comments-placeholder"></textarea>
+              <textarea id="comments" name="comments" class="contact-form__control" rows="5" placeholder="Déjame tus comentarios" required data-translate="contact-comments-placeholder"></textarea>
             </div>
             <div class="contact-form__loader text-center d-none">
               <img src="./public/images/loader.svg" alt="Enviando..." data-translate="contact-loader-alt" />
