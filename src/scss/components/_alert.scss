@@ -7,7 +7,7 @@
 @use '../abstracts' as *;
 
 .alert {
-  --alert-text: var(--color-info-text);
+  --alert-text: var(--color-badge-info-subtle-text);
   --alert-bg: var(--color-info-bg);
   --alert-border: var(--color-info-border);
 
@@ -35,23 +35,24 @@
 }
 
 .alert--success {
-  --alert-text: var(--color-success-text);
+  --alert-text: var(--color-badge-success-subtle-text);
   --alert-bg: var(--color-success-bg);
   --alert-border: var(--color-success-border);
 }
 
 .alert--warning {
-  --alert-text: var(--color-warning-text);
+  --alert-text: var(--color-badge-warning-subtle-text);
   --alert-bg: var(--color-warning-bg);
   --alert-border: var(--color-warning-border);
 }
 
 .alert--error {
-  --alert-text: var(--color-danger-text);
+  --alert-text: var(--color-badge-danger-subtle-text);
   --alert-bg: var(--color-danger-bg);
   --alert-border: var(--color-danger-border);
 }
 
+/* Icono y X con el mismo color que el texto del badge suave de su estado */
 .alert__icon {
   flex: none;
   width: 1.5rem;

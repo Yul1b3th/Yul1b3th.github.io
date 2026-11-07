@@ -23,14 +23,6 @@
   white-space: nowrap;
 }
 
-/* Icono del estado, del mismo tamaño que el texto */
-.badge__icon {
-  flex: none;
-  width: 1.25em;
-  height: 1.25em;
-  fill: currentColor;
-}
-
 /* Rellenos con texto blanco, salvo aviso, que va oscuro sobre amarillo */
 .badge--success {
   --badge-text: var(--color-badge-text);
