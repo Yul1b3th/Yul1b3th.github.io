@@ -330,17 +330,18 @@ section:has(> .bg-layer) > .bg-layer {
 }
 
 /* Suelo en perspectiva al pie de la sección */
+/* Se ajusta con --floor-height, --floor-opacity, --floor-line, --floor-tilt y --floor-perspective */
 .bg-floor::before {
   right: -50%;
   bottom: -2%;
   left: -50%;
-  height: 60%;
+  height: var(--floor-height, 60%);
   background:
-    linear-gradient(var(--color-decor-wave-soft-2) 1.5px, transparent 1.5px) 0 0 / 4rem 4rem,
-    linear-gradient(90deg, var(--color-decor-wave-soft-2) 1.5px, transparent 1.5px) 0 0 / 4rem 4rem;
+    linear-gradient(var(--floor-line, var(--color-decor-wave-soft-2)) 1.5px, transparent 1.5px) 0 0 / 4rem 4rem,
+    linear-gradient(90deg, var(--floor-line, var(--color-decor-wave-soft-2)) 1.5px, transparent 1.5px) 0 0 / 4rem 4rem;
   mask: linear-gradient(to top, #000, transparent 85%);
-  opacity: var(--opacity-decor-subtle);
-  transform: perspective(420px) rotateX(68deg);
+  opacity: var(--floor-opacity, var(--opacity-decor-subtle));
+  transform: perspective(var(--floor-perspective, 420px)) rotateX(var(--floor-tilt, 68deg));
   transform-origin: bottom;
 }
 

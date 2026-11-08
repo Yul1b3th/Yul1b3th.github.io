@@ -361,7 +361,11 @@ export function initCarousels(root = document) {
     });
     carousel.addEventListener('mouseenter', () => { hovered = true; refresh(); });
     carousel.addEventListener('mouseleave', () => { hovered = false; refresh(); });
-    carousel.addEventListener('focusin', refresh);
+    // Con el teclado el pase se para y no vuelve solo, como pide el patrón de la W3C
+    carousel.addEventListener('focusin', (event) => {
+      if (event.target !== play && event.target.matches(':focus-visible')) userPaused = true;
+      refresh();
+    });
     carousel.addEventListener('focusout', () => setTimeout(refresh));
     // Si la persona elige reducir el movimiento, el pase se para
     document.addEventListener('motionchange', () => {

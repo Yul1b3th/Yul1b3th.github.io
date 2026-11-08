@@ -57,8 +57,18 @@
 
 .contact {
   background-color: var(--color-bg-surface);
-  min-height: 100vh;
   width: 100%;
+  // Sin alto mínimo; el hueco de abajo es para el suelo en perspectiva
+  padding-bottom: clamp(7rem, 14vw, 11rem);
+}
+
+// Cuadrícula en perspectiva más marcada, como la del hero de la landing
+.contact > .bg-floor {
+  --floor-height: 75%;
+  --floor-opacity: var(--opacity-decor);
+  --floor-line: var(--color-decor-wave-2);
+  --floor-tilt: 60deg;
+  --floor-perspective: 500px;
 }
 
 .contact__cards {
