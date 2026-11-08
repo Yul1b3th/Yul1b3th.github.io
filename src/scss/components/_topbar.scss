@@ -28,8 +28,8 @@
   transform: translateY(calc(-1 * var(--topbar-height)));
 }
 
-// Si el teclado entra en la barra oculta, vuelve a verse
-.header-stack.is-condensed:focus-within {
+// Vuelve solo si el teclado entra en la barra oculta, no al hacer clic en el menú
+.header-stack.is-condensed:has(.topbar :focus-visible) {
   transform: none;
 }
 
