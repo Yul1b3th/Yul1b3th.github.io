@@ -172,7 +172,12 @@
     "contact-error-name-pattern": "Your name can only contain letters and spaces.",
     "contact-error-email-required": "Enter your email address.",
     "contact-error-email-invalid": "Enter a valid email, for example name@domain.com.",
-    "contact-error-comments-required": "Tell me how I can help you."
+    "contact-error-comments-required": "Tell me how I can help you.",
+    "carousel-prev-label": "Previous",
+    "carousel-next-label": "Next",
+    "education-tabs-label": "Education",
+    "education-tab-studies": "Studies",
+    "education-tab-courses": "Courses"
   },
   "es": {
     "home": "Inicio",
@@ -347,6 +352,11 @@
     "contact-error-name-pattern": "El nombre solo puede tener letras y espacios.",
     "contact-error-email-required": "Escribe tu correo electrónico.",
     "contact-error-email-invalid": "Escribe un correo válido, por ejemplo nombre@dominio.com.",
-    "contact-error-comments-required": "Cuéntame en qué puedo ayudarte."
+    "contact-error-comments-required": "Cuéntame en qué puedo ayudarte.",
+    "carousel-prev-label": "Anterior",
+    "carousel-next-label": "Siguiente",
+    "education-tabs-label": "Formación",
+    "education-tab-studies": "Estudios",
+    "education-tab-courses": "Cursos"
   }
 }

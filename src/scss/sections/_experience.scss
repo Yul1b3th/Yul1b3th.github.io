@@ -15,3 +15,41 @@
     margin-left: 1.5rem;
   }
 }
+
+// Línea de tiempo con todas las experiencias completas, una debajo de otra
+.cv-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding-left: 2rem;
+}
+
+.cv-timeline::before {
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  width: 2px;
+  content: '';
+  background-color: var(--color-border-default);
+}
+
+.cv-timeline > .card {
+  position: relative;
+  margin-bottom: 0;
+  overflow: visible;
+}
+
+// Un punto por experiencia sobre la línea
+.cv-timeline > .card::before {
+  position: absolute;
+  top: 1.5rem;
+  left: calc(-2rem + 0.5rem - 7px + 1px);
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--color-text-heading);
+  border-radius: 50%;
+  content: '';
+  background-color: var(--color-action-primary-bg);
+}

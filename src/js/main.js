@@ -8,6 +8,8 @@ import { initContactForm } from './components/contact-form.js';
 import { initScrollTop } from './components/scroll-top.js';
 import { initFooter } from './components/footer.js';
 import { initAnimate } from './utils/animate.js';
+import { initCarousels } from './components/carousel.js';
+import { initTabs } from './components/tabs.js';
 
 // La barra copia sus enlaces al panel antes de traducir la página
 initNavbars();
@@ -18,4 +20,6 @@ initLanguageSwitcher();
 initContactForm();
 initScrollTop();
 initFooter();
+initCarousels();
+initTabs();
 initAnimate();

@@ -1,0 +1,33 @@
+// Carruseles y pestañas del CV, encima de los del sistema
+// Tech Skills, Proyectos y Formación con tres tarjetas a la vez en escritorio
+
+@use '../abstracts' as *;
+
+.cv-carousel {
+  width: 100%;
+  margin-top: var(--space-md);
+}
+
+/* Las tarjetas ocupan todo el alto de la diapositiva para que la fila quede igual */
+.cv-carousel .carousel__slide {
+  display: flex;
+}
+
+.cv-carousel .carousel__slide > :is(.card, .card--cv) {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0;
+}
+
+.cv-carousel .card--cv ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+.cv-tabs {
+  width: 100%;
+}
+
+.cv-tabs .tabs__list {
+  justify-content: center;
+}
