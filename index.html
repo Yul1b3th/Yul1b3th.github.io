@@ -28,7 +28,7 @@
   </head>
   <body>
     <a class="skip-link" href="#main" data-translate="skip-link">Saltar al contenido</a>
-    <div class="header-stack" data-header-stack>
+    <header class="header-stack" data-header-stack>
     <div class="topbar">
       <div class="topbar__inner">
         <span class="topbar__item"><svg aria-hidden="true"><use href="public/icons/icons.svg#location_on"></use></svg><span data-translate="contact-location">Barcelona, España</span></span>
@@ -94,51 +94,34 @@
         </div>
       </div>
     </div>
-    <header class="navbar navbar--landing navbar--nav-end navbar--expand-xl" data-navbar-spy>
-      <div class="navbar__inner">
-        <a class="navbar__brand" href="#home" data-translate="navbar-brand">YR</a>
-        <nav class="navbar__nav" aria-label="Principal">
-          <ul class="navbar__list">
-              <li><a class="navbar__link" href="#home" data-translate="home">Inicio</a></li>
-              <li><a class="navbar__link" href="#about-me" data-translate="about-me">Sobre Mí</a></li>
-              <li><a class="navbar__link" href="#projects" data-translate="projects">Proyectos</a></li>
-              <li><a class="navbar__link" href="#experience" data-translate="experience">Experiencia</a></li>
-              <li><a class="navbar__link" href="#education" data-translate="education">Formación</a></li>
-              <li><a class="navbar__link" href="#contact" data-translate="contact">Contacto</a></li>
-          </ul>
-        </nav>
-        <div class="navbar__actions">
-          <span class="navbar__separator navbar__utility" aria-hidden="true">|</span>
-          <a class="button button--icon navbar__utility" href="https://www.linkedin.com/in/yulibeth-rivero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <svg aria-hidden="true" viewBox="0 0 448 512"><use href="public/icons/icons.svg#linkedin"></use></svg>
-            </a>
-            <a class="button button--icon navbar__utility" href="https://github.com/Yul1b3th" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <svg aria-hidden="true" viewBox="0 0 496 512"><use href="public/icons/icons.svg#github"></use></svg>
-            </a>
+      <div class="navbar navbar--landing navbar--nav-end navbar--expand-xl" data-navbar-spy>
+        <div class="navbar__inner">
+          <a class="navbar__brand" href="#home" data-translate="navbar-brand">YR</a>
+          <nav class="navbar__nav" aria-label="Principal">
+            <ul class="navbar__list">
+                <li><a class="navbar__link" href="#home" data-translate="home">Inicio</a></li>
+                <li><a class="navbar__link" href="#about-me" data-translate="about-me">Sobre Mí</a></li>
+                <li><a class="navbar__link" href="#projects" data-translate="projects">Proyectos</a></li>
+                <li><a class="navbar__link" href="#experience" data-translate="experience">Experiencia</a></li>
+                <li><a class="navbar__link" href="#education" data-translate="education">Formación</a></li>
+                <li><a class="navbar__link" href="#contact" data-translate="contact">Contacto</a></li>
+            </ul>
+          </nav>
+          <div class="navbar__actions">
+            <span class="navbar__separator navbar__utility" aria-hidden="true">|</span>
+            <a class="button button--icon navbar__utility" href="https://www.linkedin.com/in/yulibeth-rivero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg aria-hidden="true" viewBox="0 0 448 512"><use href="public/icons/icons.svg#linkedin"></use></svg>
+              </a>
+              <a class="button button--icon navbar__utility" href="https://github.com/Yul1b3th" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg aria-hidden="true" viewBox="0 0 496 512"><use href="public/icons/icons.svg#github"></use></svg>
+              </a>
+          </div>
+          <button class="button button--icon navbar__toggle" type="button" aria-label="Menú" data-translate="menu-label" aria-controls="navbar-drawer" data-drawer-open="navbar-drawer">
+            <svg aria-hidden="true"><use href="public/icons/icons.svg#menu"></use></svg>
+          </button>
         </div>
-        <button class="button button--icon navbar__toggle" type="button" aria-label="Menú" data-translate="menu-label" aria-controls="navbar-drawer" data-drawer-open="navbar-drawer">
-          <svg aria-hidden="true"><use href="public/icons/icons.svg#menu"></use></svg>
-        </button>
       </div>
     </header>
-    </div>
-    <dialog class="drawer drawer--full drawer--end drawer--emphasis" id="navbar-drawer" aria-label="Menú" data-translate="menu-label">
-      <div class="drawer__header">
-        <a class="navbar__brand" href="#home" data-translate="navbar-brand">YR</a>
-        <button class="button button--icon" type="button" aria-label="Cerrar menú" data-translate="close-menu-label" data-drawer-close>
-          <svg aria-hidden="true"><use href="public/icons/icons.svg#close"></use></svg>
-        </button>
-      </div>
-      <nav class="drawer__body" aria-label="Principal" data-navbar-links></nav>
-      <div class="drawer__footer">
-            <a class="button button--icon " href="https://www.linkedin.com/in/yulibeth-rivero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <svg aria-hidden="true" viewBox="0 0 448 512"><use href="public/icons/icons.svg#linkedin"></use></svg>
-            </a>
-            <a class="button button--icon " href="https://github.com/Yul1b3th" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <svg aria-hidden="true" viewBox="0 0 496 512"><use href="public/icons/icons.svg#github"></use></svg>
-            </a>
-      </div>
-    </dialog>
     <main id="main" tabindex="-1">
       <!-- home -->
 
@@ -178,6 +161,8 @@
       <!-- About me -->
 
       <section id="about-me" class="about-me section section--solid">
+        <div class="bg-layer bg-grid bg-grid--sides" aria-hidden="true"></div>
+        <div class="bg-layer bg-dots" aria-hidden="true"></div>
         <div class="bg-layer bg-divider" aria-hidden="true"></div>
         <div class="container">
           <!-- Section Title -->
@@ -402,6 +387,7 @@
       <!-- Experience -->
 
       <section id="experience" class="experience section section--solid">
+        <div class="bg-layer bg-grid" aria-hidden="true"></div>
         <div class="bg-layer bg-divider" aria-hidden="true"></div>
         <div class="container">
           <div class="section-title animate animate--fade-up">
@@ -624,6 +610,9 @@
       <!-- Contact -->
 
       <section id="contact" class="contact section section--solid">
+        <div class="bg-layer bg-ribbon" aria-hidden="true"></div>
+        <div class="bg-layer bg-floor" aria-hidden="true"></div>
+        <div class="bg-layer bg-dots bg-dots--top-end" aria-hidden="true"></div>
         <div class="bg-layer bg-divider" aria-hidden="true"></div>
         <div class="container">
           <div class="section-title animate animate--fade-up">
@@ -717,6 +706,23 @@
         <p>© <span id="year"></span> Yulibeth Rivero</p>
       </div>
     </footer>
+    <dialog class="drawer drawer--full drawer--end drawer--emphasis" id="navbar-drawer" aria-label="Menú" data-translate="menu-label">
+      <div class="drawer__header">
+        <a class="navbar__brand" href="#home" data-translate="navbar-brand">YR</a>
+        <button class="button button--icon" type="button" aria-label="Cerrar menú" data-translate="close-menu-label" data-drawer-close>
+          <svg aria-hidden="true"><use href="public/icons/icons.svg#close"></use></svg>
+        </button>
+      </div>
+      <nav class="drawer__body" aria-label="Principal" data-navbar-links></nav>
+      <div class="drawer__footer">
+            <a class="button button--icon " href="https://www.linkedin.com/in/yulibeth-rivero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg aria-hidden="true" viewBox="0 0 448 512"><use href="public/icons/icons.svg#linkedin"></use></svg>
+            </a>
+            <a class="button button--icon " href="https://github.com/Yul1b3th" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg aria-hidden="true" viewBox="0 0 496 512"><use href="public/icons/icons.svg#github"></use></svg>
+            </a>
+      </div>
+    </dialog>
     <button class="scroll-top-btn hidden" type="button" aria-label="Volver arriba" data-translate="scroll-top-label">
       <svg class="scroll-top-btn__icon" aria-hidden="true"><use href="public/icons/icons.svg#keyboard_control_key"></use></svg>
     </button>
