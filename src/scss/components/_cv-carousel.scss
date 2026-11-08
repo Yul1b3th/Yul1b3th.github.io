@@ -31,3 +31,21 @@
 .cv-tabs .tabs__list {
   justify-content: center;
 }
+
+/* La regla de imágenes del carrusel recorta, aquí la ilustración se ve entera */
+.cv-carousel .card__media--illustration img {
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+/* Proyectos con el mismo alto y el botón Demo abajo, alineado en las tres tarjetas */
+.cv-carousel--projects .card--cv {
+  display: flex;
+  flex-direction: column;
+}
+
+.cv-carousel--projects .card--cv > .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
