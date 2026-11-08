@@ -49,3 +49,41 @@
   align-self: flex-start;
   margin-top: auto;
 }
+
+/* Las dos pestañas de Formación ocupan la misma celda, así el alto es el de la más alta y no salta */
+/* La oculta sigue con hidden y visibility hidden, fuera del orden de tabulación y de los lectores */
+.cv-tabs {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.cv-tabs .tabs__panel {
+  grid-row: 2;
+  grid-column: 1;
+  transition:
+    opacity var(--duration-base) var(--ease-decelerate),
+    visibility var(--duration-base);
+}
+
+.cv-tabs .tabs__panel[hidden] {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* En móvil una tarjeta entera y centrada, sin la vecina asomando solo por la derecha */
+.cv-carousel.carousel--multi {
+  --carousel-per-view: 1;
+}
+
+@include apply-media-breakpoint(md) {
+  .cv-carousel.carousel--multi {
+    --carousel-per-view: 2;
+  }
+}
+
+@include apply-media-breakpoint(lg) {
+  .cv-carousel.carousel--multi {
+    --carousel-per-view: 3;
+  }
+}
