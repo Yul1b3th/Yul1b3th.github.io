@@ -600,7 +600,7 @@
             <!-- JAVA SE 11 -->
             <div class="card card--cv animate animate--fade-up">
               <h3 data-translate="courses-java-title">Java SE 11</h3>
-              <p class="resume-items__year" data-translate="courses-java-year">2026 (60 horas)</p>
+              <p class="resume-items__year" data-translate="courses-java-year">2026 (120 horas)</p>
               <p data-translate="courses-java-institution">La Salle Universidad Ramon Llull | España.</p>
             </div>
 
@@ -680,7 +680,7 @@
               </ul>
             </div>
           </div>
-          <form class="card card--cv contact-form">
+          <form class="card card--cv contact-form" novalidate>
             <div class="field contact-form__group">
               <label class="field__label" for="name"><span data-translate="contact-name-label">Nombre</span> <span class="field__required" aria-hidden="true">*</span></label>
               <input
@@ -688,12 +688,9 @@
                 type="text"
                 name="name"
                 class="field__control"
-                placeholder="Ingresa tu nombre"
-                title="Nombre sólo acepta letras y espacios en blanco"
                 pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                 autocomplete="name"
                 required
-                data-translate="contact-name-placeholder contact-name-title"
               />
             </div>
             <div class="field contact-form__group">
@@ -703,16 +700,13 @@
                 type="email"
                 name="email"
                 class="field__control"
-                placeholder="Ingresa tu correo"
-                title="Email incorrecto"
                 autocomplete="email"
                 required
-                data-translate="contact-email-placeholder contact-email-title2"
               />
             </div>
             <div class="field contact-form__group">
               <label class="field__label" for="comments"><span data-translate="contact-comments-label">Comentarios</span> <span class="field__required" aria-hidden="true">*</span></label>
-              <textarea id="comments" name="comments" class="field__control" rows="5" placeholder="Déjame tus comentarios" required data-translate="contact-comments-placeholder"></textarea>
+              <textarea id="comments" name="comments" class="field__control" rows="5" required></textarea>
             </div>
             <p class="field__required-note" data-translate="contact-required-note">* Campos obligatorios</p>
             <div class="contact-form__loader text-center d-none">

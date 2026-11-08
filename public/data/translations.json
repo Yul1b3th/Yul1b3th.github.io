@@ -118,7 +118,7 @@
     "courses-prompting-year": "2026 (8 hours)",
     "courses-prompting-institution": "Coursera.",
     "courses-java-title": "Java SE 11",
-    "courses-java-year": "2026 (60 hours)",
+    "courses-java-year": "2026 (120 hours)",
     "courses-java-institution": "La Salle Ramon Llull University | Spain.",
     "courses-scrum-title": "Scrum Framework",
     "courses-scrum-year": "2023 (50 hours)",
@@ -139,11 +139,6 @@
     "contact-email": "yulibeth.rivero@gmail.com",
     "contact-social-title": "Social Media",
     "contact-required-note": "* Required fields",
-    "contact-name-placeholder": "Enter your name",
-    "contact-name-title": "Name only accepts letters and spaces",
-    "contact-email-placeholder": "Enter your email",
-    "contact-email-title2": "Incorrect email",
-    "contact-comments-placeholder": "Leave your comments",
     "contact-loader-alt": "Sending...",
     "contact-submit": "Send message",
     "contact-thanks-message": "Thank you very much!<br>For your comments",
@@ -172,7 +167,12 @@
     "tech-tag-rest": "REST APIs",
     "soft-skills-autonomy-description": "I keep learning so I can work with confidence and autonomy, and solve problems effectively.",
     "soft-skills-achievement-orientation-description": "I am committed to the quality of every delivery. The time I spend improving a solution is, for me, an investment in learning.",
-    "soft-skills-teamwork-description": "I listen, share knowledge and collaborate to reach shared goals."
+    "soft-skills-teamwork-description": "I listen, share knowledge and collaborate to reach shared goals.",
+    "contact-error-name-required": "Enter your name.",
+    "contact-error-name-pattern": "Your name can only contain letters and spaces.",
+    "contact-error-email-required": "Enter your email address.",
+    "contact-error-email-invalid": "Enter a valid email, for example name@domain.com.",
+    "contact-error-comments-required": "Tell me how I can help you."
   },
   "es": {
     "home": "Inicio",
@@ -293,7 +293,7 @@
     "courses-prompting-year": "2026 (8 horas)",
     "courses-prompting-institution": "Coursera.",
     "courses-java-title": "Java SE 11",
-    "courses-java-year": "2026 (60 horas)",
+    "courses-java-year": "2026 (120 horas)",
     "courses-java-institution": "La Salle Universidad Ramon Llull | España.",
     "courses-scrum-title": "Scrum Framework",
     "courses-scrum-year": "2023 (50 horas)",
@@ -314,11 +314,6 @@
     "contact-email": "yulibeth.rivero@gmail.com",
     "contact-social-title": "Redes Sociales",
     "contact-required-note": "* Campos obligatorios",
-    "contact-name-placeholder": "Ingresa tu nombre",
-    "contact-name-title": "Nombre sólo acepta letras y espacios en blanco",
-    "contact-email-placeholder": "Ingresa tu correo",
-    "contact-email-title2": "Email incorrecto",
-    "contact-comments-placeholder": "Déjame tus comentarios",
     "contact-loader-alt": "Enviando...",
     "contact-submit": "Enviar mensaje",
     "contact-thanks-message": "¡Muchas Gracias!<br>Por tus comentarios",
@@ -347,6 +342,11 @@
     "tech-tag-rest": "APIs REST",
     "soft-skills-autonomy-description": "Aprendo de forma continua para trabajar con seguridad y autonomía, y resolver problemas de forma eficaz.",
     "soft-skills-achievement-orientation-description": "Me comprometo con la calidad de cada entrega. El tiempo que dedico a mejorar una solución es, para mí, una inversión en aprendizaje.",
-    "soft-skills-teamwork-description": "Escucho, comparto conocimiento y colaboro para alcanzar los objetivos comunes."
+    "soft-skills-teamwork-description": "Escucho, comparto conocimiento y colaboro para alcanzar los objetivos comunes.",
+    "contact-error-name-required": "Escribe tu nombre.",
+    "contact-error-name-pattern": "El nombre solo puede tener letras y espacios.",
+    "contact-error-email-required": "Escribe tu correo electrónico.",
+    "contact-error-email-invalid": "Escribe un correo válido, por ejemplo nombre@dominio.com.",
+    "contact-error-comments-required": "Cuéntame en qué puedo ayudarte."
   }
 }
