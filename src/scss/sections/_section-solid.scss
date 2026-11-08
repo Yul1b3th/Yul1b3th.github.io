@@ -1,0 +1,8 @@
+// Secciones con color sólido, sin degradado ni decoración (8 de noviembre de 2026)
+// Se alternan con las de degradado y solo llevan la línea que separa secciones
+
+.section--solid {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--color-bg-surface);
+}
