@@ -57,7 +57,9 @@ export function initCarousels(root = document) {
     addTooltip(prev, 'prev', 'end');
     addTooltip(next, 'next', 'start');
 
-    const left = (card) => card.offsetLeft - track.offsetLeft;
+    // Al asomar, el relleno de la pista deja ver las vecinas y la actual queda en el centro
+    const inset = () => (carousel.classList.contains('carousel--peek') ? parseFloat(getComputedStyle(track).paddingInlineStart) : 0);
+    const left = (card) => card.offsetLeft - track.offsetLeft - inset();
     // Copias solo visuales, sin foco ni lector de pantalla
     const clones = endless
       ? slides.slice(0, Math.min(slides.length, 4)).map((slide) => {

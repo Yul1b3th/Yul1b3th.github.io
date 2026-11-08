@@ -322,6 +322,22 @@
   scroll-snap-stop: normal;
 }
 
+/* Asomando, la tarjeta actual en el centro y las vecinas asoman a los lados */
+/* Se combina con carousel--multi y mantiene puntos, flechas y pase automático */
+.carousel--multi.carousel--peek {
+  --carousel-per-view: 1;
+  --carousel-peek: 2rem;
+}
+
+.carousel--peek .carousel__track {
+  padding-inline: calc(var(--carousel-peek) + var(--carousel-gap));
+  scroll-padding-inline: calc(var(--carousel-peek) + var(--carousel-gap));
+}
+
+.carousel--peek .carousel__slide {
+  flex-basis: 100%;
+}
+
 /* Fila tipo Netflix, varias tarjetas con flechas a los lados que avanzan una página */
 /* Sin indicadores ni pase automático; la flecha que no lleva a nada se oculta */
 .carousel--row .carousel__controls {
@@ -366,11 +382,21 @@
   .carousel--multi {
     --carousel-per-view: 2;
   }
+
+  .carousel--multi.carousel--peek {
+    --carousel-per-view: 1;
+    --carousel-peek: 12%;
+  }
 }
 
 @include apply-media-breakpoint(lg) {
   .carousel--multi {
     --carousel-per-view: 3;
+  }
+
+  .carousel--multi.carousel--peek {
+    --carousel-per-view: 1;
+    --carousel-peek: 18%;
   }
 }
 
