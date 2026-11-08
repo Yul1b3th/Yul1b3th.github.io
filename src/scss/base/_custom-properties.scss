@@ -933,6 +933,9 @@
   --color-action-primary-bg-hover: var(--color-violet-400);
   --color-action-primary-bg-active: var(--color-violet-500);
   --color-action-primary-border: var(--color-violet-300);
+  --color-action-secondary-text: var(--color-violet-800);
+  --color-action-secondary-border: var(--color-violet-700);
+  --color-action-secondary-bg-hover: var(--color-violet-50);
 }
 @media (prefers-color-scheme: dark) {
   :root[data-accent="violet"]:not([data-theme]) {
@@ -940,6 +943,9 @@
     --color-action-primary-bg-hover: var(--color-violet-400);
     --color-action-primary-bg-active: var(--color-violet-500);
     --color-action-primary-border: var(--color-violet-300);
+    --color-action-secondary-text: var(--color-violet-200);
+    --color-action-secondary-border: var(--color-violet-300);
+    --color-action-secondary-bg-hover: var(--color-violet-950);
   }
 }
 @media (prefers-contrast: more) {
@@ -948,6 +954,9 @@
     --color-action-primary-bg-hover: var(--color-violet-200);
     --color-action-primary-bg-active: var(--color-violet-400);
     --color-action-primary-border: var(--color-neutral-950);
+    --color-action-secondary-text: var(--color-violet-900);
+    --color-action-secondary-border: var(--color-violet-900);
+    --color-action-secondary-bg-hover: var(--color-violet-50);
   }
 }
 :root[data-accent="violet"][data-theme="light"] {
@@ -955,18 +964,27 @@
   --color-action-primary-bg-hover: var(--color-violet-400);
   --color-action-primary-bg-active: var(--color-violet-500);
   --color-action-primary-border: var(--color-violet-300);
+  --color-action-secondary-text: var(--color-violet-800);
+  --color-action-secondary-border: var(--color-violet-700);
+  --color-action-secondary-bg-hover: var(--color-violet-50);
 }
 :root[data-accent="violet"][data-theme="dark"] {
   --color-action-primary-bg: var(--color-violet-300);
   --color-action-primary-bg-hover: var(--color-violet-400);
   --color-action-primary-bg-active: var(--color-violet-500);
   --color-action-primary-border: var(--color-violet-300);
+  --color-action-secondary-text: var(--color-violet-200);
+  --color-action-secondary-border: var(--color-violet-300);
+  --color-action-secondary-bg-hover: var(--color-violet-950);
 }
 :root[data-accent="violet"][data-theme="hc"] {
   --color-action-primary-bg: var(--color-violet-300);
   --color-action-primary-bg-hover: var(--color-violet-200);
   --color-action-primary-bg-active: var(--color-violet-400);
   --color-action-primary-border: var(--color-neutral-950);
+  --color-action-secondary-text: var(--color-violet-900);
+  --color-action-secondary-border: var(--color-violet-900);
+  --color-action-secondary-bg-hover: var(--color-violet-50);
 }
 
 /* Acento navy */
