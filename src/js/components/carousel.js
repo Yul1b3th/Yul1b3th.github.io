@@ -9,6 +9,14 @@ import { prefersReducedMotion } from '../utils/motion.js';
 const MIN_INTERVAL = 5000;
 const SWIPE = 40;
 
+// Textos que crea el carrusel, en el idioma del lang más cercano; si no está, en español
+const MESSAGES = {
+  es: { carousel: 'carrusel', slide: 'diapositiva', position: '{n} de {total}', goTo: 'Ir a la {n} de {total}', play: 'Reproducir', pause: 'Pausar' },
+  en: { carousel: 'carousel', slide: 'slide', position: '{n} of {total}', goTo: 'Go to slide {n} of {total}', play: 'Play', pause: 'Pause' },
+};
+const messagesFor = (el) => MESSAGES[(el.closest('[lang]')?.lang || 'es').slice(0, 2).toLowerCase()] ?? MESSAGES.es;
+const fill = (text, n, total) => text.replace('{n}', n).replace('{total}', total);
+
 export function initCarousels(root = document) {
   root.querySelectorAll('.carousel').forEach((carousel) => {
     const track = carousel.querySelector('.carousel__track');
@@ -33,6 +41,7 @@ export function initCarousels(root = document) {
     let nearestCard = () => 0;
     let settleOnClone = () => {};
     let takeControl = () => {};
+    let onLanguage = () => {};
     // Cada diapositiva puede tener su propio tiempo con data-carousel-interval
     const slideInterval = (i) => Math.max(Number(slides[i].dataset.carouselInterval) || interval, MIN_INTERVAL);
 
@@ -53,8 +62,9 @@ export function initCarousels(root = document) {
       // Sigue visible mientras el ratón está encima, también después de pulsar, como en Material
       return content;
     };
-    addTooltip(prev, 'prev', 'end');
-    addTooltip(next, 'next', 'start');
+    const prevTip = addTooltip(prev, 'prev', 'end');
+    const nextTip = addTooltip(next, 'next', 'start');
+    let t = messagesFor(carousel);
 
     // Al asomar, el relleno de la pista deja ver las vecinas y la actual queda en el centro
     const inset = () => (carousel.classList.contains('carousel--peek') ? parseFloat(getComputedStyle(track).paddingInlineStart) : 0);
@@ -74,8 +84,6 @@ export function initCarousels(root = document) {
 
     slides.forEach((slide, i) => {
       slide.setAttribute('role', 'group');
-      slide.setAttribute('aria-roledescription', 'diapositiva');
-      slide.setAttribute('aria-label', `${i + 1} de ${slides.length}`);
     });
 
     // Un indicador por diapositiva, el actual es una píldora que se llena con el pase automático
@@ -83,7 +91,6 @@ export function initCarousels(root = document) {
       const dot = document.createElement('button');
       dot.type = 'button';
       dot.className = 'carousel__indicator';
-      dot.setAttribute('aria-label', `Ir a la ${i + 1} de ${slides.length}`);
       dot.addEventListener('click', () => {
         takeControl();
         goTo(i);
@@ -91,6 +98,22 @@ export function initCarousels(root = document) {
       indicators?.append(dot);
       return dot;
     });
+
+    // Los textos se rehacen al cambiar de idioma con el evento languagechange
+    const translate = () => {
+      t = messagesFor(carousel);
+      carousel.setAttribute('aria-roledescription', t.carousel);
+      slides.forEach((slide, i) => {
+        slide.setAttribute('aria-roledescription', t.slide);
+        slide.setAttribute('aria-label', fill(t.position, i + 1, slides.length));
+      });
+      dots.forEach((dot, i) => dot.setAttribute('aria-label', fill(t.goTo, i + 1, slides.length)));
+      if (prevTip) prevTip.textContent = prev.getAttribute('aria-label') ?? '';
+      if (nextTip) nextTip.textContent = next.getAttribute('aria-label') ?? '';
+      onLanguage();
+    };
+    translate();
+    document.addEventListener('languagechange', translate);
 
     // En fila se avanza una página entera, tantas tarjetas como se ven
     const step = () => {
@@ -293,9 +316,10 @@ export function initCarousels(root = document) {
     const render = () => {
       carousel.classList.toggle('is-stopped', userPaused);
       play.dataset.playing = String(!userPaused);
-      play.setAttribute('aria-label', userPaused ? 'Reproducir' : 'Pausar');
+      play.setAttribute('aria-label', userPaused ? t.play : t.pause);
       playTip.textContent = play.getAttribute('aria-label');
     };
+    onLanguage = render;
     // Cada diapositiva tiene su tiempo; al pausar se guarda lo que falta para que cuadre con la píldora
     const run = (on) => {
       if (on === running) return;
