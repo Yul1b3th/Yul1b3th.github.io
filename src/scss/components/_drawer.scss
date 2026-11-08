@@ -8,6 +8,11 @@
 
 .drawer {
   --drawer-from: 100%;
+  // Los enlaces copiados del navbar quedan fuera de él, así que el panel trae sus colores
+  // Sin esto la sección actual no se marcaba en el menú del móvil
+  --navbar-link-active: var(--color-text-tab-active);
+  --navbar-line: var(--color-border-tab-active);
+  --navbar-focus: var(--color-border-focus);
 
   position: fixed;
   inset: 0 0 0 auto;
