@@ -206,6 +206,26 @@
     border-color var(--duration-fast) var(--ease-standard);
 }
 
+/* Al pasar el ratón el punto se rellena a medias, como estado interactivo */
+.carousel__indicator:hover:not([aria-current='true'])::before {
+  border-color: var(--color-action-selected-bg);
+  background: color-mix(in srgb, var(--color-action-selected-bg) 35%, transparent);
+  transform: scale(1.2);
+}
+
+.carousel__indicator::before {
+  transition:
+    width var(--duration-moderate) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
+}
+
+/* Flechas y pausa con fondo propio y sombra para verse sobre cualquier fondo de sección */
+.carousel:not(.carousel--overlay, .carousel--row) :is(.carousel__prev, .carousel__next, .carousel__play) {
+  --button-bg: var(--color-bg-page);
+  --button-shadow: var(--shadow-sm);
+}
+
 .carousel__indicator[aria-current='true']::before {
   width: 1.875rem;
   border-color: var(--color-action-selected-bg);
