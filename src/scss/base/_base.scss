@@ -44,3 +44,14 @@ a:not([class]):hover {
     transition: none;
   }
 }
+
+// Los enlaces a secciones de la misma página bajan con desplazamiento suave
+html {
+  scroll-behavior: smooth;
+}
+
+@include apply-reduced-motion {
+  html {
+    scroll-behavior: auto;
+  }
+}
