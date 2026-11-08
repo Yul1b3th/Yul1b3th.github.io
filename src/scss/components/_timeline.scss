@@ -1,0 +1,71 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Línea de tiempo vertical con un punto por elemento, para experiencia, hitos o pasos
+// Cada elemento puede llevar dentro una card u otro contenido
+
+@use '../abstracts' as *;
+
+.timeline {
+  --timeline-gap: var(--space-lg);
+  --timeline-dot: 0.875rem;
+  --timeline-indent: 2rem;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--timeline-gap);
+  margin: 0;
+  padding: 0 0 0 var(--timeline-indent);
+  list-style: none;
+}
+
+// La línea va por detrás de los puntos, de arriba abajo
+.timeline::before {
+  position: absolute;
+  top: var(--space-sm);
+  bottom: var(--space-sm);
+  left: calc(var(--timeline-dot) / 2 - var(--border-width-md) / 2);
+  width: var(--border-width-md);
+  content: '';
+  background-color: var(--color-border-default);
+}
+
+.timeline__item {
+  position: relative;
+}
+
+// Punto a la altura del título del elemento
+.timeline__item::before {
+  position: absolute;
+  top: var(--space-ml);
+  left: calc(-1 * var(--timeline-indent));
+  width: var(--timeline-dot);
+  height: var(--timeline-dot);
+  border: var(--border-width-md) solid var(--color-text-heading);
+  border-radius: 50%;
+  content: '';
+  background-color: var(--color-action-primary-bg);
+}
+
+// El elemento actual, por ejemplo el trabajo de hoy, con el punto relleno del color del texto
+.timeline__item--current::before {
+  background-color: var(--color-text-heading);
+}
+
+.timeline__item > .card {
+  margin-bottom: 0;
+}
+
+// El elemento también puede ser la propia card, sin margen y sin recortar el punto
+.timeline > .timeline__item {
+  margin: 0;
+  overflow: visible;
+}
+
+// En alto contraste la línea se ve con el color del texto
+.timeline::before {
+  @include apply-high-contrast {
+    background-color: var(--color-text-default);
+  }
+}

@@ -46,7 +46,8 @@
   scroll-snap-stop: always;
 }
 
-.carousel__slide img {
+/* Solo la foto que es la diapositiva; las imágenes de dentro de una tarjeta siguen su propio estilo */
+.carousel__slide > img {
   display: block;
   width: 100%;
   height: auto;
@@ -342,6 +343,21 @@
   scroll-snap-stop: normal;
 }
 
+/* Tarjetas enteras, una en el móvil, dos en tablet y tres en escritorio, sin vecina asomando */
+.carousel--multi.carousel--fit {
+  --carousel-per-view: 1;
+}
+
+/* Todas las tarjetas de la fila con el mismo alto, el de la más alta */
+.carousel--equal .carousel__slide {
+  display: flex;
+}
+
+.carousel--equal .carousel__slide > * {
+  width: 100%;
+  height: 100%;
+}
+
 /* Asomando, la tarjeta actual en el centro y las vecinas asoman a los lados */
 /* Se combina con carousel--multi y mantiene puntos, flechas y pase automático */
 .carousel--multi.carousel--peek {
@@ -407,6 +423,10 @@
     --carousel-per-view: 1;
     --carousel-peek: 12%;
   }
+
+  .carousel--multi.carousel--fit {
+    --carousel-per-view: 2;
+  }
 }
 
 @include apply-media-breakpoint(lg) {
@@ -417,6 +437,10 @@
   .carousel--multi.carousel--peek {
     --carousel-per-view: 1;
     --carousel-peek: 18%;
+  }
+
+  .carousel--multi.carousel--fit {
+    --carousel-per-view: 3;
   }
 }
 
