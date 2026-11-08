@@ -30,6 +30,8 @@ export function initCarousels(root = document) {
     let index = Math.min(Math.max(Number(carouselStart) || 1, 1), slides.length) - 1;
     let sliding = false;
     let onSlide = () => {};
+    let nearestCard = () => 0;
+    let settleOnClone = () => {};
     let takeControl = () => {};
     // Cada diapositiva puede tener su propio tiempo con data-carousel-interval
     const slideInterval = (i) => Math.max(Number(slides[i].dataset.carouselInterval) || interval, MIN_INTERVAL);
@@ -48,10 +50,7 @@ export function initCarousels(root = document) {
       content.textContent = button.getAttribute('aria-label') ?? '';
       button.replaceWith(wrap);
       wrap.append(button, content);
-      const reset = () => wrap.classList.remove('is-dismissed');
-      wrap.addEventListener('mouseleave', reset);
-      wrap.addEventListener('focusout', reset);
-      wrap.addEventListener('click', () => wrap.classList.add('is-dismissed'));
+      // Sigue visible mientras el ratón está encima, también después de pulsar, como en Material
       return content;
     };
     addTooltip(prev, 'prev', 'end');
@@ -198,6 +197,14 @@ export function initCarousels(root = document) {
     if (multi) {
       // Al deslizar se toma como actual la tarjeta más cercana al inicio, también si es una copia
       const cards = [...slides, ...clones];
+      nearestCard = () => nearest();
+      settleOnClone = () => {
+        const i = nearest();
+        index = i - slides.length;
+        track.scrollTo({ left: left(cards[i]), behavior: prefersReducedMotion() ? 'instant' : 'smooth' });
+        paint();
+        onSlide();
+      };
       const nearest = () =>
         cards.reduce((best, card, i) => (Math.abs(left(card) - track.scrollLeft) < Math.abs(left(cards[best]) - track.scrollLeft) ? i : best), 0);
       track.addEventListener('scroll', () => {
@@ -238,7 +245,9 @@ export function initCarousels(root = document) {
       drag = null;
       track.dataset.dragged = String(moved);
       if (!moved) return;
-      if (multi) goTo(index);
+      // Si se suelta sobre una copia se queda ahí y luego salta a la real, sin barrer hacia atrás
+      if (multi && endless && nearestCard() >= slides.length) settleOnClone();
+      else if (multi) goTo(index);
       else {
         const dx = event.clientX - x;
         if (Math.abs(dx) >= SWIPE) {
