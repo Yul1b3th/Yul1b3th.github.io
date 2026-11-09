@@ -1,0 +1,59 @@
+// Carruseles y pestañas del CV, encima de los del sistema
+// Tech Skills, Proyectos y Formación, con las variantes fit y equal del carrusel del sistema
+
+@use '../abstracts' as *;
+
+.cv-carousel {
+  width: 100%;
+  margin-top: var(--space-md);
+}
+
+/* Tarjetas enteras y del mismo alto con carousel--fit y carousel--equal del sistema */
+.cv-carousel .carousel__slide > .card--cv {
+  margin-bottom: 0;
+}
+
+.cv-carousel .card--cv ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+.cv-tabs {
+  width: 100%;
+}
+
+.cv-tabs .tabs__list {
+  justify-content: center;
+}
+
+/* Proyectos con el mismo alto y el botón Demo abajo, alineado en las tres tarjetas */
+.cv-carousel--projects .card--cv {
+  display: flex;
+  flex-direction: column;
+}
+
+.cv-carousel--projects .card--cv > .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* Las dos pestañas de Formación ocupan la misma celda, así el alto es el de la más alta y no salta */
+/* La oculta sigue con hidden y visibility hidden, fuera del orden de tabulación y de los lectores */
+.cv-tabs {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.cv-tabs .tabs__panel {
+  grid-row: 2;
+  grid-column: 1;
+  transition:
+    opacity var(--duration-base) var(--ease-decelerate),
+    visibility var(--duration-base);
+}
+
+.cv-tabs .tabs__panel[hidden] {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+}

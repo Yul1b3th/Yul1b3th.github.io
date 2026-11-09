@@ -10,13 +10,10 @@ html {
   scroll-behavior: smooth;
   // Al saltar a una sección, el título no queda debajo de la barra fija
   scroll-padding-top: project.$navbar-height;
-  font-size: 16px; // Base inmutable para el cálculo de los rem
+  // 100 % son 16 px por defecto y respeta el tamaño de letra que cada persona elige en su navegador
+  // Igual en todos los tamaños de pantalla, como Bootstrap y Material (7 de noviembre de 2026)
+  font-size: 100%;
   line-height: get-line-height(base);
-
-  // Reemplazo e integración limpia del breakpoint móvil-first para escritorio - 1200px
-  @include apply-media-breakpoint(lg) {
-    font-size: 18px;
-  }
 }
 
 body {
@@ -91,20 +88,14 @@ a {
   max-width: 75rem;
 }
 
-// En escritorio los enlaces van a la derecha, junto a las redes, como en la barra anterior
+// La barra superior con el mismo ancho que el menú para que alineen
+.topbar__inner {
+  width: 96%;
+  max-width: 75rem;
+}
+
+// Los enlaces van a la derecha con navbar--nav-end del sistema, aquí solo la separación entre palabras
 @media (min-width: 1200px) {
-  .navbar.navbar--landing.navbar--expand-xl .navbar__brand {
-    margin-right: auto;
-  }
-
-  .navbar.navbar--landing.navbar--expand-xl .navbar__nav {
-    margin-left: 0;
-  }
-
-  .navbar.navbar--expand-xl .navbar__actions {
-    margin-left: var(--space-sm);
-  }
-
   // Sin relleno lateral para que la línea mida lo mismo que la palabra; la separación la da el gap
   .navbar.navbar--landing.navbar--expand-xl .navbar__list {
     gap: var(--space-ml);
@@ -159,6 +150,19 @@ a {
 .navbar.navbar--landing .navbar__link::after {
   right: 0;
   left: 0;
+}
+
+// Los enlaces con forma de botón usan los colores del botón, también visitados
+a.button {
+  &,
+  &:visited,
+  &:active {
+    color: var(--button-text);
+  }
+
+  &:hover {
+    color: var(--button-text-hover);
+  }
 }
 
 // Conserva el color del navbar para los iconos, incluidos los enlaces visitados

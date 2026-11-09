@@ -17,8 +17,8 @@
 /* Variante para bg.emphasis, como la barra de navegación */
 .dropdown--emphasis {
   --dropdown-text: var(--color-text-on-emphasis);
-  --dropdown-border: color-mix(in srgb, var(--color-text-on-emphasis) 35%, transparent);
-  --dropdown-hover: color-mix(in srgb, var(--color-text-on-emphasis) 12%, transparent);
+  --dropdown-border: color-mix(in srgb, var(--color-text-on-emphasis) calc(var(--opacity-on-border) * 100%), transparent);
+  --dropdown-hover: color-mix(in srgb, var(--color-text-on-emphasis) calc(var(--opacity-on-hover) * 100%), transparent);
   --dropdown-focus: var(--color-border-focus-emphasis);
 }
 
@@ -65,7 +65,7 @@
 }
 
 .dropdown__chevron {
-  transition: transform var(--duration-fast) var(--ease-standard);
+  transition: transform var(--duration-base) var(--ease-standard);
 }
 
 .dropdown__button[aria-expanded='true'] .dropdown__chevron {
@@ -87,9 +87,9 @@
   box-shadow: var(--shadow-hover);
   transform-origin: top right;
   transition:
-    opacity var(--duration-fast) var(--ease-standard),
-    transform var(--duration-fast) var(--ease-standard),
-    display var(--duration-fast) allow-discrete;
+    opacity var(--duration-base) var(--ease-standard),
+    transform var(--duration-base) var(--ease-standard),
+    display var(--duration-base) allow-discrete;
 }
 
 /* Flecha que apunta al botón del que sale el menú, del mismo fondo y borde */
@@ -172,7 +172,7 @@
 }
 
 .dropdown__option[aria-checked='true']:hover {
-  background: color-mix(in srgb, var(--color-border-selected) 12%, var(--color-bg-selected));
+  background: color-mix(in srgb, var(--color-border-selected) calc(var(--opacity-on-hover) * 100%), var(--color-bg-selected));
 }
 
 .dropdown__check {

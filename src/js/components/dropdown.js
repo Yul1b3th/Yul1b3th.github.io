@@ -8,7 +8,7 @@ export function initDropdown(root, { onChange, onToggle } = {}) {
   const button = root.querySelector('.dropdown__button');
   const menu = root.querySelector('.dropdown__menu');
   const options = [...menu.querySelectorAll('[role="menuitemradio"]')];
-  // Casillas independientes, como Reducir movimiento, que no cierran el menú
+  // Casillas independientes, como Reducir movimiento, que cierran el menú al elegirlas
   const checks = [...menu.querySelectorAll('[role="menuitemcheckbox"]')];
   const items = [...options, ...checks];
 
@@ -92,7 +92,10 @@ export function initDropdown(root, { onChange, onToggle } = {}) {
   };
 
   checks.forEach((check) =>
-    check.addEventListener('click', () => setChecked(check.dataset.value, check.getAttribute('aria-checked') !== 'true')),
+    check.addEventListener('click', () => {
+      setChecked(check.dataset.value, check.getAttribute('aria-checked') !== 'true');
+      close();
+    }),
   );
 
   // Cierra al pulsar fuera del desplegable

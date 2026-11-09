@@ -23,7 +23,7 @@
   white-space: nowrap;
 }
 
-/* Rellenos con texto blanco, la versión por defecto */
+/* Rellenos con texto blanco, salvo aviso, que va oscuro sobre amarillo */
 .badge--success {
   --badge-text: var(--color-badge-text);
   --badge-bg: var(--color-badge-success-bg);
@@ -31,7 +31,7 @@
 }
 
 .badge--warning {
-  --badge-text: var(--color-badge-text);
+  --badge-text: var(--color-badge-warning-text);
   --badge-bg: var(--color-badge-warning-bg);
   --badge-border: var(--color-badge-warning-bg);
 }

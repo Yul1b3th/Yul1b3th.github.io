@@ -12,7 +12,7 @@
   align-items: center;
   gap: var(--space-md);
   padding: var(--space-sm) var(--space-md) calc(var(--space-sm) + env(safe-area-inset-bottom));
-  background-color: color-mix(in srgb, var(--color-bg-page) 95%, transparent);
+  background-color: color-mix(in srgb, var(--color-bg-page) calc(var(--opacity-translucent-strong) * 100%), transparent);
   box-shadow: var(--shadow-bar);
 }
 

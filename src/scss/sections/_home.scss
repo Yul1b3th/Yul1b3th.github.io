@@ -13,8 +13,8 @@
   display: flex;
 
   .container {
-    // Deja libre la altura de la barra fija más un margen
-    padding-top: calc(#{project.$navbar-height} + 2.5rem);
+    // Deja libre la barra superior y el menú fijo más un margen
+    padding-top: calc(#{project.$topbar-height} + #{project.$navbar-height} + 2.5rem);
     padding-bottom: 3.5rem;
 
     @include mx.apply-flex-container(

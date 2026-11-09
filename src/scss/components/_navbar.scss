@@ -52,7 +52,7 @@
 
 /* Landing de una sola página, fija y con el fondo al 90 % */
 .navbar--landing {
-  --navbar-bg: color-mix(in srgb, var(--navbar-solid) 90%, transparent);
+  --navbar-bg: color-mix(in srgb, var(--navbar-solid) calc(var(--opacity-translucent) * 100%), transparent);
 }
 
 .navbar__inner {
@@ -155,8 +155,8 @@
 
 /* Botones de icono sobre el fondo oscuro */
 .navbar--dark .button--icon {
-  --button-bg-hover: color-mix(in srgb, var(--color-text-on-emphasis) 12%, transparent);
-  --button-bg-active: color-mix(in srgb, var(--color-text-on-emphasis) 20%, transparent);
+  --button-bg-hover: color-mix(in srgb, var(--color-text-on-emphasis) calc(var(--opacity-on-hover) * 100%), transparent);
+  --button-bg-active: color-mix(in srgb, var(--color-text-on-emphasis) calc(var(--opacity-on-pressed) * 100%), transparent);
 }
 
 .navbar--dark .button--icon:focus-visible {
@@ -176,6 +176,15 @@
 
     .navbar--expand-#{$size} .navbar__actions {
       margin-left: auto;
+    }
+
+    // Enlaces a la derecha junto a las utilidades, como el CV
+    .navbar--nav-end.navbar--expand-#{$size} .navbar__brand {
+      margin-right: auto;
+    }
+
+    .navbar--nav-end.navbar--expand-#{$size} .navbar__actions {
+      margin-left: var(--space-sm);
     }
 
     .navbar--expand-#{$size} .navbar__utility {

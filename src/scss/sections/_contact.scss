@@ -57,8 +57,18 @@
 
 .contact {
   background-color: var(--color-bg-surface);
-  min-height: 100vh;
   width: 100%;
+  // Sin alto mínimo; el formulario puede quedar encima del suelo en perspectiva
+  padding-bottom: 0;
+}
+
+// Cuadrícula en perspectiva más marcada, como la del hero de la landing
+.contact > .bg-floor {
+  --floor-height: 80%;
+  --floor-opacity: var(--opacity-decor);
+  --floor-line: var(--color-decor-wave-2);
+  --floor-tilt: 60deg;
+  --floor-perspective: 500px;
 }
 
 .contact__cards {
@@ -96,53 +106,21 @@
     @include mx.apply-flex-container(column, center, stretch);
   }
 
-  input,
-  textarea {
-    @include mx.apply-border-radius(0.2rem);
-    @include mx.apply-font-family(primary); // Extrae tu fuente primaria del mapa
-    font-size: 0.85rem;
-    margin: 1rem auto;
-    padding: 0.5rem;
-    width: 100%;
-  }
-
-  input {
-    border: 0;
-    @include mx.apply-color(border-bottom-color, border-strong);
-    border-bottom-style: solid;
-    border-bottom-width: thin;
-  }
-
-  textarea {
-    border-style: solid;
-    border-width: thin;
-    @include mx.apply-color(border-color, border-strong);
-    resize: none;
-    width: 100%;
-  }
-
-  *::placeholder {
-    @include mx.apply-color(color, text-muted);
-  }
-
-  input:focus,
-  textarea:focus {
-    @include mx.apply-color(border-color, border-focus);
-    // Cambiado el box-shadow antiguo por el mixin especializado de estados de focus
-    @include mx.input-state-focus(border-focus);
-  }
+  // Los campos usan field del sistema: etiqueta visible, borde, foco y estados
 
   @media (min-width: fn.get-breakpoint(md)) {
     // Ajustado a tus 768px globales
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto;
 
-    .contact-form__group:nth-child(1),
-    .contact-form__group:nth-child(2) {
+    // Los grupos se cuentan por tipo para que no les afecte otro elemento del formulario
+    .contact-form__group:nth-of-type(1),
+    .contact-form__group:nth-of-type(2) {
       grid-column: span 1;
     }
 
-    .contact-form__group:nth-child(3),
+    .contact-form__group:nth-of-type(3),
+    .field__required-note,
     .contact-form__loader,
     button {
       grid-column: span 2;

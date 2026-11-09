@@ -1,0 +1,92 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Barra superior fina con datos y ajustes (idioma, apariencia) encima del navbar
+// Al bajar se oculta y el navbar queda fijo arriba; vuelve al subir del todo
+
+@use '../abstracts' as *;
+
+.header-stack {
+  --topbar-height: 2.75rem;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: var(--z-index-sticky);
+  transition: transform var(--duration-moderate) var(--ease-standard);
+}
+
+// El navbar ya va dentro de la pila fija
+.header-stack > .navbar {
+  position: relative;
+  // La capa la da el contenedor, así la barra superior queda encima
+  z-index: auto;
+}
+
+.header-stack.is-condensed {
+  transform: translateY(calc(-1 * var(--topbar-height)));
+}
+
+// Vuelve solo si el teclado entra en la barra oculta, no al hacer clic en el menú
+.header-stack.is-condensed:has(.topbar :focus-visible) {
+  transform: none;
+}
+
+.topbar {
+  // Encima del navbar para que los menús del idioma y la apariencia no queden tapados
+  position: relative;
+  z-index: var(--z-index-raised);
+  height: var(--topbar-height);
+  border-bottom: var(--border-width-sm) solid var(--color-border-surface);
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-default);
+  font-size: var(--font-size-sm);
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  height: 100%;
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: var(--space-ml);
+}
+
+.topbar__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  min-width: 0;
+  white-space: nowrap;
+}
+
+// En pantallas estrechas el texto largo se corta con puntos suspensivos
+.topbar__item > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topbar__item svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
+.topbar__end {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-left: auto;
+}
+
+.topbar .dropdown__button {
+  min-height: 2.25rem;
+}
+
+@include apply-reduced-motion {
+  .header-stack {
+    transition: none;
+  }
+}

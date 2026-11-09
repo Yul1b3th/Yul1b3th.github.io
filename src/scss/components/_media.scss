@@ -1,0 +1,78 @@
+// Archivo de innovatech-ds. No editar aquí
+// Se cambia en innovatech-ds y se copia con npm run sync
+
+// Vídeo y audio sobre los elementos nativos, con su leyenda y la transcripción
+// El vídeo de fondo lleva un botón de pausa propio porque no tiene controles
+
+@use '../abstracts' as *;
+
+.media {
+  margin: 0;
+}
+
+.media__frame {
+  position: relative;
+  overflow: hidden;
+  border: var(--border-width-sm) solid var(--color-border-surface);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-muted);
+}
+
+.media__video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Recorte fijo, para vídeos de fondo o de portada */
+.media--cover .media__frame {
+  aspect-ratio: var(--media-ratio, 16 / 9);
+}
+
+.media--cover .media__video {
+  height: 100%;
+  object-fit: cover;
+}
+
+.media__audio {
+  display: block;
+  width: 100%;
+}
+
+.media__caption {
+  margin-top: var(--space-xs);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.media__transcript {
+  margin-top: var(--space-sm);
+}
+
+/* Botón de pausa del vídeo de fondo, abajo a la izquierda */
+.media__control {
+  position: absolute;
+  bottom: var(--space-sm);
+  left: var(--space-sm);
+}
+
+.media__control[hidden] {
+  display: none;
+}
+
+.media__toggle {
+  --button-bg: color-mix(in srgb, var(--color-bg-page) calc(var(--opacity-translucent) * 100%), transparent);
+  --button-shadow: var(--shadow-sm);
+}
+
+/* Pausa con dos barras y reproducir con un triángulo, como el carrusel */
+.media__toggle-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  background-color: currentColor;
+  clip-path: polygon(0 0, 35% 0, 35% 100%, 0 100%, 0 0, 65% 0, 100% 0, 100% 100%, 65% 100%, 65% 0);
+}
+
+.media__toggle[data-playing='false'] .media__toggle-icon {
+  clip-path: polygon(10% 0, 100% 50%, 10% 100%);
+}

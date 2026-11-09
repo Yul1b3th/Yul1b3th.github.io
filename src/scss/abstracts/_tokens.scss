@@ -200,6 +200,9 @@ $color-action-danger-text: var(--color-action-danger-text);
 $color-action-danger-border: var(--color-action-danger-border);
 $color-action-disabled-bg: var(--color-action-disabled-bg);
 $color-action-secondary-bg: var(--color-action-secondary-bg);
+$color-action-tonal-bg: var(--color-action-tonal-bg);
+$color-action-tonal-text: var(--color-action-tonal-text);
+$color-action-tonal-border: var(--color-action-tonal-border);
 $color-action-ghost-bg-hover: var(--color-action-ghost-bg-hover);
 $color-action-option-bg: var(--color-action-option-bg);
 $color-action-option-text: var(--color-action-option-text);
@@ -227,6 +230,7 @@ $color-badge-text: var(--color-badge-text);
 $color-badge-brand-bg: var(--color-badge-brand-bg);
 $color-badge-success-bg: var(--color-badge-success-bg);
 $color-badge-warning-bg: var(--color-badge-warning-bg);
+$color-badge-warning-text: var(--color-badge-warning-text);
 $color-badge-danger-bg: var(--color-badge-danger-bg);
 $color-badge-info-bg: var(--color-badge-info-bg);
 $color-badge-success-subtle-text: var(--color-badge-success-subtle-text);
@@ -327,6 +331,9 @@ $theme-light: (
   'color-action-danger-border': #65070E,
   'color-action-disabled-bg': #EBEBEB,
   'color-action-secondary-bg': #FFFFFF,
+  'color-action-tonal-bg': #C4F3DF,
+  'color-action-tonal-text': #0F0F0F,
+  'color-action-tonal-border': #C4F3DF,
   'color-action-ghost-bg-hover': #E6FBF2,
   'color-action-option-bg': #262F49,
   'color-action-option-text': #FFFFFF,
@@ -345,15 +352,16 @@ $theme-light: (
   'color-danger-bg': #FFF3F2,
   'color-danger-border': #FD4848,
   'color-warning-text': #7D5200,
-  'color-warning-bg': #FBF7E7,
-  'color-warning-border': #B18405,
+  'color-warning-bg': #F5E8C1,
+  'color-warning-border': #916502,
   'color-info-text': #055F8D,
   'color-info-bg': #EFF8FE,
   'color-info-border': #0993D8,
   'color-badge-text': #FFFFFF,
   'color-badge-brand-bg': #4D387E,
   'color-badge-success-bg': #1E5012,
-  'color-badge-warning-bg': #7D5200,
+  'color-badge-warning-bg': #E3B502,
+  'color-badge-warning-text': #0F0F0F,
   'color-badge-danger-bg': #89151A,
   'color-badge-info-bg': #004A6F,
   'color-badge-success-subtle-text': #1E5012,
@@ -454,6 +462,9 @@ $theme-dark: (
   'color-action-danger-border': #FFA098,
   'color-action-disabled-bg': #262F49,
   'color-action-secondary-bg': #0B132B,
+  'color-action-tonal-bg': #003828,
+  'color-action-tonal-text': #E6FBF2,
+  'color-action-tonal-border': #003828,
   'color-action-ghost-bg-hover': #262F49,
   'color-action-option-bg': #EFF3FF,
   'color-action-option-text': #0B132B,
@@ -480,7 +491,8 @@ $theme-dark: (
   'color-badge-text': #FFFFFF,
   'color-badge-brand-bg': #4D387E,
   'color-badge-success-bg': #1E5012,
-  'color-badge-warning-bg': #7D5200,
+  'color-badge-warning-bg': #E3B502,
+  'color-badge-warning-text': #0F0F0F,
   'color-badge-danger-bg': #89151A,
   'color-badge-info-bg': #004A6F,
   'color-badge-success-subtle-text': #82E96B,
@@ -581,6 +593,9 @@ $theme-hc: (
   'color-action-danger-border': #65070E,
   'color-action-disabled-bg': #EBEBEB,
   'color-action-secondary-bg': #FFFFFF,
+  'color-action-tonal-bg': #FFFFFF,
+  'color-action-tonal-text': #0F0F0F,
+  'color-action-tonal-border': #0F0F0F,
   'color-action-ghost-bg-hover': #EBEBEB,
   'color-action-option-bg': #1C1C1C,
   'color-action-option-text': #FFFFFF,
@@ -608,6 +623,7 @@ $theme-hc: (
   'color-badge-brand-bg': #4D387E,
   'color-badge-success-bg': #1E5012,
   'color-badge-warning-bg': #633D02,
+  'color-badge-warning-text': #FFFFFF,
   'color-badge-danger-bg': #89151A,
   'color-badge-info-bg': #004A6F,
   'color-badge-success-subtle-text': #133809,
@@ -665,6 +681,7 @@ $tokens-durations: (
   'base': 200ms,
   'moderate': 300ms,
   'slow': 500ms,
+  'slide': 600ms,
   'hero': 1200ms,
 );
 
@@ -716,10 +733,26 @@ $tokens-opacities: (
   'decor-strong': 0.85,
   'glass': 0.12,
   'glass-border': 0.24,
+  'on-hover': 0.12,
+  'on-pressed': 0.2,
+  'on-divider': 0.2,
+  'on-border': 0.35,
+  'translucent': 0.9,
+  'translucent-strong': 0.95,
+  'veil': 0.85,
+  'glow-soft': 0.3,
+  'glow': 0.45,
+  'glow-strong': 0.55,
+  'decor-faint': 0.35,
+  'decor-medium': 0.55,
+  'state-layer-hover': 0.08,
+  'state-layer-pressed': 0.12,
 );
 
 $tokens-z-indexes: (
+  'behind': -1,
   'base': 0,
+  'raised': 1,
   'dropdown': 1000,
   'sticky': 1020,
   'fixed': 1030,

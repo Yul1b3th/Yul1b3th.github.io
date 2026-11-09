@@ -28,29 +28,11 @@
   </head>
   <body>
     <a class="skip-link" href="#main" data-translate="skip-link">Saltar al contenido</a>
-    <header class="navbar navbar--landing navbar--expand-xl" data-navbar-spy>
-      <div class="navbar__inner">
-        <a class="navbar__brand" href="#home" data-translate="navbar-brand">YR</a>
-        <nav class="navbar__nav" aria-label="Principal">
-          <ul class="navbar__list">
-              <li><a class="navbar__link" href="#home" data-translate="home">Inicio</a></li>
-              <li><a class="navbar__link" href="#about-me" data-translate="about-me">Sobre Mí</a></li>
-              <li><a class="navbar__link" href="#projects" data-translate="projects">Proyectos</a></li>
-              <li><a class="navbar__link" href="#experience" data-translate="experience">Experiencia</a></li>
-              <li><a class="navbar__link" href="#education" data-translate="education">Educación</a></li>
-              <li><a class="navbar__link" href="#courses" data-translate="courses">Cursos</a></li>
-              <li><a class="navbar__link" href="#contact" data-translate="contact">Contacto</a></li>
-          </ul>
-        </nav>
-        <div class="navbar__actions">
-          <span class="navbar__separator navbar__utility" aria-hidden="true">|</span>
-          <a class="button button--icon navbar__utility" href="https://www.linkedin.com/in/yulibeth-rivero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <svg aria-hidden="true" viewBox="0 0 448 512"><use href="public/icons/icons.svg#linkedin"></use></svg>
-            </a>
-            <a class="button button--icon navbar__utility" href="https://github.com/Yul1b3th" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <svg aria-hidden="true" viewBox="0 0 496 512"><use href="public/icons/icons.svg#github"></use></svg>
-            </a>
-          <span class="navbar__separator navbar__utility" aria-hidden="true">|</span>
+    <header class="header-stack" data-header-stack>
+    <div class="topbar">
+      <div class="topbar__inner">
+        <span class="topbar__item"><svg aria-hidden="true"><use href="public/icons/icons.svg#location_on"></use></svg><span data-translate="contact-location">Barcelona, España</span></span>
+        <div class="topbar__end">
           <div class="dropdown" id="language-dropdown">
               <button class="dropdown__button" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="language-menu">
                 <svg class="dropdown__icon" aria-hidden="true"><use href="public/icons/icons.svg#language"></use></svg>
@@ -110,28 +92,36 @@
               </ul>
             </div>
         </div>
-        <button class="button button--icon navbar__toggle" type="button" aria-label="Menú" data-translate="menu-label" aria-controls="navbar-drawer" data-drawer-open="navbar-drawer">
-          <svg aria-hidden="true"><use href="public/icons/icons.svg#menu"></use></svg>
-        </button>
+      </div>
+    </div>
+      <div class="navbar navbar--landing navbar--nav-end navbar--expand-xl" data-navbar-spy>
+        <div class="navbar__inner">
+          <a class="navbar__brand" href="#home" data-translate="navbar-brand">YR</a>
+          <nav class="navbar__nav" aria-label="Principal">
+            <ul class="navbar__list">
+                <li><a class="navbar__link" href="#home" data-translate="home">Inicio</a></li>
+                <li><a class="navbar__link" href="#about-me" data-translate="about-me">Sobre Mí</a></li>
+                <li><a class="navbar__link" href="#projects" data-translate="projects">Proyectos</a></li>
+                <li><a class="navbar__link" href="#experience" data-translate="experience">Experiencia</a></li>
+                <li><a class="navbar__link" href="#education" data-translate="education">Formación</a></li>
+                <li><a class="navbar__link" href="#contact" data-translate="contact">Contacto</a></li>
+            </ul>
+          </nav>
+          <div class="navbar__actions">
+            <span class="navbar__separator navbar__utility" aria-hidden="true">|</span>
+            <a class="button button--icon navbar__utility" href="https://www.linkedin.com/in/yulibeth-rivero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg aria-hidden="true" viewBox="0 0 448 512"><use href="public/icons/icons.svg#linkedin"></use></svg>
+              </a>
+              <a class="button button--icon navbar__utility" href="https://github.com/Yul1b3th" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg aria-hidden="true" viewBox="0 0 496 512"><use href="public/icons/icons.svg#github"></use></svg>
+              </a>
+          </div>
+          <button class="button button--icon navbar__toggle" type="button" aria-label="Menú" data-translate="menu-label" aria-controls="navbar-drawer" data-drawer-open="navbar-drawer">
+            <svg aria-hidden="true"><use href="public/icons/icons.svg#menu"></use></svg>
+          </button>
+        </div>
       </div>
     </header>
-    <dialog class="drawer drawer--full drawer--end drawer--emphasis" id="navbar-drawer" aria-label="Menú" data-translate="menu-label">
-      <div class="drawer__header">
-        <a class="navbar__brand" href="#home" data-translate="navbar-brand">YR</a>
-        <button class="button button--icon" type="button" aria-label="Cerrar menú" data-translate="close-menu-label" data-drawer-close>
-          <svg aria-hidden="true"><use href="public/icons/icons.svg#close"></use></svg>
-        </button>
-      </div>
-      <nav class="drawer__body" aria-label="Principal" data-navbar-links></nav>
-      <div class="drawer__footer">
-            <a class="button button--icon " href="https://www.linkedin.com/in/yulibeth-rivero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <svg aria-hidden="true" viewBox="0 0 448 512"><use href="public/icons/icons.svg#linkedin"></use></svg>
-            </a>
-            <a class="button button--icon " href="https://github.com/Yul1b3th" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <svg aria-hidden="true" viewBox="0 0 496 512"><use href="public/icons/icons.svg#github"></use></svg>
-            </a>
-      </div>
-    </dialog>
     <main id="main" tabindex="-1">
       <!-- home -->
 
@@ -170,7 +160,7 @@
 
       <!-- About me -->
 
-      <section id="about-me" class="about-me section bg-sweep">
+      <section id="about-me" class="about-me section section--solid">
         <div class="bg-layer bg-grid bg-grid--sides" aria-hidden="true"></div>
         <div class="bg-layer bg-dots" aria-hidden="true"></div>
         <div class="bg-layer bg-divider" aria-hidden="true"></div>
@@ -206,64 +196,59 @@
 
           <!-- Tech Skills -->
           <div class="tech-skills mb-2">
-            <h3 class="text-center animate animate--fade-up" data-translate="tech-skills-title">Tech Skills</h3>
+            <h3 class="text-center animate animate--fade-up" id="tech-skills-title" data-translate="tech-skills-title">Tech Skills</h3>
             <p class="animate animate--fade-up" data-translate="tech-skills-description">En mi carrera, he trabajado con una variedad de tecnologías, como:</p>
-            <ul class="card-grid skills-grid">
-              <li>
-                <article class="card animate animate--fade-up">
+            <section data-carousel-autoplay="true" class="carousel carousel--multi carousel--fit carousel--equal cv-carousel animate animate--fade-up" aria-roledescription="carrusel" aria-labelledby="tech-skills-title">
+            <ul class="carousel__track" aria-live="polite">
+              <li class="carousel__slide"><article class="card">
                   <div class="card__media card__media--illustration"><img src="./public/images/undraw/progressive-web-app.svg" alt="" width="800" height="560" loading="lazy" /></div>
                   <div class="card__body">
                     <h4 class="card__title" data-translate="tech-skills-frontend">Frontend</h4>
                     <ul class="card__tags"><li class="card__tag">Angular 16+</li><li class="card__tag">Angular Signals</li><li class="card__tag">Angular Material</li><li class="card__tag">TypeScript</li><li class="card__tag">RxJS</li><li class="card__tag">JavaScript ES6+</li><li class="card__tag">HTML5</li><li class="card__tag">CSS3</li><li class="card__tag">Sass</li><li class="card__tag">Bootstrap</li><li class="card__tag">Tailwind CSS</li><li class="card__tag">Vue</li><li class="card__tag">jQuery</li></ul>
                   </div>
-                </article>
-              </li>
-              <li>
-                <article class="card animate animate--fade-up">
+                </article></li>
+              <li class="carousel__slide"><article class="card">
                   <div class="card__media card__media--illustration"><img src="./public/images/undraw/bug-detected.svg" alt="" width="800" height="560" loading="lazy" /></div>
                   <div class="card__body">
                     <h4 class="card__title" data-translate="tech-skills-testing">Pruebas</h4>
                     <ul class="card__tags"><li class="card__tag">Jest</li><li class="card__tag">Jasmine</li><li class="card__tag">Karma</li></ul>
                   </div>
-                </article>
-              </li>
-              <li>
-                <article class="card animate animate--fade-up">
+                </article></li>
+              <li class="carousel__slide"><article class="card">
                   <div class="card__media card__media--illustration"><img src="./public/images/undraw/database-tables.svg" alt="" width="800" height="560" loading="lazy" /></div>
                   <div class="card__body">
                     <h4 class="card__title" data-translate="tech-skills-backend-data">Backend y datos</h4>
                     <ul class="card__tags"><li class="card__tag" data-translate="tech-tag-rest">APIs REST</li><li class="card__tag">Node.js</li><li class="card__tag">NestJS</li><li class="card__tag">MySQL</li><li class="card__tag">Oracle</li><li class="card__tag">Java</li><li class="card__tag">PHP</li></ul>
                   </div>
-                </article>
-              </li>
-              <li>
-                <article class="card animate animate--fade-up">
+                </article></li>
+              <li class="carousel__slide"><article class="card">
                   <div class="card__media card__media--illustration"><img src="./public/images/undraw/code-review.svg" alt="" width="800" height="560" loading="lazy" /></div>
                   <div class="card__body">
                     <h4 class="card__title" data-translate="tech-skills-tools">Herramientas y metodologías</h4>
                     <ul class="card__tags"><li class="card__tag">Scrum</li><li class="card__tag">Git</li><li class="card__tag">GitHub</li><li class="card__tag">Git Flow</li><li class="card__tag">Azure DevOps</li><li class="card__tag">Postman</li><li class="card__tag">DBeaver</li><li class="card__tag">SonarQube</li><li class="card__tag">CI/CD</li></ul>
                   </div>
-                </article>
-              </li>
-              <li>
-                <article class="card animate animate--fade-up">
+                </article></li>
+              <li class="carousel__slide"><article class="card">
                   <div class="card__media card__media--illustration"><img src="./public/images/undraw/smartwatch-map.svg" alt="" width="800" height="560" loading="lazy" /></div>
                   <div class="card__body">
                     <h4 class="card__title" data-translate="tech-skills-gis-design">GIS y diseño</h4>
                     <ul class="card__tags"><li class="card__tag">Mapbox</li><li class="card__tag">SIG/GIS</li><li class="card__tag">Figma</li><li class="card__tag">Adobe XD</li><li class="card__tag">Photoshop</li><li class="card__tag">Illustrator</li><li class="card__tag">InDesign</li></ul>
                   </div>
-                </article>
-              </li>
-              <li>
-                <article class="card animate animate--fade-up">
+                </article></li>
+              <li class="carousel__slide"><article class="card">
                   <div class="card__media card__media--illustration"><img src="./public/images/undraw/ai-agent.svg" alt="" width="800" height="560" loading="lazy" /></div>
                   <div class="card__body">
                     <h4 class="card__title" data-translate="tech-skills-ai">IA</h4>
                     <p class="card__text card__text--full" data-translate="tech-skills-ai-description">Prompting aplicado a la optimización del código y la productividad.</p>
                   </div>
-                </article>
-              </li>
+                </article></li>
             </ul>
+            <div class="carousel__controls">
+              <button class="button button--icon button--sm carousel__prev" type="button" aria-label="Anterior" data-translate="carousel-prev-label"><svg aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg></button>
+              <div class="carousel__indicators"></div>
+              <button class="button button--icon button--sm carousel__next" type="button" aria-label="Siguiente" data-translate="carousel-next-label"><svg aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg></button>
+            </div>
+          </section>
           
           </div>
 
@@ -316,11 +301,11 @@
         <div class="container">
           <div class="section-title animate animate--fade-up">
             <span aria-hidden="true" data-translate="projects-title">Proyectos</span>
-            <h2 data-translate="projects-title">Proyectos</h2>
+            <h2 id="projects-heading" data-translate="projects-title">Proyectos</h2>
           </div>
-          <div class="center flex-column gap-4">
-            <!-- EZHub -->
-            <div class="card card--cv animate animate--fade-up">
+          <section data-carousel-autoplay="true" class="carousel carousel--multi carousel--fit carousel--equal cv-carousel cv-carousel--projects animate animate--fade-up" aria-roledescription="carrusel" aria-labelledby="projects-heading">
+            <ul class="carousel__track" aria-live="polite">
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="projects-ezhub-title">EZHub</h3>
               <p data-translate="projects-ezhub-description">
                 Aplicación en desarrollo para la búsqueda de habitaciones por geolocalización, diseñada como proyecto final de mi bootcamp de Angular en IT Academy. La aplicación permite interactuar
@@ -332,10 +317,8 @@
                 <a href="https://github.com/Yul1b3th/ezhub-backend" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Backend de EZHub">Backend</a>
               </p>
               <a href="https://ezhub.vercel.app/" class="btn btn--small" target="_blank" rel="noopener noreferrer" data-translate="projects-ezhub-demo">Demo</a>
-            </div>
-
-            <!-- EZHub DS -->
-            <div class="card card--cv animate animate--fade-up">
+            </div></li>
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="projects-ezhubds-title">EZHub DS</h3>
               <p data-translate="projects-ezhubds-description">
                 Design System desarrollado con Angular enfocado en la reutilización de componentes, escalabilidad y consistencia visual en aplicaciones frontend. Incluye componentes reutilizables,
@@ -345,10 +328,8 @@
                 Repositorio: <a href="https://github.com/Yul1b3th/design-system" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Frontend de EZHub DS">Frontend</a>
               </p>
               <a href="https://ezhub-ds.vercel.app/" class="btn btn--small" target="_blank" rel="noopener noreferrer" data-translate="projects-ezhubds-demo">Demo</a>
-            </div>
-
-            <!-- ITA Challenges -->
-            <div class="card card--cv animate animate--fade-up">
+            </div></li>
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="projects-ita-challenges-title">ITA Challenges</h3>
               <p data-translate="projects-ita-challenges-description">
                 Aplicación en desarrollo de la IT Academy que permite a los estudiantes participar en retos de programación y hacer seguimiento de su progreso. En 2024, colaboré activamente
@@ -367,10 +348,8 @@
                 data-translate="projects-ita-challenges-demo"
                 >Demo</a
               >
-            </div>
-
-            <!-- EduMap -->
-            <div class="card card--cv animate animate--fade-up">
+            </div></li>
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="projects-edumap-title">EduMap</h3>
               <p data-translate="projects-edumap-description">
                 Aplicación que permite a los usuarios visualizar y analizar datos relacionados con el acceso y la equidad en la educación a través de mapas interactivos. Los datos, obtenidos de
@@ -382,10 +361,8 @@
                 <a href="https://github.com/amarinite/hackatonITAcademy" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Backend de EduMap">Backend</a>
               </p>
               <a href="https://edu-front-delta.vercel.app/" class="btn btn--small" target="_blank" rel="noopener noreferrer" data-translate="projects-edumap-demo">Demo</a>
-            </div>
-
-            <!-- TryTime -->
-            <div class="card card--cv animate animate--fade-up">
+            </div></li>
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="projects-trytime-title">TryTime</h3>
               <p data-translate="projects-trytime-description">
                 Aplicación web que genera actividades aleatorias, diseñada para la hackatón de IT Academy en 2024. Desarrollada con Angular y Server-Side Rendering (SSR) para mejorar el rendimiento y
@@ -396,14 +373,20 @@
                 Repositorio: <a href="https://github.com/Yul1b3th/hackaton-cibernarium-boored" target="_blank" rel="noopener noreferrer" aria-label="Repositorio Frontend de TryTime">Frontend</a>
               </p>
               <a href="https://hackaton-cibernarium-boored.vercel.app/" class="btn btn--small" target="_blank" rel="noopener noreferrer" data-translate="projects-trytime-demo">Demo</a>
+            </div></li>
+            </ul>
+            <div class="carousel__controls">
+              <button class="button button--icon button--sm carousel__prev" type="button" aria-label="Anterior" data-translate="carousel-prev-label"><svg aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg></button>
+              <div class="carousel__indicators"></div>
+              <button class="button button--icon button--sm carousel__next" type="button" aria-label="Siguiente" data-translate="carousel-next-label"><svg aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg></button>
             </div>
-          </div>
+          </section>
         </div>
       </section>
 
       <!-- Experience -->
 
-      <section id="experience" class="experience section bg-halo bg-halo--start">
+      <section id="experience" class="experience section section--solid">
         <div class="bg-layer bg-grid" aria-hidden="true"></div>
         <div class="bg-layer bg-divider" aria-hidden="true"></div>
         <div class="container">
@@ -411,9 +394,9 @@
             <span aria-hidden="true" data-translate="experience-title">EXPERIENCIA</span>
             <h2 data-translate="experience-title">EXPERIENCIA</h2>
           </div>
-          <div class="center flex-column gap-4">
+          <ol class="timeline">
             <!-- TRAGSATEC -->
-            <div class="card card--cv animate animate--fade-up">
+            <li class="timeline__item card card--cv animate animate--fade-up">
               <h3 data-translate="experience-tragsatec-title">Angular Developer</h3>
               <p class="resume-items__year" data-translate="experience-tragsatec-year">Ene. 2025 - Mar. 2026</p>
               <p><strong data-translate="experience-tragsatec-company">Tragsatec | España.</strong></p>
@@ -431,10 +414,10 @@
                   Integración de código mediante Git Flow y Azure DevOps. Participación en pipelines CI/CD, pruebas unitarias con Jasmine/Karma y validación de cobertura mediante SonarQube.
                 </li>
               </ul>
-            </div>
+            </li>
 
             <!-- IT ACADEMY -->
-            <div class="card card--cv animate animate--fade-up">
+            <li class="timeline__item card card--cv animate animate--fade-up">
               <h3 data-translate="experience-itacademy-title">Angular Developer</h3>
               <p class="resume-items__year" data-translate="experience-itacademy-year">Sep. 2023 - Dic. 2024</p>
               <p><strong data-translate="experience-itacademy-company">IT Academy | España.</strong></p>
@@ -443,10 +426,10 @@
                 <li data-translate="experience-itacademy-task2">Consumo e integración de APIs REST mediante HttpClient y RxJS. Validación de endpoints con Postman.</li>
                 <li data-translate="experience-itacademy-task3">Realización de pruebas unitarias con Jest. Colaboración mediante GitHub.</li>
               </ul>
-            </div>
+            </li>
 
             <!-- GRUPO ANAYA -->
-            <div class="card card--cv animate animate--fade-up">
+            <li class="timeline__item card card--cv animate animate--fade-up">
               <h3 data-translate="experience-anaya-title">JavaScript Developer</h3>
               <p class="resume-items__year" data-translate="experience-anaya-year">Feb. 2023 - Jul. 2023</p>
               <p><strong data-translate="experience-anaya-company">Grupo Anaya, S.A.U. | España.</strong></p>
@@ -454,10 +437,10 @@
                 <li data-translate="experience-anaya-task1">Adaptación de contenido impreso de libros a formatos web.</li>
                 <li data-translate="experience-anaya-task2">Creación de juegos interactivos con JavaScript para libros digitales.</li>
               </ul>
-            </div>
+            </li>
 
             <!-- PRINCIPIOS INTERACTIVOS -->
-            <div class="card card--cv animate animate--fade-up">
+            <li class="timeline__item card card--cv animate animate--fade-up">
               <h3 data-translate="experience-principios-title">Maquetadora Web</h3>
               <p class="resume-items__year" data-translate="experience-principios-year">Jun. 2019 - Dic. 2022</p>
               <p><strong data-translate="experience-principios-company">Principios Interactivos, S.L. | España.</strong></p>
@@ -465,10 +448,10 @@
                 <li data-translate="experience-principios-task1">Diseño y maquetación de campañas digitales para CaixaBank Digital.</li>
                 <li data-translate="experience-principios-task2">Carga y envío de pruebas de las campañas mediante Adobe Campaign.</li>
               </ul>
-            </div>
+            </li>
 
             <!-- VIP RENTAL -->
-            <div class="card card--cv animate animate--fade-up">
+            <li class="timeline__item card card--cv animate animate--fade-up">
               <h3 data-translate="experience-vip-title">Desarrolladora Web</h3>
               <p class="resume-items__year" data-translate="experience-vip-year">Mar. 2016 - May. 2019</p>
               <p><strong data-translate="experience-vip-company">VIP Rental Barcelona, S.L.U. | España.</strong></p>
@@ -476,10 +459,10 @@
                 <li data-translate="experience-vip-task1">Administración de e-commerce en WordPress, PrestaShop y Magento, optimizando UI, rendimiento, accesibilidad y SEO.</li>
                 <li data-translate="experience-vip-task2">Gestión de campañas digitales.</li>
               </ul>
-            </div>
+            </li>
 
             <!-- INTERCID -->
-            <div class="card card--cv animate animate--fade-up">
+            <li class="timeline__item card card--cv animate animate--fade-up">
               <h3 data-translate="experience-owner-title">Propietaria</h3>
               <p class="resume-items__year" data-translate="experience-owner-year">Mar. 2007 - Nov. 2014</p>
               <p><strong data-translate="experience-owner-company">Intercid, C.A. | Venezuela.</strong></p>
@@ -487,8 +470,8 @@
                 <li data-translate="experience-owner-task1">Dirección del e-commerce de dispositivos tecnológicos.</li>
                 <li data-translate="experience-owner-task2">Capacitación en informática básica para niños, adolescentes y adultos.</li>
               </ul>
-            </div>
-          </div>
+            </li>
+          </ol>
         </div>
       </section>
 
@@ -503,133 +486,130 @@
             <span data-translate="education-title">Formación</span>
             <h2 data-translate="education-title">Formación</h2>
           </div>
-          <div class="center flex-column gap-4">
-            <div class="card card--cv animate animate--fade-up">
+          <div class="tabs cv-tabs animate animate--fade-up">
+            <div class="tabs__list" role="tablist" aria-label="Formación" data-translate="education-tabs-label">
+              <button class="tabs__tab" type="button" role="tab" id="education-tab-studies" aria-controls="education-panel-studies" aria-selected="true"><svg aria-hidden="true"><use href="public/icons/icons.svg#school"></use></svg><span data-translate="education-tab-studies">Estudios</span></button>
+              <button class="tabs__tab" type="button" role="tab" id="education-tab-courses" aria-controls="education-panel-courses" aria-selected="false"><svg aria-hidden="true"><use href="public/icons/icons.svg#workspace_premium"></use></svg><span data-translate="education-tab-courses">Cursos</span></button>
+            </div>
+            <div class="tabs__panel" role="tabpanel" id="education-panel-studies" aria-labelledby="education-tab-studies" tabindex="0">
+          <section data-carousel-autoplay="true" class="carousel carousel--multi carousel--fit carousel--equal cv-carousel" aria-roledescription="carrusel" aria-labelledby="education-tab-studies">
+            <ul class="carousel__track" aria-live="polite">
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="education-informatica-title">Ingeniero en Informática</h3>
               <p class="resume-items__year" data-translate="education-informatica-year">Oct. 1998 - Mar. 2004</p>
               <p><strong data-translate="education-informatica-institution">Universidad "Fermín Toro" | Venezuela.</strong></p>
               <ul>
                 <li data-translate="education-informatica-duration">5 años.</li>
               </ul>
-            </div>
-            <div class="card card--cv animate animate--fade-up">
+            </div></li>
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="education-angular-title">Frontend Developer Angular</h3>
               <p class="resume-items__year" data-translate="education-angular-year">Sep. 2023 - Feb. 2024</p>
               <p><strong data-translate="education-angular-institution">IT Academy | España.</strong></p>
               <ul>
                 <li data-translate="education-angular-duration">Bootcamp de 360 horas.</li>
               </ul>
-            </div>
-            <div class="card card--cv animate animate--fade-up">
+            </div></li>
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="education-certification3-title">CP3: Desarrollo de Aplicaciones con Tecnología Web</h3>
               <p class="resume-items__year" data-translate="education-certification3-year">2023 - 2024</p>
               <p><strong data-translate="education-certification3-institution">Certificado de Profesionalidad de Nivel 3 | CIFO | España.</strong></p>
               <ul>
                 <li data-translate="education-certification3-duration">180 horas.</li>
               </ul>
-            </div>
-            <div class="card card--cv animate animate--fade-up">
+            </div></li>
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="education-vue2023-title">Frontend Developer Vue</h3>
               <p class="resume-items__year" data-translate="education-vue2023-year">2023</p>
               <p><strong data-translate="education-vue2023-institution">La Salle Universidad Ramon Llull | España.</strong></p>
               <ul>
                 <li data-translate="education-vue2023-duration">Bootcamp de 240 horas.</li>
               </ul>
-            </div>
-            <div class="card card--cv animate animate--fade-up">
+            </div></li>
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="education-vue2022-title">Frontend Developer Vue</h3>
               <p class="resume-items__year" data-translate="education-vue2022-year">2022</p>
               <p><strong data-translate="education-vue2022-institution">Eurecat | España.</strong></p>
               <ul>
                 <li data-translate="education-vue2022-duration">Bootcamp de 240 horas.</li>
               </ul>
-            </div>
-            <div class="card card--cv animate animate--fade-up">
+            </div></li>
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="education-certification2-title">CP2: Confección y Publicación de Páginas Web</h3>
               <p class="resume-items__year" data-translate="education-certification2-year">2016</p>
               <p><strong data-translate="education-certification2-institution">Certificado de Profesionalidad de Nivel 2 | CIFO | España.</strong></p>
               <ul>
                 <li data-translate="education-certification2-duration">560 horas.</li>
               </ul>
+            </div></li>
+            </ul>
+            <div class="carousel__controls">
+              <button class="button button--icon button--sm carousel__prev" type="button" aria-label="Anterior" data-translate="carousel-prev-label"><svg aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg></button>
+              <div class="carousel__indicators"></div>
+              <button class="button button--icon button--sm carousel__next" type="button" aria-label="Siguiente" data-translate="carousel-next-label"><svg aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg></button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Courses -->
-
-      <section id="courses" class="courses section bg-glow">
-        <div class="bg-layer bg-waves bg-waves--soft" aria-hidden="true"></div>
-        <div class="bg-layer bg-dots bg-dots--top-start" aria-hidden="true"></div>
-        <div class="bg-layer bg-divider" aria-hidden="true"></div>
-        <div class="container">
-          <div class="section-title animate animate--fade-up">
-            <span aria-hidden="true" data-translate="courses-title">Cursos</span>
-            <h2 data-translate="courses-title">Cursos</h2>
-          </div>
-          <div class="resume-items">
-            <!-- GOOGLE UX DESIGN -->
-            <div class="card card--cv animate animate--fade-up">
+          </section>
+            </div>
+            <div class="tabs__panel" role="tabpanel" id="education-panel-courses" aria-labelledby="education-tab-courses" tabindex="0" hidden>
+          <section data-carousel-autoplay="true" class="carousel carousel--multi carousel--fit carousel--equal cv-carousel" aria-roledescription="carrusel" aria-labelledby="education-tab-courses">
+            <ul class="carousel__track" aria-live="polite">
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="courses-ux-title">Google UX Design Professional Certificate</h3>
               <p class="resume-items__year" data-translate="courses-ux-year">2026 (260 horas)</p>
               <p data-translate="courses-ux-institution">Coursera.</p>
-            </div>
-
-            <!-- DESARROLLO WEB PHP / MYSQL -->
-            <div class="card card--cv animate animate--fade-up">
+            </div></li>
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="courses-php-title">Desarrollo Web (PHP / MySQL)</h3>
               <p class="resume-items__year" data-translate="courses-php-year">2026 (80 horas)</p>
               <p data-translate="courses-php-institution">La Salle Universidad Ramon Llull | España.</p>
-            </div>
-
-            <!-- GOOGLE PROMPTING ESSENTIALS -->
-            <div class="card card--cv animate animate--fade-up">
+            </div></li>
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="courses-prompting-title">Google Prompting Essentials</h3>
               <p class="resume-items__year" data-translate="courses-prompting-year">2026 (8 horas)</p>
               <p data-translate="courses-prompting-institution">Coursera.</p>
-            </div>
-
-            <!-- JAVA SE 11 -->
-            <div class="card card--cv animate animate--fade-up">
+            </div></li>
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="courses-java-title">Java SE 11</h3>
-              <p class="resume-items__year" data-translate="courses-java-year">2026 (60 horas)</p>
+              <p class="resume-items__year" data-translate="courses-java-year">2026 (120 horas)</p>
               <p data-translate="courses-java-institution">La Salle Universidad Ramon Llull | España.</p>
-            </div>
-
-            <!-- SCRUM -->
-            <div class="card card--cv animate animate--fade-up">
+            </div></li>
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="courses-scrum-title">Scrum Framework</h3>
               <p class="resume-items__year" data-translate="courses-scrum-year">2023 (50 horas)</p>
               <p data-translate="courses-scrum-institution">Proyecto Universidad Empresa, S.L. (PUE) | España.</p>
-            </div>
-
-            <!-- WORDPRESS -->
-            <div class="card card--cv animate animate--fade-up">
+            </div></li>
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="courses-wordpress-title">WordPress</h3>
               <p class="resume-items__year" data-translate="courses-wordpress-year">2017 (100 horas)</p>
               <p data-translate="courses-wordpress-institution">CIFO | España.</p>
-            </div>
-
-            <!-- PHOTOSHOP -->
-            <div class="card card--cv animate animate--fade-up">
+            </div></li>
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="courses-photoshop-title">Procesamiento de Imágenes para la Web con Photoshop</h3>
               <p class="resume-items__year" data-translate="courses-photoshop-year">2017 (100 horas)</p>
               <p data-translate="courses-photoshop-institution">CIFO | España.</p>
-            </div>
-
-            <!-- PRESTASHOP -->
-            <div class="card card--cv animate animate--fade-up">
+            </div></li>
+              <li class="carousel__slide"><div class="card card--cv">
               <h3 data-translate="courses-prestashop-title">Creación de tiendas online con Prestashop</h3>
               <p class="resume-items__year" data-translate="courses-prestashop-year">2017 (100 horas)</p>
               <p data-translate="courses-prestashop-institution">Barcelona Activa | España.</p>
+            </div></li>
+            </ul>
+            <div class="carousel__controls">
+              <button class="button button--icon button--sm carousel__prev" type="button" aria-label="Anterior" data-translate="carousel-prev-label"><svg aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg></button>
+              <div class="carousel__indicators"></div>
+              <button class="button button--icon button--sm carousel__next" type="button" aria-label="Siguiente" data-translate="carousel-next-label"><svg aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg></button>
+            </div>
+          </section>
             </div>
           </div>
         </div>
       </section>
 
+      
+
       <!-- Contact -->
 
-      <section id="contact" class="contact section bg-halo bg-halo--start">
+      <section id="contact" class="contact section section--solid">
         <div class="bg-layer bg-ribbon" aria-hidden="true"></div>
         <div class="bg-layer bg-floor" aria-hidden="true"></div>
         <div class="bg-layer bg-dots bg-dots--top-end" aria-hidden="true"></div>
@@ -672,44 +652,39 @@
               </ul>
             </div>
           </div>
-          <form class="card card--cv contact-form">
-            <div class="contact-form__group">
-              <label class="visually-hidden" for="name" data-translate="contact-name-label">Nombre</label>
+          <form class="card card--cv contact-form" novalidate>
+            <div class="field contact-form__group">
+              <label class="field__label" for="name"><span data-translate="contact-name-label">Nombre</span> <span class="field__required" aria-hidden="true">*</span></label>
               <input
                 id="name"
                 type="text"
                 name="name"
-                class="contact-form__control"
-                placeholder="Ingresa tu nombre *"
-                title="Nombre sólo acepta letras y espacios en blanco"
+                class="field__control"
                 pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                 autocomplete="name"
                 required
-                data-translate="contact-name-placeholder contact-name-title"
               />
             </div>
-            <div class="contact-form__group">
-              <label class="visually-hidden" for="email" data-translate="contact-email-label">Correo electrónico</label>
+            <div class="field contact-form__group">
+              <label class="field__label" for="email"><span data-translate="contact-email-label">Correo electrónico</span> <span class="field__required" aria-hidden="true">*</span></label>
               <input
                 id="email"
                 type="email"
                 name="email"
-                class="contact-form__control"
-                placeholder="Ingresa tu correo *"
-                title="Email incorrecto"
+                class="field__control"
                 autocomplete="email"
                 required
-                data-translate="contact-email-placeholder contact-email-title2"
               />
             </div>
-            <div class="contact-form__group">
-              <label class="visually-hidden" for="comments" data-translate="contact-comments-label">Comentarios</label>
-              <textarea id="comments" name="comments" class="contact-form__control" rows="5" placeholder="Déjame tus comentarios *" required data-translate="contact-comments-placeholder"></textarea>
+            <div class="field contact-form__group">
+              <label class="field__label" for="comments"><span data-translate="contact-comments-label">Comentarios</span> <span class="field__required" aria-hidden="true">*</span></label>
+              <textarea id="comments" name="comments" class="field__control" rows="5" required></textarea>
             </div>
+            <p class="field__required-note" data-translate="contact-required-note">* Campos obligatorios</p>
             <div class="contact-form__loader text-center d-none">
               <img src="./public/images/loader.svg" alt="Enviando..." data-translate="contact-loader-alt" />
             </div>
-            <button type="submit" class="btn" data-translate="contact-submit">Enviar mensaje</button>
+            <button type="submit" class="button" data-translate="contact-submit">Enviar mensaje</button>
           </form>
           <div id="thanks" class="contact-modal">
             <div class="contact-modal__content">
@@ -731,6 +706,23 @@
         <p>© <span id="year"></span> Yulibeth Rivero</p>
       </div>
     </footer>
+    <dialog class="drawer drawer--full drawer--end drawer--emphasis" id="navbar-drawer" aria-label="Menú" data-translate="menu-label">
+      <div class="drawer__header">
+        <a class="navbar__brand" href="#home" data-translate="navbar-brand">YR</a>
+        <button class="button button--icon" type="button" aria-label="Cerrar menú" data-translate="close-menu-label" data-drawer-close>
+          <svg aria-hidden="true"><use href="public/icons/icons.svg#close"></use></svg>
+        </button>
+      </div>
+      <nav class="drawer__body" aria-label="Principal" data-navbar-links></nav>
+      <div class="drawer__footer">
+            <a class="button button--icon " href="https://www.linkedin.com/in/yulibeth-rivero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg aria-hidden="true" viewBox="0 0 448 512"><use href="public/icons/icons.svg#linkedin"></use></svg>
+            </a>
+            <a class="button button--icon " href="https://github.com/Yul1b3th" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg aria-hidden="true" viewBox="0 0 496 512"><use href="public/icons/icons.svg#github"></use></svg>
+            </a>
+      </div>
+    </dialog>
     <button class="scroll-top-btn hidden" type="button" aria-label="Volver arriba" data-translate="scroll-top-label">
       <svg class="scroll-top-btn__icon" aria-hidden="true"><use href="public/icons/icons.svg#keyboard_control_key"></use></svg>
     </button>

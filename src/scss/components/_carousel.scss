@@ -1,7 +1,7 @@
 // Archivo de innovatech-ds. No editar aquí
 // Se cambia en innovatech-ds y se copia con npm run sync
 
-// Carrusel con scroll-snap, se desliza con el dedo y con los botones
+// Una foto a la vez se desliza como Bootstrap 5.3 y varias tarjetas usan scroll-snap
 // Variantes overlay con los controles sobre la foto y multi con varias tarjetas a la vez
 
 @use '../abstracts' as *;
@@ -46,11 +46,61 @@
   scroll-snap-stop: always;
 }
 
-.carousel__slide img {
+/* Solo la foto que es la diapositiva; las imágenes de dentro de una tarjeta siguen su propio estilo */
+.carousel__slide > img {
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+}
+
+/* Una foto a la vez, la nueva entra por un lado y la actual sale por el otro, como Bootstrap 5.3 */
+/* Todas ocupan la misma celda de la rejilla; al dar la vuelta la primera entra por la derecha */
+.carousel--slide .carousel__track {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  overflow: hidden;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+  touch-action: pan-y;
+}
+
+.carousel--slide .carousel__slide {
+  grid-area: 1 / 1;
+  min-width: 0;
+  visibility: hidden;
+  transition: transform var(--duration-slide) var(--ease-in-out);
+}
+
+.carousel--slide .carousel__slide:is(.is-active, .is-next, .is-prev) {
+  visibility: visible;
+}
+
+.carousel--slide .carousel__slide.is-next:not(.is-start),
+.carousel--slide .carousel__slide.is-active.is-end {
+  transform: translateX(100%);
+}
+
+.carousel--slide .carousel__slide.is-prev:not(.is-end),
+.carousel--slide .carousel__slide.is-active.is-start {
+  transform: translateX(-100%);
+}
+
+/* Fundido en lugar de deslizar, como carousel-fade de Bootstrap */
+.carousel--fade .carousel__slide {
+  opacity: 0;
+  transform: none;
+  transition: opacity var(--duration-slide) var(--ease-in-out);
+}
+
+.carousel--fade .carousel__slide:is(.is-active, .is-leaving) {
+  visibility: visible;
+}
+
+.carousel--fade .carousel__slide.is-active {
+  z-index: var(--z-index-raised);
+  opacity: 1;
 }
 
 /* Diapositiva con texto, como carousel-caption de Bootstrap */
@@ -87,7 +137,7 @@
     position: absolute;
     inset: auto 0 0;
     padding: var(--space-xl) var(--space-ml) var(--space-ml);
-    background: linear-gradient(to top, color-mix(in srgb, var(--color-bg-emphasis) 85%, transparent), transparent);
+    background: linear-gradient(to top, color-mix(in srgb, var(--color-bg-emphasis) calc(var(--opacity-veil) * 100%), transparent), transparent);
     color: var(--color-text-on-emphasis);
   }
 
@@ -131,10 +181,11 @@
   gap: var(--space-xs);
 }
 
+/* Ancho fijo para que la píldora crezca dentro sin mover los otros puntos ni las flechas */
 .carousel__indicator {
   display: inline-grid;
   place-items: center;
-  width: 1.75rem;
+  width: 2.375rem;
   height: 2.75rem;
   padding: 0;
   border: 0;
@@ -142,21 +193,66 @@
   cursor: pointer;
 }
 
+/* Punto que en la diapositiva actual se alarga en píldora, como Bootstrap 6 */
+/* El relleno es un degradado de un color para poder animar cuánto falta en el pase automático */
 .carousel__indicator::before {
   content: '';
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.75rem;
+  height: 0.75rem;
   border: var(--border-width-md) solid var(--color-border-strong);
-  border-radius: 50%;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(var(--color-action-selected-bg), var(--color-action-selected-bg)) no-repeat left / 0% 100%;
   transition:
-    background-color var(--duration-fast) var(--ease-standard),
+    width var(--duration-moderate) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard);
+}
+
+/* Al pasar el ratón el punto se rellena a medias, como estado interactivo */
+.carousel__indicator:hover:not([aria-current='true'])::before {
+  border-color: var(--color-action-selected-bg);
+  background: color-mix(in srgb, var(--color-action-selected-bg) 35%, transparent);
+  transform: scale(1.2);
+}
+
+.carousel__indicator::before {
+  transition:
+    width var(--duration-moderate) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
     transform var(--duration-fast) var(--ease-standard);
 }
 
+/* Flechas y pausa con fondo propio y sombra para verse sobre cualquier fondo de sección */
+.carousel:not(.carousel--overlay, .carousel--row) :is(.carousel__prev, .carousel__next, .carousel__play) {
+  --button-bg: var(--color-bg-page);
+  --button-shadow: var(--shadow-sm);
+}
+
 .carousel__indicator[aria-current='true']::before {
+  width: 1.875rem;
   border-color: var(--color-action-selected-bg);
-  background-color: var(--color-action-selected-bg);
-  transform: scale(1.2);
+  background-size: 100% 100%;
+}
+
+/* Con pase automático la píldora se llena en el tiempo de cada diapositiva y se para con la pausa */
+.carousel--autoplay .carousel__indicator[aria-current='true']::before {
+  background-size: 0% 100%;
+  animation: carousel-progress var(--carousel-interval, 5000ms) linear forwards paused;
+}
+
+.carousel--autoplay.is-playing .carousel__indicator[aria-current='true']::before {
+  animation-play-state: running;
+}
+
+/* Parado por la persona, la píldora queda llena como en un carrusel sin pase automático */
+.carousel--autoplay.is-stopped .carousel__indicator[aria-current='true']::before {
+  background-size: 100% 100%;
+  animation: none;
+}
+
+@keyframes carousel-progress {
+  to {
+    background-size: 100% 100%;
+  }
 }
 
 .carousel__indicator:focus-visible {
@@ -194,7 +290,7 @@
 }
 
 .carousel--overlay :is(.carousel__prev, .carousel__next, .carousel__play) {
-  --button-bg: color-mix(in srgb, var(--color-bg-page) 90%, transparent);
+  --button-bg: color-mix(in srgb, var(--color-bg-page) calc(var(--opacity-translucent) * 100%), transparent);
   --button-shadow: var(--shadow-sm);
 }
 
@@ -226,7 +322,7 @@
   left: 50%;
   padding: 0 var(--space-xs);
   border-radius: var(--radius-pill);
-  background-color: color-mix(in srgb, var(--color-bg-page) 85%, transparent);
+  background-color: color-mix(in srgb, var(--color-bg-page) calc(var(--opacity-veil) * 100%), transparent);
   transform: translateX(-50%);
 }
 
@@ -245,6 +341,37 @@
 .carousel--multi .carousel__slide {
   flex-basis: calc((100% - (var(--carousel-per-view) - 1) * var(--carousel-gap)) / var(--carousel-per-view));
   scroll-snap-stop: normal;
+}
+
+/* Tarjetas enteras, una en el móvil, dos en tablet y tres en escritorio, sin vecina asomando */
+.carousel--multi.carousel--fit {
+  --carousel-per-view: 1;
+}
+
+/* Todas las tarjetas de la fila con el mismo alto, el de la más alta */
+.carousel--equal .carousel__slide {
+  display: flex;
+}
+
+.carousel--equal .carousel__slide > * {
+  width: 100%;
+  height: 100%;
+}
+
+/* Asomando, la tarjeta actual en el centro y las vecinas asoman a los lados */
+/* Se combina con carousel--multi y mantiene puntos, flechas y pase automático */
+.carousel--multi.carousel--peek {
+  --carousel-per-view: 1;
+  --carousel-peek: 2rem;
+}
+
+.carousel--peek .carousel__track {
+  padding-inline: calc(var(--carousel-peek) + var(--carousel-gap));
+  scroll-padding-inline: calc(var(--carousel-peek) + var(--carousel-gap));
+}
+
+.carousel--peek .carousel__slide {
+  flex-basis: 100%;
 }
 
 /* Fila tipo Netflix, varias tarjetas con flechas a los lados que avanzan una página */
@@ -291,10 +418,28 @@
   .carousel--multi {
     --carousel-per-view: 2;
   }
+
+  .carousel--multi.carousel--peek {
+    --carousel-per-view: 1;
+    --carousel-peek: 12%;
+  }
+
+  .carousel--multi.carousel--fit {
+    --carousel-per-view: 2;
+  }
 }
 
 @include apply-media-breakpoint(lg) {
   .carousel--multi {
+    --carousel-per-view: 3;
+  }
+
+  .carousel--multi.carousel--peek {
+    --carousel-per-view: 1;
+    --carousel-peek: 18%;
+  }
+
+  .carousel--multi.carousel--fit {
     --carousel-per-view: 3;
   }
 }
@@ -310,7 +455,14 @@
     scroll-behavior: auto;
   }
 
-  .carousel__indicator::before {
+  .carousel__indicator::before,
+  .carousel--slide .carousel__slide {
     transition: none;
+  }
+
+  /* Sin la cuenta atrás animada, como Bootstrap 6; la píldora queda llena */
+  .carousel--autoplay .carousel__indicator[aria-current='true']::before {
+    background-size: 100% 100%;
+    animation: none;
   }
 }

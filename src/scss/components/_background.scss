@@ -25,7 +25,7 @@ $decor-path: '' !default;
 .bg-halo::before,
 .bg-halo::after {
   position: absolute;
-  z-index: -1;
+  z-index: var(--z-index-behind);
   content: '';
   pointer-events: none;
 }
@@ -111,9 +111,9 @@ $decor-path: '' !default;
 .bg-halo::before {
   inset: -10%;
   background:
-    radial-gradient(42rem 22rem at 50% 4%, color-mix(in srgb, var(--halo-3) 45%, transparent), transparent 70%),
-    radial-gradient(38rem 26rem at 76% 14%, color-mix(in srgb, var(--halo-1) 55%, transparent), transparent 70%),
-    radial-gradient(34rem 26rem at 98% 38%, color-mix(in srgb, var(--halo-2) 50%, transparent), transparent 70%);
+    radial-gradient(42rem 22rem at 50% 4%, color-mix(in srgb, var(--halo-3) calc(var(--opacity-decor-subtle) * 100%), transparent), transparent 70%),
+    radial-gradient(38rem 26rem at 76% 14%, color-mix(in srgb, var(--halo-1) calc(var(--opacity-decor-medium) * 100%), transparent), transparent 70%),
+    radial-gradient(34rem 26rem at 98% 38%, color-mix(in srgb, var(--halo-2) calc(var(--opacity-decor-medium) * 100%), transparent), transparent 70%);
   filter: blur(60px);
 }
 
@@ -138,13 +138,13 @@ $decor-path: '' !default;
   --streaks-3: var(--color-decor-emphasis-halo-3);
 
   position: absolute;
-  z-index: -1;
+  z-index: var(--z-index-behind);
   right: 0;
   bottom: 0;
   left: 0;
   height: 15rem;
   pointer-events: none;
-  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--streaks-2) 60%, transparent));
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--streaks-2) calc(var(--opacity-decor) * 100%), transparent));
 }
 
 .bg-streaks::before {
@@ -177,17 +177,17 @@ section:has(> .bg-layer),
 
 section:has(> .bg-layer) > .container {
   position: relative;
-  z-index: 1;
+  z-index: var(--z-index-raised);
 }
 
 section:has(> .bg-layer) > .bg-layer {
-  z-index: 0;
+  z-index: var(--z-index-base);
 }
 
 .bg-layer {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: var(--z-index-behind);
   overflow: hidden;
   pointer-events: none;
 }
@@ -330,17 +330,18 @@ section:has(> .bg-layer) > .bg-layer {
 }
 
 /* Suelo en perspectiva al pie de la sección */
+/* Se ajusta con --floor-height, --floor-opacity, --floor-line, --floor-tilt y --floor-perspective */
 .bg-floor::before {
   right: -50%;
   bottom: -2%;
   left: -50%;
-  height: 60%;
+  height: var(--floor-height, 60%);
   background:
-    linear-gradient(var(--color-decor-wave-soft-2) 1.5px, transparent 1.5px) 0 0 / 4rem 4rem,
-    linear-gradient(90deg, var(--color-decor-wave-soft-2) 1.5px, transparent 1.5px) 0 0 / 4rem 4rem;
+    linear-gradient(var(--floor-line, var(--color-decor-wave-soft-2)) 1.5px, transparent 1.5px) 0 0 / 4rem 4rem,
+    linear-gradient(90deg, var(--floor-line, var(--color-decor-wave-soft-2)) 1.5px, transparent 1.5px) 0 0 / 4rem 4rem;
   mask: linear-gradient(to top, #000, transparent 85%);
-  opacity: var(--opacity-decor-subtle);
-  transform: perspective(420px) rotateX(68deg);
+  opacity: var(--floor-opacity, var(--opacity-decor-subtle));
+  transform: perspective(var(--floor-perspective, 420px)) rotateX(var(--floor-tilt, 68deg));
   transform-origin: bottom;
 }
 
@@ -353,7 +354,7 @@ section:has(> .bg-layer) > .bg-layer {
 /* Línea fina de color arriba de la sección para separarla de la anterior */
 .bg-divider {
   inset: 0 0 auto;
-  height: 1px;
+  height: var(--border-width-sm);
   background: linear-gradient(90deg, transparent, var(--color-decor-divider-1) 20%, var(--color-decor-divider-2) 50%, var(--color-decor-divider-3) 80%, transparent);
 }
 
@@ -380,5 +381,18 @@ section:has(> .bg-layer) > .bg-layer {
   :root:not([data-theme]) .bg-streaks,
   :root:not([data-theme]) .bg-layer {
     display: none;
+  }
+}
+
+/* En alto contraste la única capa que queda es la línea entre secciones, sólida */
+[data-theme='hc'] .bg-layer.bg-divider {
+  display: block;
+  background: var(--color-border-default);
+}
+
+@media (prefers-contrast: more) {
+  :root:not([data-theme]) .bg-layer.bg-divider {
+    display: block;
+    background: var(--color-border-default);
   }
 }
