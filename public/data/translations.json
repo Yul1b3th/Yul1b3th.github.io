@@ -1,5 +1,6 @@
 {
   "en": {
+    "page-title": "Yulibeth Rivero | Angular Frontend Developer in Barcelona",
     "home": "Home",
     "about-me": "About Me",
     "experience": "Experience",
@@ -8,7 +9,7 @@
     "courses": "Courses",
     "contact": "Contact",
     "navbar-brand": "YR",
-    "meta-description": "Resume of Yulibeth Rivero, Angular Frontend Developer with experience in Agile environments. Scalable, robust and accessible applications with UX principles.",
+    "meta-description": "Yulibeth Rivero, frontend developer specializing in Angular, TypeScript, and accessible web applications. Agile team experience. Barcelona, Spain.",
     "download-cv": "Download CV",
     "home-title": "Hi, I'm Yulibeth!",
     "home-subtitle": "Frontend Developer",
@@ -180,6 +181,7 @@
     "education-tab-courses": "Courses"
   },
   "es": {
+    "page-title": "Yulibeth Rivero | Desarrolladora Frontend Angular en Barcelona",
     "home": "Inicio",
     "about-me": "Sobre Mí",
     "projects": "Proyectos",
@@ -188,7 +190,7 @@
     "courses": "Cursos",
     "contact": "Contacto",
     "navbar-brand": "YR",
-    "meta-description": "Currículum de Yulibeth Rivero, Frontend Developer en Angular con experiencia en entornos Agile. Aplicaciones escalables, robustas y accesibles con principios de UX.",
+    "meta-description": "Yulibeth Rivero, desarrolladora frontend especializada en Angular, TypeScript y aplicaciones web accesibles. Experiencia en equipos Agile. Barcelona, España.",
     "download-cv": "Descargar CV",
     "home-title": "Hola, soy Yulibeth!",
     "home-subtitle": "Frontend Developer",
