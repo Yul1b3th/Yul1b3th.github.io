@@ -11,5 +11,7 @@ export function initScrollTop() {
 
     $toTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Deja la dirección en Inicio, igual que el enlace Inicio del menú
+      if (location.hash !== '#home') history.pushState(null, '', '#home');
     });
 }
