@@ -253,12 +253,15 @@ export function initCarousels(root = document) {
       if (event.button !== 0 || (multi && event.pointerType !== 'mouse')) return;
       drag = { x: event.clientX, left: track.scrollLeft, moved: false };
       track.classList.add('is-dragging');
-      track.setPointerCapture(event.pointerId);
     });
     track.addEventListener('pointermove', (event) => {
       if (!drag) return;
       const dx = event.clientX - drag.x;
-      if (Math.abs(dx) > 5) drag.moved = true;
+      // Captura el puntero solo al arrastrar, si no el clic no llega a los enlaces
+      if (Math.abs(dx) > 5 && !drag.moved) {
+        drag.moved = true;
+        track.setPointerCapture(event.pointerId);
+      }
       if (multi) track.scrollLeft = drag.left - dx;
     });
     const endDrag = (event) => {

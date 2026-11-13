@@ -20,5 +20,8 @@ export function initBackToTop(button = document.querySelector('.back-to-top:not(
     window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
     if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
     target.focus({ preventScroll: true });
+    // Deja la dirección en el destino, como haría un enlace normal
+    const hash = button.getAttribute('href');
+    if (location.hash !== hash) history.pushState(null, '', hash);
   });
 }
