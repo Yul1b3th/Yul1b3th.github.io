@@ -1,6 +1,8 @@
 // Archivo de innovatech-ds. No editar aquí
 // Se cambia en innovatech-ds y se copia con npm run sync
 
+@use '../abstracts' as *;
+
 /* Baldosa para iconos de marca: el icono no depende del fondo de la sección */
 /* Uso con SVG: <span class="icon-tile" aria-hidden="true"><svg><use href="icons.svg#check"></use></svg></span> */
 /* Uso con archivo: <span class="icon-tile" aria-hidden="true"><span class="icon-tile__mask" style="--icon: url('../public/images/icono.svg')"></span></span> */
@@ -20,6 +22,28 @@
 .icon-tile--lg {
   --icon-tile-size: 4.5rem;
 }
+
+/* Baldosas de color decorativo, como las de la landing, para agrupar sin tarjetas */
+/* El icono va en el color de los títulos; en alto contraste vuelve la baldosa normal */
+.icon-tile--lavender,
+.icon-tile--sky,
+.icon-tile--rose,
+.icon-tile--mint {
+  border-color: transparent;
+  border-radius: var(--radius-md);
+  color: var(--color-text-heading);
+
+  @include apply-high-contrast {
+    border-color: var(--color-icon-tile-border);
+    background: var(--color-icon-tile-bg);
+    color: var(--color-icon-brand);
+  }
+}
+
+.icon-tile--lavender { background: var(--color-decor-lavender); }
+.icon-tile--sky { background: var(--color-decor-sky); }
+.icon-tile--rose { background: var(--color-decor-rose); }
+.icon-tile--mint { background: var(--color-decor-mint); }
 
 .icon-tile > svg {
   width: 55%;
