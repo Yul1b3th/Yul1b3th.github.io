@@ -12,16 +12,84 @@
     h3 {
       text-align: center;
     }
-    /* Tarjetas de Tech y Soft Skills con la card del sistema, 3 columnas en escritorio */
-    .skills-grid {
-      gap: var(--space-lg);
-      margin-top: fn.get-spacing(md);
-      margin-bottom: var(--space-xl);
+    /* Pestañas de Tech y Soft Skills, grupos sin tarjetas separados por una línea fina */
+    .skills-tabs {
+      margin-top: var(--space-xl);
+    }
+
+    .skills-tabs__intro {
+      margin: var(--space-lg) 0 0;
+      text-align: center;
+    }
+
+    .skills-groups {
+      display: grid;
+      gap: var(--space-md) var(--space-xl);
+      margin: var(--space-lg) 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skills-group {
+      padding: var(--space-lg) 0 var(--space-xs);
+      border-top: var(--border-width-sm) solid var(--color-border-default);
+    }
+
+    .skills-group__title {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin: 0 0 var(--space-md);
+      font-size: var(--font-size-base);
+      text-align: left;
+    }
+
+    .skills-group__title .icon-tile,
+    .soft-skill .icon-tile {
+      --icon-tile-size: 2.5rem;
+    }
+
+    .soft-skills-list {
+      display: grid;
+      margin: var(--space-lg) 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .soft-skill {
+      padding: var(--space-lg) 0;
+      text-align: center;
+    }
+
+    .soft-skill + .soft-skill {
+      border-top: var(--border-width-sm) solid var(--color-border-default);
+    }
+
+    .soft-skill__title {
+      margin: var(--space-sm) 0 var(--space-xs);
+      font-size: var(--font-size-base);
+    }
+
+    .soft-skill p {
+      margin: 0;
     }
 
     @media (min-width: fn.get-breakpoint(lg)) {
-      .skills-grid {
+      .skills-groups {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .soft-skills-list {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .soft-skill {
+        padding: 0 var(--space-xl);
+      }
+
+      .soft-skill + .soft-skill {
+        border-top: 0;
+        border-left: var(--border-width-sm) solid var(--color-border-default);
       }
     }
   }

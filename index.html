@@ -201,8 +201,7 @@
       <!-- About me -->
 
       <section id="about-me" class="about-me section section--solid">
-        <div class="bg-layer bg-grid bg-grid--sides" aria-hidden="true"></div>
-        <div class="bg-layer bg-dots" aria-hidden="true"></div>
+        <div class="bg-layer bg-curves" aria-hidden="true"></div>
         <div class="bg-layer bg-divider" aria-hidden="true"></div>
         <div class="container">
           <!-- Section Title -->
@@ -234,99 +233,61 @@
             </p>
           </div>
 
-          <!-- Tech Skills -->
-          <div class="tech-skills mb-2">
-            <h3 class="text-center animate animate--fade-up" id="tech-skills-title" data-translate="tech-skills-title">Tech Skills</h3>
-            <p class="animate animate--fade-up" data-translate="tech-skills-description">En mi carrera, he trabajado con una variedad de tecnologías, como:</p>
-            <section data-carousel-autoplay="true" class="carousel carousel--multi carousel--fit carousel--equal cv-carousel animate animate--fade-up" aria-roledescription="carrusel" aria-labelledby="tech-skills-title">
-            <ul class="carousel__track" aria-live="polite">
-              <li class="carousel__slide"><article class="card">
-                  <div class="card__media card__media--illustration"><img src="./public/images/undraw/progressive-web-app.svg" alt="" width="800" height="560" loading="lazy" /></div>
-                  <div class="card__body">
-                    <h4 class="card__title" data-translate="tech-skills-frontend">Frontend</h4>
-                    <ul class="card__tags"><li class="card__tag">Angular 16+</li><li class="card__tag">Angular Signals</li><li class="card__tag">Angular Material</li><li class="card__tag">TypeScript</li><li class="card__tag">RxJS</li><li class="card__tag">JavaScript ES6+</li><li class="card__tag">HTML5</li><li class="card__tag">CSS3</li><li class="card__tag">Sass</li><li class="card__tag">Bootstrap</li><li class="card__tag">Tailwind CSS</li><li class="card__tag">Vue</li><li class="card__tag">jQuery</li></ul>
-                  </div>
-                </article></li>
-              <li class="carousel__slide"><article class="card">
-                  <div class="card__media card__media--illustration"><img src="./public/images/undraw/bug-detected.svg" alt="" width="800" height="560" loading="lazy" /></div>
-                  <div class="card__body">
-                    <h4 class="card__title" data-translate="tech-skills-testing">Pruebas</h4>
-                    <ul class="card__tags"><li class="card__tag">Jest</li><li class="card__tag">Jasmine</li><li class="card__tag">Karma</li></ul>
-                  </div>
-                </article></li>
-              <li class="carousel__slide"><article class="card">
-                  <div class="card__media card__media--illustration"><img src="./public/images/undraw/database-tables.svg" alt="" width="800" height="560" loading="lazy" /></div>
-                  <div class="card__body">
-                    <h4 class="card__title" data-translate="tech-skills-backend-data">Backend y datos</h4>
-                    <ul class="card__tags"><li class="card__tag" data-translate="tech-tag-rest">APIs REST</li><li class="card__tag">Node.js</li><li class="card__tag">NestJS</li><li class="card__tag">MySQL</li><li class="card__tag">Oracle</li><li class="card__tag">Java</li><li class="card__tag">PHP</li></ul>
-                  </div>
-                </article></li>
-              <li class="carousel__slide"><article class="card">
-                  <div class="card__media card__media--illustration"><img src="./public/images/undraw/code-review.svg" alt="" width="800" height="560" loading="lazy" /></div>
-                  <div class="card__body">
-                    <h4 class="card__title" data-translate="tech-skills-tools">Herramientas y metodologías</h4>
-                    <ul class="card__tags"><li class="card__tag">Scrum</li><li class="card__tag">Git</li><li class="card__tag">GitHub</li><li class="card__tag">Git Flow</li><li class="card__tag">Azure DevOps</li><li class="card__tag">Postman</li><li class="card__tag">DBeaver</li><li class="card__tag">SonarQube</li><li class="card__tag">CI/CD</li></ul>
-                  </div>
-                </article></li>
-              <li class="carousel__slide"><article class="card">
-                  <div class="card__media card__media--illustration"><img src="./public/images/undraw/smartwatch-map.svg" alt="" width="800" height="560" loading="lazy" /></div>
-                  <div class="card__body">
-                    <h4 class="card__title" data-translate="tech-skills-gis-design">GIS y diseño</h4>
-                    <ul class="card__tags"><li class="card__tag">Mapbox</li><li class="card__tag">SIG/GIS</li><li class="card__tag">Figma</li><li class="card__tag">Adobe XD</li><li class="card__tag">Photoshop</li><li class="card__tag">Illustrator</li><li class="card__tag">InDesign</li></ul>
-                  </div>
-                </article></li>
-              <li class="carousel__slide"><article class="card">
-                  <div class="card__media card__media--illustration"><img src="./public/images/undraw/ai-agent.svg" alt="" width="800" height="560" loading="lazy" /></div>
-                  <div class="card__body">
-                    <h4 class="card__title" data-translate="tech-skills-ai">IA</h4>
-                    <p class="card__text card__text--full" data-translate="tech-skills-ai-description">Prompting aplicado a la optimización del código y la productividad.</p>
-                  </div>
-                </article></li>
-            </ul>
-            <div class="carousel__controls">
-              <button class="button button--icon button--sm carousel__prev" type="button" aria-label="Anterior" data-translate="carousel-prev-label"><svg aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg></button>
-              <div class="carousel__indicators"></div>
-              <button class="button button--icon button--sm carousel__next" type="button" aria-label="Siguiente" data-translate="carousel-next-label"><svg aria-hidden="true"><use href="public/icons/icons.svg#keyboard_arrow_down"></use></svg></button>
+          <!-- Habilidades técnicas y personales en pestañas, sin tarjetas -->
+          <div class="tabs cv-tabs skills-tabs animate animate--fade-up">
+            <div class="tabs__list" role="tablist" aria-label="Habilidades" data-translate="skills-tabs-label">
+              <button class="tabs__tab" type="button" role="tab" id="skills-tab-tech" aria-controls="skills-panel-tech" aria-selected="true"><svg aria-hidden="true"><use href="public/icons/icons.svg#code"></use></svg><span data-translate="tech-skills-title">Tech Skills</span></button>
+              <button class="tabs__tab" type="button" role="tab" id="skills-tab-soft" aria-controls="skills-panel-soft" aria-selected="false"><svg aria-hidden="true"><use href="public/icons/icons.svg#psychology"></use></svg><span data-translate="soft-skills-title">Soft Skills</span></button>
             </div>
-          </section>
-          
-          </div>
-
-          <!-- Soft Skills -->
-          <div class="soft-skills">
-            <h3 class="text-center animate animate--fade-up" data-translate="soft-skills-title">Soft Skills</h3>
-            <p class="animate animate--fade-up" data-translate="soft-skills-description">
-              Soy autónoma, orientada al logro y al cliente, y me adapto bien a los cambios. Disfruto del trabajo en equipo y de colaborar para alcanzar objetivos comunes.
-            </p>
-            <ul class="card-grid skills-grid">
-              <li>
-                <article class="card animate animate--fade-up">
-                  <div class="card__body">
-                    <span class="icon-tile card__icon" aria-hidden="true"><svg><use href="public/icons/icons.svg#psychology"></use></svg></span>
-                    <h4 class="card__title" data-translate="soft-skills-autonomy">Autonomía</h4>
-                    <p class="card__text card__text--full" data-translate="soft-skills-autonomy-description">Aprendo de forma continua para trabajar con seguridad y autonomía, y resolver problemas de forma eficaz.</p>
-                  </div>
-                </article>
-              </li>
-              <li>
-                <article class="card animate animate--fade-up">
-                  <div class="card__body">
-                    <span class="icon-tile card__icon" aria-hidden="true"><svg><use href="public/icons/icons.svg#ads_click"></use></svg></span>
-                    <h4 class="card__title" data-translate="soft-skills-achievement-orientation">Orientación al logro</h4>
-                    <p class="card__text card__text--full" data-translate="soft-skills-achievement-orientation-description">Me comprometo con la calidad de cada entrega. El tiempo que dedico a mejorar una solución es, para mí, una inversión en aprendizaje.</p>
-                  </div>
-                </article>
-              </li>
-              <li>
-                <article class="card animate animate--fade-up">
-                  <div class="card__body">
-                    <span class="icon-tile card__icon" aria-hidden="true"><svg><use href="public/icons/icons.svg#groups"></use></svg></span>
-                    <h4 class="card__title" data-translate="soft-skills-teamwork">Trabajo en equipo</h4>
-                    <p class="card__text card__text--full" data-translate="soft-skills-teamwork-description">Escucho, comparto conocimiento y colaboro para alcanzar los objetivos comunes.</p>
-                  </div>
-                </article>
-              </li>
-            </ul>
+            <div class="tabs__panel" role="tabpanel" id="skills-panel-tech" aria-labelledby="skills-tab-tech" tabindex="0">
+              <p class="skills-tabs__intro" data-translate="tech-skills-description">En mi carrera, he trabajado con una variedad de tecnologías, como:</p>
+              <ul class="skills-groups">
+                <li class="skills-group">
+                  <h3 class="skills-group__title"><span class="icon-tile icon-tile--lavender" aria-hidden="true"><svg><use href="public/icons/icons.svg#devices"></use></svg></span><span data-translate="tech-skills-frontend">Frontend</span></h3>
+                  <ul class="card__tags"><li class="card__tag">Angular 16+</li><li class="card__tag">Angular Signals</li><li class="card__tag">Angular Material</li><li class="card__tag">TypeScript</li><li class="card__tag">RxJS</li><li class="card__tag">JavaScript ES6+</li><li class="card__tag">HTML5</li><li class="card__tag">CSS3</li><li class="card__tag">Sass</li><li class="card__tag">Bootstrap</li><li class="card__tag">Tailwind CSS</li><li class="card__tag">Vue</li><li class="card__tag">jQuery</li></ul>
+                </li>
+                <li class="skills-group">
+                  <h3 class="skills-group__title"><span class="icon-tile icon-tile--sky" aria-hidden="true"><svg><use href="public/icons/icons.svg#bug_report"></use></svg></span><span data-translate="tech-skills-testing">Pruebas</span></h3>
+                  <ul class="card__tags"><li class="card__tag">Jest</li><li class="card__tag">Jasmine</li><li class="card__tag">Karma</li></ul>
+                </li>
+                <li class="skills-group">
+                  <h3 class="skills-group__title"><span class="icon-tile icon-tile--rose" aria-hidden="true"><svg><use href="public/icons/icons.svg#database"></use></svg></span><span data-translate="tech-skills-backend-data">Backend y datos</span></h3>
+                  <ul class="card__tags"><li class="card__tag" data-translate="tech-tag-rest">APIs REST</li><li class="card__tag">Node.js</li><li class="card__tag">NestJS</li><li class="card__tag">MySQL</li><li class="card__tag">Oracle</li><li class="card__tag">Java</li><li class="card__tag">PHP</li></ul>
+                </li>
+                <li class="skills-group">
+                  <h3 class="skills-group__title"><span class="icon-tile icon-tile--mint" aria-hidden="true"><svg><use href="public/icons/icons.svg#build"></use></svg></span><span data-translate="tech-skills-tools">Herramientas y metodologías</span></h3>
+                  <ul class="card__tags"><li class="card__tag">Scrum</li><li class="card__tag">Git</li><li class="card__tag">GitHub</li><li class="card__tag">Git Flow</li><li class="card__tag">Azure DevOps</li><li class="card__tag">Postman</li><li class="card__tag">DBeaver</li><li class="card__tag">SonarQube</li><li class="card__tag">CI/CD</li></ul>
+                </li>
+                <li class="skills-group">
+                  <h3 class="skills-group__title"><span class="icon-tile icon-tile--lavender" aria-hidden="true"><svg><use href="public/icons/icons.svg#map_search"></use></svg></span><span data-translate="tech-skills-gis-design">GIS y diseño</span></h3>
+                  <ul class="card__tags"><li class="card__tag">Mapbox</li><li class="card__tag">SIG/GIS</li><li class="card__tag">Figma</li><li class="card__tag">Adobe XD</li><li class="card__tag">Photoshop</li><li class="card__tag">Illustrator</li><li class="card__tag">InDesign</li></ul>
+                </li>
+                <li class="skills-group">
+                  <h3 class="skills-group__title"><span class="icon-tile icon-tile--sky" aria-hidden="true"><svg><use href="public/icons/icons.svg#smart_toy"></use></svg></span><span data-translate="tech-skills-ai">IA</span></h3>
+                  <ul class="card__tags"><li class="card__tag" data-translate="tech-skills-ai-description">Prompting aplicado a la optimización del código y la productividad.</li></ul>
+                </li>
+              </ul>
+            </div>
+            <div class="tabs__panel" role="tabpanel" id="skills-panel-soft" aria-labelledby="skills-tab-soft" tabindex="0" hidden>
+              <p class="skills-tabs__intro" data-translate="soft-skills-description">Soy autónoma, orientada al logro y al cliente, y me adapto bien a los cambios. Disfruto del trabajo en equipo y de colaborar para alcanzar objetivos comunes.</p>
+              <ul class="soft-skills-list">
+                <li class="soft-skill">
+                  <span class="icon-tile icon-tile--lavender" aria-hidden="true"><svg><use href="public/icons/icons.svg#psychology"></use></svg></span>
+                  <h3 class="soft-skill__title" data-translate="soft-skills-autonomy">Autonomía</h3>
+                  <p data-translate="soft-skills-autonomy-description">Aprendo de forma continua para trabajar con seguridad y autonomía, y resolver problemas de forma eficaz.</p>
+                </li>
+                <li class="soft-skill">
+                  <span class="icon-tile icon-tile--sky" aria-hidden="true"><svg><use href="public/icons/icons.svg#ads_click"></use></svg></span>
+                  <h3 class="soft-skill__title" data-translate="soft-skills-achievement-orientation">Orientación al logro</h3>
+                  <p data-translate="soft-skills-achievement-orientation-description">Me comprometo con la calidad de cada entrega. El tiempo que dedico a mejorar una solución es, para mí, una inversión en aprendizaje.</p>
+                </li>
+                <li class="soft-skill">
+                  <span class="icon-tile icon-tile--mint" aria-hidden="true"><svg><use href="public/icons/icons.svg#groups"></use></svg></span>
+                  <h3 class="soft-skill__title" data-translate="soft-skills-teamwork">Trabajo en equipo</h3>
+                  <p data-translate="soft-skills-teamwork-description">Escucho, comparto conocimiento y colaboro para alcanzar los objetivos comunes.</p>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -517,9 +478,7 @@
 
       <!-- Education -->
 
-      <section id="education" class="education section bg-sweep">
-        <div class="bg-layer bg-beams" aria-hidden="true"></div>
-        <div class="bg-layer bg-orbs" aria-hidden="true"></div>
+      <section id="education" class="education section bg-tone">
         <div class="bg-layer bg-divider" aria-hidden="true"></div>
         <div class="container">
           <div class="section-title animate animate--fade-up">

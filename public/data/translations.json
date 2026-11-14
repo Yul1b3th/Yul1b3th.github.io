@@ -178,7 +178,8 @@
     "carousel-next-label": "Next",
     "education-tabs-label": "Education",
     "education-tab-studies": "Studies",
-    "education-tab-courses": "Courses"
+    "education-tab-courses": "Courses",
+    "skills-tabs-label": "Skills"
   },
   "es": {
     "page-title": "Yulibeth Rivero | Desarrolladora Frontend Angular en Barcelona",
@@ -359,6 +360,7 @@
     "carousel-next-label": "Siguiente",
     "education-tabs-label": "Formación",
     "education-tab-studies": "Estudios",
-    "education-tab-courses": "Cursos"
+    "education-tab-courses": "Cursos",
+    "skills-tabs-label": "Habilidades"
   }
 }
